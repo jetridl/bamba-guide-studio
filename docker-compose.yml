@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: bamba-guide-studio-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bamba
+      POSTGRES_PASSWORD: bamba
+      POSTGRES_DB: bamba_guide_studio
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

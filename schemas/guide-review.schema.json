@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bamba.local/schemas/guide-review.schema.json",
+  "title": "Bamba Guide Review",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "guideId",
+    "reviewer",
+    "summary",
+    "comments"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "guideId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "targetType",
+          "severity",
+          "category",
+          "comment"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "targetType": {
+            "type": "string",
+            "enum": [
+              "guide",
+              "session",
+              "page",
+              "field"
+            ]
+          },
+          "targetId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "field": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "note",
+              "suggestion",
+              "warning",
+              "blocking"
+            ]
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "tone",
+              "pacing",
+              "clarity",
+              "difficulty",
+              "memorisation",
+              "literary_accuracy",
+              "schema",
+              "chunking",
+              "ux",
+              "copy"
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "suggestedRevision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

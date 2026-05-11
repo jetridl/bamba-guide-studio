@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "guide": {
+    "id": "the_tyger_guide_v1",
+    "poemId": "the_tyger",
+    "title": "The Tyger Guided Plan",
+    "version": 1,
+    "status": "draft",
+    "description": "A six-day guided plan for William Blake's The Tyger.",
+    "metadata": {
+      "difficulty": "medium",
+      "estimatedDays": 6
+    }
+  },
+  "poem": {
+    "id": "the_tyger",
+    "title": "The Tyger",
+    "author": "William Blake",
+    "text": "Tyger Tyger, burning bright,\nIn the forests of the night;\nWhat immortal hand or eye,\nCould frame thy fearful symmetry?",
+    "year": 1794,
+    "metadata": {
+      "source": "public_domain"
+    }
+  },
+  "chunks": [
+    {
+      "id": "stanza_1_line_1",
+      "sectionId": "stanza_1",
+      "orderIndex": 0,
+      "text": "Tyger Tyger, burning bright,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_2",
+      "sectionId": "stanza_1",
+      "orderIndex": 1,
+      "text": "In the forests of the night;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_3",
+      "sectionId": "stanza_1",
+      "orderIndex": 2,
+      "text": "What immortal hand or eye,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_4",
+      "sectionId": "stanza_1",
+      "orderIndex": 3,
+      "text": "Could frame thy fearful symmetry?",
+      "metadata": {}
+    }
+  ],
+  "sessions": [
+    {
+      "id": "the_tyger_day_1",
+      "sessionNumber": 1,
+      "title": "Fearful symmetry",
+      "subtitle": "Day 1 of 6",
+      "focusSummary": "Meet the creature and its burning contrast.",
+      "orderIndex": 0,
+      "metadata": {
+        "estimatedMinutes": 7
+      },
+      "pages": [
+        {
+          "id": "day1_page1",
+          "type": "intro",
+          "orderIndex": 0,
+          "title": "A creature of fire",
+          "bodyMarkdown": "Today we begin with the first four lines: bright, dangerous, and memorable.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        }
+      ]
+    }
+  ]
+}
