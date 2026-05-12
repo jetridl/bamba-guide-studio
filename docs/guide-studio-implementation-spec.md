@@ -178,6 +178,14 @@ Use PostgreSQL as the editable source of truth. JSON is import/export format onl
 
 Use UUID primary keys represented as strings in API responses.
 
+Clarifications:
+
+- The guided-plan JSON format does not contain top-level poem sections.
+- Internal `poem_sections` rows are reconstructed from `chunks[].sectionId`.
+- Reimporting an existing `guide.id` creates a new guide version instead of overwriting earlier editorial work.
+- Accepting review suggestions mutates only whitelisted editable page fields; otherwise it only changes review comment status.
+- Export marks an approved guide as `exported`, and exported guides may be downloaded again.
+
 ### guides
 
 - id: uuid primary key

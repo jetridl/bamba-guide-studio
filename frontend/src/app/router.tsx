@@ -1,21 +1,29 @@
-import { createBrowserRouter } from "react-router";
+import { Navigate, createBrowserRouter } from "react-router";
 
-function GuideListPage() {
-  return (
-    <div className="min-h-screen bg-bamba-ivory p-8 text-bamba-ink">
-      <h1 className="font-serif text-4xl font-bold">Bamba Guide Studio</h1>
-      <p className="mt-2 text-bamba-muted">Compose guided learning journeys.</p>
-    </div>
-  );
-}
+import { GuideEditorPage } from "@/features/editor/GuideEditorPage";
+import { GuideListPage } from "@/features/guides/GuideListPage";
+import { ImportGuidePage } from "@/features/guides/ImportGuidePage";
+import { ImportReviewPage } from "@/features/reviews/ImportReviewPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <GuideListPage />,
+    element: <Navigate replace to="/guides" />,
   },
   {
     path: "/guides",
     element: <GuideListPage />,
+  },
+  {
+    path: "/guides/import",
+    element: <ImportGuidePage />,
+  },
+  {
+    path: "/guides/:guideId",
+    element: <GuideEditorPage />,
+  },
+  {
+    path: "/guides/:guideId/reviews/import",
+    element: <ImportReviewPage />,
   },
 ]);
