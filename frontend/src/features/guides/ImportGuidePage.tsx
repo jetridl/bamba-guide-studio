@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Link, useNavigate } from "react-router"
-import { ArrowLeft, FileJson } from "lucide-react"
+import { ArrowLeft, FileJson, Upload } from "lucide-react"
 import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -35,6 +35,18 @@ export function ImportGuidePage() {
     }
   }
 
+  async function onFileChange(file: File | undefined) {
+    if (!file) return
+    setError(null)
+    try {
+      const text = await file.text()
+      JSON.parse(text)
+      form.setValue("json", text, { shouldDirty: true, shouldValidate: true })
+    } catch {
+      setError("That file is not valid JSON.")
+    }
+  }
+
   return (
     <main className="min-h-screen bg-bamba-ivory px-8 py-8 text-bamba-ink">
       <div className="mx-auto flex max-w-5xl flex-col gap-5">
@@ -53,6 +65,18 @@ export function ImportGuidePage() {
           </CardHeader>
           <CardContent>
             <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
+              <label className="flex cursor-pointer items-center justify-between rounded-md border border-dashed border-bamba-border bg-bamba-paper px-4 py-3 text-sm">
+                <span className="flex items-center gap-2 text-bamba-muted">
+                  <Upload className="size-4 text-bamba-amber" />
+                  Choose a guided-plan JSON file
+                </span>
+                <input
+                  accept="application/json,.json"
+                  className="sr-only"
+                  type="file"
+                  onChange={(event) => void onFileChange(event.target.files?.[0])}
+                />
+              </label>
               <Textarea
                 className="min-h-[520px] bg-bamba-paper font-mono text-sm"
                 placeholder="{ ... guided plan JSON ... }"

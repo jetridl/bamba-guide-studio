@@ -3,7 +3,7 @@ from __future__ import annotations
 import uuid
 from typing import Any
 
-from fastapi import APIRouter, Depends, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
@@ -13,18 +13,22 @@ from app.schemas.api import GuidePatch, PagePatch, ReorderPayload, SessionPatch
 from app.services.guide_service import (
     approve_guide,
     duplicate_page,
+    ensure_latest_working_copy,
     get_guide_or_404,
     get_page_or_404,
     get_session_or_404,
     guide_query,
+    list_guide_versions,
     mark_in_review,
     patch_guide,
     patch_page,
     patch_session,
     reorder_pages,
     reorder_sessions,
+    restore_latest_from_version,
+    save_guide_version,
 )
-from app.services.serialization import guide_summary_to_dict, guide_to_dict
+from app.services.serialization import guide_group_summary_to_dict, guide_to_dict, guide_version_to_dict
 
 router = APIRouter()
 
@@ -34,14 +38,25 @@ def list_guides(db: Session = Depends(get_db)) -> list[dict[str, Any]]:
     guides = db.scalars(
         select(Guide)
         .options(selectinload(Guide.poem), selectinload(Guide.sessions))
-        .order_by(Guide.updated_at.desc())
+        .order_by(Guide.external_id, Guide.version.desc())
     ).all()
-    return [guide_summary_to_dict(guide) for guide in guides]
+    groups: dict[str, list[Guide]] = {}
+    for guide in guides:
+        groups.setdefault(guide.external_id, []).append(guide)
+    for group in groups.values():
+        ensure_latest_working_copy(db, group)
+    summaries = [guide_group_summary_to_dict(group) for group in groups.values()]
+    return sorted(summaries, key=lambda item: item["updatedAt"] or "", reverse=True)
 
 
 @router.get("/guides/{guide_id}")
 def get_guide(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any]:
     return guide_to_dict(get_guide_or_404(db, guide_id))
+
+
+@router.get("/guides/{guide_id}/versions")
+def get_guide_versions(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> list[dict[str, Any]]:
+    return [guide_version_to_dict(guide) for guide in list_guide_versions(db, get_guide_or_404(db, guide_id))]
 
 
 @router.patch("/guides/{guide_id}")
@@ -67,11 +82,26 @@ def approve(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any
     return approve_guide(db, get_guide_or_404(db, guide_id))
 
 
+@router.post("/guides/{guide_id}/save-version")
+def save_version(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any]:
+    return save_guide_version(db, get_guide_or_404(db, guide_id))
+
+
+@router.post("/guides/{guide_id}/restore-latest")
+def restore_latest(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any]:
+    return restore_latest_from_version(db, get_guide_or_404(db, guide_id))
+
+
 @router.post("/guides/{guide_id}/sessions")
 def create_session(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any]:
     guide = db.scalar(guide_query().where(Guide.id == guide_id))
     if guide is None:
         return get_guide_or_404(db, guide_id)
+    if guide.version > 0:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Saved versions are read-only. Restore this version to latest before editing.",
+        )
     order_index = max((session.order_index for session in guide.sessions), default=-1) + 1
     session = GuideSession(
         guide=guide,
@@ -79,6 +109,7 @@ def create_session(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[s
         session_number=order_index + 1,
         title="Untitled session",
         order_index=order_index,
+        chunk_ids_json=[],
         metadata_json={},
     )
     db.add(session)

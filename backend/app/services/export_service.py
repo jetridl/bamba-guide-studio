@@ -6,11 +6,13 @@ from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.models import Guide, GuidePage, GuideSession, PoemChunk
+from app.services.chunk_ordering import chunk_sort_key
 from app.services.json_schema import validate_json_schema
+from app.services.page_types import derive_round_type
 
 
 def build_guided_plan(guide: Guide) -> dict[str, Any]:
-    chunks = sorted(guide.poem.chunks, key=lambda chunk: chunk.order_index)
+    chunks = sorted(guide.poem.chunks, key=chunk_sort_key)
     sessions = sorted(guide.sessions, key=lambda session: session.order_index)
     return {
         "schemaVersion": 1,
@@ -18,7 +20,7 @@ def build_guided_plan(guide: Guide) -> dict[str, Any]:
             "id": guide.external_id,
             "poemId": guide.poem.external_id,
             "title": guide.title,
-            "version": guide.version,
+            "version": guide.version if guide.version > 0 else 1,
             "status": guide.status,
             **({"description": guide.description} if guide.description is not None else {}),
             "metadata": guide.metadata_json or {},
@@ -86,6 +88,7 @@ def _session_json(session: GuideSession) -> dict[str, Any]:
         "subtitle": session.subtitle,
         "focusSummary": session.focus_summary,
         "orderIndex": session.order_index,
+        "chunkIds": session.chunk_ids_json or [],
         "metadata": session.metadata_json or {},
         "pages": [_page_json(page) for page in sorted(session.pages, key=lambda item: item.order_index)],
     }
@@ -100,7 +103,5 @@ def _page_json(page: GuidePage) -> dict[str, Any]:
         "bodyMarkdown": page.body_markdown,
         "prompt": page.prompt,
         "chunkIds": page.chunk_ids_json or [],
-        "roundType": page.round_type,
-        "estimatedSeconds": page.estimated_seconds,
-        "metadata": page.metadata_json or {},
+        "roundType": derive_round_type(page.page_type),
     }

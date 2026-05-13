@@ -3,11 +3,12 @@ from __future__ import annotations
 from typing import Any
 
 from fastapi import HTTPException, status
-from sqlalchemy import func, select
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.models import Guide, GuidePage, GuideSession, Poem, PoemChunk, PoemSection
 from app.services.json_schema import validate_json_schema
+from app.services.page_types import derive_round_type
 from app.services.serialization import guide_to_dict
 
 
@@ -35,20 +36,27 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
     _upsert_chunks(db, poem, section_by_external_id, payload["chunks"])
 
     guide_data = payload["guide"]
-    max_version = db.scalar(
-        select(func.max(Guide.version)).where(Guide.external_id == guide_data["id"])
+    guide = db.scalar(
+        select(Guide).where(
+            Guide.external_id == guide_data["id"],
+            Guide.version == 0,
+        )
     )
-    guide = Guide(
-        external_id=guide_data["id"],
-        poem=poem,
-        title=guide_data["title"],
-        description=guide_data.get("description"),
-        version=(max_version or 0) + 1,
-        status="draft",
-        metadata_json=guide_data.get("metadata") or {},
-        import_snapshot_json=payload,
-    )
-    db.add(guide)
+    if guide is None:
+        guide = Guide(external_id=guide_data["id"], version=0)
+        db.add(guide)
+    else:
+        for session in list(guide.sessions):
+            db.delete(session)
+        for review in list(guide.reviews):
+            db.delete(review)
+        db.flush()
+    guide.poem = poem
+    guide.title = guide_data["title"]
+    guide.description = guide_data.get("description")
+    guide.status = "draft"
+    guide.metadata_json = guide_data.get("metadata") or {}
+    guide.import_snapshot_json = payload
     db.flush()
 
     for session_data in payload["sessions"]:
@@ -60,6 +68,7 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
             subtitle=session_data.get("subtitle"),
             focus_summary=session_data.get("focusSummary"),
             order_index=session_data["orderIndex"],
+            chunk_ids_json=session_data.get("chunkIds") or _infer_session_chunk_ids(session_data),
             metadata_json=session_data.get("metadata") or {},
         )
         db.add(session)
@@ -75,9 +84,8 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
                     body_markdown=page_data.get("bodyMarkdown"),
                     prompt=page_data.get("prompt"),
                     chunk_ids_json=page_data.get("chunkIds") or [],
-                    round_type=page_data.get("roundType"),
-                    estimated_seconds=page_data.get("estimatedSeconds"),
-                    metadata_json=page_data.get("metadata") or {},
+                    round_type=derive_round_type(page_data["type"]),
+                    metadata_json={},
                 )
             )
 
@@ -90,7 +98,7 @@ def _reconstruct_sections(
     db: Session, poem: Poem, chunks: list[dict[str, Any]]
 ) -> dict[str, PoemSection]:
     section_ids: list[str] = []
-    for chunk in sorted(chunks, key=lambda item: item["orderIndex"]):
+    for chunk in chunks:
         section_id = chunk.get("sectionId")
         if section_id and section_id not in section_ids:
             section_ids.append(section_id)
@@ -110,6 +118,15 @@ def _reconstruct_sections(
         result[external_id] = section
     db.flush()
     return result
+
+
+def _infer_session_chunk_ids(session_data: dict[str, Any]) -> list[str]:
+    chunk_ids: list[str] = []
+    for page in session_data.get("pages") or []:
+        for chunk_id in page.get("chunkIds") or []:
+            if chunk_id not in chunk_ids:
+                chunk_ids.append(chunk_id)
+    return chunk_ids
 
 
 def _upsert_chunks(

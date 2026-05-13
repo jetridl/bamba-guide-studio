@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import Any
 
 from app.models import Guide, GuidePage, GuideReviewComment, GuideSession, Poem, PoemChunk
+from app.services.chunk_ordering import chunk_sort_key
+from app.services.page_types import derive_round_type
 
 
 def page_to_dict(page: GuidePage) -> dict[str, Any]:
@@ -15,9 +17,7 @@ def page_to_dict(page: GuidePage) -> dict[str, Any]:
         "bodyMarkdown": page.body_markdown,
         "prompt": page.prompt,
         "chunkIds": page.chunk_ids_json or [],
-        "roundType": page.round_type,
-        "estimatedSeconds": page.estimated_seconds,
-        "metadata": page.metadata_json or {},
+        "roundType": derive_round_type(page.page_type),
     }
 
 
@@ -30,6 +30,7 @@ def session_to_dict(session: GuideSession) -> dict[str, Any]:
         "subtitle": session.subtitle,
         "focusSummary": session.focus_summary,
         "orderIndex": session.order_index,
+        "chunkIds": session.chunk_ids_json or [],
         "metadata": session.metadata_json or {},
         "pages": [page_to_dict(page) for page in sorted(session.pages, key=lambda item: item.order_index)],
     }
@@ -55,7 +56,7 @@ def poem_to_dict(poem: Poem) -> dict[str, Any]:
         "text": poem.text,
         "year": poem.year,
         "metadata": poem.metadata_json or {},
-        "chunks": [chunk_to_dict(chunk) for chunk in sorted(poem.chunks, key=lambda item: item.order_index)],
+        "chunks": [chunk_to_dict(chunk) for chunk in sorted(poem.chunks, key=chunk_sort_key)],
     }
 
 
@@ -89,6 +90,7 @@ def guide_to_dict(guide: Guide) -> dict[str, Any]:
         "title": guide.title,
         "description": guide.description,
         "version": guide.version,
+        "versionLabel": "latest" if guide.version == 0 else f"v{guide.version}",
         "status": guide.status,
         "metadata": guide.metadata_json or {},
         "poem": poem_to_dict(guide.poem),
@@ -107,9 +109,36 @@ def guide_summary_to_dict(guide: Guide) -> dict[str, Any]:
         "title": guide.title,
         "description": guide.description,
         "version": guide.version,
+        "versionLabel": "latest" if guide.version == 0 else f"v{guide.version}",
         "status": guide.status,
         "poemTitle": guide.poem.title,
         "poemAuthor": guide.poem.author,
         "sessionCount": len(guide.sessions),
         "updatedAt": guide.updated_at.isoformat() if guide.updated_at else None,
+    }
+
+
+def guide_version_to_dict(guide: Guide) -> dict[str, Any]:
+    timestamp = guide.updated_at if guide.version == 0 else guide.created_at
+    return {
+        "id": str(guide.id),
+        "version": guide.version,
+        "versionLabel": "latest" if guide.version == 0 else f"v{guide.version}",
+        "status": guide.status,
+        "isLatest": guide.version == 0,
+        "timestamp": timestamp.isoformat() if timestamp else None,
+    }
+
+
+def guide_group_summary_to_dict(guides: list[Guide]) -> dict[str, Any]:
+    saved_versions = sorted([guide.version for guide in guides if guide.version > 0])
+    latest = next((guide for guide in guides if guide.version == 0), None)
+    if latest is None:
+        latest = max(guides, key=lambda guide: guide.version)
+    return {
+        **guide_summary_to_dict(latest),
+        "versionLabel": "latest" if latest.version == 0 else f"v{latest.version}",
+        "savedVersions": saved_versions,
+        "savedVersionCount": len(saved_versions),
+        "latestSavedVersion": saved_versions[-1] if saved_versions else None,
     }

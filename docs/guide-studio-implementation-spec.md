@@ -243,6 +243,7 @@ Unique: poem_id + external_id
 - subtitle: text nullable
 - focus_summary: text nullable
 - order_index: int
+- chunk_ids_json: jsonb
 - metadata_json: jsonb
 
 Unique: guide_id + external_id
@@ -259,8 +260,6 @@ Unique: guide_id + external_id
 - chunk_ids_json: jsonb
 - round_type: text nullable
 - prompt: text nullable
-- metadata_json: jsonb
-- estimated_seconds: int nullable
 
 Unique: session_id + external_id
 
@@ -429,7 +428,9 @@ Accepting suggestion:
 - Page type unknown
 - Required field missing for page type
 - Game page references no chunks
+- Game/read-through page selects chunks outside the session chunkIds
 - Page references chunk ID that does not exist
+- Session references chunk ID that does not exist
 - Duplicate session order
 - Duplicate page order within session
 - Open blocking review comments
@@ -514,7 +515,7 @@ When sessions or pages are reordered:
 
 Changing page type should:
 - preserve shared fields where possible
-- clear incompatible fields only after confirmation
+- clear incompatible fields such as non-reflection prompts and reflection bodyMarkdown
 
 ---
 
@@ -523,10 +524,20 @@ Changing page type should:
 Preview must render:
 
 - intro/context/commentary/background pages as text pages
-- poem_chunk pages using linked chunk text
-- game pages as mock game pages with blanks/badges
+- recap_previous pages as previous-day recap pages
+- poem_chunk pages using page chunk overrides or the session chunkIds fallback
+- whole_poem pages as a scrollable full-poem view
+- game pages as mock game pages with blanks/badges using page chunk overrides or the session chunkIds fallback
 - reflection pages as prompt pages
 - completion pages as closing pages
+
+Session `chunkIds` defines the chunks for the day. `poem_chunk` and game pages may narrow that scope with page `chunkIds`, but they may only select from the session chunkIds. `recap_previous` pages may reference chunks from earlier sessions. Text pages and `whole_poem` do not need linked chunks.
+
+Session title, subtitle, focus summary, and day chunk selection belong on the Daily chunks sidebar entry, not on each individual page editor. Prompt is editable only for reflection pages. Reflection pages use `prompt` instead of `bodyMarkdown`.
+
+Game page types are `first_letter_game`, `last_word_game`, `first_last_word_game`, and `hidden_word_game`.
+
+Round type is derived from game page type and must not be independently selectable in Guide Studio. The derived mapping is `first_letter_game -> firstLetter`, `last_word_game -> lastWord`, `first_last_word_game -> firstAndLast`, and `hidden_word_game -> hiddenWord`. Non-game pages should export `roundType: null`.
 
 Preview should show:
 - session progress

@@ -4,11 +4,24 @@ export type GuideSummary = {
   title: string
   description?: string | null
   version: number
+  versionLabel: string
   status: GuideStatus
   poemTitle: string
   poemAuthor: string
   sessionCount: number
   updatedAt?: string | null
+  savedVersions?: number[]
+  savedVersionCount?: number
+  latestSavedVersion?: number | null
+}
+
+export type GuideVersionSummary = {
+  id: string
+  version: number
+  versionLabel: string
+  status: GuideStatus
+  isLatest: boolean
+  timestamp?: string | null
 }
 
 export type GuideStatus = "draft" | "in_review" | "approved" | "exported"
@@ -32,8 +45,6 @@ export type GuidePage = {
   prompt?: string | null
   chunkIds: string[]
   roundType?: RoundType | null
-  estimatedSeconds?: number | null
-  metadata: Record<string, unknown>
 }
 
 export type GuideSession = {
@@ -44,6 +55,7 @@ export type GuideSession = {
   subtitle?: string | null
   focusSummary?: string | null
   orderIndex: number
+  chunkIds: string[]
   metadata: Record<string, unknown>
   pages: GuidePage[]
 }
@@ -54,6 +66,7 @@ export type GuideDetail = {
   title: string
   description?: string | null
   version: number
+  versionLabel: string
   status: GuideStatus
   metadata: Record<string, unknown>
   poem: {
@@ -79,15 +92,18 @@ export type PageType =
   | "poet_background"
   | "poem_background"
   | "recap"
+  | "recap_previous"
   | "poem_chunk"
+  | "whole_poem"
   | "commentary"
+  | "first_letter_game"
   | "last_word_game"
   | "first_last_word_game"
   | "hidden_word_game"
   | "reflection"
   | "completion"
 
-export type RoundType = "readThrough" | "lastWord" | "firstAndLast" | "hiddenWord"
+export type RoundType = "readThrough" | "firstLetter" | "lastWord" | "firstAndLast" | "hiddenWord"
 
 export type ValidationIssue = {
   severity: "blocking" | "warning" | "suggestion" | "note"

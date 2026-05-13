@@ -83,7 +83,9 @@ export function GuideListPage() {
                     <div>
                       <h2 className="text-lg font-medium">{guide.title}</h2>
                       <p className="text-sm text-bamba-muted">
-                        {guide.poemTitle} by {guide.poemAuthor} · {guide.sessionCount} sessions · v{guide.version}
+                        {guide.poemTitle} by {guide.poemAuthor} · {guide.sessionCount} sessions ·{" "}
+                        {guide.versionLabel}
+                        {guide.savedVersionCount ? ` · ${guide.savedVersionCount} saved versions` : ""}
                       </p>
                     </div>
                   </div>

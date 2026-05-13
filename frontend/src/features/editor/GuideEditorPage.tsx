@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react"
-import { Link, useParams } from "react-router"
+import { Link, useNavigate, useParams } from "react-router"
 import {
   DndContext,
   closestCenter,
@@ -20,7 +20,6 @@ import {
   Download,
   FileJson,
   GripVertical,
-  MessageSquare,
   Plus,
   Save,
   Trash2,
@@ -39,10 +38,9 @@ import type {
   GuideDetail,
   GuidePage,
   GuideSession,
+  GuideVersionSummary,
   PageType,
   ReviewComment,
-  RoundType,
-  ValidationResult,
 } from "@/lib/types"
 
 const PAGE_TYPES: PageType[] = [
@@ -51,8 +49,11 @@ const PAGE_TYPES: PageType[] = [
   "poet_background",
   "poem_background",
   "recap",
+  "recap_previous",
   "poem_chunk",
+  "whole_poem",
   "commentary",
+  "first_letter_game",
   "last_word_game",
   "first_last_word_game",
   "hidden_word_game",
@@ -60,13 +61,19 @@ const PAGE_TYPES: PageType[] = [
   "completion",
 ]
 
-const ROUND_TYPES: RoundType[] = ["readThrough", "lastWord", "firstAndLast", "hiddenWord"]
+const GAME_PAGE_TYPES = new Set<PageType>([
+  "first_letter_game",
+  "last_word_game",
+  "first_last_word_game",
+  "hidden_word_game",
+])
 
 export function GuideEditorPage() {
   const { guideId = "" } = useParams()
+  const navigate = useNavigate()
   const [guide, setGuide] = useState<GuideDetail | null>(null)
+  const [versions, setVersions] = useState<GuideVersionSummary[]>([])
   const [selectedPageId, setSelectedPageId] = useState<string | null>(null)
-  const [validation, setValidation] = useState<ValidationResult | null>(null)
   const [comments, setComments] = useState<ReviewComment[]>([])
   const [saving, setSaving] = useState<"idle" | "saving" | "saved" | "error">("idle")
   const [error, setError] = useState<string | null>(null)
@@ -76,15 +83,19 @@ export function GuideEditorPage() {
   const load = useCallback(async () => {
     setError(null)
     try {
-      const [guideData, validationData, commentData] = await Promise.all([
+      const [guideData, commentData] = await Promise.all([
         api.getGuide(guideId),
-        api.validateGuide(guideId),
         api.listReviewComments(guideId),
       ])
+      const versionData = await api.listGuideVersions(guideData.id)
       setGuide(guideData)
-      setValidation(validationData)
+      setVersions(versionData)
       setComments(commentData)
-      setSelectedPageId((current) => current ?? guideData.sessions[0]?.pages[0]?.id ?? null)
+      setSelectedPageId((current) =>
+        guideData.sessions.some((session) => session.pages.some((page) => page.id === current) || current === dailyChunksId(session.id))
+          ? current
+          : guideData.sessions[0]?.pages[0]?.id ?? null,
+      )
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Could not load guide.")
     }
@@ -101,7 +112,6 @@ export function GuideEditorPage() {
       try {
         await api.patchPage(pendingPagePatch.pageId, pendingPagePatch.payload)
         setSaving("saved")
-        setValidation(await api.validateGuide(guideId))
       } catch {
         setSaving("error")
       }
@@ -116,7 +126,6 @@ export function GuideEditorPage() {
       try {
         await api.patchSession(pendingSessionPatch.sessionId, pendingSessionPatch.payload)
         setSaving("saved")
-        setValidation(await api.validateGuide(guideId))
       } catch {
         setSaving("error")
       }
@@ -125,6 +134,9 @@ export function GuideEditorPage() {
   }, [guideId, pendingSessionPatch])
 
   const selected = useMemo(() => findSelectedPage(guide, selectedPageId), [guide, selectedPageId])
+  const selectedDailySession = useMemo(() => findSelectedDailySession(guide, selectedPageId), [guide, selectedPageId])
+  const readOnly = Boolean(guide && guide.version > 0)
+  const hasReview = comments.length > 0
 
   function updatePage(pageId: string, payload: Record<string, unknown>) {
     setGuide((current) => current && patchGuidePage(current, pageId, payload))
@@ -142,6 +154,30 @@ export function GuideEditorPage() {
       await load()
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Action failed.")
+    }
+  }
+
+  async function saveCurrentVersion() {
+    if (!guide) return
+    try {
+      const nextGuide = await api.saveVersion(guide.id)
+      if (nextGuide.id !== guide.id) {
+        navigate(`/guides/${nextGuide.id}`)
+        return
+      }
+      await load()
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Could not save version.")
+    }
+  }
+
+  async function restoreAsLatest() {
+    if (!guide) return
+    try {
+      const latest = await api.restoreLatest(guide.id)
+      navigate(`/guides/${latest.id}`)
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Could not restore version.")
     }
   }
 
@@ -167,49 +203,85 @@ export function GuideEditorPage() {
 
   return (
     <main className="flex h-screen min-w-[1180px] flex-col bg-bamba-ivory text-bamba-ink">
-      <TopBar guide={guide} saving={saving} onApprove={() => void reloadAfter(() => api.approveGuide(guide.id))} onExport={() => void exportGuide()} />
+      <TopBar
+        guide={guide}
+        versions={versions}
+        saving={saving}
+        onApprove={() => void reloadAfter(() => api.approveGuide(guide.id))}
+        onExport={() => void exportGuide()}
+        onSaveVersion={() => void saveCurrentVersion()}
+        onRestoreLatest={() => void restoreAsLatest()}
+        onSelectVersion={(versionGuideId) => navigate(`/guides/${versionGuideId}`)}
+      />
       <div className="grid min-h-0 flex-1 grid-cols-[300px_minmax(480px,1fr)_420px] border-t border-bamba-border">
         <SessionsNavigator
           guide={guide}
           selectedPageId={selectedPageId}
           onSelectPage={setSelectedPageId}
+          readOnly={readOnly}
           onCreatePage={(sessionId) => void reloadAfter(() => api.createPage(sessionId))}
           onDuplicatePage={(pageId) => void reloadAfter(() => api.duplicatePage(pageId))}
           onDeletePage={(pageId) => void reloadAfter(() => api.deletePage(pageId))}
           onReorderPages={async (sessionId, pages) => {
+            if (readOnly) return
             setGuide((current) => current && replaceSessionPages(current, sessionId, pages))
             await api.reorderPages(sessionId, pages.map((page, index) => ({ id: page.id, orderIndex: index })))
             await load()
           }}
         />
-        <PageEditor selected={selected} guide={guide} onUpdatePage={updatePage} onUpdateSession={updateSession} />
-        <aside className="grid min-h-0 grid-rows-[1fr_1fr] border-l border-bamba-border bg-bamba-paper/70">
-          <MobilePreview guide={guide} selected={selected} />
-          <ReviewPanel
+        {selectedDailySession ? (
+          <DailyChunksEditor
             guide={guide}
-            comments={comments}
-            selectedPage={selected?.page ?? null}
-            onAccept={(commentId) => void reloadAfter(() => api.acceptComment(commentId))}
-            onStatus={(commentId, status) => void reloadAfter(() => api.setCommentStatus(commentId, status))}
+            session={selectedDailySession}
+            readOnly={readOnly}
+            onUpdateSession={updateSession}
           />
+        ) : (
+          <PageEditor selected={selected} guide={guide} readOnly={readOnly} onUpdatePage={updatePage} />
+        )}
+        <aside className={`grid min-h-0 border-l border-bamba-border bg-bamba-paper/70 ${hasReview ? "grid-rows-[1fr_1fr]" : "grid-rows-1"}`}>
+          <MobilePreview guide={guide} selected={selected} showDivider={hasReview} />
+          {hasReview ? (
+            <ReviewPanel
+              guide={guide}
+              comments={comments}
+              selectedPage={selected?.page ?? null}
+              onAccept={(commentId) => void reloadAfter(() => api.acceptComment(commentId))}
+              onStatus={(commentId, status) => void reloadAfter(() => api.setCommentStatus(commentId, status))}
+            />
+          ) : null}
         </aside>
       </div>
-      <BottomUtilityBar guide={guide} validation={validation} onValidate={() => void reloadAfter(async () => setValidation(await api.validateGuide(guide.id)))} />
     </main>
   )
 }
 
 function TopBar({
   guide,
+  versions,
   saving,
   onApprove,
   onExport,
+  onSaveVersion,
+  onRestoreLatest,
+  onSelectVersion,
 }: {
   guide: GuideDetail
+  versions: GuideVersionSummary[]
   saving: "idle" | "saving" | "saved" | "error"
   onApprove: () => void
   onExport: () => void
+  onSaveVersion: () => void
+  onRestoreLatest: () => void
+  onSelectVersion: (guideId: string) => void
 }) {
+  const latestSaved = versions.find((version) => !version.isLatest)
+  const currentVersion = versions.find((version) => version.id === guide.id)
+  const versionDisplay =
+    guide.version === 0 && latestSaved
+      ? `latest · saved ${latestSaved.versionLabel}`
+      : currentVersion?.versionLabel ?? guide.versionLabel
+
   return (
     <header className="flex h-16 shrink-0 items-center justify-between bg-bamba-paper px-5">
       <div className="flex items-center gap-3">
@@ -222,13 +294,29 @@ function TopBar({
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-semibold">{guide.title}</h1>
             <GuideStatusPill status={guide.status} />
+            <Badge variant="outline" className="bg-bamba-paper">
+              {versionDisplay}
+            </Badge>
           </div>
           <p className="text-xs text-bamba-muted">
-            {guide.poem.title} · {guide.poem.author} · v{guide.version}
+            {guide.poem.title} · {guide.poem.author}
+            {currentVersion?.timestamp ? ` · ${formatVersionTimestamp(currentVersion.timestamp)}` : ""}
           </p>
         </div>
       </div>
       <div className="flex items-center gap-2">
+        <Select value={guide.id} onValueChange={onSelectVersion}>
+          <SelectTrigger className="h-9 w-64 bg-bamba-paper">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {versions.map((version) => (
+              <SelectItem key={version.id} value={version.id}>
+                {version.versionLabel} · {formatVersionTimestamp(version.timestamp)}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
         <span className="flex items-center gap-1 text-xs text-bamba-muted">
           <Save className="size-3" />
           {saving === "saving" ? "Saving" : saving === "error" ? "Save failed" : saving === "saved" ? "Saved" : "Ready"}
@@ -239,6 +327,17 @@ function TopBar({
             Import review
           </Link>
         </Button>
+        {guide.version === 0 ? (
+          <Button variant="outline" onClick={onSaveVersion}>
+            <Save />
+            Save version
+          </Button>
+        ) : (
+          <Button variant="outline" onClick={onRestoreLatest}>
+            <Save />
+            Use as latest
+          </Button>
+        )}
         <Button variant="outline" onClick={onApprove}>
           <CheckCircle2 />
           Approve
@@ -255,6 +354,7 @@ function TopBar({
 function SessionsNavigator({
   guide,
   selectedPageId,
+  readOnly,
   onSelectPage,
   onCreatePage,
   onDuplicatePage,
@@ -263,6 +363,7 @@ function SessionsNavigator({
 }: {
   guide: GuideDetail
   selectedPageId: string | null
+  readOnly: boolean
   onSelectPage: (pageId: string) => void
   onCreatePage: (sessionId: string) => void
   onDuplicatePage: (pageId: string) => void
@@ -280,12 +381,14 @@ function SessionsNavigator({
                   <h2 className="text-sm font-semibold">{session.title}</h2>
                   <p className="text-xs text-bamba-muted">Session {session.sessionNumber}</p>
                 </div>
-                <Button variant="ghost" size="icon-sm" onClick={() => onCreatePage(session.id)} title="Add page">
+                <Button disabled={readOnly} variant="ghost" size="icon-sm" onClick={() => onCreatePage(session.id)} title="Add page">
                   <Plus />
                 </Button>
               </div>
               <SortablePages
+                session={session}
                 pages={session.pages}
+                readOnly={readOnly}
                 selectedPageId={selectedPageId}
                 onSelectPage={onSelectPage}
                 onDuplicatePage={onDuplicatePage}
@@ -301,14 +404,18 @@ function SessionsNavigator({
 }
 
 function SortablePages({
+  session,
   pages,
+  readOnly,
   selectedPageId,
   onSelectPage,
   onDuplicatePage,
   onDeletePage,
   onReorder,
 }: {
+  session: GuideSession
   pages: GuidePage[]
+  readOnly: boolean
   selectedPageId: string | null
   onSelectPage: (pageId: string) => void
   onDuplicatePage: (pageId: string) => void
@@ -317,6 +424,7 @@ function SortablePages({
 }) {
   async function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event
+    if (readOnly) return
     if (!over || active.id === over.id) return
     const oldIndex = pages.findIndex((page) => page.id === active.id)
     const newIndex = pages.findIndex((page) => page.id === over.id)
@@ -327,10 +435,28 @@ function SortablePages({
     <DndContext collisionDetection={closestCenter} onDragEnd={(event) => void handleDragEnd(event)}>
       <SortableContext items={pages.map((page) => page.id)} strategy={verticalListSortingStrategy}>
         <div className="flex flex-col gap-1">
+          <button
+            className={`grid grid-cols-[24px_1fr_auto] items-center gap-1 rounded-md border px-1 py-1 text-left text-xs ${
+              selectedPageId === dailyChunksId(session.id)
+                ? "border-bamba-amber bg-bamba-amber/10"
+                : "border-transparent bg-transparent hover:bg-bamba-ivory"
+            }`}
+            onClick={() => onSelectPage(dailyChunksId(session.id))}
+          >
+            <span />
+            <span className="truncate">
+              <span className="block truncate font-medium">Daily chunks</span>
+              <span className="block truncate text-bamba-muted">{session.chunkIds.length} linked</span>
+            </span>
+            <Badge variant="outline" className="bg-bamba-paper text-[10px]">
+              day
+            </Badge>
+          </button>
           {pages.map((page) => (
             <SortablePageNode
               key={page.id}
               page={page}
+              readOnly={readOnly}
               selected={selectedPageId === page.id}
               onSelect={() => onSelectPage(page.id)}
               onDuplicate={() => onDuplicatePage(page.id)}
@@ -345,18 +471,20 @@ function SortablePages({
 
 function SortablePageNode({
   page,
+  readOnly,
   selected,
   onSelect,
   onDuplicate,
   onDelete,
 }: {
   page: GuidePage
+  readOnly: boolean
   selected: boolean
   onSelect: () => void
   onDuplicate: () => void
   onDelete: () => void
 }) {
-  const sortable = useSortable({ id: page.id })
+  const sortable = useSortable({ id: page.id, disabled: readOnly })
   const style = {
     transform: CSS.Transform.toString(sortable.transform),
     transition: sortable.transition,
@@ -369,7 +497,7 @@ function SortablePageNode({
         selected ? "border-bamba-amber bg-bamba-amber/10" : "border-transparent bg-transparent hover:bg-bamba-ivory"
       }`}
     >
-      <button className="cursor-grab text-bamba-muted" {...sortable.attributes} {...sortable.listeners} title="Drag page">
+      <button className="cursor-grab text-bamba-muted disabled:cursor-default disabled:opacity-50" disabled={readOnly} {...sortable.attributes} {...sortable.listeners} title="Drag page">
         <GripVertical className="size-4" />
       </button>
       <button className="truncate text-left" onClick={onSelect}>
@@ -377,10 +505,10 @@ function SortablePageNode({
         <span className="block truncate text-bamba-muted">{page.type}</span>
       </button>
       <div className="flex">
-        <Button variant="ghost" size="icon-xs" onClick={onDuplicate} title="Duplicate page">
+        <Button disabled={readOnly} variant="ghost" size="icon-xs" onClick={onDuplicate} title="Duplicate page">
           <Copy />
         </Button>
-        <Button variant="ghost" size="icon-xs" onClick={onDelete} title="Delete page">
+        <Button disabled={readOnly} variant="ghost" size="icon-xs" onClick={onDelete} title="Delete page">
           <Trash2 />
         </Button>
       </div>
@@ -391,50 +519,46 @@ function SortablePageNode({
 function PageEditor({
   selected,
   guide,
+  readOnly,
   onUpdatePage,
-  onUpdateSession,
 }: {
   selected: { session: GuideSession; page: GuidePage } | null
   guide: GuideDetail
+  readOnly: boolean
   onUpdatePage: (pageId: string, payload: Record<string, unknown>) => void
-  onUpdateSession: (sessionId: string, payload: Record<string, unknown>) => void
 }) {
   if (!selected) {
     return <section className="p-8 text-bamba-muted">Choose a page to edit.</section>
   }
   const { session, page } = selected
+  const isGamePage = GAME_PAGE_TYPES.has(page.type)
+  const isReflectionPage = page.type === "reflection"
+  const showBodyMarkdown = !isGamePage && !isReflectionPage
+  const gameChunkOptions = getChunksByExternalIds(guide, session.chunkIds)
+  const selectedGameChunkIds = page.chunkIds.length > 0 ? page.chunkIds : session.chunkIds
   return (
     <section className="min-h-0 bg-bamba-ivory">
       <ScrollArea className="h-full">
         <div className="mx-auto flex max-w-3xl flex-col gap-5 p-6">
-          <Card className="border-bamba-border bg-white/65">
-            <CardHeader>
-              <CardTitle>Session</CardTitle>
-            </CardHeader>
-            <CardContent className="grid grid-cols-2 gap-3">
-              <Field label="Title">
-                <Input value={session.title} onChange={(event) => onUpdateSession(session.id, { title: event.target.value })} />
-              </Field>
-              <Field label="Subtitle">
-                <Input value={session.subtitle ?? ""} onChange={(event) => onUpdateSession(session.id, { subtitle: event.target.value })} />
-              </Field>
-              <Field className="col-span-2" label="Focus summary">
-                <Textarea
-                  value={session.focusSummary ?? ""}
-                  onChange={(event) => onUpdateSession(session.id, { focusSummary: event.target.value })}
-                />
-              </Field>
-            </CardContent>
-          </Card>
-
           <Card className="border-bamba-border bg-white/70">
             <CardHeader>
               <CardTitle>Page editor</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 <Field label="Type">
-                  <Select value={page.type} onValueChange={(value) => onUpdatePage(page.id, { type: value })}>
+                  <Select
+                    disabled={readOnly}
+                    value={page.type}
+                    onValueChange={(value) => {
+                      const nextType = value as PageType
+                      onUpdatePage(page.id, {
+                        type: nextType,
+                        bodyMarkdown: nextType === "reflection" || GAME_PAGE_TYPES.has(nextType) ? null : page.bodyMarkdown,
+                        prompt: nextType === "reflection" ? page.prompt : null,
+                      })
+                    }}
+                  >
                     <SelectTrigger className="w-full bg-bamba-paper">
                       <SelectValue />
                     </SelectTrigger>
@@ -447,64 +571,97 @@ function PageEditor({
                     </SelectContent>
                   </Select>
                 </Field>
-                <Field label="Round type">
-                  <Select value={page.roundType ?? "none"} onValueChange={(value) => onUpdatePage(page.id, { roundType: value === "none" ? null : value })}>
-                    <SelectTrigger className="w-full bg-bamba-paper">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="none">none</SelectItem>
-                      {ROUND_TYPES.map((type) => (
-                        <SelectItem key={type} value={type}>
-                          {type}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </Field>
               </div>
               <Field label="Title">
-                <Input value={page.title ?? ""} onChange={(event) => onUpdatePage(page.id, { title: event.target.value })} />
+                <Input disabled={readOnly} value={page.title ?? ""} onChange={(event) => onUpdatePage(page.id, { title: event.target.value })} />
               </Field>
-              <Field label="Body markdown">
-                <Textarea
-                  className="min-h-48"
-                  value={page.bodyMarkdown ?? ""}
-                  onChange={(event) => onUpdatePage(page.id, { bodyMarkdown: event.target.value })}
-                />
-              </Field>
-              <Field label="Prompt">
-                <Textarea value={page.prompt ?? ""} onChange={(event) => onUpdatePage(page.id, { prompt: event.target.value })} />
-              </Field>
-              <div className="grid grid-cols-[1fr_160px] gap-3">
-                <Field label="Linked chunks">
-                  <ChunkSelector
-                    chunks={guide.poem.chunks}
-                    selected={page.chunkIds}
-                    onChange={(chunkIds) => onUpdatePage(page.id, { chunkIds })}
+              {showBodyMarkdown ? (
+                <Field label="Body markdown">
+                  <Textarea
+                    className="min-h-48"
+                    disabled={readOnly}
+                    value={page.bodyMarkdown ?? ""}
+                    onChange={(event) => onUpdatePage(page.id, { bodyMarkdown: event.target.value })}
                   />
                 </Field>
-                <Field label="Estimated seconds">
-                  <Input
-                    type="number"
-                    value={page.estimatedSeconds ?? ""}
-                    onChange={(event) => onUpdatePage(page.id, { estimatedSeconds: Number(event.target.value) || null })}
+              ) : null}
+              {isReflectionPage ? (
+                <Field label="Prompt">
+                  <Textarea disabled={readOnly} value={page.prompt ?? ""} onChange={(event) => onUpdatePage(page.id, { prompt: event.target.value })} />
+                </Field>
+              ) : null}
+              <div className="grid grid-cols-[1fr_160px] gap-3">
+                {isGamePage ? (
+                  <Field label="Game chunks">
+                    <ChunkSelector
+                      chunks={gameChunkOptions}
+                      selected={selectedGameChunkIds}
+                      disabled={readOnly}
+                      onChange={(chunkIds) => onUpdatePage(page.id, { chunkIds })}
+                    />
+                  </Field>
+                ) : (
+                  <div />
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </ScrollArea>
+    </section>
+  )
+}
+
+function DailyChunksEditor({
+  guide,
+  session,
+  readOnly,
+  onUpdateSession,
+}: {
+  guide: GuideDetail
+  session: GuideSession
+  readOnly: boolean
+  onUpdateSession: (sessionId: string, payload: Record<string, unknown>) => void
+}) {
+  const selectedChunks = getChunksByExternalIds(guide, session.chunkIds)
+  return (
+    <section className="min-h-0 bg-bamba-ivory">
+      <ScrollArea className="h-full">
+        <div className="mx-auto flex max-w-3xl flex-col gap-5 p-6">
+          <Card className="border-bamba-border bg-white/70">
+            <CardHeader>
+              <CardTitle>Daily chunks</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-4">
+              <div className="grid grid-cols-2 gap-3">
+                <Field label="Title">
+                  <Input disabled={readOnly} value={session.title} onChange={(event) => onUpdateSession(session.id, { title: event.target.value })} />
+                </Field>
+                <Field label="Subtitle">
+                  <Input disabled={readOnly} value={session.subtitle ?? ""} onChange={(event) => onUpdateSession(session.id, { subtitle: event.target.value })} />
+                </Field>
+                <Field className="col-span-2" label="Focus summary">
+                  <Textarea
+                    value={session.focusSummary ?? ""}
+                    disabled={readOnly}
+                    onChange={(event) => onUpdateSession(session.id, { focusSummary: event.target.value })}
                   />
                 </Field>
               </div>
-              <Field label="Metadata JSON">
-                <Textarea
-                  className="min-h-24 font-mono text-xs"
-                  value={JSON.stringify(page.metadata ?? {}, null, 2)}
-                  onChange={(event) => {
-                    try {
-                      onUpdatePage(page.id, { metadata: JSON.parse(event.target.value) as Record<string, unknown> })
-                    } catch {
-                      return
-                    }
-                  }}
-                />
-              </Field>
+              <ChunkSelector
+                chunks={guide.poem.chunks}
+                selected={session.chunkIds}
+                disabled={readOnly}
+                onChange={(chunkIds) => onUpdateSession(session.id, { chunkIds })}
+              />
+              <div className="grid gap-2">
+                {selectedChunks.map((chunk) => (
+                  <div key={chunk.id} className="rounded-md border border-bamba-border bg-bamba-paper p-3 text-sm">
+                    <div className="mb-1 text-xs font-medium text-bamba-muted">{chunk.externalId}</div>
+                    <p className="leading-6">{chunk.text}</p>
+                  </div>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -516,14 +673,17 @@ function PageEditor({
 function ChunkSelector({
   chunks,
   selected,
+  disabled,
   onChange,
 }: {
   chunks: GuideDetail["poem"]["chunks"]
   selected: string[]
+  disabled: boolean
   onChange: (chunkIds: string[]) => void
 }) {
   return (
     <div className="grid max-h-44 gap-1 overflow-auto rounded-md border border-bamba-border bg-bamba-paper p-2">
+      {chunks.length === 0 ? <p className="px-2 py-1 text-xs text-bamba-muted">No chunks available.</p> : null}
       {chunks.map((chunk) => {
         const checked = selected.includes(chunk.externalId)
         return (
@@ -531,6 +691,7 @@ function ChunkSelector({
             <input
               checked={checked}
               className="mt-0.5"
+              disabled={disabled}
               type="checkbox"
               onChange={(event) => {
                 onChange(event.target.checked ? [...selected, chunk.externalId] : selected.filter((id) => id !== chunk.externalId))
@@ -547,12 +708,30 @@ function ChunkSelector({
   )
 }
 
-function MobilePreview({ guide, selected }: { guide: GuideDetail; selected: { session: GuideSession; page: GuidePage } | null }) {
+function formatVersionTimestamp(timestamp?: string | null) {
+  if (!timestamp) return "unsaved"
+  return new Intl.DateTimeFormat(undefined, {
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(timestamp))
+}
+
+function MobilePreview({
+  guide,
+  selected,
+  showDivider,
+}: {
+  guide: GuideDetail
+  selected: { session: GuideSession; page: GuidePage } | null
+  showDivider: boolean
+}) {
   const page = selected?.page
   const session = selected?.session
-  const linkedChunks = page ? guide.poem.chunks.filter((chunk) => page.chunkIds.includes(chunk.externalId)) : []
+  const linkedChunks = page && session ? getEffectiveChunks(guide, session, page) : []
   return (
-    <section className="min-h-0 border-b border-bamba-border p-4">
+    <section className={`min-h-0 p-4 ${showDivider ? "border-b border-bamba-border" : ""}`}>
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-sm font-semibold">Mobile preview</h2>
         {session && page ? <span className="text-xs text-bamba-muted">Session {session.sessionNumber} · page {page.orderIndex + 1}</span> : null}
@@ -564,12 +743,21 @@ function MobilePreview({ guide, selected }: { guide: GuideDetail; selected: { se
           {page?.type.includes("game") ? (
             <div className="space-y-3">
               {linkedChunks.map((chunk) => (
-                <div key={chunk.id} className="rounded-md border border-bamba-border bg-white/70 p-3 text-sm">
+                <div key={chunk.id} className="overflow-hidden rounded-md border border-bamba-border bg-white/70 p-3 text-sm">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-2">
                   {chunk.text.split(" ").map((word, index) => (
-                    <span key={`${word}-${index}`} className={index % 3 === 1 ? "mx-1 rounded bg-bamba-amber/15 px-2 py-0.5" : "mr-1"}>
+                    <span
+                      key={`${word}-${index}`}
+                      className={
+                        index % 3 === 1
+                          ? "inline-flex h-8 min-w-16 max-w-full shrink-0 items-center justify-center rounded-md bg-bamba-amber/15 px-3 font-mono"
+                          : "min-w-0 max-w-full break-words leading-8"
+                      }
+                    >
                       {index % 3 === 1 ? "____" : word}
                     </span>
                   ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -579,6 +767,21 @@ function MobilePreview({ guide, selected }: { guide: GuideDetail; selected: { se
                 <p key={chunk.id}>{chunk.text}</p>
               ))}
             </div>
+          ) : page?.type === "recap_previous" ? (
+            <div className="space-y-4">
+              {linkedChunks.length > 0 ? (
+                <div className="space-y-2 text-base leading-7">
+                  {linkedChunks.map((chunk) => (
+                    <p key={chunk.id}>{chunk.text}</p>
+                  ))}
+                </div>
+              ) : null}
+              <div className="prose prose-sm max-w-none text-bamba-ink">
+                <ReactMarkdown>{page.bodyMarkdown ?? ""}</ReactMarkdown>
+              </div>
+            </div>
+          ) : page?.type === "whole_poem" ? (
+            <div className="whitespace-pre-wrap text-base leading-7">{guide.poem.text}</div>
           ) : page?.type === "reflection" ? (
             <p className="text-lg leading-8">{page.prompt}</p>
           ) : (
@@ -648,31 +851,6 @@ function ReviewPanel({
   )
 }
 
-function BottomUtilityBar({ guide, validation, onValidate }: { guide: GuideDetail; validation: ValidationResult | null; onValidate: () => void }) {
-  const blocking = validation?.issues.filter((issue) => issue.severity === "blocking") ?? []
-  return (
-    <footer className="flex h-24 shrink-0 items-center justify-between border-t border-bamba-border bg-bamba-paper px-5">
-      <div className="flex items-center gap-4">
-        <Button variant="outline" onClick={onValidate}>
-          <MessageSquare />
-          Validate
-        </Button>
-        <div>
-          <p className="text-sm font-medium">{blocking.length === 0 ? "No blocking validation issues" : `${blocking.length} blocking issues`}</p>
-          <p className="text-xs text-bamba-muted">Export path: assets/curated_poems/{guide.poem.externalId}/guided_plan.json</p>
-        </div>
-      </div>
-      <div className="flex max-w-2xl gap-2 overflow-auto">
-        {validation?.issues.slice(0, 4).map((issue) => (
-          <Badge key={`${issue.code}-${issue.targetId}-${issue.message}`} variant="outline" className="bg-white/60">
-            {issue.severity}: {issue.message}
-          </Badge>
-        ))}
-      </div>
-    </footer>
-  )
-}
-
 function Field({ label, className, children }: { label: string; className?: string; children: ReactNode }) {
   return (
     <label className={`flex flex-col gap-1 text-sm ${className ?? ""}`}>
@@ -689,6 +867,29 @@ function findSelectedPage(guide: GuideDetail | null, pageId: string | null) {
     if (page) return { session, page }
   }
   return null
+}
+
+function findSelectedDailySession(guide: GuideDetail | null, pageId: string | null) {
+  if (!guide || !pageId) return null
+  return guide.sessions.find((session) => pageId === dailyChunksId(session.id)) ?? null
+}
+
+function dailyChunksId(sessionId: string) {
+  return `daily-chunks:${sessionId}`
+}
+
+function getChunksByExternalIds(guide: GuideDetail, chunkIds: string[]) {
+  const chunkIdSet = new Set(chunkIds)
+  return guide.poem.chunks.filter((chunk) => chunkIdSet.has(chunk.externalId))
+}
+
+function getEffectiveChunks(guide: GuideDetail, session: GuideSession, page: GuidePage) {
+  const chunkIds =
+    (page.type === "poem_chunk" || GAME_PAGE_TYPES.has(page.type)) && page.chunkIds.length === 0
+      ? session.chunkIds
+      : page.chunkIds
+  const chunkIdSet = new Set(chunkIds)
+  return guide.poem.chunks.filter((chunk) => chunkIdSet.has(chunk.externalId))
 }
 
 function patchGuidePage(guide: GuideDetail, pageId: string, payload: Record<string, unknown>): GuideDetail {

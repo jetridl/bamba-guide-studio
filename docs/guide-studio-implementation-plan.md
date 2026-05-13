@@ -38,8 +38,8 @@ Implement Bamba Guide Studio as a vertical slice first, then broaden the editor,
 ## Phase 4: Editor Vertical Slice
 
 - Build the desktop 3-column editor: sessions navigator, page editor, and mobile preview/review panel.
-- Support editing page type, title, body markdown, prompt, linked chunks, round type, estimated seconds, and page metadata.
-- Support session title, subtitle, and focus summary editing.
+- Support editing page type, title, body markdown for text/content pages, prompt for reflection pages, and game chunk overrides where relevant. Round type is derived from game page type and is not editor-selectable.
+- Support session title, subtitle, focus summary, and day chunk selection from the Daily chunks sidebar entry.
 - Autosave field patches after a 500ms debounce and show saved/error state.
 - Reorder pages with dnd-kit while preserving stable external IDs.
 - Add page create, duplicate, and delete actions.

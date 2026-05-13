@@ -16,8 +16,6 @@ class PagePatch(CamelModel):
     prompt: str | None = None
     chunk_ids: list[str] | None = Field(default=None, alias="chunkIds")
     round_type: str | None = Field(default=None, alias="roundType")
-    estimated_seconds: int | None = Field(default=None, alias="estimatedSeconds")
-    metadata: dict[str, Any] | None = None
     order_index: int | None = Field(default=None, alias="orderIndex")
 
 
@@ -26,6 +24,7 @@ class SessionPatch(CamelModel):
     title: str | None = None
     subtitle: str | None = None
     focus_summary: str | None = Field(default=None, alias="focusSummary")
+    chunk_ids: list[str] | None = Field(default=None, alias="chunkIds")
     order_index: int | None = Field(default=None, alias="orderIndex")
     metadata: dict[str, Any] | None = None
 

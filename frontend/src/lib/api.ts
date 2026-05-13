@@ -1,6 +1,7 @@
 import type {
   GuideDetail,
   GuideSummary,
+  GuideVersionSummary,
   ReviewComment,
   ValidationResult,
 } from "@/lib/types"
@@ -17,6 +18,19 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   })
   if (!response.ok) {
     const detail = await response.text()
+    try {
+      const parsed = JSON.parse(detail) as { detail?: unknown }
+      if (typeof parsed.detail === "string") {
+        throw new Error(parsed.detail)
+      }
+      if (parsed.detail && typeof parsed.detail === "object") {
+        throw new Error(JSON.stringify(parsed.detail, null, 2))
+      }
+    } catch (caught) {
+      if (caught instanceof Error && caught.message !== detail) {
+        throw caught
+      }
+    }
     throw new Error(detail || response.statusText)
   }
   if (response.status === 204) {
@@ -28,6 +42,8 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 export const api = {
   listGuides: () => request<GuideSummary[]>("/guides"),
   getGuide: (guideId: string) => request<GuideDetail>(`/guides/${guideId}`),
+  listGuideVersions: (guideId: string) =>
+    request<GuideVersionSummary[]>(`/guides/${guideId}/versions`),
   importGuide: (payload: unknown) =>
     request<GuideDetail>("/import/guide", { method: "POST", body: JSON.stringify(payload) }),
   importReview: (payload: unknown) =>
@@ -59,6 +75,10 @@ export const api = {
     request<GuideDetail>(`/guides/${guideId}/mark-in-review`, { method: "POST" }),
   approveGuide: (guideId: string) =>
     request<GuideDetail>(`/guides/${guideId}/approve`, { method: "POST" }),
+  saveVersion: (guideId: string) =>
+    request<GuideDetail>(`/guides/${guideId}/save-version`, { method: "POST" }),
+  restoreLatest: (guideId: string) =>
+    request<GuideDetail>(`/guides/${guideId}/restore-latest`, { method: "POST" }),
   listReviewComments: (guideId: string) =>
     request<ReviewComment[]>(`/guides/${guideId}/review-comments`),
   setCommentStatus: (commentId: string, status: ReviewComment["status"]) =>

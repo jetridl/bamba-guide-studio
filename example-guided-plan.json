@@ -27,29 +27,25 @@
       "id": "stanza_1_line_1",
       "sectionId": "stanza_1",
       "orderIndex": 0,
-      "text": "Tyger Tyger, burning bright,",
-      "metadata": {}
+      "text": "Tyger Tyger, burning bright,"
     },
     {
       "id": "stanza_1_line_2",
       "sectionId": "stanza_1",
       "orderIndex": 1,
-      "text": "In the forests of the night;",
-      "metadata": {}
+      "text": "In the forests of the night;"
     },
     {
       "id": "stanza_1_line_3",
       "sectionId": "stanza_1",
       "orderIndex": 2,
-      "text": "What immortal hand or eye,",
-      "metadata": {}
+      "text": "What immortal hand or eye,"
     },
     {
       "id": "stanza_1_line_4",
       "sectionId": "stanza_1",
       "orderIndex": 3,
-      "text": "Could frame thy fearful symmetry?",
-      "metadata": {}
+      "text": "Could frame thy fearful symmetry?"
     }
   ],
   "sessions": [
@@ -60,6 +56,12 @@
       "subtitle": "Day 1 of 6",
       "focusSummary": "Meet the creature and its burning contrast.",
       "orderIndex": 0,
+      "chunkIds": [
+        "stanza_1_line_1",
+        "stanza_1_line_2",
+        "stanza_1_line_3",
+        "stanza_1_line_4"
+      ],
       "metadata": {
         "estimatedMinutes": 7
       },
@@ -72,9 +74,7 @@
           "bodyMarkdown": "Today we begin with the first four lines: bright, dangerous, and memorable.",
           "prompt": null,
           "chunkIds": [],
-          "roundType": null,
-          "estimatedSeconds": 45,
-          "metadata": {}
+          "roundType": null
         }
       ]
     }

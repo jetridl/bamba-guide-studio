@@ -28,7 +28,11 @@ def import_review(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             detail={"message": "Review JSON does not match schema", "errors": errors},
         )
-    guide = db.scalar(select(Guide).where(Guide.external_id == payload["guideId"]).order_by(Guide.version.desc()))
+    guide = db.scalar(
+        select(Guide)
+        .where(Guide.external_id == payload["guideId"])
+        .order_by((Guide.version == 0).desc(), Guide.version.desc())
+    )
     if guide is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Guide not found for review.")
     review = GuideReview(

@@ -4,11 +4,12 @@ import uuid
 from typing import Any
 
 from fastapi import HTTPException, status
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
 from app.models import Guide, GuidePage, GuideReview, GuideSession, Poem, PoemChunk
 from app.schemas.api import GuidePatch, PagePatch, ReorderPayload, SessionPatch
+from app.services.page_types import derive_round_type
 from app.services.serialization import guide_to_dict
 from app.services.validation_service import validate_guide
 
@@ -46,7 +47,31 @@ def get_page_or_404(db: Session, page_id: uuid.UUID) -> GuidePage:
     return page
 
 
+def ensure_latest_working_copy(db: Session, guides: list[Guide]) -> Guide:
+    latest = next((guide for guide in guides if guide.version == 0), None)
+    if latest is not None:
+        return latest
+    source = max(guides, key=lambda guide: guide.version)
+    latest = Guide(external_id=source.external_id, version=0)
+    db.add(latest)
+    _copy_guide_contents(db, source=source, target=latest)
+    db.commit()
+    db.refresh(latest)
+    guides.append(latest)
+    return latest
+
+
+def list_guide_versions(db: Session, guide: Guide) -> list[Guide]:
+    versions = db.scalars(
+        guide_query().where(Guide.external_id == guide.external_id)
+    ).all()
+    if not any(version.version == 0 for version in versions):
+        ensure_latest_working_copy(db, versions)
+    return sorted(versions, key=lambda item: (item.version != 0, -item.version))
+
+
 def patch_guide(db: Session, guide: Guide, patch: GuidePatch) -> dict[str, Any]:
+    _ensure_editable_guide(guide)
     data = patch.model_dump(exclude_unset=True)
     for key, value in data.items():
         if key == "metadata":
@@ -59,6 +84,7 @@ def patch_guide(db: Session, guide: Guide, patch: GuidePatch) -> dict[str, Any]:
 
 
 def mark_in_review(db: Session, guide: Guide) -> dict[str, Any]:
+    _ensure_editable_guide(guide)
     guide.status = "in_review"
     db.commit()
     db.refresh(guide)
@@ -66,6 +92,7 @@ def mark_in_review(db: Session, guide: Guide) -> dict[str, Any]:
 
 
 def approve_guide(db: Session, guide: Guide) -> dict[str, Any]:
+    _ensure_editable_guide(guide)
     validation = validate_guide(guide)
     blocking = [issue for issue in validation["issues"] if issue["severity"] == "blocking"]
     if blocking:
@@ -76,13 +103,118 @@ def approve_guide(db: Session, guide: Guide) -> dict[str, Any]:
     return guide_to_dict(guide)
 
 
+def save_guide_version(db: Session, guide: Guide) -> dict[str, Any]:
+    if guide.version > 0:
+        latest = db.scalar(
+            select(Guide).where(
+                Guide.external_id == guide.external_id,
+                Guide.version == 0,
+            )
+        )
+        if latest is None:
+            latest = Guide(external_id=guide.external_id, version=0)
+            db.add(latest)
+        _copy_guide_contents(db, source=guide, target=latest)
+        guide = latest
+
+    next_version = (
+        db.scalar(
+            select(func.max(Guide.version)).where(
+                Guide.external_id == guide.external_id,
+                Guide.version > 0,
+            )
+        )
+        or 0
+    ) + 1
+    saved = Guide(external_id=guide.external_id, version=next_version)
+    db.add(saved)
+    _copy_guide_contents(db, source=guide, target=saved)
+    db.commit()
+    db.refresh(guide)
+    return guide_to_dict(guide)
+
+
+def restore_latest_from_version(db: Session, guide: Guide) -> dict[str, Any]:
+    if guide.version == 0:
+        return guide_to_dict(guide)
+    latest = db.scalar(
+        select(Guide).where(
+            Guide.external_id == guide.external_id,
+            Guide.version == 0,
+        )
+    )
+    if latest is None:
+        latest = Guide(external_id=guide.external_id, version=0)
+        db.add(latest)
+    _copy_guide_contents(db, source=guide, target=latest)
+    db.commit()
+    db.refresh(latest)
+    return guide_to_dict(latest)
+
+
+def _copy_guide_contents(db: Session, source: Guide, target: Guide) -> None:
+    for session in list(target.sessions):
+        db.delete(session)
+    if target.id is not None:
+        db.flush()
+
+    target.poem = source.poem
+    target.title = source.title
+    target.description = source.description
+    target.status = source.status
+    target.metadata_json = dict(source.metadata_json or {})
+    target.import_snapshot_json = source.import_snapshot_json
+
+    for session in sorted(source.sessions, key=lambda item: item.order_index):
+        saved_session = GuideSession(
+            external_id=session.external_id,
+            guide=target,
+            session_number=session.session_number,
+            title=session.title,
+            subtitle=session.subtitle,
+            focus_summary=session.focus_summary,
+            order_index=session.order_index,
+            chunk_ids_json=list(session.chunk_ids_json or []),
+            metadata_json=dict(session.metadata_json or {}),
+        )
+        db.add(saved_session)
+        db.flush()
+        for page in sorted(session.pages, key=lambda item: item.order_index):
+            db.add(
+                GuidePage(
+                    external_id=page.external_id,
+                    session=saved_session,
+                    page_type=page.page_type,
+                    order_index=page.order_index,
+                    title=page.title,
+                    body_markdown=page.body_markdown,
+                    chunk_ids_json=list(page.chunk_ids_json or []),
+                    round_type=derive_round_type(page.page_type),
+                    prompt=page.prompt,
+                    metadata_json={},
+                )
+            )
+    db.flush()
+
+
+def _ensure_editable_guide(guide: Guide) -> None:
+    if guide.version > 0:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Saved versions are read-only. Restore this version to latest before editing.",
+        )
+
+
 def patch_session(db: Session, session: GuideSession, patch: SessionPatch) -> dict[str, Any]:
+    _ensure_editable_guide(session.guide)
     data = patch.model_dump(exclude_unset=True)
     for key, value in data.items():
         if key == "metadata":
             session.metadata_json = value or {}
         elif key == "focus_summary":
             session.focus_summary = value
+        elif key == "chunk_ids":
+            session.chunk_ids_json = value or []
         elif key == "session_number":
             session.session_number = value
         elif key == "order_index":
@@ -95,6 +227,7 @@ def patch_session(db: Session, session: GuideSession, patch: SessionPatch) -> di
 
 
 def patch_page(db: Session, page: GuidePage, patch: PagePatch) -> dict[str, Any]:
+    _ensure_editable_guide(page.session.guide)
     data = patch.model_dump(exclude_unset=True)
     for key, value in data.items():
         if key == "type":
@@ -104,21 +237,19 @@ def patch_page(db: Session, page: GuidePage, patch: PagePatch) -> dict[str, Any]
         elif key == "chunk_ids":
             page.chunk_ids_json = value or []
         elif key == "round_type":
-            page.round_type = value
-        elif key == "estimated_seconds":
-            page.estimated_seconds = value
-        elif key == "metadata":
-            page.metadata_json = value or {}
+            continue
         elif key == "order_index":
             page.order_index = value
         else:
             setattr(page, key, value)
+    page.round_type = derive_round_type(page.page_type)
     db.commit()
     db.refresh(page)
     return {"id": str(page.id), "sessionId": str(page.session_id)}
 
 
 def reorder_sessions(db: Session, guide: Guide, payload: ReorderPayload) -> dict[str, Any]:
+    _ensure_editable_guide(guide)
     sessions = {str(session.id): session for session in guide.sessions}
     for item in payload.items:
         session = sessions.get(item.id)
@@ -129,6 +260,7 @@ def reorder_sessions(db: Session, guide: Guide, payload: ReorderPayload) -> dict
 
 
 def reorder_pages(db: Session, session: GuideSession, payload: ReorderPayload) -> dict[str, Any]:
+    _ensure_editable_guide(session.guide)
     pages = {str(page.id): page for page in session.pages}
     for item in payload.items:
         page = pages.get(item.id)
@@ -139,6 +271,7 @@ def reorder_pages(db: Session, session: GuideSession, payload: ReorderPayload) -
 
 
 def duplicate_page(db: Session, page: GuidePage) -> dict[str, Any]:
+    _ensure_editable_guide(page.session.guide)
     existing_ids = {sibling.external_id for sibling in page.session.pages}
     index = 1
     external_id = f"{page.external_id}_copy"
@@ -153,10 +286,9 @@ def duplicate_page(db: Session, page: GuidePage) -> dict[str, Any]:
         title=page.title,
         body_markdown=page.body_markdown,
         chunk_ids_json=list(page.chunk_ids_json or []),
-        round_type=page.round_type,
+        round_type=derive_round_type(page.page_type),
         prompt=page.prompt,
-        metadata_json=dict(page.metadata_json or {}),
-        estimated_seconds=page.estimated_seconds,
+        metadata_json={},
     )
     db.add(duplicate)
     db.commit()

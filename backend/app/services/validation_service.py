@@ -7,9 +7,18 @@ from app.models import Guide, GuidePage, GuideSession
 from app.services.export_service import build_guided_plan
 from app.services.json_schema import validate_json_schema
 
-TEXT_PAGE_TYPES = {"intro", "context", "poet_background", "poem_background", "recap", "commentary", "completion"}
-GAME_PAGE_TYPES = {"last_word_game", "first_last_word_game", "hidden_word_game"}
-KNOWN_PAGE_TYPES = TEXT_PAGE_TYPES | GAME_PAGE_TYPES | {"poem_chunk", "reflection"}
+TEXT_PAGE_TYPES = {
+    "intro",
+    "context",
+    "poet_background",
+    "poem_background",
+    "recap",
+    "commentary",
+    "completion",
+}
+GAME_PAGE_TYPES = {"first_letter_game", "last_word_game", "first_last_word_game", "hidden_word_game"}
+CHUNK_SCOPED_PAGE_TYPES = GAME_PAGE_TYPES | {"poem_chunk"}
+KNOWN_PAGE_TYPES = TEXT_PAGE_TYPES | GAME_PAGE_TYPES | {"poem_chunk", "reflection", "recap_previous", "whole_poem"}
 
 
 def validate_guide(guide: Guide) -> dict[str, Any]:
@@ -76,10 +85,7 @@ def _validate_session(session: GuideSession, chunk_ids: set[str], issues: list[d
         if count > 1:
             issues.append(_issue("blocking", "duplicate_page_order", f"Duplicate page order {order}.", "session", session.external_id))
 
-    estimated_seconds = sum(page.estimated_seconds or 0 for page in session.pages)
     estimated_minutes = session.metadata_json.get("estimatedMinutes") if session.metadata_json else None
-    if estimated_minutes is None and estimated_seconds:
-        estimated_minutes = estimated_seconds / 60
     if estimated_minutes and estimated_minutes > 12:
         issues.append(_issue("warning", "session_too_long", "Session estimated time is over 12 minutes.", "session", session.external_id))
 
@@ -94,6 +100,19 @@ def _validate_session(session: GuideSession, chunk_ids: set[str], issues: list[d
     for title, count in Counter(titles).items():
         if count > 1:
             issues.append(_issue("suggestion", "repeated_page_title", f'Repeated page title "{title}".', "session", session.external_id))
+
+    for chunk_id in session.chunk_ids_json or []:
+        if chunk_id not in chunk_ids:
+            issues.append(
+                _issue(
+                    "blocking",
+                    "missing_session_chunk_reference",
+                    f"Session references missing chunk {chunk_id}.",
+                    "session",
+                    session.external_id,
+                    "chunkIds",
+                )
+            )
 
     _validate_runs(session.pages, issues)
     for page in session.pages:
@@ -117,16 +136,74 @@ def _validate_runs(pages: list[GuidePage], issues: list[dict[str, Any]]) -> None
 
 
 def _validate_page(page: GuidePage, chunk_ids: set[str], issues: list[dict[str, Any]]) -> None:
+    effective_chunk_ids = _effective_chunk_ids(page)
+    session_chunk_ids = set(page.session.chunk_ids_json or [])
     if page.page_type not in KNOWN_PAGE_TYPES:
         issues.append(_issue("blocking", "unknown_page_type", "Page type is unknown.", "page", page.external_id, "type"))
     if page.page_type in TEXT_PAGE_TYPES and not page.body_markdown:
         issues.append(_issue("blocking", "missing_body", "Text page is missing bodyMarkdown.", "page", page.external_id, "bodyMarkdown"))
+    if page.page_type == "recap_previous" and not page.body_markdown and not page.chunk_ids_json:
+        issues.append(
+            _issue(
+                "blocking",
+                "missing_recap_previous_content",
+                "Previous-days recap page needs bodyMarkdown or chunkIds.",
+                "page",
+                page.external_id,
+            )
+        )
     if page.page_type == "reflection" and not page.prompt:
         issues.append(_issue("blocking", "missing_prompt", "Reflection page is missing prompt.", "page", page.external_id, "prompt"))
-    if page.page_type in GAME_PAGE_TYPES and not page.chunk_ids_json:
+    if page.page_type == "reflection" and page.body_markdown:
+        issues.append(
+            _issue(
+                "blocking",
+                "reflection_body_not_allowed",
+                "Reflection pages use prompt instead of bodyMarkdown.",
+                "page",
+                page.external_id,
+                "bodyMarkdown",
+            )
+        )
+    if page.page_type != "reflection" and page.prompt:
+        issues.append(
+            _issue(
+                "blocking",
+                "prompt_only_for_reflection",
+                "Prompt is only valid on reflection pages.",
+                "page",
+                page.external_id,
+                "prompt",
+            )
+        )
+    if page.page_type in GAME_PAGE_TYPES and not effective_chunk_ids:
         issues.append(_issue("blocking", "game_without_chunks", "Game page references no chunks.", "page", page.external_id, "chunkIds"))
-    if page.page_type == "poem_chunk" and not page.chunk_ids_json:
+    if page.page_type == "poem_chunk" and not effective_chunk_ids:
         issues.append(_issue("blocking", "poem_chunk_without_chunks", "Poem chunk page references no chunks.", "page", page.external_id, "chunkIds"))
+    if page.page_type in CHUNK_SCOPED_PAGE_TYPES and page.chunk_ids_json and not session_chunk_ids:
+        issues.append(
+            _issue(
+                "blocking",
+                "page_chunks_without_session_chunks",
+                "Page chunk selection requires session chunkIds.",
+                "page",
+                page.external_id,
+                "chunkIds",
+            )
+        )
+    if page.page_type in CHUNK_SCOPED_PAGE_TYPES and page.chunk_ids_json:
+        for chunk_id in page.chunk_ids_json:
+            if chunk_id not in session_chunk_ids:
+                issues.append(
+                    _issue(
+                        "blocking",
+                        "page_chunk_outside_session",
+                        f"Page references chunk {chunk_id} outside the session chunkIds.",
+                        "page",
+                        page.external_id,
+                        "chunkIds",
+                    )
+                )
     for chunk_id in page.chunk_ids_json or []:
         if chunk_id not in chunk_ids:
             issues.append(_issue("blocking", "missing_chunk_reference", f"Page references missing chunk {chunk_id}.", "page", page.external_id, "chunkIds"))
@@ -134,8 +211,14 @@ def _validate_page(page: GuidePage, chunk_ids: set[str], issues: list[dict[str, 
         issues.append(_issue("warning", "commentary_too_long", "Commentary page body is longer than 120 words.", "page", page.external_id))
     if page.page_type == "intro" and page.body_markdown and len(page.body_markdown.split()) < 8:
         issues.append(_issue("suggestion", "intro_very_short", "Intro page is very short.", "page", page.external_id))
-    if page.page_type == "poem_chunk" and len(page.chunk_ids_json or []) > 4:
+    if page.page_type == "poem_chunk" and len(effective_chunk_ids) > 4:
         issues.append(_issue("suggestion", "too_many_chunks", "Poem chunk page links many chunks.", "page", page.external_id, "chunkIds"))
+
+
+def _effective_chunk_ids(page: GuidePage) -> list[str]:
+    if page.page_type in CHUNK_SCOPED_PAGE_TYPES and not page.chunk_ids_json:
+        return list(page.session.chunk_ids_json or [])
+    return list(page.chunk_ids_json or [])
 
 
 def _issue(

@@ -109,6 +109,7 @@ class GuideSession(Base, TimestampMixin):
     subtitle: Mapped[str | None] = mapped_column(String)
     focus_summary: Mapped[str | None] = mapped_column(Text)
     order_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    chunk_ids_json: Mapped[list[str]] = mapped_column(json_type, default=list, nullable=False)
     metadata_json: Mapped[dict[str, Any]] = mapped_column(json_type, default=dict, nullable=False)
 
     guide: Mapped[Guide] = relationship(back_populates="sessions")
@@ -132,8 +133,6 @@ class GuidePage(Base, TimestampMixin):
     round_type: Mapped[str | None] = mapped_column(String)
     prompt: Mapped[str | None] = mapped_column(Text)
     metadata_json: Mapped[dict[str, Any]] = mapped_column(json_type, default=dict, nullable=False)
-    estimated_seconds: Mapped[int | None] = mapped_column(Integer)
-
     session: Mapped[GuideSession] = relationship(back_populates="pages")
 
 
