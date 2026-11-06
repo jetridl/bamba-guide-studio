@@ -120,21 +120,38 @@ def test_import_rejects_invalid_schema(client: TestClient) -> None:
     assert "Guide JSON does not match schema" in response.text
 
 
-def test_game_round_type_is_derived_from_page_type(client: TestClient) -> None:
+@pytest.mark.parametrize(
+    ("page_type", "round_type"),
+    [
+        ("first_letter_game", "firstLetter"),
+        ("full_chunk_typing_game", "fullChunkTyping"),
+        ("last_word_game", "lastWord"),
+        ("first_last_word_game", "firstAndLast"),
+        ("hidden_word_game", "hiddenWord"),
+    ],
+)
+def test_game_round_type_is_derived_from_page_type(
+    client: TestClient, page_type: str, round_type: str
+) -> None:
     payload = load_example()
-    payload["sessions"][0]["pages"][0]["type"] = "first_letter_game"
-    payload["sessions"][0]["pages"][0]["roundType"] = "hiddenWord"
+    payload["sessions"][0]["pages"][0]["type"] = page_type
+    payload["sessions"][0]["pages"][0]["roundType"] = "readThrough"
     payload["sessions"][0]["pages"][0]["chunkIds"] = ["stanza_1_line_1"]
 
     response = client.post("/api/import/guide", json=payload)
+    assert response.status_code == 200
+    assert response.json()["sessions"][0]["pages"][0]["roundType"] == round_type
     validation = client.get(f"/api/guides/{response.json()['id']}/validate")
     approve = client.post(f"/api/guides/{response.json()['id']}/approve")
     exported = client.get(f"/api/guides/{response.json()['id']}/export").json()
 
-    assert response.status_code == 200
     assert validation.status_code == 200
     assert approve.status_code == 200
-    assert exported["sessions"][0]["pages"][0]["roundType"] == "firstLetter"
+    exported_page = exported["sessions"][0]["pages"][0]
+    assert exported_page["type"] == page_type
+    assert exported_page["roundType"] == round_type
+    assert exported_page["id"] == payload["sessions"][0]["pages"][0]["id"]
+    assert exported_page["chunkIds"] == ["stanza_1_line_1"]
     assert not [
         issue
         for issue in validation.json()["issues"]
@@ -142,10 +159,11 @@ def test_game_round_type_is_derived_from_page_type(client: TestClient) -> None:
     ]
 
 
-def test_chunk_scoped_page_uses_session_chunks_by_default(client: TestClient) -> None:
+@pytest.mark.parametrize("page_type", ["poem_chunk", "full_chunk_typing_game"])
+def test_chunk_scoped_page_uses_session_chunks_by_default(client: TestClient, page_type: str) -> None:
     payload = load_example()
     payload["sessions"][0]["chunkIds"] = ["stanza_1_line_1", "stanza_1_line_2"]
-    payload["sessions"][0]["pages"][0]["type"] = "poem_chunk"
+    payload["sessions"][0]["pages"][0]["type"] = page_type
     payload["sessions"][0]["pages"][0]["chunkIds"] = []
 
     imported = client.post("/api/import/guide", json=payload).json()
@@ -159,8 +177,66 @@ def test_chunk_scoped_page_uses_session_chunks_by_default(client: TestClient) ->
     assert not [
         issue
         for issue in validation["issues"]
-        if issue["severity"] == "blocking" and issue["code"] == "poem_chunk_without_chunks"
+        if issue["severity"] == "blocking"
     ]
+
+
+def test_full_chunk_typing_round_trip(client: TestClient) -> None:
+    payload = load_example()
+    page = payload["sessions"][0]["pages"][0]
+    page["type"] = "full_chunk_typing_game"
+    page["roundType"] = "fullChunkTyping"
+    page["chunkIds"] = ["stanza_1_line_1"]
+
+    response = client.post("/api/import/guide", json=payload)
+    assert response.status_code == 200
+    guide_id = response.json()["id"]
+    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    exported = client.get(f"/api/guides/{guide_id}/export")
+    assert exported.status_code == 200
+
+    reimported = client.post("/api/import/guide", json=exported.json())
+    assert reimported.status_code == 200
+    imported_page = reimported.json()["sessions"][0]["pages"][0]
+    assert imported_page["externalId"] == page["id"]
+    assert imported_page["type"] == page["type"]
+    assert imported_page["roundType"] == page["roundType"]
+    assert imported_page["chunkIds"] == page["chunkIds"]
+    assert imported_page["bodyMarkdown"] == page["bodyMarkdown"]
+
+
+@pytest.mark.parametrize(
+    ("session_chunks", "page_chunks", "expected_code"),
+    [
+        ([], [], "game_without_chunks"),
+        (["stanza_1_line_1"], ["stanza_1_line_2"], "page_chunk_outside_session"),
+        (["stanza_1_line_1"], ["missing_chunk"], "missing_chunk_reference"),
+    ],
+)
+def test_full_chunk_typing_invalid_chunks_block_export(
+    client: TestClient, session_chunks: list[str], page_chunks: list[str], expected_code: str
+) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+    session = imported["sessions"][0]
+    page = session["pages"][0]
+    assert client.patch(
+        f"/api/sessions/{session['id']}", json={"chunkIds": session_chunks}
+    ).status_code == 200
+    patched = client.patch(
+        f"/api/pages/{page['id']}",
+        json={"type": "full_chunk_typing_game", "chunkIds": page_chunks},
+    )
+    assert patched.status_code == 200
+    detail = client.get(f"/api/guides/{imported['id']}").json()
+    assert detail["sessions"][0]["pages"][0]["roundType"] == "fullChunkTyping"
+
+    validation = client.get(f"/api/guides/{imported['id']}/validate").json()
+    assert any(
+        issue["code"] == expected_code and issue["severity"] == "blocking"
+        for issue in validation["issues"]
+    )
+    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 409
+    assert client.get(f"/api/guides/{imported['id']}/export").status_code == 409
 
 
 def test_page_chunk_selection_must_stay_inside_session_chunks(client: TestClient) -> None:

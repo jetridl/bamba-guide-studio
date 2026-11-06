@@ -97,13 +97,14 @@ export type PageType =
   | "whole_poem"
   | "commentary"
   | "first_letter_game"
+  | "full_chunk_typing_game"
   | "last_word_game"
   | "first_last_word_game"
   | "hidden_word_game"
   | "reflection"
   | "completion"
 
-export type RoundType = "readThrough" | "firstLetter" | "lastWord" | "firstAndLast" | "hiddenWord"
+export type RoundType = "readThrough" | "firstLetter" | "fullChunkTyping" | "lastWord" | "firstAndLast" | "hiddenWord"
 
 export type ValidationIssue = {
   severity: "blocking" | "warning" | "suggestion" | "note"

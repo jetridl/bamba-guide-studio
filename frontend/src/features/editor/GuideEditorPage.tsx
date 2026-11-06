@@ -54,6 +54,7 @@ const PAGE_TYPES: PageType[] = [
   "whole_poem",
   "commentary",
   "first_letter_game",
+  "full_chunk_typing_game",
   "last_word_game",
   "first_last_word_game",
   "hidden_word_game",
@@ -63,6 +64,7 @@ const PAGE_TYPES: PageType[] = [
 
 const GAME_PAGE_TYPES = new Set<PageType>([
   "first_letter_game",
+  "full_chunk_typing_game",
   "last_word_game",
   "first_last_word_game",
   "hidden_word_game",
@@ -749,12 +751,12 @@ function MobilePreview({
                     <span
                       key={`${word}-${index}`}
                       className={
-                        index % 3 === 1
+                        page.type === "full_chunk_typing_game" || index % 3 === 1
                           ? "inline-flex h-8 min-w-16 max-w-full shrink-0 items-center justify-center rounded-md bg-bamba-amber/15 px-3 font-mono"
                           : "min-w-0 max-w-full break-words leading-8"
                       }
                     >
-                      {index % 3 === 1 ? "____" : word}
+                      {page.type === "full_chunk_typing_game" || index % 3 === 1 ? "____" : word}
                     </span>
                   ))}
                   </div>

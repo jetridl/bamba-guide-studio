@@ -6,6 +6,7 @@ from typing import Any
 from app.models import Guide, GuidePage, GuideSession
 from app.services.export_service import build_guided_plan
 from app.services.json_schema import validate_json_schema
+from app.services.page_types import GAME_PAGE_ROUND_TYPES
 
 TEXT_PAGE_TYPES = {
     "intro",
@@ -16,7 +17,7 @@ TEXT_PAGE_TYPES = {
     "commentary",
     "completion",
 }
-GAME_PAGE_TYPES = {"first_letter_game", "last_word_game", "first_last_word_game", "hidden_word_game"}
+GAME_PAGE_TYPES = set(GAME_PAGE_ROUND_TYPES)
 CHUNK_SCOPED_PAGE_TYPES = GAME_PAGE_TYPES | {"poem_chunk"}
 KNOWN_PAGE_TYPES = TEXT_PAGE_TYPES | GAME_PAGE_TYPES | {"poem_chunk", "reflection", "recap_previous", "whole_poem"}
 

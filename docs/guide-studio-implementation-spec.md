@@ -535,9 +535,11 @@ Session `chunkIds` defines the chunks for the day. `poem_chunk` and game pages m
 
 Session title, subtitle, focus summary, and day chunk selection belong on the Daily chunks sidebar entry, not on each individual page editor. Prompt is editable only for reflection pages. Reflection pages use `prompt` instead of `bodyMarkdown`.
 
-Game page types are `first_letter_game`, `last_word_game`, `first_last_word_game`, and `hidden_word_game`.
+Game page types are `first_letter_game`, `full_chunk_typing_game`, `last_word_game`, `first_last_word_game`, and `hidden_word_game`.
 
-Round type is derived from game page type and must not be independently selectable in Guide Studio. The derived mapping is `first_letter_game -> firstLetter`, `last_word_game -> lastWord`, `first_last_word_game -> firstAndLast`, and `hidden_word_game -> hiddenWord`. Non-game pages should export `roundType: null`.
+Round type is derived from game page type and must not be independently selectable in Guide Studio. The derived mapping is `first_letter_game -> firstLetter`, `full_chunk_typing_game -> fullChunkTyping`, `last_word_game -> lastWord`, `first_last_word_game -> firstAndLast`, and `hidden_word_game -> hiddenWord`. Non-game pages should export `roundType: null`.
+
+Full chunk typing asks the user to type every word of the selected chunk text from memory, without starting-letter cues or word-choice badges. It uses the same chunk selection and session fallback as other games; no additional JSON fields are needed. Its preview should show blanks for every word.
 
 Preview should show:
 - session progress

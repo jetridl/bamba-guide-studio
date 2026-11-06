@@ -86,6 +86,8 @@ Guide generation is out of scope. Guide Studio imports, edits, reviews, validate
 assets/curated_poems/<poem_id>/guided_plan.json
 ```
 
+Full chunk typing uses page type `full_chunk_typing_game` and derived round type `fullChunkTyping`. The learner types all selected chunk text from memory without starting-letter cues. Select chunks on the page or leave `chunkIds` empty to use the session's chunks. The Flutter guided-plan parser and study game mappings must support these new values before consuming such exports; see [the integration spec](docs/flutter-guided-plan-json-integration-spec.md#game-pages).
+
 ## Checks
 
 Backend:

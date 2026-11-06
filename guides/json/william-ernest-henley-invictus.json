@@ -1,0 +1,1455 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "invictus_guide_v1",
+    "poemId": "invictus",
+    "title": "Invictus Guided Plan",
+    "version": 1,
+    "status": "approved",
+    "description": "A four-day guided plan for William Ernest Henley's Invictus.",
+    "metadata": {
+      "difficulty": "medium",
+      "estimatedDays": 4
+    }
+  },
+  "poem": {
+    "id": "invictus",
+    "title": "Invictus",
+    "author": "William Ernest Henley",
+    "year": 1888,
+    "text": "Out of the night that covers me,\n    Black as the Pit from pole to pole,\nI thank whatever gods may be\n    For my unconquerable soul.\n\nIn the fell clutch of circumstance\n    I have not winced nor cried aloud.\nUnder the bludgeonings of chance\n    My head is bloody, but unbowed.\n\nBeyond this place of wrath and tears\n    Looms but the Horror of the shade,\nAnd yet the menace of the years\n    Finds, and shall find, me unafraid.\n\nIt matters not how strait the gate,\n    How charged with punishments the scroll,\nI am the master of my fate:\n    I am the captain of my soul.",
+    "metadata": {
+      "source": "public_domain"
+    }
+  },
+  "chunks": [
+    {
+      "id": "chunk_1_part_1",
+      "orderIndex": 0,
+      "lineIds": [
+        "stanza_1_line_1",
+        "stanza_1_line_2"
+      ],
+      "label": "Stanza 1, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_1",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_1_part_2",
+      "orderIndex": 1,
+      "lineIds": [
+        "stanza_1_line_3",
+        "stanza_1_line_4"
+      ],
+      "label": "Stanza 1, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_1",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_2_part_1",
+      "orderIndex": 2,
+      "lineIds": [
+        "stanza_2_line_1",
+        "stanza_2_line_2"
+      ],
+      "label": "Stanza 2, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_2",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_2_part_2",
+      "orderIndex": 3,
+      "lineIds": [
+        "stanza_2_line_3",
+        "stanza_2_line_4"
+      ],
+      "label": "Stanza 2, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_2",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_3_part_1",
+      "orderIndex": 4,
+      "lineIds": [
+        "stanza_3_line_1",
+        "stanza_3_line_2"
+      ],
+      "label": "Stanza 3, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_3",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_3_part_2",
+      "orderIndex": 5,
+      "lineIds": [
+        "stanza_3_line_3",
+        "stanza_3_line_4"
+      ],
+      "label": "Stanza 3, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_3",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_4_part_1",
+      "orderIndex": 6,
+      "lineIds": [
+        "stanza_4_line_1",
+        "stanza_4_line_2"
+      ],
+      "label": "Stanza 4, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_4",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_4_part_2",
+      "orderIndex": 7,
+      "lineIds": [
+        "stanza_4_line_3",
+        "stanza_4_line_4"
+      ],
+      "label": "Stanza 4, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_4",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "invictus_day_1",
+      "sessionNumber": 1,
+      "title": "Out of the Night",
+      "subtitle": "Day 1 of 4",
+      "focusSummary": "Meet Henley and the whole poem, then learn the first stanza.",
+      "orderIndex": 0,
+      "metadata": {
+        "estimatedMinutes": 20
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Out of the night that covers me,\n    Black as the Pit from pole to pole,\nI thank whatever gods may be\n    For my unconquerable soul.\n\nIn the fell clutch of circumstance\n    I have not winced nor cried aloud.\nUnder the bludgeonings of chance\n    My head is bloody, but unbowed.\n\nBeyond this place of wrath and tears\n    Looms but the Horror of the shade,\nAnd yet the menace of the years\n    Finds, and shall find, me unafraid.\n\nIt matters not how strait the gate,\n    How charged with punishments the scroll,\nI am the master of my fate:\n    I am the captain of my soul.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Let's spend a little time with the first stanza. Read it once or twice and listen for the turn towards gratitude.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1",
+            "chunk_1_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day1_page1",
+          "type": "intro",
+          "orderIndex": 2,
+          "title": "A Poem to Keep Close",
+          "bodyMarkdown": "You may already know the last two lines of *Invictus*. I love coming back to the beginning: before the speaker calls himself a captain, he is someone standing in the dark, finding words to keep himself company.\n\nOver four sessions, we'll spend time with one stanza at a time. There are only sixteen lines, but plenty to hear in them. For now, read them aloud if you like. Let the sound arrive before you worry about remembering anything.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page2",
+          "type": "poet_background",
+          "orderIndex": 3,
+          "title": "Meet William Ernest Henley",
+          "bodyMarkdown": "William Ernest Henley (1849–1903) was an English poet, editor, and critic. Tuberculosis of the bone led to the amputation of one leg; later, treatment by the surgeon Joseph Lister helped save the other. He wrote poems during his long hospital stay.\n\nThat experience gives these lines a moving backdrop. The voice has some knowledge of pain. Still, a poem is more than its author's biography: you can hear this speaker in your own way, whether his confidence feels familiar or wonderfully far away.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 4,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 5,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page4",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "A Small Voice in a Vast Dark",
+          "bodyMarkdown": "Look how much darkness Henley fits into the opening: night covers the speaker, and the Pit stretches from pole to pole. There seems to be no edge to it. Then, unexpectedly, comes a thank-you.\n\n“I thank whatever gods may be” leaves belief open, almost conversational. What the speaker treasures is his “unconquerable soul.” *Unconquerable* is a lovely, roomy word to say aloud. After those short words about darkness, it gives the voice somewhere to stand. Try letting the line unfold slowly.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 7,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page6",
+          "type": "poem_background",
+          "orderIndex": 9,
+          "title": "The Poem in a Book",
+          "bodyMarkdown": "The poem appeared in Henley's *A Book of Verses* in 1888, in a section called “Life and Death (Echoes).” That is a useful doorway into it: this little poem makes room for both the weight of living and the wish to answer back.\n\nThe title *Invictus* is Latin for “unconquered.” Keep it nearby as we read. Henley's speaker begins surrounded by darkness; the title gives us a hint of the reply he is gathering.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 10,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 11,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page8",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Let the Rhymes Lend a Hand",
+          "bodyMarkdown": "Listen to the line endings: *me / pole / be / soul*. The first line rhymes with the third, and the second with the fourth. That alternating pattern will stay with us through all four stanzas, giving the poem a familiar shape as its images change.\n\nThere is a steady four-beat pulse too. Try “I THANK whatEV-er GODS may BE,” without forcing every syllable into place. You can borrow that pulse when remembering the words. Let *night* lead to *Pit*, then *thank* lead to *soul*: a little journey from darkness to gratitude.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "invictus_day_2",
+      "sessionNumber": 2,
+      "title": "Bloody, but Unbowed",
+      "subtitle": "Day 2 of 4",
+      "focusSummary": "Return to the opening, then learn the second stanza and its vivid physical images.",
+      "orderIndex": 1,
+      "metadata": {
+        "estimatedMinutes": 22
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Let's return to the opening before we add the next stanza. Familiar words can take a moment to come back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Last Session’s Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then try saying it aloud. A little help is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Last Session’s Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then try saying it aloud. A little help is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Out of the night that covers me,\n    Black as the Pit from pole to pole,\nI thank whatever gods may be\n    For my unconquerable soul.\n\nIn the fell clutch of circumstance\n    I have not winced nor cried aloud.\nUnder the bludgeonings of chance\n    My head is bloody, but unbowed.\n\nBeyond this place of wrath and tears\n    Looms but the Horror of the shade,\nAnd yet the menace of the years\n    Finds, and shall find, me unafraid.\n\nIt matters not how strait the gate,\n    How charged with punishments the scroll,\nI am the master of my fate:\n    I am the captain of my soul.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Here are today's four lines. Read them slowly and picture the speaker's lifted head.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1",
+            "chunk_2_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day2_page2",
+          "type": "context",
+          "orderIndex": 5,
+          "title": "A Few Fierce Words",
+          "bodyMarkdown": "Today's stanza has a couple of words worth making friends with. *Fell* here means fierce or cruel; a *clutch* is a tight grip. “The fell clutch of circumstance” turns whatever life brings into something that can seize you.\n\n*Bludgeonings* means heavy blows, as from a club. Say it once slowly: the word itself feels bulky in the mouth. These are strong images for four short lines. Take your time with them; understanding what each word is doing gives memory something to hold.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page4",
+          "type": "commentary",
+          "orderIndex": 8,
+          "title": "The Little Word That Turns the Line",
+          "bodyMarkdown": "“My head is bloody, but unbowed.” There is so much in that little *but*. The speaker acknowledges the wound before he tells us how he is standing. I find that order deeply touching: the hurt is right there in the sentence.\n\nRead the line with a small pause at the comma. You can almost see a head lift. *Aloud* and *unbowed* rhyme across the stanza, bringing the voice and the body together. Let the image help you remember the ending.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 9,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 10,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page6",
+          "type": "context",
+          "orderIndex": 11,
+          "title": "Room for Your Own Response",
+          "bodyMarkdown": "“I have not winced nor cried aloud” is a fierce thing to say. You might admire it, or feel that crying out can be brave too. There is room for both responses here. A poem becomes a companion partly because we can talk back to it.\n\nFor this speaker, keeping his composure is a way of claiming some freedom inside a painful situation. Try reading the stanza as his particular declaration. You can borrow its energy while keeping your own understanding of courage.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page8",
+          "type": "commentary",
+          "orderIndex": 14,
+          "title": "Grip, Blows, Lift",
+          "bodyMarkdown": "Here is a small memory trail for these four lines: *grip, response, blows, lifted head*. Circumstance takes hold; the speaker answers. Chance strikes; the speaker stays unbowed. The two halves share the same shape.\n\nNotice the link between *circumstance* and *chance*, too. They rhyme, and both name forces outside the speaker's control. “In” opens the first line; “Under” opens the third. Those little signposts can bring the bigger images back. If a word wanders off, return to the picture and begin again gently.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "invictus_day_3",
+      "sessionNumber": 3,
+      "title": "And Yet",
+      "subtitle": "Day 3 of 4",
+      "focusSummary": "Revisit the first two stanzas, then follow the third stanza from uncertainty to resolve.",
+      "orderIndex": 2,
+      "metadata": {
+        "estimatedMinutes": 24
+      },
+      "pages": [
+        {
+          "id": "day3_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Let's revisit the stanzas from the last two sessions. Let their images and rhymes help the words return.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Sessions Back 1/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Sessions Back 2/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Last Session’s Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then try saying it aloud. A little help is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Last Session’s Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then try saying it aloud. A little help is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day3_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Out of the night that covers me,\n    Black as the Pit from pole to pole,\nI thank whatever gods may be\n    For my unconquerable soul.\n\nIn the fell clutch of circumstance\n    I have not winced nor cried aloud.\nUnder the bludgeonings of chance\n    My head is bloody, but unbowed.\n\nBeyond this place of wrath and tears\n    Looms but the Horror of the shade,\nAnd yet the menace of the years\n    Finds, and shall find, me unafraid.\n\nIt matters not how strait the gate,\n    How charged with punishments the scroll,\nI am the master of my fate:\n    I am the captain of my soul.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day3_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's stanza once or twice. Listen for the change of direction at “And yet.”",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1",
+            "chunk_3_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day3_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Looking Beyond",
+          "bodyMarkdown": "The third stanza looks further ahead. “This place of wrath and tears” feels like the painful world we have already entered. Beyond it, the speaker sees “the Horror of the shade”: an image that suggests death and the unknown.\n\n*Looms* is a beautifully unsettling verb. Something large seems to rise into view before we can quite make it out. Henley gives *Horror* a capital letter, lending that shadow a presence of its own. Read the first two lines slowly and let their uncertainty be there.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "The Hinge of the Stanza",
+          "bodyMarkdown": "Then come two words I love: “And yet.” They turn the stanza towards an answer while leaving the darkness in view. Say them with a little space around them and hear how the voice gathers itself.\n\n“The menace of the years” makes the future sound threatening. But “Finds, and shall find” stretches the speaker's resolve across time: now, and whatever comes next. That repeated *find* is a useful memory anchor. The sentence takes its time getting to *unafraid*, and the pause makes the arrival feel earned.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page6",
+          "type": "poem_background",
+          "orderIndex": 13,
+          "title": "The Poem Keeps Its Shape",
+          "bodyMarkdown": "We have moved from night, to blows, to the shadow beyond life. Through it all, Henley keeps the same four-line stanzas and alternating rhymes. I hear a kind of steadiness in that repeated shape, as though the voice is finding a rhythm it can lean on.\n\nTry the rhyme pairs aloud: *tears / years*, then *shade / unafraid*. The second pair carries us from the frightening image to the speaker's reply. You may find the sound remembers the path before you do.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Three Different Ways to Stand",
+          "bodyMarkdown": "The first stanza closes with *unconquerable*, the second with *unbowed*, and the third with *unafraid*. Hear the family resemblance? Each word begins by pushing something away: conquest, surrender, fear.\n\nThey can also mark the poem's route in your memory. First the soul, then the head, then the face turned towards the years ahead. Try bringing those three images to mind in order. You do not need to feel fearless to enjoy the movement of the lines. Sometimes it is enough to listen to another voice trying out courage.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "invictus_day_4",
+      "sessionNumber": 4,
+      "title": "The Captain of My Soul",
+      "subtitle": "Day 4 of 4",
+      "focusSummary": "Learn the final stanza and hear how its closing declaration answers the whole poem.",
+      "orderIndex": 3,
+      "metadata": {
+        "estimatedMinutes": 25
+      },
+      "pages": [
+        {
+          "id": "day4_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Let's revisit the stanzas from the last two sessions. Let their images and rhymes help the words return.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Sessions Back 1/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Sessions Back 2/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Last Session’s Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then try saying it aloud. A little help is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Last Session’s Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then try saying it aloud. A little help is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day4_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Out of the night that covers me,\n    Black as the Pit from pole to pole,\nI thank whatever gods may be\n    For my unconquerable soul.\n\nIn the fell clutch of circumstance\n    I have not winced nor cried aloud.\nUnder the bludgeonings of chance\n    My head is bloody, but unbowed.\n\nBeyond this place of wrath and tears\n    Looms but the Horror of the shade,\nAnd yet the menace of the years\n    Finds, and shall find, me unafraid.\n\nIt matters not how strait the gate,\n    How charged with punishments the scroll,\nI am the master of my fate:\n    I am the captain of my soul.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day4_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Here is the final stanza. Give the gate and scroll their moment before the two closing declarations.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1",
+            "chunk_4_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day4_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "The Gate and the Scroll",
+          "bodyMarkdown": "A small spelling detail opens up this stanza: *strait* means narrow or constricted. Picture a gate with very little room to pass through. Then imagine a scroll crowded with punishments, like a written record of judgment.\n\nThe images suggest a harsh reckoning, with echoes of religious language about judgment and a narrow gate. The speaker imagines that prospect and answers it with “It matters not.” As you read, let the gate and the scroll appear before you reach the declaration. They give those familiar last lines their setting.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "Bring back the first word of each line, then try saying the whole line. Let the opening lead you in.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "Two Lines Worth Hearing Afresh",
+          "bodyMarkdown": "“I am the master of my fate: / I am the captain of my soul.” Even if you have heard these words many times, try saying them slowly enough to notice their construction. “I am the” begins both lines, a repeated foothold. Then *master* becomes *captain*, and *fate* becomes *soul*.\n\nThe colon after *fate* holds the door open for the final line. I like hearing the second declaration as the more intimate one: the speaker has travelled through a threatening world and ends by naming something inward that he wants to steer.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Bring back the last word of each line, then say it through. Listen for the rhyme waiting at the end.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page6",
+          "type": "poem_background",
+          "orderIndex": 13,
+          "title": "Back to the First Stanza",
+          "bodyMarkdown": "There is a lovely piece of circular music here. The first stanza pairs *pole* with *soul*; the last pairs *scroll* with *soul*. We return to the very same closing word, but the voice has changed from giving thanks to making a declaration.\n\nNotice *gate / fate*, too. The narrow entrance and the speaker's answer rhyme across two lines. When the ending feels familiar, try reading the opening straight after it. You may hear how much of the whole poem is held between those two appearances of *soul*.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Let the initials help you find the words. Take each line at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "A Route Through All Sixteen Lines",
+          "bodyMarkdown": "Let's gather the poem's four pictures: *night, blows, shadow, gate*. Each stanza meets something daunting, then finds words to answer it. The route takes us from “Out of the night” to “I am the captain,” one small turn at a time.\n\nIf you feel like it, say the four opening phrases: “Out of,” “In the,” “Beyond,” “It matters.” Let each bring its stanza along. There is no need to hurry towards a flawless recital. The pleasure is in finding the poem becoming familiar enough to visit without opening a book.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Fill in the missing words, then enjoy the sound of the line again. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page10",
+          "type": "completion",
+          "orderIndex": 19,
+          "title": "A Poem to Carry With You",
+          "bodyMarkdown": "You've spent time with all sixteen lines of *Invictus*. Some may already come easily; others may still want a little company. Both are good places to be.\n\nI hope you've found a phrase you love, whether it's the quiet thank-you near the beginning or that lifted head in the middle. Bamba will offer gentle chances to return to the whole poem as it settles into memory. For now, take whichever words you like with you into the rest of your day.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "stanzas": [
+    {
+      "id": "stanza_1",
+      "orderIndex": 0,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2",
+      "orderIndex": 1,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3",
+      "orderIndex": 2,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4",
+      "orderIndex": 3,
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "stanza_1_line_1",
+      "stanzaId": "stanza_1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "Out of the night that covers me,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_2",
+      "stanzaId": "stanza_1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "    Black as the Pit from pole to pole,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_3",
+      "stanzaId": "stanza_1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "I thank whatever gods may be",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_4",
+      "stanzaId": "stanza_1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "    For my unconquerable soul.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_1",
+      "stanzaId": "stanza_2",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 0,
+      "text": "In the fell clutch of circumstance",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_2",
+      "stanzaId": "stanza_2",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 1,
+      "text": "    I have not winced nor cried aloud.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_3",
+      "stanzaId": "stanza_2",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 2,
+      "text": "Under the bludgeonings of chance",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_4",
+      "stanzaId": "stanza_2",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 3,
+      "text": "    My head is bloody, but unbowed.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_1",
+      "stanzaId": "stanza_3",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 0,
+      "text": "Beyond this place of wrath and tears",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_2",
+      "stanzaId": "stanza_3",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 1,
+      "text": "    Looms but the Horror of the shade,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_3",
+      "stanzaId": "stanza_3",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 2,
+      "text": "And yet the menace of the years",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_4",
+      "stanzaId": "stanza_3",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 3,
+      "text": "    Finds, and shall find, me unafraid.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_1",
+      "stanzaId": "stanza_4",
+      "orderIndex": 12,
+      "stanzaOrderIndex": 0,
+      "text": "It matters not how strait the gate,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_2",
+      "stanzaId": "stanza_4",
+      "orderIndex": 13,
+      "stanzaOrderIndex": 1,
+      "text": "    How charged with punishments the scroll,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_3",
+      "stanzaId": "stanza_4",
+      "orderIndex": 14,
+      "stanzaOrderIndex": 2,
+      "text": "I am the master of my fate:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_4",
+      "stanzaId": "stanza_4",
+      "orderIndex": 15,
+      "stanzaOrderIndex": 3,
+      "text": "    I am the captain of my soul.",
+      "metadata": {}
+    }
+  ]
+}

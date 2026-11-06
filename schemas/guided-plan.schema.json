@@ -215,6 +215,7 @@
         "whole_poem",
         "commentary",
         "first_letter_game",
+        "full_chunk_typing_game",
         "last_word_game",
         "first_last_word_game",
         "hidden_word_game",
@@ -227,6 +228,7 @@
       "enum": [
         "readThrough",
         "firstLetter",
+        "fullChunkTyping",
         "lastWord",
         "firstAndLast",
         "hiddenWord"

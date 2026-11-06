@@ -161,6 +161,7 @@ Allowed page types:
 - `whole_poem`
 - `commentary`
 - `first_letter_game`
+- `full_chunk_typing_game`
 - `last_word_game`
 - `first_last_word_game`
 - `hidden_word_game`
@@ -171,6 +172,7 @@ Derived round types:
 
 - `readThrough`
 - `firstLetter`
+- `fullChunkTyping`
 - `lastWord`
 - `firstAndLast`
 - `hiddenWord`
@@ -259,6 +261,7 @@ Rendering:
 Page types:
 
 - `first_letter_game`
+- `full_chunk_typing_game`
 - `last_word_game`
 - `first_last_word_game`
 - `hidden_word_game`
@@ -270,10 +273,15 @@ Rendering:
 - Use `type` to select the game mechanic.
 - Derived mapping:
   - `first_letter_game` -> `firstLetter`
+  - `full_chunk_typing_game` -> `fullChunkTyping`
   - `last_word_game` -> `lastWord`
   - `first_last_word_game` -> `firstAndLast`
   - `hidden_word_game` -> `hiddenWord`
 - Game content should come from resolved chunk text, not from markdown.
+
+For `full_chunk_typing_game`, the user types every word of the selected chunk text from memory, including single-letter words. Show blank word slots without starting-letter cues or word-choice badges, matching Bamba's existing `PracticeRoundType.fullChunkTyping` interaction. No extra page fields are required.
+
+The Flutter guided-plan parser and study game mappings must accept `full_chunk_typing_game` and `fullChunkTyping` and route them to that practice interaction before loading plans containing these pages. Practice-round support alone does not enable guided-plan support.
 
 ### Whole Poem Pages
 
