@@ -1,0 +1,1978 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "the_second_coming_guide_v1",
+    "poemId": "the_second_coming",
+    "title": "The Second Coming Guided Plan",
+    "version": 1,
+    "status": "approved",
+    "description": "A 5-day guided plan for William Butler Yeats's The Second Coming.",
+    "metadata": {
+      "difficulty": "medium",
+      "estimatedDays": 5
+    }
+  },
+  "poem": {
+    "id": "the_second_coming",
+    "title": "The Second Coming",
+    "author": "William Butler Yeats",
+    "text": "Turning and turning in the widening gyre\nThe falcon cannot hear the falconer;\nThings fall apart; the centre cannot hold;\nMere anarchy is loosed upon the world,\n\nThe blood-dimmed tide is loosed, and everywhere\nThe ceremony of innocence is drowned;\nThe best lack all conviction, while the worst\nAre full of passionate intensity.\n\nSurely some revelation is at hand;\nSurely the Second Coming is at hand.\nThe Second Coming! Hardly are those words out\nWhen a vast image out of Spiritus Mundi\nTroubles my sight: somewhere in sands of the desert\n\nA shape with lion body and the head of a man,\nA gaze blank and pitiless as the sun,\nIs moving its slow thighs, while all about it\nReel shadows of the indignant desert birds.\n\nThe darkness drops again; but now I know\nThat twenty centuries of stony sleep\nWere vexed to nightmare by a rocking cradle,\nAnd what rough beast, its hour come round at last,\nSlouches towards Bethlehem to be born?",
+    "year": 1920,
+    "metadata": {
+      "source": "public_domain"
+    }
+  },
+  "stanzas": [
+    {
+      "id": "stanza_1",
+      "orderIndex": 0,
+      "title": "Stanza 1",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2",
+      "orderIndex": 1,
+      "title": "Stanza 2",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3",
+      "orderIndex": 2,
+      "title": "Stanza 3",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4",
+      "orderIndex": 3,
+      "title": "Stanza 4",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_5",
+      "orderIndex": 4,
+      "title": "Stanza 5",
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "stanza_1_line_1",
+      "stanzaId": "stanza_1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "Turning and turning in the widening gyre",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_2",
+      "stanzaId": "stanza_1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "The falcon cannot hear the falconer;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_3",
+      "stanzaId": "stanza_1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "Things fall apart; the centre cannot hold;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_4",
+      "stanzaId": "stanza_1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "Mere anarchy is loosed upon the world,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_1",
+      "stanzaId": "stanza_2",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 0,
+      "text": "The blood-dimmed tide is loosed, and everywhere",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_2",
+      "stanzaId": "stanza_2",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 1,
+      "text": "The ceremony of innocence is drowned;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_3",
+      "stanzaId": "stanza_2",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 2,
+      "text": "The best lack all conviction, while the worst",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_4",
+      "stanzaId": "stanza_2",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 3,
+      "text": "Are full of passionate intensity.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_1",
+      "stanzaId": "stanza_3",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 0,
+      "text": "Surely some revelation is at hand;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_2",
+      "stanzaId": "stanza_3",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 1,
+      "text": "Surely the Second Coming is at hand.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_3",
+      "stanzaId": "stanza_3",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 2,
+      "text": "The Second Coming! Hardly are those words out",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_4",
+      "stanzaId": "stanza_3",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 3,
+      "text": "When a vast image out of Spiritus Mundi",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_5",
+      "stanzaId": "stanza_3",
+      "orderIndex": 12,
+      "stanzaOrderIndex": 4,
+      "text": "Troubles my sight: somewhere in sands of the desert",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_1",
+      "stanzaId": "stanza_4",
+      "orderIndex": 13,
+      "stanzaOrderIndex": 0,
+      "text": "A shape with lion body and the head of a man,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_2",
+      "stanzaId": "stanza_4",
+      "orderIndex": 14,
+      "stanzaOrderIndex": 1,
+      "text": "A gaze blank and pitiless as the sun,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_3",
+      "stanzaId": "stanza_4",
+      "orderIndex": 15,
+      "stanzaOrderIndex": 2,
+      "text": "Is moving its slow thighs, while all about it",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_4",
+      "stanzaId": "stanza_4",
+      "orderIndex": 16,
+      "stanzaOrderIndex": 3,
+      "text": "Reel shadows of the indignant desert birds.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_5_line_1",
+      "stanzaId": "stanza_5",
+      "orderIndex": 17,
+      "stanzaOrderIndex": 0,
+      "text": "The darkness drops again; but now I know",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_5_line_2",
+      "stanzaId": "stanza_5",
+      "orderIndex": 18,
+      "stanzaOrderIndex": 1,
+      "text": "That twenty centuries of stony sleep",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_5_line_3",
+      "stanzaId": "stanza_5",
+      "orderIndex": 19,
+      "stanzaOrderIndex": 2,
+      "text": "Were vexed to nightmare by a rocking cradle,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_5_line_4",
+      "stanzaId": "stanza_5",
+      "orderIndex": 20,
+      "stanzaOrderIndex": 3,
+      "text": "And what rough beast, its hour come round at last,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_5_line_5",
+      "stanzaId": "stanza_5",
+      "orderIndex": 21,
+      "stanzaOrderIndex": 4,
+      "text": "Slouches towards Bethlehem to be born?",
+      "metadata": {}
+    }
+  ],
+  "chunks": [
+    {
+      "id": "lines_1_4_part_1",
+      "orderIndex": 0,
+      "lineIds": [
+        "stanza_1_line_1",
+        "stanza_1_line_2"
+      ],
+      "label": "Lines 1-4, part 1",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 4,
+        "sourceChunkId": "lines_1_4",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_1_4_part_2",
+      "orderIndex": 1,
+      "lineIds": [
+        "stanza_1_line_3",
+        "stanza_1_line_4"
+      ],
+      "label": "Lines 1-4, part 2",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 4,
+        "sourceChunkId": "lines_1_4",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_5_8_part_1",
+      "orderIndex": 2,
+      "lineIds": [
+        "stanza_2_line_1",
+        "stanza_2_line_2"
+      ],
+      "label": "Lines 5-8, part 1",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 8,
+        "sourceChunkId": "lines_5_8",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_5_8_part_2",
+      "orderIndex": 3,
+      "lineIds": [
+        "stanza_2_line_3",
+        "stanza_2_line_4"
+      ],
+      "label": "Lines 5-8, part 2",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 8,
+        "sourceChunkId": "lines_5_8",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_9_13_part_1",
+      "orderIndex": 4,
+      "lineIds": [
+        "stanza_3_line_1",
+        "stanza_3_line_2"
+      ],
+      "label": "Lines 9-13, part 1",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 13,
+        "sourceChunkId": "lines_9_13",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_9_13_part_2",
+      "orderIndex": 5,
+      "lineIds": [
+        "stanza_3_line_3",
+        "stanza_3_line_4"
+      ],
+      "label": "Lines 9-13, part 2",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 13,
+        "sourceChunkId": "lines_9_13",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_9_13_part_3",
+      "orderIndex": 6,
+      "lineIds": [
+        "stanza_3_line_5"
+      ],
+      "label": "Lines 9-13, part 3",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 13,
+        "sourceChunkId": "lines_9_13",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_14_17_part_1",
+      "orderIndex": 7,
+      "lineIds": [
+        "stanza_4_line_1",
+        "stanza_4_line_2"
+      ],
+      "label": "Lines 14-17, part 1",
+      "metadata": {
+        "startLine": 14,
+        "endLine": 17,
+        "sourceChunkId": "lines_14_17",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_14_17_part_2",
+      "orderIndex": 8,
+      "lineIds": [
+        "stanza_4_line_3",
+        "stanza_4_line_4"
+      ],
+      "label": "Lines 14-17, part 2",
+      "metadata": {
+        "startLine": 14,
+        "endLine": 17,
+        "sourceChunkId": "lines_14_17",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_18_22_part_1",
+      "orderIndex": 9,
+      "lineIds": [
+        "stanza_5_line_1",
+        "stanza_5_line_2"
+      ],
+      "label": "Lines 18-22, part 1",
+      "metadata": {
+        "startLine": 18,
+        "endLine": 22,
+        "sourceChunkId": "lines_18_22",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_18_22_part_2",
+      "orderIndex": 10,
+      "lineIds": [
+        "stanza_5_line_3",
+        "stanza_5_line_4"
+      ],
+      "label": "Lines 18-22, part 2",
+      "metadata": {
+        "startLine": 18,
+        "endLine": 22,
+        "sourceChunkId": "lines_18_22",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_18_22_part_3",
+      "orderIndex": 11,
+      "lineIds": [
+        "stanza_5_line_5"
+      ],
+      "label": "Lines 18-22, part 3",
+      "metadata": {
+        "startLine": 18,
+        "endLine": 22,
+        "sourceChunkId": "lines_18_22",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "the_second_coming_day_1",
+      "sessionNumber": 1,
+      "title": "The Widening Gyre",
+      "subtitle": "Day 1 of 5",
+      "focusSummary": "The poem opens with a world whose centre has stopped holding.",
+      "orderIndex": 0,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Turning and turning in the widening gyre\nThe falcon cannot hear the falconer;\nThings fall apart; the centre cannot hold;\nMere anarchy is loosed upon the world,\n\nThe blood-dimmed tide is loosed, and everywhere\nThe ceremony of innocence is drowned;\nThe best lack all conviction, while the worst\nAre full of passionate intensity.\n\nSurely some revelation is at hand;\nSurely the Second Coming is at hand.\nThe Second Coming! Hardly are those words out\nWhen a vast image out of Spiritus Mundi\nTroubles my sight: somewhere in sands of the desert\n\nA shape with lion body and the head of a man,\nA gaze blank and pitiless as the sun,\nIs moving its slow thighs, while all about it\nReel shadows of the indignant desert birds.\n\nThe darkness drops again; but now I know\nThat twenty centuries of stony sleep\nWere vexed to nightmare by a rocking cradle,\nAnd what rough beast, its hour come round at last,\nSlouches towards Bethlehem to be born?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1",
+            "lines_1_4_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day1_page1",
+          "type": "intro",
+          "orderIndex": 2,
+          "title": "A Poem That Begins in Motion",
+          "bodyMarkdown": "Yeats wrote this poem after the First World War, during a period when Europe had become very good at disproving its own faith in progress. It is only twenty-two lines long, but it sounds as if it has looked at a whole century and found the floor giving way.\n\nYou will learn it over five days. Today is the first turn of the wheel: the widening spiral, the lost signal, and the moment when the poem says plainly what it fears.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page2",
+          "type": "context",
+          "orderIndex": 3,
+          "title": "After the Centre Gives Way",
+          "bodyMarkdown": "Yeats was not writing from a quiet room outside history. The war had ended in 1918. Ireland was moving through revolution and violence. The old empires looked damaged, and the new political certainties did not look much cleaner. Yeats had spent years thinking about history as a pattern of cycles, not as a neat ladder upwards.\n\nThat is why the poem begins with a \"gyre,\" a spiral that widens as it turns. The image is abstract, but it immediately becomes practical: a falcon has flown too far out to hear the person who trained it. Order has not been argued away. It has drifted out of range.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page4",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Too Far to Hear",
+          "bodyMarkdown": "\"Turning and turning\" gives you repetition before it gives you explanation. The phrase circles in the mouth, and the line itself refuses to arrive quickly. Yeats makes you feel the motion before you are told what kind of motion it is.\n\nThe falcon image is exact. A trained falcon should return to the falconer. Here, it cannot even hear him. The disaster is not loud at first. It is distance. Command, training, memory, and trust are all still present, but the connection between them has failed.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 7,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page6",
+          "type": "context",
+          "orderIndex": 9,
+          "title": "The Sentence Breaks Open",
+          "bodyMarkdown": "The poem is written in loose blank verse, but it does not move with calm conversational ease. The first four lines keep pressing forward, each phrase adding another loss. There is no rhyme to settle the ear. The lines feel controlled and unstable at once.\n\n\"Mere anarchy\" does not mean a small amount of anarchy. \"Mere\" means pure, absolute, stripped of disguise. Yeats is not describing ordinary disorder. He is imagining disorder released as a force in its own right.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page8",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Things Fall Apart",
+          "bodyMarkdown": "\"Things fall apart\" has become famous because it is so plain. After the gyre and the falcon, Yeats suddenly gives you a sentence that sounds almost blunt. Its force comes from how little it decorates the fact.\n\nThen the line tightens: \"the centre cannot hold.\" A centre normally gathers things around it. It gives shape to movement. If it cannot hold, the problem is not only at the edges. The governing middle has failed, and the poem has only just begun.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_second_coming_day_2",
+      "sessionNumber": 2,
+      "title": "The Blood-Dimmed Tide",
+      "subtitle": "Day 2 of 5",
+      "focusSummary": "The poem turns from structural collapse to moral and public disaster.",
+      "orderIndex": 1,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from yesterday.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Turning and turning in the widening gyre\nThe falcon cannot hear the falconer;\nThings fall apart; the centre cannot hold;\nMere anarchy is loosed upon the world,\n\nThe blood-dimmed tide is loosed, and everywhere\nThe ceremony of innocence is drowned;\nThe best lack all conviction, while the worst\nAre full of passionate intensity.\n\nSurely some revelation is at hand;\nSurely the Second Coming is at hand.\nThe Second Coming! Hardly are those words out\nWhen a vast image out of Spiritus Mundi\nTroubles my sight: somewhere in sands of the desert\n\nA shape with lion body and the head of a man,\nA gaze blank and pitiless as the sun,\nIs moving its slow thighs, while all about it\nReel shadows of the indignant desert birds.\n\nThe darkness drops again; but now I know\nThat twenty centuries of stony sleep\nWere vexed to nightmare by a rocking cradle,\nAnd what rough beast, its hour come round at last,\nSlouches towards Bethlehem to be born?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1",
+            "lines_5_8_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day2_page2",
+          "type": "context",
+          "orderIndex": 5,
+          "title": "Violence Without Ceremony",
+          "bodyMarkdown": "Yeats had seen public violence become part of ordinary political weather. The Easter Rising of 1916, the executions that followed, the Russian Revolution, the First World War, and the violence in Ireland after it all sit behind this poem. Not as footnotes to decode every line, but as the pressure in the room.\n\nThe phrase \"ceremony of innocence\" is strange because innocence usually sounds natural, not ceremonial. Yeats makes innocence feel like something society has to enact and protect. Once the tide comes in, that delicate public ritual is drowned.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 6,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 7,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page4",
+          "type": "commentary",
+          "orderIndex": 8,
+          "title": "Loosed Upon the World",
+          "bodyMarkdown": "\"The blood-dimmed tide\" turns violence into water. That makes it worse, not cleaner. A tide does not argue with you. It rises, spreads, covers, and makes distinctions hard to see.\n\nYeats repeats \"loosed\" from the previous line of the poem. The repetition matters for memory, but it also matters morally. Anarchy is loosed; the tide is loosed. The verb suggests something chained, penned in, or restrained until now. The poem hears history as a gate opening.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 9,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 10,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page6",
+          "type": "context",
+          "orderIndex": 11,
+          "title": "The Line Everyone Quotes",
+          "bodyMarkdown": "\"The best lack all conviction, while the worst / Are full of passionate intensity\" has had a long afterlife because it is brutally portable. It can be applied too easily, which is both its strength and its danger.\n\nIn the poem, the line is not a clever complaint about bad manners or shallow politics. It comes after anarchy, blood, and drowned innocence. Yeats is describing a public world where hesitation belongs to the decent, and energy belongs to the destructive.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 12,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page8",
+          "type": "commentary",
+          "orderIndex": 14,
+          "title": "Best and Worst",
+          "bodyMarkdown": "The last two lines are balanced almost like a scale: \"The best\" on one side, \"the worst\" on the other. But the balance is sick. The best are defined by absence. They \"lack.\" The worst are defined by fullness.\n\n\"Passionate intensity\" is not condemned because passion is always bad. Yeats is more exact than that. The phrase becomes frightening because it belongs to \"the worst.\" Feeling has detached from judgment, and conviction has detached from goodness.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_second_coming_day_3",
+      "sessionNumber": 3,
+      "title": "Spiritus Mundi",
+      "subtitle": "Day 3 of 5",
+      "focusSummary": "The speaker expects revelation, but the words summon a troubling image instead.",
+      "orderIndex": 2,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day3_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day3_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Turning and turning in the widening gyre\nThe falcon cannot hear the falconer;\nThings fall apart; the centre cannot hold;\nMere anarchy is loosed upon the world,\n\nThe blood-dimmed tide is loosed, and everywhere\nThe ceremony of innocence is drowned;\nThe best lack all conviction, while the worst\nAre full of passionate intensity.\n\nSurely some revelation is at hand;\nSurely the Second Coming is at hand.\nThe Second Coming! Hardly are those words out\nWhen a vast image out of Spiritus Mundi\nTroubles my sight: somewhere in sands of the desert\n\nA shape with lion body and the head of a man,\nA gaze blank and pitiless as the sun,\nIs moving its slow thighs, while all about it\nReel shadows of the indignant desert birds.\n\nThe darkness drops again; but now I know\nThat twenty centuries of stony sleep\nWere vexed to nightmare by a rocking cradle,\nAnd what rough beast, its hour come round at last,\nSlouches towards Bethlehem to be born?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day3_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_1",
+            "lines_9_13_part_2",
+            "lines_9_13_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day3_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Revelation and the World Mind",
+          "bodyMarkdown": "Yeats was fascinated by occult systems, symbols, cycles, and hidden correspondences. After his marriage to Georgie Hyde-Lees in 1917, he began receiving what he believed were messages through her automatic writing. He later shaped some of these ideas into *A Vision*, his dense and eccentric book about history's cycles.\n\n\"Spiritus Mundi\" means something like the spirit or mind of the world. In this poem, the image does not feel privately invented. It feels as if it rises from a shared storehouse of human symbols, older and less polite than ordinary thought.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page3_part_3",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page4",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "Surely, Surely",
+          "bodyMarkdown": "The repetition of \"Surely\" sounds like self-persuasion. The word claims confidence, but saying it twice makes the confidence feel pressured. The speaker is trying to make a pattern appear.\n\n\"The Second Coming\" is a Christian phrase for the return of Christ and the fulfilment of history. Yeats writes it, then immediately breaks the expected frame: \"Hardly are those words out.\" The line makes the speaker sound interrupted by his own vision. The poem does not calmly introduce the image. It is seized by it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 13,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 14,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_3"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page6",
+          "type": "context",
+          "orderIndex": 15,
+          "title": "A Broken Expectation",
+          "bodyMarkdown": "The title of the poem invites a Christian expectation before the first line even begins. You hear \"The Second Coming\" and expect return, judgment, and perhaps restoration. Yeats uses that expectation, but he does not satisfy it.\n\nThe vision begins in the desert, not in a church or a city. That matters. The desert can be biblical, but it can also be pre-biblical, stripped down, sun-struck, and inhuman. The poem moves towards a religious image by entering a place where human comfort has very little authority.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page8",
+          "type": "commentary",
+          "orderIndex": 19,
+          "title": "Troubles My Sight",
+          "bodyMarkdown": "\"A vast image\" is carefully vague. Yeats lets scale arrive before definition. The speaker sees something large enough to overwhelm ordinary sight, but not yet clear enough to name.\n\nThe phrase \"Troubles my sight\" is stronger than \"appears to me.\" The vision does not simply enter the eye. It disturbs the act of seeing. By the end of today's chunk, you are suspended just before the creature comes into focus.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 20,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 21,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 22,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_second_coming_day_4",
+      "sessionNumber": 4,
+      "title": "The Desert Shape",
+      "subtitle": "Day 4 of 5",
+      "focusSummary": "The vision becomes a creature: part lion, part man, blank-eyed and moving.",
+      "orderIndex": 3,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day4_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_3",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day4_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Turning and turning in the widening gyre\nThe falcon cannot hear the falconer;\nThings fall apart; the centre cannot hold;\nMere anarchy is loosed upon the world,\n\nThe blood-dimmed tide is loosed, and everywhere\nThe ceremony of innocence is drowned;\nThe best lack all conviction, while the worst\nAre full of passionate intensity.\n\nSurely some revelation is at hand;\nSurely the Second Coming is at hand.\nThe Second Coming! Hardly are those words out\nWhen a vast image out of Spiritus Mundi\nTroubles my sight: somewhere in sands of the desert\n\nA shape with lion body and the head of a man,\nA gaze blank and pitiless as the sun,\nIs moving its slow thighs, while all about it\nReel shadows of the indignant desert birds.\n\nThe darkness drops again; but now I know\nThat twenty centuries of stony sleep\nWere vexed to nightmare by a rocking cradle,\nAnd what rough beast, its hour come round at last,\nSlouches towards Bethlehem to be born?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day4_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_1",
+            "lines_14_17_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day4_page2",
+          "type": "context",
+          "orderIndex": 8,
+          "title": "The Sphinx Without Mercy",
+          "bodyMarkdown": "The creature recalls the sphinx: lion body, human head, desert setting. That association brings Egypt, riddles, age, and monument into the poem without needing to name them. Yeats lets the old shape do its work.\n\nBut this is not a museum object. It is moving. That is the line's shock. Something ancient, stony, and symbolic has entered time again, and the birds around it are not peaceful witnesses.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page4",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "Blank and Pitiless",
+          "bodyMarkdown": "\"A shape\" is an oddly bare phrase for such a memorable creature. Yeats does not give it a name. Naming would make it easier to file away. \"Shape\" keeps it present and unfinished.\n\nThe gaze is \"blank and pitiless as the sun.\" The simile is exact because the sun is not cruel in a human way. It simply shines without mercy, without preference, without noticing what it burns. The creature's face has that same absence of inward softness.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 13,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page6",
+          "type": "context",
+          "orderIndex": 14,
+          "title": "A Slow Body",
+          "bodyMarkdown": "The phrase \"moving its slow thighs\" has always unsettled people, and rightly. It makes the symbolic creature bodily. The poem does not let it remain a decorative emblem of apocalypse. It has weight. It has legs. It advances.\n\nThe desert birds are \"indignant,\" a surprisingly social word. They seem offended or disturbed by the creature's motion, as if even the desert has rules that this thing violates.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page8",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "Slow Thighs, Reel Shadows",
+          "bodyMarkdown": "The sound of \"slow thighs\" drags. Both words are heavy with long vowels, and the phrase makes the line move with the creature. The poem's music does not merely describe slowness. It performs it.\n\nThen the movement around the creature changes: \"Reel shadows.\" The birds are reduced to shadows, and their motion is dizzy, circular, unstable. The creature moves slowly; the world around it spins.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 19,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_second_coming_day_5",
+      "sessionNumber": 5,
+      "title": "The Rough Beast",
+      "subtitle": "Day 5 of 5",
+      "focusSummary": "The vision closes with the terrible question of what is being born.",
+      "orderIndex": 4,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day5_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day5_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day5_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day5_page02_recap_two_days_previous_part_3",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 3/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_13_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day5_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day5_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_14_17_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day5_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Turning and turning in the widening gyre\nThe falcon cannot hear the falconer;\nThings fall apart; the centre cannot hold;\nMere anarchy is loosed upon the world,\n\nThe blood-dimmed tide is loosed, and everywhere\nThe ceremony of innocence is drowned;\nThe best lack all conviction, while the worst\nAre full of passionate intensity.\n\nSurely some revelation is at hand;\nSurely the Second Coming is at hand.\nThe Second Coming! Hardly are those words out\nWhen a vast image out of Spiritus Mundi\nTroubles my sight: somewhere in sands of the desert\n\nA shape with lion body and the head of a man,\nA gaze blank and pitiless as the sun,\nIs moving its slow thighs, while all about it\nReel shadows of the indignant desert birds.\n\nThe darkness drops again; but now I know\nThat twenty centuries of stony sleep\nWere vexed to nightmare by a rocking cradle,\nAnd what rough beast, its hour come round at last,\nSlouches towards Bethlehem to be born?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day5_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_1",
+            "lines_18_22_part_2",
+            "lines_18_22_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day5_page2",
+          "type": "context",
+          "orderIndex": 8,
+          "title": "Twenty Centuries",
+          "bodyMarkdown": "\"Twenty centuries\" points back to the age of Christianity, roughly the time since the birth of Christ. Yeats imagines that whole era not as settled triumph, but as a long sleep that can be disturbed.\n\nThe \"rocking cradle\" is one of the poem's quiet cruelties. A cradle should soothe a child. Here, it vexes the old shape into nightmare. The image of birth remains, but comfort has gone out of it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page3_part_3",
+          "type": "first_last_word_game",
+          "orderIndex": 11,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page4",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Darkness, Then Knowledge",
+          "bodyMarkdown": "\"The darkness drops again\" sounds like a curtain falling. The vision has ended. But Yeats adds \"but now I know,\" and that phrase changes everything. The speaker has not merely seen an image. He believes the image has interpreted history.\n\n\"Stony sleep\" belongs to the sphinx-like creature, but it also belongs to the long dead weight of an age. Stone suggests monument, burial, and endurance. Sleep suggests something capable of waking. The phrase holds both at once.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 13,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 14,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 15,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_3"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page6",
+          "type": "context",
+          "orderIndex": 16,
+          "title": "Bethlehem Reimagined",
+          "bodyMarkdown": "Bethlehem is the place of Christ's birth, so the final line pulls the whole poem back into the language of nativity. But the expected child has been replaced by a \"rough beast.\" Yeats keeps the sacred map and changes what is travelling across it.\n\nThat is why the ending feels so cold. The poem does not say that nothing is coming. Something is coming. The fear is that history's next birth may answer an old religious form with an opposite spirit.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page7_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 19,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page8",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "Slouches Towards Bethlehem",
+          "bodyMarkdown": "\"Rough beast\" refuses grandeur. The creature is not called a king, god, angel, or demon. \"Rough\" makes it coarse, unfinished, and physical. \"Beast\" strips away the human head's possible dignity.\n\nThen comes \"Slouches.\" It is one of the great final verbs in English poetry because it is so ugly and slow. The thing does not march, descend, or blaze. It slouches. The birth it moves towards is not sudden. It is inevitable enough to take its time.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 21,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 22,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day5_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 23,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_18_22_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    }
+  ]
+}

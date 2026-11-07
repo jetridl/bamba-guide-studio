@@ -1,0 +1,1905 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "the_road_not_taken_guide_v1",
+    "poemId": "the_road_not_taken",
+    "title": "The Road Not Taken Guided Plan",
+    "version": 1,
+    "status": "approved",
+    "description": "A four-day guided plan for Robert Frost's The Road Not Taken.",
+    "metadata": {
+      "difficulty": "medium",
+      "estimatedDays": 4
+    }
+  },
+  "poem": {
+    "id": "the_road_not_taken",
+    "title": "The Road Not Taken",
+    "author": "Robert Frost",
+    "year": 1916,
+    "text": "Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference.",
+    "metadata": {
+      "source": "public_domain"
+    }
+  },
+  "chunks": [
+    {
+      "id": "chunk_1_part_1",
+      "orderIndex": 0,
+      "lineIds": [
+        "stanza_1_line_1",
+        "stanza_1_line_2"
+      ],
+      "label": "Stanza 1, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_1",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_1_part_2",
+      "orderIndex": 1,
+      "lineIds": [
+        "stanza_1_line_3",
+        "stanza_1_line_4"
+      ],
+      "label": "Stanza 1, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_1",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_1_part_3",
+      "orderIndex": 2,
+      "lineIds": [
+        "stanza_1_line_5"
+      ],
+      "label": "Stanza 1, part 3",
+      "metadata": {
+        "sourceChunkId": "chunk_1",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_2_part_1",
+      "orderIndex": 3,
+      "lineIds": [
+        "stanza_2_line_1",
+        "stanza_2_line_2"
+      ],
+      "label": "Stanza 2, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_2",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_2_part_2",
+      "orderIndex": 4,
+      "lineIds": [
+        "stanza_2_line_3",
+        "stanza_2_line_4"
+      ],
+      "label": "Stanza 2, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_2",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_2_part_3",
+      "orderIndex": 5,
+      "lineIds": [
+        "stanza_2_line_5"
+      ],
+      "label": "Stanza 2, part 3",
+      "metadata": {
+        "sourceChunkId": "chunk_2",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_3_part_1",
+      "orderIndex": 6,
+      "lineIds": [
+        "stanza_3_line_1",
+        "stanza_3_line_2"
+      ],
+      "label": "Stanza 3, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_3",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_3_part_2",
+      "orderIndex": 7,
+      "lineIds": [
+        "stanza_3_line_3",
+        "stanza_3_line_4"
+      ],
+      "label": "Stanza 3, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_3",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_3_part_3",
+      "orderIndex": 8,
+      "lineIds": [
+        "stanza_3_line_5"
+      ],
+      "label": "Stanza 3, part 3",
+      "metadata": {
+        "sourceChunkId": "chunk_3",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_4_part_1",
+      "orderIndex": 9,
+      "lineIds": [
+        "stanza_4_line_1",
+        "stanza_4_line_2"
+      ],
+      "label": "Stanza 4, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_4",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_4_part_2",
+      "orderIndex": 10,
+      "lineIds": [
+        "stanza_4_line_3",
+        "stanza_4_line_4"
+      ],
+      "label": "Stanza 4, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_4",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "chunk_4_part_3",
+      "orderIndex": 11,
+      "lineIds": [
+        "stanza_4_line_5"
+      ],
+      "label": "Stanza 4, part 3",
+      "metadata": {
+        "sourceChunkId": "chunk_4",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "the_road_not_taken_day_1",
+      "sessionNumber": 1,
+      "title": "At the Fork",
+      "subtitle": "Day 1 of 4",
+      "focusSummary": "The speaker arrives at a divided path, looks as far as he can, and does not yet move.",
+      "orderIndex": 0,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1",
+            "chunk_1_part_2",
+            "chunk_1_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day1_page1",
+          "type": "intro",
+          "orderIndex": 2,
+          "title": "The Whole Poem in View",
+          "bodyMarkdown": "This is one of the most quoted poems in the English language. It is also one of the most misread. Most people remember a single phrase, \"the road less traveled\", and reach for the poem when they want to celebrate going their own way. The poem itself is shyer about that. It looks like a moral and behaves like a riddle.\n\nOver the next four days you'll learn it by heart, one stanza at a time. Today you stay with the opening five lines: a man at a fork in the woods, looking. He has not chosen yet.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page2",
+          "type": "poet_background",
+          "orderIndex": 3,
+          "title": "Frost and Edward Thomas",
+          "bodyMarkdown": "Frost wrote this poem in 1915 for his closest friend, the English critic Edward Thomas. The two had met when Frost was living in Gloucestershire, broke and unknown, trying to convince American editors that he was a poet. They walked the countryside together for hours, talking about birdsong, metre, and whatever line of verse was in their heads.\n\nThomas was a famously frustrating walking companion. Whichever path the two of them took on those rambles, he would inevitably sigh over the one they had missed. Frost teased him about it. Then, after he had moved back to New Hampshire, he sent him this poem in a letter. He thought Thomas would catch the joke about himself. Thomas didn't.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 4,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 5,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page3_part_3",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_3"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page4",
+          "type": "commentary",
+          "orderIndex": 7,
+          "title": "Yellow Wood, Long Pause",
+          "bodyMarkdown": "Notice the colour. Not green, not autumn, but \"yellow\". Frost has placed us in a season already half spent, where the leaves are turning. The whole poem is going to be a story told from later about a moment of choice, and the colour of the wood is a quiet first signal that the moment is itself already sliding into memory.\n\nNow notice \"long I stood\". The verb is plain and the rhythm slows around it. This is not a man striding decisively into his future. He stalls. Half the truth about choice in this poem lives in that loitering, before he has done anything at all.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 9,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 10,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_3"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page6",
+          "type": "poem_background",
+          "orderIndex": 11,
+          "title": "Five Lines, Slightly Off-Balance",
+          "bodyMarkdown": "Each stanza of the poem has five lines and rhymes ABAAB. That is an unusual shape. It is not the four-square ABAB of hymns or the AABB of folk song; the third A returns where you might expect a resolution and gives you another A instead. The stanza leans, then catches itself.\n\nThe metre is loose iambic tetrameter, four beats a line, plain enough that you barely notice it. Frost loved roughening that pattern with stresses that argue back. Read line one aloud and listen: \"TWO ROADS diverged in a YEL-low WOOD.\" Two heavy stresses up front, then the line eases out. The poem is doing folk-music things in a deceptively conversational voice.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_3"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page8",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "A Sentence That Won't End",
+          "bodyMarkdown": "The first stanza is one sentence held open across all five lines. Watch how the \"And\"s stack: \"And sorry I could not travel both / And be one traveler, long I stood / And looked down one as far as I could.\" The eye keeps moving even though the speaker doesn't. He is straining to see further than he can.\n\nThe last word of the stanza is \"undergrowth\". The road does not vanish into light or into a clearing. It bends and disappears into mess. Whatever this man is about to choose, the future of either path is already obscured at the moment he makes the call.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_road_not_taken_day_2",
+      "sessionNumber": 2,
+      "title": "The Other Road",
+      "subtitle": "Day 2 of 4",
+      "focusSummary": "The speaker chooses, justifies the choice, and quietly admits the justification was wishful.",
+      "orderIndex": 1,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from yesterday.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_3",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1",
+            "chunk_2_part_2",
+            "chunk_2_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day2_page2",
+          "type": "poet_background",
+          "orderIndex": 6,
+          "title": "What Thomas Couldn't Hear",
+          "bodyMarkdown": "When Frost sent the poem to Edward Thomas, he expected him to laugh. Thomas read it as straight self-portraiture and took offence. He thought Frost was mocking him for indecisiveness, which Frost was, but with affection. The exchange of letters that followed is full of Frost backpedalling and Thomas refusing to be soothed.\n\nWithin months, Thomas, who had been wavering over whether to enlist in the First World War, signed up. He died at Arras in April 1917, killed by the blast of a shell on his first day in the line. Frost spent the rest of his life uneasy about the poem. He never quite admitted it had pushed Thomas in any direction, but he also never quite denied it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page3_part_3",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_3"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "The Reason and Its Retraction",
+          "bodyMarkdown": "The speaker offers a reason. The other road is \"grassy and wanted wear\". You can almost hear him pleased with the phrase. Then the next two lines walk it back: \"Though as for that the passing there / Had worn them really about the same.\"\n\nRead those words slowly. \"Really about the same.\" That is the most damaging line in the poem to anyone who wants it to be a hymn to nonconformity. The speaker is telling you, plainly, that the two roads were equivalent. Whatever distinction he is going to claim later, he is admitting now, while standing at the fork, that he is making it up.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 13,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_3"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page6",
+          "type": "poem_background",
+          "orderIndex": 14,
+          "title": "\"Perhaps\"",
+          "bodyMarkdown": "The whole stanza is hung on the smallest of hedges: \"having *perhaps* the better claim\". One word, easy to skim, doing enormous work. The speaker is not saying the road he took was better. He is saying it had, perhaps, the better claim, and then explaining that the claim was not really better at all.\n\nFrost's poems are full of these little softenings. He is a poet who almost never raises his voice. The drama happens in qualifiers and in second clauses, the things a casual reader skips on the way to the loud line.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 16,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 17,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_3"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page8",
+          "type": "commentary",
+          "orderIndex": 18,
+          "title": "The Stanza's Shape",
+          "bodyMarkdown": "Watch the syntax fall. The first three lines lift the road up: \"the other, as just as fair\", \"the better claim\", \"grassy and wanted wear\". By the fourth line the lift starts to wobble, \"Though as for that\". By the fifth, it has been set back down: \"really about the same\".\n\nThe stanza itself enacts second thoughts. The speaker reaches for distinction, then gently puts the distinction away. By the end he has chosen and admitted the choice was arbitrary. Tomorrow's stanza will tell you what he plans to do with that admission.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 19,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 20,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 21,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_road_not_taken_day_3",
+      "sessionNumber": 3,
+      "title": "That Morning",
+      "subtitle": "Day 3 of 4",
+      "focusSummary": "The speaker promises to come back, then doubts himself in the same breath.",
+      "orderIndex": 2,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day3_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_3",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 3/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_3",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day3_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day3_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1",
+            "chunk_3_part_2",
+            "chunk_3_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 8
+        },
+        {
+          "id": "day3_page2",
+          "type": "poet_background",
+          "orderIndex": 9,
+          "title": "Gloucestershire, 1914",
+          "bodyMarkdown": "The two friends walked the lanes around Dymock, in Gloucestershire, almost daily. Frost called those walks the most fertile of his life. The lanes were old, narrow, and confusingly forked. Thomas knew the country better; Frost was the new arrival; both men were broke; both were trying to write themselves out of being middle-aged failures.\n\nThe poem comes out of that landscape, but it is also worth saying that Frost claimed not to be writing about any specific walk. He wrote it from New Hampshire, looking back on England. Memory is already at work in the making of the poem, not just in its plot.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 10,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 11,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page3_part_3",
+          "type": "first_word_game",
+          "orderIndex": 12,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_3"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page4",
+          "type": "commentary",
+          "orderIndex": 13,
+          "title": "The Untrodden Leaves",
+          "bodyMarkdown": "\"In leaves no step had trodden black.\" Stop on that. What does it mean for a leaf to be trodden black? A path that has been walked on through the autumn looks different from one that has not; the leaves on it are crushed, dark, mulched into the ground. Both of these paths, the speaker is saying, look untouched. Nobody has been down either of them this morning.\n\nThis is the second time the poem has told you the roads were equivalent. Stanza two said it about wear. Stanza three says it about the leaves underfoot. The speaker keeps insisting on this point, almost as if he is arguing with someone else's later version of the story.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 14,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 15,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 16,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_3"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page6",
+          "type": "poem_background",
+          "orderIndex": 17,
+          "title": "\"Oh\"",
+          "bodyMarkdown": "The poem has one exclamation mark and it is here: \"Oh, I kept the first for another day!\" In a poem this restrained, that small \"Oh\" is loud. It is the sound of someone trying to cheer himself up.\n\nRead it that way and the next line lands harder. \"Yet knowing how way leads on to way, / I doubted if I should ever come back.\" The bright promise lasts one line. Then the speaker, in the same stanza, undoes it. He knows how this works. One road leads to another. You don't return.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 18,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 19,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 20,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_3"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page8",
+          "type": "commentary",
+          "orderIndex": 21,
+          "title": "\"Way Leads on to Way\"",
+          "bodyMarkdown": "\"Way leads on to way\" is the kind of plain phrase Frost loved. Five short words, all monosyllables, two of them the same word. It says nothing fancy and means everything. Once you go a little down a road, the road takes you further; the next decision is shaped by the one before it; you can't easily reverse.\n\nThe line is also the structural pivot of the poem. Until this point the speaker has been describing a single morning. From here on, his eye lifts towards the future. Tomorrow's stanza will look back from \"ages and ages hence\" at the morning we have just been standing in.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day3_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 22,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 23,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 24,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "the_road_not_taken_day_4",
+      "sessionNumber": 4,
+      "title": "The Sigh",
+      "subtitle": "Day 4 of 4",
+      "focusSummary": "The speaker imagines telling the story decades from now, and edits it as he tells it.",
+      "orderIndex": 3,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day4_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_3",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 3/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_3",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day4_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day4_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1",
+            "chunk_4_part_2",
+            "chunk_4_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 8
+        },
+        {
+          "id": "day4_page2",
+          "type": "poem_background",
+          "orderIndex": 9,
+          "title": "A Poem on a Mug",
+          "bodyMarkdown": "This stanza, ripped out of context, has decorated graduation cards, motivational posters, and corporate slide decks for over a century. The line about the road less travelled has become one of the most quoted in American verse, almost always read as a celebration of going your own way.\n\nFrost watched this happen for decades and rarely corrected anyone in public. He told friends and audiences that almost no one understood who the poem was actually about, or what was being teased. He may have enjoyed the joke too much to spoil it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 10,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 11,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page3_part_3",
+          "type": "first_word_game",
+          "orderIndex": 12,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_3"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page4",
+          "type": "commentary",
+          "orderIndex": 13,
+          "title": "\"With a Sigh\"",
+          "bodyMarkdown": "The whole reading of the poem turns on three words: \"with a sigh\". A sigh of what? A sigh of contentment, looking back on a brave road taken? A sigh of regret, looking back on the road not? The poem itself does not say. Many readers want it to be the first. The mood of the rest of the stanza, with its wistful \"ages and ages hence\", leans the other way.\n\nWhat is certain is that the speaker is not sighing now. He is predicting that he will sigh, decades from now, when he tells the story. The future telling is already coloured. He is composing the legend of himself in advance.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 14,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 15,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 16,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_3"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page6",
+          "type": "poet_background",
+          "orderIndex": 17,
+          "title": "\"A Tricky Poem\"",
+          "bodyMarkdown": "Frost said many things about this poem over the years, almost all of them designed to keep it slippery. He liked to warn audiences in advance that it was a tricky poem before he read it aloud, and then read it perfectly straight.\n\nHe sometimes introduced it as a joke about a friend who could never make up his mind on a walk. Then he would read it. Then the audience would clap as if he had said something inspirational. Then he would smile and move on to the next poem.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 18,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 19,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 20,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_3"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page8",
+          "type": "commentary",
+          "orderIndex": 21,
+          "title": "What the Last Line Is Doing",
+          "bodyMarkdown": "\"I took the one less traveled by, / And that has made all the difference.\" Set this against the lines you learned on Day 2: \"the passing there / Had worn them really about the same.\" The speaker has, in his old-age retelling, promoted himself. He has become a man who once chose the rarer road. The poem on the page knows he didn't.\n\nThis is not a poem about taking the road less travelled. It is a poem about how we tell ourselves the stories of our lives, and how the telling, with the years and the sighs, slowly edits the truth. That is the poem the world keeps forgetting it learned.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day4_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 22,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 23,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 24,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words wherever they appear in the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page10",
+          "type": "completion",
+          "orderIndex": 25,
+          "title": "The Poem You Now Carry",
+          "bodyMarkdown": "You now know twenty lines that most people only think they know. You know that the roads were the same; that the speaker said so twice; that he promised to come back and didn't believe his own promise; that the famous final line is a future story he has decided to tell with a sigh.\n\nWhen you next catch yourself telling someone how a choice you made years ago \"made all the difference\", who is doing the telling? The you who was there on the morning, or the you who is sighing about it now?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "stanzas": [
+    {
+      "id": "stanza_1",
+      "orderIndex": 0,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2",
+      "orderIndex": 1,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3",
+      "orderIndex": 2,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4",
+      "orderIndex": 3,
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "stanza_1_line_1",
+      "stanzaId": "stanza_1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "Two roads diverged in a yellow wood,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_2",
+      "stanzaId": "stanza_1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "And sorry I could not travel both",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_3",
+      "stanzaId": "stanza_1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "And be one traveler, long I stood",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_4",
+      "stanzaId": "stanza_1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "And looked down one as far as I could",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_5",
+      "stanzaId": "stanza_1",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 4,
+      "text": "To where it bent in the undergrowth;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_1",
+      "stanzaId": "stanza_2",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 0,
+      "text": "Then took the other, as just as fair,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_2",
+      "stanzaId": "stanza_2",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 1,
+      "text": "And having perhaps the better claim,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_3",
+      "stanzaId": "stanza_2",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 2,
+      "text": "Because it was grassy and wanted wear;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_4",
+      "stanzaId": "stanza_2",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 3,
+      "text": "Though as for that the passing there",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_5",
+      "stanzaId": "stanza_2",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 4,
+      "text": "Had worn them really about the same,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_1",
+      "stanzaId": "stanza_3",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 0,
+      "text": "And both that morning equally lay",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_2",
+      "stanzaId": "stanza_3",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 1,
+      "text": "In leaves no step had trodden black.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_3",
+      "stanzaId": "stanza_3",
+      "orderIndex": 12,
+      "stanzaOrderIndex": 2,
+      "text": "Oh, I kept the first for another day!",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_4",
+      "stanzaId": "stanza_3",
+      "orderIndex": 13,
+      "stanzaOrderIndex": 3,
+      "text": "Yet knowing how way leads on to way,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_5",
+      "stanzaId": "stanza_3",
+      "orderIndex": 14,
+      "stanzaOrderIndex": 4,
+      "text": "I doubted if I should ever come back.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_1",
+      "stanzaId": "stanza_4",
+      "orderIndex": 15,
+      "stanzaOrderIndex": 0,
+      "text": "I shall be telling this with a sigh",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_2",
+      "stanzaId": "stanza_4",
+      "orderIndex": 16,
+      "stanzaOrderIndex": 1,
+      "text": "Somewhere ages and ages hence:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_3",
+      "stanzaId": "stanza_4",
+      "orderIndex": 17,
+      "stanzaOrderIndex": 2,
+      "text": "Two roads diverged in a wood, and I—",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_4",
+      "stanzaId": "stanza_4",
+      "orderIndex": 18,
+      "stanzaOrderIndex": 3,
+      "text": "I took the one less traveled by,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_5",
+      "stanzaId": "stanza_4",
+      "orderIndex": 19,
+      "stanzaOrderIndex": 4,
+      "text": "And that has made all the difference.",
+      "metadata": {}
+    }
+  ]
+}

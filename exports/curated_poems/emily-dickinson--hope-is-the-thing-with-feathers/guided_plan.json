@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "hope_is_the_thing_with_feathers--guide",
+    "poemId": "hope_is_the_thing_with_feathers",
+    "title": "“Hope” is the thing with feathers — a guided memorization plan",
+    "version": 1,
+    "status": "approved",
+    "description": "A three-day guided plan to read, understand, and memorize Emily Dickinson's “‘Hope’ is the thing with feathers,” one stanza per day with spaced recap.",
+    "metadata": {
+      "totalSessions": 3,
+      "voice": "literate friend with scholar's depth",
+      "chunkingStrategy": "one stanza per chunk"
+    }
+  },
+  "poem": {
+    "id": "hope_is_the_thing_with_feathers",
+    "title": "”Hope” is the thing with feathers",
+    "author": "Emily Dickinson",
+    "text": "“Hope” is the thing with feathers -\nThat perches in the soul -\nAnd sings the tune without the words -\nAnd never stops - at all -\n\nAnd sweetest - in the Gale - is heard -\nAnd sore must be the storm -\nThat could abash the little Bird\nThat kept so many warm -\n\nI’ve heard it in the chillest land -\nAnd on the strangest Sea -\nYet - never - in Extremity,\nIt asked a crumb - of me.",
+    "year": 1891,
+    "metadata": {
+      "composedCirca": 1861,
+      "catalogue": "Franklin 314 / Johnson 254",
+      "form": "three quatrains, common (ballad) meter",
+      "publicDomain": true,
+      "firstPublished": "Poems, Second Series (1891)"
+    }
+  },
+  "stanzas": [
+    {
+      "id": "stanza-1",
+      "orderIndex": 0,
+      "title": null,
+      "metadata": {}
+    },
+    {
+      "id": "stanza-2",
+      "orderIndex": 1,
+      "title": null,
+      "metadata": {}
+    },
+    {
+      "id": "stanza-3",
+      "orderIndex": 2,
+      "title": null,
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-01",
+      "stanzaId": "stanza-1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "“Hope” is the thing with feathers -",
+      "metadata": {}
+    },
+    {
+      "id": "line-02",
+      "stanzaId": "stanza-1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "That perches in the soul -",
+      "metadata": {}
+    },
+    {
+      "id": "line-03",
+      "stanzaId": "stanza-1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "And sings the tune without the words -",
+      "metadata": {}
+    },
+    {
+      "id": "line-04",
+      "stanzaId": "stanza-1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "And never stops - at all -",
+      "metadata": {}
+    },
+    {
+      "id": "line-05",
+      "stanzaId": "stanza-2",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 0,
+      "text": "And sweetest - in the Gale - is heard -",
+      "metadata": {}
+    },
+    {
+      "id": "line-06",
+      "stanzaId": "stanza-2",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 1,
+      "text": "And sore must be the storm -",
+      "metadata": {}
+    },
+    {
+      "id": "line-07",
+      "stanzaId": "stanza-2",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 2,
+      "text": "That could abash the little Bird",
+      "metadata": {}
+    },
+    {
+      "id": "line-08",
+      "stanzaId": "stanza-2",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 3,
+      "text": "That kept so many warm -",
+      "metadata": {}
+    },
+    {
+      "id": "line-09",
+      "stanzaId": "stanza-3",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 0,
+      "text": "I’ve heard it in the chillest land -",
+      "metadata": {}
+    },
+    {
+      "id": "line-10",
+      "stanzaId": "stanza-3",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 1,
+      "text": "And on the strangest Sea -",
+      "metadata": {}
+    },
+    {
+      "id": "line-11",
+      "stanzaId": "stanza-3",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 2,
+      "text": "Yet - never - in Extremity,",
+      "metadata": {}
+    },
+    {
+      "id": "line-12",
+      "stanzaId": "stanza-3",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 3,
+      "text": "It asked a crumb - of me.",
+      "metadata": {}
+    }
+  ],
+  "chunks": [
+    {
+      "id": "chunk-1_part_1",
+      "orderIndex": 0,
+      "lineIds": [
+        "line-01",
+        "line-02"
+      ],
+      "label": "Stanza 1, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk-1",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk-1_part_2",
+      "orderIndex": 1,
+      "lineIds": [
+        "line-03",
+        "line-04"
+      ],
+      "label": "Stanza 1, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk-1",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk-2_part_1",
+      "orderIndex": 2,
+      "lineIds": [
+        "line-05",
+        "line-06"
+      ],
+      "label": "Stanza 2, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk-2",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk-2_part_2",
+      "orderIndex": 3,
+      "lineIds": [
+        "line-07",
+        "line-08"
+      ],
+      "label": "Stanza 2, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk-2",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk-3_part_1",
+      "orderIndex": 4,
+      "lineIds": [
+        "line-09",
+        "line-10"
+      ],
+      "label": "Stanza 3, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk-3",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk-3_part_2",
+      "orderIndex": 5,
+      "lineIds": [
+        "line-11",
+        "line-12"
+      ],
+      "label": "Stanza 3, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk-3",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "emily-dickinson--hope-is-the-thing-with-feathers_day_1",
+      "sessionNumber": 1,
+      "title": "Meet the Bird",
+      "subtitle": "Day 1 of 3",
+      "focusSummary": "Read the whole poem, then learn the first stanza.",
+      "orderIndex": 0,
+      "metadata": {
+        "templateVersion": 1,
+        "templateKind": "guided_poem_standard_session",
+        "renumberPagesAfterOmissions": true,
+        "estimatedMinutes": 13,
+        "variables": {
+          "sessionNumber": 1,
+          "sessionOrderIndex": 0,
+          "todayChunkIds": [
+            "chunk-1"
+          ],
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": [],
+          "allChunkIds": [
+            "chunk-1",
+            "chunk-2",
+            "chunk-3"
+          ]
+        },
+        "droppedTemplatePages": [
+          "first_word_game"
+        ]
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "“Hope” is the thing with feathers -\nThat perches in the soul -\nAnd sings the tune without the words -\nAnd never stops - at all -\n\nAnd sweetest - in the Gale - is heard -\nAnd sore must be the storm -\nThat could abash the little Bird\nThat kept so many warm -\n\nI’ve heard it in the chillest land -\nAnd on the strangest Sea -\nYet - never - in Extremity,\nIt asked a crumb - of me.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day1_page06_commentary",
+          "type": "commentary",
+          "title": "What the Feathered Thing Is",
+          "bodyMarkdown": "Dickinson refuses to define hope as a feeling. Instead it is a small creature — “the thing with feathers” — that *perches*, settling in to stay, inside the soul, singing a wordless tune that “never stops - at all.” Hope here needs no reasons; it simply keeps singing.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 2
+        },
+        {
+          "id": "day1_page08_poet_background",
+          "type": "poet_background",
+          "title": "Who Was Emily Dickinson?",
+          "bodyMarkdown": "Emily Dickinson (1830–1886) lived almost her whole life in her family's house in Amherst, Massachusetts. Famously private, she wrote close to 1,800 poems but published only a handful, anonymously, while she was alive. This is among her most beloved.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 3
+        },
+        {
+          "id": "day1_page09_last_word_part_1",
+          "type": "last_word_game",
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day1_page09_last_word_part_2",
+          "type": "last_word_game",
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day1_page10_analysis",
+          "type": "commentary",
+          "title": "Form & Sound: Hymn Meter and Dashes",
+          "bodyMarkdown": "Hear the hymn beat — four stresses, then three: the *common meter* of church hymnals (you can sing the whole poem to “Amazing Grace”). The dashes hold each phrase open, and the chain of “And… And…” makes the song feel endless. The slant rhyme *soul / all* stays gently unresolved.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 6
+        },
+        {
+          "id": "day1_page11_first_letter_part_1",
+          "type": "first_letter_game",
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Use the initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day1_page11_first_letter_part_2",
+          "type": "first_letter_game",
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Use the initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 8
+        },
+        {
+          "id": "day1_page12_poem_background",
+          "type": "poem_background",
+          "title": "How the Poem Reached Us",
+          "bodyMarkdown": "The text you're learning keeps Dickinson's dashes and her unusual capital letters. Early editors smoothed both away; modern editions restore them, because the pauses and the capitals are part of how the poem thinks.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 9
+        },
+        {
+          "id": "day1_page13_hidden_word_part_1",
+          "type": "hidden_word_game",
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words wherever they appear.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 10
+        },
+        {
+          "id": "day1_page13_hidden_word_part_2",
+          "type": "hidden_word_game",
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words wherever they appear.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 11
+        },
+        {
+          "id": "day1_page14_reflection",
+          "type": "reflection",
+          "title": "A Moment to Reflect",
+          "bodyMarkdown": null,
+          "prompt": "Where in your own life does something “sing without the words”?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "optional": true
+          },
+          "orderIndex": 12
+        },
+        {
+          "id": "day1_page15_completion",
+          "type": "completion",
+          "title": "Well Done",
+          "bodyMarkdown": "You've planted the first stanza. Tomorrow we add the gale and the storm. Well done.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {},
+          "orderIndex": 13
+        }
+      ]
+    },
+    {
+      "id": "emily-dickinson--hope-is-the-thing-with-feathers_day_2",
+      "sessionNumber": 2,
+      "title": "Sweetest in the Gale",
+      "subtitle": "Day 2 of 3",
+      "focusSummary": "Revisit the first stanza, then add the second.",
+      "orderIndex": 1,
+      "metadata": {
+        "templateVersion": 1,
+        "templateKind": "guided_poem_standard_session",
+        "renumberPagesAfterOmissions": true,
+        "estimatedMinutes": 15,
+        "variables": {
+          "sessionNumber": 2,
+          "sessionOrderIndex": 1,
+          "todayChunkIds": [
+            "chunk-2"
+          ],
+          "oneDayPreviousChunkIds": [
+            "chunk-1"
+          ],
+          "twoDaysPreviousChunkIds": [],
+          "allChunkIds": [
+            "chunk-1",
+            "chunk-2",
+            "chunk-3"
+          ]
+        },
+        "droppedTemplatePages": [
+          "first_word_game"
+        ]
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from yesterday.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "“Hope” is the thing with feathers -\nThat perches in the soul -\nAnd sings the tune without the words -\nAnd never stops - at all -\n\nAnd sweetest - in the Gale - is heard -\nAnd sore must be the storm -\nThat could abash the little Bird\nThat kept so many warm -\n\nI’ve heard it in the chillest land -\nAnd on the strangest Sea -\nYet - never - in Extremity,\nIt asked a crumb - of me.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day2_page06_commentary",
+          "type": "commentary",
+          "title": "Sweetest in the Storm",
+          "bodyMarkdown": "Now the paradox: the bird is heard “sweetest - in the Gale.” Hope sings most beautifully in the worst weather. Only a “sore” — a grievous — storm could “abash” (shame into silence) this “little Bird that kept so many warm.” It is small, but unshaken, and you are far from the first it has warmed.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 5
+        },
+        {
+          "id": "day2_page08_poet_background",
+          "type": "poet_background",
+          "title": "How She Wrote",
+          "bodyMarkdown": "Dickinson wrote on small sheets she sewed into little hand-bound booklets her editors later called “fascicles.” She composed in concentrated bursts, especially in the early 1860s — the years this poem belongs to.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 6
+        },
+        {
+          "id": "day2_page09_last_word_part_1",
+          "type": "last_word_game",
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day2_page09_last_word_part_2",
+          "type": "last_word_game",
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 8
+        },
+        {
+          "id": "day2_page10_analysis",
+          "type": "commentary",
+          "title": "Paradox and the Little Bird",
+          "bodyMarkdown": "Listen to the s-sounds stack up — *sweetest, sore, storm* — and to the firm true rhyme *storm / warm*, the cleanest pair in the poem. Dickinson sets the tiny “little Bird” against the huge “Gale” and “storm”: fragility that refuses to be cowed.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 9
+        },
+        {
+          "id": "day2_page11_first_letter_part_1",
+          "type": "first_letter_game",
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Use the initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 10
+        },
+        {
+          "id": "day2_page11_first_letter_part_2",
+          "type": "first_letter_game",
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Use the initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 11
+        },
+        {
+          "id": "day2_page12_poem_background",
+          "type": "poem_background",
+          "title": "About the “Title”",
+          "bodyMarkdown": "Dickinson titled almost nothing. “Hope” here isn't really a title but her own first word, set in quotation marks — as if she names the abstract word only to redefine it, at once, as a bird.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 12
+        },
+        {
+          "id": "day2_page13_hidden_word_part_1",
+          "type": "hidden_word_game",
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words wherever they appear.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 13
+        },
+        {
+          "id": "day2_page13_hidden_word_part_2",
+          "type": "hidden_word_game",
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words wherever they appear.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 14
+        },
+        {
+          "id": "day2_page14_reflection",
+          "type": "reflection",
+          "title": "A Moment to Reflect",
+          "bodyMarkdown": null,
+          "prompt": "When has hope been loudest for you in a hard season?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "optional": true
+          },
+          "orderIndex": 15
+        },
+        {
+          "id": "day2_page15_completion",
+          "type": "completion",
+          "title": "Two Stanzas Down",
+          "bodyMarkdown": "Two stanzas learned. Tomorrow: the sea, the extremity, and the crumb. Lovely work.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {},
+          "orderIndex": 16
+        }
+      ]
+    },
+    {
+      "id": "emily-dickinson--hope-is-the-thing-with-feathers_day_3",
+      "sessionNumber": 3,
+      "title": "What Hope Never Asks",
+      "subtitle": "Day 3 of 3",
+      "focusSummary": "Add the final stanza and bind the whole poem together.",
+      "orderIndex": 2,
+      "metadata": {
+        "templateVersion": 1,
+        "templateKind": "guided_poem_standard_session",
+        "renumberPagesAfterOmissions": true,
+        "estimatedMinutes": 16,
+        "variables": {
+          "sessionNumber": 3,
+          "sessionOrderIndex": 2,
+          "todayChunkIds": [
+            "chunk-3"
+          ],
+          "oneDayPreviousChunkIds": [
+            "chunk-2"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "chunk-1"
+          ],
+          "allChunkIds": [
+            "chunk-1",
+            "chunk-2",
+            "chunk-3"
+          ]
+        },
+        "droppedTemplatePages": [
+          "first_word_game"
+        ]
+      },
+      "pages": [
+        {
+          "id": "day3_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day3_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "“Hope” is the thing with feathers -\nThat perches in the soul -\nAnd sings the tune without the words -\nAnd never stops - at all -\n\nAnd sweetest - in the Gale - is heard -\nAnd sore must be the storm -\nThat could abash the little Bird\nThat kept so many warm -\n\nI’ve heard it in the chillest land -\nAnd on the strangest Sea -\nYet - never - in Extremity,\nIt asked a crumb - of me.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day3_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-3_part_1",
+            "chunk-3_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day3_page06_commentary",
+          "type": "commentary",
+          "title": "It Asked No Crumb",
+          "bodyMarkdown": "The speaker testifies in the first person: she has carried this bird to the “chillest land” and “strangest Sea” — the edges of cold and strangeness — “Yet - never - in Extremity, / It asked a crumb - of me.” The bird that warms and sings demands no payment. That is the poem's quiet gift.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 7
+        },
+        {
+          "id": "day3_page08_poet_background",
+          "type": "poet_background",
+          "title": "Found in a Drawer",
+          "bodyMarkdown": "Only after her death did her sister Lavinia find the cache of poems. Their publication, beginning in 1890, made Dickinson — all but unknown in life — one of the central poets in English.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 8
+        },
+        {
+          "id": "day3_page09_last_word_part_1",
+          "type": "last_word_game",
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-3_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 9
+        },
+        {
+          "id": "day3_page09_last_word_part_2",
+          "type": "last_word_game",
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-3_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 10
+        },
+        {
+          "id": "day3_page10_analysis",
+          "type": "commentary",
+          "title": "The Turn to “Me”",
+          "bodyMarkdown": "The poem turns on its single “I.” Watch the scale shift from vast superlatives — *chillest, strangest, Extremity* — down to one small “crumb,” and the clean final rhyme *Sea / me* click the whole thing shut. Hope is defined, at the last, by what it never asks.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 11
+        },
+        {
+          "id": "day3_page11_first_letter_part_1",
+          "type": "first_letter_game",
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Use the initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-3_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 12
+        },
+        {
+          "id": "day3_page11_first_letter_part_2",
+          "type": "first_letter_game",
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Use the initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-3_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 13
+        },
+        {
+          "id": "day3_page12_poem_background",
+          "type": "poem_background",
+          "title": "Where It Sits in Her Work",
+          "bodyMarkdown": "Catalogued as Fr314, the poem belongs among her early-1860s lyrics that define abstractions through one sharp image. It first appeared in print in the 1891 *Poems, Second Series*.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {},
+          "orderIndex": 14
+        },
+        {
+          "id": "day3_page13_hidden_word_part_1",
+          "type": "hidden_word_game",
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words wherever they appear.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-3_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 15
+        },
+        {
+          "id": "day3_page13_hidden_word_part_2",
+          "type": "hidden_word_game",
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words wherever they appear.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-3_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 16
+        },
+        {
+          "id": "day3_page14_reflection",
+          "type": "reflection",
+          "title": "A Moment to Reflect",
+          "bodyMarkdown": null,
+          "prompt": "What does it mean to you that hope “asked a crumb” of no one?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "optional": true
+          },
+          "orderIndex": 17
+        },
+        {
+          "id": "day3_page15_completion",
+          "type": "completion",
+          "title": "The Whole Poem, Learned",
+          "bodyMarkdown": "That's the whole poem — learned. Revisit it tomorrow, then in three days, then next week, and it is yours for good.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {},
+          "orderIndex": 18
+        }
+      ]
+    }
+  ]
+}

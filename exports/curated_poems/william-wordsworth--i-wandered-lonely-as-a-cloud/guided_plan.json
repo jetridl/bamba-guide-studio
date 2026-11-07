@@ -1,0 +1,1875 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "i_wandered_lonely_as_a_cloud_guide_v1",
+    "poemId": "i_wandered_lonely_as_a_cloud",
+    "title": "I Wandered Lonely as a Cloud Guided Plan",
+    "version": 1,
+    "status": "approved",
+    "description": "A 4-day guided plan for William Wordsworth's I Wandered Lonely as a Cloud.",
+    "metadata": {
+      "difficulty": "medium",
+      "estimatedDays": 4
+    }
+  },
+  "poem": {
+    "id": "i_wandered_lonely_as_a_cloud",
+    "title": "I Wandered Lonely as a Cloud",
+    "author": "William Wordsworth",
+    "text": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils;\nBeside the lake, beneath the trees,\nFluttering and dancing in the breeze.\n\nContinuous as the stars that shine\nAnd twinkle on the milky way,\nThey stretched in never-ending line\nAlong the margin of a bay:\nTen thousand saw I at a glance,\nTossing their heads in sprightly dance.\n\nThe waves beside them danced; but they\nOut-did the sparkling waves in glee:\nA poet could not but be gay,\nIn such a jocund company:\nI gazed—and gazed—but little thought\nWhat wealth the show to me had brought:\n\nFor oft, when on my couch I lie\nIn vacant or in pensive mood,\nThey flash upon that inward eye\nWhich is the bliss of solitude;\nAnd then my heart with pleasure fills,\nAnd dances with the daffodils.",
+    "year": 1807,
+    "metadata": {
+      "source": "public_domain"
+    }
+  },
+  "stanzas": [
+    {
+      "id": "stanza_1",
+      "orderIndex": 0,
+      "title": "Stanza 1",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2",
+      "orderIndex": 1,
+      "title": "Stanza 2",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3",
+      "orderIndex": 2,
+      "title": "Stanza 3",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4",
+      "orderIndex": 3,
+      "title": "Stanza 4",
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "stanza_1_line_1",
+      "stanzaId": "stanza_1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "I wandered lonely as a cloud",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_2",
+      "stanzaId": "stanza_1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "That floats on high o'er vales and hills,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_3",
+      "stanzaId": "stanza_1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "When all at once I saw a crowd,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_4",
+      "stanzaId": "stanza_1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "A host, of golden daffodils;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_5",
+      "stanzaId": "stanza_1",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 4,
+      "text": "Beside the lake, beneath the trees,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_6",
+      "stanzaId": "stanza_1",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 5,
+      "text": "Fluttering and dancing in the breeze.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_1",
+      "stanzaId": "stanza_2",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 0,
+      "text": "Continuous as the stars that shine",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_2",
+      "stanzaId": "stanza_2",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 1,
+      "text": "And twinkle on the milky way,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_3",
+      "stanzaId": "stanza_2",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 2,
+      "text": "They stretched in never-ending line",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_4",
+      "stanzaId": "stanza_2",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 3,
+      "text": "Along the margin of a bay:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_5",
+      "stanzaId": "stanza_2",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 4,
+      "text": "Ten thousand saw I at a glance,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_6",
+      "stanzaId": "stanza_2",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 5,
+      "text": "Tossing their heads in sprightly dance.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_1",
+      "stanzaId": "stanza_3",
+      "orderIndex": 12,
+      "stanzaOrderIndex": 0,
+      "text": "The waves beside them danced; but they",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_2",
+      "stanzaId": "stanza_3",
+      "orderIndex": 13,
+      "stanzaOrderIndex": 1,
+      "text": "Out-did the sparkling waves in glee:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_3",
+      "stanzaId": "stanza_3",
+      "orderIndex": 14,
+      "stanzaOrderIndex": 2,
+      "text": "A poet could not but be gay,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_4",
+      "stanzaId": "stanza_3",
+      "orderIndex": 15,
+      "stanzaOrderIndex": 3,
+      "text": "In such a jocund company:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_5",
+      "stanzaId": "stanza_3",
+      "orderIndex": 16,
+      "stanzaOrderIndex": 4,
+      "text": "I gazed—and gazed—but little thought",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_6",
+      "stanzaId": "stanza_3",
+      "orderIndex": 17,
+      "stanzaOrderIndex": 5,
+      "text": "What wealth the show to me had brought:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_1",
+      "stanzaId": "stanza_4",
+      "orderIndex": 18,
+      "stanzaOrderIndex": 0,
+      "text": "For oft, when on my couch I lie",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_2",
+      "stanzaId": "stanza_4",
+      "orderIndex": 19,
+      "stanzaOrderIndex": 1,
+      "text": "In vacant or in pensive mood,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_3",
+      "stanzaId": "stanza_4",
+      "orderIndex": 20,
+      "stanzaOrderIndex": 2,
+      "text": "They flash upon that inward eye",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_4",
+      "stanzaId": "stanza_4",
+      "orderIndex": 21,
+      "stanzaOrderIndex": 3,
+      "text": "Which is the bliss of solitude;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_5",
+      "stanzaId": "stanza_4",
+      "orderIndex": 22,
+      "stanzaOrderIndex": 4,
+      "text": "And then my heart with pleasure fills,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_6",
+      "stanzaId": "stanza_4",
+      "orderIndex": 23,
+      "stanzaOrderIndex": 5,
+      "text": "And dances with the daffodils.",
+      "metadata": {}
+    }
+  ],
+  "chunks": [
+    {
+      "id": "lines_1_6_part_1",
+      "orderIndex": 0,
+      "lineIds": [
+        "stanza_1_line_1",
+        "stanza_1_line_2"
+      ],
+      "label": "Lines 1-6, part 1",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 6,
+        "sourceChunkId": "lines_1_6",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_1_6_part_2",
+      "orderIndex": 1,
+      "lineIds": [
+        "stanza_1_line_3",
+        "stanza_1_line_4"
+      ],
+      "label": "Lines 1-6, part 2",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 6,
+        "sourceChunkId": "lines_1_6",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_1_6_part_3",
+      "orderIndex": 2,
+      "lineIds": [
+        "stanza_1_line_5",
+        "stanza_1_line_6"
+      ],
+      "label": "Lines 1-6, part 3",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 6,
+        "sourceChunkId": "lines_1_6",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_7_12_part_1",
+      "orderIndex": 3,
+      "lineIds": [
+        "stanza_2_line_1",
+        "stanza_2_line_2"
+      ],
+      "label": "Lines 7-12, part 1",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 12,
+        "sourceChunkId": "lines_7_12",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_7_12_part_2",
+      "orderIndex": 4,
+      "lineIds": [
+        "stanza_2_line_3",
+        "stanza_2_line_4"
+      ],
+      "label": "Lines 7-12, part 2",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 12,
+        "sourceChunkId": "lines_7_12",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_7_12_part_3",
+      "orderIndex": 5,
+      "lineIds": [
+        "stanza_2_line_5",
+        "stanza_2_line_6"
+      ],
+      "label": "Lines 7-12, part 3",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 12,
+        "sourceChunkId": "lines_7_12",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_13_18_part_1",
+      "orderIndex": 6,
+      "lineIds": [
+        "stanza_3_line_1",
+        "stanza_3_line_2"
+      ],
+      "label": "Lines 13-18, part 1",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 18,
+        "sourceChunkId": "lines_13_18",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_13_18_part_2",
+      "orderIndex": 7,
+      "lineIds": [
+        "stanza_3_line_3",
+        "stanza_3_line_4"
+      ],
+      "label": "Lines 13-18, part 2",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 18,
+        "sourceChunkId": "lines_13_18",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_13_18_part_3",
+      "orderIndex": 8,
+      "lineIds": [
+        "stanza_3_line_5",
+        "stanza_3_line_6"
+      ],
+      "label": "Lines 13-18, part 3",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 18,
+        "sourceChunkId": "lines_13_18",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_19_24_part_1",
+      "orderIndex": 9,
+      "lineIds": [
+        "stanza_4_line_1",
+        "stanza_4_line_2"
+      ],
+      "label": "Lines 19-24, part 1",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 24,
+        "sourceChunkId": "lines_19_24",
+        "splitPart": 1,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_19_24_part_2",
+      "orderIndex": 10,
+      "lineIds": [
+        "stanza_4_line_3",
+        "stanza_4_line_4"
+      ],
+      "label": "Lines 19-24, part 2",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 24,
+        "sourceChunkId": "lines_19_24",
+        "splitPart": 2,
+        "splitCount": 3
+      }
+    },
+    {
+      "id": "lines_19_24_part_3",
+      "orderIndex": 11,
+      "lineIds": [
+        "stanza_4_line_5",
+        "stanza_4_line_6"
+      ],
+      "label": "Lines 19-24, part 3",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 24,
+        "sourceChunkId": "lines_19_24",
+        "splitPart": 3,
+        "splitCount": 3
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "i_wandered_lonely_as_a_cloud_day_1",
+      "sessionNumber": 1,
+      "title": "The Encounter",
+      "subtitle": "Day 1 of 4",
+      "focusSummary": "A solitary walker, drifting like cloud, comes around a corner and finds a crowd of daffodils dancing at the water's edge.",
+      "orderIndex": 0,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils;\nBeside the lake, beneath the trees,\nFluttering and dancing in the breeze.\n\nContinuous as the stars that shine\nAnd twinkle on the milky way,\nThey stretched in never-ending line\nAlong the margin of a bay:\nTen thousand saw I at a glance,\nTossing their heads in sprightly dance.\n\nThe waves beside them danced; but they\nOut-did the sparkling waves in glee:\nA poet could not but be gay,\nIn such a jocund company:\nI gazed—and gazed—but little thought\nWhat wealth the show to me had brought:\n\nFor oft, when on my couch I lie\nIn vacant or in pensive mood,\nThey flash upon that inward eye\nWhich is the bliss of solitude;\nAnd then my heart with pleasure fills,\nAnd dances with the daffodils.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_1",
+            "lines_1_6_part_2",
+            "lines_1_6_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day1_page1",
+          "type": "intro",
+          "orderIndex": 2,
+          "title": "A walk by Ullswater",
+          "bodyMarkdown": "The poem begins in motion and ends in stillness. Today you will live in its first six lines, where a man wandering on his own catches sight of something that will turn out to matter more than he yet knows.\n\nRead the stanza twice before you go further. Once for the picture. Once for the rhythm.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page2",
+          "type": "context",
+          "orderIndex": 3,
+          "title": "Two pairs of eyes",
+          "bodyMarkdown": "On the 15th of April, 1802, William Wordsworth went walking with his sister Dorothy along the western shore of Ullswater, in the Lake District. They came around Glencoyne Bay and found a long belt of wild daffodils tossing in the wind off the water. Dorothy wrote the scene up in her journal that night. Two years later, William wrote this poem.\n\nSo the famous loneliness of line one is, in plain biographical fact, slightly invented. He was not alone. He was with his sister, who would describe the flowers more accurately than he did. The \"I\" of the poem is doing imaginative work from the very first word.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page3_part_3",
+          "type": "first_last_word_game",
+          "orderIndex": 6,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page4",
+          "type": "commentary",
+          "orderIndex": 7,
+          "title": "\"Lonely\" doesn't quite mean lonely",
+          "bodyMarkdown": "\"I wandered lonely as a cloud\" sounds, on first hearing, like a complaint. It isn't. Wordsworth's \"lonely\" carries the older Romantic charge of solitary attentiveness, the kind of aloneness that lets the world come in without interruption. A cloud floating \"on high o'er vales and hills\" is not unhappy. It is high up, drifting, free of business.\n\nThen the line breaks and the world arrives. \"When all at once I saw a crowd.\" The pivot is the phrase \"all at once.\" Drift becomes encounter. A man who could see anything happens to see this.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 9,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 10,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_3"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page6",
+          "type": "context",
+          "orderIndex": 11,
+          "title": "Why \"golden\"?",
+          "bodyMarkdown": "The version you are memorising is the one Wordsworth printed in 1815. The first publication, in 1807, read a little differently. Line 4 said \"dancing daffodils,\" which echoed the \"dancing in the breeze\" two lines later and made the stanza chime against itself. By 1815, Wordsworth had changed \"dancing\" to \"golden.\" He gave each verb its own room and gave the flowers a colour they hadn't had before.\n\nThe faint echo of \"host\" is also worth holding in mind. A host of daffodils is a multitude, but the word brushes against the heavenly hosts of older English. Wordsworth doesn't press the religious note. He lets it sit at the edge of hearing.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 12,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page7_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page8",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "A crowd, a host",
+          "bodyMarkdown": "Notice how the daffodils are introduced by a small ladder of nouns. First a crowd. Then a host. Then, finally, daffodils. The sentence widens before it lands. By the time you reach the flower itself, you have already felt the multitude.\n\nThen the camera pulls back to set them in place: \"Beside the lake, beneath the trees.\" Two short prepositional phrases, almost identical in shape, plant the scene before the verbs return. \"Fluttering and dancing in the breeze\" closes the stanza on motion. Six lines, and the picture is complete.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "i_wandered_lonely_as_a_cloud_day_2",
+      "sessionNumber": 2,
+      "title": "Never-Ending Line",
+      "subtitle": "Day 2 of 4",
+      "focusSummary": "The daffodils stretch out along the bay until they read like the milky way: ten thousand of them, in motion, all seen at a single glance.",
+      "orderIndex": 1,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from yesterday.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_3",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils;\nBeside the lake, beneath the trees,\nFluttering and dancing in the breeze.\n\nContinuous as the stars that shine\nAnd twinkle on the milky way,\nThey stretched in never-ending line\nAlong the margin of a bay:\nTen thousand saw I at a glance,\nTossing their heads in sprightly dance.\n\nThe waves beside them danced; but they\nOut-did the sparkling waves in glee:\nA poet could not but be gay,\nIn such a jocund company:\nI gazed—and gazed—but little thought\nWhat wealth the show to me had brought:\n\nFor oft, when on my couch I lie\nIn vacant or in pensive mood,\nThey flash upon that inward eye\nWhich is the bliss of solitude;\nAnd then my heart with pleasure fills,\nAnd dances with the daffodils.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_1",
+            "lines_7_12_part_2",
+            "lines_7_12_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day2_page2",
+          "type": "context",
+          "orderIndex": 6,
+          "title": "The stanza Wordsworth added",
+          "bodyMarkdown": "The whole second stanza was not in the 1807 first printing. Wordsworth added it for the collected edition of 1815. The poem you know, the one with the milky way and the ten thousand, is the result of him going back to a poem he had already published and deciding it needed more.\n\nThis is the stanza that turns a memory of one walk into the cosmic-scaled vision the poem is now famous for. Without it, the daffodils stay local. With it, they belong to the night sky.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 7,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page3_part_3",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "The vault upward",
+          "bodyMarkdown": "\"Continuous as the stars that shine / And twinkle on the milky way.\" The simile is the engine of the stanza. Wordsworth does not say there were many daffodils. He says they were like the stars, and the imagination has nowhere left to go but up.\n\nThis is a Romantic move, and a clever one. By the time you finish the second line, the lakeshore in Cumbria has briefly become the entire night sky. Then he returns you to the bay. The trick is to make the cosmic comparison feel earned by the multitude, rather than imposed on it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 13,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_3"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page6",
+          "type": "context",
+          "orderIndex": 14,
+          "title": "The shape of a stanza",
+          "bodyMarkdown": "Each stanza of the poem runs to six lines of iambic tetrameter, rhymed ABABCC. Four beats to a line. The opening four lines build, and the closing couplet rounds the breath off.\n\nListen to it land here. After the long simile that vaults from daffodils to the milky way, the closing couplet brings the eye back to the flowers themselves: \"Ten thousand saw I at a glance, / Tossing their heads in sprightly dance.\" The cosmic comparison and the small physical gesture of a flower nodding in wind are tucked into the same stanza.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page7_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page8",
+          "type": "commentary",
+          "orderIndex": 18,
+          "title": "\"Sprightly\"",
+          "bodyMarkdown": "\"Sprightly\" is the word to linger on. It means lively, full of spirit, but it carries the faintest echo of \"sprite,\" a small mischievous spirit of older English folklore. Wordsworth chose it after he had already invoked a \"host\" two stanzas back. The flowers picked up something celestial in stanza one and something almost faerie in stanza two. They are physical, and they are slightly more than physical.\n\n\"Tossing their heads\" finishes the personification. By line twelve, these are not flowers being looked at. They are something closer to a company.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 19,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 20,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 21,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "i_wandered_lonely_as_a_cloud_day_3",
+      "sessionNumber": 3,
+      "title": "The Wealth He Hadn't Counted",
+      "subtitle": "Day 3 of 4",
+      "focusSummary": "The waves dance, the daffodils outdance them, the speaker watches in good company, and notices in passing that he is not quite sure what he is gaining.",
+      "orderIndex": 2,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day3_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_3",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 3/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_6_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_3",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day3_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils;\nBeside the lake, beneath the trees,\nFluttering and dancing in the breeze.\n\nContinuous as the stars that shine\nAnd twinkle on the milky way,\nThey stretched in never-ending line\nAlong the margin of a bay:\nTen thousand saw I at a glance,\nTossing their heads in sprightly dance.\n\nThe waves beside them danced; but they\nOut-did the sparkling waves in glee:\nA poet could not but be gay,\nIn such a jocund company:\nI gazed—and gazed—but little thought\nWhat wealth the show to me had brought:\n\nFor oft, when on my couch I lie\nIn vacant or in pensive mood,\nThey flash upon that inward eye\nWhich is the bliss of solitude;\nAnd then my heart with pleasure fills,\nAnd dances with the daffodils.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day3_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_1",
+            "lines_13_18_part_2",
+            "lines_13_18_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 8
+        },
+        {
+          "id": "day3_page2",
+          "type": "context",
+          "orderIndex": 9,
+          "title": "A theory of memory",
+          "bodyMarkdown": "Seven years before this stanza was finalised, Wordsworth had written the most quoted sentence of his prose career. It is the line everyone learns when they learn what Romantic poetry is.\n\n> Poetry is the spontaneous overflow of powerful feelings: it takes its origin from emotion recollected in tranquillity.\n> — William Wordsworth, Preface to Lyrical Ballads, 1800\n\nThis stanza is that theory in action. The speaker is gathering material he does not yet know he is gathering. The poem you are reading was written two years after the walk it describes. The recollection is the point.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 11,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page3_part_3",
+          "type": "first_last_word_game",
+          "orderIndex": 12,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page4",
+          "type": "commentary",
+          "orderIndex": 13,
+          "title": "\"Out-did\"",
+          "bodyMarkdown": "\"The waves beside them danced; but they / Out-did the sparkling waves in glee.\" The daffodils win a small dancing competition against open water, which is a striking picture given that water is the more obviously active partner. Notice the hyphen in \"Out-did.\" Wordsworth could have written it smooth, \"outdid,\" and almost no one would have blinked.\n\nThe hyphen does two things. It slows the eye for a fraction of a second. And it makes the verb feel like a contest, with two parts pushing against each other. The flowers are not just lively; they are competitively lively.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 14,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 15,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 16,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_3"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page6",
+          "type": "context",
+          "orderIndex": 17,
+          "title": "Jocund",
+          "bodyMarkdown": "\"Jocund\" was a slightly old-fashioned word even in 1804. It means cheerful, festive, light-hearted, but with a touch of formality the plain words don't carry. The flowers are not \"happy company\" or \"merry company.\" They are \"jocund company,\" which dignifies the gathering and makes the speaker's place in it feel almost ceremonial.\n\nWordsworth liked words that had a ceremonial weight without being grand. \"Jocund\" is one of them. Once he has used it, the speaker is no longer a tourist looking at flowers. He is a guest at something.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 19,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 20,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page8",
+          "type": "commentary",
+          "orderIndex": 21,
+          "title": "Wealth, ungrasped",
+          "bodyMarkdown": "\"I gazed—and gazed—but little thought / What wealth the show to me had brought.\" This is the pivot of the whole poem. Up to here, everything has been present-tense joy. Now the speaker steps outside the moment and admits he didn't realise what was happening to him.\n\nThe em dashes around \"and gazed\" hold the looking open, as though the line itself is taking longer because the gaze did. And \"wealth\" is a strange word for daffodils. Wealth is something stored, banked, paid out later. Wordsworth slides the metaphor in casually here. Tomorrow he will collect on it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 22,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 23,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 24,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "i_wandered_lonely_as_a_cloud_day_4",
+      "sessionNumber": 4,
+      "title": "The Inward Eye",
+      "subtitle": "Day 4 of 4",
+      "focusSummary": "The walk is long over. The speaker is lying down, half-empty, half-thoughtful, and the daffodils come back of their own accord.",
+      "orderIndex": 3,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day4_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_3",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 3/3",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_7_12_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_3",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_18_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day4_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "I wandered lonely as a cloud\nThat floats on high o'er vales and hills,\nWhen all at once I saw a crowd,\nA host, of golden daffodils;\nBeside the lake, beneath the trees,\nFluttering and dancing in the breeze.\n\nContinuous as the stars that shine\nAnd twinkle on the milky way,\nThey stretched in never-ending line\nAlong the margin of a bay:\nTen thousand saw I at a glance,\nTossing their heads in sprightly dance.\n\nThe waves beside them danced; but they\nOut-did the sparkling waves in glee:\nA poet could not but be gay,\nIn such a jocund company:\nI gazed—and gazed—but little thought\nWhat wealth the show to me had brought:\n\nFor oft, when on my couch I lie\nIn vacant or in pensive mood,\nThey flash upon that inward eye\nWhich is the bliss of solitude;\nAnd then my heart with pleasure fills,\nAnd dances with the daffodils.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 7
+        },
+        {
+          "id": "day4_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_1",
+            "lines_19_24_part_2",
+            "lines_19_24_part_3"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 8
+        },
+        {
+          "id": "day4_page2",
+          "type": "context",
+          "orderIndex": 9,
+          "title": "Mary Hutchinson's gift",
+          "bodyMarkdown": "Wordsworth was, by his own account, stuck on this stanza. His wife Mary Hutchinson, who rarely intervened in his writing, gave him two lines: \"They flash upon that inward eye / Which is the bliss of solitude.\" He kept them. Late in life, when dictating notes on his poems to Isabella Fenwick, he said plainly that the two best lines in the poem were by Mary.\n\nIt is a funny thing for a famous poet to admit, and he didn't have to. Wordsworth was generous about it, which is a small reason to like him.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 11,
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page3_part_3",
+          "type": "first_last_word_game",
+          "orderIndex": 12,
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_3"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page4",
+          "type": "commentary",
+          "orderIndex": 13,
+          "title": "\"Couch\"",
+          "bodyMarkdown": "\"For oft, when on my couch I lie.\" Resist the modern picture. A couch in 1807 was not a sofa in a living room. It meant any place of rest, often a bed, sometimes a sickbed. The speaker is at home, lying down, possibly resting, possibly idle.\n\n\"In vacant or in pensive mood\" gives him two states the daffodils can visit. Empty-headed and thoughtful. The flowers don't choose their mood. They come either way. That is part of the gift.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 14,
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 15,
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page5_part_3",
+          "type": "last_word_game",
+          "orderIndex": 16,
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_3"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page6",
+          "type": "context",
+          "orderIndex": 17,
+          "title": "From cloud to dance",
+          "bodyMarkdown": "Watch what happens to the speaker across the four stanzas. In stanza one he is a lonely cloud. In stanza two he is counting from a small distance: ten thousand at a glance. In stanza three he stands beside the flowers in jocund company. By the last line his heart \"dances with the daffodils.\"\n\nThe whole poem has been a slow joining. Solitary cloud. Observer of multitudes. Member of the company. Dancer in it. The closing couplet returns to the dancing of stanza one, but the speaker is now inside the dance, and not by his own walking effort.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 19,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page7_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 20,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page8",
+          "type": "commentary",
+          "orderIndex": 21,
+          "title": "\"Bliss of solitude\"",
+          "bodyMarkdown": "\"The bliss of solitude\" is the line that gets quoted out of context as a recommendation to be alone. In the poem, solitude is bliss only because it allows the memory to do its work. The speaker is lying on his couch, and the company comes to him. Solitude is the condition for return, not an escape from people.\n\nThis is also where the wealth from yesterday's stanza is finally paid out. The \"show\" the speaker did not realise he had banked is what flashes upon his inward eye now. The poem turns out to be a small economic argument about attention. What you let in becomes what you can call back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 22,
+          "title": "Random-Words 1/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 23,
+          "title": "Random-Words 2/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page9_part_3",
+          "type": "hidden_word_game",
+          "orderIndex": 24,
+          "title": "Random-Words 3/3",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_19_24_part_3"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        }
+      ]
+    }
+  ]
+}

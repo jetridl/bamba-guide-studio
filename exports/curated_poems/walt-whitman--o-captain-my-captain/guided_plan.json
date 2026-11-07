@@ -1,0 +1,2117 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "o_captain_my_captain_guide_v1",
+    "poemId": "o_captain_my_captain",
+    "title": "O Captain! My Captain! Guided Plan",
+    "version": 1,
+    "status": "approved",
+    "description": "A 6-day guided plan for Walt Whitman's O Captain! My Captain!.",
+    "metadata": {
+      "difficulty": "medium",
+      "estimatedDays": 6
+    }
+  },
+  "poem": {
+    "id": "o_captain_my_captain",
+    "title": "O Captain! My Captain!",
+    "author": "Walt Whitman",
+    "text": "O Captain! my Captain! our fearful trip is done,\nThe ship has weather'd every rack, the prize we sought is won,\nThe port is near, the bells I hear, the people all exulting,\nWhile follow eyes the steady keel, the vessel grim and daring;\nBut O heart! heart! heart!\nO the bleeding drops of red,\nWhere on the deck my Captain lies,\nFallen cold and dead.\n\nO Captain! my Captain! rise up and hear the bells;\nRise up—for you the flag is flung—for you the bugle trills,\nFor you bouquets and ribbon'd wreaths—for you the shores a-crowding,\nFor you they call, the swaying mass, their eager faces turning;\nHere Captain! dear father!\nThis arm beneath your head!\nIt is some dream that on the deck,\nYou've fallen cold and dead.\n\nMy Captain does not answer, his lips are pale and still,\nMy father does not feel my arm, he has no pulse nor will,\nThe ship is anchor'd safe and sound, its voyage closed and done,\nFrom fearful trip the victor ship comes in with object won;\nExult O shores, and ring O bells!\nBut I with mournful tread,\nWalk the deck my Captain lies,\nFallen cold and dead.",
+    "year": 1865,
+    "metadata": {
+      "source": "public_domain"
+    }
+  },
+  "stanzas": [
+    {
+      "id": "stanza_1",
+      "orderIndex": 0,
+      "title": "Stanza 1",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2",
+      "orderIndex": 1,
+      "title": "Stanza 2",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3",
+      "orderIndex": 2,
+      "title": "Stanza 3",
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "stanza_1_line_1",
+      "stanzaId": "stanza_1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "O Captain! my Captain! our fearful trip is done,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_2",
+      "stanzaId": "stanza_1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "The ship has weather'd every rack, the prize we sought is won,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_3",
+      "stanzaId": "stanza_1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "The port is near, the bells I hear, the people all exulting,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_4",
+      "stanzaId": "stanza_1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "While follow eyes the steady keel, the vessel grim and daring;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_5",
+      "stanzaId": "stanza_1",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 4,
+      "text": "But O heart! heart! heart!",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_6",
+      "stanzaId": "stanza_1",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 5,
+      "text": "O the bleeding drops of red,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_7",
+      "stanzaId": "stanza_1",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 6,
+      "text": "Where on the deck my Captain lies,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_8",
+      "stanzaId": "stanza_1",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 7,
+      "text": "Fallen cold and dead.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_1",
+      "stanzaId": "stanza_2",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 0,
+      "text": "O Captain! my Captain! rise up and hear the bells;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_2",
+      "stanzaId": "stanza_2",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 1,
+      "text": "Rise up—for you the flag is flung—for you the bugle trills,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_3",
+      "stanzaId": "stanza_2",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 2,
+      "text": "For you bouquets and ribbon'd wreaths—for you the shores a-crowding,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_4",
+      "stanzaId": "stanza_2",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 3,
+      "text": "For you they call, the swaying mass, their eager faces turning;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_5",
+      "stanzaId": "stanza_2",
+      "orderIndex": 12,
+      "stanzaOrderIndex": 4,
+      "text": "Here Captain! dear father!",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_6",
+      "stanzaId": "stanza_2",
+      "orderIndex": 13,
+      "stanzaOrderIndex": 5,
+      "text": "This arm beneath your head!",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_7",
+      "stanzaId": "stanza_2",
+      "orderIndex": 14,
+      "stanzaOrderIndex": 6,
+      "text": "It is some dream that on the deck,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_8",
+      "stanzaId": "stanza_2",
+      "orderIndex": 15,
+      "stanzaOrderIndex": 7,
+      "text": "You've fallen cold and dead.",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_1",
+      "stanzaId": "stanza_3",
+      "orderIndex": 16,
+      "stanzaOrderIndex": 0,
+      "text": "My Captain does not answer, his lips are pale and still,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_2",
+      "stanzaId": "stanza_3",
+      "orderIndex": 17,
+      "stanzaOrderIndex": 1,
+      "text": "My father does not feel my arm, he has no pulse nor will,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_3",
+      "stanzaId": "stanza_3",
+      "orderIndex": 18,
+      "stanzaOrderIndex": 2,
+      "text": "The ship is anchor'd safe and sound, its voyage closed and done,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_4",
+      "stanzaId": "stanza_3",
+      "orderIndex": 19,
+      "stanzaOrderIndex": 3,
+      "text": "From fearful trip the victor ship comes in with object won;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_5",
+      "stanzaId": "stanza_3",
+      "orderIndex": 20,
+      "stanzaOrderIndex": 4,
+      "text": "Exult O shores, and ring O bells!",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_6",
+      "stanzaId": "stanza_3",
+      "orderIndex": 21,
+      "stanzaOrderIndex": 5,
+      "text": "But I with mournful tread,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_7",
+      "stanzaId": "stanza_3",
+      "orderIndex": 22,
+      "stanzaOrderIndex": 6,
+      "text": "Walk the deck my Captain lies,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_8",
+      "stanzaId": "stanza_3",
+      "orderIndex": 23,
+      "stanzaOrderIndex": 7,
+      "text": "Fallen cold and dead.",
+      "metadata": {}
+    }
+  ],
+  "chunks": [
+    {
+      "id": "lines_1_4_part_1",
+      "orderIndex": 0,
+      "lineIds": [
+        "stanza_1_line_1",
+        "stanza_1_line_2"
+      ],
+      "label": "Lines 1-4, part 1",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 4,
+        "sourceChunkId": "lines_1_4",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_1_4_part_2",
+      "orderIndex": 1,
+      "lineIds": [
+        "stanza_1_line_3",
+        "stanza_1_line_4"
+      ],
+      "label": "Lines 1-4, part 2",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 4,
+        "sourceChunkId": "lines_1_4",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_5_8_part_1",
+      "orderIndex": 2,
+      "lineIds": [
+        "stanza_1_line_5",
+        "stanza_1_line_6"
+      ],
+      "label": "Lines 5-8, part 1",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 8,
+        "sourceChunkId": "lines_5_8",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_5_8_part_2",
+      "orderIndex": 3,
+      "lineIds": [
+        "stanza_1_line_7",
+        "stanza_1_line_8"
+      ],
+      "label": "Lines 5-8, part 2",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 8,
+        "sourceChunkId": "lines_5_8",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_9_12_part_1",
+      "orderIndex": 4,
+      "lineIds": [
+        "stanza_2_line_1",
+        "stanza_2_line_2"
+      ],
+      "label": "Lines 9-12, part 1",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 12,
+        "sourceChunkId": "lines_9_12",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_9_12_part_2",
+      "orderIndex": 5,
+      "lineIds": [
+        "stanza_2_line_3",
+        "stanza_2_line_4"
+      ],
+      "label": "Lines 9-12, part 2",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 12,
+        "sourceChunkId": "lines_9_12",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_13_16_part_1",
+      "orderIndex": 6,
+      "lineIds": [
+        "stanza_2_line_5",
+        "stanza_2_line_6"
+      ],
+      "label": "Lines 13-16, part 1",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 16,
+        "sourceChunkId": "lines_13_16",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_13_16_part_2",
+      "orderIndex": 7,
+      "lineIds": [
+        "stanza_2_line_7",
+        "stanza_2_line_8"
+      ],
+      "label": "Lines 13-16, part 2",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 16,
+        "sourceChunkId": "lines_13_16",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_17_20_part_1",
+      "orderIndex": 8,
+      "lineIds": [
+        "stanza_3_line_1",
+        "stanza_3_line_2"
+      ],
+      "label": "Lines 17-20, part 1",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 20,
+        "sourceChunkId": "lines_17_20",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_17_20_part_2",
+      "orderIndex": 9,
+      "lineIds": [
+        "stanza_3_line_3",
+        "stanza_3_line_4"
+      ],
+      "label": "Lines 17-20, part 2",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 20,
+        "sourceChunkId": "lines_17_20",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_21_24_part_1",
+      "orderIndex": 10,
+      "lineIds": [
+        "stanza_3_line_5",
+        "stanza_3_line_6"
+      ],
+      "label": "Lines 21-24, part 1",
+      "metadata": {
+        "startLine": 21,
+        "endLine": 24,
+        "sourceChunkId": "lines_21_24",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "lines_21_24_part_2",
+      "orderIndex": 11,
+      "lineIds": [
+        "stanza_3_line_7",
+        "stanza_3_line_8"
+      ],
+      "label": "Lines 21-24, part 2",
+      "metadata": {
+        "startLine": 21,
+        "endLine": 24,
+        "sourceChunkId": "lines_21_24",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "o_captain_my_captain_day_1",
+      "sessionNumber": 1,
+      "title": "The Ship Comes In",
+      "subtitle": "Day 1 of 6",
+      "focusSummary": "The poem opens with victory, but the triumph already feels heavy.",
+      "orderIndex": 0,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O Captain! my Captain! our fearful trip is done,\nThe ship has weather'd every rack, the prize we sought is won,\nThe port is near, the bells I hear, the people all exulting,\nWhile follow eyes the steady keel, the vessel grim and daring;\nBut O heart! heart! heart!\nO the bleeding drops of red,\nWhere on the deck my Captain lies,\nFallen cold and dead.\n\nO Captain! my Captain! rise up and hear the bells;\nRise up—for you the flag is flung—for you the bugle trills,\nFor you bouquets and ribbon'd wreaths—for you the shores a-crowding,\nFor you they call, the swaying mass, their eager faces turning;\nHere Captain! dear father!\nThis arm beneath your head!\nIt is some dream that on the deck,\nYou've fallen cold and dead.\n\nMy Captain does not answer, his lips are pale and still,\nMy father does not feel my arm, he has no pulse nor will,\nThe ship is anchor'd safe and sound, its voyage closed and done,\nFrom fearful trip the victor ship comes in with object won;\nExult O shores, and ring O bells!\nBut I with mournful tread,\nWalk the deck my Captain lies,\nFallen cold and dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1",
+            "lines_1_4_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day1_page1",
+          "type": "intro",
+          "orderIndex": 2,
+          "title": "The Whole Poem in View",
+          "bodyMarkdown": "Whitman wrote this poem after Abraham Lincoln was assassinated in April 1865, just as the Civil War was ending. It is not his strangest or most expansive poem. In fact, it is unusually regular for him, with rhyme, refrain, and a public symbol almost everyone could grasp at once.\n\nYou will take it over six days, four lines at a time. Today begins with the ship returning from danger. The prize has been won. The port is close. For a moment, the poem seems to know how victory should sound.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page2",
+          "type": "context",
+          "orderIndex": 3,
+          "title": "A Nation at the Wharf",
+          "bodyMarkdown": "The ship is the United States after the Civil War. The Captain is Lincoln. Whitman does not name either one, because he does not need to. In 1865 the image was clear: a dangerous voyage, a hard-won prize, and a leader who brought the vessel through.\n\nThat clarity is part of the poem's power. Whitman often loved long, open-ended lines, but here he chooses a shape closer to a ballad or public song. The poem wants to be remembered aloud. It sounds as if it belongs to a crowd before it becomes painfully private.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page4",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Fearful Trip",
+          "bodyMarkdown": "The first phrase to feel is \"fearful trip.\" It does not say long trip, noble trip, or glorious trip. Fear comes first. The voyage has been won, but the word keeps the memory of danger inside the victory.\n\n\"Weather'd every rack\" makes the ship feel battered rather than shining. \"Rack\" suggests strain, storm, and torment. By the time the \"prize\" appears, the poem has already made you hear what it cost.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 7,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page6",
+          "type": "context",
+          "orderIndex": 9,
+          "title": "Why a Ship",
+          "bodyMarkdown": "A ship gives Whitman several things at once. It gives him a country, a crew, a voyage, a captain, a port, and a crowd waiting on shore. The metaphor lets public history become visible without turning the poem into a speech.\n\nIt also keeps the scene moving. The ship is not safely at rest yet. The port is \"near,\" not reached. The people are already celebrating, but the sentence has not arrived at its wound. That delay matters.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page8",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Bells Before Blood",
+          "bodyMarkdown": "The third line is crowded with sound: \"port,\" \"near,\" \"bells,\" \"hear,\" \"people,\" \"exulting.\" It has the rush of arrival. You can hear a public ceremony gathering itself before anyone has understood what the speaker knows.\n\nThen line four turns your eye to the ship's body. \"Steady keel\" suggests control and balance, while \"grim and daring\" gives the vessel a human character. The ship has survived, but the adjectives are not light. Triumph enters the poem already shadowed.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "o_captain_my_captain_day_2",
+      "sessionNumber": 2,
+      "title": "The Body on the Deck",
+      "subtitle": "Day 2 of 6",
+      "focusSummary": "The poem breaks from public triumph into immediate grief.",
+      "orderIndex": 1,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from yesterday.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O Captain! my Captain! our fearful trip is done,\nThe ship has weather'd every rack, the prize we sought is won,\nThe port is near, the bells I hear, the people all exulting,\nWhile follow eyes the steady keel, the vessel grim and daring;\nBut O heart! heart! heart!\nO the bleeding drops of red,\nWhere on the deck my Captain lies,\nFallen cold and dead.\n\nO Captain! my Captain! rise up and hear the bells;\nRise up—for you the flag is flung—for you the bugle trills,\nFor you bouquets and ribbon'd wreaths—for you the shores a-crowding,\nFor you they call, the swaying mass, their eager faces turning;\nHere Captain! dear father!\nThis arm beneath your head!\nIt is some dream that on the deck,\nYou've fallen cold and dead.\n\nMy Captain does not answer, his lips are pale and still,\nMy father does not feel my arm, he has no pulse nor will,\nThe ship is anchor'd safe and sound, its voyage closed and done,\nFrom fearful trip the victor ship comes in with object won;\nExult O shores, and ring O bells!\nBut I with mournful tread,\nWalk the deck my Captain lies,\nFallen cold and dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1",
+            "lines_5_8_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day2_page2",
+          "type": "context",
+          "orderIndex": 5,
+          "title": "Grief Interrupts the Parade",
+          "bodyMarkdown": "An elegy is a poem of mourning, but this one has an unusual pressure because the public occasion is celebratory. Lincoln died after the Union victory had become certain. The war was nearly over. The bells were not imaginary.\n\nWhitman lets those two facts collide. The country has reason to exult, and the speaker has reason to break. The poem does not solve that contradiction. It repeats it until you feel how strange victory can become when the victorious leader is gone.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 6,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 7,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page4",
+          "type": "commentary",
+          "orderIndex": 8,
+          "title": "But O Heart",
+          "bodyMarkdown": "The word \"But\" does enormous work. It cancels the clean story of arrival. Everything before it remains true, but it is no longer the whole truth.\n\n\"O heart! heart! heart!\" is not analysis. It is the body speaking before the mind can manage a sentence. The repetition matters for memorising too. The line is a heartbeat, and then the next line gives you what the heart has seen.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 9,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 10,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page6",
+          "type": "context",
+          "orderIndex": 11,
+          "title": "The Public Father",
+          "bodyMarkdown": "Whitman admired Lincoln at a distance. During the war years in Washington, he saw the President pass through the city and felt that Lincoln's worn face carried the strain of the country. They were not friends, but Whitman turned him into something intimate after death.\n\nThat is why the title can sound both formal and personal. \"Captain\" belongs to command. \"My Captain\" belongs to grief. The poem keeps moving between those registers, as if the speaker cannot decide whether he is addressing a national leader or someone from his own household.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 12,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page8",
+          "type": "commentary",
+          "orderIndex": 14,
+          "title": "Red on the Deck",
+          "bodyMarkdown": "\"The bleeding drops of red\" is almost painfully simple. Whitman does not decorate the blood. He names the color and leaves it there against the wooden deck.\n\nThe line \"Where on the deck my Captain lies\" slows the poem into position. You know exactly where the body is. Then \"Fallen cold and dead\" closes the stanza with three hard facts. The Captain has fallen. He is cold. He is dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "o_captain_my_captain_day_3",
+      "sessionNumber": 3,
+      "title": "The Crowd Calls",
+      "subtitle": "Day 3 of 6",
+      "focusSummary": "The second stanza brings the celebration closer, as if ceremony might wake the dead.",
+      "orderIndex": 2,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day3_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_1_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day3_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O Captain! my Captain! our fearful trip is done,\nThe ship has weather'd every rack, the prize we sought is won,\nThe port is near, the bells I hear, the people all exulting,\nWhile follow eyes the steady keel, the vessel grim and daring;\nBut O heart! heart! heart!\nO the bleeding drops of red,\nWhere on the deck my Captain lies,\nFallen cold and dead.\n\nO Captain! my Captain! rise up and hear the bells;\nRise up—for you the flag is flung—for you the bugle trills,\nFor you bouquets and ribbon'd wreaths—for you the shores a-crowding,\nFor you they call, the swaying mass, their eager faces turning;\nHere Captain! dear father!\nThis arm beneath your head!\nIt is some dream that on the deck,\nYou've fallen cold and dead.\n\nMy Captain does not answer, his lips are pale and still,\nMy father does not feel my arm, he has no pulse nor will,\nThe ship is anchor'd safe and sound, its voyage closed and done,\nFrom fearful trip the victor ship comes in with object won;\nExult O shores, and ring O bells!\nBut I with mournful tread,\nWalk the deck my Captain lies,\nFallen cold and dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day3_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_1",
+            "lines_9_12_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day3_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "The Ceremony He Cannot Receive",
+          "bodyMarkdown": "After Lincoln's assassination, mourning became a national ritual. Trains, processions, black cloth, speeches, and crowds turned private grief into public form. Whitman's poem catches that atmosphere without listing the actual funeral journey.\n\nThe details here are ceremonial rather than domestic. The flag is flung. The bugle trills. Wreaths are ready. The shore is packed. Everything is prepared for honor, except the honored man cannot receive it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "Rise Up",
+          "bodyMarkdown": "\"Rise up\" is impossible, which is why it hurts. The command belongs to life, leadership, and public appearance. The Captain should stand to hear the bells and receive the people's praise.\n\nThe phrase is repeated at the start of the next line, as if the speaker has to try again. The repetition does not change reality. It shows resistance to reality.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page6",
+          "type": "context",
+          "orderIndex": 13,
+          "title": "A Regular Whitman",
+          "bodyMarkdown": "This poem is more regular than the Whitman many readers meet in Leaves of Grass. It rhymes, repeats, and moves in stanzas with a clear refrain. That made it easy to recite, and it quickly became one of his most familiar poems.\n\nThere is a small irony in that. Whitman's boldest work often pushes against conventional poetic form. Here, mourning pulls him toward it. The pattern gives grief a vessel strong enough to carry public feeling.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "For You",
+          "bodyMarkdown": "\"For you\" appears three times in these lines. The phrase turns the crowd's honors toward one absent body. Flag, bugle, bouquets, wreaths, shore, and faces all gather around the Captain.\n\nThat repetition also creates pressure. The public world keeps offering signs of victory, but each sign lands against silence. The more the crowd calls, the more sharply you feel the Captain's inability to answer.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "o_captain_my_captain_day_4",
+      "sessionNumber": 4,
+      "title": "Dear Father",
+      "subtitle": "Day 4 of 6",
+      "focusSummary": "The speaker tries to hold the Captain close and briefly refuses the fact of death.",
+      "orderIndex": 3,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day4_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_5_8_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day4_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O Captain! my Captain! our fearful trip is done,\nThe ship has weather'd every rack, the prize we sought is won,\nThe port is near, the bells I hear, the people all exulting,\nWhile follow eyes the steady keel, the vessel grim and daring;\nBut O heart! heart! heart!\nO the bleeding drops of red,\nWhere on the deck my Captain lies,\nFallen cold and dead.\n\nO Captain! my Captain! rise up and hear the bells;\nRise up—for you the flag is flung—for you the bugle trills,\nFor you bouquets and ribbon'd wreaths—for you the shores a-crowding,\nFor you they call, the swaying mass, their eager faces turning;\nHere Captain! dear father!\nThis arm beneath your head!\nIt is some dream that on the deck,\nYou've fallen cold and dead.\n\nMy Captain does not answer, his lips are pale and still,\nMy father does not feel my arm, he has no pulse nor will,\nThe ship is anchor'd safe and sound, its voyage closed and done,\nFrom fearful trip the victor ship comes in with object won;\nExult O shores, and ring O bells!\nBut I with mournful tread,\nWalk the deck my Captain lies,\nFallen cold and dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day4_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_1",
+            "lines_13_16_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day4_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Captain Becomes Father",
+          "bodyMarkdown": "The shift from \"Captain\" to \"dear father\" changes the emotional scale. Captain is a title of command. Father is a word of dependence, affection, and loss. Whitman makes Lincoln both the head of the ship and the figure whose death leaves the speaker personally bereft.\n\nThe poem is not subtle about this symbolism, but subtlety is not its main task. Its task is to make a national wound speak in words an ordinary mourner could say.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "This Arm",
+          "bodyMarkdown": "\"This arm beneath your head\" is the most tender gesture in the poem. It is also helpless. The speaker can support the Captain's head, but he cannot restore breath, warmth, or answer.\n\nThe word \"this\" matters. It places the arm in the present moment, as if the speaker is saying, here, now, feel this. The body does not respond, and the line leaves that failure unsaid.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page6",
+          "type": "context",
+          "orderIndex": 13,
+          "title": "Some Dream",
+          "bodyMarkdown": "\"It is some dream\" is not a reasoned claim. It is the mind refusing to keep pace with the eye. The speaker has already said the Captain is dead, yet here he reaches for another explanation.\n\nThat is one of the poem's truest movements. Grief does not move in a clean line from knowledge to acceptance. It circles. It repeats the fact and then flinches from it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Fallen Again",
+          "bodyMarkdown": "The stanza ends by returning to \"fallen cold and dead.\" Refrains can comfort because they make a pattern. Here the pattern is severe. Each return forces the same fact back into speech.\n\nThere is one difference from the first stanza. \"Where on the deck my Captain lies\" becomes \"You've fallen cold and dead.\" The speaker is no longer describing the body. He is speaking directly to the person who cannot hear him.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "o_captain_my_captain_day_5",
+      "sessionNumber": 5,
+      "title": "Safe and Sound",
+      "subtitle": "Day 5 of 6",
+      "focusSummary": "The final stanza accepts the death while confirming that the voyage has succeeded.",
+      "orderIndex": 4,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day5_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day5_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day5_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_9_12_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day5_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day5_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day5_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O Captain! my Captain! our fearful trip is done,\nThe ship has weather'd every rack, the prize we sought is won,\nThe port is near, the bells I hear, the people all exulting,\nWhile follow eyes the steady keel, the vessel grim and daring;\nBut O heart! heart! heart!\nO the bleeding drops of red,\nWhere on the deck my Captain lies,\nFallen cold and dead.\n\nO Captain! my Captain! rise up and hear the bells;\nRise up—for you the flag is flung—for you the bugle trills,\nFor you bouquets and ribbon'd wreaths—for you the shores a-crowding,\nFor you they call, the swaying mass, their eager faces turning;\nHere Captain! dear father!\nThis arm beneath your head!\nIt is some dream that on the deck,\nYou've fallen cold and dead.\n\nMy Captain does not answer, his lips are pale and still,\nMy father does not feel my arm, he has no pulse nor will,\nThe ship is anchor'd safe and sound, its voyage closed and done,\nFrom fearful trip the victor ship comes in with object won;\nExult O shores, and ring O bells!\nBut I with mournful tread,\nWalk the deck my Captain lies,\nFallen cold and dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day5_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_1",
+            "lines_17_20_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day5_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Victory After the Death",
+          "bodyMarkdown": "Lincoln was killed at a moment when the Union's victory was no longer a hope but an emerging fact. Richmond had fallen. Lee had surrendered at Appomattox. The national story seemed to be turning toward survival.\n\nThat timing is why Whitman's poem keeps pairing completion with loss. The voyage has not failed. The terrible thing is that it has succeeded without the Captain living to stand at the end of it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "Pale and Still",
+          "bodyMarkdown": "\"Does not answer\" is plainer than the earlier cries. The poem has moved from command to report. No amount of address can turn the Captain back toward speech.\n\n\"His lips are pale and still\" focuses on the organ of answer. The lips that might speak are colorless and motionless. Then \"he has no pulse nor will\" removes both bodily life and intention. The Captain is beyond response in every sense.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page6",
+          "type": "context",
+          "orderIndex": 13,
+          "title": "The Voyage Closes",
+          "bodyMarkdown": "The ship now reaches the condition promised at the start. It is \"anchor'd safe and sound.\" The phrase is almost domestic. After all the storm and strain, the vessel has come home.\n\nBut Whitman repeats \"fearful trip\" to keep the cost present. The phrase from line one returns near the end, not as an opening memory but as a completed ordeal. The poem is tying its own ropes.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Object Won",
+          "bodyMarkdown": "\"Victor ship\" gives the poem its clearest word of triumph. The ship is not merely surviving. It has won. Yet the victory is surrounded by the dead Captain's silence.\n\n\"Object won\" sounds oddly stiff beside the grief around it. That stiffness helps. The political goal can be named, but it cannot console the mourner completely. History may be able to say won. The speaker still has to say dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "o_captain_my_captain_day_6",
+      "sessionNumber": 6,
+      "title": "Mournful Tread",
+      "subtitle": "Day 6 of 6",
+      "focusSummary": "The poem ends by setting public exultation beside solitary grief.",
+      "orderIndex": 5,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day6_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day6_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day6_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_13_16_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day6_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day6_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_17_20_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day6_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O Captain! my Captain! our fearful trip is done,\nThe ship has weather'd every rack, the prize we sought is won,\nThe port is near, the bells I hear, the people all exulting,\nWhile follow eyes the steady keel, the vessel grim and daring;\nBut O heart! heart! heart!\nO the bleeding drops of red,\nWhere on the deck my Captain lies,\nFallen cold and dead.\n\nO Captain! my Captain! rise up and hear the bells;\nRise up—for you the flag is flung—for you the bugle trills,\nFor you bouquets and ribbon'd wreaths—for you the shores a-crowding,\nFor you they call, the swaying mass, their eager faces turning;\nHere Captain! dear father!\nThis arm beneath your head!\nIt is some dream that on the deck,\nYou've fallen cold and dead.\n\nMy Captain does not answer, his lips are pale and still,\nMy father does not feel my arm, he has no pulse nor will,\nThe ship is anchor'd safe and sound, its voyage closed and done,\nFrom fearful trip the victor ship comes in with object won;\nExult O shores, and ring O bells!\nBut I with mournful tread,\nWalk the deck my Captain lies,\nFallen cold and dead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day6_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_1",
+            "lines_21_24_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day6_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Two Endings at Once",
+          "bodyMarkdown": "Public history needs ceremonies. It needs bells, flags, processions, and speeches because shared grief requires a shared shape. Whitman understands that. He gives the shore permission to exult.\n\nBut private grief does not always move with the ceremony. The speaker's body keeps a different rhythm. While the bells ring outward, his feet move across the deck in mourning.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page3_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page3_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "Exult and But",
+          "bodyMarkdown": "\"Exult O shores, and ring O bells!\" is generous. The speaker does not tell the shore to stop. He does not deny the victory. The public world may keep its proper sound.\n\nThen comes \"But I.\" Those two words make the poem's final division. The crowd has one duty, and the speaker has another. He must stay with the body.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page6",
+          "type": "context",
+          "orderIndex": 13,
+          "title": "The Refrain Changes Weight",
+          "bodyMarkdown": "By now, \"Fallen cold and dead\" has returned three times. The words are the same, but the poem around them has changed. First they shocked. Then they resisted denial. Now they settle.\n\nThat settling is not comfort. It is recognition. The speaker has stopped trying to wake the Captain, and the poem has stopped asking the public celebration to explain the private loss.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page7_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page7_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Walking the Deck",
+          "bodyMarkdown": "\"Mournful tread\" gives grief a pace. It is not only an emotion in the speaker's mind. It is a way of moving, slow enough for each step to count.\n\n\"Walk the deck my Captain lies\" leaves out the expected \"where.\" That compression makes the line feel slightly bare, almost stunned. The speaker's path and the Captain's body occupy the same space. Memory will have to walk there too.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "lines_21_24_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    }
+  ]
+}

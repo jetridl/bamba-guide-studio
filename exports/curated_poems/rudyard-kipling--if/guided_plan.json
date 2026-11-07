@@ -1,0 +1,2823 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "if_guide_v1",
+    "poemId": "if",
+    "title": "If— Guided Plan",
+    "version": 1,
+    "status": "approved",
+    "description": "An eight-day guided plan for Rudyard Kipling's If—.",
+    "metadata": {
+      "difficulty": "medium",
+      "estimatedDays": 8
+    }
+  },
+  "poem": {
+    "id": "if",
+    "title": "If—",
+    "author": "Rudyard Kipling",
+    "year": 1910,
+    "text": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+    "metadata": {
+      "source": "public_domain"
+    }
+  },
+  "chunks": [
+    {
+      "id": "chunk_1_part_1",
+      "orderIndex": 0,
+      "lineIds": [
+        "stanza_1_line_1",
+        "stanza_1_line_2"
+      ],
+      "label": "Stanza 1, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_1",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_1_part_2",
+      "orderIndex": 1,
+      "lineIds": [
+        "stanza_1_line_3",
+        "stanza_1_line_4"
+      ],
+      "label": "Stanza 1, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_1",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_2_part_1",
+      "orderIndex": 2,
+      "lineIds": [
+        "stanza_1_line_5",
+        "stanza_1_line_6"
+      ],
+      "label": "Stanza 1, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_2",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_2_part_2",
+      "orderIndex": 3,
+      "lineIds": [
+        "stanza_1_line_7",
+        "stanza_1_line_8"
+      ],
+      "label": "Stanza 1, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_2",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_3_part_1",
+      "orderIndex": 4,
+      "lineIds": [
+        "stanza_2_line_1",
+        "stanza_2_line_2"
+      ],
+      "label": "Stanza 2, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_3",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_3_part_2",
+      "orderIndex": 5,
+      "lineIds": [
+        "stanza_2_line_3",
+        "stanza_2_line_4"
+      ],
+      "label": "Stanza 2, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_3",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_4_part_1",
+      "orderIndex": 6,
+      "lineIds": [
+        "stanza_2_line_5",
+        "stanza_2_line_6"
+      ],
+      "label": "Stanza 2, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_4",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_4_part_2",
+      "orderIndex": 7,
+      "lineIds": [
+        "stanza_2_line_7",
+        "stanza_2_line_8"
+      ],
+      "label": "Stanza 2, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_4",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_5_part_1",
+      "orderIndex": 8,
+      "lineIds": [
+        "stanza_3_line_1",
+        "stanza_3_line_2"
+      ],
+      "label": "Stanza 3, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_5",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_5_part_2",
+      "orderIndex": 9,
+      "lineIds": [
+        "stanza_3_line_3",
+        "stanza_3_line_4"
+      ],
+      "label": "Stanza 3, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_5",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_6_part_1",
+      "orderIndex": 10,
+      "lineIds": [
+        "stanza_3_line_5",
+        "stanza_3_line_6"
+      ],
+      "label": "Stanza 3, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_6",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_6_part_2",
+      "orderIndex": 11,
+      "lineIds": [
+        "stanza_3_line_7",
+        "stanza_3_line_8"
+      ],
+      "label": "Stanza 3, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_6",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_7_part_1",
+      "orderIndex": 12,
+      "lineIds": [
+        "stanza_4_line_1",
+        "stanza_4_line_2"
+      ],
+      "label": "Stanza 4, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_7",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_7_part_2",
+      "orderIndex": 13,
+      "lineIds": [
+        "stanza_4_line_3",
+        "stanza_4_line_4"
+      ],
+      "label": "Stanza 4, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_7",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_8_part_1",
+      "orderIndex": 14,
+      "lineIds": [
+        "stanza_4_line_5",
+        "stanza_4_line_6"
+      ],
+      "label": "Stanza 4, part 1",
+      "metadata": {
+        "sourceChunkId": "chunk_8",
+        "splitPart": 1,
+        "splitCount": 2
+      }
+    },
+    {
+      "id": "chunk_8_part_2",
+      "orderIndex": 15,
+      "lineIds": [
+        "stanza_4_line_7",
+        "stanza_4_line_8"
+      ],
+      "label": "Stanza 4, part 2",
+      "metadata": {
+        "sourceChunkId": "chunk_8",
+        "splitPart": 2,
+        "splitCount": 2
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "if_day_1",
+      "sessionNumber": 1,
+      "title": "Composure Under Pressure",
+      "subtitle": "Day 1 of 8",
+      "focusSummary": "The poem opens with two of its most quoted lines, setting out the cost of staying steady when others lose their footing.",
+      "orderIndex": 0,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1",
+            "chunk_1_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day1_page1",
+          "type": "intro",
+          "orderIndex": 2,
+          "title": "Meet the Poem",
+          "bodyMarkdown": "Welcome. Over the next eight days you'll learn Kipling's \"If—\" by heart. Four lines a day. Roughly ten minutes a session. By Day 8 the whole poem will be yours.\n\nIt begins with poise under pressure.\n\nThe whole poem is one extended sentence stretched over thirty-two lines. Today we take just the first four. Notice what the speaker assumes about the world: that men will doubt you, blame you, lose their heads. The poem begins not in calm but in trouble.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page2",
+          "type": "context",
+          "orderIndex": 3,
+          "title": "When the Room Turns on You",
+          "bodyMarkdown": "The first four lines describe a specific predicament. You are at the centre of something going wrong. Others are panicking. Worse, they have decided the panic is your fault. Worse still, they have begun to doubt your judgement out loud.\n\nKipling does not flinch from how lonely this is. The room is against you. The poem's answer is not righteousness or counter-attack. It is composure, paired with a peculiar generosity in line 4: even as you trust yourself, you allow that the doubters might have their reasons. That qualification is what saves the lines from sounding smug.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 4,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 5,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page4",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "The Doubter and the Doubted",
+          "bodyMarkdown": "The first word of the poem is \"If\". So is the first word of line 3. The whole poem will be a piling up of conditions before any reward arrives. We will not learn what you get for all this until the second-to-last line. That is a long suspended sentence to hold.\n\nLook at the symmetry of line 3 and line 4. \"Trust yourself when all men doubt you\" is the easy heroism. \"But make allowance for their doubting too\" is the harder discipline. Self-belief without humility curdles fast. Kipling closes the loop in a single half-line.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 7,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page6",
+          "type": "poet_background",
+          "orderIndex": 9,
+          "title": "A Boy from Bombay",
+          "bodyMarkdown": "Rudyard Kipling was born in Bombay in 1865. His parents, both English, had moved to India for work. He spent his early childhood there, surrounded by Indian languages and stories, before being sent at age five to a foster home in Southsea, England. The years there were miserable. He later called the place \"the House of Desolation\".\n\nHe returned to India as a young journalist in his teens and made his name there. By the time he wrote \"If—\", he was the most widely read writer in the English-speaking world. The British public adored him. Critics, then as now, were more divided.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 10,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 11,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page8",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Make Allowance",
+          "bodyMarkdown": "The phrase \"make allowance\" is doing more work than it looks. It is not just tolerance. To make allowance for someone is to grant them the conditions of their misjudgement, to admit that from where they stand, the doubt is reasonable.\n\nThat generosity changes the speaker's position. He is not above the doubters; he is among them, having simply decided not to let their doubt unsteady him. The poem will return to this stance of poised humility throughout.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day1_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "if_day_2",
+      "sessionNumber": 2,
+      "title": "Patience Without Bitterness",
+      "subtitle": "Day 2 of 8",
+      "focusSummary": "The first stanza closes with a harder demand: not just to stay calm, but to refuse the easy revenges of lying, hating, and looking pleased about it.",
+      "orderIndex": 1,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from yesterday.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1",
+            "chunk_2_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day2_page2",
+          "type": "context",
+          "orderIndex": 5,
+          "title": "Three Refusals and a Warning",
+          "bodyMarkdown": "The structure of these four lines is a list of refusals. Refuse to be tired by waiting. Refuse to lie back when lied about. Refuse to hate when hated. Then a sting in the tail: don't look too good, and don't talk too wise.\n\nThe last line is the one that keeps the stanza honest. Without it, the speaker would be reciting a Sunday-school lesson. With it, he reminds us that the moment you start to feel saintly about your patience, you have lost the thing entirely.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page4",
+          "type": "commentary",
+          "orderIndex": 8,
+          "title": "Don't, Don't, Don't",
+          "bodyMarkdown": "Kipling repeats \"don't\" three times across lines 6 and 7. Each one is paired with a passive participle: \"being lied about\", \"being hated\". The grammar is doing the moral work. You are passive in the wrong; you must be active in not returning it.\n\nThen comes \"And yet\". Two small words that turn the lines. Everything before \"yet\" is what to refuse. The phrase after \"yet\" warns you against being seen to refuse it. Virtue that advertises itself stops being virtue. This is the door into the stanzas that follow.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 9,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 10,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page6",
+          "type": "poem_background",
+          "orderIndex": 11,
+          "title": "One Sentence per Stanza",
+          "bodyMarkdown": "Each of the four stanzas in \"If—\" is a single sentence. Eight lines, no full stop until the colon at the end. The reader is held in suspension while conditions accumulate. Speak it aloud and you can feel the pressure building in the lungs.\n\nThe rhyme scheme of stanza one is unusual. The first four lines all close on \"you\" or \"too\", a wall of second-person address. Then the rhyme opens up. The speaker has been pinning the reader in place with that \"you\" and only now lets the air in.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page8",
+          "type": "commentary",
+          "orderIndex": 14,
+          "title": "The Look That Gives You Away",
+          "bodyMarkdown": "\"Don't look too good, nor talk too wise.\" This is the cleverest line in the stanza, and the one most often skipped over. The whole poem is about a man holding himself together. But the moment he is seen to be holding himself together, something is lost. Self-possession that performs itself becomes a kind of vanity.\n\nKipling, who would later be accused of every kind of moralising, plants the warning here, at the threshold. The reader is being told, before any reward is on the table, not to wear any of this on his face.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day2_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 16,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "if_day_3",
+      "sessionNumber": 3,
+      "title": "Dreams, Thoughts, and the Two Impostors",
+      "subtitle": "Day 3 of 8",
+      "focusSummary": "The poem opens its second stanza by domesticating dreams and thoughts, then puts Triumph and Disaster in their place.",
+      "orderIndex": 2,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day3_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day3_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day3_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day3_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day3_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1",
+            "chunk_3_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day3_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Servants, Not Masters",
+          "bodyMarkdown": "Notice what Kipling does to dreams in line 9. He does not say don't dream. He says don't let dreaming become the thing that runs you. The same with thinking in line 10. Both are tools, useful in their place, dangerous when they take the wheel.\n\nThe pair of dashes in lines 9 and 10 is doing pointed work. The break sets up a small \"yes, but\" rhythm. Yes, dream. But. Yes, think. But. The reader is allowed the gift before it is qualified.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "Two Impostors",
+          "bodyMarkdown": "\"Impostors\" is the word doing the heavy lifting. To call Triumph and Disaster impostors is to say neither one is what it appears. Triumph is not the proof you are good. Disaster is not the proof you are finished. Both will overstate themselves, and both should be greeted with the same level look.\n\nThe thought is older than Kipling. It is Stoic. It is in the Book of Job. It is in countless soldier's letters. The reason it survives in this form is that one word. \"Impostors\" does the work of three sentences in one breath.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page6",
+          "type": "poet_background",
+          "orderIndex": 13,
+          "title": "A Man Who Knew Disaster",
+          "bodyMarkdown": "Kipling was not writing this from theory. In 1899 his eldest daughter Josephine died of pneumonia in New York. She was six. Kipling, who had been gravely ill himself in the same hotel, recovered to find she had not. He wrote almost nothing public about her loss for the rest of his life.\n\nTriumph he had in plenty. The Nobel Prize for Literature came in 1907; he was the first English-language writer to receive it. By the time \"If—\" was published in 1910, he was famous enough that the poem became a phenomenon almost immediately, and he lived to watch it ossify into a national possession.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Master and Aim",
+          "bodyMarkdown": "Lines 9 and 10 are a near-mirror. \"Master\" and \"aim\" land in the same metrical position. Both turn an inner activity into a danger when it grows too large. Dreams that master you become fantasy. Thoughts that become an aim become an end in themselves, where reflection replaces action.\n\nThese are warnings against the intellectual life as much as against fecklessness. Kipling, who could think and dream as productively as anyone alive, is telling the reader what those gifts are for. They serve the day. They are not the day.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day3_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day3_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "if_day_4",
+      "sessionNumber": 4,
+      "title": "Truth Twisted, Work Broken",
+      "subtitle": "Day 4 of 8",
+      "focusSummary": "The second stanza closes with two scenes of public ruin and a quiet act of repair.",
+      "orderIndex": 3,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day4_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day4_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day4_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day4_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day4_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1",
+            "chunk_4_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day4_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Knaves and Fools",
+          "bodyMarkdown": "A knave, in the older sense, is a dishonest schemer. A fool, here, is the credulous person who falls for the schemer's trick. Kipling sets them up as a pair. The knave twists what you said; the fools fall into the trap.\n\nYou are caught in the middle. You spoke the true thing. The true thing has been bent into a snare. The injury is double. You have been misrepresented, and someone else has been harmed by the misrepresentation. The line asks only that you bear it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "Stoop and Build",
+          "bodyMarkdown": "Listen to the rhythm of line 16. \"And stoop and build 'em up with worn-out tools.\" The verb \"stoop\" comes first because it is the harder act. Bending to pick up the broken pieces is what costs you. The building comes after, and it gets done with what is left.\n\n\"Worn-out tools\" is an honest detail. The poem does not pretend you will get fresh equipment for round two. You start again with what you already have, which is less than you began with, and you do it anyway. The contracted \"'em\" keeps the line in working clothes; nothing in it is heroic.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page6",
+          "type": "poet_background",
+          "orderIndex": 13,
+          "title": "Kipling Under Fire",
+          "bodyMarkdown": "Kipling knew what it was to have his words turned into traps. By 1910 he was a public face of British imperial sentiment, and his political positions were drawing increasingly sharp attacks. Some of those attacks were earned. Some misrepresented him. He took the hits without much public reply.\n\nHe was also, by this point, accustomed to seeing the larger structures he had supported strain and crack. The Boer War, recently ended, had not gone the way he had hoped. He kept writing. The lines about stooping and building stand close to his own habit.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Watching It Break",
+          "bodyMarkdown": "Look at the placement of \"broken\" at the end of line 15. It hangs there before the line turns. The reader sees the wreckage for a long half-second before the poem starts repairing it.\n\nThat hanging word is the whole emotional weight of the stanza. Without it, line 16 would be too quick a recovery. With it, you feel the moment of standing in front of the ruin before the work resumes. The colon at the end of line 16 closes the second stanza. Two down, two to go.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day4_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day4_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "if_day_5",
+      "sessionNumber": 5,
+      "title": "One Throw, Silent Loss",
+      "subtitle": "Day 5 of 8",
+      "focusSummary": "The poem's most reckless image: gathering everything, betting it on a single coin toss, losing, and saying nothing.",
+      "orderIndex": 4,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day5_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day5_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day5_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day5_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day5_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day5_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day5_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_1",
+            "chunk_5_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day5_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Pitch-and-Toss",
+          "bodyMarkdown": "Pitch-and-toss is a children's gambling game played with coins. Players stand at a line and pitch their coins toward a target. Whoever lands closest wins; the rest is decided by tossing for heads or tails. It is the simplest possible bet, with no skill once the coin is in the air.\n\nKipling chooses the cheapest game on purpose. The man in the lines is not at a casino with mahogany tables. He is in a back yard, putting his life's winnings on a coin. The grandeur of what he risks is offset by the meanness of the throw.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "\"And Lose\"",
+          "bodyMarkdown": "Read line 19 slowly. \"And lose, and start again at your beginnings.\" Three small words at the front. The losing gets a single beat, no fanfare; then the line walks straight on into starting over.\n\nThe structure tells you what the poem thinks of self-pity. It is given no time. The verb \"lose\" gets nothing more than a comma, and then \"start again\" is already happening. By the time you have absorbed the loss, the rebuild is underway.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page6",
+          "type": "poem_background",
+          "orderIndex": 13,
+          "title": "Stanza Three Opens",
+          "bodyMarkdown": "We are in the third of four stanzas. Each stanza has been one extended sentence, and the rhythm of \"If you can\" continues to drive the poem forward. The third stanza is the most physical. The first was social, the second was mental, and now we are in the body and the bank account.\n\nThese four lines are the first half of the third stanza's eight-line span. Tomorrow's chunk picks up from the semicolon at the end of line 20, where the speaker, having lost everything in silence, is asked to keep going past the point where there is anything left in him.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Never Breathe a Word",
+          "bodyMarkdown": "The line that closes the chunk is the one to sit with. \"Never breathe a word about your loss.\" It is not \"never speak\". It is \"never breathe\". The implication is that even the air you let out should not carry the news.\n\nThis is the high-water mark of the poem's stoicism. Some readers find it unbearable; others read it as the only honest demand. Many people have lost everything and made a long career of telling everyone about it. The poem asks for the opposite, and asks for it without offering you a reward.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day5_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day5_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "if_day_6",
+      "sessionNumber": 6,
+      "title": "The Will That Holds On",
+      "subtitle": "Day 6 of 8",
+      "focusSummary": "The third stanza closes with the poem's most exhausted and most defiant image: a body running on nothing but its own will.",
+      "orderIndex": 5,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day6_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day6_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day6_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day6_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day6_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day6_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day6_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_1",
+            "chunk_6_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day6_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Heart, Nerve, Sinew",
+          "bodyMarkdown": "Three nouns share line 21: heart, nerve, sinew. Together they cover the working parts of the body that fail under strain. The heart for courage and circulation. The nerve for the willingness to act. The sinew for the muscle that does the work.\n\nAll three are spoken of as servants in line 22. They serve \"your turn\", a phrase from card games and from soldiering, meaning the moment when it is on you to act. When your turn comes round, these are what you have. When they are gone, the question is whether anything remains.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "The Capital W",
+          "bodyMarkdown": "\"Will\" arrives at line 24 with a capital. In a poem otherwise restrained about its abstractions, this stands out. Triumph and Disaster were also capitalised, and they were called impostors. The Will is the only one the poem treats as real.\n\nNotice that Will is given speech. It says \"Hold on!\" to the body. The body has stopped having anything to say. The Will is the voice that goes on speaking when the speaker himself is silent. This is the closest the poem comes to mysticism, and it is still couched in the plainest language.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page6",
+          "type": "context",
+          "orderIndex": 13,
+          "title": "Stoicism in Plain English",
+          "bodyMarkdown": "The thinking behind these lines is older than the lines themselves. Marcus Aurelius wrote out the same instructions to himself in Greek in his tent on the Danube in the second century. The Stoics held that the only thing entirely yours is your response. The body fails, the world breaks, but the choice to keep going belongs to you.\n\nKipling never quotes the Stoics, but he had been schooled in the Latin classics at the United Services College in Devon and would have known the lineage. Part of the poem's power is that it strips that ancient idea of its philosophical robes and gives it to anyone who can read.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "The Exclamation",
+          "bodyMarkdown": "The exclamation mark at the end of line 24 is the first in the poem. Kipling has held off on raised voices for twenty-three lines. When it comes, it is in the mouth of the Will, not the speaker.\n\nThe effect is unsettling. The voice in the poem has been so steady that this single shout breaks through. It marks the place where stoicism reaches its limit and becomes something fiercer. The third stanza ends here, with that voice still echoing.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day6_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day6_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "if_day_7",
+      "sessionNumber": 7,
+      "title": "Crowds, Kings, Common Touch",
+      "subtitle": "Day 7 of 8",
+      "focusSummary": "The final stanza opens with a balancing act: keeping yourself in any company, from the marketplace to the throne room.",
+      "orderIndex": 6,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day7_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day7_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day7_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_5_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day7_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day7_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day7_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day7_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_1",
+            "chunk_7_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day7_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "Crowds and Kings",
+          "bodyMarkdown": "\"Crowds\" and \"Kings\" are the polar pair, with Kings capitalised to give them their full weight. The line is not really about literal kings. It is about the rooms where power lives. The challenge is to walk into one of those rooms and not become a different person, and to walk back into a market square and not become a different person there either.\n\nKipling moved in both worlds. He was friends with George V and with sergeants in barracks rooms. He thought the test was whether you used the same voice in both places.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day7_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day7_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day7_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "The Friend Who Hurts You",
+          "bodyMarkdown": "Line 27 names two threats: foes and loving friends. The foe is obvious. The loving friend is not. A friend can hurt you precisely because they love you, by needing your time, by drawing on your sympathy, by wanting more than you can give. The poem treats both as equal hazards to the steady self.\n\nLine 28 is one of the strangest in the poem. \"If all men count with you, but none too much.\" Everyone matters. No one matters most. This is the kind of qualified humanism that takes a lifetime to live up to.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day7_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day7_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day7_page6",
+          "type": "poet_background",
+          "orderIndex": 13,
+          "title": "A Man Who Refused Honours",
+          "bodyMarkdown": "By the time he wrote \"If—\", Kipling had already declined offers of the Poet Laureateship and a knighthood. He would later turn down the Order of Merit as well. He accepted the Nobel Prize in 1907, but he was wary of any institutional embrace. He thought the official recognitions would soften him.\n\nHe kept the company he wanted to keep. He moved between dukes and dock workers without much fuss either way. The line \"walk with Kings, nor lose the common touch\" was an idea he tried to live by, with the irritating fluency of a man who actually had access to both.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day7_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day7_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day7_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Count, But Not Too Much",
+          "bodyMarkdown": "\"All men count with you, but none too much\" sits at the centre of the poem's social ethic. Not indifference: every person matters. Not idolatry: nobody owns you. The line refuses two easy stances at once.\n\nYou can hear the rhythm doing the same balancing act. \"All men count with you\" is positive and warm. \"But none too much\" pulls back. The line is the metrical equivalent of a man stepping forward in greeting and then stopping a foot short of the embrace. Tomorrow the conditions stop and the reward arrives.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day7_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day7_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "if_day_8",
+      "sessionNumber": 8,
+      "title": "The Unforgiving Minute",
+      "subtitle": "Day 8 of 8",
+      "focusSummary": "The conditions end, and the long-suspended sentence finally lands.",
+      "orderIndex": 7,
+      "metadata": {
+        "estimatedMinutes": 10
+      },
+      "pages": [
+        {
+          "id": "day8_page01_recap_intro",
+          "type": "recap",
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin by returning briefly to the lines from the last two sessions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          },
+          "orderIndex": 0
+        },
+        {
+          "id": "day8_page02_recap_two_days_previous_part_1",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 1
+        },
+        {
+          "id": "day8_page02_recap_two_days_previous_part_2",
+          "type": "hidden_word_game",
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Restore the missing words from the earlier lines.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_6_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 2
+        },
+        {
+          "id": "day8_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          },
+          "orderIndex": 3
+        },
+        {
+          "id": "day8_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line, then say the full line aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_7_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          },
+          "orderIndex": 4
+        },
+        {
+          "id": "day8_page04_whole_poem",
+          "type": "poem_chunk",
+          "title": "The Whole Poem",
+          "bodyMarkdown": "If you can keep your head when all about you\n    Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n    But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n    Or being lied about, don't deal in lies,\nOr being hated, don't give way to hating,\n    And yet don't look too good, nor talk too wise:\n\nIf you can dream—and not make dreams your master;\n    If you can think—and not make thoughts your aim;\nIf you can meet with Triumph and Disaster\n    And treat those two impostors just the same;\nIf you can bear to hear the truth you've spoken\n    Twisted by knaves to make a trap for fools,\nOr watch the things you gave your life to, broken,\n    And stoop and build 'em up with worn-out tools:\n\nIf you can make one heap of all your winnings\n    And risk it on one turn of pitch-and-toss,\nAnd lose, and start again at your beginnings\n    And never breathe a word about your loss;\nIf you can force your heart and nerve and sinew\n    To serve your turn long after they are gone,\nAnd so hold on when there is nothing in you\n    Except the Will which says to them: 'Hold on!'\n\nIf you can talk with crowds and keep your virtue,\n    Or walk with Kings—nor lose the common touch,\nIf neither foes nor loving friends can hurt you,\n    If all men count with you, but none too much;\nIf you can fill the unforgiving minute\n    With sixty seconds' worth of distance run,\nYours is the Earth and everything that's in it,\n    And—which is more—you'll be a Man, my son!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": "readThrough",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          },
+          "orderIndex": 5
+        },
+        {
+          "id": "day8_page05_today_chunks",
+          "type": "poem_chunk",
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read today's lines gently once or twice.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_1",
+            "chunk_8_part_2"
+          ],
+          "roundType": "readThrough",
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "today_chunks"
+          },
+          "orderIndex": 6
+        },
+        {
+          "id": "day8_page2",
+          "type": "context",
+          "orderIndex": 7,
+          "title": "The Unforgiving Minute",
+          "bodyMarkdown": "A minute has sixty seconds. Kipling tells you to fill it with sixty seconds' worth of distance run. The instruction is mathematical, almost punitive. There are no spare seconds. A minute that is not filled is a minute that is gone, and minutes do not come back.\n\n\"Unforgiving\" is the word. The minute will not pardon you for slack use of it. The image comes from running, possibly from the athletics field at school, but it travels easily into any kind of work. The clock is a hard master.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day8_page3_part_1",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First-Word 1/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_1"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page3_part_2",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First-Word 2/2",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then recall the full line aloud or in writing.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_2"
+          ],
+          "roundType": "firstWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page4",
+          "type": "commentary",
+          "orderIndex": 10,
+          "title": "Yours Is the Earth",
+          "bodyMarkdown": "After all the conditions, the reward in line 31 is enormous. \"Yours is the Earth and everything that's in it.\" A reader expecting something modest gets the planet. The phrasing has the cadence of the King James Bible, where similar absolute promises live.\n\nBut the poem does not stop there. Line 32 quietly raises the stakes a second time. \"And—which is more—you'll be a Man, my son!\" The Earth is the lesser prize. Becoming the kind of person who could meet all those conditions is the greater one. The closing word, \"son\", finally names the listener who has been spoken to all along.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day8_page5_part_1",
+          "type": "last_word_game",
+          "orderIndex": 11,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_1"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page5_part_2",
+          "type": "last_word_game",
+          "orderIndex": 12,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say or write the full line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_2"
+          ],
+          "roundType": "lastWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page6",
+          "type": "poet_background",
+          "orderIndex": 13,
+          "title": "A Father, a Son",
+          "bodyMarkdown": "Kipling had a son, John, born in 1897. The poem was published in 1910, when John was thirteen. It was natural that readers heard the closing line as addressed to him.\n\nIn 1915, John was killed at the Battle of Loos. He was eighteen. Kipling had used his connections to get him a commission despite poor eyesight that should have kept him out of the army. The boy died in his first action, and his body was not identified for many years. Kipling wrote little about it directly. Among the few public lines he gave to it was a couplet: \"If any question why we died, / Tell them, because our fathers lied.\" The poem you are learning was already in print and already famous when its closing line acquired a second meaning that its author would have given anything to undo.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day8_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_1"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 15,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall and complete the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_2"
+          ],
+          "roundType": "firstLetter",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page8",
+          "type": "commentary",
+          "orderIndex": 16,
+          "title": "Which Is More",
+          "bodyMarkdown": "The dashes around \"which is more\" do something delicate. The voice pauses. The promise of inheriting the Earth has just been made. Then the speaker, almost as an aside, raises one finger and says: also this.\n\nThe exclamation mark at the end is only the second in the poem. The first was the Will's \"Hold on!\" in line 24. Now the speaker himself raises his voice, in the only place he allows himself the warmth of direct address. \"My son\" is the moment the poem stops being public counsel and becomes a private one.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        },
+        {
+          "id": "day8_page9_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 17,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page9_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 18,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "Restore the missing words when they appear in shifting positions across the chunk.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_8_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day8_page10",
+          "type": "completion",
+          "orderIndex": 19,
+          "title": "The Poem Is Yours",
+          "bodyMarkdown": "You have the whole of \"If—\" by heart. Thirty-two lines of conditions and a four-line reward. One long sentence held in suspension across eight days, now collapsed into a single thing you can carry.\n\nThe poem will travel with you now. It will surface at unexpected moments, the way memorised poetry always does. A line will arrive when you are tired and need to hold on, or when something has been broken that you have to stoop and rebuild, or when someone has lied about you and you can feel the bad reply forming. You will not always live up to it. The poem does not assume you will.\n\nIt is yours.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null
+        }
+      ]
+    }
+  ],
+  "stanzas": [
+    {
+      "id": "stanza_1",
+      "orderIndex": 0,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2",
+      "orderIndex": 1,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3",
+      "orderIndex": 2,
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4",
+      "orderIndex": 3,
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "stanza_1_line_1",
+      "stanzaId": "stanza_1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "If you can keep your head when all about you",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_2",
+      "stanzaId": "stanza_1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "    Are losing theirs and blaming it on you,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_3",
+      "stanzaId": "stanza_1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "If you can trust yourself when all men doubt you,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_4",
+      "stanzaId": "stanza_1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "    But make allowance for their doubting too;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_5",
+      "stanzaId": "stanza_1",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 4,
+      "text": "If you can wait and not be tired by waiting,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_6",
+      "stanzaId": "stanza_1",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 5,
+      "text": "    Or being lied about, don't deal in lies,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_7",
+      "stanzaId": "stanza_1",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 6,
+      "text": "Or being hated, don't give way to hating,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_1_line_8",
+      "stanzaId": "stanza_1",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 7,
+      "text": "    And yet don't look too good, nor talk too wise:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_1",
+      "stanzaId": "stanza_2",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 0,
+      "text": "If you can dream—and not make dreams your master;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_2",
+      "stanzaId": "stanza_2",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 1,
+      "text": "    If you can think—and not make thoughts your aim;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_3",
+      "stanzaId": "stanza_2",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 2,
+      "text": "If you can meet with Triumph and Disaster",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_4",
+      "stanzaId": "stanza_2",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 3,
+      "text": "    And treat those two impostors just the same;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_5",
+      "stanzaId": "stanza_2",
+      "orderIndex": 12,
+      "stanzaOrderIndex": 4,
+      "text": "If you can bear to hear the truth you've spoken",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_6",
+      "stanzaId": "stanza_2",
+      "orderIndex": 13,
+      "stanzaOrderIndex": 5,
+      "text": "    Twisted by knaves to make a trap for fools,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_7",
+      "stanzaId": "stanza_2",
+      "orderIndex": 14,
+      "stanzaOrderIndex": 6,
+      "text": "Or watch the things you gave your life to, broken,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_2_line_8",
+      "stanzaId": "stanza_2",
+      "orderIndex": 15,
+      "stanzaOrderIndex": 7,
+      "text": "    And stoop and build 'em up with worn-out tools:",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_1",
+      "stanzaId": "stanza_3",
+      "orderIndex": 16,
+      "stanzaOrderIndex": 0,
+      "text": "If you can make one heap of all your winnings",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_2",
+      "stanzaId": "stanza_3",
+      "orderIndex": 17,
+      "stanzaOrderIndex": 1,
+      "text": "    And risk it on one turn of pitch-and-toss,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_3",
+      "stanzaId": "stanza_3",
+      "orderIndex": 18,
+      "stanzaOrderIndex": 2,
+      "text": "And lose, and start again at your beginnings",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_4",
+      "stanzaId": "stanza_3",
+      "orderIndex": 19,
+      "stanzaOrderIndex": 3,
+      "text": "    And never breathe a word about your loss;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_5",
+      "stanzaId": "stanza_3",
+      "orderIndex": 20,
+      "stanzaOrderIndex": 4,
+      "text": "If you can force your heart and nerve and sinew",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_6",
+      "stanzaId": "stanza_3",
+      "orderIndex": 21,
+      "stanzaOrderIndex": 5,
+      "text": "    To serve your turn long after they are gone,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_7",
+      "stanzaId": "stanza_3",
+      "orderIndex": 22,
+      "stanzaOrderIndex": 6,
+      "text": "And so hold on when there is nothing in you",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_3_line_8",
+      "stanzaId": "stanza_3",
+      "orderIndex": 23,
+      "stanzaOrderIndex": 7,
+      "text": "    Except the Will which says to them: 'Hold on!'",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_1",
+      "stanzaId": "stanza_4",
+      "orderIndex": 24,
+      "stanzaOrderIndex": 0,
+      "text": "If you can talk with crowds and keep your virtue,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_2",
+      "stanzaId": "stanza_4",
+      "orderIndex": 25,
+      "stanzaOrderIndex": 1,
+      "text": "    Or walk with Kings—nor lose the common touch,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_3",
+      "stanzaId": "stanza_4",
+      "orderIndex": 26,
+      "stanzaOrderIndex": 2,
+      "text": "If neither foes nor loving friends can hurt you,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_4",
+      "stanzaId": "stanza_4",
+      "orderIndex": 27,
+      "stanzaOrderIndex": 3,
+      "text": "    If all men count with you, but none too much;",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_5",
+      "stanzaId": "stanza_4",
+      "orderIndex": 28,
+      "stanzaOrderIndex": 4,
+      "text": "If you can fill the unforgiving minute",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_6",
+      "stanzaId": "stanza_4",
+      "orderIndex": 29,
+      "stanzaOrderIndex": 5,
+      "text": "    With sixty seconds' worth of distance run,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_7",
+      "stanzaId": "stanza_4",
+      "orderIndex": 30,
+      "stanzaOrderIndex": 6,
+      "text": "Yours is the Earth and everything that's in it,",
+      "metadata": {}
+    },
+    {
+      "id": "stanza_4_line_8",
+      "stanzaId": "stanza_4",
+      "orderIndex": 31,
+      "stanzaOrderIndex": 7,
+      "text": "    And—which is more—you'll be a Man, my son!",
+      "metadata": {}
+    }
+  ]
+}
