@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "journey": {
     "id": "attention_and_wonder",
-    "version": 2,
+    "version": 3,
     "status": "exported",
     "title": "Attention and wonder",
     "subtitle": "Three ways of seeing the living world",
@@ -13,7 +13,11 @@
     ],
     "closing": [
       "You have carried three different kinds of wonder through these poems. Their images can stay with you: a field of flowers, a small persistent bird, a creature burning in the dark."
-    ]
+    ],
+    "coverImage": {
+      "alt": "Daffodils by a lake",
+      "path": "cover.jpg"
+    }
   },
   "poems": [
     {
