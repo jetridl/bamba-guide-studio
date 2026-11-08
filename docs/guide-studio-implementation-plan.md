@@ -9,7 +9,7 @@ Implement Bamba Guide Studio as a vertical slice first, then broaden the editor,
 - `schemas/guided-plan.schema.json` remains the authoritative guide import/export contract.
 - `schemas/guide-review.schema.json` remains the authoritative review import contract.
 - Top-level poem sections are not added to guided-plan JSON.
-- Internal `poem_sections` records are reconstructed from `chunks[].sectionId`.
+- Internal `poem_sections` records come from v2 `stanzas` (or, for legacy v1 imports, from `chunks[].sectionId`). The v2 `stanzas`, `lines` and chunk `lineIds` are kept as imported and exported unchanged.
 - Reimporting a guide with an existing `guide.id` creates a new editable version/import snapshot instead of overwriting prior editorial work.
 - Review suggestions mutate content only for whitelisted editable page fields: `title`, `bodyMarkdown`, and `prompt`.
 - Exporting an approved guide marks the persisted guide as `exported`; exported guides can be downloaded again.

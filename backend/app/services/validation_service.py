@@ -6,7 +6,7 @@ from typing import Any
 from app.models import Guide, GuidePage, GuideSession
 from app.services.export_service import build_guided_plan
 from app.services.json_schema import validate_json_schema
-from app.services.page_types import GAME_PAGE_ROUND_TYPES
+from app.services.page_types import APP_UNSUPPORTED_PAGE_TYPES, CHUNK_SCOPED_PAGE_TYPES, GAME_PAGE_ROUND_TYPES
 
 TEXT_PAGE_TYPES = {
     "intro",
@@ -18,7 +18,6 @@ TEXT_PAGE_TYPES = {
     "completion",
 }
 GAME_PAGE_TYPES = set(GAME_PAGE_ROUND_TYPES)
-CHUNK_SCOPED_PAGE_TYPES = GAME_PAGE_TYPES | {"poem_chunk"}
 KNOWN_PAGE_TYPES = TEXT_PAGE_TYPES | GAME_PAGE_TYPES | {"poem_chunk", "reflection", "recap_previous", "whole_poem"}
 
 
@@ -141,6 +140,17 @@ def _validate_page(page: GuidePage, chunk_ids: set[str], issues: list[dict[str, 
     session_chunk_ids = set(page.session.chunk_ids_json or [])
     if page.page_type not in KNOWN_PAGE_TYPES:
         issues.append(_issue("blocking", "unknown_page_type", "Page type is unknown.", "page", page.external_id, "type"))
+    if page.page_type in APP_UNSUPPORTED_PAGE_TYPES:
+        issues.append(
+            _issue(
+                "blocking",
+                "page_type_not_supported_by_app",
+                f"The Bamba app cannot show {page.page_type} pages yet. Change the page type or remove the page before export.",
+                "page",
+                page.external_id,
+                "type",
+            )
+        )
     if page.page_type in TEXT_PAGE_TYPES and not page.body_markdown:
         issues.append(_issue("blocking", "missing_body", "Text page is missing bodyMarkdown.", "page", page.external_id, "bodyMarkdown"))
     if page.page_type == "recap_previous" and not page.body_markdown and not page.chunk_ids_json:

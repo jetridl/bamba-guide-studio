@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "who_has_seen_the_wind--guide",
+    "poemId": "who_has_seen_the_wind",
+    "title": "Who Has Seen the Wind? — a guided memorization plan",
+    "version": 1,
+    "status": "exported",
+    "description": "A gentle two-day guided plan to read, enjoy, and memorize Christina Rossetti’s “Who Has Seen the Wind?”, one stanza at a time, with a friendly return to yesterday’s lines.",
+    "metadata": {
+      "voice": "warm, poetry-loving friend with scholar’s depth",
+      "totalSessions": 2,
+      "chunkingStrategy": "one stanza per session, split into chunks of at most two lines"
+    }
+  },
+  "poem": {
+    "id": "who_has_seen_the_wind",
+    "title": "Who Has Seen the Wind?",
+    "author": "Christina Rossetti",
+    "text": "Who has seen the wind?\nNeither I nor you:\nBut when the leaves hang trembling\nThe wind is passing thro’.\n\nWho has seen the wind?\nNeither you nor I:\nBut when the trees bow down their heads\nThe wind is passing by.",
+    "year": 1872,
+    "metadata": {
+      "form": "two quatrains, ABCB rhyme in each stanza",
+      "source": "https://www.gutenberg.org/cache/epub/76703/pg76703-images.html",
+      "textEdition": "Sing-Song: A Nursery Rhyme Book, Macmillan, 1893; retains the printed contraction thro’.",
+      "publicDomain": true,
+      "firstPublished": "Sing-Song: A Nursery Rhyme Book (1872)",
+      "biographicalSource": "https://poets.org/poet/christina-rossetti"
+    }
+  },
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Who has seen the wind?",
+      "metadata": {},
+      "stanzaId": "stanza-1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "line-02",
+      "text": "Neither I nor you:",
+      "metadata": {},
+      "stanzaId": "stanza-1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "line-03",
+      "text": "But when the leaves hang trembling",
+      "metadata": {},
+      "stanzaId": "stanza-1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2
+    },
+    {
+      "id": "line-04",
+      "text": "The wind is passing thro’.",
+      "metadata": {},
+      "stanzaId": "stanza-1",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3
+    },
+    {
+      "id": "line-05",
+      "text": "Who has seen the wind?",
+      "metadata": {},
+      "stanzaId": "stanza-2",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "line-06",
+      "text": "Neither you nor I:",
+      "metadata": {},
+      "stanzaId": "stanza-2",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "line-07",
+      "text": "But when the trees bow down their heads",
+      "metadata": {},
+      "stanzaId": "stanza-2",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 2
+    },
+    {
+      "id": "line-08",
+      "text": "The wind is passing by.",
+      "metadata": {},
+      "stanzaId": "stanza-2",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 3
+    }
+  ],
+  "chunks": [
+    {
+      "id": "chunk-1_part_1",
+      "label": "Stanza 1, part 1",
+      "lineIds": [
+        "line-01",
+        "line-02"
+      ],
+      "metadata": {
+        "splitPart": 1,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-1"
+      },
+      "orderIndex": 0
+    },
+    {
+      "id": "chunk-1_part_2",
+      "label": "Stanza 1, part 2",
+      "lineIds": [
+        "line-03",
+        "line-04"
+      ],
+      "metadata": {
+        "splitPart": 2,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-1"
+      },
+      "orderIndex": 1
+    },
+    {
+      "id": "chunk-2_part_1",
+      "label": "Stanza 2, part 1",
+      "lineIds": [
+        "line-05",
+        "line-06"
+      ],
+      "metadata": {
+        "splitPart": 1,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-2"
+      },
+      "orderIndex": 2
+    },
+    {
+      "id": "chunk-2_part_2",
+      "label": "Stanza 2, part 2",
+      "lineIds": [
+        "line-07",
+        "line-08"
+      ],
+      "metadata": {
+        "splitPart": 2,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-2"
+      },
+      "orderIndex": 3
+    }
+  ],
+  "stanzas": [
+    {
+      "id": "stanza-1",
+      "title": null,
+      "metadata": {},
+      "orderIndex": 0
+    },
+    {
+      "id": "stanza-2",
+      "title": null,
+      "metadata": {},
+      "orderIndex": 1
+    }
+  ],
+  "sessions": [
+    {
+      "id": "christina-georgina-rossetti--who-has-seen-the-wind_day_1",
+      "sessionNumber": 1,
+      "title": "A Little Mystery in the Leaves",
+      "subtitle": "Day 1 of 2",
+      "focusSummary": "Meet the whole poem, then learn the first stanza by following its question, answer, and trembling leaves.",
+      "orderIndex": 0,
+      "chunkIds": [
+        "chunk-1_part_1",
+        "chunk-1_part_2"
+      ],
+      "metadata": {
+        "variables": {
+          "allChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2",
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "sessionNumber": 1,
+          "todayChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2"
+          ],
+          "sessionOrderIndex": 0,
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": []
+        },
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "estimatedMinutes": 10,
+        "droppedTemplatePages": [
+          "first_word_game"
+        ],
+        "renumberPagesAfterOmissions": true
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "orderIndex": 0,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Who has seen the wind?\nNeither I nor you:\nBut when the leaves hang trembling\nThe wind is passing thro’.\n\nWho has seen the wind?\nNeither you nor I:\nBut when the trees bow down their heads\nThe wind is passing by.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "Today's Lines",
+          "bodyMarkdown": "Today we’ll keep company with the first four lines. Read them slowly once or twice. The little word “thro’” means “through” and sounds exactly the same.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "today_chunks"
+          }
+        },
+        {
+          "id": "day1_page06_commentary",
+          "type": "commentary",
+          "orderIndex": 2,
+          "title": "Come and Look with Me",
+          "bodyMarkdown": "I love how Rossetti makes room for us straight away: “Neither I nor you.” We’re standing beside the speaker, looking at the same leaves. Nobody can see the wind itself, but we can see what it touches.\n\nNotice the turn at “But.” The question opens a mystery; the trembling leaves offer a way to understand it. Try holding that small scene in your mind as you learn the words. A branch outside a window will do beautifully.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page08_poet_background",
+          "type": "poet_background",
+          "orderIndex": 3,
+          "title": "Meet Christina Rossetti",
+          "bodyMarkdown": "Christina Rossetti (1830–1894) was born in London into a family of writers and artists. Her brother Dante Gabriel was a painter and poet, and Christina began writing poetry while she was young.\n\nShe wrote the rich, strange *Goblin Market*, devotional poems, and verses for children. Here she gives a very ordinary moment her full attention. It’s a lovely invitation to slow down and look with her.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page09_last_word_part_1",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page09_last_word_part_2",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page10_analysis",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Let the Rhymes Bring You Home",
+          "bodyMarkdown": "Say “you” and “thro’” aloud: they rhyme, giving the second and fourth lines a soft landing. The question sounds conversational, while “But when the leaves hang trembling” seems to linger on its branch.\n\nYou can let the rhythm help without marching through it. For a memory path, try **question → you → leaves → through**. Then put the little connecting words back. The scene and the sound can carry the lines together.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page11_first_letter_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 7,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page11_first_letter_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 8,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page12_poem_background",
+          "type": "poem_background",
+          "orderIndex": 9,
+          "title": "A Small Poem with Room to Wonder",
+          "bodyMarkdown": "This poem belongs to *Sing-Song: A Nursery Rhyme Book*, first published in 1872 with illustrations by Arthur Hughes. Its short verses make room for animals, weather, play, and questions.\n\nWe’re keeping the spelling “thro’” from the 1893 edition used here. It’s simply a shortened way of writing “through.” Read it naturally, as if you were talking with someone beside you.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page13_hidden_word_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page13_hidden_word_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page14_reflection",
+          "type": "reflection",
+          "orderIndex": 12,
+          "title": "A Moment to Reflect",
+          "bodyMarkdown": null,
+          "prompt": "When did you last notice the wind through something it moved: leaves, a curtain, someone’s hair? Which image would you like to keep beside these lines?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "optional": true
+          }
+        },
+        {
+          "id": "day1_page15_completion",
+          "type": "completion",
+          "orderIndex": 13,
+          "title": "A Stanza to Take Outside",
+          "bodyMarkdown": "You’ve spent a little time with four lovely lines. Before you go, try saying them once while picturing those leaves. If a word wanders off, have a look and welcome it back.\n\nTomorrow we’ll return to this stanza, then let our gaze travel from the leaves to the whole tree. Next time a branch stirs, you may find the opening question waiting for you.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "christina-georgina-rossetti--who-has-seen-the-wind_day_2",
+      "sessionNumber": 2,
+      "title": "When the Trees Bow",
+      "subtitle": "Day 2 of 2",
+      "focusSummary": "Recall the first stanza, learn the second, and connect the two through their small, memorable changes.",
+      "orderIndex": 1,
+      "chunkIds": [
+        "chunk-1_part_1",
+        "chunk-1_part_2",
+        "chunk-2_part_1",
+        "chunk-2_part_2"
+      ],
+      "metadata": {
+        "variables": {
+          "allChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2",
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "sessionNumber": 2,
+          "todayChunkIds": [
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "sessionOrderIndex": 1,
+          "oneDayPreviousChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2"
+          ],
+          "twoDaysPreviousChunkIds": []
+        },
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "estimatedMinutes": 11,
+        "droppedTemplatePages": [
+          "first_word_game"
+        ],
+        "renumberPagesAfterOmissions": true
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Welcome back. Before we read again, let’s visit yesterday’s lines. Try what you remember, then take a peek if you need one. Every return helps the words feel more familiar.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 1,
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Find the first and last word of each line from yesterday, then try saying the whole line. A quick look is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2,
+            "recapOffsetDays": 1
+          }
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 2,
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Find the first and last word of each line from yesterday, then try saying the whole line. A quick look is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2,
+            "recapOffsetDays": 1
+          }
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "orderIndex": 3,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Who has seen the wind?\nNeither I nor you:\nBut when the leaves hang trembling\nThe wind is passing thro’.\n\nWho has seen the wind?\nNeither you nor I:\nBut when the trees bow down their heads\nThe wind is passing by.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read the second stanza gently. Picture the whole tree bending this time. Let “Neither you nor I” and “passing by” settle together in your ear.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "today_chunks"
+          }
+        },
+        {
+          "id": "day2_page06_commentary",
+          "type": "commentary",
+          "orderIndex": 5,
+          "title": "From a Leaf to a Whole Tree",
+          "bodyMarkdown": "Yesterday we watched the leaves tremble. Now the trees “bow down their heads.” That human gesture is called *personification*: Rossetti lets us recognize a familiar movement in a tree. You might hear a courteous bow, or feel the weight of a stronger breeze.\n\nI like the way our view widens without leaving the little scene. First a leaf, then a whole tree: the wind remains invisible, and its presence becomes easier to feel.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page08_poet_background",
+          "type": "poet_background",
+          "orderIndex": 6,
+          "title": "An Ear for Little Changes",
+          "bodyMarkdown": "Rossetti’s care with small words is easy to hear here. Read “Neither I nor you,” then “Neither you nor I.” The people haven’t changed; their order has. That tiny exchange makes a new rhyme possible.\n\nTry the two phrases aloud as if you were offering someone a turn in a conversation. Her craft feels wonderfully companionable: the poem keeps bringing the reader back into the circle.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page09_last_word_part_1",
+          "type": "last_word_game",
+          "orderIndex": 7,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page09_last_word_part_2",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page10_analysis",
+          "type": "commentary",
+          "orderIndex": 9,
+          "title": "Two Pairs to Keep Beside You",
+          "bodyMarkdown": "Here’s a friendly way through the nearly matching stanzas: **you / thro’** belongs with the leaves; **I / by** belongs with the trees. The rhyme helps you choose the right order of the pronouns.\n\nBoth stanzas begin “Who has seen the wind?” and turn at “But when.” Keep those shared stepping stones, then let each picture supply its own words. Try whispering the rhyme pairs before your next round.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page11_first_letter_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 10,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page11_first_letter_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 11,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page12_poem_background",
+          "type": "poem_background",
+          "orderIndex": 12,
+          "title": "The Question We Get to Keep",
+          "bodyMarkdown": "The poem answers its question by asking us to look carefully. The speaker and reader cannot see the wind, but they can notice its passing. That leaves room for wonder as well as understanding.\n\nYou may find other meanings gathering around that thought. Let them come in their own time. For now, these two small scenes are plenty: trembling leaves, bowing trees, and us there to notice.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page13_hidden_word_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page13_hidden_word_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page14_reflection",
+          "type": "reflection",
+          "orderIndex": 15,
+          "title": "A Moment to Reflect",
+          "bodyMarkdown": null,
+          "prompt": "How does the feeling change for you when the leaves become trees that “bow down their heads”? What sort of voice would you use for the repeated question?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "optional": true
+          }
+        },
+        {
+          "id": "day2_page15_completion",
+          "type": "completion",
+          "orderIndex": 16,
+          "title": "Eight Lines for a Breezy Day",
+          "bodyMarkdown": "You’ve visited all eight lines. When you feel ready, try the whole poem aloud with the words covered: question, leaves; question, trees. If the pronouns swap places, let “you / thro’” and “I / by” guide you home.\n\nCome back tomorrow for a quiet read and another try from memory, then again a few days later. I hope these lines keep you company outdoors. There’s something lovely about having a poem ready when the world gives you its opening image.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        }
+      ]
+    }
+  ]
+}

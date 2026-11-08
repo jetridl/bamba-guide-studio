@@ -1,0 +1,66 @@
+FIRST STEPS IN POETRY — SOURCE AND VALIDATION NOTES
+Checked: 8 November 2026
+
+AUTHORING STATUS AND LOCATION
+This is a new Journey: first_steps_in_poetry, version 1, status draft, curator Bamba.
+The draft is stored under guides/journeys/ rather than exports/, which is reserved for approved content.
+The Journey references the existing poem IDs; it does not contain new poem transcriptions or duplicate guides.
+No approved guide, poem text, external ID or app content pin was changed.
+
+ORDER AND ELIGIBILITY
+1. Who Has Seen the Wind? — Christina Rossetti
+   poemId: who_has_seen_the_wind
+   Canonical guide: exports/curated_poems/christina-rossetti--who-has-seen-the-wind/guided_plan.json
+   Guide status: exported. Eight nonblank lines, two four-line stanzas.
+   File SHA-256: 1005916fb1c196bc8940982730c8912140cdc37ddcf4fb0ed67ddc2b23c4fd40
+
+2. The Eagle — Alfred, Lord Tennyson
+   poemId: the_eagle
+   Canonical guide: exports/curated_poems/alfred-lord-tennyson--the-eagle/guided_plan.json
+   Guide status: exported. Six nonblank lines, two three-line stanzas.
+   File SHA-256: ebb5b41ee0febc36d5f45ff07bafe7f317ed6c68275d00e94cc3a4759d2aa16b
+
+3. “Hope” is the thing with feathers — Emily Dickinson
+   poemId: hope_is_the_thing_with_feathers
+   Canonical guide: exports/curated_poems/emily-dickinson--hope-is-the-thing-with-feathers/guided_plan.json
+   Guide status: approved. Twelve nonblank lines, three four-line stanzas.
+   File SHA-256: e2a1b9290827536604b6f618c0c21e67e7220d4657f79e38dcdf268e43218f0d
+
+The progression follows repeated phrasing and rhythm, then concentrated visual imagery, then an extended metaphor. Tennyson has fewer lines than Rossetti, but his denser language and changing viewpoint offer a natural next step. Dickinson's three stanzas provide the longest poem and the inward turn that closes the Journey.
+
+TEXT VERIFICATION
+Rossetti: Sing-Song: A Nursery Rhyme Book, Macmillan, 1893, via Project Gutenberg. The catalogue's wording, punctuation, contraction thro’, and two stanzas agree with this edition. Other anthologies expand the contraction or add commas; those variants were not substituted.
+https://www.gutenberg.org/cache/epub/76703/pg76703-images.html
+
+Tennyson: Representative Poetry Online, University of Toronto Libraries, text of The Eagle citing the 1851 and 1891 editions. Wording and punctuation agree with the catalogue, including Ring'd. The catalogue's two tercets are retained.
+https://rpo.library.utoronto.ca/content/eagle
+
+Dickinson: The public-domain 1891 printing in Poems, Second Series was checked through Project Gutenberg, and the manuscript-based text was checked in Dartmouth's White Heat project, under “Hope” is the thing with feathers. The catalogue uses the manuscript-based wording, capitalisation and punctuation pattern, with hyphen-minus characters for dashes, conventional twelve-line verse layout and three stanzas. Dartmouth also shows manuscript line wrapping; it is not a different poem.
+https://www.gutenberg.org/files/12242/12242-h/12242-h.htm
+https://journeys.dartmouth.edu/whiteheat/september-10-16-1862-poems-on-birds/
+
+Edition distinction: the 1891 printing regularises Dickinson's dashes and capitalisation. The approved Bamba transcription was preserved exactly; it has not been claimed to be a facsimile of the 1891 typography. The Journey's notes discuss the text actually bundled in Bamba.
+
+VALIDATION
+PASS — journey.json validates against schemas/journey.schema.json using jsonschema Draft202012Validator.
+PASS — exactly three poem IDs, unique and in the requested order.
+PASS — every ID resolves to a canonical approved or exported guide in exports/curated_poems/.
+PASS — expected line and stanza counts checked against those guides.
+PASS — editorial text is plain prose in paragraph arrays, without headings, bullets or Markdown.
+PASS — introduction 145 words; notes 94, 99 and 102 words; closing 81 words.
+PASS — coverImage.path is cover.png, a filename only.
+PASS — cover.png exists, its PNG signature and 1536 x 1024 dimensions were checked, and the final saved file opens.
+PASS — cover-brief.txt contains the artistic brief and exact final generation prompt.
+
+VISUAL REVIEW AGAINST visual-guide.md
+The generated image was inspected at full resolution and in the displayed reduced view.
+The quiet library is a single recognisable setting, with arched windows, dark timber presses, pale masonry and a generous floor plane. The original oblique composition has readable foreground, middle-ground and distance; the principal window and library identity remain clear when reduced.
+Brushwork varies between broad wall and floor passages and selected architectural edges. Materials, proportions and perspective are coherent. The restrained warm stone and timber contrast with cooler window light; illumination is plausible and avoids theatrical shafts, glow and cinematic grading.
+No typography, logos, watermarks, figures, poem montage or staged writing props are visible. Shelved volumes are integral to the requested library setting.
+This is an imaginative Cambridge library interior inspired by Trinity, not a documented view of the Wren Library.
+The final alt text describes the generated image itself.
+
+DELIVERY
+Required files: journey.json, cover.png, cover-brief.txt.
+Supplementary file: source-and-validation-notes.txt.
+The cover was generated with the built-in image_gen tool. No runtime generation feature was added.

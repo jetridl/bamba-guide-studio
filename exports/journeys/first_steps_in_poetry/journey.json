@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "journey": {
+    "id": "first_steps_in_poetry",
+    "version": 1,
+    "status": "exported",
+    "title": "First Steps in Poetry",
+    "subtitle": "Three short poems to learn by heart and carry with you",
+    "curator": "Bamba",
+    "introduction": [
+      "A poem learned by heart can become a small part of everyday life: a rhythm on a walk, an image at a window, a few words that return unexpectedly. This Journey begins with three short poems whose sounds and pictures offer natural places for memory to rest. Read them aloud, linger over a line you like, and let familiarity grow at its own pace.",
+      "Christina Rossetti invites us to notice the wind through the movement of leaves and trees. Alfred, Lord Tennyson lifts our eyes to an eagle above the sea, holding a whole scene in six lines. Emily Dickinson brings a bird into the inward life, giving hope feathers and a song. We move from a returning question, through a vivid moment, to an image that opens into feeling. Each poem offers a different pleasure to come back to, wherever its words find you."
+    ],
+    "closing": [
+      "The wind remains unseen, the eagle leaves its perch, and the little bird keeps singing. Rossetti gives us a way to notice movement; Tennyson, a moment of stillness before sudden flight; Dickinson, a voice that persists through rough weather. Together, they offer words for looking outward and listening inward. Perhaps one line will return on a windy afternoon, or a bird will bring a whole stanza with it. There is room to keep returning, hearing something a little differently each time."
+    ],
+    "coverImage": {
+      "alt": "Oil painting of a quiet library with tall arched windows, dark wooden bookcases and soft daylight falling across a pale stone floor.",
+      "path": "cover.png"
+    }
+  },
+  "poems": [
+    {
+      "poemId": "who_has_seen_the_wind",
+      "note": [
+        "Rossetti offers a gentle beginning: the same question returns, and each answer leads us to something we can see. The wind itself is hidden, but trembling leaves and bowing trees make its presence felt. While learning the two stanzas, listen to the small change from “I nor you” to “you nor I”. The rhymes help hold those turns in place: “you” with “thro’”, then “I” with “by”. Let the picture widen from leaves to whole trees. These eight lines can accompany an ordinary walk, drawing attention to a movement you might otherwise pass by."
+      ]
+    },
+    {
+      "poemId": "the_eagle",
+      "note": [
+        "From Rossetti’s moving trees, we look up to a bird almost motionless above the sea. Tennyson gives us fewer lines, but a denser picture to inhabit: the crag is a steep rock, and “azure” is the surrounding blue. Notice how the hard sounds in “clasps the crag” seem to tighten the eagle’s grip. As you learn, follow the view from his perch down to the distant water, then back to his watchfulness. The two sets of three rhyming line endings gather the scene together before the sudden fall. It is a small poem with an immense sense of space."
+      ]
+    },
+    {
+      "poemId": "hope_is_the_thing_with_feathers",
+      "note": [
+        "After Tennyson’s eagle, Dickinson offers a different kind of bird: one that gives a shape and a voice to hope. This is a metaphor, an image through which we can approach a feeling. Her three stanzas take us from the bird’s perch, through a storm, to the speaker’s own experience. Let those changes of scene guide you as you learn, and give the dashes space when reading aloud. “Abash” suggests making the bird falter or fall silent; the storm would have to be severe indeed. Notice how the vast landscapes lead to one tiny crumb, and the quiet generosity of the ending."
+      ]
+    }
+  ]
+}

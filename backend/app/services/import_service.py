@@ -13,18 +13,37 @@ from app.services.serialization import guide_to_dict
 
 
 def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
-    schema_errors = validate_json_schema(payload, "guided-plan.schema.json")
+    schema_name = "guided-plan.schema.json" if payload.get("schemaVersion") == 2 else "guided-plan-v1.schema.json"
+    schema_errors = validate_json_schema(payload, schema_name)
     if schema_errors:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             detail={"message": "Guide JSON does not match schema", "errors": schema_errors},
         )
 
+    structure = None
+    if payload.get("schemaVersion") == 2:
+        structure = {key: payload[key] for key in ("stanzas", "lines", "chunks")}
+        line_by_id = {line["id"]: line for line in payload["lines"]}
+        if len(line_by_id) != len(payload["lines"]):
+            raise HTTPException(status_code=422, detail="Line IDs must be unique.")
+        stanza_ids = {stanza["id"] for stanza in payload["stanzas"]}
+        if any(line["stanzaId"] not in stanza_ids for line in payload["lines"]):
+            raise HTTPException(status_code=422, detail="Line references an unknown stanza.")
+        converted = []
+        for chunk in payload["chunks"]:
+            if any(line_id not in line_by_id for line_id in chunk["lineIds"]):
+                raise HTTPException(status_code=422, detail="Chunk references an unknown line.")
+            lines = [line_by_id[line_id] for line_id in chunk["lineIds"]]
+            converted.append({**chunk, "sectionId": lines[0]["stanzaId"],
+                              "text": "\n".join(line["text"] for line in lines)})
+        payload = {**payload, "chunks": converted}
     poem_data = payload["poem"]
     poem = db.scalar(select(Poem).where(Poem.external_id == poem_data["id"]))
     if poem is None:
         poem = Poem(external_id=poem_data["id"])
         db.add(poem)
+    poem.structure_json = structure
     poem.title = poem_data["title"]
     poem.author = poem_data["author"]
     poem.text = poem_data["text"]
@@ -85,7 +104,8 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
                     prompt=page_data.get("prompt"),
                     chunk_ids_json=page_data.get("chunkIds") or [],
                     round_type=derive_round_type(page_data["type"]),
-                    metadata_json={},
+                    estimated_seconds=page_data.get("estimatedSeconds"),
+                    metadata_json=page_data.get("metadata") or {},
                 )
             )
 

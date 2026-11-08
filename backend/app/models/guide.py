@@ -37,6 +37,8 @@ class Poem(Base, TimestampMixin):
     year: Mapped[int | None] = mapped_column(Integer)
     metadata_json: Mapped[dict[str, Any]] = mapped_column(json_type, default=dict, nullable=False)
 
+    structure_json: Mapped[dict[str, Any] | None] = mapped_column(json_type)
+
     sections: Mapped[list[PoemSection]] = relationship(
         back_populates="poem", cascade="all, delete-orphan", order_by="PoemSection.order_index"
     )
@@ -125,6 +127,7 @@ class GuidePage(Base, TimestampMixin):
     id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=uuid.uuid4)
     external_id: Mapped[str] = mapped_column(String, nullable=False)
     session_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("guide_sessions.id", ondelete="CASCADE"), nullable=False)
+    estimated_seconds: Mapped[int | None] = mapped_column(Integer)
     page_type: Mapped[str] = mapped_column(String, nullable=False)
     order_index: Mapped[int] = mapped_column(Integer, nullable=False)
     title: Mapped[str | None] = mapped_column(String)

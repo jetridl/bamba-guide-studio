@@ -18,6 +18,8 @@ def page_to_dict(page: GuidePage) -> dict[str, Any]:
         "prompt": page.prompt,
         "chunkIds": page.chunk_ids_json or [],
         "roundType": derive_round_type(page.page_type),
+        "estimatedSeconds": page.estimated_seconds,
+        "metadata": page.metadata_json or {},
     }
 
 

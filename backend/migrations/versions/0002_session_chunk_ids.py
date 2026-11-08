@@ -20,6 +20,10 @@ depends_on: str | Sequence[str] | None = None
 
 
 def upgrade() -> None:
+    # 0001 was later edited to create this column, so fresh databases already have it.
+    columns = {column["name"] for column in sa.inspect(op.get_bind()).get_columns("guide_sessions")}
+    if "chunk_ids_json" in columns:
+        return
     op.add_column(
         "guide_sessions",
         sa.Column(

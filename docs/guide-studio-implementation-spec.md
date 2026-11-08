@@ -181,7 +181,7 @@ Use UUID primary keys represented as strings in API responses.
 Clarifications:
 
 - The guided-plan JSON format does not contain top-level poem sections.
-- Internal `poem_sections` rows are reconstructed from `chunks[].sectionId`.
+- Internal `poem_sections` rows come from v2 `stanzas` (or, for legacy v1 imports, from `chunks[].sectionId`). The v2 `stanzas`, `lines` and chunk `lineIds` are kept as imported and exported unchanged.
 - Reimporting an existing `guide.id` creates a new guide version instead of overwriting earlier editorial work.
 - Accepting review suggestions mutates only whitelisted editable page fields; otherwise it only changes review comment status.
 - Export marks an approved guide as `exported`, and exported guides may be downloaded again.

@@ -2,6 +2,8 @@ import type {
   GuideDetail,
   GuideSummary,
   GuideVersionSummary,
+  PublishResult,
+  RefreshResult,
   ReviewComment,
   ValidationResult,
 } from "@/lib/types"
@@ -24,6 +26,15 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
         throw new Error(parsed.detail)
       }
       if (parsed.detail && typeof parsed.detail === "object") {
+        const { message, issues, errors } = parsed.detail as {
+          message?: string
+          issues?: { message: string }[]
+          errors?: string[]
+        }
+        if (message) {
+          const lines = [...(issues ?? []).map((issue) => issue.message), ...(errors ?? [])]
+          throw new Error([message, ...lines.map((line) => `• ${line}`)].join("\n"))
+        }
         throw new Error(JSON.stringify(parsed.detail, null, 2))
       }
     } catch (caught) {
@@ -41,6 +52,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 export const api = {
   listGuides: () => request<GuideSummary[]>("/guides"),
+  refreshGuides: () => request<RefreshResult>("/guides/refresh", { method: "POST" }),
   getGuide: (guideId: string) => request<GuideDetail>(`/guides/${guideId}`),
   listGuideVersions: (guideId: string) =>
     request<GuideVersionSummary[]>(`/guides/${guideId}/versions`),
@@ -88,6 +100,8 @@ export const api = {
     }),
   acceptComment: (commentId: string) =>
     request<ReviewComment>(`/review-comments/${commentId}/accept`, { method: "POST" }),
+  publishGuide: (guideId: string) =>
+    request<PublishResult>(`/guides/${guideId}/publish`, { method: "POST" }),
   exportGuide: async (guideId: string) => {
     const response = await fetch(`${API_BASE}/guides/${guideId}/export`)
     if (!response.ok) {

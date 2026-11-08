@@ -2,368 +2,168 @@
 
 ## Purpose
 
-Update the Bamba Flutter app to consume curated guided poem plans from JSON assets instead of markdown guide files.
+Guide Studio exports approved guided poem plans as JSON. The Bamba Flutter app bundles them as assets and plays them. The app does not generate or edit guides at runtime. It only parses them defensively.
 
-The source of truth for guided plans is now:
+The contract is:
 
 ```text
-schemas/guided-plan.schema.json
+schemas/guided-plan.schema.json        (schemaVersion 2)
 ```
 
-Guide Studio exports approved guide JSON for bundling into the Flutter app. The Flutter app should not generate, edit, or validate editorial content at runtime beyond defensive parsing.
+The Studio copy and the app copy (`bamba/schemas/guided-plan.schema.json`) must stay byte-identical. The app parser (`lib/features/study/domain/guided_plan.dart`) is the source of truth for what the app can render. Where the parser is stricter than the schema, Studio validation enforces the parser's rule.
 
-## Asset Location
+Guided Journeys use a separate contract, `schemas/journey.schema.json`. See [Journey files](#journey-files).
 
-Each approved guide should be bundled at:
+## Asset location
+
+Each approved guide goes at:
 
 ```text
 assets/curated_poems/<poem_id>/guided_plan.json
 ```
 
-Example:
+Studio downloads it as `<poem_id>_guided_plan.json`. Rename it to `guided_plan.json` when you place it.
 
-```text
-assets/curated_poems/the_tyger/guided_plan.json
-```
-
-The Flutter app should discover or load guided plans from this convention. If the app already has a curated poem registry, add a `guidedPlanAssetPath` field there. If not, use a generated/static list of known guided plan asset paths.
-
-## JSON Contract
-
-Each file is one complete guided plan:
+## File shape
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "guide": {},
   "poem": {},
+  "stanzas": [],
+  "lines": [],
   "chunks": [],
   "sessions": []
 }
 ```
 
-Required top-level fields:
+All seven top-level fields are required. The app rejects any other `schemaVersion`.
 
-- `schemaVersion`: integer, currently `1`
-- `guide`: guide metadata
-- `poem`: poem metadata and full poem text
-- `chunks`: ordered poem chunks used by guide pages and games
-- `sessions`: ordered guide sessions, each with ordered pages
+### guide
 
-The app should reject or ignore any file where `schemaVersion != 1`.
+| Field | Type | Notes |
+| --- | --- | --- |
+| `id` | string | Stable guide ID. |
+| `poemId` | string | Must equal `poem.id`. |
+| `title` | string | |
+| `version` | integer ≥ 1 | Raise it when the content changes. The app does not use it to replace a stored plan (see below). |
+| `status` | `draft` · `in_review` · `approved` · `exported` | Release builds show only `approved` and `exported`. |
+| `description` | string | Optional. |
+| `metadata` | object | Optional. |
 
-## Data Models
+### poem
 
-Create typed Dart models equivalent to the schema.
+`id`, `title`, `author`, `text` (required), `year` (integer or null), `metadata`. `poem.id` is the slug the app uses everywhere, for example `the_tyger`.
 
-### GuidedPlan
+### stanzas
 
-Fields:
+Ordered stanzas: `id`, `orderIndex`, optional `title` and `metadata`.
 
-- `schemaVersion: int`
-- `guide: GuideInfo`
-- `poem: GuidedPoem`
-- `chunks: List<PoemChunk>`
-- `sessions: List<GuideSession>`
+### lines
 
-### GuideInfo
+One record per poem line: `id`, `stanzaId`, `orderIndex` (across the whole poem), `stanzaOrderIndex` (within the stanza), `text`, optional `metadata`. Every `stanzaId` must match a stanza. Leading spaces in `text` are kept, because they carry indentation.
 
-Fields:
+### chunks
 
-- `id: String`
-- `poemId: String`
-- `title: String`
-- `version: int`
-- `status: GuideStatus`
-- `description: String?`
-- `metadata: Map<String, dynamic>`
+Learning units made of lines: `id`, `orderIndex` (across the whole poem), `lineIds` (one or more line IDs), optional `label` and `metadata`. Every line ID must match a line. The app stores progress against `<poem_id>__<chunk_id>`, so chunk IDs must not change between releases.
 
-Allowed statuses:
+### sessions
 
-- `draft`
-- `in_review`
-- `approved`
-- `exported`
+One session per learning day: `id`, `sessionNumber`, `title`, `subtitle`, `focusSummary`, `orderIndex`, `metadata`, `chunkIds`, `pages`.
 
-Runtime behavior:
+`session.chunkIds` lists the chunks studied that day. The app parser does **not** read it. It is kept for Studio round trips.
 
-- The bundled app should normally load only `approved` or `exported` guides.
-- `draft` and `in_review` may be useful in debug builds, but should not appear as published user-facing plans unless explicitly enabled.
+### pages
 
-### GuidedPoem
+`id`, `type`, `orderIndex`, `title`, `bodyMarkdown`, `prompt`, `chunkIds`, `roundType`, `estimatedSeconds`, `metadata`.
 
-Fields:
+- `chunkIds` must reference known chunks. The app reads only the page's own `chunkIds`. In Studio, a game or `poem_chunk` page with no chunks uses its session's chunks, so **the export writes those inherited IDs onto the page**.
+- One exception: a `poem_chunk` page with `metadata.scope = "whole_poem"` is the whole-poem reading page. It shows `bodyMarkdown` (the poem text) and keeps `chunkIds` empty.
+- `roundType` is derived from `type` for game pages and is null otherwise. Never edit it by hand.
+- Reflection pages put their text in `prompt`. Studio requires their `bodyMarkdown` to be null. (The app shows `prompt` first, so a body is never seen.)
 
-- `id: String`
-- `title: String`
-- `author: String`
-- `text: String`
-- `year: int?`
-- `metadata: Map<String, dynamic>`
+## Page types
 
-### PoemChunk
+| Type | App rendering | Exportable from Studio |
+| --- | --- | --- |
+| `intro`, `context`, `poet_background`, `poem_background`, `recap`, `commentary`, `completion` | Text page from `bodyMarkdown` | Yes |
+| `poem_chunk` | `bodyMarkdown`, then the text of the page's chunks | Yes |
+| `reflection` | `prompt` | Yes |
+| `first_word_game` → `firstWord` | Memory game over the page's chunks | Yes |
+| `first_letter_game` → `firstLetter` | Memory game | Yes |
+| `last_word_game` → `lastWord` | Memory game | Yes |
+| `first_last_word_game` → `firstAndLast` | Memory game | Yes |
+| `hidden_word_game` → `hiddenWord` | Memory game | Yes |
+| `full_chunk_typing_game` → `fullChunkTyping` | **Not supported.** The parser throws on `fullChunkTyping`, so the whole guide fails to load. | **No** |
+| `whole_poem` | **Not supported.** Falls back to an empty generic page. | **No** |
+| `recap_previous` | **Not supported.** Falls back to a generic page without its chunk lines. | **No** |
 
-Fields:
+The schema lists all of these types, so a file that uses them is structurally valid. Studio marks the last three as `page_type_not_supported_by_app` (blocking). Approval and export stay blocked until the app parser supports them. To read the whole poem today, use a `poem_chunk` page with `metadata.scope = "whole_poem"` and the poem text in `bodyMarkdown`.
 
-- `id: String`
-- `sectionId: String?`
-- `orderIndex: int`
-- `text: String`
-- `metadata: Map<String, dynamic>`
+## Intentional differences between Studio and the schema
 
-Notes:
+The two schema files are identical. Studio is stricter in these places:
 
-- There are no top-level section records in the JSON.
-- If the Flutter app needs section grouping, reconstruct sections from `chunks[].sectionId`.
-- Chunks must be sorted by `orderIndex` before use.
+- A non-reflection page with a `prompt` is blocking in Studio. The schema allows it.
+- A reflection page without a `prompt` is blocking in Studio.
+- A reflection page with a `bodyMarkdown` is blocking in Studio. The schema allows it.
+- The three unsupported page types above are blocking in Studio.
 
-### GuideSession
+## Importing into Studio
 
-Fields:
+> **Import the canonical approved export** from `exports/curated_poems/<author-name>--<poem-title>/guided_plan.json`, or its `guides/json/` symlink. These files replaced the older drafts with the app-compatible versions. The app keys saved progress by poem and chunk ID; preserve those external IDs in every export.
 
-- `id: String`
-- `sessionNumber: int`
-- `title: String`
-- `subtitle: String?`
-- `focusSummary: String?`
-- `orderIndex: int`
-- `chunkIds: List<String>`
-- `metadata: Map<String, dynamic>`
-- `pages: List<GuidePage>`
+- **v2 files** (for example a guide copied back from the app assets) import without loss. Stanza, line and chunk IDs, labels, page `metadata` and `estimatedSeconds` all come back out on export.
+- **v1 files** (`chunks[].sectionId` and `chunks[].text`, no stanzas or lines) still import, using `schemas/guided-plan-v1.schema.json`. On export, each v1 section becomes a stanza and each non-empty text line of a chunk becomes a line with ID `<chunk_id>__line_<n>`. Chunk IDs do not change.
 
-Sessions must be displayed in ascending `orderIndex`.
-`chunkIds` defines the chunks studied on that day/session. For read-through and game pages, this is the default chunk scope.
-
-### GuidePage
-
-Fields:
-
-- `id: String`
-- `type: GuidePageType`
-- `orderIndex: int`
-- `title: String?`
-- `bodyMarkdown: String?`
-- `prompt: String?`
-- `chunkIds: List<String>`
-- `roundType: GuideRoundType?`
-
-Pages must be displayed in ascending `orderIndex` within each session.
-
-Allowed page types:
-
-- `intro`
-- `context`
-- `poet_background`
-- `poem_background`
-- `recap`
-- `recap_previous`
-- `poem_chunk`
-- `whole_poem`
-- `commentary`
-- `first_letter_game`
-- `full_chunk_typing_game`
-- `last_word_game`
-- `first_last_word_game`
-- `hidden_word_game`
-- `reflection`
-- `completion`
-
-Derived round types:
-
-- `readThrough`
-- `firstLetter`
-- `fullChunkTyping`
-- `lastWord`
-- `firstAndLast`
-- `hiddenWord`
-
-`roundType` is derived compatibility data. The Flutter app should not treat it as independently author-controlled. For game pages, the mechanic is determined by `type`; for non-game pages, `roundType` should be null. If `type` and `roundType` disagree, prefer `type`.
-
-## Runtime Import Behavior
-
-On app startup or asset seed refresh:
+## App runtime behaviour
 
 1. Load each `guided_plan.json` asset.
-2. Decode JSON into typed models.
-3. Confirm `schemaVersion == 1`.
-4. Confirm `guide.poemId == poem.id`.
-5. Sort chunks, sessions, and pages by `orderIndex`.
-6. Build a chunk lookup by `chunk.id`.
-7. Ensure all `session.chunkIds` and `page.chunkIds` resolve to known chunks.
-8. Store or upsert the guide into the app database using stable external IDs.
+2. Parse with `GuidedPlanJsonParser`. It checks `schemaVersion == 2`, `guide.poemId == poem.id`, and that every stanza, line and chunk reference resolves.
+3. Skip a file that fails to parse, and log the asset path. One bad file must not crash the app.
+4. Show only `approved` and `exported` guides in release builds.
+5. At startup the app stores a copy of each bundled plan that is not stored yet. It never replaces a stored plan, whatever its `guide.version`. So a changed guide reaches new installs and new poems only. Existing users keep the plan they already have.
 
-Stable IDs:
+## Journey files
 
-- Use `guide.id`, `poem.id`, `chunks[].id`, `sessions[].id`, and `pages[].id` as stable external IDs.
-- Do not generate replacement IDs for imported content.
-- Database primary keys may be local IDs, but the external IDs must be preserved.
+Journeys are exported from Studio as `<journey_id>_journey.json` and placed at:
 
-Upsert rules:
+```text
+assets/journeys/<journey_id>/journey.json
+```
 
-- Upsert poems by `poem.id`.
-- Upsert guides by `guide.id`.
-- Upsert chunks by `poem.id + chunk.id`.
-- Upsert sessions by `guide.id + session.id`.
-- Upsert pages by `session.id + page.id`.
-- If `guide.version` increases, replace the prior imported guide structure for that `guide.id`.
+```json
+{
+  "schemaVersion": 1,
+  "journey": {
+    "id": "romantic-poets",
+    "version": 1,
+    "status": "approved",
+    "title": "...",
+    "subtitle": "...",
+    "curator": "...",
+    "introduction": ["paragraph"],
+    "closing": ["paragraph"],
+    "coverImage": { "path": "cover.jpg", "alt": "A lantern on a snowy path at dusk" }
+  },
+  "poems": [{ "poemId": "the_tyger", "note": ["paragraph"] }]
+}
+```
 
-## Rendering Requirements
+- `closing` is optional. Studio leaves it out when it is empty.
+- `coverImage` is optional. Studio leaves it out when it is not set.
+  - `path` is a file name only (no folders), ending in `.png`, `.jpg`, `.jpeg` or `.webp`. The file goes in the same folder as `journey.json`, for example `assets/journeys/romantic-poets/cover.jpg`. The app bundles the whole Journey folder, so no `pubspec.yaml` change is needed.
+  - `alt` is required when there is a cover. It describes the image for screen readers.
+  - The app's asset test fails if a Journey names a cover file that is not in its folder. Studio cannot check this, because it does not hold the image.
+  - The app parses the cover into `Journey.coverImage`, but does not store it in its local database or show it yet.
+- `poems` order is the Journey order. Each `poemId` appears once and must match a bundled poem folder.
+- Raise `journey.version` when the content changes. The app replaces a stored Journey only when the bundled version is higher, and it keeps the user's progress.
 
-The Flutter app should render guide pages according to `page.type`.
+## Reference files
 
-### Text Pages
-
-Page types:
-
-- `intro`
-- `context`
-- `poet_background`
-- `poem_background`
-- `recap`
-- `commentary`
-- `completion`
-
-Rendering:
-
-- Show `title` when present.
-- Render `bodyMarkdown` with the app’s existing markdown renderer or a small supported markdown subset.
-- If `bodyMarkdown` is null, render an empty body gracefully.
-
-### Previous-Day Recap Pages
-
-Page type:
-
-- `recap_previous`
-
-Rendering:
-
-- Show `title` when present.
-- Render `bodyMarkdown` when present.
-- If `chunkIds` is present, resolve those chunks and display them as recap content.
-- Unlike read-through and game pages, `recap_previous.chunkIds` may point to chunks outside the current session chunk scope.
-
-### Poem Chunk Pages
-
-Page type:
-
-- `poem_chunk`
-
-Rendering:
-
-- Resolve effective chunks to `PoemChunk` records.
-- Effective chunks are `page.chunkIds` when non-empty; otherwise they are `session.chunkIds`.
-- `page.chunkIds`, when present, should be a subset of `session.chunkIds`.
-- Display chunk text in resolved poem order.
-- If a referenced chunk is missing, log a non-fatal content error and skip that chunk.
-
-### Game Pages
-
-Page types:
-
-- `first_letter_game`
-- `full_chunk_typing_game`
-- `last_word_game`
-- `first_last_word_game`
-- `hidden_word_game`
-
-Rendering:
-
-- Resolve effective chunks. Effective chunks are `page.chunkIds` when non-empty; otherwise they are `session.chunkIds`.
-- `page.chunkIds`, when present, should be a subset of `session.chunkIds`.
-- Use `type` to select the game mechanic.
-- Derived mapping:
-  - `first_letter_game` -> `firstLetter`
-  - `full_chunk_typing_game` -> `fullChunkTyping`
-  - `last_word_game` -> `lastWord`
-  - `first_last_word_game` -> `firstAndLast`
-  - `hidden_word_game` -> `hiddenWord`
-- Game content should come from resolved chunk text, not from markdown.
-
-For `full_chunk_typing_game`, the user types every word of the selected chunk text from memory, including single-letter words. Show blank word slots without starting-letter cues or word-choice badges, matching Bamba's existing `PracticeRoundType.fullChunkTyping` interaction. No extra page fields are required.
-
-The Flutter guided-plan parser and study game mappings must accept `full_chunk_typing_game` and `fullChunkTyping` and route them to that practice interaction before loading plans containing these pages. Practice-round support alone does not enable guided-plan support.
-
-### Whole Poem Pages
-
-Page type:
-
-- `whole_poem`
-
-Rendering:
-
-- Show the full `poem.text` in a scrollable reading view.
-- Ignore `chunkIds` for this page type.
-
-### Reflection Pages
-
-Page type:
-
-- `reflection`
-
-Rendering:
-
-- Show `title` when present.
-- Show `prompt` as the main reflective prompt.
-- `bodyMarkdown` must be null or absent. Reflection copy belongs in `prompt`.
-
-## Database Migration Guidance
-
-If the current app stores markdown-derived guide content, add a new import path for JSON guides rather than trying to parse markdown into the new structure at runtime.
-
-Recommended local database tables/entities:
-
-- `poems`
-- `poem_chunks`
-- `guided_plans`
-- `guide_sessions`
-- `guide_pages`
-
-Minimum persisted fields should include:
-
-- Local primary key
-- Stable external ID
-- Parent references
-- Order index
-- Type/status fields
-- Display text fields
-- Raw metadata JSON where useful
-- Imported guide version
-
-Migration strategy:
-
-1. Keep existing markdown guides available for one release if needed.
-2. Add JSON guided plan importer behind the current startup seed/import mechanism.
-3. Bundle one known JSON guide and verify full runtime rendering.
-4. Switch curated poem guide loading to JSON.
-5. Remove markdown guide assets after JSON coverage is complete.
-
-## Error Handling
-
-The app should fail softly for content problems:
-
-- Invalid JSON: skip the file and log the asset path.
-- Unsupported `schemaVersion`: skip the file and log the version.
-- Unknown page type: show a fallback unsupported-page view in debug; skip or show a neutral error in release.
-- Missing chunk reference: log and skip the missing chunk.
-- Empty sessions/pages: do not show the guide as playable.
-
-The app should not crash because one guide asset is malformed.
-
-## Acceptance Criteria
-
-- The Flutter app can load `assets/curated_poems/<poem_id>/guided_plan.json`.
-- Parsed models preserve all stable external IDs from JSON.
-- Sessions and pages render in `orderIndex` order.
-- Text pages render from `bodyMarkdown`.
-- Poem chunk and game pages resolve content from `page.chunkIds` when present, otherwise from `session.chunkIds`.
-- Whole poem pages render `poem.text`.
-- Reflection pages render `prompt`.
-- Only `approved` or `exported` plans are user-facing in release builds.
-- Updating a bundled guide with a higher `guide.version` replaces the older imported version.
-- Markdown guide files are no longer required for curated guided plan playback.
-
-## Reference Files
-
-- Schema: `schemas/guided-plan.schema.json`
-- Example: `example-guided-plan.json`
-- Export convention: `assets/curated_poems/<poem_id>/guided_plan.json`
+- Guided plan schema: `schemas/guided-plan.schema.json`
+- Legacy import schema: `schemas/guided-plan-v1.schema.json`
+- Journey schema: `schemas/journey.schema.json`
+- Example (v1, still importable): `example-guided-plan.json`
+- App-format v2 example: `guides/json/william-ernest-henley--invictus.json`

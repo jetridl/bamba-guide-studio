@@ -97,6 +97,7 @@ export type PageType =
   | "whole_poem"
   | "commentary"
   | "first_letter_game"
+  | "first_word_game"
   | "full_chunk_typing_game"
   | "last_word_game"
   | "first_last_word_game"
@@ -113,6 +114,20 @@ export type ValidationIssue = {
   targetType: string
   targetId?: string | null
   field?: string | null
+}
+
+export type RefreshResult = {
+  loaded: string[]
+  skipped: string[]
+  failed: string[]
+}
+
+export type PublishResult = {
+  folder: string
+  path: string
+  link: string | null
+  created: boolean
+  warnings: string[]
 }
 
 export type ValidationResult = {

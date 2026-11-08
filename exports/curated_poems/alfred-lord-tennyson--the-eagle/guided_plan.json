@@ -1,0 +1,702 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "the_eagle--guide",
+    "poemId": "the_eagle",
+    "title": "The Eagle — a guided memorization plan",
+    "version": 1,
+    "status": "exported",
+    "description": "A two-day guided plan to read, savor, and memorize Alfred, Lord Tennyson’s “The Eagle,” moving from the bird’s rocky perch to its sudden plunge, with gentle memory practice and a next-day recap.",
+    "metadata": {
+      "voice": "warm, poetry-loving friend with scholar’s depth",
+      "totalSessions": 2,
+      "chunkingStrategy": "one stanza per session, split into chunks of at most two lines"
+    }
+  },
+  "poem": {
+    "id": "the_eagle",
+    "title": "The Eagle",
+    "author": "Alfred, Lord Tennyson",
+    "text": "He clasps the crag with crooked hands;\nClose to the sun in lonely lands,\nRing'd with the azure world, he stands.\n\nThe wrinkled sea beneath him crawls;\nHe watches from his mountain walls,\nAnd like a thunderbolt he falls.",
+    "year": 1851,
+    "metadata": {
+      "form": "two rhyming tercets, AAA BBB, iambic tetrameter",
+      "source": "https://rpo.library.utoronto.ca/content/eagle",
+      "textEdition": "Representative Poetry Online, University of Toronto; retains the source spelling Ring'd.",
+      "publicDomain": true,
+      "firstPublished": "Poems of Alfred Tennyson, seventh edition (1851)",
+      "biographicalSource": "https://poets.org/poet/alfred-lord-tennyson"
+    }
+  },
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "He clasps the crag with crooked hands;",
+      "metadata": {},
+      "stanzaId": "stanza-1",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "line-02",
+      "text": "Close to the sun in lonely lands,",
+      "metadata": {},
+      "stanzaId": "stanza-1",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "line-03",
+      "text": "Ring'd with the azure world, he stands.",
+      "metadata": {},
+      "stanzaId": "stanza-1",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2
+    },
+    {
+      "id": "line-04",
+      "text": "The wrinkled sea beneath him crawls;",
+      "metadata": {},
+      "stanzaId": "stanza-2",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "line-05",
+      "text": "He watches from his mountain walls,",
+      "metadata": {},
+      "stanzaId": "stanza-2",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "line-06",
+      "text": "And like a thunderbolt he falls.",
+      "metadata": {},
+      "stanzaId": "stanza-2",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 2
+    }
+  ],
+  "chunks": [
+    {
+      "id": "chunk-1_part_1",
+      "label": "Stanza 1, part 1",
+      "lineIds": [
+        "line-01",
+        "line-02"
+      ],
+      "metadata": {
+        "splitPart": 1,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-1"
+      },
+      "orderIndex": 0
+    },
+    {
+      "id": "chunk-1_part_2",
+      "label": "Stanza 1, part 2",
+      "lineIds": [
+        "line-03"
+      ],
+      "metadata": {
+        "splitPart": 2,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-1"
+      },
+      "orderIndex": 1
+    },
+    {
+      "id": "chunk-2_part_1",
+      "label": "Stanza 2, part 1",
+      "lineIds": [
+        "line-04",
+        "line-05"
+      ],
+      "metadata": {
+        "splitPart": 1,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-2"
+      },
+      "orderIndex": 2
+    },
+    {
+      "id": "chunk-2_part_2",
+      "label": "Stanza 2, part 2",
+      "lineIds": [
+        "line-06"
+      ],
+      "metadata": {
+        "splitPart": 2,
+        "splitCount": 2,
+        "sourceChunkId": "chunk-2"
+      },
+      "orderIndex": 3
+    }
+  ],
+  "stanzas": [
+    {
+      "id": "stanza-1",
+      "title": null,
+      "metadata": {},
+      "orderIndex": 0
+    },
+    {
+      "id": "stanza-2",
+      "title": null,
+      "metadata": {},
+      "orderIndex": 1
+    }
+  ],
+  "sessions": [
+    {
+      "id": "alfred-lord-tennyson--the-eagle_day_1",
+      "sessionNumber": 1,
+      "title": "Up on the Crag",
+      "subtitle": "Day 1 of 2",
+      "focusSummary": "Meet the whole poem, then learn the opening three lines through their sound, color, and stillness.",
+      "orderIndex": 0,
+      "chunkIds": [
+        "chunk-1_part_1",
+        "chunk-1_part_2"
+      ],
+      "metadata": {
+        "variables": {
+          "allChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2",
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "sessionNumber": 1,
+          "todayChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2"
+          ],
+          "sessionOrderIndex": 0,
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": []
+        },
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "estimatedMinutes": 10,
+        "droppedTemplatePages": [
+          "first_word_game"
+        ],
+        "renumberPagesAfterOmissions": true
+      },
+      "pages": [
+        {
+          "id": "day1_page04_whole_poem",
+          "type": "poem_chunk",
+          "orderIndex": 0,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "He clasps the crag with crooked hands;\nClose to the sun in lonely lands,\nRing'd with the azure world, he stands.\n\nThe wrinkled sea beneath him crawls;\nHe watches from his mountain walls,\nAnd like a thunderbolt he falls.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "day1_page05_today_chunks",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "Today's Lines",
+          "bodyMarkdown": "Today we’ll learn the first three lines. A “crag” is a steep, rugged rock; “azure” means blue. “Ring’d” sounds like “ringed”: the eagle is surrounded by that blue world.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "today_chunks"
+          }
+        },
+        {
+          "id": "day1_page06_commentary",
+          "type": "commentary",
+          "orderIndex": 2,
+          "title": "A Grip You Can Hear",
+          "bodyMarkdown": "Try “clasps the crag with crooked” slowly. Feel those repeated hard *c* sounds? They make your mouth do a little gripping of its own. Tennyson calls the eagle’s claws “hands,” bringing the bird briefly close to us even on that lonely height.\n\nThen the view opens into blue. The eagle is “Close to the sun” in our imagination: wonderfully high, surrounded by sky. Hold the rock and that wide blue together. They make a lovely place to begin remembering.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page08_poet_background",
+          "type": "poet_background",
+          "orderIndex": 3,
+          "title": "Meet Alfred, Lord Tennyson",
+          "bodyMarkdown": "Alfred, Lord Tennyson (1809–1892) grew up in Lincolnshire, England, and began writing poetry as a boy. He became Poet Laureate in 1850, and his poems reached a wide Victorian readership.\n\nHe also read his work aloud in a booming voice. I like remembering that when a line feels especially good to say. Give these words a little room in your own voice; you can hear how carefully their sounds fit together.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page09_last_word_part_1",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page09_last_word_part_2",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page10_analysis",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Three Rhymes on One High Ledge",
+          "bodyMarkdown": "The first stanza is a *tercet*, a group of three lines. All three endings rhyme: **hands / lands / stands**. Say them together and you have a little rail to hold as you learn.\n\nThere’s a steady four-beat pulse beneath the words. Let “crooked” have its two syllables: *crook-ed*. At the end, give “he stands” a small pause. We’ve spent three lines reaching this eagle, and we can afford a moment beside him.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page11_first_letter_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 7,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page11_first_letter_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 8,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page12_poem_background",
+          "type": "poem_background",
+          "orderIndex": 9,
+          "title": "A Fragment Worth Keeping",
+          "bodyMarkdown": "“The Eagle” appeared in the seventh edition of Tennyson’s *Poems* in 1851 and bears the subtitle “Fragment.” It gives us just six lines, leaving a great deal around its edges.\n\nThat small frame is part of the pleasure. We get a rock, a bird, a huge surrounding world, and one sudden movement. As you read, notice how much you can picture from so few words.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day1_page13_hidden_word_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page13_hidden_word_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day1_page14_reflection",
+          "type": "reflection",
+          "orderIndex": 12,
+          "title": "A Moment to Reflect",
+          "bodyMarkdown": null,
+          "prompt": "Which detail makes the eagle feel most present to you: the crooked hands, the lonely height, or the blue world around him? Try picturing it for a moment.",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "optional": true
+          }
+        },
+        {
+          "id": "day1_page15_completion",
+          "type": "completion",
+          "orderIndex": 13,
+          "title": "A Place in the Blue",
+          "bodyMarkdown": "You’ve spent today on the eagle’s high ledge. Try the three lines once with your eyes away from the words. Let “hands / lands / stands” mark the path, and take a peek whenever you need one.\n\nTomorrow we’ll look down at the sea and follow the poem into its sudden movement. For now, you can leave the eagle standing in that enormous blue.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "alfred-lord-tennyson--the-eagle_day_2",
+      "sessionNumber": 2,
+      "title": "Like a Thunderbolt",
+      "subtitle": "Day 2 of 2",
+      "focusSummary": "Return to the opening, learn the final three lines, and feel how the whole poem moves from stillness into speed.",
+      "orderIndex": 1,
+      "chunkIds": [
+        "chunk-1_part_1",
+        "chunk-1_part_2",
+        "chunk-2_part_1",
+        "chunk-2_part_2"
+      ],
+      "metadata": {
+        "variables": {
+          "allChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2",
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "sessionNumber": 2,
+          "todayChunkIds": [
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "sessionOrderIndex": 1,
+          "oneDayPreviousChunkIds": [
+            "chunk-1_part_1",
+            "chunk-1_part_2"
+          ],
+          "twoDaysPreviousChunkIds": []
+        },
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "estimatedMinutes": 11,
+        "droppedTemplatePages": [
+          "first_word_game"
+        ],
+        "renumberPagesAfterOmissions": true
+      },
+      "pages": [
+        {
+          "id": "day2_page01_recap_intro",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Welcome back. Before we read again, let’s visit yesterday’s lines. Try what you remember, then take a peek if you need one. Every return helps the words feel more familiar.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_1",
+          "type": "first_last_word_game",
+          "orderIndex": 1,
+          "title": "Yesterday's Lines 1/2",
+          "bodyMarkdown": "Find the first and last word of each line from yesterday, then try saying the whole line. A quick look is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_1"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2,
+            "recapOffsetDays": 1
+          }
+        },
+        {
+          "id": "day2_page03_recap_one_day_previous_part_2",
+          "type": "first_last_word_game",
+          "orderIndex": 2,
+          "title": "Yesterday's Lines 2/2",
+          "bodyMarkdown": "Find the first and last word of each line from yesterday, then try saying the whole line. A quick look is always welcome.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-1_part_2"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2,
+            "recapOffsetDays": 1
+          }
+        },
+        {
+          "id": "day2_page04_whole_poem",
+          "type": "poem_chunk",
+          "orderIndex": 3,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "He clasps the crag with crooked hands;\nClose to the sun in lonely lands,\nRing'd with the azure world, he stands.\n\nThe wrinkled sea beneath him crawls;\nHe watches from his mountain walls,\nAnd like a thunderbolt he falls.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "day2_page05_today_chunks",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "Today's Lines",
+          "bodyMarkdown": "Read the last three lines slowly before trying them at speaking pace. Follow their little sequence: the sea below, the eagle watching, then that sudden fall.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1",
+            "chunk-2_part_2"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "scope": "today_chunks"
+          }
+        },
+        {
+          "id": "day2_page06_commentary",
+          "type": "commentary",
+          "orderIndex": 5,
+          "title": "The Sea from Up Here",
+          "bodyMarkdown": "The sea is “wrinkled” and “crawls.” From this height, waves that might tower over us look like tiny, slow movements. I love how those two words quietly tell us where we’re standing.\n\nThe eagle watches from “mountain walls,” which can make his perch feel like a fortress. For two lines we keep waiting with him. Then “like a thunderbolt” gives his movement the speed and force of lightning. Try leaving a small breath before that last line.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page08_poet_background",
+          "type": "poet_background",
+          "orderIndex": 6,
+          "title": "A Poet Who Makes Us Listen",
+          "bodyMarkdown": "Tennyson wrote long poems as well as short lyrics, including *In Memoriam* and the Arthurian *Idylls of the King*. Here his attention is gathered into a tiny scene.\n\nYou can hear the care in the verbs: “clasps,” “stands,” “crawls,” “watches,” “falls.” Say them in order. They give the poem its movement, from a firm grip to a sudden release. It’s a useful little rehearsal before you bring the full lines back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page09_last_word_part_1",
+          "type": "last_word_game",
+          "orderIndex": 7,
+          "title": "Last-Word 1/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page09_last_word_part_2",
+          "type": "last_word_game",
+          "orderIndex": 8,
+          "title": "Last-Word 2/2",
+          "bodyMarkdown": "Let the rhyme lend a hand. Restore the last word of each line, then say the line aloud. Take your time.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page10_analysis",
+          "type": "commentary",
+          "orderIndex": 9,
+          "title": "From Stands to Falls",
+          "bodyMarkdown": "Today’s rhyme is **crawls / walls / falls**. It keeps the three lines close together even as the last one carries the eagle away. The first stanza ends “he stands”; the second ends “he falls.” Those matching positions make the change especially vivid.\n\nThe last line still has the poem’s four-beat pulse. Its surprise comes from the action and the comparison, so you can let the words do their work. Try it once slowly, then let your own reading find its pace.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page11_first_letter_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 10,
+          "title": "First-Letter 1/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page11_first_letter_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 11,
+          "title": "First-Letter 2/2",
+          "bodyMarkdown": "Use the initials as little stepping stones back to the words. Picture the scene as you say each line.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page12_poem_background",
+          "type": "poem_background",
+          "orderIndex": 12,
+          "title": "Where the Picture Ends",
+          "bodyMarkdown": "The poem stops with the eagle in motion. We aren’t told what happens below, or what he sees. You might picture a hunting dive; the words leave the destination open.\n\nTry staying with that open ending for a moment. The comparison to a thunderbolt gives us enough to feel the movement. This little fragment can keep moving in your imagination after the final word.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
+          "id": "day2_page13_hidden_word_part_1",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "Random-Words 1/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_1"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page13_hidden_word_part_2",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "Random-Words 2/2",
+          "bodyMarkdown": "A few words have slipped out of sight. Bring them back, then enjoy saying the lines together.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk-2_part_2"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "day2_page14_reflection",
+          "type": "reflection",
+          "orderIndex": 15,
+          "title": "A Moment to Reflect",
+          "bodyMarkdown": null,
+          "prompt": "How does the final line change the feeling of the eagle’s earlier stillness? Where would you pause if you were reading the poem to a friend?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {
+            "optional": true
+          }
+        },
+        {
+          "id": "day2_page15_completion",
+          "type": "completion",
+          "orderIndex": 16,
+          "title": "Six Lines, a Whole Sky",
+          "bodyMarkdown": "You’ve now met every line. Try saying the whole poem with the words covered: **hands, lands, stands; crawls, walls, falls**. Picture the grip, the blue, the distant sea, the watching, and the plunge. If you lose your place, return to the image and have another gentle try.\n\nGive it another visit tomorrow, then a few days later. I hope you enjoy having this small, vivid scene to carry with you. Six lines can hold a surprising amount of sky.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        }
+      ]
+    }
+  ]
+}

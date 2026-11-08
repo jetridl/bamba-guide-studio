@@ -13,11 +13,13 @@ from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy.pool import StaticPool
 
 os.environ["DATABASE_URL"] = "sqlite+pysqlite:///:memory:"
+os.environ["LOAD_PUBLISHED_GUIDES"] = "false"
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 
 from app.core.database import Base, get_db  # noqa: E402
 from app.main import app  # noqa: E402
+from app.services.json_schema import validate_json_schema  # noqa: E402
 
 
 @pytest.fixture
@@ -124,7 +126,6 @@ def test_import_rejects_invalid_schema(client: TestClient) -> None:
     ("page_type", "round_type"),
     [
         ("first_letter_game", "firstLetter"),
-        ("full_chunk_typing_game", "fullChunkTyping"),
         ("last_word_game", "lastWord"),
         ("first_last_word_game", "firstAndLast"),
         ("hidden_word_game", "hiddenWord"),
@@ -159,8 +160,9 @@ def test_game_round_type_is_derived_from_page_type(
     ]
 
 
-@pytest.mark.parametrize("page_type", ["poem_chunk", "full_chunk_typing_game"])
-def test_chunk_scoped_page_uses_session_chunks_by_default(client: TestClient, page_type: str) -> None:
+@pytest.mark.parametrize("page_type", ["poem_chunk", "hidden_word_game"])
+def test_chunk_scoped_page_exports_inherited_session_chunks(client: TestClient, page_type: str) -> None:
+    # The app parser reads only page chunkIds, so inherited session chunks must be written out.
     payload = load_example()
     payload["sessions"][0]["chunkIds"] = ["stanza_1_line_1", "stanza_1_line_2"]
     payload["sessions"][0]["pages"][0]["type"] = page_type
@@ -172,37 +174,95 @@ def test_chunk_scoped_page_uses_session_chunks_by_default(client: TestClient, pa
     exported = client.get(f"/api/guides/{imported['id']}/export").json()
 
     assert approve.status_code == 200
+    assert imported["sessions"][0]["pages"][0]["chunkIds"] == []
     assert exported["sessions"][0]["chunkIds"] == ["stanza_1_line_1", "stanza_1_line_2"]
+    assert exported["sessions"][0]["pages"][0]["chunkIds"] == ["stanza_1_line_1", "stanza_1_line_2"]
+    assert not [issue for issue in validation["issues"] if issue["severity"] == "blocking"]
+
+
+def test_whole_poem_reading_page_keeps_empty_chunk_ids(client: TestClient) -> None:
+    payload = load_example()
+    payload["sessions"][0]["chunkIds"] = ["stanza_1_line_1"]
+    page = payload["sessions"][0]["pages"][0]
+    page["type"] = "poem_chunk"
+    page["chunkIds"] = []
+    page["bodyMarkdown"] = payload["poem"]["text"]
+    exported_v1 = client.post("/api/import/guide", json=payload).json()
+    assert client.post(f"/api/guides/{exported_v1['id']}/approve").status_code == 200
+    v2 = client.get(f"/api/guides/{exported_v1['id']}/export").json()
+    v2["sessions"][0]["pages"][0]["metadata"] = {"scope": "whole_poem"}
+    v2["sessions"][0]["pages"][0]["chunkIds"] = []
+
+    imported = client.post("/api/import/guide", json=v2).json()
+    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    exported = client.get(f"/api/guides/{imported['id']}/export").json()
+
     assert exported["sessions"][0]["pages"][0]["chunkIds"] == []
-    assert not [
-        issue
+
+
+@pytest.mark.parametrize("page_type", ["full_chunk_typing_game", "whole_poem", "recap_previous"])
+def test_page_types_the_app_cannot_render_block_export(client: TestClient, page_type: str) -> None:
+    payload = load_example()
+    page = payload["sessions"][0]["pages"][0]
+    page["type"] = page_type
+    page["chunkIds"] = ["stanza_1_line_1"]
+
+    imported = client.post("/api/import/guide", json=payload)
+    assert imported.status_code == 200
+    guide_id = imported.json()["id"]
+    validation = client.get(f"/api/guides/{guide_id}/validate").json()
+
+    assert any(
+        issue["code"] == "page_type_not_supported_by_app" and issue["severity"] == "blocking"
         for issue in validation["issues"]
-        if issue["severity"] == "blocking"
-    ]
+    )
+    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 409
+    assert client.get(f"/api/guides/{guide_id}/export").status_code == 409
 
 
-def test_full_chunk_typing_round_trip(client: TestClient) -> None:
+def test_first_word_game_exports_with_first_word_round(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+    page = imported["sessions"][0]["pages"][0]
+    session = imported["sessions"][0]
+    client.patch(f"/api/sessions/{session['id']}", json={"chunkIds": ["stanza_1_line_1"]})
+    client.patch(f"/api/pages/{page['id']}", json={"type": "first_word_game", "bodyMarkdown": None})
+
+    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    exported_page = client.get(f"/api/guides/{imported['id']}/export").json()["sessions"][0]["pages"][0]
+
+    assert exported_page["type"] == "first_word_game"
+    assert exported_page["roundType"] == "firstWord"
+    assert exported_page["chunkIds"] == ["stanza_1_line_1"]
+
+
+def test_full_chunk_typing_round_type_is_still_derived(client: TestClient) -> None:
     payload = load_example()
     page = payload["sessions"][0]["pages"][0]
     page["type"] = "full_chunk_typing_game"
-    page["roundType"] = "fullChunkTyping"
+    page["roundType"] = "readThrough"
     page["chunkIds"] = ["stanza_1_line_1"]
 
     response = client.post("/api/import/guide", json=payload)
-    assert response.status_code == 200
-    guide_id = response.json()["id"]
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
-    exported = client.get(f"/api/guides/{guide_id}/export")
-    assert exported.status_code == 200
 
-    reimported = client.post("/api/import/guide", json=exported.json())
-    assert reimported.status_code == 200
-    imported_page = reimported.json()["sessions"][0]["pages"][0]
-    assert imported_page["externalId"] == page["id"]
-    assert imported_page["type"] == page["type"]
-    assert imported_page["roundType"] == page["roundType"]
-    assert imported_page["chunkIds"] == page["chunkIds"]
-    assert imported_page["bodyMarkdown"] == page["bodyMarkdown"]
+    assert response.status_code == 200
+    assert response.json()["sessions"][0]["pages"][0]["roundType"] == "fullChunkTyping"
+
+
+def test_app_format_v2_guide_round_trips_structure(client: TestClient) -> None:
+    source = json.loads((ROOT / "guides/json/william-ernest-henley--invictus.json").read_text())
+
+    imported = client.post("/api/import/guide", json=source)
+    assert imported.status_code == 200, imported.text
+    assert client.post(f"/api/guides/{imported.json()['id']}/approve").status_code == 200
+    exported = client.get(f"/api/guides/{imported.json()['id']}/export").json()
+
+    assert validate_json_schema(exported, "guided-plan.schema.json") == []
+    assert exported["stanzas"] == source["stanzas"]
+    assert exported["lines"] == source["lines"]
+    assert exported["chunks"] == source["chunks"]
+    source_pages = [page["id"] for session in source["sessions"] for page in session["pages"]]
+    exported_pages = [page["id"] for session in exported["sessions"] for page in session["pages"]]
+    assert exported_pages == source_pages
 
 
 @pytest.mark.parametrize(

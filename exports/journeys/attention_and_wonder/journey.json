@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "journey": {
+    "id": "attention_and_wonder",
+    "version": 1,
+    "status": "approved",
+    "title": "Attention and wonder",
+    "subtitle": "Three ways of seeing the living world",
+    "curator": "Bamba",
+    "introduction": [
+      "A cloud, a bird, a tiger: a small encounter can open into something larger. These poems invite us to look closely, then carry what we have seen into memory.",
+      "Begin with the quiet abundance of Wordsworth, listen to Dickinson’s inward song, and finish with Blake’s unanswered wonder."
+    ],
+    "closing": [
+      "You have carried three different kinds of wonder through these poems. Their images can stay with you: a field of flowers, a small persistent bird, a creature burning in the dark."
+    ]
+  },
+  "poems": [
+    {
+      "poemId": "i_wandered_lonely_as_a_cloud",
+      "note": [
+        "Wordsworth begins with a passing sight and returns to it in solitude. Notice how the flowers become an inward resource: learning the poem gives its movement a home in your own memory."
+      ]
+    },
+    {
+      "poemId": "hope_is_the_thing_with_feathers",
+      "note": [
+        "Dickinson turns from an outward scene to an unseen companion. After Wordsworth’s dancing flowers, listen for a smaller movement: the song that continues without asking anything in return."
+      ]
+    },
+    {
+      "poemId": "the_tyger",
+      "note": [
+        "Blake’s tiger brings a different kind of attention. Its beauty leaves the speaker questioning rather than reassured. Let the repeated questions hold their mystery as you learn the poem."
+      ]
+    }
+  ]
+}

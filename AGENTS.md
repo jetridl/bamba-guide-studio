@@ -131,7 +131,18 @@ Approved guides must be exported as JSON in the exact same format expected by th
 Target export path convention:
 
 ```text
-assets/curated_poems/<poem_id>/guided_plan.json
+exports/curated_poems/<author-name>--<poem-title>/guided_plan.json
 ```
 
-The Guide Studio itself does not need to write directly into the Flutter repo unless explicitly asked.
+Canonical approved JSON lives under `exports/curated_poems/`. The matching
+`guides/json/<author-name>--<poem-title>.json` paths are symlinks to it, not
+separate copies. Preserve every external ID inside the JSON when renaming.
+The Flutter app consumes a pinned Studio commit; commit and push approved
+exports here before advancing its content pin. See `exports/README.md`.
+
+Approved Journeys follow the same rule: canonical files live under
+`exports/journeys/<journey_id>/` (`journey.json` plus its cover image), and
+`guides/journeys/<journey_id>/` links to them.
+
+Do not copy approved guides or Journeys into the Flutter Git tree. Its content setup tool
+links a pinned checkout (or an explicitly selected local Studio worktree).

@@ -15,6 +15,7 @@ import { CSS } from "@dnd-kit/utilities"
 import ReactMarkdown from "react-markdown"
 import {
   ArrowLeft,
+  BookUp,
   CheckCircle2,
   Copy,
   Download,
@@ -40,6 +41,7 @@ import type {
   GuideSession,
   GuideVersionSummary,
   PageType,
+  PublishResult,
   ReviewComment,
 } from "@/lib/types"
 
@@ -54,6 +56,7 @@ const PAGE_TYPES: PageType[] = [
   "whole_poem",
   "commentary",
   "first_letter_game",
+  "first_word_game",
   "full_chunk_typing_game",
   "last_word_game",
   "first_last_word_game",
@@ -62,8 +65,12 @@ const PAGE_TYPES: PageType[] = [
   "completion",
 ]
 
+// The Bamba app cannot render these yet, so the backend blocks export when a guide uses them.
+const APP_UNSUPPORTED_PAGE_TYPES = new Set<PageType>(["recap_previous", "whole_poem", "full_chunk_typing_game"])
+
 const GAME_PAGE_TYPES = new Set<PageType>([
   "first_letter_game",
+  "first_word_game",
   "full_chunk_typing_game",
   "last_word_game",
   "first_last_word_game",
@@ -79,6 +86,9 @@ export function GuideEditorPage() {
   const [comments, setComments] = useState<ReviewComment[]>([])
   const [saving, setSaving] = useState<"idle" | "saving" | "saved" | "error">("idle")
   const [error, setError] = useState<string | null>(null)
+  // Failed actions (approve, export, save version) show as a banner and keep the editor open.
+  const [actionError, setActionError] = useState<string | null>(null)
+  const [published, setPublished] = useState<PublishResult | null>(null)
   const [pendingPagePatch, setPendingPagePatch] = useState<{ pageId: string; payload: Record<string, unknown> } | null>(null)
   const [pendingSessionPatch, setPendingSessionPatch] = useState<{ sessionId: string; payload: Record<string, unknown> } | null>(null)
 
@@ -151,11 +161,12 @@ export function GuideEditorPage() {
   }
 
   async function reloadAfter(action: () => Promise<unknown>) {
+    setActionError(null)
     try {
       await action()
       await load()
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Action failed.")
+      setActionError(caught instanceof Error ? caught.message : "Action failed.")
     }
   }
 
@@ -169,7 +180,7 @@ export function GuideEditorPage() {
       }
       await load()
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Could not save version.")
+      setActionError(caught instanceof Error ? caught.message : "Could not save version.")
     }
   }
 
@@ -179,8 +190,14 @@ export function GuideEditorPage() {
       const latest = await api.restoreLatest(guide.id)
       navigate(`/guides/${latest.id}`)
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Could not restore version.")
+      setActionError(caught instanceof Error ? caught.message : "Could not restore version.")
     }
+  }
+
+  async function publishGuide() {
+    if (!guide) return
+    setPublished(null)
+    await reloadAfter(async () => setPublished(await api.publishGuide(guide.id)))
   }
 
   async function exportGuide() {
@@ -210,11 +227,46 @@ export function GuideEditorPage() {
         versions={versions}
         saving={saving}
         onApprove={() => void reloadAfter(() => api.approveGuide(guide.id))}
+        onPublish={() => void publishGuide()}
         onExport={() => void exportGuide()}
         onSaveVersion={() => void saveCurrentVersion()}
         onRestoreLatest={() => void restoreAsLatest()}
         onSelectVersion={(versionGuideId) => navigate(`/guides/${versionGuideId}`)}
       />
+      {actionError ? (
+        <div role="alert" className="flex items-start justify-between gap-4 border-t border-amber-300 bg-amber-50 px-5 py-3 text-sm">
+          <p className="whitespace-pre-wrap">{actionError}</p>
+          <Button size="xs" variant="ghost" onClick={() => setActionError(null)}>
+            Dismiss
+          </Button>
+        </div>
+      ) : null}
+      {published ? (
+        <div role="status" className="flex items-start justify-between gap-4 border-t border-bamba-border bg-bamba-amber/10 px-5 py-3 text-sm">
+          <div className="space-y-1">
+            <p>
+              Published to <code className="font-mono text-xs">{published.path}</code>
+              {published.link ? (
+                <>
+                  {" "}and linked from <code className="font-mono text-xs">{published.link}</code>
+                </>
+              ) : null}
+              .
+            </p>
+            {published.warnings.map((warning) => (
+              <p key={warning} className="text-amber-800">
+                {warning}
+              </p>
+            ))}
+            <p className="text-bamba-muted">
+              Next: commit and push, then advance the content pin in Bamba and run its sync tool.
+            </p>
+          </div>
+          <Button size="xs" variant="ghost" onClick={() => setPublished(null)}>
+            Dismiss
+          </Button>
+        </div>
+      ) : null}
       <div className="grid min-h-0 flex-1 grid-cols-[300px_minmax(480px,1fr)_420px] border-t border-bamba-border">
         <SessionsNavigator
           guide={guide}
@@ -263,6 +315,7 @@ function TopBar({
   versions,
   saving,
   onApprove,
+  onPublish,
   onExport,
   onSaveVersion,
   onRestoreLatest,
@@ -272,6 +325,7 @@ function TopBar({
   versions: GuideVersionSummary[]
   saving: "idle" | "saving" | "saved" | "error"
   onApprove: () => void
+  onPublish: () => void
   onExport: () => void
   onSaveVersion: () => void
   onRestoreLatest: () => void
@@ -344,9 +398,13 @@ function TopBar({
           <CheckCircle2 />
           Approve
         </Button>
-        <Button onClick={onExport}>
+        <Button variant="outline" onClick={onExport} title="Download the guide JSON without publishing it">
           <Download />
-          Export
+          Download
+        </Button>
+        <Button onClick={onPublish} title="Write the guide to exports/curated_poems for the Bamba app">
+          <BookUp />
+          Publish
         </Button>
       </div>
     </header>
@@ -568,6 +626,9 @@ function PageEditor({
                       {PAGE_TYPES.map((type) => (
                         <SelectItem key={type} value={type}>
                           {type}
+                          {APP_UNSUPPORTED_PAGE_TYPES.has(type) ? (
+                            <span className="text-bamba-muted"> · not in the app yet</span>
+                          ) : null}
                         </SelectItem>
                       ))}
                     </SelectContent>

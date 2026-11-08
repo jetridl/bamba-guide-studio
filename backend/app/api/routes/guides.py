@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import uuid
+from dataclasses import asdict
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
+from app.core.config import settings
 from app.core.database import get_db
 from app.models import Guide, GuidePage, GuideSession
 from app.schemas.api import GuidePatch, PagePatch, ReorderPayload, SessionPatch
@@ -28,6 +30,7 @@ from app.services.guide_service import (
     restore_latest_from_version,
     save_guide_version,
 )
+from app.services.published_guides import load_guide_folder
 from app.services.serialization import guide_group_summary_to_dict, guide_to_dict, guide_version_to_dict
 
 router = APIRouter()
@@ -47,6 +50,12 @@ def list_guides(db: Session = Depends(get_db)) -> list[dict[str, Any]]:
         ensure_latest_working_copy(db, group)
     summaries = [guide_group_summary_to_dict(group) for group in groups.values()]
     return sorted(summaries, key=lambda item: item["updatedAt"] or "", reverse=True)
+
+
+@router.post("/guides/refresh")
+def refresh_guides(db: Session = Depends(get_db)) -> dict[str, list[str]]:
+    """Add guides from guides/json that Studio does not hold yet. Never overwrites Studio edits."""
+    return asdict(load_guide_folder(db, settings.guides_dir))
 
 
 @router.get("/guides/{guide_id}")

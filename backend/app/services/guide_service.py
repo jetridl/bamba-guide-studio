@@ -191,7 +191,8 @@ def _copy_guide_contents(db: Session, source: Guide, target: Guide) -> None:
                     chunk_ids_json=list(page.chunk_ids_json or []),
                     round_type=derive_round_type(page.page_type),
                     prompt=page.prompt,
-                    metadata_json={},
+                    metadata_json=dict(page.metadata_json or {}),
+                    estimated_seconds=page.estimated_seconds,
                 )
             )
     db.flush()
@@ -288,7 +289,8 @@ def duplicate_page(db: Session, page: GuidePage) -> dict[str, Any]:
         chunk_ids_json=list(page.chunk_ids_json or []),
         round_type=derive_round_type(page.page_type),
         prompt=page.prompt,
-        metadata_json={},
+        metadata_json=dict(page.metadata_json or {}),
+        estimated_seconds=page.estimated_seconds,
     )
     db.add(duplicate)
     db.commit()

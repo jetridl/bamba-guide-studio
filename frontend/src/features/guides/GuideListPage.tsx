@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router"
 import { BookOpen, FileJson, RefreshCw } from "lucide-react"
 
+import { StudioTopBar } from "@/components/StudioTopBar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -12,6 +13,8 @@ export function GuideListPage() {
   const [guides, setGuides] = useState<GuideSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [refreshing, setRefreshing] = useState(false)
+  const [notice, setNotice] = useState<string | null>(null)
 
   async function load() {
     setLoading(true)
@@ -25,13 +28,36 @@ export function GuideListPage() {
     }
   }
 
+  async function refresh() {
+    setRefreshing(true)
+    setError(null)
+    setNotice(null)
+    try {
+      const result = await api.refreshGuides()
+      const parts = [
+        result.loaded.length
+          ? `Added ${result.loaded.length} new ${result.loaded.length === 1 ? "guide" : "guides"}: ${result.loaded.join(", ")}.`
+          : "No new guides in guides/json.",
+      ]
+      if (result.failed.length) {
+        parts.push(`Could not import: ${result.failed.join(", ")}. See the backend log for details.`)
+      }
+      setNotice(parts.join(" "))
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Could not check guides/json.")
+    } finally {
+      setRefreshing(false)
+    }
+    await load()
+  }
+
   useEffect(() => {
     void load()
   }, [])
 
   return (
     <main className="min-h-screen bg-bamba-ivory text-bamba-ink">
-      <TopBar />
+      <StudioTopBar />
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-8 py-8">
         <div className="flex items-center justify-between">
           <div>
@@ -39,9 +65,9 @@ export function GuideListPage() {
             <p className="mt-1 text-sm text-bamba-muted">Curated poem plans ready for editorial review.</p>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" onClick={() => void load()}>
-              <RefreshCw />
-              Refresh
+            <Button variant="outline" disabled={refreshing} onClick={() => void refresh()}>
+              <RefreshCw className={refreshing ? "animate-spin" : undefined} />
+              {refreshing ? "Checking..." : "Refresh"}
             </Button>
             <Button asChild>
               <Link to="/guides/import">
@@ -52,6 +78,9 @@ export function GuideListPage() {
           </div>
         </div>
 
+        {notice && (
+          <div className="rounded-md border border-bamba-border bg-bamba-paper p-3 text-sm text-bamba-ink">{notice}</div>
+        )}
         {error && <div className="rounded-md border border-amber-300 bg-amber-50 p-3 text-sm">{error}</div>}
         {loading ? <p className="text-sm text-bamba-muted">Loading guides...</p> : null}
         {!loading && guides.length === 0 ? (
@@ -97,19 +126,6 @@ export function GuideListPage() {
         </div>
       </section>
     </main>
-  )
-}
-
-function TopBar() {
-  return (
-    <header className="border-b border-bamba-border bg-bamba-paper/80 px-8 py-3">
-      <div className="mx-auto flex max-w-6xl items-center justify-between">
-        <Link to="/guides" className="text-sm font-medium uppercase tracking-[0.18em] text-bamba-muted">
-          Bamba
-        </Link>
-        <span className="text-sm text-bamba-muted">editorial desk</span>
-      </div>
-    </header>
   )
 }
 

@@ -10,6 +10,8 @@ from app.models.guide import (
 )
 
 __all__ = [
+    "Journey",
+    "JourneyPoem",
     "Guide",
     "GuidePage",
     "GuideReview",
@@ -19,3 +21,5 @@ __all__ = [
     "PoemChunk",
     "PoemSection",
 ]
+
+from app.models.journey import Journey, JourneyPoem

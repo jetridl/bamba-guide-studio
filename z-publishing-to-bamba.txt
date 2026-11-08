@@ -1,0 +1,24 @@
+1. Publish in Studio
+1. Open the guide, validate it, and approve it.
+2. Click Publish.
+
+Studio writes exports/curated_poems/<author>--<title>/guided_plan.json and points guides/json/<author>--<title>.json at that file. Only published guides reach the app. Drafts such as The Eagle stay in Studio.
+
+2. Commit and push the Studio repo
+cd ~/Projects/Personal/Bamba/bamba-guide-studio
+git add exports/curated_poems guides/json
+git commit -m "Publish <poem>"
+git push
+git rev-parse HEAD   # copy this commit hash
+
+3. Move the pin in the Bamba repo
+1. In bamba/tool/studio_content.lock.json, set revision to the new hash. It now points at ca936fa….
+2. Run the sync tool:
+cd ~/Projects/Personal/Bamba/bamba
+dart tool/sync_studio_content.dart
+3. Build or run the app, and commit the lock file change.
+
+To test before you push: skip step 2 and the lock file edit. Point the tool at your local Studio checkout instead:
+dart tool/sync_studio_content.dart --local ../bamba-guide-studio
+
+One catch: the app saves each guide once and never replaces it. A changed guide shows up only on a fresh install. To see your edits on a test device, delete the app first.
