@@ -1,0 +1,37 @@
+ATTENTION AND WONDER — COVER BRIEF
+
+Application: Bamba Journey cover.
+Subject and emotional connection: A sheltered lakeshore in spring, with a naturally occurring drift of daffodils near moving water and a grove receding into cool shade. A familiar small detail opens into a larger space, expressing attention, inward reflection and unanswered wonder without illustrating every poem.
+Historical reference artists: John Constable for natural observation, weather and movement; Camille Corot for tonal harmony, soft transitions and contemplative depth.
+Artistic tradition: Traditional nineteenth-century oil landscape; Bamba Styles A (English Landscape Naturalism) and C (Tonal and Contemplative Landscape).
+Composition: Wide 3:2 landscape at human eye level. Uneven shore and naturally distributed flowers in the middle foreground, asymmetrical trees at one side, open lake and distant land behind. The relationship between small moving flowers and open water is the focal point. Broad masses, breathing room and a central crop-safe scene remain readable at card size.
+Lighting and weather: Soft mid-morning daylight beneath light cloud in spring. Natural patches of light, cool woodland shade and gently moving water; no spectacular atmospheric effects.
+Palette: Muted olive, grey-green, earth brown, pale yellow, pearly white and blue-grey.
+Brushwork: Varied purposeful oil handling, broad sky and water passages, broken vegetation marks, selective near edges and softer distance. No photographic paint filter or uniform grain overlay.
+Restrictions: One recognisable landscape; no poem montage, figures, animals, typography, logos, watermarks, books, writing props, fantasy scenery, artificial glow, oversaturation or formulaic cinematic lighting. Daffodils belong to the lakeshore vegetation rather than decorative framing. Original composition.
+Output: cover.jpg, true JPEG, 1536 x 1024 pixels. Authoring location requested by the user: guides/journeys/attention_and_wonder/cover.jpg. This creates the artwork only; publishing and Journey metadata remain handled in Studio.
+Generation method: Built-in image_gen tool; any format conversion preserves the composition.
+
+FINAL GENERATION PROMPT
+
+Use case: illustration-story.
+Application: A cover painting for Bamba's adult poetry Journey "Attention and wonder", subtitle "Three ways of seeing the living world". The poems move from Wordsworth's daffodils, to Dickinson's inward song of hope, to Blake's unanswered wonder. Express close attention to the natural world and the quiet mystery beyond what we see through ONE coherent landscape, not a collage or a literal inventory of poems.
+
+Create an original credible traditional nineteenth-century oil painting of a sheltered English lakeshore in spring, at the place where open water meets a wooded bank. Reference John Constable for close observation of weather, foliage and movement, and Camille Corot for tonal harmony, soft edges and contemplative depth. Bamba visual-guide.md Styles A and C: English landscape naturalism with tonal restraint.
+
+Scene and composition: Wide landscape 3:2, exactly 1536 x 1024 pixels. A low, human-eye-level view standing on an uneven grassy shore. A modest irregular drift of wild daffodils grows naturally along the bank in the middle foreground; their small pale yellow heads lean in the same light breeze that softly troubles the water. They are part of the landscape, never arranged as a decorative border or bouquet. An asymmetrical group of mature trees anchors one side; branches and darker trunks lead into a quiet shaded grove, with natural gaps and believable structure. An open breadth of blue-grey lake and muted distant wooded land extends beyond the bank. The focal relationship is between the small moving flowers and the large still expanse of water and air. Make the flower mass, shore and trees legible at card size without relying on fine botanical detail. Keep the main scene within a generous central wide crop, with breathing room in the sky and water. Avoid a centred tree, a winding river, symmetrical landscape, extravagant mountains or an obvious path to the horizon.
+
+Light and atmosphere: Gentle mid-morning light on a lightly clouded spring day, soft cloud shadows crossing the lake. Pale daylight touches the daffodils and bank while the grove holds quiet cool shade; no ominous storm, artificial beams, golden-hour glow or luminous mist. The scene should reward looking without demanding attention through spectacle.
+
+Palette and materials: Observed subdued olive and grey-green, earth brown and weathered bark, soft yellow flowers, pearly cloud whites and blue-grey water. Natural warm-cool relationships and moderate contrast, neither muddy nor excessively saturated.
+
+Painting technique: Build forms with varied oil brushwork and credible spatial relationships. Broad fluid strokes in sky and water; broken, economical marks in grass and flowers; selective firm edges on a few near branches, softer transitions into distance. Real painterly construction and restrained surface texture, not a photograph beneath a paint filter, and not a uniform grain overlay. A collected landscape painting worth looking at independently of the app.
+
+Restrictions: No people, birds, tigers or other animals, books, manuscripts, writing implements, staged props, typography, signatures, logos, watermarks, frames or borders. No symbolic collage, fantasy scenery, digital effects, HDR contrast, cinematic colour grading, excessively intricate foliage or decorative foreground flowers outside the natural lakeshore drift. Do not copy the composition of an existing painting.
+Output: One finished opaque image, 1536 x 1024 pixels, landscape. The final project asset will be saved as cover.jpg.
+
+FINAL IMAGE ALT TEXT
+Oil painting of pale yellow daffodils beneath leafy trees beside a blue-grey lake, with wooded hills and a softly clouded sky beyond.
+
+VISUAL REVIEW
+Inspected the generated painting against visual-guide.md. The single lakeshore setting, natural asymmetry, credible trees and water, muted palette, varied brushwork and soft daylight suit the Journey. The main tree, flowers and open water remain distinct at card size. No text, staged literary props or decorative effects are visible.
