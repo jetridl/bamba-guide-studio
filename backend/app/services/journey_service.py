@@ -59,7 +59,10 @@ def validation(db: Session, journey: Journey) -> dict[str, Any]:
     if not journey.poems:
         issues.append(_issue("no_poems", "Add at least one poem.", "journey", journey.external_id))
     cover = journey.cover_image_json
-    if cover and not COVER_FILE_NAME.match(cover.get("path", "")):
+    if not cover or not cover.get("path"):
+        issues.append(_issue("missing_cover", "Add a cover image. A Journey cannot be published without one.",
+                             "journey", journey.external_id))
+    elif not COVER_FILE_NAME.match(cover["path"]):
         issues.append(_issue("cover_image_path", "Give the cover image a file name such as cover.jpg: "
                              "letters, numbers, - or _, ending in .png, .jpg, .jpeg or .webp, with no folders.",
                              "journey", journey.external_id))

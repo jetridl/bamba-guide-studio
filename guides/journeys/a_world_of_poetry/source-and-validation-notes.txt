@@ -1,0 +1,118 @@
+A WORLD OF POETRY — EDITORIAL, SOURCES AND VALIDATION
+Prepared 11 November 2026
+
+DELIVERY AND STATUS
+
+Journey ID: a_world_of_poetry. Version: 1. Status: draft. Curator: Bamba.
+The required files are journey.json, cover.png and cover-brief.txt, stored together here.
+This supplementary file records sources, import instructions and the checks performed.
+cover-brief.txt also selects historical art treatments for all seven poems. Those are future art directions; only the Journey cover was requested for generation and generated in this delivery.
+
+The catalogue held approved/exported guides for Frost and Whitman. They are referenced by their exact existing poem IDs; neither guide nor any of its external IDs was changed or duplicated.
+Five missing poems now have schema-v2 draft guides in guides/json/. They contain the complete poem text, original stanzas, stable poem-prefixed stanza/line/chunk/session/page IDs, chunks of at most two lines, and short reading, commentary, recall, reflection and closing pages. There are no scored exercises. Poe's learning passages divide the two long stanzas without introducing new stanza breaks in the poem.
+No files were written under exports/. No content has been approved, published, committed or pushed by this task.
+
+ORDER AND EDITORIAL ARC
+
+1. The Arrow and the Song — Henry Wadsworth Longfellow. Storytelling: a complete miniature narrative, paired sounds and delayed discovery make an accessible opening.
+2. A Red, Red Rose — Robert Burns. Love: the song motif becomes the music of a personal declaration, with Scots vocabulary gently introduced.
+3. The Sick Rose — William Blake. Symbolism: a familiar flower becomes uncertain; eight lines make space for several interpretations.
+4. A Dream Within a Dream — Edgar Allan Poe. Uncertainty: the difficulty of interpreting an image widens into questions of reality, time and loss, grounded in a hand holding sand.
+5. Because I could not stop for Death — Emily Dickinson. Mortality: a familiar carriage ride gives Death a social presence; the correction at the fourth stanza complicates the apparent journey.
+6. The Road Not Taken — Robert Frost. Choices: the difference between the similar roads and a future retelling invites irony and careful interpretation, without replacing one simplistic moral with another.
+7. O Captain! My Captain! — Walt Whitman. Grief: a sustained ship-and-voyage metaphor joins public history with personal address; long and short lines invite expressive but unforced recitation.
+
+Complexity grows chiefly in emotional and interpretive demands, rather than line count. Blake is the shortest selection and still deepens the reading. Whitman's long lines require more sustained breath at the close.
+The introduction explicitly describes this as a small English-language selection from Scotland, England and the United States, not a survey of world poetry. The closing opens towards other languages, traditions and living voices.
+None of the three First Steps in Poetry poems is repeated. Neither of the other repository Journey files duplicates any of these seven poems. No files for the other planned Journeys were available; their future selections cannot be checked for overlap.
+
+CATALOGUE AND TEXTUAL SOURCES
+
+1. the_arrow_and_the_song — 12 lines, 3 stanzas of 4.
+New draft: guides/json/henry-wadsworth-longfellow--the-arrow-and-the-song.json
+Text and attribution: Poetry Foundation public-domain transcription.
+https://www.poetryfoundation.org/poems/44624/the-arrow-and-the-song
+Its complete cached search text was available; direct page fetching returned HTTP 403. Wording and punctuation were checked against that text. No spelling was modernised.
+
+2. a_red_red_rose — 16 lines, 4 stanzas of 4.
+New draft: guides/json/robert-burns--a-red-red-rose.json
+Copy-text: Scottish Poetry Library, A Red, Red Rose by Robert Burns.
+https://www.scottishpoetrylibrary.org.uk/poem/red-red-rose/
+Four-verse structure cross-checked against the University of Glasgow's Scottish Literature in the Classroom printing, p. 7:
+https://www.gla.ac.uk/media/Media_1209456_smxx.pdf
+Keep this edition's Luve’s, melodie, play’d, are, bonie, Dear/dear, a’, gang, wi’, o’, weel, Tho’ and singular mile. In particular, do not silently replace are with art or standardise Scots into English. The introductory glosses are separate from the poem text.
+
+3. the_sick_rose — 8 lines, 2 stanzas of 4.
+New draft: guides/json/william-blake--the-sick-rose.json
+Copy-text: University of Toronto, Representative Poetry Online; cites Songs of Experience (1794), Blake's Illuminated Books, edited by David Bindman. RPO editor Northrop Frye.
+https://rpo.library.utoronto.ca/content/sick-rose-2
+This edition begins with an exclamation mark and uses commas after night and storm. It differs in punctuation from the Poetry Foundation transcription. Follow RPO consistently; no mixture of the two editions was made.
+
+4. a_dream_within_a_dream — 24 lines, 2 stanzas of 11 and 13.
+New draft: guides/json/edgar-allan-poe--a-dream-within-a-dream.json
+Copy-text: Edgar Allan Poe Society of Baltimore reading text.
+https://www.eapoe.org/works/reading/pp017r1.htm
+The source explicitly identifies itself as based on the Flag of Our Union printing with a few minor changes from the Examiner proof-sheets. It is an edited reading text, not a claim to reproduce the first printing verbatim. Preserve thy brow, capital Hope, spaced em dashes and O, God! in both appeals.
+Variant history:
+https://www.eapoe.org/works/info/pp017.htm
+The common the brow / O God! version is not silently substituted. The display title follows the brief's capitalisation; the source prints within with a lowercase w.
+
+5. because_i_could_not_stop_for_death — 24 lines, 6 stanzas of 4.
+New draft: guides/json/emily-dickinson--because-i-could-not-stop-for-death.json
+Copy-text: Emily Dickinson, poem 479 in Composition and Literature: A Handbook and Anthology, James Sexton and Derek Soles (BCcampus, 2019), printed p. 178, PDF page index 193. The anthology is distributed under CC BY 4.0 except where otherwise noted; the poem is a historical public-domain work. No anthology commentary is reproduced.
+https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/638/3/Composition-and-Literature-1575562940.pdf
+Full text cross-check:
+https://www.poetryfoundation.org/poems/47652/because-i-could-not-stop-for-death-479
+The anthology's text extraction supplies en dashes, curly apostrophes and the final dash after Eternity; these are retained. Its editorial footnote number after Tippet is omitted from the poem, explicitly, as it is an annotation marker, not a word of Dickinson's text. A screenshot fetch of the anthology page was unavailable; text extraction was available for all 24 lines. This is a typeset edition, not a facsimile of the handwriting.
+Do not substitute the altered twenty-line 1890 printing titled The Chariot. Its missing stanza and other variants are documented by RPO:
+https://rpo.library.utoronto.ca/content/chariot
+This untitled poem is displayed under its first line, as in the brief. The year field is null to avoid presenting an uncertain composition date as a publication date.
+
+6. the_road_not_taken — 20 lines, 4 stanzas of 5.
+Existing canonical guide: exports/curated_poems/robert-frost--the-road-not-taken/guided_plan.json
+Guide ID retained: the_road_not_taken_guide_v1.
+Wording, punctuation and stanza order checked against the Poetry Foundation text and University of Toronto RPO, which cites Mountain Interval (Henry Holt, 1921), p. 9.
+https://www.poetryfoundation.org/poems/44272/the-road-not-taken
+https://rpo.library.utoronto.ca/content/road-not-taken
+The catalogue's em dash in line 18 is retained; RPO represents it as two hyphens. No canonical text was edited. Interpretive comments about the future retelling and the uncertain sigh are editorial readings grounded in the poem, not a single prescribed explanation.
+
+7. o_captain_my_captain — 24 lines, 3 stanzas of 8.
+Existing canonical guide: exports/curated_poems/walt-whitman--o-captain-my-captain/guided_plan.json
+Guide ID retained: o_captain_my_captain_guide_v1.
+Checked against Leaves of Grass, Project Gutenberg eBook 1322, Book XXII, O Captain! My Captain!
+https://www.gutenberg.org/files/1322/1322-h/1322-h.htm
+The canonical wording and punctuation match this text, with straight rather than typographic apostrophes and flattened indentation already present in the catalogue. Preserve those existing choices. Printed wrapping of long lines does not add poetic lines. The existing guide is unchanged.
+Historical setting and evidence of Whitman's revisions:
+https://www.loc.gov/lcm/pdf/LCM_2015_0304.pdf
+The Voyage/Union/Civil War and Captain/Lincoln associations provide historical orientation; the note invites attention to the individual voice rather than reducing each image to a fixed code.
+
+STUDIO IMPORT
+
+The files are prepared for import; the running Studio database has not been changed.
+1. With these files in the repository, click Refresh on the guide list. Studio adds the five new guides as drafts and skips guides it already holds.
+2. Click Refresh on the Journeys page. The Journey loader can import this draft once all seven poem records exist, while preserving its order, notes, ID and version.
+3. Review the five new guides in Studio, validate and approve them through the normal workflow. The Journey has exactly five expected approval blockers until those guides are approved. A successful JSON schema check is not editorial approval.
+4. Publish each newly approved guide before publishing the approved Journey. Studio requires every poem to be present under exports/curated_poems/ before Journey publication. Let Publish create the canonical exports and symlinks; do not place these drafts in exports/ or copy them into the Flutter tree.
+5. Commit and push approved exports here before advancing the Flutter app's pinned Studio revision, as described in exports/README.md.
+
+VALIDATION PERFORMED
+
+PASS — journey.json validates against schemas/journey.schema.json with Draft202012Validator.
+PASS — exactly seven unique poem IDs, in the requested order, all resolved against canonical guides plus the five new local draft guides. No duplicate of an existing poem guide was created.
+PASS — all seven selected guides satisfy schemas/guided-plan.schema.json; all seven expected line and stanza counts match.
+PASS — poem.text reconstructs exactly from the ordered line/stanza records in every guide.
+PASS — unique structure and page IDs within each guide; all chunk-to-line, session-to-chunk and page-to-chunk references resolve.
+PASS — every line in each new guide is covered by exactly one chunk, with at most two lines in a chunk.
+PASS — all seven guides import through Studio's real import_guide service in a disposable in-memory test database using the existing repository test approach. The production PostgreSQL database and application code were not changed.
+PASS — all seven pass the backend validate_guide check with zero blocking issues. Four new guides have no issues; Poe has one non-blocking too_many_chunks suggestion on its final whole-poem reading page. That page correctly has scope whole_poem and no explicit chunkIds; the suggestion comes from validation counting the session's five chunks. Frost and Whitman retain their existing non-blocking editorial warnings/suggestions (20 and 26 respectively); no existing content was edited to suppress them.
+PASS — the Journey imports through load_journey_folders and serialises back to the exact supplied payload, preserving all content and IDs.
+PASS — Journey validation identifies exactly five poem_without_approved_guide blockers for the five drafts. These are expected workflow gates, not missing references or schema errors. No approval action was taken.
+PASS — coverImage.path is a filename only; cover.png is beside journey.json, has a real PNG signature, is 1536 × 1024, and opens.
+PASS — the saved cover was inspected at full size and as a 360 × 240 card preview against visual-guide.md.
+PASS — cover-brief.txt records the artistic brief, historical reference artists and exact final generation prompt. The built-in image_gen tool generated the cover; no runtime generation feature or API integration was added.
+
+VISUAL REVIEW
+
+The cover reads as a traditional architectural oil painting. Its large arched windows, dark oak presses and clear floor plane remain recognisable at card size. Natural perspective and receding bays establish a coherent interior; varied brushwork describes stone, timber, glass and shadow without a photographic filter or uniform texture overlay.
+Soft window light, warm neutral stone and subdued wood keep the atmosphere inviting. No extreme golden light, decorative glow, visible typography, signatures, watermark, figures or staged writing props appear. Shelved books belong to the library rather than functioning as added poetry props.
+The exposed timber roof and distant college architecture are part of an imaginative Cambridge setting, not a documentary claim about the Wren Library. The final alt text describes what is visible in the generated painting.

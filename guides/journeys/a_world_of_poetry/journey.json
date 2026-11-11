@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "journey": {
+    "id": "a_world_of_poetry",
+    "version": 1,
+    "status": "draft",
+    "title": "A World of Poetry",
+    "subtitle": "Seven poems, seven ways of giving experience a voice",
+    "curator": "Bamba",
+    "introduction": [
+      "An arrow disappears into the air; a lover promises the impossible; a rose holds a secret. Poetry can begin almost anywhere, and its familiar materials can lead somewhere unexpected. Following First Steps in Poetry, this Journey opens a wider anthology: seven poems whose different voices give us stories, declarations, questions and encounters. These are English-language poems from Scotland, England and the United States, a few openings into a much larger world.",
+      "We begin with a small story, then listen to the music of love before entering less certain ground. A rose becomes difficult to explain; sand slips through a hand; a courteous carriage ride carries an unsettling passenger. Later, a woodland choice changes in the telling, and a returning ship holds celebration and grief together. As the poems grow more demanding, their sounds and pictures offer something to hold on to. Read aloud, pause where a line catches you, and leave room for an impression to change. You need not settle every question to find words worth keeping."
+    ],
+    "closing": [
+      "Longfellow's song finds a listener; Whitman's speaker calls to someone who cannot answer. Between them, a declaration of love has widened into impossible promises, a flower has become a mystery, and familiar scenes have made time and memory feel strange. Perhaps one of these voices felt immediately close, while another still keeps its distance. Either can be a reason to return.",
+      "This has been one small shelf in poetry's much larger library. Beyond it are other languages, traditions, forms and living voices, with ways of seeing we have scarcely approached. Follow whichever curiosity stays with you: a poet, an image, a sound, or an unanswered question. The anthology can keep opening."
+    ],
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a quiet library with tall arched windows, dark wooden bookcases, exposed roof beams and soft daylight across a pale stone floor."
+    }
+  },
+  "poems": [
+    {
+      "poemId": "the_arrow_and_the_song",
+      "note": [
+        "Longfellow begins with two ordinary actions and a question: where does something go once it leaves us? In twelve lines, he gives us a beginning, a disappearance and a discovery. This is a welcoming place to start because the story is easy to follow, while its echoes reach beyond the events it describes. Listen to the matching openings of the first two stanzas, and notice how the last stanza gathers their separate threads. As you learn, let the repeated sounds guide you through the leap in time. What might a song leave behind that an arrow cannot?"
+      ]
+    },
+    {
+      "poemId": "a_red_red_rose",
+      "note": [
+        "After a song travelling out of sight, we meet words made to be sung. Burns brings poetry close to the speaking voice, with a declaration of love that moves through four short verses. His Scots words carry much of its warmth: “luve” is love, “bonie” is lovely, and “gang” means go. Say the lines aloud and listen for the returning phrases. The comparisons begin within easy reach, with a flower and a melody, before taking on a very different scale. Notice what happens when the speaker finally says farewell: how does a promise sound when distance enters the poem?"
+      ]
+    },
+    {
+      "poemId": "the_sick_rose",
+      "note": [
+        "Burns's rose offered a comparison we could readily recognise. Blake's rose is harder to place. In just eight lines, a flower, a worm and a storm become an encounter whose meanings will not stay within a garden. A symbol is an image that gathers associations beyond its literal presence; here those associations may pull in several directions. Begin with the strangeness of what is actually said, especially the worm's invisibility and flight. You can hold the two stanzas in memory without making them yield a single explanation. Notice how the language of love has changed since Burns."
+      ]
+    },
+    {
+      "poemId": "a_dream_within_a_dream",
+      "note": [
+        "Blake leaves us unsure what an image means; Poe makes uncertainty itself the subject. His speaker moves from a parting kiss to a shore where sand slips through his fingers. The question is philosophical, but the helpless movement of a hand gives it a physical shape. Let the two unequal stanzas be your bearings: first a farewell, then the sound and pressure of the sea. Listen to the repeated words as the voice becomes more urgent. When the dream returns at the end, notice the question mark. Has the speaker reached the same place, or does it feel different now?"
+      ]
+    },
+    {
+      "poemId": "because_i_could_not_stop_for_death",
+      "note": [
+        "From Poe's slipping sand, Dickinson takes us into a carriage moving at an unhurried pace. She gives Death the manners of a courteous caller: an example of personification, in which something abstract takes on a person's actions. That familiar social scene lets an unfamiliar experience unfold. Follow the passing school, fields and sun, giving the dashes room as you read. Halfway through, the speaker corrects what seemed to be happening. Notice how that small revision changes the journey. The six short stanzas offer a clear route for memory, even as the relationship between an afternoon and eternity becomes harder to grasp."
+      ]
+    },
+    {
+      "poemId": "the_road_not_taken",
+      "note": [
+        "After Dickinson's carriage ride, Frost returns us to a traveller on foot. The scene is familiar, but the telling asks for careful listening. You may have heard the ending quoted as advice to choose a less travelled path. Earlier, though, the speaker describes the roads as worn much alike. Keep that detail beside the final stanza, which imagines a story told far in the future. The gap makes room for irony: the account may reveal something beyond what it claims. Try letting the sigh sound different ways. Does it suggest regret, satisfaction, amusement, or something you cannot quite name?"
+      ]
+    },
+    {
+      "poemId": "o_captain_my_captain",
+      "note": [
+        "Frost asks how we tell our own stories; Whitman brings a private voice into a public one. Written after Abraham Lincoln's assassination in 1865, this poem imagines a ship arriving safely while its captain lies dead. The ship and voyage carry a sustained comparison with the United States and the Civil War, but the speaker's repeated calls make history feel intimate. This final poem draws together story, music and figurative language in a voice especially rewarding to speak aloud. Let the long lines carry the sound of the welcoming shore, then attend to the shorter lines on deck. Allow the contrast to speak without forcing the emotion."
+      ]
+    }
+  ]
+}

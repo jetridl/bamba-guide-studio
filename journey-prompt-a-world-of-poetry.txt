@@ -1,0 +1,139 @@
+You are a literary curator creating a complete Guided Journey for Bamba, a calm poem memorisation app.
+
+Create an ordered path through poems, write its editorial content, and generate its cover image. Select the poems yourself unless I specify otherwise.
+
+Read journey.schema.json and visual-guide.md before starting. Those files are authoritative.
+
+## MY BRIEF
+
+# MY BRIEF
+
+- **Theme, poet, period, question, or feeling:** *A World of Poetry.* A broad and engaging introduction to the extraordinary variety of poetry. This Journey follows *First Steps in Poetry* and introduces readers to different ways poetry can express human experience: storytelling, love, symbolism, uncertainty, mortality, personal choices, and grief. The Journey should demonstrate that poetry is not one particular kind of writing, but a rich and varied art form.
+
+  The experience should feel like exploring a carefully curated anthology of essential poems, with each selection opening a different door. The sequence should develop gradually in linguistic, emotional, and interpretive complexity.
+
+  **Editorial arc:**
+  1. **Storytelling:** Begin with an accessible poem that demonstrates how a few lines can tell a complete story.
+  2. **Love:** Introduce the musicality and emotional expression of poetry.
+  3. **Symbolism:** Show how a short poem can contain multiple layers of meaning.
+  4. **Uncertainty:** Explore philosophical questions and the nature of reality.
+  5. **Mortality:** Demonstrate how poetry can approach difficult subjects through imagination and personification.
+  6. **Choices:** Introduce ambiguity, irony, and the importance of interpretation.
+  7. **Grief:** Conclude with a powerful example of extended metaphor and expressive recitation.
+
+  The Journey should leave the reader with a sense of discovery and curiosity about the broader world of poetry, rather than the feeling of having completed a literary course.
+
+- **Intended reader:** Adults who are relatively new to poetry or have recently completed Bamba's *First Steps in Poetry* Journey. Readers may have little formal literary knowledge but should be treated as intelligent and curious. Explanations should be accessible, thoughtful, and engaging without becoming academic or patronising.
+
+- **Number of poems:** Exactly 7, in the specified order. Most poems should be relatively short, ideally between 8 and 24 lines. The difficulty should increase gently, although variety and literary quality take precedence over a strictly linear progression.
+
+- **Poems that must be included:**
+  1. *The Arrow and the Song* — Henry Wadsworth Longfellow (12 lines). Storytelling, consequence, and the enduring effect of our actions.
+  2. *A Red, Red Rose* — Robert Burns (16 lines). Love, rhythm, musicality, and emotional expression.
+  3. *The Sick Rose* — William Blake (8 lines). Symbolism, ambiguity, and layered interpretation.
+  4. *A Dream Within a Dream* — Edgar Allan Poe (24 lines). Reality, uncertainty, time, and loss.
+  5. *Because I could not stop for Death* — Emily Dickinson (24 lines). Personification, mortality, and imaginative storytelling.
+  6. *The Road Not Taken* — Robert Frost (20 lines). Choices, irony, hindsight, and the difference between popular interpretation and the poem's actual ambiguity.
+  7. *O Captain! My Captain!* — Walt Whitman (24 lines). Grief, history, extended metaphor, and expressive recitation.
+
+- **Poems to consider, without obligation:** None. The seven selected poems form the intended Journey. Do not substitute poems unless a significant copyright, textual, or editorial problem is identified. If a problem exists, flag it rather than silently making a replacement.
+
+- **Poems or subjects to avoid:** Do not repeat any poems from *First Steps in Poetry*: *Who Has Seen the Wind?* by Christina Rossetti, *The Eagle* by Alfred, Lord Tennyson, or *Hope is the thing with feathers* by Emily Dickinson.
+
+  Avoid treating the Journey as a formal literature course, relying on unnecessary technical terminology, or suggesting that each poem has one definitive interpretation.
+
+  Avoid motivational or self-improvement framing, artificial achievement language, tests, scores, and pressure to progress.
+
+  Preserve editorial distinctions from Bamba's other planned Journeys: *The Natural World*, *The Human Condition*, *The Great Romantics*, *The Art of the Sonnet*, and *A Lighter Verse*. Overlap in poets and themes is acceptable, but poem duplication should be avoided.
+
+- **Curator name:** Bamba
+
+- **Visual subject or preference:** Follow Bamba's established visual style guide: traditional fine-art painting inspired by 18th- and 19th-century European art. Prefer believable compositions, restrained colour, authentic painterly texture, natural lighting, and emotional atmosphere.
+
+  **Journey cover:** A traditional oil painting depicting a historic university library or scholarly interior, inspired by Cambridge architecture and the atmosphere of Trinity College's Wren Library. The scene should evoke intellectual curiosity, discovery, and the richness of literary heritage without feeling formal or intimidating.
+
+  **Reference artists:** John Singer Sargent for natural light and painterly technique; Pieter Jansz. Saenredam for architectural perspective and quiet interiors; Samuel Prout for historic architectural character.
+
+  **Individual poem artwork:** Select an artistic treatment appropriate to each poem's mood and subject, using named historical reference artists. For example:
+  - *The Arrow and the Song:* John Constable, naturalistic landscape painting.
+  - *A Red, Red Rose:* John William Waterhouse, Romantic figurative painting.
+  - *The Sick Rose:* William Blake, symbolic and visionary art.
+  - *A Dream Within a Dream:* Caspar David Friedrich, contemplative Romantic landscapes.
+  - *Because I could not stop for Death:* George Frederic Watts, symbolic Victorian painting.
+  - *The Road Not Taken:* John Constable or Camille Corot, naturalistic woodland landscapes.
+  - *O Captain! My Captain!:* J. M. W. Turner, atmospheric maritime painting.
+
+  Artwork should never look like generic AI fantasy illustration. Avoid excessive golden light, exaggerated drama, artificial glow, oversaturation, and unnecessary decorative objects. Do not embed typography in images.
+
+  Future memorisation illustrations should prioritise recognisable scenes, metaphors, and visual anchors over purely decorative imagery.
+
+- **Source material:** Use the existing Bamba poetry catalogue, poem guides, Journey schema, visual style guide, and repository conventions.
+
+  Verify poem titles, attribution, text, punctuation, stanza divisions, and line counts against reliable editions. Do not silently modernise or alter the poems.
+
+  Generate the Journey using the established structured JSON format, including its ordered poem references, editorial introductions, transitions, and any other fields required by the schema.
+
+  Each poem introduction should explain why the selection belongs at that point in the Journey and highlight an interesting idea for the reader to notice. Avoid simply summarising the poem or revealing every interpretive insight before the reader encounters it.
+
+- **Destination:** Use the existing Bamba repository structure for curated Journeys and associated poem guides. Prepare the output for import into Guide Studio, following the repository's established naming, validation, and approval conventions.
+
+The default direction is credible traditional oil painting, with considered composition, believable forms and light, restrained colour, and natural variation in brushwork. Choose the appropriate tradition from the visual guide rather than making every Journey look identical.
+
+Use a wide landscape composition that remains recognisable at card size. Leave breathing room and allow for cropping. Follow any supplied image dimensions; otherwise use 1536 × 1024 pixels.
+
+Avoid embedded typography, logos, watermarks, decorative digital effects, photographic paint filters, excessive saturation, fantasy scenery, and formulaic cinematic lighting. Do not automatically add books, manuscripts, or writing implements. Do not copy an existing painting’s composition.
+
+Inspect the generated image against the visual guide and improve it if necessary. Write concise, descriptive alt text based on the final image itself.
+
+JSON AND FILES
+Do not create new guide for poems that already have a guide in the catalogue.
+
+Create journey.json matching the supplied schema. Its current structure is:
+
+{
+  "schemaVersion": 1,
+  "journey": {
+    "id": "a_stable_descriptive_id",
+    "version": 1,
+    "status": "draft",
+    "title": "Journey title",
+    "subtitle": "A concise description",
+    "curator": "Bamba",
+    "introduction": ["First paragraph.", "Second paragraph."],
+    "closing": ["Closing paragraph."],
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "A description of the final generated painting."
+    }
+  },
+  "poems": [
+    {
+      "poemId": "exact_existing_poem_id",
+      "note": ["Journey Note paragraph."]
+    }
+  ]
+}
+
+The poems array defines the order. Include each poem ID only once.
+
+coverImage.path must be a filename only, without folders or URLs. Use PNG, JPEG, or WebP, and ensure the extension matches the actual file format. Store the image beside journey.json.
+
+Do not add fields outside the schema. Keep the image brief and generation prompt in a separate file.
+
+For a new Journey, use version 1 and status "draft". When revising an existing Journey, preserve its ID and increase its version.
+
+DELIVERY
+Provide a folder, or a downloadable ZIP, containing:
+- journey.json
+- The generated cover image referenced by the JSON.
+- cover-brief.txt containing the artistic brief and final generation prompt.
+
+Also provide a short explanation of the chosen sequence, listing each poem’s title and poet.
+
+Before finishing:
+- Validate the JSON against journey.schema.json.
+- Check every poem ID against the catalogue.
+- Confirm the referenced cover file exists and opens.
+- Review the image against visual-guide.md.
+
+If image generation or validation is unavailable, state exactly what remains unfinished. Do not present a prompt or placeholder as a completed cover image.

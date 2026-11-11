@@ -1,0 +1,34 @@
+A WORLD OF POETRY — COVER BRIEF
+
+Application: Guided Journey cover; adult readers exploring poetry after First Steps in Poetry.
+Subject: A welcoming historic Cambridge library inspired by the Wren Library at Trinity College. An imaginative interior, not a documented reconstruction. The setting suggests curiosity and a varied literary inheritance without illustrating seven separate poems.
+Historical references: John Singer Sargent for economical brushwork and natural daylight; Pieter Jansz. Saenredam for quiet architectural space and perspective; Samuel Prout for the character of old stone and timber.
+Tradition: visual-guide.md Style E, Classical Architectural and Interior Painting, interpreted in traditional oil paint.
+Composition: A lateral oblique view through a few window bays and oak presses; broad floor plane, receding divisions, readable masses at card size, breathing room and cropping tolerance. Human scale and moderate contrast.
+Light: Soft overcast late-morning daylight, cool near the glazing and gently warm in reflection.
+Palette: Ivory, limestone grey, muted walnut and umber, subdued blue-grey. No excessive gold.
+Technique: Varied strokes describing the material, broad floor and plaster passages, selected firm edges, softer shadow and distant detail.
+Restrictions: No text, watermark, signature, staged writing props, figures, decorative glow, paint filters, fantasy architecture or copied composition. Shelved volumes belong to the requested library.
+Format: 1536 × 1024, wide 3:2, opaque PNG; cover.png beside journey.json.
+Generation method: built-in image_gen tool.
+
+FINAL GENERATION PROMPT
+
+Use case: historical-scene.
+Asset type: cover for Bamba's Guided Journey "A World of Poetry".
+Create a single original traditional oil painting, 1536 x 1024 pixels, landscape 3:2, opaque PNG. Subject: an inviting historic Cambridge college library interior inspired by Trinity College's Wren Library, an imaginative interpretation rather than a documentary reconstruction. Style E of Bamba's visual guide: classical architectural and interior painting, with John Singer Sargent's natural daylight and economical varied brushwork, Pieter Jansz. Saenredam's lucid architectural perspective and quiet space, Samuel Prout's characterful old masonry and timber. Do not copy any existing painting.
+Composition: a human-scale lateral oblique view across two or three tall round-headed window bays and dark oak library presses. A broad, uncluttered pale floor and receding timber divisions make a welcoming interior with places for the eye to wander. Readable large architectural masses, open space and cropping tolerance, a calm focal patch of soft daylight in the middle distance. Avoid a rigid central corridor or palace-like grandeur. Built-in shelved books are integral to this requested library; render as quiet masses, no readable lettering. No loose books, manuscripts, pens, theatrical props, people or animals.
+Soft overcast late-morning daylight through the high windows, plausible cooler window light and warm reflected light on pale plaster and honey-grey stone. Natural restrained ivory, limestone grey, muted walnut, umber and blue-grey. No excessive golden light, beams, artificial glow, saturated colours, orange grading or extreme contrast.
+Credible oil paint construction with broad floor and wall strokes, firmer selected architectural edges, lost edges in shadow, subtle surface irregularity and loosely suggested distant detail. Believable proportions, joinery, weight and perspective. Do not use a photo paint filter, uniform canvas texture overlay, hyperdetail, fantasy illustration, digital polish, decorative effects, signatures, logos, watermark, borders or embedded typography. Evoke curiosity and literary discovery through the space itself; quiet, approachable and worth looking at even without the Journey.
+
+INDIVIDUAL POEM ART DIRECTION — SELECTIONS FOR FUTURE COMMISSIONS
+
+These are art treatments, not generated or attached poem images. Existing guides remain unchanged. Each future commission should use a wide 3:2 composition with one clear recall anchor, natural illumination, restrained pigment and varied painterly handling. No embedded type or decorative digital effects.
+
+The Arrow and the Song — John Constable; English landscape naturalism. A weathered oak at the edge of an open meadow, an old arrow discernible in its bark. Clouded daylight, subdued leaf greens and earth browns, convincing scale. Keep the oak the dominant shape; no floating music symbols or simultaneous scenes.
+A Red, Red Rose — John William Waterhouse; Romantic figurative oil painting. A solitary figure at a Scottish garden boundary, turned towards a distant departure route, with a living rose integrated into the hedge. Cool June daylight, restrained red against natural greens, observed posture. No costume spectacle, rose bouquet or glowing petals.
+The Sick Rose — William Blake; symbolic, visionary treatment grounded in his illuminated watercolour and relief-etching tradition. A single curved rose stem, crimson flower and a small worm-like form at its base. Muted crimson, green and ink-dark washes; tension through shape rather than spectacle. Avoid giving the worm a monstrous body or presenting the image as the poem's definitive explanation.
+A Dream Within a Dream — Caspar David Friedrich; contemplative Romantic oil landscape. A lone figure on a surf-worn shore, with a hand releasing a little sand. Cool grey sea and subdued ochre sand under overcast light, empty horizon and believable surf. Make the hand and shoreline readable; no hourglass, floating clocks or dream effects.
+Because I could not stop for Death — George Frederic Watts; symbolic Victorian oil painting. A plain horse-drawn carriage passing a low rise at dusk. Quiet, bodily believable horses, restrained earth pigments, fine pale cloth and cool air. No skeleton, scythe, horror imagery or literal glowing afterlife. Let Death remain an ordinary, ambiguous passenger.
+The Road Not Taken — Camille Corot, with John Constable for woodland observation; tonal naturalism. Two equally plausible woodland tracks dividing in autumn, similar wear and leaf cover on each. Diffuse daylight and muted yellow-green and umber. Do not illuminate or beautify one route to imply it is the correct choice.
+O Captain! My Captain! — J. M. W. Turner; atmospheric maritime oil painting. A returning vessel near a crowded harbour, its quiet deck contrasted with distant celebrations. Cool marine greys, sober timber and a little muted signal colour. Restrained haze and convincing rigging; no supernatural light, cinematic storm or triumphant naval spectacle.

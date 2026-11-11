@@ -16,6 +16,7 @@ def journey_input(poem_id):
     return {'externalId': 'images-of-light', 'title': 'Images of light', 'subtitle': 'A small path',
             'curator': 'Bamba', 'version': 1, 'introduction': ['Listen for the light.'],
             'closing': ['Carry these images with you.'],
+            'coverImage': {'path': 'cover.jpg', 'alt': 'A lantern on a winter path'},
             'poems': [{'poemId': poem_id, 'note': ['Begin with the burning image.']}]}
 
 
@@ -166,15 +167,16 @@ def test_journey_cover_image_round_trips_into_export(client):
     assert exported['journey']['coverImage'] == {'path': 'cover.jpg', 'alt': 'A lantern on a winter path'}
 
 
-def test_journey_without_cover_leaves_the_key_out(client):
+def test_journey_without_cover_saves_but_cannot_be_approved(client):
     guide = approved_poem(client)
     data = journey_input(guide['poem']['externalId'])
     data['coverImage'] = {'path': '', 'alt': '  '}
     journey = client.post('/api/journeys', json=data).json()
     assert journey['coverImage'] is None
     path = f"/api/journeys/{journey['id']}"
-    assert client.post(f'{path}/approve').status_code == 200
-    assert 'coverImage' not in client.get(f'{path}/export').json()['journey']
+    assert [issue['code'] for issue in client.get(f'{path}/validate').json()['issues']] == ['missing_cover']
+    assert client.post(f'{path}/approve').status_code == 409
+    assert client.get(f'{path}/export').status_code == 409
 
 
 def test_journey_cover_gaps_save_but_block_approval(client):
@@ -182,7 +184,7 @@ def test_journey_cover_gaps_save_but_block_approval(client):
     data = journey_input(guide['poem']['externalId'])
     cases = [
         ({'path': 'cover.jpg', 'alt': ''}, {'missing_cover_alt'}),
-        ({'path': '', 'alt': 'A lantern'}, {'cover_image_path'}),
+        ({'path': '', 'alt': 'A lantern'}, {'missing_cover'}),
         ({'path': '../cover.jpg', 'alt': 'A lantern'}, {'cover_image_path'}),
         ({'path': 'images/cover.jpg', 'alt': 'A lantern'}, {'cover_image_path'}),
         ({'path': 'cover.gif', 'alt': ''}, {'cover_image_path', 'missing_cover_alt'}),

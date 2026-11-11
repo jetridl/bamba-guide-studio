@@ -265,7 +265,7 @@ export function JourneyEditorPage() {
                 <Field label="Stable ID" hint={saved ? "Fixed after the first save." : "Letters, numbers, - and _. The app uses this ID."}>
                   <Input
                     disabled={saved}
-                    placeholder="romantic-poets"
+                    placeholder="For example: romantic-poets"
                     value={journey.externalId}
                     onChange={(event) => edit("externalId", event.target.value)}
                   />
@@ -296,23 +296,23 @@ export function JourneyEditorPage() {
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <p className="text-sm text-bamba-muted">
-                  Optional. Put the image file at{" "}
+                  Required to publish. Put the image file at{" "}
                   <span className="font-mono">
-                    guides/journeys/{journey.externalId || "<id>"}/{journey.coverImage?.path || "cover.jpg"}
+                    guides/journeys/{journey.externalId || "<id>"}/{journey.coverImage?.path || "<file name>"}
                   </span>
                   . Publish copies it beside the Journey's <span className="font-mono">journey.json</span>.
                 </p>
                 <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-4">
                   <Field label="Image file" hint="File name only: .png, .jpg, .jpeg or .webp.">
                     <Input
-                      placeholder="cover.jpg"
+                      placeholder="For example: cover.jpg"
                       value={journey.coverImage?.path ?? ""}
                       onChange={(event) => editCover("path", event.target.value)}
                     />
                   </Field>
                   <Field label="Image description" hint="Alt text. Say what the image shows, for readers who cannot see it.">
                     <Input
-                      placeholder="A lantern on a snowy path at dusk"
+                      placeholder="For example: A lantern on a snowy path at dusk"
                       value={journey.coverImage?.alt ?? ""}
                       onChange={(event) => editCover("alt", event.target.value)}
                     />

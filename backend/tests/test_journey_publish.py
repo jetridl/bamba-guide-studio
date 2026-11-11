@@ -36,15 +36,14 @@ def publish_poem_file(folders: dict[str, Path], poem_id: str) -> None:
     plan.write_text(json.dumps({"poem": {"id": poem_id}}))
 
 
-def approved_journey(client: TestClient, folders: dict[str, Path], *, cover: bool = True) -> tuple[dict, dict]:
+def approved_journey(client: TestClient, folders: dict[str, Path]) -> tuple[dict, dict]:
     poem_id = approved_poem(client)["poem"]["externalId"]
     publish_poem_file(folders, poem_id)
     data = journey_input(poem_id)
-    if cover:
-        data["coverImage"] = {"path": "cover.png", "alt": "A lamp on a desk."}
-        draft = folders["drafts"] / data["externalId"]
-        draft.mkdir()
-        (draft / "cover.png").write_bytes(COVER)
+    data["coverImage"] = {"path": "cover.png", "alt": "A lamp on a desk."}
+    draft = folders["drafts"] / data["externalId"]
+    draft.mkdir()
+    (draft / "cover.png").write_bytes(COVER)
     journey = client.post("/api/journeys", json=data).json()
     assert client.post(f"/api/journeys/{journey['id']}/approve").json()["status"] == "approved"
     return journey, data
@@ -90,8 +89,20 @@ def test_publish_needs_the_cover_image(client: TestClient, folders: dict[str, Pa
     assert not (folders["exports"] / "images-of-light").exists()
 
 
+def test_publish_needs_a_cover_image_set(client: TestClient, folders: dict[str, Path]) -> None:
+    journey, data = approved_journey(client, folders)
+    data["coverImage"] = None
+    data["version"] = 2
+    assert client.put(f"/api/journeys/{journey['id']}", json=data).status_code == 200
+
+    response = client.post(f"/api/journeys/{journey['id']}/publish")
+
+    assert response.status_code == 409
+    assert not (folders["exports"] / "images-of-light").exists()
+
+
 def test_publish_needs_every_poem_published(client: TestClient, folders: dict[str, Path]) -> None:
-    journey, _ = approved_journey(client, folders, cover=False)
+    journey, _ = approved_journey(client, folders)
     for plan in folders["poems"].glob("*/guided_plan.json"):
         plan.unlink()
 
@@ -114,7 +125,7 @@ def test_publish_needs_approval(client: TestClient, folders: dict[str, Path]) ->
 
 
 def test_changed_journey_needs_a_higher_version(client: TestClient, folders: dict[str, Path]) -> None:
-    journey, _ = approved_journey(client, folders, cover=False)
+    journey, _ = approved_journey(client, folders)
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 200
     path = folders["exports"] / "images-of-light" / "journey.json"
     # Someone changed the published file by hand, at the same version.
@@ -132,7 +143,7 @@ def test_changed_journey_needs_a_higher_version(client: TestClient, folders: dic
 def test_approved_file_can_be_published_as_exported_at_the_same_version(
     client: TestClient, folders: dict[str, Path]
 ) -> None:
-    journey, _ = approved_journey(client, folders, cover=False)
+    journey, _ = approved_journey(client, folders)
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 200
     path = folders["exports"] / "images-of-light" / "journey.json"
     approved = json.loads(path.read_text())
@@ -146,7 +157,7 @@ def test_approved_file_can_be_published_as_exported_at_the_same_version(
 
 
 def test_new_version_replaces_the_published_journey(client: TestClient, folders: dict[str, Path]) -> None:
-    journey, data = approved_journey(client, folders, cover=False)
+    journey, data = approved_journey(client, folders)
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 200
     data["version"] = 2
     data["poems"][0]["note"] = ["A revised note."]
@@ -162,9 +173,8 @@ def test_new_version_replaces_the_published_journey(client: TestClient, folders:
 
 
 def test_another_journeys_draft_is_never_replaced(client: TestClient, folders: dict[str, Path]) -> None:
-    journey, data = approved_journey(client, folders, cover=False)
+    journey, data = approved_journey(client, folders)
     draft = folders["drafts"] / data["externalId"]
-    draft.mkdir()
     other = json.dumps({"journey": {"id": "someone-else"}})
     (draft / "journey.json").write_text(other)
 
@@ -200,7 +210,8 @@ def test_startup_loads_published_journeys(
     published.mkdir()
     journey = {"schemaVersion": 1, "journey": {
         "id": "images-of-light", "version": 3, "status": "exported", "title": "Images of light",
-        "subtitle": "A small path", "curator": "Bamba", "introduction": ["Listen."]},
+        "subtitle": "A small path", "curator": "Bamba", "introduction": ["Listen."],
+        "coverImage": {"path": "cover.png", "alt": "A lamp."}},
         "poems": [{"poemId": poem_id, "note": ["Begin here."]}]}
     (published / "journey.json").write_text(json.dumps(journey))
     monkeypatch.setattr(main.settings, "load_published_guides", True)

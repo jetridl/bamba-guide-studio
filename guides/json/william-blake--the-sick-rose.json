@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "the_sick_rose--guide",
+    "poemId": "the_sick_rose",
+    "title": "The Sick Rose — a guided reading and memorisation plan",
+    "version": 1,
+    "status": "draft",
+    "description": "An unhurried reading of William Blake’s poem, with short passages, images, sound and gentle returns to the text.",
+    "metadata": {
+      "curator": "Bamba",
+      "totalSessions": 2,
+      "chunkingStrategy": "Passages within original stanzas; chunks of at most two lines. Read aloud and recall at your own pace, without scored exercises."
+    }
+  },
+  "poem": {
+    "id": "the_sick_rose",
+    "title": "The Sick Rose",
+    "author": "William Blake",
+    "text": "O Rose, thou art sick!\nThe invisible worm\nThat flies in the night,\nIn the howling storm,\n\nHas found out thy bed\nOf crimson joy:\nAnd his dark secret love\nDoes thy life destroy.",
+    "year": 1794,
+    "metadata": {
+      "sourceUrl": "https://rpo.library.utoronto.ca/content/sick-rose-2",
+      "edition": "University of Toronto Representative Poetry Online, citing Songs of Experience (1794), Blake’s Illuminated Books, ed. David Bindman. Two four-line stanzas. RPO punctuation differs from the Poetry Foundation transcription; follow RPO throughout."
+    }
+  },
+  "stanzas": [
+    {
+      "id": "the_sick_rose--stanza-01",
+      "orderIndex": 0,
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--stanza-02",
+      "orderIndex": 1,
+      "metadata": {}
+    }
+  ],
+  "lines": [
+    {
+      "id": "the_sick_rose--line-01",
+      "stanzaId": "the_sick_rose--stanza-01",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0,
+      "text": "O Rose, thou art sick!",
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--line-02",
+      "stanzaId": "the_sick_rose--stanza-01",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1,
+      "text": "The invisible worm",
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--line-03",
+      "stanzaId": "the_sick_rose--stanza-01",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2,
+      "text": "That flies in the night,",
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--line-04",
+      "stanzaId": "the_sick_rose--stanza-01",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3,
+      "text": "In the howling storm,",
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--line-05",
+      "stanzaId": "the_sick_rose--stanza-02",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 0,
+      "text": "Has found out thy bed",
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--line-06",
+      "stanzaId": "the_sick_rose--stanza-02",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 1,
+      "text": "Of crimson joy:",
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--line-07",
+      "stanzaId": "the_sick_rose--stanza-02",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 2,
+      "text": "And his dark secret love",
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--line-08",
+      "stanzaId": "the_sick_rose--stanza-02",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 3,
+      "text": "Does thy life destroy.",
+      "metadata": {}
+    }
+  ],
+  "chunks": [
+    {
+      "id": "the_sick_rose--chunk-01",
+      "orderIndex": 0,
+      "label": "Lines 1–2",
+      "lineIds": [
+        "the_sick_rose--line-01",
+        "the_sick_rose--line-02"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--chunk-02",
+      "orderIndex": 1,
+      "label": "Lines 3–4",
+      "lineIds": [
+        "the_sick_rose--line-03",
+        "the_sick_rose--line-04"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--chunk-03",
+      "orderIndex": 2,
+      "label": "Lines 5–6",
+      "lineIds": [
+        "the_sick_rose--line-05",
+        "the_sick_rose--line-06"
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "the_sick_rose--chunk-04",
+      "orderIndex": 3,
+      "label": "Lines 7–8",
+      "lineIds": [
+        "the_sick_rose--line-07",
+        "the_sick_rose--line-08"
+      ],
+      "metadata": {}
+    }
+  ],
+  "sessions": [
+    {
+      "id": "the_sick_rose--session-01",
+      "sessionNumber": 1,
+      "title": "An unseen arrival",
+      "focusSummary": "Hold the rose, the invisible worm and the storm together.",
+      "orderIndex": 0,
+      "chunkIds": [
+        "the_sick_rose--chunk-01",
+        "the_sick_rose--chunk-02"
+      ],
+      "pages": [
+        {
+          "id": "the_sick_rose--session-01--page-01",
+          "type": "intro",
+          "orderIndex": 0,
+          "title": "An invitation to read",
+          "bodyMarkdown": "Blake addresses a rose as though it could hear him. The eight lines offer a few vivid things and an unsettling relationship between them. Begin by speaking the whole poem without trying to solve it. Its images can stay open while the words become familiar. Thou means you; thy means your.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-01--page-02",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "The whole poem",
+          "bodyMarkdown": "O Rose, thou art sick!\nThe invisible worm\nThat flies in the night,\nIn the howling storm,\n\nHas found out thy bed\nOf crimson joy:\nAnd his dark secret love\nDoes thy life destroy.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "the_sick_rose--session-01--page-03",
+          "type": "poem_chunk",
+          "orderIndex": 2,
+          "title": "Stay with these lines",
+          "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-01--page-04",
+          "type": "commentary",
+          "orderIndex": 3,
+          "title": "An unseen arrival",
+          "bodyMarkdown": "The opening is an urgent address. After it, the sentence begins following a worm that cannot be seen and yet flies. Rather than making the scene tidier, let those details retain their strangeness. Night and storm give us a setting without explaining the danger. The stanza ends with a comma in this edition: the sentence will continue across the gap. Keep the pause without making it a full stop.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-01--page-05",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-01--page-06",
+          "type": "reflection",
+          "orderIndex": 5,
+          "title": "A moment to linger",
+          "bodyMarkdown": null,
+          "prompt": "What do you picture when the poem describes something as invisible?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-01--page-07",
+          "type": "completion",
+          "orderIndex": 6,
+          "title": "A place to pause",
+          "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ],
+      "metadata": {
+        "estimatedMinutes": 7
+      }
+    },
+    {
+      "id": "the_sick_rose--session-02",
+      "sessionNumber": 2,
+      "title": "Crimson joy",
+      "focusSummary": "Follow the unfinished sentence into its disturbing conclusion.",
+      "orderIndex": 1,
+      "chunkIds": [
+        "the_sick_rose--chunk-01",
+        "the_sick_rose--chunk-02",
+        "the_sick_rose--chunk-03",
+        "the_sick_rose--chunk-04"
+      ],
+      "pages": [
+        {
+          "id": "the_sick_rose--session-02--page-01",
+          "type": "poem_chunk",
+          "orderIndex": 0,
+          "title": "Return to the previous passage",
+          "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-02--page-02",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "Stay with these lines",
+          "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-03",
+            "the_sick_rose--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-02--page-03",
+          "type": "commentary",
+          "orderIndex": 2,
+          "title": "Crimson joy",
+          "bodyMarkdown": "The first line completes the action begun in the previous stanza. Bed might belong to a garden or to an intimate human space; crimson offers colour without settling the association. Notice how love is placed beside secrecy and destruction. You can explore disease, desire or harm as possibilities, keeping each close to the actual words. Read both stanzas aloud and hear how little explanation the poem supplies.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-02--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 3,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-03",
+            "the_sick_rose--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-02--page-05",
+          "type": "reflection",
+          "orderIndex": 4,
+          "title": "A moment to linger",
+          "bodyMarkdown": null,
+          "prompt": "Which word most unsettles your first impression of the rose, and why?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "the_sick_rose--session-02--page-06",
+          "type": "poem_chunk",
+          "orderIndex": 5,
+          "title": "Read from the beginning",
+          "bodyMarkdown": "O Rose, thou art sick!\nThe invisible worm\nThat flies in the night,\nIn the howling storm,\n\nHas found out thy bed\nOf crimson joy:\nAnd his dark secret love\nDoes thy life destroy.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "the_sick_rose--session-02--page-07",
+          "type": "completion",
+          "orderIndex": 6,
+          "title": "Keep the poem near",
+          "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ],
+      "metadata": {
+        "estimatedMinutes": 7
+      }
+    }
+  ]
+}
