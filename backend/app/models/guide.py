@@ -37,6 +37,7 @@ class Poem(Base, TimestampMixin):
     year: Mapped[int | None] = mapped_column(Integer)
     metadata_json: Mapped[dict[str, Any]] = mapped_column(json_type, default=dict, nullable=False)
 
+    cover_image_json: Mapped[dict[str, Any] | None] = mapped_column(json_type)
     structure_json: Mapped[dict[str, Any] | None] = mapped_column(json_type)
 
     sections: Mapped[list[PoemSection]] = relationship(

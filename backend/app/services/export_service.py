@@ -20,7 +20,10 @@ def build_guided_plan(guide: Guide) -> dict[str, Any]:
             "id": guide.external_id,
             "poemId": guide.poem.external_id,
             "title": guide.title,
-            "version": guide.version if guide.version > 0 else 1,
+            # Version 0 is Studio's working copy, not an authored content version.
+            "version": guide.version if guide.version > 0 else (
+                (guide.import_snapshot_json or {}).get("guide", {}).get("version", 1)
+            ),
             "status": guide.status,
             **({"description": guide.description} if guide.description is not None else {}),
             "metadata": guide.metadata_json or {},
@@ -32,6 +35,7 @@ def build_guided_plan(guide: Guide) -> dict[str, Any]:
             "text": guide.poem.text,
             "year": guide.poem.year,
             "metadata": guide.poem.metadata_json or {},
+            **({"coverImage": guide.poem.cover_image_json} if guide.poem.cover_image_json else {}),
         },
         **_poem_structure(guide, chunks),
         "sessions": [_session_json(session) for session in sessions],

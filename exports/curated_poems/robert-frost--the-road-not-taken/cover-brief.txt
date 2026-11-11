@@ -1,0 +1,17 @@
+THE ROAD NOT TAKEN — POEM COVER
+
+Poet: Robert Frost
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and tradition: Camille Corot and John Constable — tonal woodland naturalism in oil.
+Art direction: visual-guide.md. This is an original generated composition, not a copy of an existing painting.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of two similarly worn, leaf-covered paths dividing among trees in a yellow autumn wood.
+Guide version: 1 → 2; all external IDs, poem text, structure, sessions and editorial content are preserved.
+
+VISUAL REVIEW
+Inspected at full resolution against visual-guide.md. Clear central subject, believable forms and light, restrained colour, varied painterly handling and no embedded typography, logos or watermark. Blake deliberately uses a historical watercolour treatment rather than oil. No memorisation-sequence images are claimed.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Believable composition, natural restrained colours, plausible light, purposeful varied painterly brushwork and selective soft and firm edges. One readable scene with a clear visual memory anchor, recognisable at card size with room for a wide crop. No text, typography, signatures, watermarks, logos, borders, books, manuscripts, writing tools, decorative effects, artificial glow, oversaturation, fantasy illustration, cinematic colour grading, photographic paint filters or uniform canvas texture overlay. Do not copy any existing painting. Subject: The Road Not Taken by Robert Frost. Traditional tonal naturalist woodland oil painting, referencing Camille Corot's muted tonal harmony and John Constable's observed trees and ground. Two equally plausible narrow woodland tracks divide in a yellow autumn wood, viewed at standing eye level from just before their fork. Both paths have the same degree of wear and comparable leaf cover, neither made more inviting, brighter, straighter, emptier or more heroic. Each bends naturally out of sight behind ordinary trunks and undergrowth; the uncertainty is part of the image. Original asymmetrical arrangement of trees with readable fork in the near middle ground, no signpost or human figure. Diffuse overcast daylight, muted yellow-green and ochre leaves, umber trunks and cool quiet shadows. Believable woodland depth, broad natural brushwork and generous breathing room. No symbolic labels, spotlight on one path, dramatic sun rays, glowing foliage or idealised fantasy forest.

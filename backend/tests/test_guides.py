@@ -180,6 +180,35 @@ def test_chunk_scoped_page_exports_inherited_session_chunks(client: TestClient, 
     assert not [issue for issue in validation["issues"] if issue["severity"] == "blocking"]
 
 
+def test_poem_cover_survives_import_and_export(client: TestClient) -> None:
+    source = json.loads((ROOT / "exports/curated_poems/alfred-lord-tennyson--the-eagle/guided_plan.json").read_text())
+    cover = {"path": "cover.png", "alt": "An eagle perched above a grey sea."}
+    source["poem"]["coverImage"] = cover
+    source["guide"]["version"] = 2
+
+    imported = client.post("/api/import/guide", json=source)
+
+    assert imported.status_code == 200, imported.text
+    guide_id = imported.json()["id"]
+    assert imported.json()["poem"]["coverImage"] == cover
+    assert client.get(f"/api/guides/{guide_id}").json()["poem"]["coverImage"] == cover
+    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    exported = client.get(f"/api/guides/{guide_id}/export").json()
+    assert exported["poem"]["coverImage"] == cover
+    assert exported["guide"]["version"] == 2
+    assert exported["poem"]["metadata"] == source["poem"]["metadata"]
+    for key in ("stanzas", "lines", "chunks"):
+        assert exported[key] == source[key]
+
+
+@pytest.mark.parametrize("path", ["../cover.png", "images/cover.png", "https://example.com/cover.png", "cover.svg"])
+def test_poem_cover_requires_an_adjacent_image_filename(client: TestClient, path: str) -> None:
+    source = json.loads((ROOT / "exports/curated_poems/alfred-lord-tennyson--the-eagle/guided_plan.json").read_text())
+    source["poem"]["coverImage"] = {"path": path, "alt": "An eagle above the sea."}
+
+    assert client.post("/api/import/guide", json=source).status_code == 422
+
+
 def test_whole_poem_reading_page_keeps_empty_chunk_ids(client: TestClient) -> None:
     payload = load_example()
     payload["sessions"][0]["chunkIds"] = ["stanza_1_line_1"]

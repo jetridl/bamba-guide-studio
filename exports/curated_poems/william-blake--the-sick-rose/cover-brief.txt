@@ -1,0 +1,17 @@
+THE SICK ROSE — POEM COVER
+
+Poet: William Blake
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and tradition: William Blake — symbolic illuminated-watercolour tradition.
+Art direction: visual-guide.md. This is an original generated composition, not a copy of an existing painting.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Watercolour painting of a drooping crimson rose with a small worm beneath its curved stem against a dark blue-grey background.
+Guide version: 1 → 2; all external IDs, poem text, structure, sessions and editorial content are preserved.
+
+VISUAL REVIEW
+Inspected at full resolution against visual-guide.md. Clear central subject, believable forms and light, restrained colour, varied painterly handling and no embedded typography, logos or watermark. Blake deliberately uses a historical watercolour treatment rather than oil. No memorisation-sequence images are claimed.
+
+FINAL GENERATION PROMPT
+
+Create an original William Blake-inspired symbolic fine-art painting for The Sick Rose by William Blake, a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Take the historical tradition of Blake's hand-coloured illuminated watercolours and relief-etching outlines seriously: restrained translucent pigments, organic expressive contours, subtle paper surface, muted crimson, grey-green and ink-dark blue washes, not generic digital fantasy and not a photographic rose. Original composition, do not copy a Blake plate. One curved living rose stem emerges from shadow, its single crimson flower bent slightly downward, with a subtle small worm-like curved form partly hidden where the flower meets its stem; no wings and no monster. A broad quiet field of dark-blue-grey storm-toned wash surrounds the plant, leaving breathing room. The image should be charged but ambiguous, recognisable at card size and within a central wide crop. Believable botanical shape beneath the symbolic treatment, a restrained encounter between beauty and concealed disturbance, without prescribing a single meaning. No skulls, blood, human figures, faces in petals, overt sexuality, luminosity, typography, signatures, logos, watermarks, borders, decorative lettering, books, paint filters, saturated jewel colours or digital effects.

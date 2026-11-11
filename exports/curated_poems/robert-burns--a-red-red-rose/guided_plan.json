@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 2,
+  "guide": {
+    "id": "a_red_red_rose--guide",
+    "poemId": "a_red_red_rose",
+    "title": "A Red, Red Rose — a guided reading and memorisation plan",
+    "version": 2,
+    "status": "exported",
+    "description": "An unhurried reading of Robert Burns’s poem, with short passages, images, sound and gentle returns to the text.",
+    "metadata": {
+      "curator": "Bamba",
+      "totalSessions": 4,
+      "chunkingStrategy": "Passages within original stanzas; chunks of at most two lines. Read aloud and recall at your own pace, without scored exercises."
+    }
+  },
+  "poem": {
+    "id": "a_red_red_rose",
+    "title": "A Red, Red Rose",
+    "author": "Robert Burns",
+    "text": "O my Luve’s like a red, red rose,\nThat’s newly sprung in June;\nO my Luve’s like the melodie\nThat’s sweetly play’d in tune.\n\nAs fair are thou, my bonie lass,\nSo deep in luve am I;\nAnd I will luve thee still, my Dear,\nTill a’ the seas gang dry.\n\nTill a’ the seas gang dry, my Dear,\nAnd the rocks melt wi’ the sun:\nI will luve thee still, my dear,\nWhile the sands o’ life shall run.\n\nAnd fare thee weel, my only Luve!\nAnd fare thee weel, a while!\nAnd I will come again, my Luve,\nTho’ it were ten thousand mile!",
+    "year": 1794,
+    "metadata": {
+      "edition": "Scottish Poetry Library text, also printed in University of Glasgow Scottish Literature in the Classroom, p. 7. Four four-line stanzas. Preserve are, bonie, Luve’s and all Scots spellings.",
+      "sourceUrl": "https://www.scottishpoetrylibrary.org.uk/poem/red-red-rose/"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a woman beside a stone wall and red rose hedge, looking towards a country path across green fields."
+    }
+  },
+  "lines": [
+    {
+      "id": "a_red_red_rose--line-01",
+      "text": "O my Luve’s like a red, red rose,",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-01",
+      "orderIndex": 0,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "a_red_red_rose--line-02",
+      "text": "That’s newly sprung in June;",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-01",
+      "orderIndex": 1,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "a_red_red_rose--line-03",
+      "text": "O my Luve’s like the melodie",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-01",
+      "orderIndex": 2,
+      "stanzaOrderIndex": 2
+    },
+    {
+      "id": "a_red_red_rose--line-04",
+      "text": "That’s sweetly play’d in tune.",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-01",
+      "orderIndex": 3,
+      "stanzaOrderIndex": 3
+    },
+    {
+      "id": "a_red_red_rose--line-05",
+      "text": "As fair are thou, my bonie lass,",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-02",
+      "orderIndex": 4,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "a_red_red_rose--line-06",
+      "text": "So deep in luve am I;",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-02",
+      "orderIndex": 5,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "a_red_red_rose--line-07",
+      "text": "And I will luve thee still, my Dear,",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-02",
+      "orderIndex": 6,
+      "stanzaOrderIndex": 2
+    },
+    {
+      "id": "a_red_red_rose--line-08",
+      "text": "Till a’ the seas gang dry.",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-02",
+      "orderIndex": 7,
+      "stanzaOrderIndex": 3
+    },
+    {
+      "id": "a_red_red_rose--line-09",
+      "text": "Till a’ the seas gang dry, my Dear,",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-03",
+      "orderIndex": 8,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "a_red_red_rose--line-10",
+      "text": "And the rocks melt wi’ the sun:",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-03",
+      "orderIndex": 9,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "a_red_red_rose--line-11",
+      "text": "I will luve thee still, my dear,",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-03",
+      "orderIndex": 10,
+      "stanzaOrderIndex": 2
+    },
+    {
+      "id": "a_red_red_rose--line-12",
+      "text": "While the sands o’ life shall run.",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-03",
+      "orderIndex": 11,
+      "stanzaOrderIndex": 3
+    },
+    {
+      "id": "a_red_red_rose--line-13",
+      "text": "And fare thee weel, my only Luve!",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-04",
+      "orderIndex": 12,
+      "stanzaOrderIndex": 0
+    },
+    {
+      "id": "a_red_red_rose--line-14",
+      "text": "And fare thee weel, a while!",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-04",
+      "orderIndex": 13,
+      "stanzaOrderIndex": 1
+    },
+    {
+      "id": "a_red_red_rose--line-15",
+      "text": "And I will come again, my Luve,",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-04",
+      "orderIndex": 14,
+      "stanzaOrderIndex": 2
+    },
+    {
+      "id": "a_red_red_rose--line-16",
+      "text": "Tho’ it were ten thousand mile!",
+      "metadata": {},
+      "stanzaId": "a_red_red_rose--stanza-04",
+      "orderIndex": 15,
+      "stanzaOrderIndex": 3
+    }
+  ],
+  "chunks": [
+    {
+      "id": "a_red_red_rose--chunk-01",
+      "label": "Lines 1–2",
+      "lineIds": [
+        "a_red_red_rose--line-01",
+        "a_red_red_rose--line-02"
+      ],
+      "metadata": {},
+      "orderIndex": 0
+    },
+    {
+      "id": "a_red_red_rose--chunk-02",
+      "label": "Lines 3–4",
+      "lineIds": [
+        "a_red_red_rose--line-03",
+        "a_red_red_rose--line-04"
+      ],
+      "metadata": {},
+      "orderIndex": 1
+    },
+    {
+      "id": "a_red_red_rose--chunk-03",
+      "label": "Lines 5–6",
+      "lineIds": [
+        "a_red_red_rose--line-05",
+        "a_red_red_rose--line-06"
+      ],
+      "metadata": {},
+      "orderIndex": 2
+    },
+    {
+      "id": "a_red_red_rose--chunk-04",
+      "label": "Lines 7–8",
+      "lineIds": [
+        "a_red_red_rose--line-07",
+        "a_red_red_rose--line-08"
+      ],
+      "metadata": {},
+      "orderIndex": 3
+    },
+    {
+      "id": "a_red_red_rose--chunk-05",
+      "label": "Lines 9–10",
+      "lineIds": [
+        "a_red_red_rose--line-09",
+        "a_red_red_rose--line-10"
+      ],
+      "metadata": {},
+      "orderIndex": 4
+    },
+    {
+      "id": "a_red_red_rose--chunk-06",
+      "label": "Lines 11–12",
+      "lineIds": [
+        "a_red_red_rose--line-11",
+        "a_red_red_rose--line-12"
+      ],
+      "metadata": {},
+      "orderIndex": 5
+    },
+    {
+      "id": "a_red_red_rose--chunk-07",
+      "label": "Lines 13–14",
+      "lineIds": [
+        "a_red_red_rose--line-13",
+        "a_red_red_rose--line-14"
+      ],
+      "metadata": {},
+      "orderIndex": 6
+    },
+    {
+      "id": "a_red_red_rose--chunk-08",
+      "label": "Lines 15–16",
+      "lineIds": [
+        "a_red_red_rose--line-15",
+        "a_red_red_rose--line-16"
+      ],
+      "metadata": {},
+      "orderIndex": 7
+    }
+  ],
+  "stanzas": [
+    {
+      "id": "a_red_red_rose--stanza-01",
+      "metadata": {},
+      "orderIndex": 0
+    },
+    {
+      "id": "a_red_red_rose--stanza-02",
+      "metadata": {},
+      "orderIndex": 1
+    },
+    {
+      "id": "a_red_red_rose--stanza-03",
+      "metadata": {},
+      "orderIndex": 2
+    },
+    {
+      "id": "a_red_red_rose--stanza-04",
+      "metadata": {},
+      "orderIndex": 3
+    }
+  ],
+  "sessions": [
+    {
+      "id": "a_red_red_rose--session-01",
+      "sessionNumber": 1,
+      "title": "Flower and melody",
+      "subtitle": null,
+      "focusSummary": "Listen to two comparisons and their shared opening.",
+      "orderIndex": 0,
+      "chunkIds": [
+        "a_red_red_rose--chunk-01",
+        "a_red_red_rose--chunk-02"
+      ],
+      "metadata": {
+        "estimatedMinutes": 7
+      },
+      "pages": [
+        {
+          "id": "a_red_red_rose--session-01--page-01",
+          "type": "intro",
+          "orderIndex": 0,
+          "title": "An invitation to read",
+          "bodyMarkdown": "Burns brings a declaration of love into the rhythms of a song. This text keeps its Scots words and spellings. Read luve as love, bonie as lovely, and weel as well. You need not put on an accent: let the returning phrases and the rise and fall of your own voice bring the lines close.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-01--page-02",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "The whole poem",
+          "bodyMarkdown": "O my Luve’s like a red, red rose,\nThat’s newly sprung in June;\nO my Luve’s like the melodie\nThat’s sweetly play’d in tune.\n\nAs fair are thou, my bonie lass,\nSo deep in luve am I;\nAnd I will luve thee still, my Dear,\nTill a’ the seas gang dry.\n\nTill a’ the seas gang dry, my Dear,\nAnd the rocks melt wi’ the sun:\nI will luve thee still, my dear,\nWhile the sands o’ life shall run.\n\nAnd fare thee weel, my only Luve!\nAnd fare thee weel, a while!\nAnd I will come again, my Luve,\nTho’ it were ten thousand mile!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-01--page-03",
+          "type": "poem_chunk",
+          "orderIndex": 2,
+          "title": "Stay with these lines",
+          "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-01--page-04",
+          "type": "commentary",
+          "orderIndex": 3,
+          "title": "Flower and melody",
+          "bodyMarkdown": "The first pair of lines offers something seen; the second, something heard. Both begin with the same affectionate phrase. June and tune give the stanza its answering sounds. Let the longer first and third lines open out, then hear the shorter lines settle. The spelling melodie belongs to the chosen text; say it as melody. Picture freshness in the rose and movement in the music.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-01--page-05",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-01--page-06",
+          "type": "reflection",
+          "orderIndex": 5,
+          "title": "A moment to linger",
+          "bodyMarkdown": null,
+          "prompt": "Does the flower or the melody feel closer to the voice you hear?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-01--page-07",
+          "type": "completion",
+          "orderIndex": 6,
+          "title": "A place to pause",
+          "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "a_red_red_rose--session-02",
+      "sessionNumber": 2,
+      "title": "The scale of a promise",
+      "subtitle": null,
+      "focusSummary": "Let a familiar declaration grow beyond ordinary measure.",
+      "orderIndex": 1,
+      "chunkIds": [
+        "a_red_red_rose--chunk-01",
+        "a_red_red_rose--chunk-02",
+        "a_red_red_rose--chunk-03",
+        "a_red_red_rose--chunk-04"
+      ],
+      "metadata": {
+        "estimatedMinutes": 6
+      },
+      "pages": [
+        {
+          "id": "a_red_red_rose--session-02--page-01",
+          "type": "poem_chunk",
+          "orderIndex": 0,
+          "title": "Return to the previous passage",
+          "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-02--page-02",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "Stay with these lines",
+          "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-02--page-03",
+          "type": "commentary",
+          "orderIndex": 2,
+          "title": "The scale of a promise",
+          "bodyMarkdown": "Bonie means lovely; lass means a young woman. The speaker turns from describing the beloved to measuring the depth and duration of his love. The last line imagines all the seas going dry: a’ means all and gang means go. Let the impossible scale emerge naturally from the intimate address. The rhyme of I and dry keeps the personal voice beside that vast image.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-02--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 3,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-02--page-05",
+          "type": "reflection",
+          "orderIndex": 4,
+          "title": "A moment to linger",
+          "bodyMarkdown": null,
+          "prompt": "Does the impossible promise sound playful, solemn, or both when you speak it?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-02--page-06",
+          "type": "completion",
+          "orderIndex": 5,
+          "title": "A place to pause",
+          "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "a_red_red_rose--session-03",
+      "sessionNumber": 3,
+      "title": "Sea, rock and sand",
+      "subtitle": null,
+      "focusSummary": "Hear a repeated line lead into a new stanza.",
+      "orderIndex": 2,
+      "chunkIds": [
+        "a_red_red_rose--chunk-03",
+        "a_red_red_rose--chunk-04",
+        "a_red_red_rose--chunk-05",
+        "a_red_red_rose--chunk-06"
+      ],
+      "metadata": {
+        "estimatedMinutes": 6
+      },
+      "pages": [
+        {
+          "id": "a_red_red_rose--session-03--page-01",
+          "type": "poem_chunk",
+          "orderIndex": 0,
+          "title": "Return to the previous passage",
+          "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-03--page-02",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "Stay with these lines",
+          "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-03--page-03",
+          "type": "commentary",
+          "orderIndex": 2,
+          "title": "Sea, rock and sand",
+          "bodyMarkdown": "The closing image of the previous stanza becomes the opening of this one, with an added address to the beloved. That return is a useful bridge for memory. Wi’ means with; o’ means of. Sea and rock seem immense, but the final line brings us to running sand and the measure of a life. Listen to sun and run, and allow the images to change scale without rushing them.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-03--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 3,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-03--page-05",
+          "type": "reflection",
+          "orderIndex": 4,
+          "title": "A moment to linger",
+          "bodyMarkdown": null,
+          "prompt": "What happens to your sense of time as you move from the sea to the sands of life?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-03--page-06",
+          "type": "completion",
+          "orderIndex": 5,
+          "title": "A place to pause",
+          "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "a_red_red_rose--session-04",
+      "sessionNumber": 4,
+      "title": "Farewell for a while",
+      "subtitle": null,
+      "focusSummary": "Bring the promise into the moment of parting.",
+      "orderIndex": 3,
+      "chunkIds": [
+        "a_red_red_rose--chunk-05",
+        "a_red_red_rose--chunk-06",
+        "a_red_red_rose--chunk-07",
+        "a_red_red_rose--chunk-08"
+      ],
+      "metadata": {
+        "estimatedMinutes": 7
+      },
+      "pages": [
+        {
+          "id": "a_red_red_rose--session-04--page-01",
+          "type": "poem_chunk",
+          "orderIndex": 0,
+          "title": "Return to the previous passage",
+          "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-04--page-02",
+          "type": "poem_chunk",
+          "orderIndex": 1,
+          "title": "Stay with these lines",
+          "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-04--page-03",
+          "type": "commentary",
+          "orderIndex": 2,
+          "title": "Farewell for a while",
+          "bodyMarkdown": "The repeated farewell asks for a little space in the voice. Weel means well, and Tho’ means though. The distance in the final line is enormous, but the speaker insists on returning. Keep the source’s singular mile: it answers while in the rhyme. Now read the four stanzas together, following flower and melody, promise, great stretches of time, and the parting itself.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-04--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 3,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-04--page-05",
+          "type": "reflection",
+          "orderIndex": 4,
+          "title": "A moment to linger",
+          "bodyMarkdown": null,
+          "prompt": "How does the farewell change the earlier declarations when you read the whole poem again?",
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
+          "id": "a_red_red_rose--session-04--page-06",
+          "type": "poem_chunk",
+          "orderIndex": 5,
+          "title": "Read from the beginning",
+          "bodyMarkdown": "O my Luve’s like a red, red rose,\nThat’s newly sprung in June;\nO my Luve’s like the melodie\nThat’s sweetly play’d in tune.\n\nAs fair are thou, my bonie lass,\nSo deep in luve am I;\nAnd I will luve thee still, my Dear,\nTill a’ the seas gang dry.\n\nTill a’ the seas gang dry, my Dear,\nAnd the rocks melt wi’ the sun:\nI will luve thee still, my dear,\nWhile the sands o’ life shall run.\n\nAnd fare thee weel, my only Luve!\nAnd fare thee weel, a while!\nAnd I will come again, my Luve,\nTho’ it were ten thousand mile!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-04--page-07",
+          "type": "completion",
+          "orderIndex": 6,
+          "title": "Keep the poem near",
+          "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        }
+      ]
+    }
+  ]
+}

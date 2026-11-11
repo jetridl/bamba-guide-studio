@@ -4,7 +4,7 @@
     "id": "o_captain_my_captain_guide_v1",
     "poemId": "o_captain_my_captain",
     "title": "O Captain! My Captain! Guided Plan",
-    "version": 1,
+    "version": 2,
     "status": "approved",
     "description": "A 6-day guided plan for Walt Whitman's O Captain! My Captain!.",
     "metadata": {
@@ -20,6 +20,10 @@
     "year": 1865,
     "metadata": {
       "source": "public_domain"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a sailor kneeling beside a still captain on a ship’s deck, with a welcoming crowd on the distant harbour quay."
     }
   },
   "stanzas": [

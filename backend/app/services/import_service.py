@@ -49,6 +49,7 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
     poem.text = poem_data["text"]
     poem.year = poem_data.get("year")
     poem.metadata_json = poem_data.get("metadata") or {}
+    poem.cover_image_json = poem_data.get("coverImage")
     db.flush()
 
     section_by_external_id = _reconstruct_sections(db, poem, payload["chunks"])

@@ -1,0 +1,17 @@
+O CAPTAIN! MY CAPTAIN! — POEM COVER
+
+Poet: Walt Whitman
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and tradition: J. M. W. Turner — atmospheric maritime oil painting.
+Art direction: visual-guide.md. This is an original generated composition, not a copy of an existing painting.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of a sailor kneeling beside a still captain on a ship’s deck, with a welcoming crowd on the distant harbour quay.
+Guide version: 1 → 2; all external IDs, poem text, structure, sessions and editorial content are preserved.
+
+VISUAL REVIEW
+Inspected at full resolution against visual-guide.md. Clear central subject, believable forms and light, restrained colour, varied painterly handling and no embedded typography, logos or watermark. Blake deliberately uses a historical watercolour treatment rather than oil. No memorisation-sequence images are claimed.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Believable composition, natural restrained colours, plausible light, purposeful varied painterly brushwork and selective soft and firm edges. One readable scene with a clear visual memory anchor, recognisable at card size with room for a wide crop. No text, typography, signatures, watermarks, logos, borders, books, manuscripts, writing tools, decorative effects, artificial glow, oversaturation, fantasy illustration, cinematic colour grading, photographic paint filters or uniform canvas texture overlay. Do not copy any existing painting. Subject: O Captain! My Captain! by Walt Whitman. Restrained atmospheric maritime oil painting referencing J. M. W. Turner's marine air, tonal depth and expressive paint handling, with convincing ship construction rather than abstraction. A sober view along part of the quiet deck of a mid-nineteenth-century sailing vessel arriving near a harbour. In the near middle ground a young adult sailor kneels beside the still, fully clothed body of an older captain on the deck; natural anatomy, modest scale, no visible wound or gore, no exposed skin beyond faces and hands. The sailor's bowed posture is the intimate focal point. Beyond the ship's rail, a distant quay holds a loosely painted welcoming crowd and a few muted flags, suggesting public celebration that contrasts with the quiet deck. Cool marine grey, weathered timber, subdued dark clothing and a little restrained signal red, under soft overcast daylight. Believable sparse rigging that frames but does not tangle the scene. No storm, sunset blaze, triumphant naval spectacle, supernatural light, oversized flags, detailed faces in crowds or melodramatic gestures.
