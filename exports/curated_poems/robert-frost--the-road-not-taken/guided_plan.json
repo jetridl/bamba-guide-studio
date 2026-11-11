@@ -4,7 +4,7 @@
     "id": "the_road_not_taken_guide_v1",
     "poemId": "the_road_not_taken",
     "title": "The Road Not Taken Guided Plan",
-    "version": 2,
+    "version": 3,
     "status": "approved",
     "description": "A four-day guided plan for Robert Frost's The Road Not Taken.",
     "metadata": {
@@ -262,16 +262,16 @@
           "metadata": {}
         },
         {
-          "id": "day1_page3_part_1",
-          "type": "first_word_game",
+          "id": "day1_page5_part_1",
+          "type": "last_word_game",
           "orderIndex": 4,
-          "title": "First-Word 1/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_1"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -279,16 +279,16 @@
           }
         },
         {
-          "id": "day1_page3_part_2",
-          "type": "first_word_game",
+          "id": "day1_page5_part_2",
+          "type": "last_word_game",
           "orderIndex": 5,
-          "title": "First-Word 2/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_2"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -296,16 +296,16 @@
           }
         },
         {
-          "id": "day1_page3_part_3",
-          "type": "first_word_game",
+          "id": "day1_page5_part_3",
+          "type": "last_word_game",
           "orderIndex": 6,
-          "title": "First-Word 3/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_3"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -325,16 +325,16 @@
           "metadata": {}
         },
         {
-          "id": "day1_page5_part_1",
-          "type": "last_word_game",
+          "id": "day1_page3_part_1",
+          "type": "first_word_game",
           "orderIndex": 8,
-          "title": "Last-Word 1/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_1"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -342,16 +342,16 @@
           }
         },
         {
-          "id": "day1_page5_part_2",
-          "type": "last_word_game",
+          "id": "day1_page3_part_2",
+          "type": "first_word_game",
           "orderIndex": 9,
-          "title": "Last-Word 2/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_2"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -359,16 +359,16 @@
           }
         },
         {
-          "id": "day1_page5_part_3",
-          "type": "last_word_game",
+          "id": "day1_page3_part_3",
+          "type": "first_word_game",
           "orderIndex": 10,
-          "title": "Last-Word 3/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line aloud.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_3"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -388,51 +388,51 @@
           "metadata": {}
         },
         {
-          "id": "day1_page7_part_1",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_1--first_last_word_game--part-01",
+          "type": "first_last_word_game",
           "orderIndex": 12,
-          "title": "First-Letter 1/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_1"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 1,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day1_page7_part_2",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_1--first_last_word_game--part-02",
+          "type": "first_last_word_game",
           "orderIndex": 13,
-          "title": "First-Letter 2/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_2"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 2,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day1_page7_part_3",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_1--first_last_word_game--part-03",
+          "type": "first_last_word_game",
           "orderIndex": 14,
-          "title": "First-Letter 3/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_1_part_3"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 3,
             "splitGameCount": 3
@@ -495,6 +495,57 @@
             "chunk_1_part_3"
           ],
           "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 19,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 20,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day1_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 21,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_1_part_3"
+          ],
+          "roundType": "firstLetter",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -628,16 +679,16 @@
           "metadata": {}
         },
         {
-          "id": "day2_page3_part_1",
-          "type": "first_word_game",
+          "id": "day2_page5_part_1",
+          "type": "last_word_game",
           "orderIndex": 7,
-          "title": "First-Word 1/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_1"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -645,16 +696,16 @@
           }
         },
         {
-          "id": "day2_page3_part_2",
-          "type": "first_word_game",
+          "id": "day2_page5_part_2",
+          "type": "last_word_game",
           "orderIndex": 8,
-          "title": "First-Word 2/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_2"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -662,16 +713,16 @@
           }
         },
         {
-          "id": "day2_page3_part_3",
-          "type": "first_word_game",
+          "id": "day2_page5_part_3",
+          "type": "last_word_game",
           "orderIndex": 9,
-          "title": "First-Word 3/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_3"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -691,16 +742,16 @@
           "metadata": {}
         },
         {
-          "id": "day2_page5_part_1",
-          "type": "last_word_game",
+          "id": "day2_page3_part_1",
+          "type": "first_word_game",
           "orderIndex": 11,
-          "title": "Last-Word 1/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_1"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -708,16 +759,16 @@
           }
         },
         {
-          "id": "day2_page5_part_2",
-          "type": "last_word_game",
+          "id": "day2_page3_part_2",
+          "type": "first_word_game",
           "orderIndex": 12,
-          "title": "Last-Word 2/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_2"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -725,16 +776,16 @@
           }
         },
         {
-          "id": "day2_page5_part_3",
-          "type": "last_word_game",
+          "id": "day2_page3_part_3",
+          "type": "first_word_game",
           "orderIndex": 13,
-          "title": "Last-Word 3/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_3"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -754,51 +805,51 @@
           "metadata": {}
         },
         {
-          "id": "day2_page7_part_1",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_2--first_last_word_game--part-01",
+          "type": "first_last_word_game",
           "orderIndex": 15,
-          "title": "First-Letter 1/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_1"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 1,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day2_page7_part_2",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_2--first_last_word_game--part-02",
+          "type": "first_last_word_game",
           "orderIndex": 16,
-          "title": "First-Letter 2/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_2"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 2,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day2_page7_part_3",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_2--first_last_word_game--part-03",
+          "type": "first_last_word_game",
           "orderIndex": 17,
-          "title": "First-Letter 3/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_2_part_3"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 3,
             "splitGameCount": 3
@@ -861,6 +912,57 @@
             "chunk_2_part_3"
           ],
           "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 22,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 23,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day2_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 24,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_2_part_3"
+          ],
+          "roundType": "firstLetter",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -1048,16 +1150,16 @@
           "metadata": {}
         },
         {
-          "id": "day3_page3_part_1",
-          "type": "first_word_game",
+          "id": "day3_page5_part_1",
+          "type": "last_word_game",
           "orderIndex": 10,
-          "title": "First-Word 1/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_1"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -1065,16 +1167,16 @@
           }
         },
         {
-          "id": "day3_page3_part_2",
-          "type": "first_word_game",
+          "id": "day3_page5_part_2",
+          "type": "last_word_game",
           "orderIndex": 11,
-          "title": "First-Word 2/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_2"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -1082,16 +1184,16 @@
           }
         },
         {
-          "id": "day3_page3_part_3",
-          "type": "first_word_game",
+          "id": "day3_page5_part_3",
+          "type": "last_word_game",
           "orderIndex": 12,
-          "title": "First-Word 3/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_3"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -1111,16 +1213,16 @@
           "metadata": {}
         },
         {
-          "id": "day3_page5_part_1",
-          "type": "last_word_game",
+          "id": "day3_page3_part_1",
+          "type": "first_word_game",
           "orderIndex": 14,
-          "title": "Last-Word 1/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_1"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -1128,16 +1230,16 @@
           }
         },
         {
-          "id": "day3_page5_part_2",
-          "type": "last_word_game",
+          "id": "day3_page3_part_2",
+          "type": "first_word_game",
           "orderIndex": 15,
-          "title": "Last-Word 2/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_2"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -1145,16 +1247,16 @@
           }
         },
         {
-          "id": "day3_page5_part_3",
-          "type": "last_word_game",
+          "id": "day3_page3_part_3",
+          "type": "first_word_game",
           "orderIndex": 16,
-          "title": "Last-Word 3/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_3"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -1174,51 +1276,51 @@
           "metadata": {}
         },
         {
-          "id": "day3_page7_part_1",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_3--first_last_word_game--part-01",
+          "type": "first_last_word_game",
           "orderIndex": 18,
-          "title": "First-Letter 1/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_1"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 1,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day3_page7_part_2",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_3--first_last_word_game--part-02",
+          "type": "first_last_word_game",
           "orderIndex": 19,
-          "title": "First-Letter 2/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_2"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 2,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day3_page7_part_3",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_3--first_last_word_game--part-03",
+          "type": "first_last_word_game",
           "orderIndex": 20,
-          "title": "First-Letter 3/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_3_part_3"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 3,
             "splitGameCount": 3
@@ -1281,6 +1383,57 @@
             "chunk_3_part_3"
           ],
           "roundType": "hiddenWord",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 25,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 26,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day3_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 27,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_3_part_3"
+          ],
+          "roundType": "firstLetter",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -1468,16 +1621,16 @@
           "metadata": {}
         },
         {
-          "id": "day4_page3_part_1",
-          "type": "first_word_game",
+          "id": "day4_page5_part_1",
+          "type": "last_word_game",
           "orderIndex": 10,
-          "title": "First-Word 1/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 1/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_1"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -1485,16 +1638,16 @@
           }
         },
         {
-          "id": "day4_page3_part_2",
-          "type": "first_word_game",
+          "id": "day4_page5_part_2",
+          "type": "last_word_game",
           "orderIndex": 11,
-          "title": "First-Word 2/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 2/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_2"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -1502,16 +1655,16 @@
           }
         },
         {
-          "id": "day4_page3_part_3",
-          "type": "first_word_game",
+          "id": "day4_page5_part_3",
+          "type": "last_word_game",
           "orderIndex": 12,
-          "title": "First-Word 3/3",
-          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
+          "title": "Last-Word 3/3",
+          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_3"
           ],
-          "roundType": "firstWord",
+          "roundType": "lastWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -1531,16 +1684,16 @@
           "metadata": {}
         },
         {
-          "id": "day4_page5_part_1",
-          "type": "last_word_game",
+          "id": "day4_page3_part_1",
+          "type": "first_word_game",
           "orderIndex": 14,
-          "title": "Last-Word 1/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 1/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_1"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 1,
@@ -1548,16 +1701,16 @@
           }
         },
         {
-          "id": "day4_page5_part_2",
-          "type": "last_word_game",
+          "id": "day4_page3_part_2",
+          "type": "first_word_game",
           "orderIndex": 15,
-          "title": "Last-Word 2/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 2/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_2"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 2,
@@ -1565,16 +1718,16 @@
           }
         },
         {
-          "id": "day4_page5_part_3",
-          "type": "last_word_game",
+          "id": "day4_page3_part_3",
+          "type": "first_word_game",
           "orderIndex": 16,
-          "title": "Last-Word 3/3",
-          "bodyMarkdown": "The last word of each line is missing. Restore it, then say the full line.",
+          "title": "First-Word 3/3",
+          "bodyMarkdown": "The first word of each line is missing. Restore it, then say the full line.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_3"
           ],
-          "roundType": "lastWord",
+          "roundType": "firstWord",
           "estimatedSeconds": 90,
           "metadata": {
             "splitGamePart": 3,
@@ -1594,51 +1747,51 @@
           "metadata": {}
         },
         {
-          "id": "day4_page7_part_1",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_4--first_last_word_game--part-01",
+          "type": "first_last_word_game",
           "orderIndex": 18,
-          "title": "First-Letter 1/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_1"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 1,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day4_page7_part_2",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_4--first_last_word_game--part-02",
+          "type": "first_last_word_game",
           "orderIndex": 19,
-          "title": "First-Letter 2/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_2"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 2,
             "splitGameCount": 3
           }
         },
         {
-          "id": "day4_page7_part_3",
-          "type": "first_letter_game",
+          "id": "the_road_not_taken_day_4--first_last_word_game--part-03",
+          "type": "first_last_word_game",
           "orderIndex": 20,
-          "title": "First-Letter 3/3",
-          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "title": "First and Last Word 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
           "chunkIds": [
             "chunk_4_part_3"
           ],
-          "roundType": "firstLetter",
-          "estimatedSeconds": 90,
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
           "metadata": {
             "splitGamePart": 3,
             "splitGameCount": 3
@@ -1708,9 +1861,60 @@
           }
         },
         {
+          "id": "day4_page7_part_1",
+          "type": "first_letter_game",
+          "orderIndex": 25,
+          "title": "First-Letter 1/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_1"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page7_part_2",
+          "type": "first_letter_game",
+          "orderIndex": 26,
+          "title": "First-Letter 2/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_2"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "day4_page7_part_3",
+          "type": "first_letter_game",
+          "orderIndex": 27,
+          "title": "First-Letter 3/3",
+          "bodyMarkdown": "Only the first letter of each word is shown. Use those initials to recall the full text.",
+          "prompt": null,
+          "chunkIds": [
+            "chunk_4_part_3"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 90,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
           "id": "day4_page10",
           "type": "completion",
-          "orderIndex": 25,
+          "orderIndex": 28,
           "title": "The Poem You Now Carry",
           "bodyMarkdown": "You now know twenty lines that most people only think they know. You know that the roads were the same; that the speaker said so twice; that he promised to come back and didn't believe his own promise; that the famous final line is a future story he has decided to tell with a sigh.\n\nWhen you next catch yourself telling someone how a choice you made years ago \"made all the difference\", who is doing the telling? The you who was there on the morning, or the you who is sighing about it now?",
           "prompt": null,

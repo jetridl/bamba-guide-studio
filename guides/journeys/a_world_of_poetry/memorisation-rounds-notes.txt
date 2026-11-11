@@ -1,0 +1,50 @@
+A WORLD OF POETRY — DAILY MEMORISATION ROUNDS, VERSION 3
+11 November 2026
+
+All seven canonical guides have been advanced from version 2 to version 3.
+Every one of their 31 learning days now practises the day's new lines in this order:
+
+1. Last Word — last_word_game / lastWord
+2. First Word — first_word_game / firstWord
+3. First and Last Word — first_last_word_game / firstAndLast
+4. Random Words — hidden_word_game / hiddenWord
+5. First Letter — first_letter_game / firstLetter
+
+Each round covers every new chunk once before moving to the next round type. Each exercise page refers explicitly to one existing chunk of at most two lines; the app does not have to infer its passage from the session. The sequence provides 335 daily exercise pages across the seven guides.
+
+DAYS PER POEM
+
+The Arrow and the Song — Henry Wadsworth Longfellow: 3
+A Red, Red Rose — Robert Burns: 4
+The Sick Rose — William Blake: 2
+A Dream Within a Dream — Edgar Allan Poe: 6
+Because I could not stop for Death — Emily Dickinson: 6
+The Road Not Taken — Robert Frost: 4
+O Captain! My Captain! — Walt Whitman: 6
+
+CHANGES AND PRESERVATION
+
+The five recently created reading guides did not contain interactive game pages. They now include all five rounds after their existing reading and recall passage, before reflection and closing.
+
+Frost and Whitman had four main exercise groups in a different order, and neither had a complete separate five-round sequence. Their existing daily game pages were reordered, and First and Last Word pages were added. Twenty-four Whitman pages labelled First-Word or First-Letter had mismatching saved exercise types; those types and roundType values now agree with the existing labels and instructions.
+
+In total, 239 new exercise pages were added. All original page IDs are retained, including the reordered and corrected exercises. Newly added pages have stable session-prefixed IDs. All original poem, guide, stanza, line, chunk and session IDs remain unchanged.
+
+Existing prior-day recap exercises are preserved at the beginning of their days. They are separate from the five rounds on the day's new lines. All original non-game pages retain their wording and relative order. Poem text, artwork, alt text, editorial notes, session metadata, cover briefs and approved/exported guide statuses are preserved. The Journey still references the same seven poem IDs and needs no version change.
+
+VALIDATION
+
+PASS — schema validation, Studio import/approval/export and external ID preservation tests for all 16 published catalogue guides.
+PASS — seven additional content checks independently identify each day's new chunks, then verify all five exercise types in the requested order and complete passage coverage, one chunk per exercise page and at most two lines per chunk.
+Result: 23 tests passed; code checks passed.
+PASS — comparisons with the starting version-2 payloads confirm that every original ID, all non-game text, prior-day recap exercises, poem structure, cover reference and non-game page order remain intact.
+PASS — Flutter's real content validator accepts all 16 poems and all 3 Journeys, including cover files and poem references.
+PASS — Flutter's actual parser and toStudyPlan conversion produce the correct playable game types, order and non-empty one- or two-line passages on all 31 days (335 daily exercise pages).
+
+The added practice pages can produce Studio's non-blocking session-length or consecutive-game warnings. The requested five-round sequence is preserved; no validation rules were relaxed and there are no blocking import/export issues.
+
+DELIVERY
+
+Canonical files remain under exports/curated_poems/, with guides/json/ symlinks pointing to them. No duplicate approved JSON copies were created. The updated content archive is output/a_world_of_poetry-v3.zip; earlier archives are historical deliveries.
+
+The running Studio database was not re-imported or overwritten. Existing Studio edits remain untouched. Release builds require committing and pushing these Studio exports, then advancing the Flutter content pin. The Flutter app's existing protection for a poem currently being learned still applies to higher guide versions; the version bump does not bypass that safeguard.

@@ -4,7 +4,7 @@
     "id": "a_dream_within_a_dream--guide",
     "poemId": "a_dream_within_a_dream",
     "title": "A Dream Within a Dream — a guided reading and memorisation plan",
-    "version": 2,
+    "version": 3,
     "status": "exported",
     "description": "An unhurried reading of Edgar Allan Poe’s poem, with short passages, images, sound and gentle returns to the text.",
     "metadata": {
@@ -450,9 +450,179 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-01--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 6,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 12,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-01--page-06",
           "type": "reflection",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What tone does the opening kiss give to the declaration that follows?",
@@ -464,7 +634,7 @@
         {
           "id": "a_dream_within_a_dream--session-01--page-07",
           "type": "completion",
-          "orderIndex": 6,
+          "orderIndex": 16,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -550,9 +720,179 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-02--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-02--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What changes when you speak the alternatives as an urgent question taking shape?",
@@ -564,7 +904,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -650,9 +990,179 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-03--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-03--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Does the statement at the end of the stanza settle the question or deepen it?",
@@ -664,7 +1174,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -750,9 +1260,179 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-04--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-04--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the shore change the scale of the earlier farewell?",
@@ -764,7 +1444,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -850,9 +1530,179 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-05--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-09"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-09"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-09"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-09"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-09"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-05--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What happens when you read the repeated words quietly instead of making them louder?",
@@ -864,7 +1714,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -953,9 +1803,264 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-06--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/3",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-11"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/3",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-12"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--last_word_game--part-03",
+          "type": "last_word_game",
+          "orderIndex": 6,
+          "title": "Last Word 3/3",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 1/3",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-11"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First Word 2/3",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-12"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_word_game--part-03",
+          "type": "first_word_game",
+          "orderIndex": 9,
+          "title": "First Word 3/3",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First and Last Word 1/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-11"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 11,
+          "title": "First and Last Word 2/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-12"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_last_word_game--part-03",
+          "type": "first_last_word_game",
+          "orderIndex": 12,
+          "title": "First and Last Word 3/3",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 13,
+          "title": "Random Words 1/3",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-11"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 14,
+          "title": "Random Words 2/3",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-12"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--hidden_word_game--part-03",
+          "type": "hidden_word_game",
+          "orderIndex": 15,
+          "title": "Random Words 3/3",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 16,
+          "title": "First Letter 1/3",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-11"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 17,
+          "title": "First Letter 2/3",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-12"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 3
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--first_letter_game--part-03",
+          "type": "first_letter_game",
+          "orderIndex": 18,
+          "title": "First Letter 3/3",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 3,
+            "splitGameCount": 3
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-06--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 19,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How differently do you hear the two appearances of the dream phrase?",
@@ -967,7 +2072,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--page-06",
           "type": "poem_chunk",
-          "orderIndex": 5,
+          "orderIndex": 20,
           "title": "Read from the beginning",
           "bodyMarkdown": "Take this kiss upon thy brow!\nAnd, in parting from you now,\nThus much let me avow —\nYou are not wrong, who deem\nThat my days have been a dream;\nYet if Hope has flown away\nIn a night, or in a day,\nIn a vision, or in none,\nIs it therefore the less gone?\nAll that we see or seem\nIs but a dream within a dream.\n\nI stand amid the roar\nOf a surf-tormented shore,\nAnd I hold within my hand\nGrains of the golden sand —\nHow few! yet how they creep\nThrough my fingers to the deep,\nWhile I weep — while I weep!\nO, God! can I not grasp\nThem with a tighter clasp?\nO, God! can I not save\nOne from the pitiless wave?\nIs all that we see or seem\nBut a dream within a dream?",
           "prompt": null,
@@ -982,7 +2087,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--page-07",
           "type": "completion",
-          "orderIndex": 6,
+          "orderIndex": 21,
           "title": "Keep the poem near",
           "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
           "prompt": null,

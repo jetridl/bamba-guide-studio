@@ -1,6 +1,8 @@
 A WORLD OF POETRY — COMPLETED POEM ARTWORK
 11 November 2026
 
+HISTORICAL VERSION-2 ARTWORK RECORD: The covers described here are unchanged. The guides have since advanced to version 3 to add the complete daily memorisation sequence; see memorisation-rounds-notes.txt for the current content delivery and validation.
+
 Seven individual poem covers were generated with the built-in image_gen tool, following visual-guide.md. Each is a real opaque 1536 × 1024 PNG, stored as cover.png beside its canonical guided_plan.json under exports/curated_poems/. Each folder also contains cover-brief.txt with the historical artistic reference, final alt text and exact generation prompt.
 
 The Arrow and the Song — Henry Wadsworth Longfellow

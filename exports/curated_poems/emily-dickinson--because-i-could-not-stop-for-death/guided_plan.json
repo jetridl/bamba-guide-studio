@@ -4,7 +4,7 @@
     "id": "because_i_could_not_stop_for_death--guide",
     "poemId": "because_i_could_not_stop_for_death",
     "title": "Because I could not stop for Death — a guided reading and memorisation plan",
-    "version": 2,
+    "version": 3,
     "status": "exported",
     "description": "An unhurried reading of Emily Dickinson’s poem, with short passages, images, sound and gentle returns to the text.",
     "metadata": {
@@ -462,9 +462,179 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-01--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 6,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 8,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 10,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 12,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 14,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-01--page-06",
           "type": "reflection",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What effect does the word kindly have on your first picture of Death?",
@@ -476,7 +646,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-01--page-07",
           "type": "completion",
-          "orderIndex": 6,
+          "orderIndex": 16,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -562,9 +732,179 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-02--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-02--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Does the courtesy feel reassuring, unsettling, or difficult to place?",
@@ -576,7 +916,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -662,9 +1002,179 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-03--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-03--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Which scene feels most alive when you say the stanza aloud?",
@@ -676,7 +1186,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -762,9 +1272,179 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-04--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-04--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the correction alter your sense of movement in the carriage?",
@@ -776,7 +1456,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -862,9 +1542,179 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-05--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-05--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What does the word seemed allow the speaker to leave uncertain?",
@@ -876,7 +1726,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--page-06",
           "type": "completion",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -962,9 +1812,179 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-06--last_word_game--part-01",
+          "type": "last_word_game",
+          "orderIndex": 4,
+          "title": "Last Word 1/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-11"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--last_word_game--part-02",
+          "type": "last_word_game",
+          "orderIndex": 5,
+          "title": "Last Word 2/2",
+          "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "roundType": "lastWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--first_word_game--part-01",
+          "type": "first_word_game",
+          "orderIndex": 6,
+          "title": "First Word 1/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-11"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--first_word_game--part-02",
+          "type": "first_word_game",
+          "orderIndex": 7,
+          "title": "First Word 2/2",
+          "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "roundType": "firstWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--first_last_word_game--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 8,
+          "title": "First and Last Word 1/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-11"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--first_last_word_game--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 9,
+          "title": "First and Last Word 2/2",
+          "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--hidden_word_game--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 10,
+          "title": "Random Words 1/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-11"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--hidden_word_game--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 11,
+          "title": "Random Words 2/2",
+          "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--first_letter_game--part-01",
+          "type": "first_letter_game",
+          "orderIndex": 12,
+          "title": "First Letter 1/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-11"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--first_letter_game--part-02",
+          "type": "first_letter_game",
+          "orderIndex": 13,
+          "title": "First Letter 2/2",
+          "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "roundType": "firstLetter",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-06--page-05",
           "type": "reflection",
-          "orderIndex": 4,
+          "orderIndex": 14,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the last stanza change the voice you hear in the first?",
@@ -976,7 +1996,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--page-06",
           "type": "poem_chunk",
-          "orderIndex": 5,
+          "orderIndex": 15,
           "title": "Read from the beginning",
           "bodyMarkdown": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed Us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – ’tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses’ Heads\nWere toward Eternity –",
           "prompt": null,
@@ -991,7 +2011,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--page-07",
           "type": "completion",
-          "orderIndex": 6,
+          "orderIndex": 16,
           "title": "Keep the poem near",
           "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
           "prompt": null,
