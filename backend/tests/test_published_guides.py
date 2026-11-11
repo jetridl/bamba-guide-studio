@@ -32,6 +32,10 @@ def test_published_app_guide_imports_and_preserves_external_ids(client, path):
     exported = response.json()
     assert exported['poem']['id'] == source['poem']['id']
     assert exported['guide']['poemId'] == source['guide']['poemId']
+    assert exported['guide']['version'] == source['guide']['version']
+    assert exported['poem'].get('coverImage') == source['poem'].get('coverImage')
+    if cover := source['poem'].get('coverImage'):
+        assert (path.parent / cover['path']).is_file()
     for key in ['stanzas', 'lines', 'chunks']:
         assert exported[key] == source[key]
     assert [session['id'] for session in exported['sessions']] == [

@@ -1,0 +1,17 @@
+BECAUSE I COULD NOT STOP FOR DEATH — POEM COVER
+
+Poet: Emily Dickinson
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and tradition: George Frederic Watts — symbolic Victorian oil painting.
+Art direction: visual-guide.md. This is an original generated composition, not a copy of an existing painting.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of a dark horse drawing a carriage with a driver and a pale-clothed passenger along a country lane at dusk.
+Guide version: 1 → 2; all external IDs, poem text, structure, sessions and editorial content are preserved.
+
+VISUAL REVIEW
+Inspected at full resolution against visual-guide.md. Clear central subject, believable forms and light, restrained colour, varied painterly handling and no embedded typography, logos or watermark. Blake deliberately uses a historical watercolour treatment rather than oil. No memorisation-sequence images are claimed.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Believable composition, natural restrained colours, plausible light, purposeful varied painterly brushwork and selective soft and firm edges. One readable scene with a clear visual memory anchor, recognisable at card size with room for a wide crop. No text, typography, signatures, watermarks, logos, borders, books, manuscripts, writing tools, decorative effects, artificial glow, oversaturation, fantasy illustration, cinematic colour grading, photographic paint filters or uniform canvas texture overlay. Do not copy any existing painting. Subject: Because I could not stop for Death by Emily Dickinson. Symbolic Victorian oil painting referencing George Frederic Watts's grave tonal restraint and human symbolism. A modest nineteenth-century enclosed horse-drawn carriage with clearly plausible wheels, shafts and harness passes a low grassy rise on a quiet country lane at early dusk. One calm dark horse at a believable scale in side three-quarter view, with natural legs and gait; no extra or fused limbs. A sober ordinary adult driver sits upright on the driver's seat. Through a side opening, only a subtle pale sleeve and seated silhouette suggest a passenger, without rendering a dramatic face. Mortality is approached through the plain carriage and cooling landscape; Death must not be depicted as a skeleton, monster or hooded reaper. Muted umber, deep grey-green, pale cloth and cool blue-grey evening air; natural fading daylight, no glowing afterlife. The lane runs laterally across the scene, with a low horizon and open sky; no decorative winding road, monumental tomb, scythe or horror imagery. Quiet, unhurried and ambiguous.

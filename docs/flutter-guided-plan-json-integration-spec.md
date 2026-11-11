@@ -47,7 +47,7 @@ All seven top-level fields are required. The app rejects any other `schemaVersio
 | `id` | string | Stable guide ID. |
 | `poemId` | string | Must equal `poem.id`. |
 | `title` | string | |
-| `version` | integer ≥ 1 | Raise it when the content changes. The app does not use it to replace a stored plan (see below). |
+| `version` | integer ≥ 1 | Raise it when the content changes. Higher authored versions refresh at startup, except while a poem is being learned (see below). |
 | `status` | `draft` · `in_review` · `approved` · `exported` | Release builds show only `approved` and `exported`. |
 | `description` | string | Optional. |
 | `metadata` | object | Optional. |
@@ -55,6 +55,8 @@ All seven top-level fields are required. The app rejects any other `schemaVersio
 ### poem
 
 `id`, `title`, `author`, `text` (required), `year` (integer or null), `metadata`. `poem.id` is the slug the app uses everywhere, for example `the_tyger`.
+
+Optional `coverImage` contains `path` (an image filename only, such as `cover.png`) and `alt` (a description). Keep the image beside `guided_plan.json` in its canonical `exports/curated_poems/<author-name>--<poem-title>/` folder. PNG, JPEG and WebP are supported. Studio preserves the reference through import/export; the Flutter build checks that the image exists, and loads bundled covers separately from stored study plans.
 
 ### stanzas
 
@@ -123,7 +125,7 @@ The two schema files are identical. Studio is stricter in these places:
 2. Parse with `GuidedPlanJsonParser`. It checks `schemaVersion == 2`, `guide.poemId == poem.id`, and that every stanza, line and chunk reference resolves.
 3. Skip a file that fails to parse, and log the asset path. One bad file must not crash the app.
 4. Show only `approved` and `exported` guides in release builds.
-5. At startup the app stores a copy of each bundled plan that is not stored yet. It never replaces a stored plan, whatever its `guide.version`. So a changed guide reaches new installs and new poems only. Existing users keep the plan they already have.
+5. At startup the app stores missing plans and refreshes stored authored plans when the bundled `guide.version` is higher. A poem in the Igniting stage, including one archived from that stage, keeps its existing plan so learning can resume safely. Other updates replace the poem and plan atomically without resetting lifecycle history. Bundled covers are loaded separately and are available even when a stored plan is retained.
 
 ## Journey files
 

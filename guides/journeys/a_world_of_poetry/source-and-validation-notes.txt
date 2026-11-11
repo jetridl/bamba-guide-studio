@@ -1,6 +1,8 @@
 A WORLD OF POETRY — EDITORIAL, SOURCES AND VALIDATION
 Prepared 11 November 2026
 
+HISTORICAL DRAFT RECORD: The sections below describe the initial Journey delivery. The five guides and Journey were subsequently published. All seven poem covers have since been generated and all seven guides advanced to version 2; see poem-artwork-notes.txt for the current artwork delivery and validation. Do not treat the initial draft statuses below as the current catalogue state.
+
 DELIVERY AND STATUS
 
 Journey ID: a_world_of_poetry. Version: 1. Status: draft. Curator: Bamba.

@@ -58,6 +58,7 @@ def poem_to_dict(poem: Poem) -> dict[str, Any]:
         "text": poem.text,
         "year": poem.year,
         "metadata": poem.metadata_json or {},
+        **({"coverImage": poem.cover_image_json} if poem.cover_image_json else {}),
         "chunks": [chunk_to_dict(chunk) for chunk in sorted(poem.chunks, key=chunk_sort_key)],
     }
 

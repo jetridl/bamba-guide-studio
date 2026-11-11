@@ -98,6 +98,24 @@
         "metadata": {
           "type": "object",
           "additionalProperties": true
+        },
+        "coverImage": {
+          "type": "object",
+          "required": [
+            "path",
+            "alt"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*\\.(png|jpg|jpeg|webp)$"
+            },
+            "alt": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
         }
       }
     },

@@ -5,6 +5,13 @@ Git-tracked copy of each approved guide consumed by the Flutter app. The
 `guides/json/<author-name>--<poem-title>.json` entries are symlinks to these same
 files, so Studio imports and app builds use identical JSON.
 
+Poem covers live beside `guided_plan.json`, normally as `cover.png`, and are
+referenced by `poem.coverImage` (`path`, a filename only, and descriptive `alt`).
+Keep image briefs beside the artwork, outside the guide JSON. Studio preserves
+cover references on import/export. Raise `guide.version` when updating a
+published guide; the app loads bundled covers and refreshes higher authored
+plan versions at startup, while protecting plans currently being learned.
+
 The initial nine guides are copied byte-for-byte from the working Bamba app.
 Folder and filename changes do not change any IDs inside the JSON. Older draft
 JSON guides have been replaced; Markdown files remain editorial reference only.

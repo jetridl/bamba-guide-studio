@@ -1,0 +1,66 @@
+A WORLD OF POETRY — COMPLETED POEM ARTWORK
+11 November 2026
+
+Seven individual poem covers were generated with the built-in image_gen tool, following visual-guide.md. Each is a real opaque 1536 × 1024 PNG, stored as cover.png beside its canonical guided_plan.json under exports/curated_poems/. Each folder also contains cover-brief.txt with the historical artistic reference, final alt text and exact generation prompt.
+
+The Arrow and the Song — Henry Wadsworth Longfellow
+Folder: henry-wadsworth-longfellow--the-arrow-and-the-song
+Reference: John Constable; landscape naturalism. An arrow lodged in a broad oak beside a meadow.
+
+A Red, Red Rose — Robert Burns
+Folder: robert-burns--a-red-red-rose
+Reference: John William Waterhouse; Romantic figurative painting. A woman beside a rose hedge looking towards a country path.
+
+The Sick Rose — William Blake
+Folder: william-blake--the-sick-rose
+Reference: William Blake; symbolic illuminated-watercolour tradition. A bent crimson rose and a partly concealed worm against dark blue-grey washes.
+
+A Dream Within a Dream — Edgar Allan Poe
+Folder: edgar-allan-poe--a-dream-within-a-dream
+Reference: Caspar David Friedrich; contemplative Romantic landscape. A solitary figure letting sand fall beside the sea.
+
+Because I could not stop for Death — Emily Dickinson
+Folder: emily-dickinson--because-i-could-not-stop-for-death
+Reference: George Frederic Watts; symbolic Victorian painting. A plain carriage, driver and passenger on a country lane at dusk.
+
+The Road Not Taken — Robert Frost
+Folder: robert-frost--the-road-not-taken
+References: Camille Corot and John Constable; tonal woodland naturalism. Two similarly worn and leaf-covered paths, neither privileged by lighting or decoration.
+
+O Captain! My Captain! — Walt Whitman
+Folder: walt-whitman--o-captain-my-captain
+Reference: J. M. W. Turner; atmospheric maritime painting. A grieving sailor and still captain on deck, with a welcoming harbour crowd beyond.
+
+VERSION AND IDENTITY
+
+All seven guides were already published when this follow-up began. Every guide was advanced from version 1 to version 2, including Frost and Whitman. The only guide JSON changes are guide.version and the addition of poem.coverImage with path and alt. Every external ID, poem transcription, stanza, line, chunk, session, page and editorial passage is unchanged. Existing approved/exported statuses are retained. guides/json/ continues to link to the same canonical JSON files; no duplicate approved copies were created.
+
+The Journey still references the same seven poem IDs in the same order, so its version and editorial content are unchanged. No files were copied into the Flutter tree and its content pin was not advanced.
+
+STUDIO SUPPORT
+
+Studio's guided-plan schema now matches the Flutter app's current schema, including optional poem.coverImage. Import, storage and export preserve that field. Alembic migration 0007_poem_cover_image adds a nullable JSONB field to poems; normal backend startup applies it. Rebuild/restart the backend when taking this code update. Existing poems without a cover remain valid.
+
+The exporter also preserves an imported authored version when working on Studio's version-0 copy, instead of silently resetting it to 1. Tests cover a version-2 guide and reject cover paths containing folders, URLs or unsupported formats.
+
+These files are ready for the Studio content publishing workflow. A running Studio database is not silently re-imported or overwritten by this task. As always, do not re-import a guide with in-progress Studio edits. When publishing an already-held Studio copy, make sure it contains the cover reference and version intended for release before replacing the canonical export.
+
+FLUTTER UPDATE BEHAVIOUR
+
+The inspected Flutter code loads bundled covers separately from locally stored plans. At startup it refreshes authored plans with a higher guide.version, except for poems still in the Igniting stage (including an archived Igniting plan). That safeguard preserves resumable learning; their bundled covers can still load. Other updates preserve lifecycle history.
+
+Release builds consume a pinned Studio commit, not uncommitted work. Commit and push the approved exports here before advancing the Flutter app's content pin. A deliberately selected local Studio worktree can be used for development. This task does not commit, push or change that pin.
+
+VISUAL REVIEW
+
+All seven paintings were opened and inspected at full resolution against visual-guide.md, with reduced 360 × 240 card previews also checked. They have distinct historical treatments, restrained colour, believable figures or natural objects, plausible light, purposeful brushwork and a readable primary subject. No embedded text, logos or watermark is visible. Blake's watercolour treatment is intentional. The covers supply one recognisable image per poem; this delivery does not claim to contain a sequence of memorisation illustrations.
+
+VALIDATION
+
+The seven cover files have PNG signatures and 1536 × 1024 headers and match the generated originals byte-for-byte. Each poem.coverImage.path resolves to its adjacent cover.png. Every guide validates against the schema, which is byte-identical to the current Flutter schema. Structural comparison against the starting files confirms that all non-image content and IDs are preserved.
+
+Studio's backend test suite passed: 90 tests. Code checks passed. The migration's PostgreSQL SQL was inspected and adds only the nullable cover_image_json column.
+
+Flutter's real sync_studio_content.dart validation functions were run against this Studio worktree, without changing the Flutter checkout: all 16 approved/exported poems and all 3 Journeys parse and pass asset/reference validation. This includes all seven new poem covers and their version-2 guides.
+
+The updated content package is output/a_world_of_poetry-with-artwork.zip. It contains canonical exports with the seven poem covers and briefs, plus the Journey and editorial/source notes. The older a_world_of_poetry-draft.zip remains the original historical draft package.

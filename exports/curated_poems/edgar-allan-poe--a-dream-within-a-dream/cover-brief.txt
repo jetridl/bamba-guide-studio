@@ -1,0 +1,17 @@
+A DREAM WITHIN A DREAM — POEM COVER
+
+Poet: Edgar Allan Poe
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and tradition: Caspar David Friedrich — contemplative Romantic oil landscape.
+Art direction: visual-guide.md. This is an original generated composition, not a copy of an existing painting.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of a solitary man letting sand fall from his hand on a grey shore beside breaking waves.
+Guide version: 1 → 2; all external IDs, poem text, structure, sessions and editorial content are preserved.
+
+VISUAL REVIEW
+Inspected at full resolution against visual-guide.md. Clear central subject, believable forms and light, restrained colour, varied painterly handling and no embedded typography, logos or watermark. Blake deliberately uses a historical watercolour treatment rather than oil. No memorisation-sequence images are claimed.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Believable composition, natural restrained colours, plausible light, purposeful varied painterly brushwork and selective soft and firm edges. One readable scene with a clear visual memory anchor, recognisable at card size with room for a wide crop. No text, typography, signatures, watermarks, logos, borders, books, manuscripts, writing tools, decorative effects, artificial glow, oversaturation, fantasy illustration, cinematic colour grading, photographic paint filters or uniform canvas texture overlay. Do not copy any existing painting. Subject: A Dream Within a Dream by Edgar Allan Poe. Contemplative Romantic oil landscape referencing Caspar David Friedrich's measured space, human scale and quiet emotional gravity. A solitary adult figure in sober early nineteenth-century clothing stands near a surf-worn shore, seen obliquely from behind at a medium distance, the ocean occupying the open middle and far ground. One bare hand extends naturally beside the figure, fingers slightly parted with a small visible trickle of ordinary sand falling onto the beach; natural hand anatomy, no exaggerated hand or luminous sand. The figure, hand and nearby surf make one coherent scene. Under an overcast sky, cool grey waves meet subdued ochre and grey sand. An empty distant horizon and restrained breakers evoke what cannot be held. No sunset, moon, clocks, hourglasses, misty ghosts, dream collage or theatrical despair. Calm and unsettled, with observed sea and honest brushwork.

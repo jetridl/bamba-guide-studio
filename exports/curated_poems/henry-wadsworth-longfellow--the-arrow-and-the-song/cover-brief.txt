@@ -1,0 +1,17 @@
+THE ARROW AND THE SONG — POEM COVER
+
+Poet: Henry Wadsworth Longfellow
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and tradition: John Constable — English landscape naturalism in oil.
+Art direction: visual-guide.md. This is an original generated composition, not a copy of an existing painting.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of an arrow lodged in a large oak beside an open meadow under a cloudy sky.
+Guide version: 1 → 2; all external IDs, poem text, structure, sessions and editorial content are preserved.
+
+VISUAL REVIEW
+Inspected at full resolution against visual-guide.md. Clear central subject, believable forms and light, restrained colour, varied painterly handling and no embedded typography, logos or watermark. Blake deliberately uses a historical watercolour treatment rather than oil. No memorisation-sequence images are claimed.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Believable composition, natural restrained colours, plausible light, purposeful varied painterly brushwork and selective soft and firm edges. One readable scene with a clear visual memory anchor, recognisable at card size with room for a wide crop. No text, typography, signatures, watermarks, logos, borders, books, manuscripts, writing tools, decorative effects, artificial glow, oversaturation, fantasy illustration, cinematic colour grading, photographic paint filters or uniform canvas texture overlay. Do not copy any existing painting. Subject: The Arrow and the Song by Henry Wadsworth Longfellow. English landscape naturalism in traditional oil paint, referencing John Constable's observational landscape, skies and vegetation. A weathered living oak at the edge of a quiet open meadow, its substantial trunk in the near middle ground; a single old wooden arrow with subdued feather fletching is lodged in its bark, clearly readable without exaggerating its size. Let the viewer discover this small surviving trace. Natural organic composition with open meadow beyond and a muted cloudy sky; no human figures. Clouded daylight, subdued greens, umber bark and grey-blue distance. The oak is the dominant shape; arrow and tree are the memory anchor. No flying arrows, weapon display, floating music symbols, decorative flowers or multiple scenes.

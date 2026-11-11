@@ -1,0 +1,17 @@
+A RED, RED ROSE — POEM COVER
+
+Poet: Robert Burns
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and tradition: John William Waterhouse — Romantic figurative oil painting.
+Art direction: visual-guide.md. This is an original generated composition, not a copy of an existing painting.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of a woman beside a stone wall and red rose hedge, looking towards a country path across green fields.
+Guide version: 1 → 2; all external IDs, poem text, structure, sessions and editorial content are preserved.
+
+VISUAL REVIEW
+Inspected at full resolution against visual-guide.md. Clear central subject, believable forms and light, restrained colour, varied painterly handling and no embedded typography, logos or watermark. Blake deliberately uses a historical watercolour treatment rather than oil. No memorisation-sequence images are claimed.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Believable composition, natural restrained colours, plausible light, purposeful varied painterly brushwork and selective soft and firm edges. One readable scene with a clear visual memory anchor, recognisable at card size with room for a wide crop. No text, typography, signatures, watermarks, logos, borders, books, manuscripts, writing tools, decorative effects, artificial glow, oversaturation, fantasy illustration, cinematic colour grading, photographic paint filters or uniform canvas texture overlay. Do not copy any existing painting. Subject: A Red, Red Rose by Robert Burns. Romantic figurative oil painting referencing John William Waterhouse's observed gestures, convincing figures and integration of foliage. A young adult woman in simple historically plausible late eighteenth-century Scottish clothing stands beside a low, living rose hedge at a modest garden boundary, quietly turned towards a departing country track in the distance. Seen in three-quarter profile at a comfortable distance, hands naturally resting together and not holding props. A few naturally growing red rose blooms belong to the hedge near her, with no giant flower or bouquet. The figure and rose hedge form one calm memorable grouping, with open cool sky and fields beyond. Soft cloud-filtered June daylight, restrained crimson, grey-green foliage, sober brown and cream fabric. Tender, intimate, thoughtful, without sentimentality or theatrical costume. Natural anatomy and expressive restrained posture. No extra figures, excessive ornament, glowing petals or grand scenery.

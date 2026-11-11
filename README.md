@@ -172,7 +172,7 @@ The guide is already in the Studio, because the backend loads it from `exports/`
 
 Do not re-import a shipped guide to start an edit. Import replaces the Studio copy and sets it back to draft. Keep every poem, stanza, line and chunk ID: the app keys saved progress by them.
 
-The app stores each guide once and never replaces it. A changed guide reaches new installs only. See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md#app-runtime-behaviour).
+The app refreshes higher authored guide versions at startup, while preserving a plan that is currently being learned (including an archived learning plan). Bundled poem covers load separately from stored plans. See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md#app-runtime-behaviour).
 
 ### Loading published guides
 
