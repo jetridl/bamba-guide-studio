@@ -1,3 +1,4 @@
+import { UNREACHABLE, apiFetch } from "@/lib/api"
 import type { GuideStatus } from "@/lib/types"
 
 export type JourneyPoem = { poemId: string; title?: string; author?: string; note: string[] }
@@ -41,7 +42,7 @@ export type JourneyPublishResult = {
 
 export type JourneyValidation = { valid: boolean; blockingCount: number; issues: JourneyIssue[] }
 
-const BASE = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api"
+const BASE = import.meta.env.VITE_API_BASE_URL ?? "/api"
 
 /** Turn FastAPI error bodies into one plain sentence per problem. */
 function errorMessage(body: string, fallback: string): string {
@@ -69,8 +70,9 @@ function errorMessage(body: string, fallback: string): string {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${BASE}${path}`, { ...init, headers: { "Content-Type": "application/json" } })
-  if (!response.ok) throw new Error(errorMessage(await response.text(), response.statusText))
+  const response = await apiFetch(`${BASE}${path}`, { ...init, headers: { "Content-Type": "application/json" } })
+  if (!response.ok)
+    throw new Error(errorMessage(await response.text(), response.status >= 500 ? UNREACHABLE : response.statusText))
   return response.json() as Promise<T>
 }
 
@@ -101,8 +103,9 @@ export const journeyApi = {
   publish: (id: string) => request<JourneyPublishResult>(`/journeys/${id}/publish`, { method: "POST" }),
   validate: (id: string) => request<JourneyValidation>(`/journeys/${id}/validate`),
   export: async (id: string) => {
-    const response = await fetch(`${BASE}/journeys/${id}/export`)
-    if (!response.ok) throw new Error(errorMessage(await response.text(), "Export failed."))
+    const response = await apiFetch(`${BASE}/journeys/${id}/export`)
+    if (!response.ok)
+      throw new Error(errorMessage(await response.text(), response.status >= 500 ? UNREACHABLE : "Export failed."))
     return response.blob()
   },
 }

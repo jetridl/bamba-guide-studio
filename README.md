@@ -38,6 +38,31 @@ http://localhost:8090
 - nginx serves the web app and forwards `/api` to the backend, so there is no CORS setup.
 - Postgres has no host port. Only the backend can reach it.
 - `exports/` and `guides/` are mounted into the backend. It loads the approved guides on start (see [Loading published guides](#loading-published-guides)), and **Publish** writes into them.
+
+### From your phone
+
+The Studio is built for a laptop and a phone. Write and shape a guide on the
+laptop; read it through, edit its words, settle review notes, approve and
+publish from the phone.
+
+The web app calls `/api` on its own origin, so nothing needs configuring:
+
+1. Find the Mac's address on your network, for example with
+   `ipconfig getifaddr en0`.
+2. Open `http://<that address>:8090` on the phone, on the same Wi-Fi.
+
+In development, `npm run dev` listens on the network too and proxies `/api` to
+`http://127.0.0.1:8000`, so `http://<that address>:5173` works the same way.
+Set `STUDIO_API_TARGET` if the API runs somewhere else.
+
+Publish writes `exports/` on the machine that runs the Studio. Committing and
+pushing stays laptop work: the phone says so when it finishes.
+
+What the phone deliberately leaves to the laptop: adding, deleting and
+reordering pages, changing a page type, linking chunks, reordering a Journey's
+poems, and starting a new Journey. Each of those says on screen where to do it
+instead. Importing a guide or a review works on the phone, but picking a file
+is easier on the laptop.
 - Data lives in the `postgres_data` volume. `docker compose down` keeps it; `docker compose down -v` deletes it.
 
 Settings (put them in a `.env` file next to `docker-compose.yml`, or set them in the shell):

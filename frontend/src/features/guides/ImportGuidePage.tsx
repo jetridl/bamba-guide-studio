@@ -2,13 +2,14 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Link, useNavigate } from "react-router"
-import { ArrowLeft, FileJson, Upload } from "lucide-react"
+import { ChevronLeft, Upload } from "lucide-react"
 import { z } from "zod"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Textarea } from "@/components/ui/textarea"
+import { Banner } from "@/components/bamba/Banner"
+import { ActionButton } from "@/components/bamba/Button"
+import { textareaClass } from "@/components/bamba/Field"
 import { api } from "@/lib/api"
+import { cn } from "@/lib/utils"
 
 const importSchema = z.object({
   json: z.string().min(2, "Paste guided-plan JSON."),
@@ -48,52 +49,48 @@ export function ImportGuidePage() {
   }
 
   return (
-    <main className="min-h-screen bg-bamba-ivory px-8 py-8 text-bamba-ink">
-      <div className="mx-auto flex max-w-5xl flex-col gap-5">
-        <Button asChild variant="ghost" className="w-fit">
-          <Link to="/guides">
-            <ArrowLeft />
-            Guides
-          </Link>
-        </Button>
-        <Card className="border-bamba-border bg-white/65">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
-              <FileJson className="size-5 text-bamba-amber" />
-              Import guide JSON
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
-              <label className="flex cursor-pointer items-center justify-between rounded-md border border-dashed border-bamba-border bg-bamba-paper px-4 py-3 text-sm">
-                <span className="flex items-center gap-2 text-bamba-muted">
-                  <Upload className="size-4 text-bamba-amber" />
-                  Choose a guided-plan JSON file
-                </span>
-                <input
-                  accept="application/json,.json"
-                  className="sr-only"
-                  type="file"
-                  onChange={(event) => void onFileChange(event.target.files?.[0])}
-                />
-              </label>
-              <Textarea
-                className="min-h-[520px] bg-bamba-paper font-mono text-sm"
-                placeholder="{ ... guided plan JSON ... }"
-                {...form.register("json")}
-              />
-              {form.formState.errors.json ? (
-                <p className="text-sm text-red-700">{form.formState.errors.json.message}</p>
-              ) : null}
-              {error ? <p className="rounded-md border border-amber-300 bg-amber-50 p-3 text-sm">{error}</p> : null}
-              <div className="flex justify-end">
-                <Button disabled={form.formState.isSubmitting} type="submit">
-                  Import guide
-                </Button>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
+    <main className="min-h-dvh bg-linear-to-b from-bamba-bg-top to-bamba-bg text-bamba-ink">
+      <div className="mx-auto w-full max-w-3xl px-5 pt-3 pb-10 md:px-8 md:pt-5">
+        <Link to="/guides" className="inline-flex h-11 items-center gap-1.5 text-base text-bamba-quiet no-underline">
+          <ChevronLeft className="size-5" />
+          Guides
+        </Link>
+        <h1 className="mt-2 font-heading text-[34px] leading-tight font-bold md:text-5xl">Import a guide</h1>
+        <p className="mt-2 text-[15px] leading-relaxed text-bamba-muted">
+          Pick a guided-plan JSON file, or paste it below. Importing is laptop work.
+        </p>
+
+        <form className="mt-6 flex flex-col gap-4" onSubmit={form.handleSubmit(onSubmit)}>
+          <label className="flex min-h-14 cursor-pointer items-center gap-3 rounded-field border border-dashed border-bamba-border bg-bamba-surface px-4 py-3 text-[15px]">
+            <Upload className="size-5 text-bamba-accent" />
+            <span className="text-bamba-muted">Choose a guided-plan JSON file</span>
+            <input
+              accept="application/json,.json"
+              className="sr-only"
+              type="file"
+              onChange={(event) => void onFileChange(event.target.files?.[0])}
+            />
+          </label>
+
+          <textarea
+            className={cn(textareaClass, "min-h-[420px] font-mono text-sm md:min-h-[520px]")}
+            placeholder="{ ... guided plan JSON ... }"
+            {...form.register("json")}
+          />
+
+          {form.formState.errors.json ? (
+            <p className="text-sm text-bamba-block-ink">{form.formState.errors.json.message}</p>
+          ) : null}
+          {error ? (
+            <Banner tone="warn" role="alert">
+              {error}
+            </Banner>
+          ) : null}
+
+          <ActionButton variant="primary" size="pinned" disabled={form.formState.isSubmitting} type="submit">
+            Import guide
+          </ActionButton>
+        </form>
       </div>
     </main>
   )

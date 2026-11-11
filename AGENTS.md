@@ -45,7 +45,8 @@ Do not replace this with Next.js, Prisma, or SQLite unless the user explicitly a
 - Use SQLAlchemy 2.x style.
 - Use Alembic for migrations.
 - Use PostgreSQL, preferably via Docker Compose for local development.
-- Keep UI desktop-first.
+- Build the UI for a laptop and a phone. The bulk of authoring happens on a
+  laptop; review, text edits, approval and publishing must work on a phone.
 - Match Bamba’s warm, calm, literary design.
 - Never create a generic admin dashboard aesthetic.
 - JSON export must match `schemas/guided-plan.schema.json`.
@@ -63,7 +64,6 @@ Do not replace this with Next.js, Prisma, or SQLite unless the user explicitly a
 - Cloud sync.
 - Collaboration.
 - Community features.
-- Mobile responsive layout beyond basic usability.
 - Flutter runtime rendering.
 
 ---
@@ -81,7 +81,7 @@ When implementing, deliver:
 7. Import/export functionality.
 8. Review import functionality.
 9. Validation UI.
-10. Mobile preview panel.
+10. Mobile preview panel, in the app's own typography.
 11. Tests.
 12. README instructions.
 

@@ -8,10 +8,51 @@ import type {
   ValidationResult,
 } from "@/lib/types"
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api"
+// Same origin by default: nginx proxies /api in production, Vite in development.
+// A phone then needs no extra setting and no CORS rule.
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "/api"
+
+/** Said in plain words, because a phone on hotel Wi-Fi sees this often. */
+export const UNREACHABLE =
+  "Could not reach the Studio. Check that it is running, and that this device is on the same network."
+
+/** Turn a FastAPI error body into one readable message. */
+async function errorFromResponse(response: Response): Promise<string> {
+  const body = await response.text()
+  let detail: unknown
+  try {
+    detail = (JSON.parse(body) as { detail?: unknown }).detail
+  } catch {
+    detail = undefined
+  }
+  if (typeof detail === "string") return detail
+  if (detail && typeof detail === "object") {
+    const { message, issues, errors } = detail as {
+      message?: string
+      issues?: { message: string }[]
+      errors?: string[]
+    }
+    if (message) {
+      const lines = [...(issues ?? []).map((issue) => issue.message), ...(errors ?? [])]
+      return [message, ...lines.map((line) => `• ${line}`)].join("\n")
+    }
+    return JSON.stringify(detail, null, 2)
+  }
+  if (body.trim()) return body
+  if (response.status >= 500) return UNREACHABLE
+  return response.statusText || `Request failed (${response.status}).`
+}
+
+export async function apiFetch(path: string, init?: RequestInit): Promise<Response> {
+  try {
+    return await fetch(path, init)
+  } catch {
+    throw new Error(UNREACHABLE)
+  }
+}
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`, {
+  const response = await apiFetch(`${API_BASE}${path}`, {
     headers: {
       "Content-Type": "application/json",
       ...(init?.headers ?? {}),
@@ -19,30 +60,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     ...init,
   })
   if (!response.ok) {
-    const detail = await response.text()
-    try {
-      const parsed = JSON.parse(detail) as { detail?: unknown }
-      if (typeof parsed.detail === "string") {
-        throw new Error(parsed.detail)
-      }
-      if (parsed.detail && typeof parsed.detail === "object") {
-        const { message, issues, errors } = parsed.detail as {
-          message?: string
-          issues?: { message: string }[]
-          errors?: string[]
-        }
-        if (message) {
-          const lines = [...(issues ?? []).map((issue) => issue.message), ...(errors ?? [])]
-          throw new Error([message, ...lines.map((line) => `• ${line}`)].join("\n"))
-        }
-        throw new Error(JSON.stringify(parsed.detail, null, 2))
-      }
-    } catch (caught) {
-      if (caught instanceof Error && caught.message !== detail) {
-        throw caught
-      }
-    }
-    throw new Error(detail || response.statusText)
+    throw new Error(await errorFromResponse(response))
   }
   if (response.status === 204) {
     return undefined as T
@@ -103,9 +121,9 @@ export const api = {
   publishGuide: (guideId: string) =>
     request<PublishResult>(`/guides/${guideId}/publish`, { method: "POST" }),
   exportGuide: async (guideId: string) => {
-    const response = await fetch(`${API_BASE}/guides/${guideId}/export`)
+    const response = await apiFetch(`${API_BASE}/guides/${guideId}/export`)
     if (!response.ok) {
-      throw new Error(await response.text())
+      throw new Error(await errorFromResponse(response))
     }
     return response.blob()
   },
