@@ -1,0 +1,21 @@
+The Second Coming — POEM COVER
+12 November 2026
+
+Poet: William Butler Yeats
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and artistic tradition: George Frederic Watts and Caspar David Friedrich — symbolic Romantic oil painting.
+Art direction: visual-guide.md. Original composition, not a copy of an existing painting.
+Composition, light, palette, paint handling and restrictions are specified in the final prompt below.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of a human-headed, lion-bodied creature moving across a barren desert beneath a dim sky, with birds circling above.
+Guide version: 1 → 2. All external IDs and existing text, structure, sessions and exercises are preserved.
+
+VISUAL REVIEW
+
+Inspected at full resolution and as a 360 × 240 card preview made from the final saved image.
+The deliberate human-headed lion follows the poem’s symbolic subject and is painted as one weighty form with a coherent slow gait. Muted sand and umber, an empty horizon and a few distant birds create foreboding through space and tone. The image avoids ornate fantasy design, magical glow, pyramids and an apocalyptic montage.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art oil painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Follow traditional 18th- and 19th-century European naturalist and Romantic painting: believable forms and perspective, natural restrained pigment, physically plausible illumination, purposeful varied brushwork, selected sharp edges and soft lost edges. A considered original composition with one readable subject, enough breathing room for a wide card crop, and a strong visual memory anchor. No typography, lettering, signature, watermark, logo, border, book, manuscript, writing implements, decorative digital effects, uniform canvas-grain overlay, photographic paint filter, oversaturation, artificial glow, HDR contrast, formulaic cinematic lighting or generic fantasy illustration. Do not copy an existing painting. Poem: The Second Coming by William Butler Yeats. Reference George Frederic Watts for grave symbolic painting and Caspar David Friedrich for sparse, unsettling space. A restrained visionary image: a single ancient-looking creature with a lion's body and a human head moves slowly across a barren desert in dusty failing daylight. This deliberate sphinx-like anatomy belongs to the poem, not to random fantasy embellishment. Treat the head and body as one weighty, physically coherent form: tawny dust-covered lion torso, four credible lion legs with one foreleg naturally advancing, a sober blank human face softly described rather than a detailed portrait, no headdress or ornate costume. A few small desert birds circle at a distance, casting fleeting shapes on the sand. A low empty horizon and cool grey-brown sky, muted sand, umber and grey ochre, shadow revealing weight and slow movement. No pyramids, temple, ruins, cradle, blood, soldiers, giant sun, magical eyes, glowing symbols, wings, horns or cinematic apocalypse. No heroic monster design or hyper-detail. The feeling is quiet foreboding and difficult recognition, not spectacle. Do not copy the Great Sphinx's pose or any existing painting.

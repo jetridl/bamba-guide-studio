@@ -4,7 +4,7 @@
     "id": "i_wandered_lonely_as_a_cloud_guide_v1",
     "poemId": "i_wandered_lonely_as_a_cloud",
     "title": "I Wandered Lonely as a Cloud Guided Plan",
-    "version": 1,
+    "version": 2,
     "status": "approved",
     "description": "A 4-day guided plan for William Wordsworth's I Wandered Lonely as a Cloud.",
     "metadata": {
@@ -20,6 +20,10 @@
     "year": 1807,
     "metadata": {
       "source": "public_domain"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of yellow daffodils growing beneath trees along a breezy lakeshore, with wooded hills across the water."
     }
   },
   "stanzas": [

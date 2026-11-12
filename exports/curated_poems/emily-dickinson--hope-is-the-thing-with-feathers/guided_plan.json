@@ -4,7 +4,7 @@
     "id": "hope_is_the_thing_with_feathers--guide",
     "poemId": "hope_is_the_thing_with_feathers",
     "title": "“Hope” is the thing with feathers — a guided memorization plan",
-    "version": 1,
+    "version": 2,
     "status": "approved",
     "description": "A three-day guided plan to read, understand, and memorize Emily Dickinson's “‘Hope’ is the thing with feathers,” one stanza per day with spaced recap.",
     "metadata": {
@@ -25,6 +25,10 @@
       "form": "three quatrains, common (ballad) meter",
       "publicDomain": true,
       "firstPublished": "Poems, Second Series (1891)"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a small brown bird singing from a rain-damp branch above a grey, clouded landscape."
     }
   },
   "stanzas": [

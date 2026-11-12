@@ -4,7 +4,7 @@
     "id": "the_eagle--guide",
     "poemId": "the_eagle",
     "title": "The Eagle — a guided memorization plan",
-    "version": 1,
+    "version": 2,
     "status": "exported",
     "description": "A two-day guided plan to read, savor, and memorize Alfred, Lord Tennyson’s “The Eagle,” moving from the bird’s rocky perch to its sudden plunge, with gentle memory practice and a next-day recap.",
     "metadata": {
@@ -26,6 +26,10 @@
       "publicDomain": true,
       "firstPublished": "Poems of Alfred Tennyson, seventh edition (1851)",
       "biographicalSource": "https://poets.org/poet/alfred-lord-tennyson"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a golden eagle gripping a high rocky crag above a blue-grey sea beneath a pale sky."
     }
   },
   "lines": [

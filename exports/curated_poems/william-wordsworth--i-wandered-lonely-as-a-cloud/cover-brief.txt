@@ -1,0 +1,21 @@
+I Wandered Lonely as a Cloud — POEM COVER
+12 November 2026
+
+Poet: William Wordsworth
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and artistic tradition: John Constable — English landscape naturalism.
+Art direction: visual-guide.md. Original composition, not a copy of an existing painting.
+Composition, light, palette, paint handling and restrictions are specified in the final prompt below.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of yellow daffodils growing beneath trees along a breezy lakeshore, with wooded hills across the water.
+Guide version: 1 → 2. All external IDs and existing text, structure, sessions and exercises are preserved.
+
+VISUAL REVIEW
+
+Inspected at full resolution and as a 360 × 240 card preview made from the final saved image.
+The daffodils grow in uneven groups along a believable lakeshore, with leaning stems, spring trees and small moving waves. Restrained yellows and greens contrast with grey-blue water and clouded daylight. Foreground flowers and quieter receding banks create depth without a decorative border, luminous petals or exaggerated mountain scenery.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art oil painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Follow traditional 18th- and 19th-century European naturalist and Romantic painting: believable forms and perspective, natural restrained pigment, physically plausible illumination, purposeful varied brushwork, selected sharp edges and soft lost edges. A considered original composition with one readable subject, enough breathing room for a wide card crop, and a strong visual memory anchor. No typography, lettering, signature, watermark, logo, border, book, manuscript, writing implements, decorative digital effects, uniform canvas-grain overlay, photographic paint filter, oversaturation, artificial glow, HDR contrast, formulaic cinematic lighting or generic fantasy illustration. Do not copy an existing painting. Poem: I Wandered Lonely as a Cloud by William Wordsworth. Reference John Constable's observational landscape painting: believable sky, wind, water and natural vegetation. An English Lake District shore in spring, where a broad irregular host of wild daffodils grows naturally along the margin of a lake beneath a few deciduous trees. Their long stems and leaves tilt gently in the breeze, while small ordinary waves catch subdued light beside them. A low bank and uneven groups of flowers give near, middle and far relationships without a decorative floral border. Distant wooded hills soften beyond the water under a pale clouded daytime sky. The daffodils are the clear visual subject and remain readable in a wide card crop; use restrained natural yellow and olive green, cool grey-blue water, umber trees and a little soft ivory sky. Purposeful brushwork suggests groups and movement with selected flower details, not a field of identical stamped blossoms. No person, cloud shaped like a face, stars, couch, book, ornamental path, dramatic mountains, glowing petals, saturated gold sunset or painted quotation.

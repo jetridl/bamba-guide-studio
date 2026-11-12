@@ -1,0 +1,118 @@
+BAMBA — COMPLETE EXPORTED POEM COVERAGE
+12 November 2026
+
+All 16 exported poems now have cover artwork. Nine previously unillustrated
+poems received new original oil paintings made with the built-in image_gen tool,
+following visual-guide.md and the restrained historical direction of the existing
+Bamba covers. The seven earlier covers and their guide files are unchanged.
+
+NEW COVERS — GUIDE VERSION 1 TO 2
+
+The Eagle — Alfred, Lord Tennyson
+  Bruno Liljefors / Archibald Thorburn; a golden eagle above a coastal crag.
+  exports/curated_poems/alfred-lord-tennyson--the-eagle/
+
+Who Has Seen the Wind? — Christina Rossetti
+  John Constable / Camille Corot; leaves, grass and a bending meadow tree.
+  exports/curated_poems/christina-rossetti--who-has-seen-the-wind/
+
+“Hope” is the thing with feathers — Emily Dickinson
+  Archibald Thorburn / Bruno Liljefors; a small singing bird in cold weather.
+  exports/curated_poems/emily-dickinson--hope-is-the-thing-with-feathers/
+
+Ode to a Nightingale — John Keats
+  Camille Corot / George Inness; a nightingale in a dim beech thicket.
+  exports/curated_poems/john-keats--ode-to-a-nightingale/
+
+If— — Rudyard Kipling
+  Jules Bastien-Lepage / Jean-François Millet; a worker rebuilding a stone wall.
+  exports/curated_poems/rudyard-kipling--if/
+
+The Tyger — William Blake
+  George Stubbs / William Blake; a natural tiger in a dark forest.
+  exports/curated_poems/william-blake--the-tyger/
+
+The Second Coming — William Butler Yeats
+  George Frederic Watts / Caspar David Friedrich; a human-headed lion in a desert.
+  exports/curated_poems/william-butler-yeats--the-second-coming/
+
+Invictus — William Ernest Henley
+  George Frederic Watts / John Singer Sargent; a steady figure on a rough shore.
+  exports/curated_poems/william-ernest-henley--invictus/
+
+I Wandered Lonely as a Cloud — William Wordsworth
+  John Constable; wild daffodils beside a lake beneath spring trees.
+  exports/curated_poems/william-wordsworth--i-wandered-lonely-as-a-cloud/
+
+Each folder contains cover.png, cover-brief.txt and the canonical guided_plan.json.
+The brief records the historical artistic references, exact generation prompt,
+format, restrictions, image-based alt text and visual review. Each image is an
+opaque 1536 × 1024 PNG in a wide 3:2 composition. The image reference is stored
+at poem.coverImage with a filename-only path and descriptive alt text.
+
+CURRENT CATALOGUE VERSIONS
+
+The Eagle                                      2
+Who Has Seen the Wind?                          2
+A Dream Within a Dream                         4
+Because I could not stop for Death              4
+“Hope” is the thing with feathers               2
+The Arrow and the Song                         4
+Ode to a Nightingale                           2
+A Red, Red Rose                                4
+The Road Not Taken                             3
+If—                                           2
+O Captain! My Captain!                         3
+The Sick Rose                                  4
+The Tyger                                      2
+The Second Coming                              2
+Invictus                                       2
+I Wandered Lonely as a Cloud                    2
+
+PRESERVATION AND DELIVERY
+
+The nine changed guide payloads differ only in guide.version (1 to 2) and the
+addition of poem.coverImage. Every original guide, poem, stanza, line, chunk,
+session and page ID is preserved. All existing wording, memorisation rounds,
+recaps, metadata, poem transcriptions and approved/exported statuses are retained.
+The seven previously illustrated guide files and their PNGs were verified
+unchanged using checksums. Journey files and versions are unchanged.
+
+Canonical files remain under exports/curated_poems/; the existing guides/json/
+symlinks still resolve to the same files. No approved content was copied into
+the Flutter tree. No generation integration was added to the application.
+
+The new artwork and nine updated guides are packaged in:
+output/remaining-poem-covers-2026-11-12.zip
+The archive mirrors the canonical export structure and includes the individual
+briefs and this note. It contains the nine additions, rather than duplicating
+the seven earlier illustrated guides.
+
+VALIDATION
+
+All nine new paintings were inspected at full resolution and as 360 × 240 card
+previews made from the final saved files. The subjects remain readable at card
+size. Figures, animals, botanical forms and landscapes are coherent; light and
+colour are restrained and appropriate to each subject. The Second Coming uses
+the poem's deliberate human-headed-lion image, painted in a symbolic historical
+tradition rather than a digital fantasy style. No embedded typography, logos,
+signatures or watermarks are visible.
+
+Every one of the 16 cover references resolves to its adjacent image. PNG
+signatures and 1536 × 1024 dimensions were checked; new saved images match the
+generated originals byte-for-byte. Every guide validates against the JSON schema,
+and every guides/json/ alias remains a canonical symlink.
+
+Flutter's real sync_studio_content.dart validator accepts all 16 poems and all
+3 Journeys, including their asset and poem references. The backend test suite
+passes: 124 tests. Code and whitespace checks pass.
+
+Several version-flow tests used the live Tyger export as a version-1 test seed.
+Now that the actual guide is version 2, those isolated test fixtures explicitly
+start at version 1. This preserves their existing version-update, conflict and
+restore assertions without changing production loading or publishing behaviour.
+
+The running Studio database and Flutter content pin were not overwritten. Normal
+Studio refresh/startup can load the higher guide versions through its existing
+version workflow while protecting unsaved edits. For a release build, commit and
+push approved Studio exports before advancing Flutter's pinned Studio revision.

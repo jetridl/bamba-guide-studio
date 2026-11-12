@@ -4,7 +4,7 @@
     "id": "who_has_seen_the_wind--guide",
     "poemId": "who_has_seen_the_wind",
     "title": "Who Has Seen the Wind? — a guided memorization plan",
-    "version": 1,
+    "version": 2,
     "status": "exported",
     "description": "A gentle two-day guided plan to read, enjoy, and memorize Christina Rossetti’s “Who Has Seen the Wind?”, one stanza at a time, with a friendly return to yesterday’s lines.",
     "metadata": {
@@ -26,6 +26,10 @@
       "publicDomain": true,
       "firstPublished": "Sing-Song: A Nursery Rhyme Book (1872)",
       "biographicalSource": "https://poets.org/poet/christina-rossetti"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a leafy tree bending in a breeze beside an open green meadow under a cloudy sky."
     }
   },
   "lines": [

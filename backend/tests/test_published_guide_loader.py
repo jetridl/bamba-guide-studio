@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import shutil
 from collections.abc import Generator
 from pathlib import Path
 
@@ -38,9 +37,12 @@ def db() -> Generator[Session, None, None]:
 
 
 def _folder(tmp_path: Path, *names: str) -> Path:
+    """Start version-flow fixtures at 1 even when the live catalogue advances."""
     for name in names:
         (tmp_path / name).mkdir()
-        shutil.copy(PUBLISHED / name / "guided_plan.json", tmp_path / name / "guided_plan.json")
+        payload = json.loads((PUBLISHED / name / "guided_plan.json").read_text())
+        payload["guide"]["version"] = 1
+        (tmp_path / name / "guided_plan.json").write_text(json.dumps(payload))
     return tmp_path
 
 

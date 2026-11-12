@@ -1,0 +1,21 @@
+Ode to a Nightingale — POEM COVER
+12 November 2026
+
+Poet: John Keats
+Application: Bamba poem cover and recognisable visual anchor.
+Historical reference and artistic tradition: Camille Corot and George Inness — tonal contemplative woodland painting.
+Art direction: visual-guide.md. Original composition, not a copy of an existing painting.
+Composition, light, palette, paint handling and restrictions are specified in the final prompt below.
+Format: cover.png, opaque PNG, 1536 × 1024, 3:2 landscape, beside guided_plan.json.
+Generation method: built-in image_gen tool.
+Final alt text: Oil painting of a brown nightingale singing from a leafy branch in a dim woodland, with fading sky beyond the trees.
+Guide version: 1 → 2. All external IDs and existing text, structure, sessions and exercises are preserved.
+
+VISUAL REVIEW
+
+Inspected at full resolution and as a 360 × 240 card preview made from the final saved image.
+The nightingale is integrated into the beech thicket at a believable scale, with folded wings and a naturally open beak. Muted olive foliage, soft distant trees and a small opening of evening sky establish tonal depth. The bird remains readable without a spotlight; the single woodland scene avoids a montage of the poem’s references.
+
+FINAL GENERATION PROMPT
+
+Create an original fine-art oil painting for a Bamba poem cover, exactly 1536 x 1024 pixels, 3:2 landscape, opaque PNG. Follow traditional 18th- and 19th-century European naturalist and Romantic painting: believable forms and perspective, natural restrained pigment, physically plausible illumination, purposeful varied brushwork, selected sharp edges and soft lost edges. A considered original composition with one readable subject, enough breathing room for a wide card crop, and a strong visual memory anchor. No typography, lettering, signature, watermark, logo, border, book, manuscript, writing implements, decorative digital effects, uniform canvas-grain overlay, photographic paint filter, oversaturation, artificial glow, HDR contrast, formulaic cinematic lighting or generic fantasy illustration. Do not copy an existing painting. Poem: Ode to a Nightingale by John Keats. Reference Camille Corot for the tonal poetry of wooded interiors and George Inness for a quiet sense of depth. A single ordinary brown nightingale sings from a low branch within a leafy beech thicket in late-spring twilight. Seen from a human listener's distance: the small bird is recognisable near the middle ground, one beak just open, naturally poised feet and folded wings, but the surrounding dark green boughs and cooling woodland atmosphere matter equally. A little fading sky filters through an irregular opening at the edge of the foliage; no direct moon or spotlight. Subdued olive, grey-green, umber and blue-grey dusk, delicate warm-cool relationships and breathable, readable shadows. Varied broad foliage strokes with selective detail at the bird. Evoke listening and a song disappearing into depth. No wine glass, bottle, poet, bench, books, opium, skull, faery figures, fantasy window, oversized bird or glowing foliage. A single credible woodland scene, not a montage of the poem's references.

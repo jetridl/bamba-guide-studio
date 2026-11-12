@@ -4,7 +4,7 @@
     "id": "ode_to_a_nightingale_guide_v1",
     "poemId": "ode_to_a_nightingale",
     "title": "Ode to a Nightingale Guided Plan",
-    "version": 1,
+    "version": 2,
     "status": "approved",
     "description": "A 16-day guided plan for John Keats's Ode to a Nightingale.",
     "metadata": {
@@ -20,6 +20,10 @@
     "year": 1819,
     "metadata": {
       "source": "public_domain"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a brown nightingale singing from a leafy branch in a dim woodland, with fading sky beyond the trees."
     }
   },
   "stanzas": [

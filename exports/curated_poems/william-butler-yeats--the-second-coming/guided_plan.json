@@ -4,7 +4,7 @@
     "id": "the_second_coming_guide_v1",
     "poemId": "the_second_coming",
     "title": "The Second Coming Guided Plan",
-    "version": 1,
+    "version": 2,
     "status": "approved",
     "description": "A 5-day guided plan for William Butler Yeats's The Second Coming.",
     "metadata": {
@@ -20,6 +20,10 @@
     "year": 1920,
     "metadata": {
       "source": "public_domain"
+    },
+    "coverImage": {
+      "path": "cover.png",
+      "alt": "Oil painting of a human-headed, lion-bodied creature moving across a barren desert beneath a dim sky, with birds circling above."
     }
   },
   "stanzas": [

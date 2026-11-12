@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 from pathlib import Path
 
 import pytest
@@ -16,6 +15,13 @@ from app.services.publish_service import folder_name
 
 PUBLISHED = ROOT / "exports/curated_poems"
 TYGER = "william-blake--the-tyger"
+
+
+def _tyger_fixture() -> dict:
+    """Version-flow tests start at 1 independently of the live catalogue."""
+    payload = json.loads((PUBLISHED / TYGER / "guided_plan.json").read_text())
+    payload["guide"]["version"] = 1
+    return payload
 
 
 @pytest.fixture
@@ -66,12 +72,11 @@ def test_publish_existing_guide_updates_its_folder_and_replaces_its_draft(
     client: TestClient, dirs: tuple[Path, Path]
 ) -> None:
     exports_dir, guides_dir = dirs
-    source_path = PUBLISHED / TYGER / "guided_plan.json"
-    source = json.loads(source_path.read_text())
+    source = _tyger_fixture()
     # The canonical file sits under a different folder name: publish must find it by ID.
     (exports_dir / "renamed").mkdir()
-    shutil.copy(source_path, exports_dir / "renamed/guided_plan.json")
-    (guides_dir / "renamed.json").write_text(source_path.read_text())  # an unlinked draft copy
+    (exports_dir / "renamed/guided_plan.json").write_text(json.dumps(source))
+    (guides_dir / "renamed.json").write_text(json.dumps(source))  # an unlinked draft copy
     guide_id = _import_and_approve(client, source)
     client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised", "contentVersion": 2})
     client.post(f"/api/guides/{guide_id}/approve")
@@ -144,8 +149,8 @@ def test_write_failure_keeps_status(client: TestClient, dirs: tuple[Path, Path],
 def _publish_tyger(client: TestClient, dirs: tuple[Path, Path]) -> tuple[str, Path]:
     exports_dir, _ = dirs
     (exports_dir / TYGER).mkdir()
-    shutil.copy(PUBLISHED / TYGER / "guided_plan.json", exports_dir / TYGER / "guided_plan.json")
-    source = json.loads((PUBLISHED / TYGER / "guided_plan.json").read_text())
+    source = _tyger_fixture()
+    (exports_dir / TYGER / "guided_plan.json").write_text(json.dumps(source))
     return _import_and_approve(client, source), exports_dir / TYGER / "guided_plan.json"
 
 
