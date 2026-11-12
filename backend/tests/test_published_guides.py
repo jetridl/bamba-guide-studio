@@ -90,3 +90,60 @@ def test_world_of_poetry_practises_every_days_new_lines_in_the_requested_order(p
         assert [page['orderIndex'] for page in pages] == list(range(len(pages)))
         seen |= referenced
     assert seen == chunks.keys()
+
+
+NEW_WORLD_GUIDE_IDS = WORLD_OF_POETRY_IDS - {'the_road_not_taken', 'o_captain_my_captain'}
+
+
+@pytest.mark.parametrize(
+    'path',
+    [path for path in PUBLISHED_GUIDES if json.loads(path.read_text())['poem']['id'] in NEW_WORLD_GUIDE_IDS],
+    ids=lambda path: path.parent.name,
+)
+def test_new_world_guides_alternate_text_and_practice_after_two_day_recaps(path):
+    source = json.loads(path.read_text())
+    round_order = [
+        'last_word_game', 'first_word_game', 'first_last_word_game',
+        'hidden_word_game', 'first_letter_game',
+    ]
+    readable = {'commentary', 'context', 'poet_background', 'poem_background', 'poem_chunk'}
+    previous_passages = []
+    for session in sorted(source['sessions'], key=lambda item: item['orderIndex']):
+        pages = sorted(session['pages'], key=lambda item: item['orderIndex'])
+        today_index = next(index for index, page in enumerate(pages)
+                           if page.get('metadata', {}).get('scope') == 'today_chunks')
+        current = pages[today_index]['chunkIds']
+        recaps = [page for page in pages if page.get('metadata', {}).get('recapOffsetDays')]
+        intros = [page for page in pages if page.get('metadata', {}).get('scope') == 'recap_intro']
+        assert len(intros) == bool(previous_passages)
+        expected_recaps = []
+        if len(previous_passages) >= 2:
+            expected_recaps.extend((2, 'hidden_word_game', [chunk]) for chunk in previous_passages[-2])
+        if previous_passages:
+            expected_recaps.extend((1, 'first_last_word_game', [chunk]) for chunk in previous_passages[-1])
+        assert [(page['metadata']['recapOffsetDays'], page['type'], page['chunkIds'])
+                for page in recaps] == expected_recaps
+        whole_index = next(index for index, page in enumerate(pages)
+                           if page.get('metadata', {}).get('scope') == 'whole_poem')
+        assert whole_index < today_index
+        assert all(page['orderIndex'] < whole_index for page in recaps)
+        assert all(page['bodyMarkdown'] == source['poem']['text'] for page in pages
+                   if page.get('metadata', {}).get('scope') == 'whole_poem')
+
+        ranges = []
+        for kind in round_order:
+            indices = [index for index, page in enumerate(pages)
+                       if page['type'] == kind and not page.get('metadata', {}).get('recapOffsetDays')]
+            assert len(indices) == len(current)
+            assert indices == list(range(min(indices), max(indices) + 1))
+            assert today_index < min(indices)
+            ranges.append((min(indices), max(indices)))
+        for (_, last_index), (next_index, _) in zip(ranges, ranges[1:]):
+            assert last_index < next_index
+            assert any(page['type'] in readable and len((page.get('bodyMarkdown') or '').split()) >= 8
+                       for page in pages[last_index + 1:next_index]), session['id']
+        assert all(page['orderIndex'] > ranges[-1][1] for page in pages
+                   if page['type'] in {'reflection', 'completion'})
+        expected_scope = {chunk for passage in previous_passages[-2:] for chunk in passage} | set(current)
+        assert set(session['chunkIds']) == expected_scope
+        previous_passages.append(current)

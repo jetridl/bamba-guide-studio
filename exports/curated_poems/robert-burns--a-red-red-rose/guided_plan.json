@@ -4,7 +4,7 @@
     "id": "a_red_red_rose--guide",
     "poemId": "a_red_red_rose",
     "title": "A Red, Red Rose — a guided reading and memorisation plan",
-    "version": 3,
+    "version": 4,
     "status": "exported",
     "description": "An unhurried reading of Robert Burns’s poem, with short passages, images, sound and gentle returns to the text.",
     "metadata": {
@@ -275,7 +275,29 @@
         "a_red_red_rose--chunk-02"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 15,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 1,
+          "sessionOrderIndex": 0,
+          "allChunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02",
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04",
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06",
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "todayChunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02"
+          ],
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
@@ -318,7 +340,9 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_red_red_rose--session-01--page-04",
@@ -333,24 +357,9 @@
           "metadata": {}
         },
         {
-          "id": "a_red_red_rose--session-01--page-05",
-          "type": "poem_chunk",
-          "orderIndex": 4,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_red_red_rose--chunk-01",
-            "a_red_red_rose--chunk-02"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_red_red_rose--session-01--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 4,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -367,7 +376,7 @@
         {
           "id": "a_red_red_rose--session-01--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 6,
+          "orderIndex": 5,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -380,6 +389,18 @@
             "splitGamePart": 2,
             "splitGameCount": 2
           }
+        },
+        {
+          "id": "a_red_red_rose--session-01--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "A returning address",
+          "bodyMarkdown": "The first and third lines begin alike, and June answers tune. Those returns make the verse easy to carry in the voice. Hear the words as an affectionate address rather than an announcement to a crowd.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
         },
         {
           "id": "a_red_red_rose--session-01--first_word_game--part-01",
@@ -416,9 +437,24 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-01--page-05",
+          "type": "poem_chunk",
+          "orderIndex": 9,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-01--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 10,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -435,7 +471,7 @@
         {
           "id": "a_red_red_rose--session-01--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 10,
+          "orderIndex": 11,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -450,9 +486,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-01--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Seeing and hearing love",
+          "bodyMarkdown": "The speaker borrows both a flower and a melody to describe feeling. A comparison need not explain everything about love; here it offers two kinds of pleasure that a listener can recognise immediately.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-01--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 13,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -469,7 +517,7 @@
         {
           "id": "a_red_red_rose--session-01--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 12,
+          "orderIndex": 14,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -484,9 +532,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-01--reading-voice",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "A voice of your own",
+          "bodyMarkdown": "Say the Scots words naturally rather than inventing an accent. Let the repeated red linger only as much as feels right. The music is already in the words and the alternating length of the lines.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-01--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 16,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -503,7 +563,7 @@
         {
           "id": "a_red_red_rose--session-01--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 14,
+          "orderIndex": 17,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -520,7 +580,7 @@
         {
           "id": "a_red_red_rose--session-01--page-06",
           "type": "reflection",
-          "orderIndex": 15,
+          "orderIndex": 18,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Does the flower or the melody feel closer to the voice you hear?",
@@ -532,7 +592,7 @@
         {
           "id": "a_red_red_rose--session-01--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 19,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -557,13 +617,52 @@
         "a_red_red_rose--chunk-04"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 16,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 2,
+          "sessionOrderIndex": 1,
+          "allChunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02",
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04",
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06",
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "todayChunkIds": [
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02"
+          ],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
+          "id": "a_red_red_rose--session-02--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Before the new passage, return to the lines you have already met. Take your time, and look again wherever you need to. Let their sounds and pictures lead you back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
           "id": "a_red_red_rose--session-02--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 1,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -576,9 +675,60 @@
           "metadata": {}
         },
         {
+          "id": "a_red_red_rose--session-02--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 2,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-01"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-02--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 3,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-02"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-02--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O my Luve’s like a red, red rose,\nThat’s newly sprung in June;\nO my Luve’s like the melodie\nThat’s sweetly play’d in tune.\n\nAs fair are thou, my bonie lass,\nSo deep in luve am I;\nAnd I will luve thee still, my Dear,\nTill a’ the seas gang dry.\n\nTill a’ the seas gang dry, my Dear,\nAnd the rocks melt wi’ the sun:\nI will luve thee still, my dear,\nWhile the sands o’ life shall run.\n\nAnd fare thee weel, my only Luve!\nAnd fare thee weel, a while!\nAnd I will come again, my Luve,\nTho’ it were ten thousand mile!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_red_red_rose--session-02--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 5,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -588,12 +738,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_red_red_rose--session-02--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 6,
           "title": "The scale of a promise",
           "bodyMarkdown": "Bonie means lovely; lass means a young woman. The speaker turns from describing the beloved to measuring the depth and duration of his love. The last line imagines all the seas going dry: a’ means all and gang means go. Let the impossible scale emerge naturally from the intimate address. The rhyme of I and dry keeps the personal voice beside that vast image.",
           "prompt": null,
@@ -603,24 +755,9 @@
           "metadata": {}
         },
         {
-          "id": "a_red_red_rose--session-02--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_red_red_rose--chunk-03",
-            "a_red_red_rose--chunk-04"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_red_red_rose--session-02--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 7,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -637,7 +774,7 @@
         {
           "id": "a_red_red_rose--session-02--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 8,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -652,9 +789,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-02--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 9,
+          "title": "Fair, deep and still",
+          "bodyMarkdown": "The stanza moves from the beloved’s appearance to the depth of feeling, then to a promise of duration. The short words I and dry answer one another, keeping the great promise close to the speaking voice.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-02--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 10,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -671,7 +820,7 @@
         {
           "id": "a_red_red_rose--session-02--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 11,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -686,9 +835,24 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-02--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 12,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-02--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 13,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -705,7 +869,7 @@
         {
           "id": "a_red_red_rose--session-02--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 14,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -720,9 +884,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-02--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "The impossible measure",
+          "bodyMarkdown": "An ordinary declaration suddenly imagines the seas disappearing. Such extravagant language can sound tender, playful or intensely serious. Keep the actual scale of the image before you without choosing one tone for all readers.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-02--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 16,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -739,7 +915,7 @@
         {
           "id": "a_red_red_rose--session-02--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 17,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -754,9 +930,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-02--reading-voice",
+          "type": "commentary",
+          "orderIndex": 18,
+          "title": "Addressing the beloved",
+          "bodyMarkdown": "Give my Dear the warmth of a direct address. Then carry the sentence to the end of the stanza. The vow can feel expansive without becoming loud; someone standing nearby is enough of an audience.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-02--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 19,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -773,7 +961,7 @@
         {
           "id": "a_red_red_rose--session-02--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 20,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -790,7 +978,7 @@
         {
           "id": "a_red_red_rose--session-02--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 21,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Does the impossible promise sound playful, solemn, or both when you speak it?",
@@ -802,7 +990,7 @@
         {
           "id": "a_red_red_rose--session-02--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 22,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -821,19 +1009,99 @@
       "focusSummary": "Hear a repeated line lead into a new stanza.",
       "orderIndex": 2,
       "chunkIds": [
+        "a_red_red_rose--chunk-01",
+        "a_red_red_rose--chunk-02",
         "a_red_red_rose--chunk-03",
         "a_red_red_rose--chunk-04",
         "a_red_red_rose--chunk-05",
         "a_red_red_rose--chunk-06"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 3,
+          "sessionOrderIndex": 2,
+          "allChunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02",
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04",
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06",
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "todayChunkIds": [
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "a_red_red_rose--session-03--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-03--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-01"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-03--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-02"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_red_red_rose--session-03--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -846,9 +1114,60 @@
           "metadata": {}
         },
         {
+          "id": "a_red_red_rose--session-03--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-03"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-03--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-04"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-03--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O my Luve’s like a red, red rose,\nThat’s newly sprung in June;\nO my Luve’s like the melodie\nThat’s sweetly play’d in tune.\n\nAs fair are thou, my bonie lass,\nSo deep in luve am I;\nAnd I will luve thee still, my Dear,\nTill a’ the seas gang dry.\n\nTill a’ the seas gang dry, my Dear,\nAnd the rocks melt wi’ the sun:\nI will luve thee still, my dear,\nWhile the sands o’ life shall run.\n\nAnd fare thee weel, my only Luve!\nAnd fare thee weel, a while!\nAnd I will come again, my Luve,\nTho’ it were ten thousand mile!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_red_red_rose--session-03--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -858,12 +1177,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_red_red_rose--session-03--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "Sea, rock and sand",
           "bodyMarkdown": "The closing image of the previous stanza becomes the opening of this one, with an added address to the beloved. That return is a useful bridge for memory. Wi’ means with; o’ means of. Sea and rock seem immense, but the final line brings us to running sand and the measure of a life. Listen to sun and run, and allow the images to change scale without rushing them.",
           "prompt": null,
@@ -873,24 +1194,9 @@
           "metadata": {}
         },
         {
-          "id": "a_red_red_rose--session-03--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_red_red_rose--chunk-05",
-            "a_red_red_rose--chunk-06"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_red_red_rose--session-03--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -907,7 +1213,7 @@
         {
           "id": "a_red_red_rose--session-03--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -922,9 +1228,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-03--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "A bridge between verses",
+          "bodyMarkdown": "The sea that closed the previous stanza opens this one again. Remember the added my Dear, then let the rocks and running sand follow. Repetition brings you back before the images begin to change.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-03--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -941,7 +1259,7 @@
         {
           "id": "a_red_red_rose--session-03--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -956,9 +1274,24 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-03--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-03--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -975,7 +1308,7 @@
         {
           "id": "a_red_red_rose--session-03--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -990,9 +1323,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-03--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "Different kinds of time",
+          "bodyMarkdown": "Rocks seem almost permanent, while sand is always moving. Holding those pictures together gives the promise a changing scale. The words stay simple even while the amount of time becomes difficult to imagine.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-03--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1009,7 +1354,7 @@
         {
           "id": "a_red_red_rose--session-03--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1024,9 +1369,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-03--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "Keep the sand moving",
+          "bodyMarkdown": "Let the last line flow rather than stopping heavily at each word. It can sound like sand continuing to run. As you return to the initials, use sea, rock and sand as places to find the language again.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-03--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1043,7 +1400,7 @@
         {
           "id": "a_red_red_rose--session-03--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1060,7 +1417,7 @@
         {
           "id": "a_red_red_rose--session-03--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What happens to your sense of time as you move from the sea to the sands of life?",
@@ -1072,7 +1429,7 @@
         {
           "id": "a_red_red_rose--session-03--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -1091,19 +1448,99 @@
       "focusSummary": "Bring the promise into the moment of parting.",
       "orderIndex": 3,
       "chunkIds": [
+        "a_red_red_rose--chunk-03",
+        "a_red_red_rose--chunk-04",
         "a_red_red_rose--chunk-05",
         "a_red_red_rose--chunk-06",
         "a_red_red_rose--chunk-07",
         "a_red_red_rose--chunk-08"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 18,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 4,
+          "sessionOrderIndex": 3,
+          "allChunkIds": [
+            "a_red_red_rose--chunk-01",
+            "a_red_red_rose--chunk-02",
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04",
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06",
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "todayChunkIds": [
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_red_red_rose--chunk-05",
+            "a_red_red_rose--chunk-06"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "a_red_red_rose--chunk-03",
+            "a_red_red_rose--chunk-04"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "a_red_red_rose--session-04--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-04--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-03"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-04--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-04"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_red_red_rose--session-04--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -1116,9 +1553,60 @@
           "metadata": {}
         },
         {
+          "id": "a_red_red_rose--session-04--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-05"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-04--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-06"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_red_red_rose--session-04--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O my Luve’s like a red, red rose,\nThat’s newly sprung in June;\nO my Luve’s like the melodie\nThat’s sweetly play’d in tune.\n\nAs fair are thou, my bonie lass,\nSo deep in luve am I;\nAnd I will luve thee still, my Dear,\nTill a’ the seas gang dry.\n\nTill a’ the seas gang dry, my Dear,\nAnd the rocks melt wi’ the sun:\nI will luve thee still, my dear,\nWhile the sands o’ life shall run.\n\nAnd fare thee weel, my only Luve!\nAnd fare thee weel, a while!\nAnd I will come again, my Luve,\nTho’ it were ten thousand mile!",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_red_red_rose--session-04--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -1128,12 +1616,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_red_red_rose--session-04--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "Farewell for a while",
           "bodyMarkdown": "The repeated farewell asks for a little space in the voice. Weel means well, and Tho’ means though. The distance in the final line is enormous, but the speaker insists on returning. Keep the source’s singular mile: it answers while in the rhyme. Now read the four stanzas together, following flower and melody, promise, great stretches of time, and the parting itself.",
           "prompt": null,
@@ -1143,24 +1633,9 @@
           "metadata": {}
         },
         {
-          "id": "a_red_red_rose--session-04--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_red_red_rose--chunk-07",
-            "a_red_red_rose--chunk-08"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_red_red_rose--session-04--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1177,7 +1652,7 @@
         {
           "id": "a_red_red_rose--session-04--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1192,9 +1667,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-04--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "While and mile",
+          "bodyMarkdown": "The repeated farewell takes us through the first two lines, while the promise of return completes the verse. While and mile rhyme across the stanza. Keep the singular mile from the selected text when the line returns.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-04--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1211,7 +1698,7 @@
         {
           "id": "a_red_red_rose--session-04--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1226,9 +1713,24 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-04--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_red_red_rose--chunk-07",
+            "a_red_red_rose--chunk-08"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-04--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1245,7 +1747,7 @@
         {
           "id": "a_red_red_rose--session-04--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1260,9 +1762,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-04--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "Distance arrives",
+          "bodyMarkdown": "Only at the end does the present parting come fully into view. The enormous distance gives the earlier vows a new setting. A promise heard during a farewell may sound different from one heard without that separation.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-04--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1279,7 +1793,7 @@
         {
           "id": "a_red_red_rose--session-04--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1294,9 +1808,21 @@
           }
         },
         {
+          "id": "a_red_red_rose--session-04--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "Farewell without a flourish",
+          "bodyMarkdown": "Leave a little silence between the two farewells. Then let the last promise travel steadily to its ending. You might hear confidence, tenderness or a wish to reassure; there is no need to force them apart.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_red_red_rose--session-04--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1313,7 +1839,7 @@
         {
           "id": "a_red_red_rose--session-04--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1330,7 +1856,7 @@
         {
           "id": "a_red_red_rose--session-04--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the farewell change the earlier declarations when you read the whole poem again?",
@@ -1342,7 +1868,7 @@
         {
           "id": "a_red_red_rose--session-04--page-06",
           "type": "poem_chunk",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "Read from the beginning",
           "bodyMarkdown": "O my Luve’s like a red, red rose,\nThat’s newly sprung in June;\nO my Luve’s like the melodie\nThat’s sweetly play’d in tune.\n\nAs fair are thou, my bonie lass,\nSo deep in luve am I;\nAnd I will luve thee still, my Dear,\nTill a’ the seas gang dry.\n\nTill a’ the seas gang dry, my Dear,\nAnd the rocks melt wi’ the sun:\nI will luve thee still, my dear,\nWhile the sands o’ life shall run.\n\nAnd fare thee weel, my only Luve!\nAnd fare thee weel, a while!\nAnd I will come again, my Luve,\nTho’ it were ten thousand mile!",
           "prompt": null,
@@ -1357,7 +1883,7 @@
         {
           "id": "a_red_red_rose--session-04--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 25,
           "title": "Keep the poem near",
           "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
           "prompt": null,

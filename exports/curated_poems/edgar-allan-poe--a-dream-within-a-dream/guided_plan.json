@@ -4,7 +4,7 @@
     "id": "a_dream_within_a_dream--guide",
     "poemId": "a_dream_within_a_dream",
     "title": "A Dream Within a Dream — a guided reading and memorisation plan",
-    "version": 3,
+    "version": 4,
     "status": "exported",
     "description": "An unhurried reading of Edgar Allan Poe’s poem, with short passages, images, sound and gentle returns to the text.",
     "metadata": {
@@ -377,7 +377,34 @@
         "a_dream_within_a_dream--chunk-02"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 15,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 1,
+          "sessionOrderIndex": 0,
+          "allChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02",
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04",
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06",
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08",
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10",
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "todayChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
@@ -420,7 +447,9 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_dream_within_a_dream--session-01--page-04",
@@ -435,24 +464,9 @@
           "metadata": {}
         },
         {
-          "id": "a_dream_within_a_dream--session-01--page-05",
-          "type": "poem_chunk",
-          "orderIndex": 4,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_dream_within_a_dream--chunk-01",
-            "a_dream_within_a_dream--chunk-02"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_dream_within_a_dream--session-01--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 4,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -469,7 +483,7 @@
         {
           "id": "a_dream_within_a_dream--session-01--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 6,
+          "orderIndex": 5,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -482,6 +496,18 @@
             "splitGamePart": 2,
             "splitGameCount": 2
           }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-01--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Three sounds of parting",
+          "bodyMarkdown": "Brow, now and avow draw the first three lines together. Deem then opens a new sound and an unfinished thought. You can use that change as a reminder that the declaration will continue beyond today’s passage.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
         },
         {
           "id": "a_dream_within_a_dream--session-01--first_word_game--part-01",
@@ -518,9 +544,24 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-01--page-05",
+          "type": "poem_chunk",
+          "orderIndex": 9,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-01--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 10,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -537,7 +578,7 @@
         {
           "id": "a_dream_within_a_dream--session-01--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 10,
+          "orderIndex": 11,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -552,9 +593,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-01--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Someone is listening",
+          "bodyMarkdown": "The kiss and the words you and thy place the speaker beside another person. The larger question about experience grows out of this small encounter. Keep an imagined listener present while the language begins to widen.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-01--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 13,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -571,7 +624,7 @@
         {
           "id": "a_dream_within_a_dream--session-01--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 12,
+          "orderIndex": 14,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -586,9 +639,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-01--reading-voice",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "A thought still opening",
+          "bodyMarkdown": "Do not make deem sound like a conclusion. The speaker has only begun saying what the listener thinks. Let the line lean forward, so the next passage can complete the sentence when you return.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-01--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 16,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -605,7 +670,7 @@
         {
           "id": "a_dream_within_a_dream--session-01--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 14,
+          "orderIndex": 17,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -622,7 +687,7 @@
         {
           "id": "a_dream_within_a_dream--session-01--page-06",
           "type": "reflection",
-          "orderIndex": 15,
+          "orderIndex": 18,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What tone does the opening kiss give to the declaration that follows?",
@@ -634,7 +699,7 @@
         {
           "id": "a_dream_within_a_dream--session-01--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 19,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -659,13 +724,57 @@
         "a_dream_within_a_dream--chunk-04"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 16,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 2,
+          "sessionOrderIndex": 1,
+          "allChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02",
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04",
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06",
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08",
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10",
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "todayChunkIds": [
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
+          "id": "a_dream_within_a_dream--session-02--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Before the new passage, return to the lines you have already met. Take your time, and look again wherever you need to. Let their sounds and pictures lead you back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-02--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 1,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -678,9 +787,60 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-02--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 2,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 3,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-02--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Take this kiss upon thy brow!\nAnd, in parting from you now,\nThus much let me avow —\nYou are not wrong, who deem\nThat my days have been a dream;\nYet if Hope has flown away\nIn a night, or in a day,\nIn a vision, or in none,\nIs it therefore the less gone?\nAll that we see or seem\nIs but a dream within a dream.\n\nI stand amid the roar\nOf a surf-tormented shore,\nAnd I hold within my hand\nGrains of the golden sand —\nHow few! yet how they creep\nThrough my fingers to the deep,\nWhile I weep — while I weep!\nO, God! can I not grasp\nThem with a tighter clasp?\nO, God! can I not save\nOne from the pitiless wave?\nIs all that we see or seem\nBut a dream within a dream?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-02--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 5,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -690,12 +850,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_dream_within_a_dream--session-02--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 6,
           "title": "If Hope has flown",
           "bodyMarkdown": "The first line completes the thought begun in the previous passage. Then Yet introduces a qualification. Night and day, vision and its absence: the speaker tries out alternatives, but the sentence has not reached its question. Listen for the paired rhymes as you keep the thought moving. Hope is capitalised in this edition. You can hear it almost as something living that has departed.",
           "prompt": null,
@@ -705,24 +867,9 @@
           "metadata": {}
         },
         {
-          "id": "a_dream_within_a_dream--session-02--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_dream_within_a_dream--chunk-03",
-            "a_dream_within_a_dream--chunk-04"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_dream_within_a_dream--session-02--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 7,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -739,7 +886,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 8,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -754,9 +901,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-02--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 9,
+          "title": "The paired alternatives",
+          "bodyMarkdown": "Away and day bring one pair together; none will find its answer in the next passage. Listen for the repeated In as the speaker tries one possibility and then another. The pattern can hold the uncertainty in memory.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-02--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 10,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -773,7 +932,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 11,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -788,9 +947,24 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-02--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 12,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-02--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 13,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -807,7 +981,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 14,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -822,9 +996,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-02--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "How a loss happens",
+          "bodyMarkdown": "Night or day, a vision or its absence: the alternatives change the circumstances without returning what has gone. The question is taking shape through these possibilities. There is room to hear both thought and feeling in the voice.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-02--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 16,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -841,7 +1027,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 17,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -856,9 +1042,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-02--reading-voice",
+          "type": "commentary",
+          "orderIndex": 18,
+          "title": "Keep Yet audible",
+          "bodyMarkdown": "Give Yet a slight turn in the voice: it changes the direction after the opening declaration. Then move through the alternatives without deciding too soon where the question will settle. The sentence is still in motion.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-02--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 19,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -875,7 +1073,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 20,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -892,7 +1090,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 21,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What changes when you speak the alternatives as an urgent question taking shape?",
@@ -904,7 +1102,7 @@
         {
           "id": "a_dream_within_a_dream--session-02--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 22,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -923,19 +1121,104 @@
       "focusSummary": "Reach the end of the first stanza.",
       "orderIndex": 2,
       "chunkIds": [
+        "a_dream_within_a_dream--chunk-01",
+        "a_dream_within_a_dream--chunk-02",
         "a_dream_within_a_dream--chunk-03",
         "a_dream_within_a_dream--chunk-04",
         "a_dream_within_a_dream--chunk-05",
         "a_dream_within_a_dream--chunk-06"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 3,
+          "sessionOrderIndex": 2,
+          "allChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02",
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04",
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06",
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08",
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10",
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "todayChunkIds": [
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "a_dream_within_a_dream--session-03--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-01"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-02"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-03--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -948,9 +1231,60 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-03--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-03--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Take this kiss upon thy brow!\nAnd, in parting from you now,\nThus much let me avow —\nYou are not wrong, who deem\nThat my days have been a dream;\nYet if Hope has flown away\nIn a night, or in a day,\nIn a vision, or in none,\nIs it therefore the less gone?\nAll that we see or seem\nIs but a dream within a dream.\n\nI stand amid the roar\nOf a surf-tormented shore,\nAnd I hold within my hand\nGrains of the golden sand —\nHow few! yet how they creep\nThrough my fingers to the deep,\nWhile I weep — while I weep!\nO, God! can I not grasp\nThem with a tighter clasp?\nO, God! can I not save\nOne from the pitiless wave?\nIs all that we see or seem\nBut a dream within a dream?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-03--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -960,12 +1294,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_dream_within_a_dream--session-03--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "A claim about dreaming",
           "bodyMarkdown": "The opening question asks whether the manner of losing Hope makes the loss any less real. The final two lines appear to offer a firm statement, held together by seem and dream. Give the full stop its space. Then read the eleven-line stanza as one movement, from a parting gesture through uncertainty to a declaration. Notice whether the firmness sounds convincing to you.",
           "prompt": null,
@@ -975,24 +1311,9 @@
           "metadata": {}
         },
         {
-          "id": "a_dream_within_a_dream--session-03--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_dream_within_a_dream--chunk-05",
-            "a_dream_within_a_dream--chunk-06"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_dream_within_a_dream--session-03--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1009,7 +1330,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1024,9 +1345,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-03--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "None finds gone",
+          "bodyMarkdown": "The word gone answers none from the preceding passage. Then seem and dream form a closing pair of their own. These three lines finish the original stanza; the shorter learning passage is not a new stanza in the poem.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-03--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1043,7 +1376,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1058,9 +1391,24 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-03--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-03--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1077,7 +1425,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1092,9 +1440,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-03--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "The reach of all",
+          "bodyMarkdown": "The claim suddenly includes everything seen or apparently experienced. Notice how much that small word all gathers into the statement. Its breadth may feel assured, troubling, or both when spoken after the earlier questions.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-03--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1111,7 +1471,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1126,9 +1486,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-03--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "A full stop to remember",
+          "bodyMarkdown": "Give the statement its full stop before imagining the shore. It offers a point of apparent stillness in the voice. Later, when similar words return as a question, this earlier certainty will be worth hearing again.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-03--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1145,7 +1517,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1162,7 +1534,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Does the statement at the end of the stanza settle the question or deepen it?",
@@ -1174,7 +1546,7 @@
         {
           "id": "a_dream_within_a_dream--session-03--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -1193,19 +1565,104 @@
       "focusSummary": "Enter the second stanza through sound and touch.",
       "orderIndex": 3,
       "chunkIds": [
+        "a_dream_within_a_dream--chunk-03",
+        "a_dream_within_a_dream--chunk-04",
         "a_dream_within_a_dream--chunk-05",
         "a_dream_within_a_dream--chunk-06",
         "a_dream_within_a_dream--chunk-07",
         "a_dream_within_a_dream--chunk-08"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 4,
+          "sessionOrderIndex": 3,
+          "allChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02",
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04",
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06",
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08",
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10",
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "todayChunkIds": [
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "a_dream_within_a_dream--session-04--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-03"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-04"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-04--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -1218,9 +1675,60 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-04--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-04--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Take this kiss upon thy brow!\nAnd, in parting from you now,\nThus much let me avow —\nYou are not wrong, who deem\nThat my days have been a dream;\nYet if Hope has flown away\nIn a night, or in a day,\nIn a vision, or in none,\nIs it therefore the less gone?\nAll that we see or seem\nIs but a dream within a dream.\n\nI stand amid the roar\nOf a surf-tormented shore,\nAnd I hold within my hand\nGrains of the golden sand —\nHow few! yet how they creep\nThrough my fingers to the deep,\nWhile I weep — while I weep!\nO, God! can I not grasp\nThem with a tighter clasp?\nO, God! can I not save\nOne from the pitiless wave?\nIs all that we see or seem\nBut a dream within a dream?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-04--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -1230,12 +1738,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_dream_within_a_dream--session-04--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "At the shore",
           "bodyMarkdown": "The setting changes abruptly. Roar and shore bring the surf into the sound of the poem; hand and sand turn attention to something small enough to hold. Picture the scene before trying to remember the wording. The dash at the end leaves the gesture unfinished. The poem has moved from an idea about experience to an experience we can almost feel in the palm.",
           "prompt": null,
@@ -1245,24 +1755,9 @@
           "metadata": {}
         },
         {
-          "id": "a_dream_within_a_dream--session-04--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_dream_within_a_dream--chunk-07",
-            "a_dream_within_a_dream--chunk-08"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_dream_within_a_dream--session-04--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1279,7 +1774,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1294,9 +1789,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-04--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "Roar, shore, hand, sand",
+          "bodyMarkdown": "Two pairs of sounds establish the new scene. The first makes room for the sea; the second brings the view close to the speaker’s hand. Let that movement from wide space to a small gesture guide your recall.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-04--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1313,7 +1820,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1328,9 +1835,24 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-04--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-04--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1347,7 +1869,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1362,9 +1884,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-04--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "A scene with pressure",
+          "bodyMarkdown": "The shore is surf-tormented: the sea acts upon it without resting. Against that continual motion, the speaker tries to hold a few grains. The landscape and the hand make different scales of the same scene available to us.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-04--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1381,7 +1915,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1396,9 +1930,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-04--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "From sound to touch",
+          "bodyMarkdown": "Begin with the noise around the figure, then make the holding gesture feel more intimate. The dash after sand asks us to stay with the hand. It is a pause inside the action, rather than its completion.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-04--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1415,7 +1961,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1432,7 +1978,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the shore change the scale of the earlier farewell?",
@@ -1444,7 +1990,7 @@
         {
           "id": "a_dream_within_a_dream--session-04--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -1463,19 +2009,104 @@
       "focusSummary": "Let repetition carry the increasing urgency.",
       "orderIndex": 4,
       "chunkIds": [
+        "a_dream_within_a_dream--chunk-05",
+        "a_dream_within_a_dream--chunk-06",
         "a_dream_within_a_dream--chunk-07",
         "a_dream_within_a_dream--chunk-08",
         "a_dream_within_a_dream--chunk-09",
         "a_dream_within_a_dream--chunk-10"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 5,
+          "sessionOrderIndex": 4,
+          "allChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02",
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04",
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06",
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08",
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10",
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "todayChunkIds": [
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "a_dream_within_a_dream--session-05--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-05"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-06"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-05--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -1488,9 +2119,60 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-05--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-05--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Take this kiss upon thy brow!\nAnd, in parting from you now,\nThus much let me avow —\nYou are not wrong, who deem\nThat my days have been a dream;\nYet if Hope has flown away\nIn a night, or in a day,\nIn a vision, or in none,\nIs it therefore the less gone?\nAll that we see or seem\nIs but a dream within a dream.\n\nI stand amid the roar\nOf a surf-tormented shore,\nAnd I hold within my hand\nGrains of the golden sand —\nHow few! yet how they creep\nThrough my fingers to the deep,\nWhile I weep — while I weep!\nO, God! can I not grasp\nThem with a tighter clasp?\nO, God! can I not save\nOne from the pitiless wave?\nIs all that we see or seem\nBut a dream within a dream?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-05--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -1500,12 +2182,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_dream_within_a_dream--session-05--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "Through the fingers",
           "bodyMarkdown": "The grains are few, but their loss seems unstoppable. Creep suggests a slow movement even within the pressure of the surf. The repeated weeping interrupts the description with a voice in distress. In this edition, the appeal begins O, God! Keep the comma as a small vocal hesitation if it helps. Its unfinished question leads into the next passage, rather than ending here.",
           "prompt": null,
@@ -1515,24 +2199,9 @@
           "metadata": {}
         },
         {
-          "id": "a_dream_within_a_dream--session-05--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_dream_within_a_dream--chunk-09",
-            "a_dream_within_a_dream--chunk-10"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_dream_within_a_dream--session-05--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1549,7 +2218,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1564,9 +2233,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-05--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "Few, creep and weep",
+          "bodyMarkdown": "The first brief exclamation counts the grains, then creep and deep draw the falling movement together. Weep returns immediately within its own line. Hear those different repetitions without making every one equally emphatic.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-05--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1583,7 +2264,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1598,9 +2279,24 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-05--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-05--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1617,7 +2313,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1632,9 +2328,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-05--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "A small loss made immense",
+          "bodyMarkdown": "Only a few grains are at stake in the literal picture, yet the voice cannot let them go easily. The poem lets a small action carry a larger distress without naming every experience that might belong to it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-05--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1651,7 +2359,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1666,9 +2374,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-05--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "An appeal held open",
+          "bodyMarkdown": "The final word grasp begins a question whose answer in sound comes in the next passage. Keep the voice reaching across that learning boundary. An ordinary, vulnerable appeal may carry more than a theatrical cry.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-05--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1685,7 +2405,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1702,7 +2422,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What happens when you read the repeated words quietly instead of making them louder?",
@@ -1714,7 +2434,7 @@
         {
           "id": "a_dream_within_a_dream--session-05--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -1733,6 +2453,8 @@
       "focusSummary": "Join the final appeal to the opening stanza.",
       "orderIndex": 5,
       "chunkIds": [
+        "a_dream_within_a_dream--chunk-07",
+        "a_dream_within_a_dream--chunk-08",
         "a_dream_within_a_dream--chunk-09",
         "a_dream_within_a_dream--chunk-10",
         "a_dream_within_a_dream--chunk-11",
@@ -1740,13 +2462,97 @@
         "a_dream_within_a_dream--chunk-13"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 21,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 6,
+          "sessionOrderIndex": 5,
+          "allChunkIds": [
+            "a_dream_within_a_dream--chunk-01",
+            "a_dream_within_a_dream--chunk-02",
+            "a_dream_within_a_dream--chunk-03",
+            "a_dream_within_a_dream--chunk-04",
+            "a_dream_within_a_dream--chunk-05",
+            "a_dream_within_a_dream--chunk-06",
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08",
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10",
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "todayChunkIds": [
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "oneDayPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-09",
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "a_dream_within_a_dream--chunk-07",
+            "a_dream_within_a_dream--chunk-08"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "a_dream_within_a_dream--session-06--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-07"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-08"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-06--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -1759,9 +2565,60 @@
           "metadata": {}
         },
         {
+          "id": "a_dream_within_a_dream--session-06--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-09"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-10"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "a_dream_within_a_dream--session-06--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Take this kiss upon thy brow!\nAnd, in parting from you now,\nThus much let me avow —\nYou are not wrong, who deem\nThat my days have been a dream;\nYet if Hope has flown away\nIn a night, or in a day,\nIn a vision, or in none,\nIs it therefore the less gone?\nAll that we see or seem\nIs but a dream within a dream.\n\nI stand amid the roar\nOf a surf-tormented shore,\nAnd I hold within my hand\nGrains of the golden sand —\nHow few! yet how they creep\nThrough my fingers to the deep,\nWhile I weep — while I weep!\nO, God! can I not grasp\nThem with a tighter clasp?\nO, God! can I not save\nOne from the pitiless wave?\nIs all that we see or seem\nBut a dream within a dream?",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "a_dream_within_a_dream--session-06--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -1772,12 +2629,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "a_dream_within_a_dream--session-06--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "A question returns",
           "bodyMarkdown": "Clasp answers grasp across the learning boundary. Then a second appeal narrows the wish to saving even one grain. The poem’s earlier statement returns as a question, with Is at its beginning. Let that change be audible without deciding what answer the poem requires. Read the whole second stanza, then the poem from the beginning. Familiar words may feel less secure when they return.",
           "prompt": null,
@@ -1787,25 +2646,9 @@
           "metadata": {}
         },
         {
-          "id": "a_dream_within_a_dream--session-06--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "a_dream_within_a_dream--chunk-11",
-            "a_dream_within_a_dream--chunk-12",
-            "a_dream_within_a_dream--chunk-13"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "a_dream_within_a_dream--session-06--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/3",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1822,7 +2665,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/3",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1839,7 +2682,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--last_word_game--part-03",
           "type": "last_word_game",
-          "orderIndex": 6,
+          "orderIndex": 11,
           "title": "Last Word 3/3",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1854,9 +2697,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-06--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Grasp meets clasp",
+          "bodyMarkdown": "The first line answers the sound at the end of the previous passage. Save and wave make another pair, followed by seem and dream. Those small sound relationships carry the appeal into its last and largest question.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-06--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 1/3",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1873,7 +2728,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 8,
+          "orderIndex": 14,
           "title": "First Word 2/3",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1890,7 +2745,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--first_word_game--part-03",
           "type": "first_word_game",
-          "orderIndex": 9,
+          "orderIndex": 15,
           "title": "First Word 3/3",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1905,9 +2760,25 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-06--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 16,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "a_dream_within_a_dream--chunk-11",
+            "a_dream_within_a_dream--chunk-12",
+            "a_dream_within_a_dream--chunk-13"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-06--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 10,
+          "orderIndex": 17,
           "title": "First and Last Word 1/3",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1924,7 +2795,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 11,
+          "orderIndex": 18,
           "title": "First and Last Word 2/3",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1941,7 +2812,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--first_last_word_game--part-03",
           "type": "first_last_word_game",
-          "orderIndex": 12,
+          "orderIndex": 19,
           "title": "First and Last Word 3/3",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1956,9 +2827,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-06--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "Trying to save one",
+          "bodyMarkdown": "The speaker’s wish narrows to a single grain, while the final question widens towards all experience. Notice that shift in scale. The poem can keep both the small physical action and the vast uncertainty present at once.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-06--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 13,
+          "orderIndex": 21,
           "title": "Random Words 1/3",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1975,7 +2858,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 14,
+          "orderIndex": 22,
           "title": "Random Words 2/3",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1992,7 +2875,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--hidden_word_game--part-03",
           "type": "hidden_word_game",
-          "orderIndex": 15,
+          "orderIndex": 23,
           "title": "Random Words 3/3",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -2007,9 +2890,21 @@
           }
         },
         {
+          "id": "a_dream_within_a_dream--session-06--reading-voice",
+          "type": "commentary",
+          "orderIndex": 24,
+          "title": "Hear the question mark",
+          "bodyMarkdown": "Let the final question sound different from the statement at the end of the first stanza. It need not rise sharply in pitch. A little uncertainty or silence can make the changed ending audible without supplying an answer.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "a_dream_within_a_dream--session-06--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 16,
+          "orderIndex": 25,
           "title": "First Letter 1/3",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -2026,7 +2921,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 17,
+          "orderIndex": 26,
           "title": "First Letter 2/3",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -2043,7 +2938,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--first_letter_game--part-03",
           "type": "first_letter_game",
-          "orderIndex": 18,
+          "orderIndex": 27,
           "title": "First Letter 3/3",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -2060,7 +2955,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--page-05",
           "type": "reflection",
-          "orderIndex": 19,
+          "orderIndex": 28,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How differently do you hear the two appearances of the dream phrase?",
@@ -2072,7 +2967,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--page-06",
           "type": "poem_chunk",
-          "orderIndex": 20,
+          "orderIndex": 29,
           "title": "Read from the beginning",
           "bodyMarkdown": "Take this kiss upon thy brow!\nAnd, in parting from you now,\nThus much let me avow —\nYou are not wrong, who deem\nThat my days have been a dream;\nYet if Hope has flown away\nIn a night, or in a day,\nIn a vision, or in none,\nIs it therefore the less gone?\nAll that we see or seem\nIs but a dream within a dream.\n\nI stand amid the roar\nOf a surf-tormented shore,\nAnd I hold within my hand\nGrains of the golden sand —\nHow few! yet how they creep\nThrough my fingers to the deep,\nWhile I weep — while I weep!\nO, God! can I not grasp\nThem with a tighter clasp?\nO, God! can I not save\nOne from the pitiless wave?\nIs all that we see or seem\nBut a dream within a dream?",
           "prompt": null,
@@ -2087,7 +2982,7 @@
         {
           "id": "a_dream_within_a_dream--session-06--page-07",
           "type": "completion",
-          "orderIndex": 21,
+          "orderIndex": 30,
           "title": "Keep the poem near",
           "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
           "prompt": null,

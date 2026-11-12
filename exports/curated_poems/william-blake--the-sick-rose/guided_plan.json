@@ -4,7 +4,7 @@
     "id": "the_sick_rose--guide",
     "poemId": "the_sick_rose",
     "title": "The Sick Rose — a guided reading and memorisation plan",
-    "version": 3,
+    "version": 4,
     "status": "exported",
     "description": "An unhurried reading of William Blake’s poem, with short passages, images, sound and gentle returns to the text.",
     "metadata": {
@@ -161,7 +161,25 @@
         "the_sick_rose--chunk-02"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 15,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 1,
+          "sessionOrderIndex": 0,
+          "allChunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02",
+            "the_sick_rose--chunk-03",
+            "the_sick_rose--chunk-04"
+          ],
+          "todayChunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02"
+          ],
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
@@ -204,7 +222,9 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "the_sick_rose--session-01--page-04",
@@ -219,24 +239,9 @@
           "metadata": {}
         },
         {
-          "id": "the_sick_rose--session-01--page-05",
-          "type": "poem_chunk",
-          "orderIndex": 4,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "the_sick_rose--chunk-01",
-            "the_sick_rose--chunk-02"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "the_sick_rose--session-01--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 4,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -253,7 +258,7 @@
         {
           "id": "the_sick_rose--session-01--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 6,
+          "orderIndex": 5,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -266,6 +271,18 @@
             "splitGamePart": 2,
             "splitGameCount": 2
           }
+        },
+        {
+          "id": "the_sick_rose--session-01--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Worm and storm",
+          "bodyMarkdown": "The worm and storm answer each other in sound, while the short first line stands like an interruption. The verse has a small, memorable shape, even when its moving creature is difficult to picture.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
         },
         {
           "id": "the_sick_rose--session-01--first_word_game--part-01",
@@ -302,9 +319,24 @@
           }
         },
         {
+          "id": "the_sick_rose--session-01--page-05",
+          "type": "poem_chunk",
+          "orderIndex": 9,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "the_sick_rose--session-01--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 10,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -321,7 +353,7 @@
         {
           "id": "the_sick_rose--session-01--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 10,
+          "orderIndex": 11,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -336,9 +368,21 @@
           }
         },
         {
+          "id": "the_sick_rose--session-01--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "A rose that can be addressed",
+          "bodyMarkdown": "The speaker talks to the flower as though it were a listener. That address gives the rose a presence beyond a botanical description. Notice the feeling in the voice before deciding what the rose might represent.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_sick_rose--session-01--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 13,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -355,7 +399,7 @@
         {
           "id": "the_sick_rose--session-01--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 12,
+          "orderIndex": 14,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -370,9 +414,21 @@
           }
         },
         {
+          "id": "the_sick_rose--session-01--reading-voice",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "The unfinished arrival",
+          "bodyMarkdown": "The comma after storm leaves the sentence waiting for its action. Read the first stanza with that incompleteness in mind. The pause between stanzas can be substantial without sounding like an ending.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_sick_rose--session-01--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 16,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -389,7 +445,7 @@
         {
           "id": "the_sick_rose--session-01--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 14,
+          "orderIndex": 17,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -406,7 +462,7 @@
         {
           "id": "the_sick_rose--session-01--page-06",
           "type": "reflection",
-          "orderIndex": 15,
+          "orderIndex": 18,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What do you picture when the poem describes something as invisible?",
@@ -418,7 +474,7 @@
         {
           "id": "the_sick_rose--session-01--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 19,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -443,13 +499,48 @@
         "the_sick_rose--chunk-04"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 2,
+          "sessionOrderIndex": 1,
+          "allChunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02",
+            "the_sick_rose--chunk-03",
+            "the_sick_rose--chunk-04"
+          ],
+          "todayChunkIds": [
+            "the_sick_rose--chunk-03",
+            "the_sick_rose--chunk-04"
+          ],
+          "oneDayPreviousChunkIds": [
+            "the_sick_rose--chunk-01",
+            "the_sick_rose--chunk-02"
+          ],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
+          "id": "the_sick_rose--session-02--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Before the new passage, return to the lines you have already met. Take your time, and look again wherever you need to. Let their sounds and pictures lead you back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
           "id": "the_sick_rose--session-02--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 1,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -462,9 +553,60 @@
           "metadata": {}
         },
         {
+          "id": "the_sick_rose--session-02--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 2,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-01"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "the_sick_rose--session-02--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 3,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-02"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "the_sick_rose--session-02--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "O Rose, thou art sick!\nThe invisible worm\nThat flies in the night,\nIn the howling storm,\n\nHas found out thy bed\nOf crimson joy:\nAnd his dark secret love\nDoes thy life destroy.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "the_sick_rose--session-02--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 5,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -474,12 +616,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "the_sick_rose--session-02--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 6,
           "title": "Crimson joy",
           "bodyMarkdown": "The first line completes the action begun in the previous stanza. Bed might belong to a garden or to an intimate human space; crimson offers colour without settling the association. Notice how love is placed beside secrecy and destruction. You can explore disease, desire or harm as possibilities, keeping each close to the actual words. Read both stanzas aloud and hear how little explanation the poem supplies.",
           "prompt": null,
@@ -489,24 +633,9 @@
           "metadata": {}
         },
         {
-          "id": "the_sick_rose--session-02--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "the_sick_rose--chunk-03",
-            "the_sick_rose--chunk-04"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "the_sick_rose--session-02--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 7,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -523,7 +652,7 @@
         {
           "id": "the_sick_rose--session-02--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 8,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -538,9 +667,21 @@
           }
         },
         {
+          "id": "the_sick_rose--session-02--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 9,
+          "title": "The sentence finds its verb",
+          "bodyMarkdown": "Has found completes the movement begun with the invisible worm. Bed and joy give us a place and its colour before love and destroy alter the feeling. Follow that sequence when the connecting words become hard to recall.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_sick_rose--session-02--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 10,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -557,7 +698,7 @@
         {
           "id": "the_sick_rose--session-02--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 11,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -572,9 +713,24 @@
           }
         },
         {
+          "id": "the_sick_rose--session-02--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 12,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "the_sick_rose--chunk-03",
+            "the_sick_rose--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "the_sick_rose--session-02--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 13,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -591,7 +747,7 @@
         {
           "id": "the_sick_rose--session-02--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 14,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -606,9 +762,21 @@
           }
         },
         {
+          "id": "the_sick_rose--session-02--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "A word that changes its company",
+          "bodyMarkdown": "Love might have seemed reassuring in another poem. Here its neighbours are dark, secret and destroy. Meaning gathers through those relationships; the word does not arrive with a single effect that stays the same everywhere.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_sick_rose--session-02--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 16,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -625,7 +793,7 @@
         {
           "id": "the_sick_rose--session-02--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 17,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -640,9 +808,21 @@
           }
         },
         {
+          "id": "the_sick_rose--session-02--reading-voice",
+          "type": "commentary",
+          "orderIndex": 18,
+          "title": "Let the ending remain strange",
+          "bodyMarkdown": "Keep the final statement clear and unhurried. Reading quietly can be as unsettling as reading with force. After the last word, allow the rose to remain an image you can return to rather than a puzzle you must finish.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_sick_rose--session-02--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 19,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -659,7 +839,7 @@
         {
           "id": "the_sick_rose--session-02--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 20,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -676,7 +856,7 @@
         {
           "id": "the_sick_rose--session-02--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 21,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Which word most unsettles your first impression of the rose, and why?",
@@ -688,7 +868,7 @@
         {
           "id": "the_sick_rose--session-02--page-06",
           "type": "poem_chunk",
-          "orderIndex": 15,
+          "orderIndex": 22,
           "title": "Read from the beginning",
           "bodyMarkdown": "O Rose, thou art sick!\nThe invisible worm\nThat flies in the night,\nIn the howling storm,\n\nHas found out thy bed\nOf crimson joy:\nAnd his dark secret love\nDoes thy life destroy.",
           "prompt": null,
@@ -703,7 +883,7 @@
         {
           "id": "the_sick_rose--session-02--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 23,
           "title": "Keep the poem near",
           "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
           "prompt": null,

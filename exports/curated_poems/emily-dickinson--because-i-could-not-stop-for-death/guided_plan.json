@@ -4,7 +4,7 @@
     "id": "because_i_could_not_stop_for_death--guide",
     "poemId": "because_i_could_not_stop_for_death",
     "title": "Because I could not stop for Death — a guided reading and memorisation plan",
-    "version": 3,
+    "version": 4,
     "status": "exported",
     "description": "An unhurried reading of Emily Dickinson’s poem, with short passages, images, sound and gentle returns to the text.",
     "metadata": {
@@ -389,7 +389,33 @@
         "because_i_could_not_stop_for_death--chunk-02"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 15,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 1,
+          "sessionOrderIndex": 0,
+          "allChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02",
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04",
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06",
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08",
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10",
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "todayChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
@@ -432,7 +458,9 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "because_i_could_not_stop_for_death--session-01--page-04",
@@ -447,24 +475,9 @@
           "metadata": {}
         },
         {
-          "id": "because_i_could_not_stop_for_death--session-01--page-05",
-          "type": "poem_chunk",
-          "orderIndex": 4,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "because_i_could_not_stop_for_death--chunk-01",
-            "because_i_could_not_stop_for_death--chunk-02"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "because_i_could_not_stop_for_death--session-01--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 4,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -481,7 +494,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-01--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 6,
+          "orderIndex": 5,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -494,6 +507,18 @@
             "splitGamePart": 2,
             "splitGameCount": 2
           }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-01--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Stop and stopped",
+          "bodyMarkdown": "The first two lines answer one another through a small change in the same word. Then Carriage gives the encounter a place. Follow inability, arrival and passengers as a simple route into these four lines.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
         },
         {
           "id": "because_i_could_not_stop_for_death--session-01--first_word_game--part-01",
@@ -530,9 +555,24 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-01--page-05",
+          "type": "poem_chunk",
+          "orderIndex": 9,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-01--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 10,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -549,7 +589,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-01--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 10,
+          "orderIndex": 11,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -564,9 +604,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-01--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Courtesy and a strange companion",
+          "bodyMarkdown": "An ordinary social gesture carries something difficult to imagine. The poem does not begin with a frightening description; it begins with someone making time for another person. Notice how much that manner shapes the encounter.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-01--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 13,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -583,7 +635,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-01--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 12,
+          "orderIndex": 14,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -598,9 +650,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-01--reading-voice",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "Room for the last passenger",
+          "bodyMarkdown": "Read the first three lines conversationally, then leave a little room before Immortality. The long word has a different weight from the opening exchange. It can feel present without becoming an explanation of everything ahead.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-01--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 16,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -617,7 +681,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-01--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 14,
+          "orderIndex": 17,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -634,7 +698,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-01--page-06",
           "type": "reflection",
-          "orderIndex": 15,
+          "orderIndex": 18,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What effect does the word kindly have on your first picture of Death?",
@@ -646,7 +710,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-01--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 19,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -671,13 +735,56 @@
         "because_i_could_not_stop_for_death--chunk-04"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 16,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 2,
+          "sessionOrderIndex": 1,
+          "allChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02",
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04",
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06",
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08",
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10",
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "todayChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "oneDayPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
+          "id": "because_i_could_not_stop_for_death--session-02--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Before the new passage, return to the lines you have already met. Take your time, and look again wherever you need to. Let their sounds and pictures lead you back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-02--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 1,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -690,9 +797,60 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-02--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 2,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 3,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-02--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed Us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – ’tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses’ Heads\nWere toward Eternity –",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-02--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 5,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -702,12 +860,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "because_i_could_not_stop_for_death--session-02--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 6,
           "title": "Putting things away",
           "bodyMarkdown": "Labor and leisure together suggest the ordinary activities of a whole life. Civility means courteous behaviour. The speaker’s explanation is restrained, even though what she puts aside is immense. Speak the stanza without hurrying, and notice the contrast between the long first line and the brief second one. For memory, follow the drive, the putting away, and the explanation offered for it.",
           "prompt": null,
@@ -717,24 +877,9 @@
           "metadata": {}
         },
         {
-          "id": "because_i_could_not_stop_for_death--session-02--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "because_i_could_not_stop_for_death--chunk-03",
-            "because_i_could_not_stop_for_death--chunk-04"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "because_i_could_not_stop_for_death--session-02--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 7,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -751,7 +896,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 8,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -766,9 +911,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-02--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 9,
+          "title": "The pace of slowly",
+          "bodyMarkdown": "The opening slows the voice before the speaker names what she has put aside. Labor and leisure balance one another in the third line. Those paired activities can help you recover the little connecting words around them.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-02--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 10,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -785,7 +942,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 11,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -800,9 +957,24 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-02--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 12,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-02--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 13,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -819,7 +991,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 14,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -834,9 +1006,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-02--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "A whole ordinary life",
+          "bodyMarkdown": "Work and free time together suggest more than a single interrupted task. The speaker sets aside the usual ways of occupying a day. The social word Civility sits beside that much larger relinquishment without fully resolving it.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-02--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 16,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -853,7 +1037,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 17,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -868,9 +1052,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-02--reading-voice",
+          "type": "commentary",
+          "orderIndex": 18,
+          "title": "Let the courtesy stay quiet",
+          "bodyMarkdown": "There is room for unease without changing the speaker into an obviously frightened voice. Try saying the explanation simply. The unhurried delivery lets us notice the size of what has been put away.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-02--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 19,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -887,7 +1083,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 20,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -904,7 +1100,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 21,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Does the courtesy feel reassuring, unsettling, or difficult to place?",
@@ -916,7 +1112,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-02--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 22,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -935,19 +1131,103 @@
       "focusSummary": "Let the repeated opening carry you through three views.",
       "orderIndex": 2,
       "chunkIds": [
+        "because_i_could_not_stop_for_death--chunk-01",
+        "because_i_could_not_stop_for_death--chunk-02",
         "because_i_could_not_stop_for_death--chunk-03",
         "because_i_could_not_stop_for_death--chunk-04",
         "because_i_could_not_stop_for_death--chunk-05",
         "because_i_could_not_stop_for_death--chunk-06"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 3,
+          "sessionOrderIndex": 2,
+          "allChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02",
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04",
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06",
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08",
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10",
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "todayChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "oneDayPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "because_i_could_not_stop_for_death--session-03--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-02"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-03--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -960,9 +1240,60 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-03--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-03--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed Us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – ’tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses’ Heads\nWere toward Eternity –",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-03--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -972,12 +1303,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "because_i_could_not_stop_for_death--session-03--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "Scenes passing",
           "bodyMarkdown": "We passed returns as a guide through school, fields and sunset. Strove suggests children busily exerting themselves; recess and the ring place them at play. The scenes can suggest stages of a life, though they remain particular sights beside a road. Notice that the grain seems to gaze back. Hold each view separately, then let the repeated phrase carry you onward.",
           "prompt": null,
@@ -987,24 +1320,9 @@
           "metadata": {}
         },
         {
-          "id": "because_i_could_not_stop_for_death--session-03--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "because_i_could_not_stop_for_death--chunk-05",
-            "because_i_could_not_stop_for_death--chunk-06"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "because_i_could_not_stop_for_death--session-03--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1021,7 +1339,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1036,9 +1354,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-03--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "A phrase to travel by",
+          "bodyMarkdown": "We passed returns three times and carries the view onward. School, Fields and Sun give each return somewhere different to land. Keep those sights distinct in memory, with the children’s ring inside the first one.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-03--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1055,7 +1385,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1070,9 +1400,24 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-03--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-03--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1089,7 +1434,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1104,9 +1449,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-03--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "Life beside the road",
+          "bodyMarkdown": "Children exert themselves, grain seems to look, and the sun is setting. The views invite connections with the movement of a life, but they also remain things encountered during a drive. You can hold both ways of seeing them.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-03--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1123,7 +1480,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1138,9 +1495,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-03--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "An ordinary procession",
+          "bodyMarkdown": "Give each return of We passed a similar steadiness, then let the scenes supply the changes. Avoid announcing a grand meaning for each sight. The voice can move on while the images continue to gather associations.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-03--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1157,7 +1526,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1174,7 +1543,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "Which scene feels most alive when you say the stanza aloud?",
@@ -1186,7 +1555,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-03--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -1205,19 +1574,103 @@
       "focusSummary": "Hear the correction and feel the speaker’s thin clothing.",
       "orderIndex": 3,
       "chunkIds": [
+        "because_i_could_not_stop_for_death--chunk-03",
+        "because_i_could_not_stop_for_death--chunk-04",
         "because_i_could_not_stop_for_death--chunk-05",
         "because_i_could_not_stop_for_death--chunk-06",
         "because_i_could_not_stop_for_death--chunk-07",
         "because_i_could_not_stop_for_death--chunk-08"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 4,
+          "sessionOrderIndex": 3,
+          "allChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02",
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04",
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06",
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08",
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10",
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "todayChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "oneDayPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "because_i_could_not_stop_for_death--session-04--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-03"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-04"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-04--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -1230,9 +1683,60 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-04--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-04--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed Us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – ’tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses’ Heads\nWere toward Eternity –",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-04--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -1242,12 +1746,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "because_i_could_not_stop_for_death--session-04--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "A change in the air",
           "bodyMarkdown": "Or rather revises the previous stanza: now the sun is passing them. The temperature changes as the dew arrives. Gossamer suggests something extremely fine and light; a tippet is a shoulder covering, and tulle a fine net fabric. The delicate clothing makes the cold bodily and immediate. Give the correction a small pause, then let the repeated light sounds of the clothing meet the chill.",
           "prompt": null,
@@ -1257,24 +1763,9 @@
           "metadata": {}
         },
         {
-          "id": "because_i_could_not_stop_for_death--session-04--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "because_i_could_not_stop_for_death--chunk-07",
-            "because_i_could_not_stop_for_death--chunk-08"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "because_i_could_not_stop_for_death--session-04--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1291,7 +1782,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1306,9 +1797,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-04--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "Dew, gown and tulle",
+          "bodyMarkdown": "The repeated light sounds of Dews, drew and quivering make the air feel active. Gossamer and Tulle then name fragile clothing. Use the change from the surrounding cold to what the speaker wears as your memory path.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-04--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1325,7 +1828,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1340,9 +1843,24 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-04--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-04--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1359,7 +1877,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1374,9 +1892,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-04--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "A correction with consequences",
+          "bodyMarkdown": "The speaker revises the direction of the previous stanza: the sun has passed them. What seemed like a sequence of views now becomes harder to place. The body’s response to the cold keeps the strangeness close to ordinary sensation.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-04--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1393,7 +1923,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1408,9 +1938,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-04--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "Pause at Or rather",
+          "bodyMarkdown": "Let the correction arrive as though the speaker has noticed something while telling the story. Then leave small spaces around the clothing phrases. The dashes allow adjustment and hesitation without requiring one fixed length of pause.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-04--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1427,7 +1969,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1444,7 +1986,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the correction alter your sense of movement in the carriage?",
@@ -1456,7 +1998,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-04--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -1475,19 +2017,103 @@
       "focusSummary": "Notice the hesitation between naming and seeing.",
       "orderIndex": 4,
       "chunkIds": [
+        "because_i_could_not_stop_for_death--chunk-05",
+        "because_i_could_not_stop_for_death--chunk-06",
         "because_i_could_not_stop_for_death--chunk-07",
         "because_i_could_not_stop_for_death--chunk-08",
         "because_i_could_not_stop_for_death--chunk-09",
         "because_i_could_not_stop_for_death--chunk-10"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 17,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 5,
+          "sessionOrderIndex": 4,
+          "allChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02",
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04",
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06",
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08",
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10",
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "todayChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "oneDayPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "because_i_could_not_stop_for_death--session-05--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-05"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-06"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-05--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -1500,9 +2126,60 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-05--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-05--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed Us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – ’tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses’ Heads\nWere toward Eternity –",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-05--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -1512,12 +2189,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "because_i_could_not_stop_for_death--session-05--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "A low house",
           "bodyMarkdown": "The speaker calls the stopping place a House, then qualifies what she sees. Its swelling ground and barely visible roof invite us to recognise a grave without being given that word. A cornice is a projecting architectural edge near a roof. Keep the apparent house and the earth together in your mind. The repeated Ground gives the stanza an unusually firm, low resting place.",
           "prompt": null,
@@ -1527,24 +2206,9 @@
           "metadata": {}
         },
         {
-          "id": "because_i_could_not_stop_for_death--session-05--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "because_i_could_not_stop_for_death--chunk-09",
-            "because_i_could_not_stop_for_death--chunk-10"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "because_i_could_not_stop_for_death--session-05--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1561,7 +2225,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1576,9 +2240,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-05--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "Ground returns",
+          "bodyMarkdown": "The second and fourth lines finish on the same word. That return holds the stanza close to the earth while House, Roof and Cornice try to describe a structure. Follow the order of those details when recalling the lines.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-05--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1595,7 +2271,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1610,9 +2286,24 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-05--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-05--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1629,7 +2320,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1644,9 +2335,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-05--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "A house almost hidden",
+          "bodyMarkdown": "The description makes architecture and landscape overlap. A roof can scarcely be seen, and the cornice is in the ground. The speaker’s careful naming leaves us to recognise more than she directly states.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-05--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1663,7 +2366,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1678,9 +2381,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-05--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "Keeping seemed in the voice",
+          "bodyMarkdown": "Give seemed a little attention without stressing it heavily. The speaker offers an impression and then examines its details. A measured reading leaves space for the uncertainty in that first description to remain present.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-05--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1697,7 +2412,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1714,7 +2429,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What does the word seemed allow the speaker to leave uncertain?",
@@ -1726,7 +2441,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-05--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -1745,19 +2460,103 @@
       "focusSummary": "Let the final change of scale reshape the ride.",
       "orderIndex": 5,
       "chunkIds": [
+        "because_i_could_not_stop_for_death--chunk-07",
+        "because_i_could_not_stop_for_death--chunk-08",
         "because_i_could_not_stop_for_death--chunk-09",
         "because_i_could_not_stop_for_death--chunk-10",
         "because_i_could_not_stop_for_death--chunk-11",
         "because_i_could_not_stop_for_death--chunk-12"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 18,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 6,
+          "sessionOrderIndex": 5,
+          "allChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-01",
+            "because_i_could_not_stop_for_death--chunk-02",
+            "because_i_could_not_stop_for_death--chunk-03",
+            "because_i_could_not_stop_for_death--chunk-04",
+            "because_i_could_not_stop_for_death--chunk-05",
+            "because_i_could_not_stop_for_death--chunk-06",
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08",
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10",
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "todayChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "oneDayPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09",
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07",
+            "because_i_could_not_stop_for_death--chunk-08"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "because_i_could_not_stop_for_death--session-06--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-07"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-08"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-06--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -1770,9 +2569,60 @@
           "metadata": {}
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-06--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-09"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-10"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "because_i_could_not_stop_for_death--session-06--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed Us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – ’tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses’ Heads\nWere toward Eternity –",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-06--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -1782,12 +2632,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "because_i_could_not_stop_for_death--session-06--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "Centuries and a day",
           "bodyMarkdown": "Surmised means inferred or began to suspect. The speaker looks back across centuries that feel shorter than a day. The ending supplies a direction, but leaves the journey’s destination beyond the picture. Read all six stanzas again, letting the ordinary scenes lead into this altered sense of time. You can give the final dash a little silence without trying to close every uncertainty.",
           "prompt": null,
@@ -1797,24 +2649,9 @@
           "metadata": {}
         },
         {
-          "id": "because_i_could_not_stop_for_death--session-06--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "because_i_could_not_stop_for_death--chunk-11",
-            "because_i_could_not_stop_for_death--chunk-12"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "because_i_could_not_stop_for_death--session-06--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1831,7 +2668,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -1846,9 +2683,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-06--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "A day inside centuries",
+          "bodyMarkdown": "Since then carries the telling forward before the stanza compares centuries with a day. The small phrase and yet turns the comparison. Keep that turn in mind as the sentence moves towards the horses’ direction.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-06--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1865,7 +2714,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -1880,9 +2729,24 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-06--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "because_i_could_not_stop_for_death--chunk-11",
+            "because_i_could_not_stop_for_death--chunk-12"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-06--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1899,7 +2763,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -1914,9 +2778,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-06--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "Looking back from where?",
+          "bodyMarkdown": "The voice speaks from a distance in time that we cannot place within an ordinary afternoon. The carriage remains a recognisable picture even as the speaker’s position becomes difficult to imagine. Let the picture and the uncertainty coexist.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-06--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1933,7 +2809,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -1948,9 +2824,21 @@
           }
         },
         {
+          "id": "because_i_could_not_stop_for_death--session-06--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "A direction beyond the picture",
+          "bodyMarkdown": "Let surmised sound like a realisation rather than a final declaration. The horses point towards something the poem cannot show us. Give the last dash a little silence, and allow the opening courtesy to sound different on your next return.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "because_i_could_not_stop_for_death--session-06--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1967,7 +2855,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1984,7 +2872,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the last stanza change the voice you hear in the first?",
@@ -1996,7 +2884,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--page-06",
           "type": "poem_chunk",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "Read from the beginning",
           "bodyMarkdown": "Because I could not stop for Death –\nHe kindly stopped for me –\nThe Carriage held but just Ourselves –\nAnd Immortality.\n\nWe slowly drove – He knew no haste\nAnd I had put away\nMy labor and my leisure too,\nFor His Civility –\n\nWe passed the School, where Children strove\nAt Recess – in the Ring –\nWe passed the Fields of Gazing Grain –\nWe passed the Setting Sun –\n\nOr rather – He passed Us –\nThe Dews drew quivering and Chill –\nFor only Gossamer, my Gown –\nMy Tippet – only Tulle –\n\nWe paused before a House that seemed\nA Swelling of the Ground –\nThe Roof was scarcely visible –\nThe Cornice – in the Ground –\n\nSince then – ’tis Centuries – and yet\nFeels shorter than the Day\nI first surmised the Horses’ Heads\nWere toward Eternity –",
           "prompt": null,
@@ -2011,7 +2899,7 @@
         {
           "id": "because_i_could_not_stop_for_death--session-06--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 25,
           "title": "Keep the poem near",
           "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
           "prompt": null,

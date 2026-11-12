@@ -4,7 +4,7 @@
     "id": "the_arrow_and_the_song--guide",
     "poemId": "the_arrow_and_the_song",
     "title": "The Arrow and the Song — a guided reading and memorisation plan",
-    "version": 3,
+    "version": 4,
     "status": "exported",
     "description": "An unhurried reading of Henry Wadsworth Longfellow’s poem, with short passages, images, sound and gentle returns to the text.",
     "metadata": {
@@ -218,7 +218,27 @@
         "the_arrow_and_the_song--chunk-02"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 15,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 1,
+          "sessionOrderIndex": 0,
+          "allChunkIds": [
+            "the_arrow_and_the_song--chunk-01",
+            "the_arrow_and_the_song--chunk-02",
+            "the_arrow_and_the_song--chunk-03",
+            "the_arrow_and_the_song--chunk-04",
+            "the_arrow_and_the_song--chunk-05",
+            "the_arrow_and_the_song--chunk-06"
+          ],
+          "todayChunkIds": [
+            "the_arrow_and_the_song--chunk-01",
+            "the_arrow_and_the_song--chunk-02"
+          ],
+          "oneDayPreviousChunkIds": [],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
@@ -261,7 +281,9 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "the_arrow_and_the_song--session-01--page-04",
@@ -276,24 +298,9 @@
           "metadata": {}
         },
         {
-          "id": "the_arrow_and_the_song--session-01--page-05",
-          "type": "poem_chunk",
-          "orderIndex": 4,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "the_arrow_and_the_song--chunk-01",
-            "the_arrow_and_the_song--chunk-02"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "the_arrow_and_the_song--session-01--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 4,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -310,7 +317,7 @@
         {
           "id": "the_arrow_and_the_song--session-01--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 6,
+          "orderIndex": 5,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -323,6 +330,18 @@
             "splitGamePart": 2,
             "splitGameCount": 2
           }
+        },
+        {
+          "id": "the_arrow_and_the_song--session-01--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 6,
+          "title": "Two answering pairs",
+          "bodyMarkdown": "Air answers where, and sight answers flight. Each pair gives the little action a resting place. Hear the first pair settle before the eye begins trying to follow the arrow in the second.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
         },
         {
           "id": "the_arrow_and_the_song--session-01--first_word_game--part-01",
@@ -359,9 +378,24 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-01--page-05",
+          "type": "poem_chunk",
+          "orderIndex": 9,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-01",
+            "the_arrow_and_the_song--chunk-02"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-01--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 10,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -378,7 +412,7 @@
         {
           "id": "the_arrow_and_the_song--session-01--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 10,
+          "orderIndex": 11,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -393,9 +427,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-01--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 12,
+          "title": "Something leaves the speaker",
+          "bodyMarkdown": "The story begins with a deliberate action, then immediately passes beyond the speaker’s knowledge. Keep that change in view: the person who sends the arrow cannot tell us where it lands.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-01--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 13,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -412,7 +458,7 @@
         {
           "id": "the_arrow_and_the_song--session-01--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 12,
+          "orderIndex": 14,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -427,9 +473,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-01--reading-voice",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "Let the sentence fly",
+          "bodyMarkdown": "There is no full stop after sight. Carry the thought into the next line, then let the period after flight finish it. The movement of the sentence can help you remember where the four lines belong.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-01--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 16,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -446,7 +504,7 @@
         {
           "id": "the_arrow_and_the_song--session-01--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 14,
+          "orderIndex": 17,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -463,7 +521,7 @@
         {
           "id": "the_arrow_and_the_song--session-01--page-06",
           "type": "reflection",
-          "orderIndex": 15,
+          "orderIndex": 18,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "How does the repeated uncertainty feel when you say the second line aloud?",
@@ -475,7 +533,7 @@
         {
           "id": "the_arrow_and_the_song--session-01--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 19,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -500,13 +558,50 @@
         "the_arrow_and_the_song--chunk-04"
       ],
       "metadata": {
-        "estimatedMinutes": 6
+        "estimatedMinutes": 16,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 2,
+          "sessionOrderIndex": 1,
+          "allChunkIds": [
+            "the_arrow_and_the_song--chunk-01",
+            "the_arrow_and_the_song--chunk-02",
+            "the_arrow_and_the_song--chunk-03",
+            "the_arrow_and_the_song--chunk-04",
+            "the_arrow_and_the_song--chunk-05",
+            "the_arrow_and_the_song--chunk-06"
+          ],
+          "todayChunkIds": [
+            "the_arrow_and_the_song--chunk-03",
+            "the_arrow_and_the_song--chunk-04"
+          ],
+          "oneDayPreviousChunkIds": [
+            "the_arrow_and_the_song--chunk-01",
+            "the_arrow_and_the_song--chunk-02"
+          ],
+          "twoDaysPreviousChunkIds": []
+        }
       },
       "pages": [
         {
+          "id": "the_arrow_and_the_song--session-02--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Before the new passage, return to the lines you have already met. Take your time, and look again wherever you need to. Let their sounds and pictures lead you back.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
           "id": "the_arrow_and_the_song--session-02--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 1,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -519,9 +614,60 @@
           "metadata": {}
         },
         {
+          "id": "the_arrow_and_the_song--session-02--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 2,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-01"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "the_arrow_and_the_song--session-02--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 3,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-02"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "the_arrow_and_the_song--session-02--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 4,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "I shot an arrow into the air,\nIt fell to earth, I knew not where;\nFor, so swiftly it flew, the sight\nCould not follow it in its flight.\n\nI breathed a song into the air,\nIt fell to earth, I knew not where;\nFor who has sight so keen and strong,\nThat it can follow the flight of song?\n\nLong, long afterward, in an oak\nI found the arrow, still unbroke;\nAnd the song, from beginning to end,\nI found again in the heart of a friend.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "the_arrow_and_the_song--session-02--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 5,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -531,12 +677,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "the_arrow_and_the_song--session-02--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 6,
           "title": "A different flight",
           "bodyMarkdown": "The new stanza begins almost like the first, but a breath replaces the shot. Longfellow asks us to imagine a song travelling as an arrow travels. The second line returns word for word. Keep that familiar landing, then attend to the change from an explanation to a question. The rhyme between strong and song helps carry the question across its two lines.",
           "prompt": null,
@@ -546,24 +694,9 @@
           "metadata": {}
         },
         {
-          "id": "the_arrow_and_the_song--session-02--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "the_arrow_and_the_song--chunk-03",
-            "the_arrow_and_the_song--chunk-04"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "the_arrow_and_the_song--session-02--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 7,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -580,7 +713,7 @@
         {
           "id": "the_arrow_and_the_song--session-02--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 8,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -595,9 +728,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-02--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 9,
+          "title": "An opening heard twice",
+          "bodyMarkdown": "The repeated air and where make this stanza sound familiar. Strong and song then give it a different ending. Those changed sounds can remind you that the second flight ends in a question.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-02--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 10,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -614,7 +759,7 @@
         {
           "id": "the_arrow_and_the_song--session-02--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 11,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -629,9 +774,24 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-02--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 12,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-03",
+            "the_arrow_and_the_song--chunk-04"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-02--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 13,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -648,7 +808,7 @@
         {
           "id": "the_arrow_and_the_song--session-02--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 14,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -663,9 +823,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-02--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 15,
+          "title": "The invisible traveller",
+          "bodyMarkdown": "A song has no shaft or feathers, yet the poem gives it a flight. The comparison invites us to imagine how a voice might travel beyond the person who first gives it breath.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-02--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 16,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -682,7 +854,7 @@
         {
           "id": "the_arrow_and_the_song--session-02--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 17,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -697,9 +869,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-02--reading-voice",
+          "type": "commentary",
+          "orderIndex": 18,
+          "title": "Speak a real question",
+          "bodyMarkdown": "Try the last two lines as a question addressed to someone beside you. Leave a little room after strong, but keep the thought going. A questioning voice gives these lines their own character beside the first stanza.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-02--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 19,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -716,7 +900,7 @@
         {
           "id": "the_arrow_and_the_song--session-02--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 20,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -733,7 +917,7 @@
         {
           "id": "the_arrow_and_the_song--session-02--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 21,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What changes when an invisible song takes the place of a visible arrow?",
@@ -745,7 +929,7 @@
         {
           "id": "the_arrow_and_the_song--session-02--page-06",
           "type": "completion",
-          "orderIndex": 15,
+          "orderIndex": 22,
           "title": "A place to pause",
           "bodyMarkdown": "You can leave the passage here for a while. If an image or a sound stays with you, let it. Return whenever you would like to hear how the next lines continue the thought.",
           "prompt": null,
@@ -764,19 +948,97 @@
       "focusSummary": "Gather the two flights into the closing discovery.",
       "orderIndex": 2,
       "chunkIds": [
+        "the_arrow_and_the_song--chunk-01",
+        "the_arrow_and_the_song--chunk-02",
         "the_arrow_and_the_song--chunk-03",
         "the_arrow_and_the_song--chunk-04",
         "the_arrow_and_the_song--chunk-05",
         "the_arrow_and_the_song--chunk-06"
       ],
       "metadata": {
-        "estimatedMinutes": 7
+        "estimatedMinutes": 18,
+        "templateKind": "guided_poem_standard_session",
+        "templateVersion": 1,
+        "variables": {
+          "sessionNumber": 3,
+          "sessionOrderIndex": 2,
+          "allChunkIds": [
+            "the_arrow_and_the_song--chunk-01",
+            "the_arrow_and_the_song--chunk-02",
+            "the_arrow_and_the_song--chunk-03",
+            "the_arrow_and_the_song--chunk-04",
+            "the_arrow_and_the_song--chunk-05",
+            "the_arrow_and_the_song--chunk-06"
+          ],
+          "todayChunkIds": [
+            "the_arrow_and_the_song--chunk-05",
+            "the_arrow_and_the_song--chunk-06"
+          ],
+          "oneDayPreviousChunkIds": [
+            "the_arrow_and_the_song--chunk-03",
+            "the_arrow_and_the_song--chunk-04"
+          ],
+          "twoDaysPreviousChunkIds": [
+            "the_arrow_and_the_song--chunk-01",
+            "the_arrow_and_the_song--chunk-02"
+          ]
+        }
       },
       "pages": [
         {
+          "id": "the_arrow_and_the_song--session-03--recap-introduction",
+          "type": "recap",
+          "orderIndex": 0,
+          "title": "A Look Back",
+          "bodyMarkdown": "Begin with the passage from two days ago, then return to yesterday’s lines. Let the words come back at their own pace; you can always look again before moving on.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 30,
+          "metadata": {
+            "scope": "recap_intro"
+          }
+        },
+        {
+          "id": "the_arrow_and_the_song--session-03--recap-two-days--part-01",
+          "type": "hidden_word_game",
+          "orderIndex": 1,
+          "title": "Two Days Back 1/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-01"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "the_arrow_and_the_song--session-03--recap-two-days--part-02",
+          "type": "hidden_word_game",
+          "orderIndex": 2,
+          "title": "Two Days Back 2/2",
+          "bodyMarkdown": "Return to the passage from two days ago. Restore the hidden words, then say the lines aloud.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-02"
+          ],
+          "roundType": "hiddenWord",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 2,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
           "id": "the_arrow_and_the_song--session-03--page-01",
           "type": "poem_chunk",
-          "orderIndex": 0,
+          "orderIndex": 3,
           "title": "Return to the previous passage",
           "bodyMarkdown": "Read these lines aloud once. If you like, look away and let their scene bring back a phrase before looking again. There is no need to hurry.",
           "prompt": null,
@@ -789,9 +1051,60 @@
           "metadata": {}
         },
         {
+          "id": "the_arrow_and_the_song--session-03--recap-yesterday--part-01",
+          "type": "first_last_word_game",
+          "orderIndex": 4,
+          "title": "Yesterday’s Lines 1/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-03"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 1,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "the_arrow_and_the_song--session-03--recap-yesterday--part-02",
+          "type": "first_last_word_game",
+          "orderIndex": 5,
+          "title": "Yesterday’s Lines 2/2",
+          "bodyMarkdown": "Return to yesterday’s passage. Restore the first and last word of each line, then let the words between them return.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-04"
+          ],
+          "roundType": "firstAndLast",
+          "estimatedSeconds": 30,
+          "metadata": {
+            "recapOffsetDays": 1,
+            "splitGamePart": 2,
+            "splitGameCount": 2
+          }
+        },
+        {
+          "id": "the_arrow_and_the_song--session-03--whole-poem-opening",
+          "type": "poem_chunk",
+          "orderIndex": 6,
+          "title": "The Whole Poem",
+          "bodyMarkdown": "I shot an arrow into the air,\nIt fell to earth, I knew not where;\nFor, so swiftly it flew, the sight\nCould not follow it in its flight.\n\nI breathed a song into the air,\nIt fell to earth, I knew not where;\nFor who has sight so keen and strong,\nThat it can follow the flight of song?\n\nLong, long afterward, in an oak\nI found the arrow, still unbroke;\nAnd the song, from beginning to end,\nI found again in the heart of a friend.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 75,
+          "metadata": {
+            "scope": "whole_poem",
+            "source": "poem_text"
+          }
+        },
+        {
           "id": "the_arrow_and_the_song--session-03--page-02",
           "type": "poem_chunk",
-          "orderIndex": 1,
+          "orderIndex": 7,
           "title": "Stay with these lines",
           "bodyMarkdown": "Read the passage aloud, following the sentence through the line endings. Pause over an image or sound that draws your attention.",
           "prompt": null,
@@ -801,12 +1114,14 @@
           ],
           "roundType": null,
           "estimatedSeconds": 60,
-          "metadata": {}
+          "metadata": {
+            "scope": "today_chunks"
+          }
         },
         {
           "id": "the_arrow_and_the_song--session-03--page-03",
           "type": "commentary",
-          "orderIndex": 2,
+          "orderIndex": 8,
           "title": "Long afterward",
           "bodyMarkdown": "The doubled opening word slows the pace and lets time pass. First the arrow is found in an oak; then the song is found somewhere quite different. The stanza gives both journeys an ending without explaining how they got there. Say the whole poem and listen to the rhyme of end and friend. The last word makes the earlier solitary actions part of a relationship.",
           "prompt": null,
@@ -816,24 +1131,9 @@
           "metadata": {}
         },
         {
-          "id": "the_arrow_and_the_song--session-03--page-04",
-          "type": "poem_chunk",
-          "orderIndex": 3,
-          "title": "Let the words return",
-          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
-          "prompt": null,
-          "chunkIds": [
-            "the_arrow_and_the_song--chunk-05",
-            "the_arrow_and_the_song--chunk-06"
-          ],
-          "roundType": null,
-          "estimatedSeconds": 60,
-          "metadata": {}
-        },
-        {
           "id": "the_arrow_and_the_song--session-03--last_word_game--part-01",
           "type": "last_word_game",
-          "orderIndex": 4,
+          "orderIndex": 9,
           "title": "Last Word 1/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -850,7 +1150,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--last_word_game--part-02",
           "type": "last_word_game",
-          "orderIndex": 5,
+          "orderIndex": 10,
           "title": "Last Word 2/2",
           "bodyMarkdown": "Restore the last word of each line, then say the full line aloud. Let the ending sound help you find the words.",
           "prompt": null,
@@ -865,9 +1165,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-03--sound-and-form",
+          "type": "commentary",
+          "orderIndex": 11,
+          "title": "The two discoveries",
+          "bodyMarkdown": "Oak and unbroke hold the first discovery together; end and friend hold the second. Let the two pairs give you a route through the stanza without making the telling sound hurried or mechanical.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-03--first_word_game--part-01",
           "type": "first_word_game",
-          "orderIndex": 6,
+          "orderIndex": 12,
           "title": "First Word 1/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -884,7 +1196,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--first_word_game--part-02",
           "type": "first_word_game",
-          "orderIndex": 7,
+          "orderIndex": 13,
           "title": "First Word 2/2",
           "bodyMarkdown": "Restore the first word of each line, then read the whole passage aloud. Picture the scene as each line begins.",
           "prompt": null,
@@ -899,9 +1211,24 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-03--page-04",
+          "type": "poem_chunk",
+          "orderIndex": 14,
+          "title": "Let the words return",
+          "bodyMarkdown": "Hold the scene in mind and look away from the words. Try saying one or two lines, then return to the text wherever you need it. Join the passage together at a comfortable pace.",
+          "prompt": null,
+          "chunkIds": [
+            "the_arrow_and_the_song--chunk-05",
+            "the_arrow_and_the_song--chunk-06"
+          ],
+          "roundType": null,
+          "estimatedSeconds": 60,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-03--first_last_word_game--part-01",
           "type": "first_last_word_game",
-          "orderIndex": 8,
+          "orderIndex": 15,
           "title": "First and Last Word 1/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -918,7 +1245,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--first_last_word_game--part-02",
           "type": "first_last_word_game",
-          "orderIndex": 9,
+          "orderIndex": 16,
           "title": "First and Last Word 2/2",
           "bodyMarkdown": "Restore the first and last word of each line. Say the words between them too, allowing the whole line to return.",
           "prompt": null,
@@ -933,9 +1260,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-03--image-and-meaning",
+          "type": "commentary",
+          "orderIndex": 17,
+          "title": "A different place to land",
+          "bodyMarkdown": "The arrow survives inside a tree, while the song returns through a friendship. The parallel joins something tangible to something felt. You can enjoy the resemblance without making both discoveries mean exactly the same thing.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-03--hidden_word_game--part-01",
           "type": "hidden_word_game",
-          "orderIndex": 10,
+          "orderIndex": 18,
           "title": "Random Words 1/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -952,7 +1291,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--hidden_word_game--part-02",
           "type": "hidden_word_game",
-          "orderIndex": 11,
+          "orderIndex": 19,
           "title": "Random Words 2/2",
           "bodyMarkdown": "A few words are hidden within the passage. Restore them wherever they appear, then read the lines together at your own pace.",
           "prompt": null,
@@ -967,9 +1306,21 @@
           }
         },
         {
+          "id": "the_arrow_and_the_song--session-03--reading-voice",
+          "type": "commentary",
+          "orderIndex": 20,
+          "title": "The room after friend",
+          "bodyMarkdown": "Read the ending simply, with a small pause before the last line. The discovery needs little extra emphasis. Let the final word have its space, then listen to how it changes the poem’s earlier loneliness.",
+          "prompt": null,
+          "chunkIds": [],
+          "roundType": null,
+          "estimatedSeconds": 45,
+          "metadata": {}
+        },
+        {
           "id": "the_arrow_and_the_song--session-03--first_letter_game--part-01",
           "type": "first_letter_game",
-          "orderIndex": 12,
+          "orderIndex": 21,
           "title": "First Letter 1/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -986,7 +1337,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--first_letter_game--part-02",
           "type": "first_letter_game",
-          "orderIndex": 13,
+          "orderIndex": 22,
           "title": "First Letter 2/2",
           "bodyMarkdown": "Use the first letter of each word to recall the passage. Take your time and let the sounds and images bring the words back.",
           "prompt": null,
@@ -1003,7 +1354,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--page-05",
           "type": "reflection",
-          "orderIndex": 14,
+          "orderIndex": 23,
           "title": "A moment to linger",
           "bodyMarkdown": null,
           "prompt": "What is the difference between finding an object and finding a song in another person?",
@@ -1015,7 +1366,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--page-06",
           "type": "poem_chunk",
-          "orderIndex": 15,
+          "orderIndex": 24,
           "title": "Read from the beginning",
           "bodyMarkdown": "I shot an arrow into the air,\nIt fell to earth, I knew not where;\nFor, so swiftly it flew, the sight\nCould not follow it in its flight.\n\nI breathed a song into the air,\nIt fell to earth, I knew not where;\nFor who has sight so keen and strong,\nThat it can follow the flight of song?\n\nLong, long afterward, in an oak\nI found the arrow, still unbroke;\nAnd the song, from beginning to end,\nI found again in the heart of a friend.",
           "prompt": null,
@@ -1030,7 +1381,7 @@
         {
           "id": "the_arrow_and_the_song--session-03--page-07",
           "type": "completion",
-          "orderIndex": 16,
+          "orderIndex": 25,
           "title": "Keep the poem near",
           "bodyMarkdown": "Let the poem rest for now. A phrase may return later, or you may want to read it aloud again with a different emphasis. Familiarity can grow through small, unhurried returns.",
           "prompt": null,

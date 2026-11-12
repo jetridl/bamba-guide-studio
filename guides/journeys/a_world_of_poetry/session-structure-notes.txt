@@ -1,0 +1,106 @@
+A WORLD OF POETRY — INTERSPERSED PRACTICE AND TWO-DAY RECAPS
+12 November 2026
+
+CURRENT GUIDE VERSIONS
+
+Version 4: The Arrow and the Song; A Red, Red Rose; The Sick Rose;
+A Dream Within a Dream; Because I could not stop for Death.
+Version 3, unchanged in this update: The Road Not Taken; O Captain! My Captain!
+
+REFERENCE STRUCTURE
+
+The established catalogue guides were inspected, including Who Has Seen the Wind?,
+The Eagle, Hope is the thing with feathers, and The Road Not Taken. Their opening
+recaps return to two days ago with Random Words and to yesterday with First and
+Last Word, before the whole-poem and current-day reading. Their practice sections
+make room for commentary and other text between exercise groups.
+
+The five newer guides now follow that structure across all 21 of their learning
+days, while retaining the five-round order explicitly requested by the editor.
+
+OPENING EACH DAY
+
+Day 1 has no previous-day recap.
+Day 2 opens with A Look Back, the existing reading of yesterday's passage, and
+First and Last Word exercises for every chunk of yesterday's new lines.
+Day 3 onward opens with A Look Back, Random Words exercises for every chunk from
+two days ago, the existing reading of yesterday's passage, and First and Last Word
+exercises for every chunk from yesterday.
+
+Recaps cover only those one or two immediately preceding learning days. They do
+not use today's new lines or extend to all earlier days. Each recap exercise has
+an explicit chunk reference and recapOffsetDays metadata. All chunks are the
+existing one- or two-line chunks; no poem structure was split or replaced.
+
+AFTER THE RECAP
+
+The whole poem is available to read, followed by the current day's passage and
+the original commentary. The five practice groups are interspersed as follows:
+
+Last Word
+  New, passage-specific note on sound or form
+First Word
+  Existing Let the words return reading/recall page
+First and Last Word
+  New, passage-specific note on imagery or meaning
+Random Words
+  New, passage-specific note on reading aloud
+First Letter
+  Existing reflection, final whole-poem return where present, and closing
+
+Each group still covers every current-day chunk once, in its original order.
+Parts within the same exercise group stay together, with a meaningful reading or
+text page between each pair of different exercise groups. The added notes are
+specific to the current passage: they discuss its sounds, images, sentence turns
+and voice rather than adding generic pause screens.
+
+CHANGES AND PRESERVATION
+
+Added 54 recap exercise pages, 63 short commentary pages, 16 opening recap notes,
+and 16 whole-poem reading pages so later days have the same reading structure as
+the established guides. Existing previous-passage reading pages are retained as
+part of the opening recap. Original commentary, reflection, closing, game pages,
+and all of their IDs and wording remain intact.
+
+The only additions to an existing reading page's metadata identify its scope as
+today_chunks. Session chunk references now include the two previous days where
+available, so every recap can round-trip through Studio correctly. Session
+metadata records actual today, yesterday and two-days-back chunk IDs using the
+established template variable names. Estimated durations were recalculated from
+the page estimates to include the practice and recap pages.
+
+All five guides advanced from version 3 to version 4. Guide and poem IDs, stanza,
+line and chunk records, poem transcriptions, cover references, images and original
+editorial wording are preserved. Existing approved/exported statuses are retained.
+The eleven other catalogue guides, including Frost and Whitman, are unchanged.
+The Journey's order, notes, ID and version are unchanged.
+
+VALIDATION
+
+PASS — 28 tests: import/approval/export and ID preservation for all 16 published
+guides; daily round order and passage coverage for all seven Journey poems; and
+five new checks of interspersed text, recap timing, exact previous-day passage
+coverage, and the absence of recaps on Day 1.
+PASS — original payload comparisons preserve every original page and its wording,
+all poem structure and artwork references, and all eleven unaffected guides.
+PASS — Flutter's real content validator accepts all 16 poems and all 3 Journeys.
+PASS — Flutter's parser and playable study-plan conversion still produce all 335
+daily exercise pages across the Journey's 31 days, with the correct types, order
+and non-empty one- or two-line passages. The 54 new recap exercises are additional
+to those daily exercises.
+PASS — code checks and whitespace checks.
+
+Studio may still show non-blocking page-count or estimated-duration warnings for
+these longer, interspersed sessions. No validation rules were relaxed; all guide
+imports and approval/export checks pass without blocking issues.
+
+DELIVERY
+
+Canonical content is under exports/curated_poems/. guides/json/ continues to link
+to it. The updated content package is output/a_world_of_poetry-v4.zip; earlier
+archives and their notes record historical deliveries.
+
+The running Studio database and the Flutter content pin were not overwritten.
+Commit and push the updated approved Studio exports before advancing the Flutter
+pin for a release build. Existing app protection for plans currently being learned
+continues to apply to the higher guide versions.
