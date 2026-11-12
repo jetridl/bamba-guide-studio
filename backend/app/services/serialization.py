@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from sqlalchemy.orm import object_session
+
 from app.models import Guide, GuidePage, GuideReviewComment, GuideSession, Poem, PoemChunk
 from app.services.chunk_ordering import chunk_sort_key
 from app.services.page_types import derive_round_type
@@ -79,6 +81,10 @@ def comment_to_dict(comment: GuideReviewComment) -> dict[str, Any]:
 
 
 def guide_to_dict(guide: Guide) -> dict[str, Any]:
+    from app.services.guide_versions import next_free_version
+    from app.services.publish_service import published_version
+
+    db = object_session(guide)
     comments = [
         comment
         for review in guide.reviews
@@ -94,6 +100,10 @@ def guide_to_dict(guide: Guide) -> dict[str, Any]:
         "description": guide.description,
         "version": guide.version,
         "versionLabel": "latest" if guide.version == 0 else f"v{guide.version}",
+        "contentVersion": guide.content_version,
+        "publishedVersion": published_version(guide.external_id),
+        # The number "Raise to N" offers: above the latest copy and every saved version.
+        "nextFreeVersion": next_free_version(db, guide) if db is not None else guide.content_version + 1,
         "status": guide.status,
         "metadata": guide.metadata_json or {},
         "poem": poem_to_dict(guide.poem),
@@ -113,6 +123,7 @@ def guide_summary_to_dict(guide: Guide) -> dict[str, Any]:
         "description": guide.description,
         "version": guide.version,
         "versionLabel": "latest" if guide.version == 0 else f"v{guide.version}",
+        "contentVersion": guide.content_version,
         "status": guide.status,
         "poemTitle": guide.poem.title,
         "poemAuthor": guide.poem.author,
@@ -127,13 +138,14 @@ def guide_version_to_dict(guide: Guide) -> dict[str, Any]:
         "id": str(guide.id),
         "version": guide.version,
         "versionLabel": "latest" if guide.version == 0 else f"v{guide.version}",
+        "contentVersion": guide.content_version,
         "status": guide.status,
         "isLatest": guide.version == 0,
         "timestamp": timestamp.isoformat() if timestamp else None,
     }
 
 
-def guide_group_summary_to_dict(guides: list[Guide]) -> dict[str, Any]:
+def guide_group_summary_to_dict(guides: list[Guide], published_version: int | None = None) -> dict[str, Any]:
     saved_versions = sorted([guide.version for guide in guides if guide.version > 0])
     latest = next((guide for guide in guides if guide.version == 0), None)
     if latest is None:
@@ -144,4 +156,14 @@ def guide_group_summary_to_dict(guides: list[Guide]) -> dict[str, Any]:
         "savedVersions": saved_versions,
         "savedVersionCount": len(saved_versions),
         "latestSavedVersion": saved_versions[-1] if saved_versions else None,
+        # The version in exports/, and the highest version Studio holds above it (not published yet).
+        "publishedVersion": published_version,
+        "newerVersion": _newer_version(guides, published_version),
     }
+
+
+def _newer_version(guides: list[Guide], published_version: int | None) -> int | None:
+    if published_version is None:
+        return None
+    highest = max(guide.content_version for guide in guides)
+    return highest if highest > published_version else None

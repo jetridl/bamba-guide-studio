@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import uuid
+from datetime import datetime
+from typing import Any
 
-from sqlalchemy import ForeignKey, Integer, String, UniqueConstraint
+from sqlalchemy import DateTime, ForeignKey, Integer, String, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.types import Uuid
 
@@ -27,6 +29,9 @@ class Journey(Base, TimestampMixin):
     poems: Mapped[list[JourneyPoem]] = relationship(
         back_populates="journey", cascade="all, delete-orphan", order_by="JourneyPoem.order_index"
     )
+    versions: Mapped[list[JourneyVersion]] = relationship(
+        back_populates="journey", cascade="all, delete-orphan", order_by="JourneyVersion.version"
+    )
 
 
 class JourneyPoem(Base):
@@ -43,3 +48,17 @@ class JourneyPoem(Base):
     note_json: Mapped[list[str]] = mapped_column(json_type, default=list, nullable=False)
     journey: Mapped[Journey] = relationship(back_populates="poems")
     poem: Mapped[Poem] = relationship()
+
+
+class JourneyVersion(Base):
+    """A read-only copy of one Journey version, as journey.json content. One content per number."""
+
+    __tablename__ = "journey_versions"
+    __table_args__ = (UniqueConstraint("journey_id", "version", name="uq_journey_version"),)
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=uuid.uuid4)
+    journey_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("journeys.id", ondelete="CASCADE"), nullable=False)
+    version: Mapped[int] = mapped_column(Integer, nullable=False)
+    status: Mapped[str] = mapped_column(String, nullable=False)
+    payload_json: Mapped[dict[str, Any]] = mapped_column(json_type, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    journey: Mapped[Journey] = relationship(back_populates="versions")

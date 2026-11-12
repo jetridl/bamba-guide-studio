@@ -52,11 +52,11 @@ export function JourneyListPage() {
       const result = await journeyApi.refresh()
       const lines = [
         result.loaded.length
-          ? `Added ${result.loaded.length} new ${result.loaded.length === 1 ? "Journey" : "Journeys"}: ${result.loaded.join(", ")}.`
-          : "No new Journeys in guides/journeys.",
+          ? `Added ${result.loaded.join(", ")}.`
+          : "No new Journeys or versions in exports/journeys or guides/journeys.",
       ]
       if (result.problems.length) {
-        lines.push("Could not import:", ...result.problems.map((problem) => `• ${problem}`))
+        lines.push("Not added:", ...result.problems.map((problem) => `• ${problem}`))
       }
       setNotice(lines.join("\n"))
     } catch (caught) {
@@ -148,9 +148,11 @@ export function JourneyListPage() {
                   <span className="mt-2 flex items-center gap-2 text-[13px] font-semibold text-bamba-quiet md:hidden">
                     <StateDot tone={statusTone(journey.status)} label={statusLabel(journey.status)} />
                     {statusLabel(journey.status)} · v{journey.version}
+                    {newerThanPublished(journey) ? <NewVersionPill journey={journey} /> : null}
                   </span>
                 </span>
                 <span className="mt-0.5 hidden items-center gap-2 md:flex">
+                  {newerThanPublished(journey) ? <NewVersionPill journey={journey} /> : null}
                   <Pill tone="neutral">v{journey.version}</Pill>
                   <GuideStatusPill status={journey.status} />
                 </span>
@@ -181,5 +183,22 @@ export function JourneyListPage() {
         />
       </Sheet>
     </StudioShell>
+  )
+}
+
+function newerThanPublished(journey: Journey) {
+  return journey.publishedVersion != null && journey.version > journey.publishedVersion
+}
+
+/** Studio holds a later version than the one in exports/journeys. */
+function NewVersionPill({ journey }: { journey: Journey }) {
+  return (
+    <span
+      title={`exports/journeys holds version ${journey.publishedVersion}. Studio holds version ${journey.version}, not published yet.`}
+    >
+      <Pill tone="warn" withDot>
+        New version
+      </Pill>
+    </span>
   )
 }

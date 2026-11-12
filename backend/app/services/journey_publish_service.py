@@ -8,6 +8,10 @@ Layout (see exports/README.md):
 The Bamba app links exports/journeys as assets/journeys, beside the poems in
 exports/curated_poems. It shows a Journey only when every poem is bundled, and
 it refreshes a Journey on a device only when the version rises.
+
+The folder holds only the newest published version, and its version never goes
+down. A version is published once: to publish a change, raise the version
+first. Each published version is also kept as a saved version.
 """
 
 from __future__ import annotations
@@ -25,6 +29,14 @@ from sqlalchemy.orm import Session
 
 from app.models.journey import Journey
 from app.services.journey_service import payload, validation
+from app.services.journey_versions import (
+    comparable,
+    next_free_version,
+    record_version,
+    same_content,
+    saved_versions,
+    version_taken,
+)
 from app.services.publish_service import PLAN_FILENAME, _write_atomically
 
 JOURNEY_FILENAME = "journey.json"
@@ -58,18 +70,27 @@ def publish_journey(
     plan_path = exports_dir / folder / JOURNEY_FILENAME
     display = f"exports/journeys/{folder}/{JOURNEY_FILENAME}"
 
+    saved = saved_versions(db, journey).get(journey.version)
+    if saved is not None and not same_content(saved.payload_json, data):
+        raise version_taken(journey.version, next_free_version(db, journey))
+
     existing = _read_json(plan_path)
     created = existing is None
-    if existing is not None and _without_status(existing) != _without_status(data):
+    if existing is not None:
         existing_journey = existing.get("journey") if isinstance(existing, dict) else None
         if not isinstance(existing_journey, dict) or existing_journey.get("id") != folder:
             raise _conflict(f"{display} holds a different Journey. Nothing was written.")
         published_version = existing_journey.get("version")
         if isinstance(published_version, int) and journey.version <= published_version:
-            raise _conflict(
-                f"{display} already holds version {published_version}. Raise the Journey version above "
-                f"{published_version} and save, so the app refreshes it on devices that have it."
-            )
+            free = next_free_version(db, journey, published_version)
+            if journey.version < published_version:
+                reason = f"{display} already holds version {published_version}, and a published version never goes down."
+            elif comparable(existing) == comparable(data):
+                reason = f"Version {journey.version} is published already."
+            else:
+                reason = f"{display} already holds version {published_version} with different content."
+            raise _conflict(f"{reason} To publish a change, raise the Journey version to {free} and save, "
+                            "so the app refreshes it on devices that have it.")
 
     cover = journey.cover_image_json
     cover_name = cover["path"] if cover else None
@@ -84,6 +105,7 @@ def publish_journey(
             detail=f"Could not write {plan_path}: {error.strerror or error}. Check that the folder exists and is writable.",
         ) from error
     journey.status = "exported"
+    record_version(db, journey, "exported")
     db.commit()
 
     warnings: list[str] = []
@@ -104,13 +126,6 @@ def _published_poem_ids(poems_dir: Path) -> set[str]:
         except (KeyError, TypeError):
             continue
     return ids
-
-
-def _without_status(data: Any) -> Any:
-    """The content the app sees. Publishing an approved file as exported is not a change."""
-    if not isinstance(data, dict) or not isinstance(data.get("journey"), dict):
-        return data
-    return {**data, "journey": {key: value for key, value in data["journey"].items() if key != "status"}}
 
 
 def _read_json(path: Path) -> Any:

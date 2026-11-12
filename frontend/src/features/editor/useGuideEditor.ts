@@ -282,6 +282,8 @@ export function useGuideEditor(guideId: string) {
     duplicatePage: (pageId: string) => void runAction(() => api.duplicatePage(pageId)),
     deletePage: (pageId: string) => void runAction(() => api.deletePage(pageId)),
     approve: () => guide && void runAction(() => api.approveGuide(guide.id)),
+    raiseVersion: () =>
+      guide && void runAction(() => api.patchGuide(guide.id, { contentVersion: guide.nextFreeVersion ?? guide.contentVersion + 1 })),
     markInReview: () => guide && void runAction(() => api.markInReview(guide.id)),
     acceptComment: (commentId: string) => void runAction(() => api.acceptComment(commentId)),
     setCommentStatus: (commentId: string, status: ReviewComment["status"]) =>

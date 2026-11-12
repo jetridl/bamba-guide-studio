@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import uuid
 from typing import Any
@@ -37,10 +38,25 @@ def payload(journey: Journey) -> dict[str, Any]:
                   for item in sorted(journey.poems, key=lambda item: item.order_index)]}
 
 
+def published_version(journey: Journey) -> int | None:
+    """The version in exports/journeys of this Journey, or None when it is not published."""
+    from app.core.config import settings
+
+    if not journey.external_id:
+        return None
+    try:
+        path = settings.published_journeys_dir / journey.external_id / "journey.json"
+        version = json.loads(path.read_text(encoding="utf-8"))["journey"]["version"]
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    return version if isinstance(version, int) else None
+
+
 def detail(journey: Journey) -> dict[str, Any]:
     data = payload(journey)
     return {"id": str(journey.id), "externalId": journey.external_id,
             **{key: value for key, value in data["journey"].items() if key != "id"},
+            "publishedVersion": published_version(journey),
             "closing": journey.closing_json,
             "coverImage": journey.cover_image_json,
             "poems": [{**item, "title": row.poem.title, "author": row.poem.author}

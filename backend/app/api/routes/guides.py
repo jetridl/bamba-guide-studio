@@ -30,6 +30,7 @@ from app.services.guide_service import (
     restore_latest_from_version,
     save_guide_version,
 )
+from app.services.publish_service import published_versions
 from app.services.published_guides import load_guide_folder
 from app.services.serialization import guide_group_summary_to_dict, guide_to_dict, guide_version_to_dict
 
@@ -48,7 +49,9 @@ def list_guides(db: Session = Depends(get_db)) -> list[dict[str, Any]]:
         groups.setdefault(guide.external_id, []).append(guide)
     for group in groups.values():
         ensure_latest_working_copy(db, group)
-    summaries = [guide_group_summary_to_dict(group) for group in groups.values()]
+    published = published_versions(settings.published_guides_dir)
+    summaries = [guide_group_summary_to_dict(group, published.get(external_id))
+                 for external_id, group in groups.items()]
     return sorted(summaries, key=lambda item: item["updatedAt"] or "", reverse=True)
 
 

@@ -88,7 +88,11 @@ class Guide(Base, TimestampMixin):
     poem_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("poems.id"), nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     description: Mapped[str | None] = mapped_column(Text)
+    # 0 is Studio's working copy. A number above 0 is a read-only saved version,
+    # and it is always the same as that version's content_version.
     version: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    # The guide.version this copy exports as. The working copy can raise it.
+    content_version: Mapped[int] = mapped_column(Integer, nullable=False, default=1, server_default="1")
     status: Mapped[str] = mapped_column(String, nullable=False, default="draft")
     metadata_json: Mapped[dict[str, Any]] = mapped_column(json_type, default=dict, nullable=False)
     import_snapshot_json: Mapped[dict[str, Any] | None] = mapped_column(json_type)

@@ -17,6 +17,7 @@ from app.models.journey import Journey, JourneyPoem
 from app.services.journey_loader import load_journey_folders
 from app.services.journey_publish_service import publish_journey
 from app.services.journey_service import detail, get_journey, payload, validation
+from app.services.journey_versions import restore_version, saved_versions
 
 router = APIRouter()
 Text = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
@@ -163,3 +164,39 @@ def publish(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, A
     """Write exports/journeys/<journey_id>/ for the Bamba app, with its cover image."""
     return publish_journey(db, get_journey(db, journey_id), settings.published_journeys_dir,
                            settings.published_guides_dir, settings.journeys_dir)
+
+
+@router.get("/journeys/{journey_id}/versions")
+def list_versions(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> list[dict[str, Any]]:
+    """The saved versions, newest first. Each one is read-only."""
+    journey = get_journey(db, journey_id)
+    rows = sorted(saved_versions(db, journey).values(), key=lambda row: row.version, reverse=True)
+    return [{"version": row.version, "status": row.status, "title": row.payload_json["journey"]["title"],
+             "createdAt": row.created_at.isoformat() if row.created_at else None} for row in rows]
+
+
+@router.get("/journeys/{journey_id}/versions/{version}")
+def read_version(journey_id: uuid.UUID, version: int, db: Session = Depends(get_db)) -> dict[str, Any]:
+    journey = get_journey(db, journey_id)
+    row = saved_versions(db, journey).get(version)
+    if row is None:
+        raise HTTPException(status_code=404, detail=f"Version {version} is not saved.")
+    poems = {poem.external_id: poem for poem in db.scalars(select(Poem).where(
+        Poem.external_id.in_([item["poemId"] for item in row.payload_json["poems"]])))}
+    info = row.payload_json["journey"]
+    return {"version": row.version, "status": row.status,
+            "createdAt": row.created_at.isoformat() if row.created_at else None,
+            "externalId": info["id"],
+            **{key: value for key, value in info.items() if key not in {"id", "version", "status"}},
+            "closing": info.get("closing") or [], "coverImage": info.get("coverImage"),
+            "poems": [{**item, "title": poems[item["poemId"]].title if item["poemId"] in poems else item["poemId"],
+                       "author": poems[item["poemId"]].author if item["poemId"] in poems else ""}
+                      for item in row.payload_json["poems"]]}
+
+
+@router.post("/journeys/{journey_id}/versions/{version}/restore")
+def use_version(journey_id: uuid.UUID, version: int, db: Session = Depends(get_db)) -> dict[str, Any]:
+    """Make a saved version the latest copy. The latest copy is kept as a version first."""
+    journey = get_journey(db, journey_id)
+    restore_version(db, journey, version)
+    return detail(get_journey(db, journey_id))

@@ -13,6 +13,45 @@ from app.services.serialization import guide_to_dict
 
 
 def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
+    """Import a file into Studio's working copy. It replaces the working copy and sets it to draft."""
+    check_guide_schema(payload)
+    poem = upsert_poem(db, payload)
+
+    guide_data = payload["guide"]
+    guide = db.scalar(
+        select(Guide).where(
+            Guide.external_id == guide_data["id"],
+            Guide.version == 0,
+        )
+    )
+    if guide is None:
+        guide = Guide(external_id=guide_data["id"], version=0)
+        db.add(guide)
+    else:
+        for session in list(guide.sessions):
+            db.delete(session)
+        for review in list(guide.reviews):
+            db.delete(review)
+        db.flush()
+    _fill_guide(db, guide, poem, payload)
+    guide.status = "draft"
+    db.commit()
+    db.refresh(guide)
+    return guide_to_dict(guide)
+
+
+def add_saved_version(db: Session, payload: dict[str, Any], poem: Poem) -> Guide:
+    """Add a file as a read-only saved version, numbered by its guide.version. Leaves the working copy alone."""
+    version = payload["guide"]["version"]
+    guide = Guide(external_id=payload["guide"]["id"], version=version)
+    db.add(guide)
+    _fill_guide(db, guide, poem, payload)
+    guide.status = "draft"
+    db.flush()
+    return guide
+
+
+def check_guide_schema(payload: dict[str, Any]) -> None:
     schema_name = "guided-plan.schema.json" if payload.get("schemaVersion") == 2 else "guided-plan-v1.schema.json"
     schema_errors = validate_json_schema(payload, schema_name)
     if schema_errors:
@@ -21,6 +60,9 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
             detail={"message": "Guide JSON does not match schema", "errors": schema_errors},
         )
 
+
+def upsert_poem(db: Session, payload: dict[str, Any]) -> Poem:
+    """Create or update the poem, its sections and its chunks. Chunks are never deleted."""
     structure = None
     if payload.get("schemaVersion") == 2:
         structure = {key: payload[key] for key in ("stanzas", "lines", "chunks")}
@@ -54,27 +96,15 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
 
     section_by_external_id = _reconstruct_sections(db, poem, payload["chunks"])
     _upsert_chunks(db, poem, section_by_external_id, payload["chunks"])
+    return poem
 
+
+def _fill_guide(db: Session, guide: Guide, poem: Poem, payload: dict[str, Any]) -> None:
     guide_data = payload["guide"]
-    guide = db.scalar(
-        select(Guide).where(
-            Guide.external_id == guide_data["id"],
-            Guide.version == 0,
-        )
-    )
-    if guide is None:
-        guide = Guide(external_id=guide_data["id"], version=0)
-        db.add(guide)
-    else:
-        for session in list(guide.sessions):
-            db.delete(session)
-        for review in list(guide.reviews):
-            db.delete(review)
-        db.flush()
     guide.poem = poem
     guide.title = guide_data["title"]
     guide.description = guide_data.get("description")
-    guide.status = "draft"
+    guide.content_version = guide_data.get("version") or 1
     guide.metadata_json = guide_data.get("metadata") or {}
     guide.import_snapshot_json = payload
     db.flush()
@@ -88,7 +118,7 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
             subtitle=session_data.get("subtitle"),
             focus_summary=session_data.get("focusSummary"),
             order_index=session_data["orderIndex"],
-            chunk_ids_json=session_data.get("chunkIds") or _infer_session_chunk_ids(session_data),
+            chunk_ids_json=session_data.get("chunkIds") or infer_session_chunk_ids(session_data),
             metadata_json=session_data.get("metadata") or {},
         )
         db.add(session)
@@ -109,10 +139,7 @@ def import_guide(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
                     metadata_json=page_data.get("metadata") or {},
                 )
             )
-
-    db.commit()
-    db.refresh(guide)
-    return guide_to_dict(guide)
+    db.flush()
 
 
 def _reconstruct_sections(
@@ -141,7 +168,7 @@ def _reconstruct_sections(
     return result
 
 
-def _infer_session_chunk_ids(session_data: dict[str, Any]) -> list[str]:
+def infer_session_chunk_ids(session_data: dict[str, Any]) -> list[str]:
     chunk_ids: list[str] = []
     for page in session_data.get("pages") or []:
         for chunk_id in page.get("chunkIds") or []:

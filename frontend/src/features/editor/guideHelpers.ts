@@ -204,3 +204,13 @@ export function warningCount(validation: ValidationResult | null): number {
 export function pageLabel(page: GuidePage): string {
   return page.title?.trim() || page.type
 }
+
+/** "Latest · v3" for the copy you edit, "v2" for a saved version. */
+/** exports/ holds this version or a later one, so it cannot be published again. */
+export function isPublished(item: { contentVersion: number; publishedVersion?: number | null }) {
+  return item.publishedVersion != null && item.contentVersion <= item.publishedVersion
+}
+
+export function versionName(item: { version: number; contentVersion: number }) {
+  return item.version === 0 ? `Latest · v${item.contentVersion}` : `v${item.version}`
+}

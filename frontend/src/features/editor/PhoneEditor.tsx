@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 import { ActionButton, IconButton } from "@/components/bamba/Button"
 import { Segmented } from "@/components/bamba/Segmented"
 import { ListRow, ListSurface, SectionHeading } from "@/components/bamba/Surface"
-import { CountBadge, GuideStatusPill, Pill, StateDot } from "@/components/bamba/pills"
+import { CountBadge, GuideStatusPill, NotPublishedPill, Pill, StateDot } from "@/components/bamba/pills"
 import { PageForm } from "@/features/editor/components/PageForm"
 import { PagePreview } from "@/features/editor/components/PagePreview"
 import { ReadinessStrip } from "@/features/editor/components/Readiness"
@@ -15,8 +15,10 @@ import {
   commentsForPage,
   findSelectedPage,
   flattenPages,
+  isPublished,
   openCommentsForPage,
   pageLabel,
+  versionName,
 } from "@/features/editor/guideHelpers"
 import type { GuideEditorState } from "@/features/editor/useGuideEditor"
 import type { GuideDetail, ReviewComment } from "@/lib/types"
@@ -139,15 +141,20 @@ function GuideOverview({
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <GuideStatusPill status={guide.status} />
           <Pill tone="neutral" className="font-normal">
-            {guide.versionLabel}
+            {versionName(guide)}
           </Pill>
+          {guide.version === 0 && !isPublished(guide) ? <NotPublishedPill publishedVersion={guide.publishedVersion} /> : null}
           <SaveState state={editor.saving} savedAt={editor.savedAt} readOnly={editor.readOnly} onRetry={() => void editor.flush()} />
         </div>
       </div>
 
       <div className="flex flex-col gap-4 px-5 pt-4">
         {banners}
-        <ReadinessStrip checks={editor.checks} onOpen={onOpenPublish} />
+        <ReadinessStrip
+          checks={editor.checks}
+          published={isPublished(guide) ? guide.contentVersion : null}
+          onOpen={onOpenPublish}
+        />
       </div>
 
       <div className="flex flex-col gap-6 px-5 pt-6">

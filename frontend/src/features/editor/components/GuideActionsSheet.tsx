@@ -6,8 +6,9 @@ import { ActionButton } from "@/components/bamba/Button"
 import { Sheet } from "@/components/bamba/Sheet"
 import { ListRow, ListSurface } from "@/components/bamba/Surface"
 import { THEME_LABELS, useTheme } from "@/lib/theme"
-import { formatVersionTimestamp } from "@/features/editor/guideHelpers"
+import { formatVersionTimestamp, versionName } from "@/features/editor/guideHelpers"
 import type { GuideDetail, GuideVersionSummary } from "@/lib/types"
+import { statusLabel } from "@/components/bamba/pills"
 
 /**
  * Everything the header used to carry, as a Bamba actions menu:
@@ -48,7 +49,7 @@ export function GuideActionsSheet({
       key: "versions",
       icon: History,
       title: "Version history",
-      description: "Read a version you saved earlier",
+      description: "Read any version Studio holds",
       trailing: versions.length > 1 ? `${versions.length}` : undefined,
       onSelect: () => setView("versions"),
     },
@@ -57,7 +58,7 @@ export function GuideActionsSheet({
           key: "save-version",
           icon: Save,
           title: "Save version",
-          description: "Keep today's wording before you change more",
+          description: `Keep this copy as version ${guide.contentVersion}`,
           onSelect: () => {
             close()
             onSaveVersion()
@@ -67,7 +68,7 @@ export function GuideActionsSheet({
           key: "restore",
           icon: Save,
           title: "Use as latest",
-          description: "Bring this saved version back into the editor",
+          description: "Edit this version. Studio keeps the latest copy as a version first",
           onSelect: () => {
             close()
             onRestoreLatest()
@@ -137,8 +138,10 @@ export function GuideActionsSheet({
                 }}
               >
                 <span className="min-w-0 flex-1">
-                  <span className="block text-[15px] font-medium">{version.versionLabel}</span>
-                  <span className="block text-[13px] text-bamba-muted">{formatVersionTimestamp(version.timestamp)}</span>
+                  <span className="block text-[15px] font-medium">{versionName(version)}</span>
+                  <span className="block text-[13px] text-bamba-muted">
+                    {statusLabel(version.status)} · {formatVersionTimestamp(version.timestamp)}
+                  </span>
                 </span>
                 {version.id === guide.id ? <Check className="size-5 shrink-0 text-bamba-glow" /> : null}
               </ListRow>

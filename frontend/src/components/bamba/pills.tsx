@@ -53,6 +53,23 @@ export function Pill({
   )
 }
 
+/** The latest copy has a version that exports/ does not hold yet. */
+export function NotPublishedPill({ publishedVersion }: { publishedVersion?: number | null }) {
+  return (
+    <span
+      title={
+        publishedVersion != null
+          ? `This version is not published yet. exports/ holds version ${publishedVersion}.`
+          : "This version is not published yet."
+      }
+    >
+      <Pill tone="warn" withDot>
+        Not published
+      </Pill>
+    </span>
+  )
+}
+
 /** A quiet marker on a list row: a dot alone, with a name for screen readers. */
 export function StateDot({ tone, label, className }: { tone: PillTone; label: string; className?: string }) {
   return <span role="img" aria-label={label} className={cn("size-2 shrink-0 rounded-full", TONES[tone].dot, className)} />

@@ -3,6 +3,10 @@
 Layout (see exports/README.md):
     exports/curated_poems/<author-name>--<poem-title>/guided_plan.json   canonical file
     guides/json/<author-name>--<poem-title>.json                         symlink to it
+
+The folder holds only the newest published version, and its version never goes
+down. A version is published once: to publish a change, raise the version
+first. Each published version is also kept as a saved version.
 """
 
 from __future__ import annotations
@@ -40,8 +44,26 @@ def folder_name(author: str, title: str) -> str:
 
 
 def publish_guide(db: Session, guide: Guide, exports_dir: Path, guides_dir: Path | None) -> dict[str, Any]:
+    from app.services.guide_versions import (
+        comparable,
+        holds_content,
+        next_free_version,
+        record_version,
+        saved_versions,
+        version_taken,
+    )
+
+    if guide.version > 0:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="This is a saved version. Use it as the latest, approve it, and publish the latest.",
+        )
     payload = prepare_export(guide)
     guide_id, poem_id = payload["guide"]["id"], payload["poem"]["id"]
+    number = payload["guide"]["version"]
+    saved = saved_versions(db, guide_id).get(number)
+    if saved is not None and not holds_content(saved, payload):
+        raise version_taken(number, next_free_version(db, guide))
 
     folder = _existing_folder(exports_dir, guide_id, poem_id)
     created = folder is None
@@ -54,6 +76,21 @@ def publish_guide(db: Session, guide: Guide, exports_dir: Path, guides_dir: Path
             )
 
     plan_path = exports_dir / folder / PLAN_FILENAME
+    existing = _read_json(plan_path)
+    published = existing.get("guide", {}).get("version") if isinstance(existing, dict) else None
+    if isinstance(published, int) and number <= published:
+        display = f"exports/curated_poems/{folder}/{PLAN_FILENAME}"
+        free = next_free_version(db, guide, published)
+        if number < published:
+            reason = f"{display} holds version {published}, and a published version never goes down."
+        elif comparable(existing) == comparable(payload):
+            reason = f"Version {number} is published already."
+        else:
+            reason = f"{display} holds version {published} with different content."
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=f"{reason} To publish a change, raise the version to {free} first.",
+        )
     try:
         _write_atomically(plan_path, json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
     except OSError as error:
@@ -62,6 +99,8 @@ def publish_guide(db: Session, guide: Guide, exports_dir: Path, guides_dir: Path
             detail=f"Could not write {plan_path}: {error.strerror or error}. Check that the folder exists and is writable.",
         ) from error
     mark_exported(db, guide)
+    record_version(db, guide, "exported")
+    db.commit()
 
     warnings: list[str] = []
     link = _link(guides_dir, folder, plan_path, guide_id, poem_id, warnings) if guides_dir else None
@@ -72,6 +111,27 @@ def publish_guide(db: Session, guide: Guide, exports_dir: Path, guides_dir: Path
         "created": created,
         "warnings": warnings,
     }
+
+
+def published_versions(exports_dir: Path) -> dict[str, int]:
+    """The version in exports/ of each published guide, by guide ID."""
+    versions: dict[str, int] = {}
+    for path in exports_dir.glob(f"*/{PLAN_FILENAME}"):
+        data = _read_json(path)
+        try:
+            guide_id, version = data["guide"]["id"], data["guide"]["version"]
+        except (KeyError, TypeError):
+            continue
+        if isinstance(version, int):
+            versions[guide_id] = version
+    return versions
+
+
+def published_version(guide_id: str) -> int | None:
+    """The version in exports/ of one guide, or None when it is not published."""
+    from app.core.config import settings
+
+    return published_versions(settings.published_guides_dir).get(guide_id)
 
 
 def _existing_folder(exports_dir: Path, guide_id: str, poem_id: str) -> str | None:
@@ -86,6 +146,13 @@ def _existing_folder(exports_dir: Path, guide_id: str, poem_id: str) -> str | No
         if ids[1] == poem_id and by_poem is None:
             by_poem = path.parent.name
     return by_poem
+
+
+def _read_json(path: Path) -> Any:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
 
 
 def _ids(path: Path) -> tuple[str, str] | None:

@@ -34,6 +34,7 @@ class GuidePatch(CamelModel):
     description: str | None = None
     status: str | None = None
     metadata: dict[str, Any] | None = None
+    content_version: int | None = Field(default=None, alias="contentVersion", ge=1)
 
 
 class ReorderItem(CamelModel):

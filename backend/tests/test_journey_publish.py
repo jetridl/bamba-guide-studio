@@ -72,10 +72,11 @@ def test_publish_writes_journey_and_cover_and_links_the_draft(client: TestClient
     assert (draft / "cover-brief.txt").read_text() == "Notes stay here."
     assert client.get(f"/api/journeys/{journey['id']}").json()["status"] == "exported"
 
-    # Publishing again without changes is harmless.
+    assert client.get(f"/api/journeys/{journey['id']}").json()["publishedVersion"] == 1
+
+    # A published version is published once.
     again = client.post(f"/api/journeys/{journey['id']}/publish")
-    assert again.status_code == 200, again.text
-    assert again.json()["created"] is False
+    assert again.status_code == 409 and "Version 1 is published already" in again.json()["detail"]
 
 
 def test_publish_needs_the_cover_image(client: TestClient, folders: dict[str, Path]) -> None:
@@ -140,7 +141,7 @@ def test_changed_journey_needs_a_higher_version(client: TestClient, folders: dic
     assert json.loads(path.read_text())["journey"]["title"] == "Edited by hand"
 
 
-def test_approved_file_can_be_published_as_exported_at_the_same_version(
+def test_approved_file_is_not_published_again_at_the_same_version(
     client: TestClient, folders: dict[str, Path]
 ) -> None:
     journey, _ = approved_journey(client, folders)
@@ -152,8 +153,8 @@ def test_approved_file_can_be_published_as_exported_at_the_same_version(
 
     response = client.post(f"/api/journeys/{journey['id']}/publish")
 
-    assert response.status_code == 200, response.text
-    assert json.loads(path.read_text())["journey"]["status"] == "exported"
+    assert response.status_code == 409 and "raise the Journey version to 2" in response.json()["detail"]
+    assert json.loads(path.read_text())["journey"]["status"] == "approved"
 
 
 def test_new_version_replaces_the_published_journey(client: TestClient, folders: dict[str, Path]) -> None:

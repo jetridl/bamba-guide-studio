@@ -5,7 +5,7 @@ import { ArrowLeft, MoreHorizontal } from "lucide-react"
 import { ActionButton, IconButton } from "@/components/bamba/Button"
 import { Segmented } from "@/components/bamba/Segmented"
 import { Sheet } from "@/components/bamba/Sheet"
-import { CountBadge, GuideStatusPill, Pill } from "@/components/bamba/pills"
+import { CountBadge, GuideStatusPill, NotPublishedPill, Pill } from "@/components/bamba/pills"
 import { DailyChunksForm } from "@/features/editor/components/DailyChunksForm"
 import { PageForm } from "@/features/editor/components/PageForm"
 import { PagePreview } from "@/features/editor/components/PagePreview"
@@ -17,7 +17,9 @@ import {
   findSelectedDailySession,
   findSelectedPage,
   formatVersionTimestamp,
+  isPublished,
   openCommentsForPage,
+  versionName,
 } from "@/features/editor/guideHelpers"
 import type { GuideEditorState } from "@/features/editor/useGuideEditor"
 import { THREE_PANE_QUERY, useMediaQuery } from "@/lib/useMediaQuery"
@@ -109,9 +111,10 @@ export function DesktopEditor({
             <h1 className="font-heading text-2xl leading-tight font-semibold">{guide.poem.title}</h1>
             <GuideStatusPill status={guide.status} />
             <Pill tone="neutral" className="font-normal">
-              {currentVersion?.versionLabel ?? guide.versionLabel}
+              {versionName(currentVersion ?? guide)}
               {currentVersion?.timestamp ? ` · ${formatVersionTimestamp(currentVersion.timestamp)}` : ""}
             </Pill>
+            {guide.version === 0 && !isPublished(guide) ? <NotPublishedPill publishedVersion={guide.publishedVersion} /> : null}
           </div>
           <p className="mt-0.5 flex items-center gap-2 text-[13px] text-bamba-muted">
             {guide.poem.author}

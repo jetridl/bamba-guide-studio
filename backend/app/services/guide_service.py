@@ -4,7 +4,7 @@ import uuid
 from typing import Any
 
 from fastapi import HTTPException, status
-from sqlalchemy import func, select
+from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
 from app.models import Guide, GuidePage, GuideReview, GuideSession, Poem, PoemChunk
@@ -54,7 +54,7 @@ def ensure_latest_working_copy(db: Session, guides: list[Guide]) -> Guide:
     source = max(guides, key=lambda guide: guide.version)
     latest = Guide(external_id=source.external_id, version=0)
     db.add(latest)
-    _copy_guide_contents(db, source=source, target=latest)
+    copy_guide_contents(db, source=source, target=latest)
     db.commit()
     db.refresh(latest)
     guides.append(latest)
@@ -76,6 +76,10 @@ def patch_guide(db: Session, guide: Guide, patch: GuidePatch) -> dict[str, Any]:
     for key, value in data.items():
         if key == "metadata":
             guide.metadata_json = value or {}
+        elif key == "content_version":
+            if value is None or value < guide.content_version:
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Guide versions cannot go down.")
+            guide.content_version = value
         else:
             setattr(guide, key, value)
     db.commit()
@@ -104,55 +108,47 @@ def approve_guide(db: Session, guide: Guide) -> dict[str, Any]:
 
 
 def save_guide_version(db: Session, guide: Guide) -> dict[str, Any]:
-    if guide.version > 0:
-        latest = db.scalar(
-            select(Guide).where(
-                Guide.external_id == guide.external_id,
-                Guide.version == 0,
-            )
-        )
-        if latest is None:
-            latest = Guide(external_id=guide.external_id, version=0)
-            db.add(latest)
-        _copy_guide_contents(db, source=guide, target=latest)
-        guide = latest
+    """Save the working copy as the read-only version with its own version number."""
+    from app.services.guide_versions import record_version
 
-    next_version = (
-        db.scalar(
-            select(func.max(Guide.version)).where(
-                Guide.external_id == guide.external_id,
-                Guide.version > 0,
-            )
-        )
-        or 0
-    ) + 1
-    saved = Guide(external_id=guide.external_id, version=next_version)
-    db.add(saved)
-    _copy_guide_contents(db, source=guide, target=saved)
+    if guide.version > 0:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="This is a saved version already.")
+    record_version(db, guide)
     db.commit()
     db.refresh(guide)
     return guide_to_dict(guide)
 
 
 def restore_latest_from_version(db: Session, guide: Guide) -> dict[str, Any]:
+    """Make a saved version the working copy. The working copy is saved first, so nothing is lost.
+
+    The working copy always has the highest version number. An older version
+    comes back under the next free number, so it can be published again.
+    """
+    from app.services.guide_versions import highest_version, keep_working_copy
+
     if guide.version == 0:
         return guide_to_dict(guide)
-    latest = db.scalar(
-        select(Guide).where(
-            Guide.external_id == guide.external_id,
-            Guide.version == 0,
-        )
-    )
+    latest = db.scalar(guide_query().where(Guide.external_id == guide.external_id, Guide.version == 0))
     if latest is None:
         latest = Guide(external_id=guide.external_id, version=0)
         db.add(latest)
-    _copy_guide_contents(db, source=guide, target=latest)
+        highest = guide.version
+    else:
+        keep_working_copy(db, latest)
+        highest = highest_version(db, latest)
+    copy_guide_contents(db, source=guide, target=latest)
+    if guide.version < highest:
+        latest.content_version = highest + 1
+        if latest.status == "exported":
+            # The new version is not in exports/ yet: Publish puts it there.
+            latest.status = "approved"
     db.commit()
     db.refresh(latest)
     return guide_to_dict(latest)
 
 
-def _copy_guide_contents(db: Session, source: Guide, target: Guide) -> None:
+def copy_guide_contents(db: Session, source: Guide, target: Guide) -> None:
     for session in list(target.sessions):
         db.delete(session)
     if target.id is not None:
@@ -160,6 +156,7 @@ def _copy_guide_contents(db: Session, source: Guide, target: Guide) -> None:
 
     target.poem = source.poem
     target.title = source.title
+    target.content_version = source.content_version
     target.description = source.description
     target.status = source.status
     target.metadata_json = dict(source.metadata_json or {})

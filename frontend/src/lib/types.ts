@@ -5,6 +5,8 @@ export type GuideSummary = {
   description?: string | null
   version: number
   versionLabel: string
+  /** The guide.version this copy publishes as. */
+  contentVersion: number
   status: GuideStatus
   poemTitle: string
   poemAuthor: string
@@ -13,12 +15,17 @@ export type GuideSummary = {
   savedVersions?: number[]
   savedVersionCount?: number
   latestSavedVersion?: number | null
+  /** The version in exports/, or null when the guide is not published. */
+  publishedVersion?: number | null
+  /** The highest version Studio holds above the published one, or null. */
+  newerVersion?: number | null
 }
 
 export type GuideVersionSummary = {
   id: string
   version: number
   versionLabel: string
+  contentVersion: number
   status: GuideStatus
   isLatest: boolean
   timestamp?: string | null
@@ -67,6 +74,11 @@ export type GuideDetail = {
   description?: string | null
   version: number
   versionLabel: string
+  contentVersion: number
+  // The version in exports/, or null when the guide is not published.
+  publishedVersion?: number | null
+  // The lowest version number no copy of this guide uses yet.
+  nextFreeVersion?: number
   status: GuideStatus
   metadata: Record<string, unknown>
   poem: {
@@ -120,6 +132,8 @@ export type RefreshResult = {
   loaded: string[]
   skipped: string[]
   failed: string[]
+  /** One sentence per file that was not added, with the reason. */
+  problems: string[]
 }
 
 export type PublishResult = {

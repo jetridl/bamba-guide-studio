@@ -20,10 +20,7 @@ def build_guided_plan(guide: Guide) -> dict[str, Any]:
             "id": guide.external_id,
             "poemId": guide.poem.external_id,
             "title": guide.title,
-            # Version 0 is Studio's working copy, not an authored content version.
-            "version": guide.version if guide.version > 0 else (
-                (guide.import_snapshot_json or {}).get("guide", {}).get("version", 1)
-            ),
+            "version": guide.content_version,
             "status": guide.status,
             **({"description": guide.description} if guide.description is not None else {}),
             "metadata": guide.metadata_json or {},

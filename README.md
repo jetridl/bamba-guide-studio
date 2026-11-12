@@ -148,7 +148,7 @@ Bamba app bundle
 ### A new guide
 
 1. Save the draft as `guides/json/<slug>.json`. Give `poem.id` the stable ID the app will use (for example `the_tyger`); it does not have to match the slug.
-2. Click **Refresh** on the guide list. Studio imports every new file in `guides/json/` as a draft. (Or open `/guides/import` and paste the JSON.)
+2. Click **Refresh** on the guide list. Studio imports every new file in `guides/json/` as a draft. (Or open `/guides/import` and paste the JSON.) See [Versions](#versions) for files of a guide Studio already holds.
 3. Edit sessions and pages in `/guides/:guideId`. Page changes autosave.
 4. Optional: import review JSON from `/guides/:guideId/reviews/import`, then resolve, dismiss, or accept each comment.
 5. Validate from the bottom bar, and approve when no blocking issues remain.
@@ -160,15 +160,18 @@ Bamba app bundle
 
 ### A guide the app already ships
 
-The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there, approve, and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Then do steps 7 and 8.
+The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there. In the Publish sheet, click **Raise to N** so the changed guide gets a new version number. Then approve and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Then do steps 7 and 8.
 
 ### What Publish protects
 
 - It writes nothing unless the guide is approved and passes validation.
+- The version in `exports/` never goes down. Publish refuses a version lower than the published one.
+- A version is published once. Publish refuses the version that `exports/` holds already, even with the same content. To publish a change, raise the version first. The Publish sheet shows this and turns off **Publish**.
+- One version number keeps one content. Publish refuses changed content at a version that is already saved, and tells you which version to raise it to.
 - It refuses to write into a folder that holds a different guide.
 - It replaces a file in `guides/json/` only when that file is a link or a draft of the same guide. Otherwise it leaves the file alone and shows a warning.
 - It writes the file in one step, so a failed write never leaves half a file. The status changes only after the file is saved.
-- The first Publish of a shipped guide can produce a large Git diff, because Studio writes the keys in its own order. The content changes are small: `status` becomes `exported`, `roundType: "readThrough"` becomes `null` (the app shows it the same way), and sessions list their `chunkIds` (the app ignores them).
+- The first Publish of a new version of a shipped guide can produce a large Git diff, because Studio writes the keys in its own order. The content changes are small: `status` becomes `exported`, `roundType: "readThrough"` becomes `null` (the app shows it the same way), and sessions list their `chunkIds` (the app ignores them).
 
 Do not re-import a shipped guide to start an edit. Import replaces the Studio copy and sets it back to draft. Keep every poem, stanza, line and chunk ID: the app keys saved progress by them.
 
@@ -176,13 +179,29 @@ The app refreshes higher authored guide versions at startup, while preserving a 
 
 ### Loading published guides
 
-When the backend starts, it reads every `exports/curated_poems/*/guided_plan.json`:
+When the backend starts, it reads every `exports/curated_poems/*/guided_plan.json`. **Refresh** on the guide list reads every `guides/json/*.json` (links included) with the same rules:
 
-- If the Studio already holds that guide ID or poem ID, it skips the file. Your Studio edits are never overwritten.
-- Otherwise it imports the file and approves it with the normal validation. A file that fails validation loads as a draft. The backend log says why.
-- A file it cannot read is skipped, and the other files still load.
+- **A new guide:** Studio imports it and approves it with the normal validation. A file that fails validation loads as a draft. Studio also keeps the file as a saved version.
+- **A new version of a guide Studio holds** (by guide ID): Studio adds it as a read-only saved version. If it is the highest version, it also becomes the latest copy, and Studio keeps the old latest copy as a saved version first.
+- **A version Studio holds already, with the same content:** skipped.
+- **A version Studio holds already, with different content:** not added. The Refresh notice says so and names the version to use instead.
+- **A file with a new guide ID for a poem Studio holds:** not added. The Refresh notice says so.
+- **Unsaved changes in the latest copy:** the higher version is saved, but it does not become the latest copy. The Refresh notice asks you to raise the latest copy's version and click **Save version**, so the changes are kept.
+- **A file Studio cannot read:** skipped, and the other files still load.
 
-The log shows a summary, for example `Published guides: 9 loaded, 0 already in Studio, 0 failed.` To pick up new files without a restart, click **Refresh** on the guide list. It reads every `guides/json/*.json` (links included) with the same rules: it adds new guides and skips guides the Studio already holds. Note: if you delete a guide in the Studio and its file is still in `guides/json/`, Refresh adds it again. Set `LOAD_PUBLISHED_GUIDES=false` to turn this off, or `PUBLISHED_GUIDES_DIR` to read another folder.
+The log shows a summary, for example `Published guides: 9 loaded, 0 already in Studio, 0 failed.` Note: if you delete a guide in the Studio and its file is still in `guides/json/`, Refresh adds it again. Set `LOAD_PUBLISHED_GUIDES=false` to turn this off, or `PUBLISHED_GUIDES_DIR` to read another folder.
+
+### Versions
+
+Each guide has one copy you edit (**Latest**) and any number of read-only saved versions. The number in the `guide.version` field names one content only, so a saved version never changes. The latest copy always has the highest version number.
+
+- **Refresh**, **Publish** and **Save version** add saved versions. Save version keeps the latest copy under its current number.
+- Open **Version history** from the guide's actions menu to read any version.
+- To edit an older version, open it and choose **Use as latest**. It comes back under the next free number, so you can publish it again. Studio first keeps the latest copy as a version of its own. If the latest copy has changes that are not in a saved version, Studio asks you to raise its version and save it first, so nothing is lost.
+- To publish a newer version from a file: put the file in `guides/json/` with a higher `guide.version`, click **Refresh**, and click **Publish**. Refresh makes it the latest copy.
+- When the latest copy is not in `exports/` yet, the guide list shows **New version** beside the status, and the editor shows **Not published**.
+- Only the newest published version is in `exports/`. Older versions live in Studio's database and in Git history.
+- All versions share one poem record. Only the newest version can change the poem's text and chunks.
 
 See [exports/README.md](exports/README.md) for the naming rules and the app checkout. `example-guided-plan.json` is a test fixture, not a source for a shipped guide.
 
@@ -200,7 +219,12 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 
 1. Open **Journeys** in the top bar and choose **New Journey**.
 
-   To start from a file instead, save it as `guides/journeys/<journey_id>/journey.json` and click **Refresh** on the Journeys page. Studio reads `exports/journeys/` and then `guides/journeys/`. It adds each Journey it does not hold yet and skips the ones it already holds, so your Studio edits are never overwritten. A file marked `approved` or `exported` keeps that status if it passes validation; any other file loads as a draft. Every poem in the file must already be in Studio (click **Refresh** on the guide list first). The page lists any file it cannot import, with the reason.
+   To start from a file instead, save it as `guides/journeys/<journey_id>/journey.json` and click **Refresh** on the Journeys page. Studio reads `exports/journeys/` and then `guides/journeys/`:
+   - It adds each Journey it does not hold yet. A file marked `approved` or `exported` keeps that status if it passes validation; any other file loads as a draft.
+   - It adds a new version of a Journey it holds as a read-only saved version. The highest version becomes the latest copy, unless the latest copy has unsaved changes.
+   - It skips a version it holds with the same content, and lists a version it holds with different content as a problem.
+
+   Every poem in the file must already be in Studio (click **Refresh** on the guide list first). The page lists any file it cannot import, with the reason.
 2. Enter a stable Journey ID (letters, numbers, `-` and `_`; it cannot change after the first save), title, subtitle, and curator.
 3. Under **Cover image**, enter the image file name (for example `cover.jpg`; `.png`, `.jpg`, `.jpeg` or `.webp`, no folders) and a description of the image for screen readers. Studio stores only the name and the description. Put the image itself at `guides/journeys/<journey_id>/<file name>`. A Journey without a cover cannot be approved or published.
 4. Write the Journey Introduction and the optional closing text. Leave a blank line between paragraphs.
@@ -210,7 +234,7 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 8. Click **Publish**. Studio checks the Journey again and refuses to publish when:
    - a poem's guide is not published to `exports/curated_poems/` yet (the app hides a Journey with a poem it does not bundle),
    - the cover image is not in `guides/journeys/<journey_id>/`,
-   - the published file already holds this version with different content (raise the version first).
+   - the published file already holds this version, or a higher one (raise the version first; a version is published once).
 
    Then it writes the canonical files and links the draft to them:
 
@@ -229,6 +253,8 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 When the backend starts, it loads `exports/journeys/*/journey.json` after the guides, with the same rules as **Refresh**.
 
 To change an exported Journey, raise its version first. Saving returns it to draft. The app replaces a bundled Journey only when the version is higher, and it keeps each user's progress.
+
+Journeys keep versions the same way as guides (see [Versions](#versions)). Refresh and Publish keep each version they see, and the latest copy always has the highest version. Open **Version history** from the Journey's actions menu to read one, and choose **Use as latest** to edit it. `exports/journeys/` holds only the newest published version, and its version never goes down. The Journey list shows **New version** when the latest copy is not published yet.
 
 The Journey file format is `schemas/journey.schema.json`, a copy of the app's schema.
 

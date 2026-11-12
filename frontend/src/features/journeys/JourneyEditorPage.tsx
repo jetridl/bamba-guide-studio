@@ -3,15 +3,28 @@ import { Link, useNavigate, useParams } from "react-router"
 import { DndContext, closestCenter, type DragEndEvent } from "@dnd-kit/core"
 import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
-import { ArrowLeft, Check, ChevronLeft, Circle, Download, Eye, GripVertical, MoreHorizontal, Save, SunMoon, Trash2 } from "lucide-react"
+import {
+  ArrowLeft,
+  Check,
+  ChevronLeft,
+  Circle,
+  Download,
+  Eye,
+  GripVertical,
+  History,
+  MoreHorizontal,
+  Save,
+  SunMoon,
+  Trash2,
+} from "lucide-react"
 
 import { ActionList } from "@/components/bamba/ActionList"
 import { Banner } from "@/components/bamba/Banner"
 import { ActionButton, IconButton } from "@/components/bamba/Button"
 import { Field, inputClass, textareaClass } from "@/components/bamba/Field"
 import { Sheet } from "@/components/bamba/Sheet"
-import { ListSurface, Panel, SectionHeading } from "@/components/bamba/Surface"
-import { GuideStatusPill, Pill } from "@/components/bamba/pills"
+import { ListRow, ListSurface, Panel, SectionHeading } from "@/components/bamba/Surface"
+import { GuideStatusPill, NotPublishedPill, Pill, statusLabel } from "@/components/bamba/pills"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { THEME_LABELS, useTheme } from "@/lib/theme"
 import { useIsPhone } from "@/lib/useMediaQuery"
@@ -23,6 +36,8 @@ import {
   type JourneyCoverImage,
   type JourneyPoem,
   type JourneyValidation,
+  type JourneyVersionDetail,
+  type JourneyVersionSummary,
 } from "@/lib/journeyApi"
 
 const BLANK: Journey = {
@@ -62,6 +77,9 @@ export function JourneyEditorPage() {
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [menuView, setMenuView] = useState<"menu" | "versions" | "version">("menu")
+  const [versions, setVersions] = useState<JourneyVersionSummary[]>([])
+  const [shownVersion, setShownVersion] = useState<JourneyVersionDetail | null>(null)
   const { choice, cycle } = useTheme()
 
   const refreshValidation = useCallback(async (id: string) => {
@@ -167,6 +185,35 @@ export function JourneyEditorPage() {
       setNotice(lines.join("\n"))
     })
 
+  function closeMenu() {
+    setMenuOpen(false)
+    setMenuView("menu")
+    setShownVersion(null)
+  }
+
+  const openVersions = () =>
+    run(async () => {
+      if (!journey.id) return
+      setVersions(await journeyApi.versions(journey.id))
+      setMenuView("versions")
+    })
+
+  const openVersion = (version: number) =>
+    run(async () => {
+      if (!journey.id) return
+      setShownVersion(await journeyApi.version(journey.id, version))
+      setMenuView("version")
+    })
+
+  const takeVersion = (version: number) => {
+    closeMenu()
+    return run(async () => {
+      if (!journey.id) return
+      replaceFromServer(await journeyApi.restoreVersion(journey.id, version))
+      setNotice(`Version ${version} is now the latest copy. Studio kept the copy you had as a version.`)
+    })
+  }
+
   const available = useMemo(
     () => candidates.filter((candidate) => !journey.poems.some((poem) => poem.poemId === candidate.poemId)),
     [candidates, journey.poems],
@@ -188,7 +235,9 @@ export function JourneyEditorPage() {
 
   const saved = Boolean(journey.id)
   const lockedByExport = journey.status === "exported"
-  const publishable = saved && !dirty && ["approved", "exported"].includes(journey.status)
+  // exports/ holds this version already: a version is published once.
+  const published = journey.publishedVersion != null && journey.version <= journey.publishedVersion
+  const publishable = saved && !dirty && !published && ["approved", "exported"].includes(journey.status)
   const saveState = busy ? "Working" : dirty ? "Unsaved changes" : saved ? "Saved" : "Draft"
 
   return (
@@ -213,6 +262,7 @@ export function JourneyEditorPage() {
             <Pill tone="neutral" className="font-normal">
               v{journey.version}
             </Pill>
+            {saved && !published ? <NotPublishedPill publishedVersion={journey.publishedVersion} /> : null}
           </div>
           <p className="mt-0.5 text-[13px] text-bamba-muted">
             {saved ? `${journey.externalId} · ${journey.poems.length} poems · ${saveState}` : `Not saved yet · ${saveState}`}
@@ -255,6 +305,7 @@ export function JourneyEditorPage() {
             <Pill tone="neutral" className="font-normal">
               v{journey.version}
             </Pill>
+            {saved && !published ? <NotPublishedPill publishedVersion={journey.publishedVersion} /> : null}
             <span className="text-[13px] text-bamba-muted">{saveState}</span>
           </div>
         </div>
@@ -265,7 +316,11 @@ export function JourneyEditorPage() {
               {error}
             </Banner>
           ) : null}
-          {notice ? <Banner onDismiss={() => setNotice(null)}>{notice}</Banner> : null}
+          {notice ? (
+            <Banner onDismiss={() => setNotice(null)}>
+              <span className="whitespace-pre-wrap">{notice}</span>
+            </Banner>
+          ) : null}
           {lockedByExport ? (
             <Banner>
               This Journey is exported. Raise the version before you save changes, so the app refreshes it.
@@ -297,7 +352,10 @@ export function JourneyEditorPage() {
                       onChange={(event) => edit("externalId", event.target.value)}
                     />
                   </Field>
-                  <Field label="Version" hint="Raise it when you change an exported Journey.">
+                  <Field
+                    label="Version"
+                    hint="Raise it when you change an exported Journey. One version keeps one content, and the published version never goes down."
+                  >
                     <input
                       className={inputClass}
                       min={1}
@@ -435,6 +493,9 @@ export function JourneyEditorPage() {
               </>
             ) : null}
             . Every poem's guide must be published first. The Bamba app picks the Journey up when you move its Studio pin.
+            {published
+              ? ` Version ${journey.version} is published already. To publish a change, raise the version and save.`
+              : ""}
           </p>
         </div>
       </div>
@@ -447,71 +508,185 @@ export function JourneyEditorPage() {
           </ActionButton>
         ) : (
           <ActionButton variant="primary" size="pinned" disabled={busy || !publishable} onClick={() => void publishJourney()}>
-            Publish journey
+            {published ? `Version ${journey.version} is published` : "Publish journey"}
           </ActionButton>
         )}
       </div>
 
-      <Sheet open={menuOpen} onOpenChange={setMenuOpen} title={journey.title || "A new Journey"}>
-        <ActionList
-          items={[
-            {
-              key: "save",
-              icon: Save,
-              title: "Save",
-              description: dirty ? "Send your changes to the Studio" : "Nothing to save",
-              disabled: busy || (!dirty && saved),
-              onSelect: () => {
-                setMenuOpen(false)
-                void save()
+      <Sheet
+        open={menuOpen}
+        onOpenChange={(next) => (next ? setMenuOpen(true) : closeMenu())}
+        title={
+          menuView === "menu"
+            ? journey.title || "A new Journey"
+            : menuView === "versions"
+              ? "Version history"
+              : `Version ${shownVersion?.version ?? ""}`
+        }
+        description={
+          menuView === "versions"
+            ? `You edit version ${journey.version}. Saved versions open read only.`
+            : menuView === "version"
+              ? "Read only. Use it as the latest copy to edit it."
+              : undefined
+        }
+      >
+        {menuView === "versions" ? (
+          <>
+            {versions.length ? (
+              <ListSurface>
+                {versions.map((item) => (
+                  <ListRow key={item.version} onClick={() => void openVersion(item.version)}>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[15px] font-medium">
+                        v{item.version} · {item.title}
+                      </span>
+                      <span className="block text-[13px] text-bamba-muted">
+                        {statusLabel(item.status)}
+                        {item.createdAt ? ` · kept ${new Date(item.createdAt).toLocaleDateString()}` : ""}
+                      </span>
+                    </span>
+                  </ListRow>
+                ))}
+              </ListSurface>
+            ) : (
+              <p className="text-sm text-bamba-muted">
+                No saved versions yet. Refresh and Publish keep each version they see.
+              </p>
+            )}
+            <ActionButton className="mt-4 w-full" onClick={() => setMenuView("menu")}>
+              <ArrowLeft />
+              Back
+            </ActionButton>
+          </>
+        ) : menuView === "version" && shownVersion ? (
+          <>
+            <VersionPreview version={shownVersion} />
+            <div className="mt-4 flex flex-col gap-2.5">
+              <ActionButton
+                variant="primary"
+                disabled={busy || dirty || shownVersion.version === journey.version}
+                onClick={() => void takeVersion(shownVersion.version)}
+              >
+                {shownVersion.version === journey.version ? "This is the version you edit" : "Use as latest"}
+              </ActionButton>
+              {dirty ? <p className="text-center text-[13px] text-bamba-hint">Save your changes first.</p> : null}
+              <ActionButton onClick={() => setMenuView("versions")}>
+                <ArrowLeft />
+                Back
+              </ActionButton>
+            </div>
+          </>
+        ) : (
+          <ActionList
+            items={[
+              {
+                key: "save",
+                icon: Save,
+                title: "Save",
+                description: dirty ? "Send your changes to the Studio" : "Nothing to save",
+                disabled: busy || (!dirty && saved),
+                onSelect: () => {
+                  setMenuOpen(false)
+                  void save()
+                },
               },
-            },
-            {
-              key: "review",
-              icon: Eye,
-              title: "Mark in review",
-              description: "Say that the Journey is waiting for notes",
-              disabled: busy || dirty || lockedByExport || !saved,
-              disabledHint: dirty ? "Save your changes first" : undefined,
-              onSelect: () => {
-                setMenuOpen(false)
-                void changeStatus("markInReview")
+              {
+                key: "review",
+                icon: Eye,
+                title: "Mark in review",
+                description: "Say that the Journey is waiting for notes",
+                disabled: busy || dirty || lockedByExport || !saved,
+                disabledHint: dirty ? "Save your changes first" : undefined,
+                onSelect: () => {
+                  setMenuOpen(false)
+                  void changeStatus("markInReview")
+                },
               },
-            },
-            {
-              key: "approve",
-              icon: Check,
-              title: "Approve",
-              description: "Mark the Journey ready to publish",
-              disabled: busy || dirty || lockedByExport || !saved,
-              disabledHint: dirty ? "Save your changes first" : undefined,
-              onSelect: () => {
-                setMenuOpen(false)
-                void changeStatus("approve")
+              {
+                key: "approve",
+                icon: Check,
+                title: "Approve",
+                description: "Mark the Journey ready to publish",
+                disabled: busy || dirty || lockedByExport || !saved,
+                disabledHint: dirty ? "Save your changes first" : undefined,
+                onSelect: () => {
+                  setMenuOpen(false)
+                  void changeStatus("approve")
+                },
               },
-            },
-            {
-              key: "download",
-              icon: Download,
-              title: "Download JSON",
-              description: "The Journey file, without publishing it",
-              disabled: busy || dirty || !publishable,
-              onSelect: () => {
-                setMenuOpen(false)
-                void exportJourney()
+              {
+                key: "download",
+                icon: Download,
+                title: "Download JSON",
+                description: "The Journey file, without publishing it",
+                disabled: busy || dirty || !publishable,
+                onSelect: () => {
+                  setMenuOpen(false)
+                  void exportJourney()
+                },
               },
-            },
-            {
-              key: "theme",
-              icon: SunMoon,
-              title: "Theme",
-              description: "Day, night, or follow the device",
-              trailing: THEME_LABELS[choice],
-              onSelect: cycle,
-            },
-          ]}
-        />
+              {
+                key: "versions",
+                icon: History,
+                title: "Version history",
+                description: "Read any version Studio holds",
+                disabled: busy || !saved,
+                onSelect: () => void openVersions(),
+              },
+              {
+                key: "theme",
+                icon: SunMoon,
+                title: "Theme",
+                description: "Day, night, or follow the device",
+                trailing: THEME_LABELS[choice],
+                onSelect: cycle,
+              },
+            ]}
+          />
+        )}
       </Sheet>
+    </div>
+  )
+}
+
+/** A saved version, read only. */
+function VersionPreview({ version }: { version: JourneyVersionDetail }) {
+  return (
+    <div className="flex flex-col gap-4 text-[15px] leading-relaxed">
+      <div>
+        <div className="font-heading text-xl font-semibold">{version.title}</div>
+        <div className="text-bamba-muted">
+          {version.subtitle} · {version.curator}
+        </div>
+        <div className="mt-1 text-[13px] text-bamba-hint">
+          {statusLabel(version.status)}
+          {version.coverImage ? ` · cover ${version.coverImage.path}` : " · no cover"}
+        </div>
+      </div>
+      {version.introduction.map((paragraph, index) => (
+        <p key={`intro-${index}`}>{paragraph}</p>
+      ))}
+      <ol className="flex flex-col gap-3">
+        {version.poems.map((poem, index) => (
+          <li key={poem.poemId} className="rounded-field border border-bamba-border p-3">
+            <div className="font-semibold">
+              {index + 1}. {poem.title}
+              {poem.author ? <span className="font-normal text-bamba-muted"> · {poem.author}</span> : null}
+            </div>
+            {poem.note.map((paragraph, noteIndex) => (
+              <p key={noteIndex} className="mt-1 text-sm text-bamba-muted">
+                {paragraph}
+              </p>
+            ))}
+          </li>
+        ))}
+      </ol>
+      {version.closing.map((paragraph, index) => (
+        <p key={`closing-${index}`} className="text-bamba-muted italic">
+          {paragraph}
+        </p>
+      ))}
     </div>
   )
 }
@@ -677,7 +852,10 @@ function SortablePoem({
   onNote: (note: string[]) => void
 }) {
   const sortable = useSortable({ id: poem.poemId })
-  const style = { transform: CSS.Transform.toString(sortable.transform), transition: sortable.transition }
+  const style = {
+    transform: CSS.Transform.toString(sortable.transform),
+    transition: sortable.transition,
+  }
   return (
     <section
       ref={sortable.setNodeRef}

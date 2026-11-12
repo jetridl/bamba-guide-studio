@@ -9,7 +9,7 @@ import { ActionButton, IconButton } from "@/components/bamba/Button"
 import { ChipRow } from "@/components/bamba/Segmented"
 import { Sheet } from "@/components/bamba/Sheet"
 import { ListRow, ListSurface } from "@/components/bamba/Surface"
-import { GuideStatusPill, StateDot, statusLabel, statusTone } from "@/components/bamba/pills"
+import { GuideStatusPill, Pill, StateDot, statusLabel, statusTone } from "@/components/bamba/pills"
 import { api } from "@/lib/api"
 import type { GuideStatus, GuideSummary } from "@/lib/types"
 
@@ -53,11 +53,11 @@ export function GuideListPage() {
       const result = await api.refreshGuides()
       const parts = [
         result.loaded.length
-          ? `Added ${result.loaded.length} new ${result.loaded.length === 1 ? "guide" : "guides"}: ${result.loaded.join(", ")}.`
-          : "No new guides in guides/json.",
+          ? `Added ${result.loaded.join(", ")}.`
+          : "No new guides or versions in guides/json.",
       ]
-      if (result.failed.length) {
-        parts.push(`Could not import: ${result.failed.join(", ")}. See the backend log for details.`)
+      if (result.problems?.length) {
+        parts.push(`Not added:\n${result.problems.map((problem) => `• ${problem}`).join("\n")}`)
       }
       setNotice(parts.join(" "))
     } catch (caught) {
@@ -113,7 +113,11 @@ export function GuideListPage() {
       </div>
 
       <div className="flex flex-col gap-4">
-        {notice ? <Banner onDismiss={() => setNotice(null)}>{notice}</Banner> : null}
+        {notice ? (
+          <Banner onDismiss={() => setNotice(null)}>
+            <span className="whitespace-pre-wrap">{notice}</span>
+          </Banner>
+        ) : null}
         {error ? (
           <Banner tone="warn" role="alert">
             {error}
@@ -147,14 +151,21 @@ export function GuideListPage() {
                   <span className="mt-0.5 block text-sm text-bamba-muted">
                     {guide.poemTitle} by {guide.poemAuthor} · {guide.sessionCount}{" "}
                     {guide.sessionCount === 1 ? "session" : "sessions"}
-                    {guide.savedVersionCount ? ` · ${guide.savedVersionCount} saved` : ""}
+                    {` · v${guide.contentVersion}`}
+                    {guide.savedVersionCount
+                      ? ` · ${guide.savedVersionCount} ${guide.savedVersionCount === 1 ? "version" : "versions"} kept`
+                      : ""}
                   </span>
                   <span className="mt-2 flex items-center gap-2 text-[13px] font-semibold text-bamba-quiet md:hidden">
                     <StateDot tone={statusTone(guide.status)} label={statusLabel(guide.status)} />
                     {statusLabel(guide.status)}
+                    {guide.newerVersion ? <NewVersionPill guide={guide} /> : null}
                   </span>
                 </span>
-                <GuideStatusPill status={guide.status} className="mt-0.5 hidden md:inline-flex" />
+                <span className="mt-0.5 hidden shrink-0 items-center gap-2 md:flex">
+                  {guide.newerVersion ? <NewVersionPill guide={guide} /> : null}
+                  <GuideStatusPill status={guide.status} />
+                </span>
               </ListRow>
             ))}
           </ListSurface>
@@ -188,5 +199,16 @@ export function GuideListPage() {
         />
       </Sheet>
     </StudioShell>
+  )
+}
+
+/** Studio holds a later version than the one in exports/. */
+function NewVersionPill({ guide }: { guide: GuideSummary }) {
+  return (
+    <span title={`exports/ holds version ${guide.publishedVersion}. Studio holds version ${guide.newerVersion}, not published yet.`}>
+      <Pill tone="warn" withDot>
+        New version
+      </Pill>
+    </span>
   )
 }

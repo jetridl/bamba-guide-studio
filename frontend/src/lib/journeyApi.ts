@@ -13,6 +13,8 @@ export type Journey = {
   subtitle: string
   curator: string
   version: number
+  // The version in exports/journeys, or null when the Journey is not published.
+  publishedVersion?: number | null
   status: GuideStatus
   introduction: string[]
   closing: string[]
@@ -39,6 +41,11 @@ export type JourneyPublishResult = {
   created: boolean
   warnings: string[]
 }
+
+/** A read-only saved version. Refresh and Publish add them. */
+export type JourneyVersionSummary = { version: number; status: GuideStatus; title: string; createdAt: string | null }
+
+export type JourneyVersionDetail = Omit<Journey, "id"> & { createdAt: string | null }
 
 export type JourneyValidation = { valid: boolean; blockingCount: number; issues: JourneyIssue[] }
 
@@ -101,6 +108,10 @@ export const journeyApi = {
   markInReview: (id: string) => request<Journey>(`/journeys/${id}/mark-in-review`, { method: "POST" }),
   approve: (id: string) => request<Journey>(`/journeys/${id}/approve`, { method: "POST" }),
   publish: (id: string) => request<JourneyPublishResult>(`/journeys/${id}/publish`, { method: "POST" }),
+  versions: (id: string) => request<JourneyVersionSummary[]>(`/journeys/${id}/versions`),
+  version: (id: string, version: number) => request<JourneyVersionDetail>(`/journeys/${id}/versions/${version}`),
+  restoreVersion: (id: string, version: number) =>
+    request<Journey>(`/journeys/${id}/versions/${version}/restore`, { method: "POST" }),
   validate: (id: string) => request<JourneyValidation>(`/journeys/${id}/validate`),
   export: async (id: string) => {
     const response = await apiFetch(`${BASE}/journeys/${id}/export`)
