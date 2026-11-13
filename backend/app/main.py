@@ -2,12 +2,15 @@ import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.orm import Session
 
 from app.api.routes import exports, guides, imports, journeys, reviews, validation
 from app.core.config import settings
-from app.core.database import SessionLocal
+from app.core.database import SessionLocal, get_db
 from app.services.journey_loader import load_journey_folders
 from app.services.published_guides import load_published_guides
 
@@ -33,7 +36,7 @@ app = FastAPI(title="Bamba Guide Studio API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[origin.strip() for origin in settings.cors_origins.split(",")],
+    allow_origins=[origin.strip() for origin in settings.cors_origins.split(",") if origin.strip()],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -48,5 +51,9 @@ app.include_router(reviews.router, prefix="/api", tags=["reviews"])
 
 
 @app.get("/api/health")
-def health() -> dict[str, str]:
+def health(db: Session = Depends(get_db)) -> dict[str, str]:
+    try:
+        db.execute(text("SELECT 1"))
+    except SQLAlchemyError:
+        raise HTTPException(status_code=503, detail="Database unavailable") from None
     return {"status": "ok"}

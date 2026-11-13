@@ -11,6 +11,8 @@ node_modules/
 dist/
 .env
 .env.local
+.env.production
+bamba-studio-images*.tar.gz
 output/
 # OS/editor
 .DS_Store

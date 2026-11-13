@@ -1,0 +1,95 @@
+# Standalone production file. Do not merge with docker-compose.yml (which builds
+# locally and publishes a LAN port). See docs/hetzner-deployment.md.
+name: bamba-studio
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  postgres:
+    # Keep the existing major version. A major upgrade requires a migration.
+    image: postgres:17
+    platform: linux/amd64
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bamba
+      POSTGRES_DB: bamba_guide_studio
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in the production .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bamba -d bamba_guide_studio"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [private]
+    logging: *logging
+
+  backend:
+    image: bamba-studio-backend:${STUDIO_IMAGE_TAG:-latest}
+    platform: linux/amd64
+    pull_policy: never
+    restart: unless-stopped
+    init: true
+    user: "${STUDIO_UID:?Set STUDIO_UID to the content owner UID}:${STUDIO_GID:?Set STUDIO_GID to the content owner GID}"
+    environment:
+      DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in the production .env}
+      DB_HOST: postgres
+      DB_USER: bamba
+      DB_NAME: bamba_guide_studio
+      CORS_ORIGINS: ""
+      # Only nginx reaches this API on the private network; no host port.
+      FORWARDED_ALLOW_IPS: "*"
+    volumes:
+      - type: bind
+        source: ./exports
+        target: /srv/exports
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./guides
+        target: /srv/guides
+        bind:
+          create_host_path: false
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks: [private]
+    logging: *logging
+
+  frontend:
+    image: bamba-studio-frontend:${STUDIO_IMAGE_TAG:-latest}
+    platform: linux/amd64
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      # Keep the small server's nginx footprint predictable.
+      NGINX_ENTRYPOINT_WORKER_PROCESSES_AUTOTUNE: "1"
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks: [private]
+    logging: *logging
+
+volumes:
+  postgres_data:
+
+networks:
+  private:
+    driver: bridge

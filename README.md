@@ -74,6 +74,19 @@ Settings (put them in a `.env` file next to `docker-compose.yml`, or set them in
 | `POSTGRES_PORT` | `5432` | Local development only (`docker-compose.dev.yml`): host port for Postgres, bound to `127.0.0.1`. Change it if 5432 is in use. |
 | `POSTGRES_USER` / `POSTGRES_PASSWORD` / `POSTGRES_DB` | `bamba` / `bamba` / `bamba_guide_studio` | Database credentials. Set a real password before you deploy anywhere shared. |
 
+## Hetzner production deployment
+
+Use the standalone [compose.prod.yml](compose.prod.yml) for Hetzner. It runs
+prebuilt Linux AMD64 images and publishes nginx only on `127.0.0.1:8080`, ready
+for a host-installed Cloudflare Tunnel at `studio.bambapoetry.app`. PostgreSQL
+and FastAPI remain private, and published content persists in the checkout.
+
+Build and package images on the Mac with `bash scripts/build-production.sh`.
+Follow [the deployment runbook](docs/hetzner-deployment.md) to transfer and load
+them, prepare secrets and content, verify startup, and back up the database.
+The local Compose command above is for local/LAN use. Production always uses
+`docker compose --env-file .env -f compose.prod.yml ...`.
+
 ## Local Development
 
 Start only Postgres, published on `127.0.0.1:5432`:
