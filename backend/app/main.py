@@ -1,6 +1,7 @@
+import asyncio
 import logging
 from collections.abc import AsyncIterator
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, suppress
 
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,6 +14,7 @@ from app.core.config import settings
 from app.core.database import SessionLocal, get_db
 from app.services.journey_loader import load_journey_folders
 from app.services.published_guides import load_published_guides
+from app.services.content_repository import content_sync_worker
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:     %(name)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -29,7 +31,14 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
         except Exception:
             # A loading problem must not stop the Studio from starting.
             logger.exception("Could not load published guides.")
-    yield
+    worker = asyncio.create_task(content_sync_worker()) if settings.content_sync_enabled else None
+    try:
+        yield
+    finally:
+        if worker is not None:
+            worker.cancel()
+            with suppress(asyncio.CancelledError):
+                await worker
 
 
 app = FastAPI(title="Bamba Guide Studio API", lifespan=lifespan)

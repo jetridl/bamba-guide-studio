@@ -134,15 +134,21 @@ Target export path convention:
 exports/curated_poems/<author-name>--<poem-title>/guided_plan.json
 ```
 
-Canonical approved JSON lives under `exports/curated_poems/`. The matching
-`guides/json/<author-name>--<poem-title>.json` paths are symlinks to it, not
-separate copies. Preserve every external ID inside the JSON when renaming.
-The Flutter app consumes a pinned Studio commit; commit and push approved
-exports here before advancing its content pin. See `exports/README.md`.
+The authoritative Hetzner Studio writes persistent exports outside its application
+checkout (`STUDIO_EXPORTS_DIR` on the host, `/srv/exports` inside the container).
+It is the sole publisher to private `jetridl/bamba-content`, branch `main`.
+Publish saves locally, then commits/pushes the validated complete export snapshot.
+A failed push leaves exports intact and is retried every 60 seconds and on restart;
+never require a new authored version just to retry Git. Keep one backend worker:
+publish routes and the retry worker share a process lock to avoid partial snapshots.
 
-Approved Journeys follow the same rule: canonical files live under
-`exports/journeys/<journey_id>/` (`journey.json` plus its cover image), and
-`guides/journeys/<journey_id>/` links to them.
+Approved Journeys live at `exports/journeys/<journey_id>/` (`journey.json` and
+cover); `guides/journeys/<journey_id>/` links to them. Development exports tracked
+here are retained as bootstrap/test fixtures, not the ongoing production source.
+Do not enable `CONTENT_SYNC_ENABLED` on a development laptop.
 
-Do not copy approved guides or Journeys into the Flutter Git tree. Its content setup tool
-links a pinned checkout (or an explicitly selected local Studio worktree).
+Bamba's `./tool/flutter run/build …` fetches main, validates and registers content
+before Flutter starts. No manual Studio commit, app pin or sync step is needed.
+Never copy exports into the Flutter Git tree. Preserve stable IDs and increasing
+authored versions. See `docs/content-publishing.md` for credentials, migration,
+private-repo CI access and recovery.

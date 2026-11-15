@@ -1,7 +1,7 @@
 # Approved Bamba content
 
 `curated_poems/<author-name>--<poem-title>/guided_plan.json` is the canonical
-Git-tracked copy of each approved guide consumed by the Flutter app. The
+format of each approved guide consumed by the Flutter app. The
 `guides/json/<author-name>--<poem-title>.json` entries are symlinks to these same
 files, so Studio imports and app builds use identical JSON.
 
@@ -24,12 +24,15 @@ Studio copy. Publish validates the guide, replaces the canonical
 keeps poem, stanza, line and chunk IDs. For a new guide it creates the folder
 and the matching `guides/json/` symlink. Folder names use the author's complete
 name (including middle names), lowercase ASCII words separated by hyphens, then
-`--`, then the title slug. Commit the result in this repository. Do not put
-drafts here.
+`--`, then the title slug. Do not put drafts here. On Hetzner, Studio pushes
+these exports to the separate private bamba-content repository automatically.
 
-Bamba pins a Studio commit in `tool/studio_content.lock.json`. Advance that pin
-only after committing and pushing the approved exports. Bamba's content setup
-command checks out that exact revision and links it into the app's asset tree.
+Production exports live outside the Studio code checkout, mounted at `/srv/exports`.
+This tracked development snapshot remains for bootstrap/testing; ongoing production
+content belongs to `jetridl/bamba-content`. The app build command `./tool/flutter`
+fetches its latest `main`, validates and registers all asset folders. There is no
+manually maintained app pin. Failed publishing pushes retry automatically from
+persistent exports. See [content publishing](../docs/content-publishing.md).
 The app bundles the JSON and never contacts Studio at runtime.
 
 ## Journeys
@@ -43,5 +46,5 @@ Journey whose poems are not all published under `curated_poems/`, and refuses
 to change a published Journey without a higher version.
 
 Bamba's content setup links this folder as `assets/journeys`, from the same
-pinned commit as the poems, and checks that every Journey is approved, names
+fetched content snapshot as the poems, and checks that every Journey is approved, names
 only bundled poems, and keeps its cover beside `journey.json`.

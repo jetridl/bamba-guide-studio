@@ -16,6 +16,7 @@ from app.models import Guide, Poem
 from app.models.journey import Journey, JourneyPoem
 from app.services.journey_loader import load_journey_folders
 from app.services.journey_publish_service import publish_journey
+from app.services.content_repository import publication_lock, sync_content
 from app.services.journey_service import detail, get_journey, payload, validation
 from app.services.journey_versions import restore_version, saved_versions
 
@@ -162,8 +163,11 @@ def export(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> Response:
 @router.post("/journeys/{journey_id}/publish")
 def publish(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any]:
     """Write exports/journeys/<journey_id>/ for the Bamba app, with its cover image."""
-    return publish_journey(db, get_journey(db, journey_id), settings.published_journeys_dir,
-                           settings.published_guides_dir, settings.journeys_dir)
+    with publication_lock:
+        result = publish_journey(db, get_journey(db, journey_id), settings.published_journeys_dir,
+                                 settings.published_guides_dir, settings.journeys_dir)
+        result["sync"] = sync_content()
+        return result
 
 
 @router.get("/journeys/{journey_id}/versions")

@@ -26,8 +26,9 @@ making it available publicly.
   recreation and **is not a backup**. The separate production project name
   avoids sharing the local development database. If migrating an existing
   installation, explicitly restore its database; a fresh volume starts empty.
-- `/opt/bamba-studio/exports` and `/opt/bamba-studio/guides` are writable bind
-  mounts. They must exist and belong to the numeric UID/GID in `.env`.
+- The `STUDIO_EXPORTS_DIR` host directory (normally `/opt/bamba-studio-data/exports`)
+  and `/opt/bamba-studio/guides` are writable bind mounts. They must exist and
+  belong to the numeric UID/GID in `.env`.
   They retain canonical exports, covers, drafts, and relative symlinks across
   image updates. They are deliberately excluded from application images.
 - Container logs rotate at 3 × 10 MB per service. Images are prebuilt for
@@ -56,7 +57,8 @@ The script builds and loads both AMD64 images, checks their architecture, and
 creates `output/deploy/<tag>/` containing:
 
 - `bamba-studio-images.tar.gz` and `SHA256SUMS`;
-- `compose.prod.yml`, `.env.production.example`, and this runbook;
+- `compose.prod.yml`, `.env.production.example`, this runbook,
+  `content-publishing.md` and `github_known_hosts`;
 - `IMAGE_TAG`, `SOURCE_COMMIT`, and `SOURCE_STATUS` to identify the source used.
 
 It uses `backend/Dockerfile` with the **repository root** build context (required
@@ -84,7 +86,9 @@ Both images must say `linux/amd64`. No application is started by these steps.
 ## 3. Prepare the server checkout and secrets (step 13 prerequisite)
 
 Use an actual Studio Git checkout at `/opt/bamba-studio`, owned by `deploy`,
-so approved exports can later be reviewed, committed, and pushed. Deploy the
+for application code. Published content is now pushed automatically to the separate
+bamba-content repository; follow [content migration](content-publishing.md) before
+starting these updated images. Deploy the
 revision containing these production files. If the production configuration
 has not been committed yet, copy the supplied `compose.prod.yml` into that
 checkout. Do not replace existing content directories with empty directories.
@@ -98,7 +102,9 @@ rsync -av -e 'ssh -i /Users/jethroridl/.ssh/bamba_hetzner' \
 ```
 
 Only do this initial content transfer into a fresh checkout. On future releases,
-first commit and push server-published content; preserve both mounted directories.
+verify automatic content sync is healthy; preserve both mounted directories.
+When moving an existing installation, follow content-publishing.md to copy its
+authoritative exports to the isolated runtime directory before enabling sync.
 Never use `rsync --delete` or blindly reset the server checkout. Database drafts,
 reviews, and saved versions are separate from these files: moving an existing
 local Studio also requires a PostgreSQL dump/restore before starting the API.
@@ -125,7 +131,8 @@ Single-quote dotenv values containing `$`, `#`, or spaces. Do not commit `.env`.
 Changing `.env` later does **not** change the password of an existing PostgreSQL
 volume; rotate the database role password as well.
 
-Ensure `exports/` and `guides/` and their contents are writable by the configured
+Ensure the `STUDIO_EXPORTS_DIR`, `guides/`, `.content-publisher/` and `.content-ssh/`
+directories exist (see content-publishing.md) and are writable/readable by the configured
 UID/GID. The backend does not run as root. Missing mounts fail instead of
 silently creating empty root-owned directories.
 
@@ -176,7 +183,9 @@ chmod 700 /home/deploy/studio-backups
 # Choose a new timestamp/name for every backup; do not overwrite an older one.
 sudo docker compose --env-file .env -f compose.prod.yml exec -T postgres \
   pg_dump -U bamba -d bamba_guide_studio -Fc > /home/deploy/studio-backups/before-update.dump
-tar -czf /home/deploy/studio-backups/before-update-content.tar.gz exports guides
+# After the content migration; use the actual STUDIO_EXPORTS_DIR if different.
+tar -czf /home/deploy/studio-backups/before-update-content.tar.gz \
+  -C /opt/bamba-studio-data exports -C /opt/bamba-studio guides
 ```
 
 Copy backups off the VPS. Preserve symlinks when archiving/restoring content.
@@ -193,9 +202,11 @@ content backups first; changing image tags does not undo migrations.
 
 Delete transferred archives after verification. Remove only specific old image
 tags once a rollback option remains. Never run `docker compose down -v` or prune
-volumes on this server. Canonical guide and Journey changes must still be committed
-and pushed in Studio before advancing the Flutter app's pinned content commit;
-do not copy content into the Flutter tree.
+volumes on this server. Studio automatically pushes canonical exports to
+bamba-content; app builds fetch latest content without a manual pin. Verify
+`/api/content-sync` reports `synced` before expecting an update in an app build.
+Do not copy content into the Flutter tree. Keep backups of the external runtime
+exports and the database together.
 
 ## Reference documentation
 

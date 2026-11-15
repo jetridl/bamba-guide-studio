@@ -35,6 +35,7 @@ docker save "bamba-studio-backend:$tag" "bamba-studio-frontend:$tag" | gzip > "$
 mv "$archive.partial" "$archive"
 cp compose.prod.yml .env.production.example "$release_dir/"
 cp docs/hetzner-deployment.md "$release_dir/"
+cp docs/content-publishing.md scripts/github_known_hosts "$release_dir/"
 git rev-parse HEAD > "$release_dir/SOURCE_COMMIT"
 git status --short > "$release_dir/SOURCE_STATUS"
 printf '%s\n' "$tag" > "$release_dir/IMAGE_TAG"

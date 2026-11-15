@@ -11,4 +11,6 @@
 **/.env
 **/.env.*
 output
+.content-publisher
+.content-ssh
 .DS_Store

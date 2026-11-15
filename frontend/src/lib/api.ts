@@ -1,5 +1,6 @@
 import type {
   GuideDetail,
+  ContentSyncStatus,
   GuideSummary,
   GuideVersionSummary,
   PublishResult,
@@ -69,6 +70,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
+  contentSync: () => request<ContentSyncStatus>("/content-sync"),
   listGuides: () => request<GuideSummary[]>("/guides"),
   refreshGuides: () => request<RefreshResult>("/guides/refresh", { method: "POST" }),
   getGuide: (guideId: string) => request<GuideDetail>(`/guides/${guideId}`),

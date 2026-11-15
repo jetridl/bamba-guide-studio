@@ -14,6 +14,8 @@ dist/
 .env.production
 bamba-studio-images*.tar.gz
 output/
+.content-publisher/
+.content-ssh/
 # OS/editor
 .DS_Store
 .idea/

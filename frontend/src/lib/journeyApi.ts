@@ -40,6 +40,7 @@ export type JourneyPublishResult = {
   link: string | null
   created: boolean
   warnings: string[]
+  sync: import("@/lib/types").ContentSyncStatus
 }
 
 /** A read-only saved version. Refresh and Publish add them. */

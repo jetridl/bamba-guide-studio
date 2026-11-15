@@ -7,6 +7,10 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /srv/backend
 
+# Git pushes use a repository-scoped deploy key, mounted read-only at runtime.
+RUN apt-get update && apt-get install -y --no-install-recommends git openssh-client ca-certificates libnss-wrapper \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY backend/requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 

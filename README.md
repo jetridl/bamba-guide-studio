@@ -55,8 +55,10 @@ In development, `npm run dev` listens on the network too and proxies `/api` to
 `http://127.0.0.1:8000`, so `http://<that address>:5173` works the same way.
 Set `STUDIO_API_TARGET` if the API runs somewhere else.
 
-Publish writes `exports/` on the machine that runs the Studio. Committing and
-pushing stays laptop work: the phone says so when it finishes.
+Publish writes persistent exports on the Studio host. On Hetzner, it also commits
+and pushes automatically to the private `jetridl/bamba-content` repository. Failed
+pushes retain the export and retry every 60 seconds; the phone shows sync status.
+See [automatic content publishing](docs/content-publishing.md) for setup and migration.
 
 What the phone deliberately leaves to the laptop: adding, deleting and
 reordering pages, changing a page type, linking chunks, reordering a Journey's
@@ -79,10 +81,12 @@ Settings (put them in a `.env` file next to `docker-compose.yml`, or set them in
 Use the standalone [compose.prod.yml](compose.prod.yml) for Hetzner. It runs
 prebuilt Linux AMD64 images and publishes nginx only on `127.0.0.1:8080`, ready
 for a host-installed Cloudflare Tunnel at `studio.bambapoetry.app`. PostgreSQL
-and FastAPI remain private, and published content persists in the checkout.
+and FastAPI remain private. Published content persists in a separate runtime directory
+configured with `STUDIO_EXPORTS_DIR`; see [content publishing](docs/content-publishing.md).
 
 Build and package images on the Mac with `bash scripts/build-production.sh`.
-Follow [the deployment runbook](docs/hetzner-deployment.md) to transfer and load
+Follow [the deployment runbook](docs/hetzner-deployment.md) and
+[content migration](docs/content-publishing.md) to transfer and load
 them, prepare secrets and content, verify startup, and back up the database.
 The local Compose command above is for local/LAN use. Production always uses
 `docker compose --env-file .env -f compose.prod.yml ...`.
@@ -152,8 +156,9 @@ guides/json/<slug>.json                          draft you write (for example wi
 Studio database                                  edit, review, validate, approve
         │  Publish: Studio writes the file and links guides/json/<slug>.json to it
         ▼
-exports/curated_poems/<slug>/guided_plan.json    canonical approved copy; commit and push
-        │  Bamba: advance tool/studio_content.lock.json, run its sync tool
+exports/curated_poems/<slug>/guided_plan.json    persistent approved copy
+        │  Hetzner automatically commits/pushes to bamba-content main
+        │  Bamba: ./tool/flutter run/build fetches and registers latest assets
         ▼
 Bamba app bundle
 ```
@@ -166,14 +171,14 @@ Bamba app bundle
 4. Optional: import review JSON from `/guides/:guideId/reviews/import`, then resolve, dismiss, or accept each comment.
 5. Validate from the bottom bar, and approve when no blocking issues remain.
 6. Click **Publish**. Studio checks the guide again, writes `exports/curated_poems/<slug>/guided_plan.json`, and replaces your draft `guides/json/<slug>.json` with a link to it. The guide's status becomes `exported`.
-7. Commit and push both paths.
-8. In the Bamba repo, set `revision` in `tool/studio_content.lock.json` to that commit and run `dart tool/sync_studio_content.dart`. To try a guide before you push it, run `dart tool/sync_studio_content.dart --local ../bamba-guide-studio` instead.
+7. On the authoritative Hetzner instance, Studio automatically commits and pushes approved exports to bamba-content. If GitHub is unavailable, exports stay safe and Studio retries automatically. Wait for **Synced** before building.
+8. In the Bamba repo, use `./tool/flutter run` or `./tool/flutter build …`. It fetches latest content and registers new assets automatically. There is no content pin to update. Local development Studios have automatic pushing disabled.
 
 **Download** saves the same JSON through the browser and writes nothing to the repo.
 
 ### A guide the app already ships
 
-The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there. In the Publish sheet, click **Raise to N** so the changed guide gets a new version number. Then approve and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Then do steps 7 and 8.
+The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there. In the Publish sheet, click **Raise to N** so the changed guide gets a new version number. Then approve and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Studio pushes automatically; the next app build fetches the update.
 
 ### What Publish protects
 
@@ -259,7 +264,7 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
    ```
 
    Other files in `guides/journeys/<journey_id>/`, such as notes, stay as they are.
-9. Commit and push `exports/journeys` (and `guides/journeys`), then move the Studio pin in the Bamba repo, the same way as for guides. The app's sync tool links `exports/journeys` as `assets/journeys`.
+9. Hetzner automatically pushes the published snapshot to bamba-content. The next `./tool/flutter run/build …` fetches and registers it. The app links `exports/journeys` as `assets/journeys`. Failed pushes retry without another Publish.
 
 **Download** still saves `<journey_id>_journey.json` without publishing it.
 

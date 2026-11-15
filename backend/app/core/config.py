@@ -26,6 +26,15 @@ class Settings(BaseSettings):
     published_journeys_dir: Path = ROOT / "exports" / "journeys"
     # Journey drafts and their cover images. Refresh adds new ones from here.
     journeys_dir: Path = ROOT / "guides" / "journeys"
+    # Enable only on the authoritative Hetzner instance, never an editorial laptop.
+    content_sync_enabled: bool = False
+    content_repository: str = "git@github.com:jetridl/bamba-content.git"
+    content_branch: str = "main"
+    content_sync_dir: Path = ROOT / ".content-publisher"
+    content_sync_interval_seconds: int = 60
+    content_git_timeout_seconds: int = 30
+    content_git_name: str = "Bamba Studio"
+    content_git_email: str = "studio@bambapoetry.app"
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

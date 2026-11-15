@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { useNavigate, useParams } from "react-router"
 
 import { Banner } from "@/components/bamba/Banner"
+import { ContentSyncNotice } from "@/components/ContentSyncNotice"
 import { DesktopEditor } from "@/features/editor/DesktopEditor"
 import { PhoneEditor } from "@/features/editor/PhoneEditor"
 import { GuideActionsSheet } from "@/features/editor/components/GuideActionsSheet"
@@ -104,10 +105,13 @@ export function GuideEditorPage() {
             </p>
           ))}
           <p className="mt-1 text-bamba-muted">
-            Next: commit and push on the MacBook, then advance the content pin in Bamba and run its sync tool.
+            {editor.published.sync.state === "disabled"
+              ? "Automatic publishing is disabled on this Studio."
+              : "Studio handles repository sync automatically."}
           </p>
         </Banner>
       ) : null}
+      <ContentSyncNotice />
       {editor.readOnly ? (
         <Banner>This is a saved version, so it is read only. Use it as the latest to edit it again.</Banner>
       ) : null}

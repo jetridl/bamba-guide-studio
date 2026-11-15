@@ -20,6 +20,7 @@ import {
 
 import { ActionList } from "@/components/bamba/ActionList"
 import { Banner } from "@/components/bamba/Banner"
+import { ContentSyncNotice } from "@/components/ContentSyncNotice"
 import { ActionButton, IconButton } from "@/components/bamba/Button"
 import { Field, inputClass, textareaClass } from "@/components/bamba/Field"
 import { Sheet } from "@/components/bamba/Sheet"
@@ -179,7 +180,7 @@ export function JourneyEditorPage() {
       replaceFromServer(await journeyApi.get(journey.id))
       const lines = [
         `Published to ${result.path}${result.link ? ` and linked from ${result.link}` : ""}.`,
-        "Commit and push exports/journeys on the MacBook, then move the Studio pin in the Bamba app.",
+        result.sync.state === "disabled" ? "Automatic publishing is disabled on this Studio." : "Studio handles repository sync automatically.",
         ...result.warnings,
       ]
       setNotice(lines.join("\n"))
@@ -316,6 +317,7 @@ export function JourneyEditorPage() {
               {error}
             </Banner>
           ) : null}
+          <ContentSyncNotice />
           {notice ? (
             <Banner onDismiss={() => setNotice(null)}>
               <span className="whitespace-pre-wrap">{notice}</span>
@@ -492,7 +494,7 @@ export function JourneyEditorPage() {
                 and copies <span className="font-mono">{journey.coverImage.path}</span> beside it
               </>
             ) : null}
-            . Every poem's guide must be published first. The Bamba app picks the Journey up when you move its Studio pin.
+            . Every poem's guide must be published first. Once synced, the Journey is included in the next app build.
             {published
               ? ` Version ${journey.version} is published already. To publish a change, raise the version and save.`
               : ""}

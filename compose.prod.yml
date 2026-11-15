@@ -43,15 +43,31 @@ services:
       CORS_ORIGINS: ""
       # Only nginx reaches this API on the private network; no host port.
       FORWARDED_ALLOW_IPS: "*"
+      CONTENT_SYNC_ENABLED: ${CONTENT_SYNC_ENABLED:-false}
+      CONTENT_REPOSITORY: git@github.com:jetridl/bamba-content.git
+      CONTENT_BRANCH: main
+      CONTENT_SYNC_DIR: /srv/content-publisher
+      GIT_SSH_COMMAND: "ssh -i /run/content-ssh/id_ed25519 -o IdentitiesOnly=yes -o UserKnownHostsFile=/run/content-ssh/known_hosts -o StrictHostKeyChecking=yes -o BatchMode=yes"
     volumes:
       - type: bind
-        source: ./exports
+        source: ${STUDIO_EXPORTS_DIR:-./exports}
         target: /srv/exports
         bind:
           create_host_path: false
       - type: bind
         source: ./guides
         target: /srv/guides
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./.content-publisher
+        target: /srv/content-publisher
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./.content-ssh
+        target: /run/content-ssh
+        read_only: true
         bind:
           create_host_path: false
     depends_on:

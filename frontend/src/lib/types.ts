@@ -136,12 +136,20 @@ export type RefreshResult = {
   problems: string[]
 }
 
+export type ContentSyncStatus = {
+  state: "disabled" | "pending" | "synced"
+  revision: string | null
+  lastSyncedAt: string | null
+  message?: string
+}
+
 export type PublishResult = {
   folder: string
   path: string
   link: string | null
   created: boolean
   warnings: string[]
+  sync: ContentSyncStatus
 }
 
 export type ValidationResult = {

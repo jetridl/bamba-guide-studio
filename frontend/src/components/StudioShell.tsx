@@ -5,6 +5,7 @@ import { Moon, Sun, SunMoon } from "lucide-react"
 import { IconButton } from "@/components/bamba/Button"
 import { THEME_LABELS, useTheme } from "@/lib/theme"
 import { cn } from "@/lib/utils"
+import { ContentSyncNotice } from "@/components/ContentSyncNotice"
 
 const TABS = [
   { to: "/guides", label: "Guides", key: "guides" },
@@ -56,7 +57,10 @@ export function StudioShell({ actions, children }: { active?: StudioTab; actions
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-5xl px-5 pt-2 pb-32 md:px-8 md:pt-6 md:pb-16">{children}</main>
+      <main className="mx-auto w-full max-w-5xl px-5 pt-2 pb-32 md:px-8 md:pt-6 md:pb-16">
+        <ContentSyncNotice />
+        {children}
+      </main>
 
       <nav
         aria-label="Studio sections"

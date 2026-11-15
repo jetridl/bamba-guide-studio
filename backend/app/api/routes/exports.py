@@ -12,6 +12,7 @@ from app.core.database import get_db
 from app.services.export_service import export_guide
 from app.services.guide_service import get_guide_or_404
 from app.services.publish_service import publish_guide
+from app.services.content_repository import publication_lock, sync_content, sync_status
 
 router = APIRouter()
 
@@ -19,7 +20,15 @@ router = APIRouter()
 @router.post("/guides/{guide_id}/publish")
 def publish_guide_json(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any]:
     guide = get_guide_or_404(db, guide_id)
-    return publish_guide(db, guide, settings.published_guides_dir, settings.guides_dir)
+    with publication_lock:
+        result = publish_guide(db, guide, settings.published_guides_dir, settings.guides_dir)
+        result["sync"] = sync_content()
+        return result
+
+
+@router.get("/content-sync")
+def content_sync_status() -> dict[str, Any]:
+    return sync_status()
 
 
 @router.get("/guides/{guide_id}/export")
