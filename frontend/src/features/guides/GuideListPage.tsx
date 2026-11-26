@@ -4,6 +4,7 @@ import { FileJson, MoreHorizontal, RefreshCw } from "lucide-react"
 
 import { PageTitle, StudioShell } from "@/components/StudioShell"
 import { ActionList } from "@/components/bamba/ActionList"
+import { Bone } from "@/components/bamba/Bone"
 import { Banner } from "@/components/bamba/Banner"
 import { ActionButton, IconButton } from "@/components/bamba/Button"
 import { ChipRow } from "@/components/bamba/Segmented"
@@ -105,10 +106,14 @@ export function GuideListPage() {
       <ChipRow label="Filter guides" value={filter} options={FILTERS} onChange={setFilter} className="mb-4" />
 
       <div className="mb-2.5 flex items-baseline justify-between text-[13px] text-bamba-muted">
-        <span>
-          {shown.length} {shown.length === 1 ? "guide" : "guides"}
-          {filter === "all" ? "" : ` · ${statusLabel(filter).toLowerCase()}`}
-        </span>
+        {loading ? (
+          <Bone className="h-3.5 w-16 self-center" />
+        ) : (
+          <span>
+            {shown.length} {shown.length === 1 ? "guide" : "guides"}
+            {filter === "all" ? "" : ` · ${statusLabel(filter).toLowerCase()}`}
+          </span>
+        )}
         <span>Newest first</span>
       </div>
 
@@ -123,7 +128,7 @@ export function GuideListPage() {
             {error}
           </Banner>
         ) : null}
-        {loading ? <p className="text-sm text-bamba-muted">Loading guides...</p> : null}
+        {loading ? <GuideListSkeleton /> : null}
 
         {!loading && guides.length === 0 && !error ? (
           <ListSurface>
@@ -142,7 +147,7 @@ export function GuideListPage() {
           </ListSurface>
         ) : null}
 
-        {shown.length > 0 ? (
+        {!loading && shown.length > 0 ? (
           <ListSurface>
             {shown.map((guide) => (
               <ListRow key={guide.id} to={`/guides/${guide.id}`} className="items-start py-4">
@@ -199,6 +204,29 @@ export function GuideListPage() {
         />
       </Sheet>
     </StudioShell>
+  )
+}
+
+const SKELETON_TITLE_WIDTHS = ["w-3/5", "w-2/5", "w-1/2", "w-[45%]"]
+
+/** The shape of the guide list while it loads. */
+function GuideListSkeleton() {
+  return (
+    <div role="status" aria-busy="true">
+      <span className="sr-only">Loading guides</span>
+      <ListSurface>
+        {SKELETON_TITLE_WIDTHS.map((width, index) => (
+          <ListRow key={index} className="items-start py-4 hover:bg-transparent">
+            <span className="flex min-w-0 flex-1 flex-col">
+              <Bone className={`h-6 ${width}`} />
+              <Bone className="mt-2 h-3.5 w-4/5 md:w-3/5" />
+              <Bone className="mt-3 h-3.5 w-24 md:hidden" />
+            </span>
+            <Bone className="mt-0.5 hidden h-6 w-24 shrink-0 rounded-full md:block" />
+          </ListRow>
+        ))}
+      </ListSurface>
+    </div>
   )
 }
 
