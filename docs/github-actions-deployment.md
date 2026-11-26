@@ -45,6 +45,15 @@ GitHub-hosted runners must be able to reach SSH; the web Cloudflare Tunnel is
 independent. The script uses only standalone `compose.prod.yml` and never builds
 on the 1 GB host.
 
+Check the **Hetzner Cloud Firewall** as well as the guest firewall. An SSH rule
+limited to a personal IP blocks GitHub-hosted runners, whose addresses change.
+For this installation, allow inbound TCP 22 from Any IPv4 (`0.0.0.0/0`), with
+SSH password authentication and root login disabled. Only authorized keys can
+log in. Keep application and database ports closed; nginx stays on loopback.
+If SSH must remain restricted to specific source addresses, arrange a static
+runner egress address or private network before enabling this workflow.
+See [Hetzner firewall rules](https://docs.hetzner.com/cloud/firewalls/overview/).
+
 For a server whose deploy user still requires a sudo password, the owner can
 run `sudo bash scripts/prepare-deployment-host.sh` interactively once. It validates
 and installs `/etc/sudoers.d/bamba-studio-deploy` allowing passwordless
