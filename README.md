@@ -78,6 +78,10 @@ Settings (put them in a `.env` file next to `docker-compose.yml`, or set them in
 
 ## Hetzner production deployment
 
+Pushes to `master` deploy automatically through GitHub Actions after backend,
+frontend and deployment checks pass. See [automated deployment](docs/github-actions-deployment.md)
+for credentials, the deployment switch, backups, verification and recovery.
+
 Use the standalone [compose.prod.yml](compose.prod.yml) for Hetzner. It runs
 prebuilt Linux AMD64 images and publishes nginx only on `127.0.0.1:8080`, ready
 for a host-installed Cloudflare Tunnel at `studio.bambapoetry.app`. PostgreSQL

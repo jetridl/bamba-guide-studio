@@ -1,5 +1,9 @@
 # Hetzner production deployment
 
+For routine releases, use [GitHub Actions deployment](github-actions-deployment.md).
+It builds off-server and automates the backup, transfer, restart and verification
+steps below. The manual procedure remains available for bootstrap and recovery.
+
 This implements deployment steps 10–12 for the AMD64 `bamba-studio` VPS.
 Build on the Mac; the 1 GB server only loads and runs images. Cloudflare Access
 and Tunnel are configured afterwards. The app has no accounts: protect the
@@ -60,6 +64,7 @@ creates `output/deploy/<tag>/` containing:
 - `compose.prod.yml`, `.env.production.example`, this runbook,
   `content-publishing.md` and `github_known_hosts`;
 - `IMAGE_TAG`, `SOURCE_COMMIT`, and `SOURCE_STATUS` to identify the source used.
+- `deploy-production.sh`, the server-side deployment script used by Actions.
 
 It uses `backend/Dockerfile` with the **repository root** build context (required
 for `schemas/`), and the existing `frontend/Dockerfile` with `frontend/` as its

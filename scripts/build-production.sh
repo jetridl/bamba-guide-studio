@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build on the development machine, never on the 1 GB Hetzner host.
+# Build on a GitHub runner or development machine, never on the 1 GB Hetzner host.
 set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -36,12 +36,14 @@ mv "$archive.partial" "$archive"
 cp compose.prod.yml .env.production.example "$release_dir/"
 cp docs/hetzner-deployment.md "$release_dir/"
 cp docs/content-publishing.md scripts/github_known_hosts "$release_dir/"
+cp scripts/deploy-production.sh "$release_dir/"
 git rev-parse HEAD > "$release_dir/SOURCE_COMMIT"
 git status --short > "$release_dir/SOURCE_STATUS"
 printf '%s\n' "$tag" > "$release_dir/IMAGE_TAG"
 (
   cd "$release_dir"
-  shasum -a 256 bamba-studio-images.tar.gz > SHA256SUMS
+  shasum -a 256 bamba-studio-images.tar.gz compose.prod.yml deploy-production.sh \
+    IMAGE_TAG SOURCE_COMMIT > SHA256SUMS
 )
 printf '\nRelease prepared in %s\nImages use STUDIO_IMAGE_TAG=%s\n' "$release_dir" "$tag"
 echo 'Follow hetzner-deployment.md to transfer, load, and configure the server.'

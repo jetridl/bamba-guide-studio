@@ -16,6 +16,10 @@ bamba-studio-images*.tar.gz
 output/
 .content-publisher/
 .content-ssh/
+.deploy.lock
+.deploy-env.*
+.deployed-release
+.deployed-commit
 # OS/editor
 .DS_Store
 .idea/
