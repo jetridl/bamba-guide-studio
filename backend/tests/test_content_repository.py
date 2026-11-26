@@ -110,6 +110,28 @@ def test_publish_api_keeps_saved_export_when_remote_is_unavailable(
     assert client.get("/api/content-sync").json()["state"] == "synced"
 
 
+def test_publish_api_pushes_before_returning(
+    client: TestClient, repository: tuple[Path, Path],
+) -> None:
+    remote, exports = repository
+    shutil.rmtree(exports)
+    guide_id = client.post("/api/import/guide", json=load_example()).json()["id"]
+    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+
+    response = client.post(f"/api/guides/{guide_id}/publish")
+
+    assert response.status_code == 200, response.text
+    sync = response.json()["sync"]
+    assert sync["state"] == "synced"
+    assert git(remote, "rev-parse", "main") == sync["revision"]
+    document = next(exports.glob("curated_poems/*/guided_plan.json"))
+    committed = subprocess.run(
+        ["git", "-C", str(remote), "show", f"main:exports/{document.relative_to(exports).as_posix()}"],
+        check=True, capture_output=True,
+    ).stdout
+    assert committed == document.read_bytes()
+
+
 def test_worker_retries_without_another_publish(repository: tuple[Path, Path], monkeypatch: pytest.MonkeyPatch) -> None:
     remote, _ = repository
     monkeypatch.setattr(settings, "content_sync_interval_seconds", 1)

@@ -107,9 +107,15 @@ From the app checkout:
 ```
 
 All usual Flutter arguments pass through. This command uses FVM locally. The
-raw `fvm flutter` command and direct Xcode builds bypass this preparation; use
-the wrapper for builds. Fetch failure stops Flutter, even if content is cached.
-Studio publishing does not itself trigger an app build or release.
+app's Xcode build phase now also fetches and validates content before bundling,
+covering direct Xcode builds/archives and raw Flutter iOS builds. Its VS Code
+launch configurations prepare content automatically too. Use the wrapper for
+terminal work, especially non-iOS builds and tests. Hot reload/restart does not
+fetch content; start a new build/run after publishing. Fetch failure stops the
+build, even if content is cached. Studio publishing does not itself trigger an
+app build or release. Compare Studio's synced revision with the bundled
+`assets/content_revision.json` (or CI's content-revision artifact) to verify a
+release uses that snapshot.
 
 ## Recovery and configuration
 
