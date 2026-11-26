@@ -45,6 +45,14 @@ GitHub-hosted runners must be able to reach SSH; the web Cloudflare Tunnel is
 independent. The script uses only standalone `compose.prod.yml` and never builds
 on the 1 GB host.
 
+For a server whose deploy user still requires a sudo password, the owner can
+run `sudo bash scripts/prepare-deployment-host.sh` interactively once. It validates
+and installs `/etc/sudoers.d/bamba-studio-deploy` allowing passwordless
+`/usr/bin/docker`, and creates the exports parent directory. Docker management
+grants administrator-level control of the host; this access belongs only to the
+trusted deployment user. The script does not change existing content or start
+services.
+
 Authoritative exports must already live **outside** the checkout, as described
 in [content migration](content-publishing.md). The script refuses checkout-bound
 exports. Production `.env`, numeric UID/GID, guides, publisher credentials and

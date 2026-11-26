@@ -48,7 +48,7 @@ jobs:
         run: alembic upgrade head
       - run: python -m pytest -q tests ../tests
       - name: Check deployment script syntax
-        run: bash -n ../scripts/build-production.sh ../scripts/deploy-production.sh
+        run: bash -n ../scripts/build-production.sh ../scripts/deploy-production.sh ../scripts/prepare-deployment-host.sh
 
   frontend:
     name: Frontend checks
