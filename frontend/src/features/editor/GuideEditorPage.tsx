@@ -5,6 +5,7 @@ import { Banner } from "@/components/bamba/Banner"
 import { ContentSyncNotice } from "@/components/ContentSyncNotice"
 import { DesktopEditor } from "@/features/editor/DesktopEditor"
 import { PhoneEditor } from "@/features/editor/PhoneEditor"
+import { EditorSkeleton } from "@/features/editor/components/EditorSkeleton"
 import { GuideActionsSheet } from "@/features/editor/components/GuideActionsSheet"
 import { PublishSheet } from "@/features/editor/components/Readiness"
 import { isDailyChunksId, knownPageId } from "@/features/editor/guideHelpers"
@@ -77,7 +78,7 @@ export function GuideEditorPage() {
     )
   }
   if (!guide) {
-    return <main className="min-h-dvh bg-bamba-bg p-6 text-sm text-bamba-muted">Loading editor...</main>
+    return <EditorSkeleton phone={phone} pageOpen={selectedPageId !== null} />
   }
 
   const banners = (
