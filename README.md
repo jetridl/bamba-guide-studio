@@ -171,7 +171,7 @@ Bamba app bundle
 
 1. Save the draft as `guides/json/<slug>.json`. Give `poem.id` the stable ID the app will use (for example `the_tyger`); it does not have to match the slug.
 2. Click **Refresh** on the guide list. Studio imports every new file in `guides/json/` as a draft. (Or open `/guides/import` and paste the JSON.) See [Versions](#versions) for files of a guide Studio already holds.
-3. Edit sessions and pages in `/guides/:guideId`. Page changes autosave.
+3. Edit sessions and pages in `/guides/:guideId`. Page changes autosave. Every edit drops an approval the guide already had, so approve it again before you publish.
 4. Optional: import review JSON from `/guides/:guideId/reviews/import`, then resolve, dismiss, or accept each comment.
 5. Validate from the bottom bar, and approve when no blocking issues remain.
 6. Click **Publish**. Studio checks the guide again, writes `exports/curated_poems/<slug>/guided_plan.json`, and replaces your draft `guides/json/<slug>.json` with a link to it. The guide's status becomes `exported`.
@@ -187,6 +187,7 @@ The guide is already in the Studio, because the backend loads it from `exports/`
 ### What Publish protects
 
 - It writes nothing unless the guide is approved and passes validation.
+- An edit drops the approval. The moment you change the words, the structure, or the order, the guide goes back to `draft`, **Publish** and **Download JSON** turn off, and the guide waits for a new approval. Accepting a review suggestion counts as an edit. Raising the version does not: the version is the first step of publishing a change.
 - The version in `exports/` never goes down. Publish refuses a version lower than the published one.
 - A version is published once. Publish refuses the version that `exports/` holds already, even with the same content. To publish a change, raise the version first. The Publish sheet shows this and turns off **Publish**.
 - One version number keeps one content. Publish refuses changed content at a version that is already saved, and tells you which version to raise it to.

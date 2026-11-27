@@ -211,6 +211,14 @@ export function isPublished(item: { contentVersion: number; publishedVersion?: n
   return item.publishedVersion != null && item.contentVersion <= item.publishedVersion
 }
 
+/**
+ * Approval covers the words as they stood, so an edit drops it. The Studio
+ * shows this the moment the editor types; the backend does the same on save.
+ */
+export function withEditReset(guide: GuideDetail): GuideDetail {
+  return guide.status === "approved" || guide.status === "exported" ? { ...guide, status: "draft" } : guide
+}
+
 export function versionName(item: { version: number; contentVersion: number }) {
   return item.version === 0 ? `Latest · v${item.contentVersion}` : `v${item.version}`
 }

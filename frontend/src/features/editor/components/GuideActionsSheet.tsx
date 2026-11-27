@@ -38,6 +38,8 @@ export function GuideActionsSheet({
   const [view, setView] = useState<"menu" | "versions">("menu")
   const { choice, cycle } = useTheme()
   const isLatest = guide.version === 0
+  // An edit drops the approval, so the file waits until the editor approves again.
+  const approved = guide.status === "approved" || guide.status === "exported"
 
   function close() {
     onOpenChange(false)
@@ -91,6 +93,8 @@ export function GuideActionsSheet({
       icon: Download,
       title: "Download JSON",
       description: "The guide file, without publishing it",
+      disabled: !approved,
+      disabledHint: "Approve the guide before you download it",
       onSelect: () => {
         close()
         onExport()

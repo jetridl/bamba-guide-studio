@@ -17,6 +17,7 @@ import {
   readinessChecks,
   replaceSessionPages,
   warningCount,
+  withEditReset,
 } from "@/features/editor/guideHelpers"
 
 export type SaveState = "idle" | "saving" | "saved" | "error"
@@ -147,7 +148,7 @@ export function useGuideEditor(guideId: string) {
 
   const updatePage = useCallback(
     (pageId: string, payload: Record<string, unknown>) => {
-      setGuide((current) => current && patchGuidePage(current, pageId, payload))
+      setGuide((current) => current && withEditReset(patchGuidePage(current, pageId, payload)))
       merge(pendingPages.current, pageId, payload)
       schedule()
     },
@@ -156,7 +157,7 @@ export function useGuideEditor(guideId: string) {
 
   const updateSession = useCallback(
     (sessionId: string, payload: Record<string, unknown>) => {
-      setGuide((current) => current && patchGuideSession(current, sessionId, payload))
+      setGuide((current) => current && withEditReset(patchGuideSession(current, sessionId, payload)))
       merge(pendingSessions.current, sessionId, payload)
       schedule()
     },
@@ -183,7 +184,7 @@ export function useGuideEditor(guideId: string) {
 
   const reorderPages = useCallback(
     async (sessionId: string, pages: GuidePage[]) => {
-      setGuide((current) => current && replaceSessionPages(current, sessionId, pages))
+      setGuide((current) => current && withEditReset(replaceSessionPages(current, sessionId, pages)))
       await api.reorderPages(
         sessionId,
         pages.map((page, index) => ({ id: page.id, orderIndex: index })),

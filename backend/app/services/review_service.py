@@ -8,6 +8,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.models import Guide, GuidePage, GuideReview, GuideReviewComment, GuideSession
+from app.services.guide_service import mark_edited
 from app.services.json_schema import validate_json_schema
 from app.services.serialization import comment_to_dict
 
@@ -91,8 +92,10 @@ def accept_comment(db: Session, comment_id: uuid.UUID) -> dict[str, Any]:
     if comment.suggested_revision and comment.target_db_id and comment.field:
         target = _load_mutation_target(db, comment)
         field_name = EDITABLE_REVIEW_FIELDS.get((comment.target_type, comment.field))
-        if target is not None and field_name:
+        if target is not None and field_name and getattr(target, field_name) != comment.suggested_revision:
             setattr(target, field_name, comment.suggested_revision)
+            # The guide now says something the approval never covered.
+            mark_edited(target.session.guide)
     comment.status = "accepted"
     db.commit()
     db.refresh(comment)
