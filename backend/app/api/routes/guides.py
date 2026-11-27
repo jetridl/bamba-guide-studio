@@ -21,6 +21,7 @@ from app.services.guide_service import (
     get_session_or_404,
     guide_query,
     list_guide_versions,
+    mark_edited,
     mark_in_review,
     patch_guide,
     patch_page,
@@ -125,6 +126,7 @@ def create_session(guide_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[s
         metadata_json={},
     )
     db.add(session)
+    mark_edited(guide)
     db.commit()
     db.refresh(session)
     return {"id": str(session.id), "externalId": session.external_id}
@@ -138,6 +140,7 @@ def update_session(session_id: uuid.UUID, payload: SessionPatch, db: Session = D
 @router.delete("/sessions/{session_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_session(session_id: uuid.UUID, db: Session = Depends(get_db)) -> Response:
     session = get_session_or_404(db, session_id)
+    mark_edited(session.guide)
     db.delete(session)
     db.commit()
     return Response(status_code=status.HTTP_204_NO_CONTENT)
@@ -169,6 +172,7 @@ def create_page(session_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[st
         metadata_json={},
     )
     db.add(page)
+    mark_edited(session.guide)
     db.commit()
     db.refresh(page)
     return {"id": str(page.id), "externalId": page.external_id}
@@ -182,6 +186,7 @@ def update_page(page_id: uuid.UUID, payload: PagePatch, db: Session = Depends(ge
 @router.delete("/pages/{page_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_page(page_id: uuid.UUID, db: Session = Depends(get_db)) -> Response:
     page = get_page_or_404(db, page_id)
+    mark_edited(page.session.guide)
     db.delete(page)
     db.commit()
     return Response(status_code=status.HTTP_204_NO_CONTENT)

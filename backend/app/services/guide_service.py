@@ -26,6 +26,23 @@ def guide_query():
     )
 
 
+# Approval covers the words as they stood. Any change to the content drops the
+# working copy back to draft, so an editor approves it again before the Studio
+# exports or publishes it. Raising the version is not a change to the content:
+# it is the first step of publishing a version that was approved already.
+APPROVED_STATUSES = {"approved", "exported"}
+
+# The statuses an editor sets by hand. Approval goes through /approve, which
+# checks the guide first.
+ASSIGNABLE_STATUSES = {"draft", "in_review"}
+
+
+def mark_edited(guide: Guide) -> None:
+    """Drop an approved working copy back to draft after a real content change."""
+    if guide.version == 0 and guide.status in APPROVED_STATUSES:
+        guide.status = "draft"
+
+
 def get_guide_or_404(db: Session, guide_id: uuid.UUID) -> Guide:
     guide = db.scalar(guide_query().where(Guide.id == guide_id))
     if guide is None:
@@ -73,15 +90,23 @@ def list_guide_versions(db: Session, guide: Guide) -> list[Guide]:
 def patch_guide(db: Session, guide: Guide, patch: GuidePatch) -> dict[str, Any]:
     _ensure_editable_guide(guide)
     data = patch.model_dump(exclude_unset=True)
+    edited = False
     for key, value in data.items():
         if key == "metadata":
-            guide.metadata_json = value or {}
+            value = value or {}
+            edited = edited or (guide.metadata_json or {}) != value
+            guide.metadata_json = value
         elif key == "content_version":
             if value is None or value < guide.content_version:
                 raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Guide versions cannot go down.")
             guide.content_version = value
+        elif key == "status":
+            guide.status = _assignable_status(value)
         else:
+            edited = edited or getattr(guide, key) != value
             setattr(guide, key, value)
+    if edited:
+        mark_edited(guide)
     db.commit()
     db.refresh(guide)
     return guide_to_dict(guide)
@@ -195,6 +220,20 @@ def copy_guide_contents(db: Session, source: Guide, target: Guide) -> None:
     db.flush()
 
 
+def _assignable_status(value: str | None) -> str:
+    if value in APPROVED_STATUSES:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Use Approve, so the Studio checks the guide before it counts as approved.",
+        )
+    if value not in ASSIGNABLE_STATUSES:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="A guide is draft or in_review until it is approved.",
+        )
+    return value
+
+
 def _ensure_editable_guide(guide: Guide) -> None:
     if guide.version > 0:
         raise HTTPException(
@@ -206,19 +245,21 @@ def _ensure_editable_guide(guide: Guide) -> None:
 def patch_session(db: Session, session: GuideSession, patch: SessionPatch) -> dict[str, Any]:
     _ensure_editable_guide(session.guide)
     data = patch.model_dump(exclude_unset=True)
+    edited = False
     for key, value in data.items():
         if key == "metadata":
-            session.metadata_json = value or {}
-        elif key == "focus_summary":
-            session.focus_summary = value
+            value = value or {}
+            edited = edited or (session.metadata_json or {}) != value
+            session.metadata_json = value
         elif key == "chunk_ids":
-            session.chunk_ids_json = value or []
-        elif key == "session_number":
-            session.session_number = value
-        elif key == "order_index":
-            session.order_index = value
+            value = value or []
+            edited = edited or list(session.chunk_ids_json or []) != value
+            session.chunk_ids_json = value
         else:
+            edited = edited or getattr(session, key) != value
             setattr(session, key, value)
+    if edited:
+        mark_edited(session.guide)
     db.commit()
     db.refresh(session)
     return {"id": str(session.id), "guideId": str(session.guide_id)}
@@ -227,20 +268,23 @@ def patch_session(db: Session, session: GuideSession, patch: SessionPatch) -> di
 def patch_page(db: Session, page: GuidePage, patch: PagePatch) -> dict[str, Any]:
     _ensure_editable_guide(page.session.guide)
     data = patch.model_dump(exclude_unset=True)
+    edited = False
     for key, value in data.items():
         if key == "type":
+            edited = edited or page.page_type != value
             page.page_type = value
-        elif key == "body_markdown":
-            page.body_markdown = value
         elif key == "chunk_ids":
-            page.chunk_ids_json = value or []
+            value = value or []
+            edited = edited or list(page.chunk_ids_json or []) != value
+            page.chunk_ids_json = value
         elif key == "round_type":
             continue
-        elif key == "order_index":
-            page.order_index = value
         else:
+            edited = edited or getattr(page, key) != value
             setattr(page, key, value)
     page.round_type = derive_round_type(page.page_type)
+    if edited:
+        mark_edited(page.session.guide)
     db.commit()
     db.refresh(page)
     return {"id": str(page.id), "sessionId": str(page.session_id)}
@@ -249,10 +293,14 @@ def patch_page(db: Session, page: GuidePage, patch: PagePatch) -> dict[str, Any]
 def reorder_sessions(db: Session, guide: Guide, payload: ReorderPayload) -> dict[str, Any]:
     _ensure_editable_guide(guide)
     sessions = {str(session.id): session for session in guide.sessions}
+    edited = False
     for item in payload.items:
         session = sessions.get(item.id)
         if session is not None:
+            edited = edited or session.order_index != item.order_index
             session.order_index = item.order_index
+    if edited:
+        mark_edited(guide)
     db.commit()
     return {"ok": True}
 
@@ -260,10 +308,14 @@ def reorder_sessions(db: Session, guide: Guide, payload: ReorderPayload) -> dict
 def reorder_pages(db: Session, session: GuideSession, payload: ReorderPayload) -> dict[str, Any]:
     _ensure_editable_guide(session.guide)
     pages = {str(page.id): page for page in session.pages}
+    edited = False
     for item in payload.items:
         page = pages.get(item.id)
         if page is not None:
+            edited = edited or page.order_index != item.order_index
             page.order_index = item.order_index
+    if edited:
+        mark_edited(session.guide)
     db.commit()
     return {"ok": True}
 
@@ -290,6 +342,7 @@ def duplicate_page(db: Session, page: GuidePage) -> dict[str, Any]:
         estimated_seconds=page.estimated_seconds,
     )
     db.add(duplicate)
+    mark_edited(page.session.guide)
     db.commit()
     db.refresh(duplicate)
     return {"id": str(duplicate.id), "externalId": duplicate.external_id}

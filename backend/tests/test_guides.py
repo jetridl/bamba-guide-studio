@@ -489,3 +489,147 @@ def test_open_blocking_review_comment_blocks_approval(client: TestClient) -> Non
 
     assert review_response.status_code == 200
     assert approve_response.status_code == 409
+
+
+def _approved_guide(client: TestClient) -> dict:
+    """An imported guide, approved, with its first session and page."""
+    imported = client.post("/api/import/guide", json=load_example()).json()
+    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    return imported
+
+
+def _status(client: TestClient, guide_id: str) -> str:
+    return client.get(f"/api/guides/{guide_id}").json()["status"]
+
+
+def test_editing_a_page_drops_the_approval(client: TestClient) -> None:
+    imported = _approved_guide(client)
+    page = imported["sessions"][0]["pages"][0]
+
+    assert client.patch(f"/api/pages/{page['id']}", json={"title": "A new title"}).status_code == 200
+
+    assert _status(client, imported["id"]) == "draft"
+    assert client.get(f"/api/guides/{imported['id']}/export").status_code == 409
+
+
+def test_an_edited_guide_exports_again_after_a_second_approval(client: TestClient) -> None:
+    imported = _approved_guide(client)
+    page = imported["sessions"][0]["pages"][0]
+    client.patch(f"/api/pages/{page['id']}", json={"title": "A new title"})
+
+    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    assert client.get(f"/api/guides/{imported['id']}/export").status_code == 200
+
+
+def test_editing_an_exported_guide_drops_the_approval(client: TestClient) -> None:
+    imported = _approved_guide(client)
+    assert client.get(f"/api/guides/{imported['id']}/export").status_code == 200
+    assert _status(client, imported["id"]) == "exported"
+
+    client.patch(f"/api/guides/{imported['id']}", json={"title": "The Tyger, revised"})
+
+    assert _status(client, imported["id"]) == "draft"
+
+
+EDITS = {
+    "guide": lambda client, guide: client.patch(f"/api/guides/{guide['id']}", json={"description": "Fresh words."}),
+    "session": lambda client, guide: client.patch(
+        f"/api/sessions/{guide['sessions'][0]['id']}", json={"subtitle": "A new subtitle"}
+    ),
+    "page": lambda client, guide: client.patch(
+        f"/api/pages/{guide['sessions'][0]['pages'][0]['id']}", json={"bodyMarkdown": "Fresh words."}
+    ),
+    "new session": lambda client, guide: client.post(f"/api/guides/{guide['id']}/sessions"),
+    "new page": lambda client, guide: client.post(f"/api/sessions/{guide['sessions'][0]['id']}/pages"),
+    "duplicated page": lambda client, guide: client.post(
+        f"/api/pages/{guide['sessions'][0]['pages'][0]['id']}/duplicate"
+    ),
+    "deleted page": lambda client, guide: client.delete(f"/api/pages/{guide['sessions'][0]['pages'][0]['id']}"),
+    "deleted session": lambda client, guide: client.delete(f"/api/sessions/{guide['sessions'][0]['id']}"),
+}
+
+
+@pytest.mark.parametrize("edit", list(EDITS), ids=list(EDITS))
+def test_every_edit_drops_the_approval(client: TestClient, edit: str) -> None:
+    imported = _approved_guide(client)
+
+    response = EDITS[edit](client, imported)
+
+    assert response.status_code in {200, 204}, response.text
+    assert _status(client, imported["id"]) == "draft"
+
+
+def test_reordering_pages_drops_the_approval(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+    session_id = imported["sessions"][0]["id"]
+    assert client.post(f"/api/pages/{imported['sessions'][0]['pages'][0]['id']}/duplicate").status_code == 200
+    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    pages = client.get(f"/api/guides/{imported['id']}").json()["sessions"][0]["pages"]
+
+    response = client.post(
+        f"/api/sessions/{session_id}/pages/reorder",
+        json={"items": [{"id": page["id"], "orderIndex": index} for index, page in enumerate(reversed(pages))]},
+    )
+
+    assert response.status_code == 200
+    assert _status(client, imported["id"]) == "draft"
+
+
+def test_an_edit_that_changes_nothing_keeps_the_approval(client: TestClient) -> None:
+    imported = _approved_guide(client)
+    page = imported["sessions"][0]["pages"][0]
+    session = imported["sessions"][0]
+
+    assert client.patch(f"/api/pages/{page['id']}", json={"title": page["title"]}).status_code == 200
+    assert client.patch(f"/api/sessions/{session['id']}", json={"title": session["title"]}).status_code == 200
+    assert client.post(
+        f"/api/sessions/{session['id']}/pages/reorder",
+        json={"items": [{"id": item["id"], "orderIndex": index} for index, item in enumerate(session["pages"])]},
+    ).status_code == 200
+
+    assert _status(client, imported["id"]) == "approved"
+
+
+def test_raising_the_version_keeps_the_approval(client: TestClient) -> None:
+    imported = _approved_guide(client)
+
+    response = client.patch(f"/api/guides/{imported['id']}", json={"contentVersion": 2})
+
+    assert response.status_code == 200
+    assert _status(client, imported["id"]) == "approved"
+
+
+def test_a_patch_cannot_approve_a_guide(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+
+    response = client.patch(f"/api/guides/{imported['id']}", json={"status": "approved"})
+
+    assert response.status_code == 409
+    assert _status(client, imported["id"]) == "draft"
+
+
+def test_accepting_a_suggestion_drops_the_approval(client: TestClient) -> None:
+    imported = _approved_guide(client)
+    review = {
+        "schemaVersion": 1,
+        "guideId": "the_tyger_guide_v1",
+        "reviewer": "editor",
+        "summary": "A gentler line.",
+        "comments": [
+            {
+                "id": "suggestion_1",
+                "targetType": "page",
+                "targetId": "day1_page1",
+                "field": "title",
+                "severity": "suggestion",
+                "category": "clarity",
+                "comment": "This title could be warmer.",
+                "suggestedRevision": "A warmer title",
+            }
+        ],
+    }
+    comment = client.post("/api/import/review", json=review).json()["comments"][0]
+
+    assert client.post(f"/api/review-comments/{comment['id']}/accept").status_code == 200
+
+    assert _status(client, imported["id"]) == "draft"

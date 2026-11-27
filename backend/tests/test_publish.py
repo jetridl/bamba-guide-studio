@@ -178,6 +178,8 @@ def test_changed_guide_needs_a_higher_version(client: TestClient, dirs: tuple[Pa
     guide_id, plan = _publish_tyger(client, dirs)
     before = plan.read_text()
     client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
+    # The edit dropped the approval, so approve the new words before publishing.
+    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
 
     response = client.post(f"/api/guides/{guide_id}/publish")
 
