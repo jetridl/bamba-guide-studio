@@ -11,7 +11,7 @@ copy is kept as a saved version first.
 
 A published or saved version is fixed. The editor never sets a version number:
 the first edit to a fixed version moves the working copy to the next free
-number, as a draft that needs approval before it can be published. The only
+number, which needs approval before it can be published. The only
 other way to a new number is a file with that version in guides/json and Refresh.
 """
 
@@ -156,10 +156,10 @@ def keep_working_copy(db: Session, working: Guide) -> None:
         record_version(db, working)
     elif not holds_content(own, build_guided_plan(working)):
         # Only older data gets here: an edit moves a fixed version to the next number.
-        # Keep the changes under the next free number, as a draft.
+        # Keep the changes under the next free number, back in review.
         working.content_version = next_free_version(db, working)
         if working.status in {"approved", "exported"}:
-            working.status = "draft"
+            working.status = "in_review"
         record_version(db, working)
 
 

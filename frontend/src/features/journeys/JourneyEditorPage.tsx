@@ -235,7 +235,7 @@ export function JourneyEditorPage() {
   }
 
   const saved = Boolean(journey.id)
-  // Published or saved: saving a change starts the next version, as a draft.
+  // Published or saved: saving a change starts the next version, back in review.
   const fixed = saved && Boolean(journey.versionFixed)
   // An exported version has nothing left to review or approve.
   const lockedByExport = journey.status === "exported"

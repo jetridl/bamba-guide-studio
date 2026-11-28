@@ -182,12 +182,13 @@ Bamba app bundle
 
 ### A guide the app already ships
 
-The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there. The first edit moves the guide to the next version number by itself, as a draft. Then approve and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Studio pushes automatically; the next app build fetches the update.
+The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there. The first edit moves the guide to the next version number by itself, back in review. Then approve and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Studio pushes automatically; the next app build fetches the update.
 
 ### What Publish protects
 
 - It writes nothing unless the guide is approved and passes validation.
-- An edit drops the approval. The moment you change the words, the structure, or the order, the guide goes back to `draft`, **Publish** and **Download JSON** turn off, and the guide waits for a new approval. Accepting a review suggestion counts as an edit.
+- An edit drops the approval. The moment you change the words, the structure, or the order of an approved guide, it goes back to `in_review`, **Publish** and **Download JSON** turn off, and the guide waits for a new approval. A draft stays a draft and a guide in review stays in review. Accepting a review suggestion counts as an edit.
+- **In review** is the queue of work waiting for approval: editors mark a guide in review when it is ready, and the **In review** filter on the guide list shows the queue. Studio has no accounts yet, so who may approve and publish is a team agreement for now; approval does not require the in-review step.
 - A published version is fixed. The first edit to a published (or saved) version moves the latest copy to the next free version number, above every saved version and the one in `exports/`. Further edits stay on that number until it is published. The editor shows the new number as you type. You never set the number in Studio; the API refuses a `contentVersion` change.
 - The version in `exports/` never goes down. Publish refuses a version lower than the published one.
 - A version is published once. Publish refuses the version that `exports/` holds already, even with the same content. The Publish sheet shows this, turns off **Publish**, and names the version your next edit starts.
@@ -210,7 +211,7 @@ When the backend starts, it reads every `exports/curated_poems/*/guided_plan.jso
 - **A version Studio holds already, with the same content:** skipped.
 - **A version Studio holds already, with different content:** not added. The Refresh notice says so and names the version to use instead.
 - **A file with a new guide ID for a poem Studio holds:** not added. The Refresh notice says so.
-- **Unsaved changes in the latest copy** (only older data can have them, because an edit leaves a saved version first): Studio keeps the changes as a draft under the next free number, and the file's version is saved below it. Use **Use as latest** on the file's version to continue from it.
+- **Unsaved changes in the latest copy** (only older data can have them, because an edit leaves a saved version first): Studio keeps the changes, back in review, under the next free number, and the file's version is saved below it. Use **Use as latest** on the file's version to continue from it.
 - **A file Studio cannot read:** skipped, and the other files still load.
 
 The log shows a summary, for example `Published guides: 9 loaded, 0 already in Studio, 0 failed.` Note: if you delete a guide in the Studio and its file is still in `guides/json/`, Refresh adds it again. Set `LOAD_PUBLISHED_GUIDES=false` to turn this off, or `PUBLISHED_GUIDES_DIR` to read another folder.
@@ -222,7 +223,7 @@ Each guide has one copy you edit (**Latest**) and any number of read-only saved 
 - **Refresh**, **Publish** and **Save version** add saved versions. Save version keeps the latest copy under its current number; the next edit then starts the next number.
 - Studio numbers versions by itself: an edit to a published or saved version starts the next one, which needs approval before Publish. The only way to choose a number by hand is a file in `guides/json/` and **Refresh** (below).
 - Open **Version history** from the guide's actions menu to read any version.
-- To edit an older version, open it and choose **Use as latest**. It comes back under the next free number, as a draft, so you approve it and can publish it again. Studio first keeps the latest copy as a version of its own, so nothing is lost.
+- To edit an older version, open it and choose **Use as latest**. It comes back under the next free number, in review, so you approve it and can publish it again. Studio first keeps the latest copy as a version of its own, so nothing is lost.
 - To publish a newer version from a file: put the file in `guides/json/` with a higher `guide.version`, click **Refresh**, and click **Publish**. Refresh makes it the latest copy.
 - When the latest copy is not in `exports/` yet, the guide list shows **New version** beside the status, and the editor shows **Not published**.
 - Only the newest published version is in `exports/`. Older versions live in Studio's database and in Git history.
@@ -246,7 +247,7 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 
    To start from a file instead, save it as `guides/journeys/<journey_id>/journey.json` and click **Refresh** on the Journeys page. Studio reads `exports/journeys/` and then `guides/journeys/`:
    - It adds each Journey it does not hold yet. A file marked `approved` or `exported` keeps that status if it passes validation; any other file loads as a draft.
-   - It adds a new version of a Journey it holds as a read-only saved version. The highest version becomes the latest copy. If the latest copy has changes that are in no saved version (only older data can), Studio keeps them as a draft under the next free number instead.
+   - It adds a new version of a Journey it holds as a read-only saved version. The highest version becomes the latest copy. If the latest copy has changes that are in no saved version (only older data can), Studio keeps them, back in review, under the next free number instead.
    - It skips a version it holds with the same content, and lists a version it holds with different content as a problem.
 
    Every poem in the file must already be in Studio (click **Refresh** on the guide list first). The page lists any file it cannot import, with the reason.
@@ -277,9 +278,9 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 
 When the backend starts, it loads `exports/journeys/*/journey.json` after the guides, with the same rules as **Refresh**.
 
-Studio numbers Journey versions by itself, as it does for guides. A published or saved version never changes: the first saved change to it moves the Journey to the next free version number (above every saved version and the one in `exports/journeys/`) and back to draft, so you approve and publish the new version in turn. Further saves stay on that number until it is published. Saving without a change keeps the status. The Version field is read only, and the API refuses any other `version`; to choose a number by hand, put a `journey.json` with that version in `guides/journeys/<journey_id>/` and click **Refresh**. The app replaces a bundled Journey only when the version is higher, and it keeps each user's progress.
+Studio numbers Journey versions by itself, as it does for guides. A published or saved version never changes: the first saved change to it moves the Journey to the next free version number (above every saved version and the one in `exports/journeys/`) and back to in review, so you approve and publish the new version in turn. As with guides, any saved change sends an approved Journey back to in review, while a draft stays a draft and a Journey in review stays in review. Further saves stay on that number until it is published. Saving without a change keeps the status. The Version field is read only, and the API refuses any other `version`; to choose a number by hand, put a `journey.json` with that version in `guides/journeys/<journey_id>/` and click **Refresh**. The app replaces a bundled Journey only when the version is higher, and it keeps each user's progress.
 
-Journeys keep versions the same way as guides (see [Versions](#versions)). Refresh and Publish keep each version they see, and the latest copy always has the highest version. Open **Version history** from the Journey's actions menu to read one, and choose **Use as latest** to edit it; an older version comes back under the next free number, as a draft. `exports/journeys/` holds only the newest published version, and its version never goes down. The Journey list shows **New version** when the latest copy is not published yet.
+Journeys keep versions the same way as guides (see [Versions](#versions)). Refresh and Publish keep each version they see, and the latest copy always has the highest version. Open **Version history** from the Journey's actions menu to read one, and choose **Use as latest** to edit it; an older version comes back under the next free number, in review. `exports/journeys/` holds only the newest published version, and its version never goes down. The Journey list shows **New version** when the latest copy is not published yet.
 
 The Journey file format is `schemas/journey.schema.json`, a copy of the app's schema.
 

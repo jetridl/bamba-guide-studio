@@ -253,7 +253,7 @@ def test_unsaved_changes_keep_the_working_copy(db: Session, tmp_path: Path) -> N
     versions = _versions(db, guide_id)
     assert sorted(versions) == [0, 1, 2, 3] and versions[2].title == "The Tyger, second edition"
     assert (versions[0].description, versions[0].content_version, versions[0].status) == (
-        "Edited in Studio", 3, "draft")
+        "Edited in Studio", 3, "in_review")
     assert versions[3].description == "Edited in Studio"
     assert guide_to_dict(versions[0])["nextFreeVersion"] == 4
 
@@ -270,7 +270,7 @@ def test_an_edit_after_refresh_starts_the_next_version(db: Session, tmp_path: Pa
 
     edited = patch_guide(db, get_guide_or_404(db, working.id), GuidePatch(description="Edited in Studio"))
 
-    assert (edited["contentVersion"], edited["status"], edited["versionFixed"]) == (2, "draft", False)
+    assert (edited["contentVersion"], edited["status"], edited["versionFixed"]) == (2, "in_review", False)
     # Version 1 is unchanged.
     assert _versions(db, guide_id)[1].description != "Edited in Studio"
 
@@ -343,7 +343,7 @@ def test_older_version_comes_back_under_the_next_number(db: Session, tmp_path: P
     restored = restore_latest_from_version(db, get_guide_or_404(db, versions[1].id))
 
     # A new version: it needs approval before it is published.
-    assert (restored["title"], restored["contentVersion"], restored["status"]) == (first_title, 3, "draft")
+    assert (restored["title"], restored["contentVersion"], restored["status"]) == (first_title, 3, "in_review")
     versions = _versions(db, payload["guide"]["id"])
     assert sorted(versions) == [0, 1, 2] and versions[2].title == "The Tyger, second edition"
 
@@ -371,4 +371,4 @@ def test_edits_are_kept_as_their_own_version_before_a_restore(db: Session, tmp_p
 
     versions = _versions(db, guide_id)
     assert sorted(versions) == [0, 1, 2, 3] and versions[3].title == "Edited after the save"
-    assert (restored["contentVersion"], restored["status"]) == (4, "draft")
+    assert (restored["contentVersion"], restored["status"]) == (4, "in_review")

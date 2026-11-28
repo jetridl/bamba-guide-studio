@@ -163,7 +163,7 @@ def test_new_version_replaces_the_published_journey(client: TestClient, folders:
     data["poems"][0]["note"] = ["A revised note."]
     saved = client.put(f"/api/journeys/{journey['id']}", json=data).json()
     # The change moves the published version 1 on to version 2, which needs approval.
-    assert (saved["version"], saved["status"]) == (2, "draft")
+    assert (saved["version"], saved["status"]) == (2, "in_review")
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 409
     assert client.post(f"/api/journeys/{journey['id']}/approve").status_code == 200
 

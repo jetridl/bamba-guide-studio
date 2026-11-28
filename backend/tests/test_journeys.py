@@ -60,7 +60,7 @@ def test_journey_editorial_flow_and_version_refresh(client):
     data['poems'][0]['note'] = ['A revised note.']
     updated = client.put(path, json=data)
     assert updated.status_code == 200, updated.text
-    assert (updated.json()['status'], updated.json()['version']) == ('draft', 2)
+    assert (updated.json()['status'], updated.json()['version']) == ('in_review', 2)
     assert updated.json()['poems'][0]['note'] == ['A revised note.']
     # Further changes stay on version 2 until it is published.
     data['version'] = 2
@@ -80,7 +80,7 @@ def test_unchanged_save_keeps_the_approval(client):
     data['title'] = 'Images of light, revised'
     changed = client.put(path, json=data).json()
     # Not published or saved yet, so the number stays; the approval goes.
-    assert (changed['status'], changed['version']) == ('draft', 1)
+    assert (changed['status'], changed['version']) == ('in_review', 1)
 
 
 def test_journey_rejects_poems_without_approved_guides(client):
@@ -283,3 +283,17 @@ def test_refresh_with_missing_folder_adds_nothing(client, tmp_path, monkeypatch)
     monkeypatch.setattr(settings, 'journeys_dir', tmp_path / 'absent')
     monkeypatch.setattr(settings, 'published_journeys_dir', tmp_path / 'absent')
     assert client.post('/api/journeys/refresh').json() == {'loaded': [], 'skipped': [], 'failed': [], 'problems': []}
+
+
+def test_a_change_keeps_a_draft_or_a_journey_in_review(client):
+    guide = approved_poem(client)
+    data = journey_input(guide['poem']['externalId'])
+    journey = client.post('/api/journeys', json=data).json()
+    path = f"/api/journeys/{journey['id']}"
+
+    data['title'] = 'A draft change'
+    assert client.put(path, json=data).json()['status'] == 'draft'
+
+    assert client.post(f'{path}/mark-in-review').json()['status'] == 'in_review'
+    data['title'] = 'A change in review'
+    assert client.put(path, json=data).json()['status'] == 'in_review'

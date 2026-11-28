@@ -212,7 +212,8 @@ export function isPublished(item: { contentVersion: number; publishedVersion?: n
 }
 
 /**
- * Approval covers the words as they stood, so an edit drops it. A published or
+ * Approval covers the words as they stood, so an edit sends an approved guide
+ * back to in review, the queue of guides waiting for approval. A published or
  * saved version never changes, so the first edit to one starts the next version.
  * The Studio shows both the moment the editor types; the backend does the same on save.
  */
@@ -223,7 +224,7 @@ export function withEditReset(guide: GuideDetail): GuideDetail {
   const next = guide.versionFixed ? (guide.nextFreeVersion ?? guide.contentVersion + 1) : guide.contentVersion
   return {
     ...guide,
-    status: approved ? "draft" : guide.status,
+    status: approved ? "in_review" : guide.status,
     contentVersion: next,
     nextFreeVersion: guide.versionFixed ? next + 1 : guide.nextFreeVersion,
     versionFixed: false,

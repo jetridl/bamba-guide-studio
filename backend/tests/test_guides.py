@@ -508,7 +508,7 @@ def test_editing_a_page_drops_the_approval(client: TestClient) -> None:
 
     assert client.patch(f"/api/pages/{page['id']}", json={"title": "A new title"}).status_code == 200
 
-    assert _status(client, imported["id"]) == "draft"
+    assert _status(client, imported["id"]) == "in_review"
     assert client.get(f"/api/guides/{imported['id']}/export").status_code == 409
 
 
@@ -528,7 +528,7 @@ def test_editing_an_exported_guide_drops_the_approval(client: TestClient) -> Non
 
     client.patch(f"/api/guides/{imported['id']}", json={"title": "The Tyger, revised"})
 
-    assert _status(client, imported["id"]) == "draft"
+    assert _status(client, imported["id"]) == "in_review"
 
 
 EDITS = {
@@ -556,7 +556,7 @@ def test_every_edit_drops_the_approval(client: TestClient, edit: str) -> None:
     response = EDITS[edit](client, imported)
 
     assert response.status_code in {200, 204}, response.text
-    assert _status(client, imported["id"]) == "draft"
+    assert _status(client, imported["id"]) == "in_review"
 
 
 def test_reordering_pages_drops_the_approval(client: TestClient) -> None:
@@ -572,7 +572,7 @@ def test_reordering_pages_drops_the_approval(client: TestClient) -> None:
     )
 
     assert response.status_code == 200
-    assert _status(client, imported["id"]) == "draft"
+    assert _status(client, imported["id"]) == "in_review"
 
 
 def test_an_edit_that_changes_nothing_keeps_the_approval(client: TestClient) -> None:
@@ -633,4 +633,16 @@ def test_accepting_a_suggestion_drops_the_approval(client: TestClient) -> None:
 
     assert client.post(f"/api/review-comments/{comment['id']}/accept").status_code == 200
 
+    assert _status(client, imported["id"]) == "in_review"
+
+
+def test_an_edit_keeps_a_draft_or_a_guide_in_review(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+    page = imported["sessions"][0]["pages"][0]
+
+    client.patch(f"/api/pages/{page['id']}", json={"title": "A draft edit"})
     assert _status(client, imported["id"]) == "draft"
+
+    client.post(f"/api/guides/{imported['id']}/mark-in-review")
+    client.patch(f"/api/pages/{page['id']}", json={"title": "An edit in review"})
+    assert _status(client, imported["id"]) == "in_review"

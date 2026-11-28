@@ -89,7 +89,7 @@ def test_studio_edits_do_not_clash_with_the_file(setup) -> None:
             "poems": [{"poemId": poem_id, "note": ["A new note."]}]}
     saved = client.put(f"/api/journeys/{journey['id']}", json=data).json()
     # The published version 1 is fixed, so the change starts version 2 by itself.
-    assert (saved["version"], saved["status"], saved["versionFixed"]) == (2, "draft", False)
+    assert (saved["version"], saved["status"], saved["versionFixed"]) == (2, "in_review", False)
 
     result = client.post("/api/journeys/refresh").json()
 
@@ -107,7 +107,7 @@ def test_older_version_comes_back_under_the_next_number(setup) -> None:
     assert response.status_code == 200, response.text
     restored = response.json()
     # A new version: it needs approval before it is published.
-    assert (restored["version"], restored["title"], restored["status"]) == (4, "Images of light", "draft")
+    assert (restored["version"], restored["title"], restored["status"]) == (4, "Images of light", "in_review")
     versions = client.get(f"/api/journeys/{journey['id']}/versions").json()
     assert [item["version"] for item in versions] == [3, 1]
     assert client.post(f"/api/journeys/{journey['id']}/approve").status_code == 200
@@ -127,13 +127,13 @@ def test_a_change_to_a_saved_version_starts_the_next_one(setup) -> None:
                                              "closing", "coverImage")},
             "title": "Changed after version 3", "version": 3, "poems": [{"poemId": poem_id, "note": ["Changed."]}]}
     saved = client.put(f"/api/journeys/{journey['id']}", json=data).json()
-    assert (saved["version"], saved["status"]) == (4, "draft")
+    assert (saved["version"], saved["status"]) == (4, "in_review")
 
     response = client.post(f"/api/journeys/{journey['id']}/versions/1/restore")
 
     # The changes are kept as version 4 first, and version 1 comes back as 5.
     assert response.status_code == 200, response.text
-    assert (response.json()["version"], response.json()["status"]) == (5, "draft")
+    assert (response.json()["version"], response.json()["status"]) == (5, "in_review")
     versions = client.get(f"/api/journeys/{journey['id']}/versions").json()
     assert [(item["version"], item["title"]) for item in versions][:2] == [(4, "Changed after version 3"),
                                                                           (3, "Images of light, revised")]

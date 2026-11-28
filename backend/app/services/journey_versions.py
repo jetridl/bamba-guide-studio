@@ -4,12 +4,12 @@ The Journey row is Studio's editable copy. Each JourneyVersion row is a
 read-only copy of one version's journey.json content. Refresh and Publish add
 versions. The editable copy always has the highest version number: when Refresh
 adds a higher version, it becomes the editable copy. "Use as latest" copies an
-older version back under the next free number, as a draft. Both keep the
+older version back under the next free number, in review. Both keep the
 editable copy as a version of its own first.
 
 A published or saved version is fixed. The editor never sets a version number:
 the first saved change to a fixed version moves the editable copy to the next
-free number, as a draft that needs approval before it can be published. The
+free number, which needs approval before it can be published. The
 only other way to a new number is a journey.json file with that version and Refresh.
 """
 
@@ -148,10 +148,10 @@ def keep_editable_copy(db: Session, journey: Journey) -> None:
         record_version(db, journey)
     elif not same_content(own.payload_json, payload(journey)):
         # Only older data gets here: a save moves a fixed version to the next number.
-        # Keep the changes under the next free number, as a draft.
+        # Keep the changes under the next free number, back in review.
         journey.version = next_free_version(db, journey)
         if journey.status in PUBLISHED_STATUSES:
-            journey.status = "draft"
+            journey.status = "in_review"
         record_version(db, journey)
 
 
@@ -187,7 +187,7 @@ def restore_version(db: Session, journey: Journey, number: int) -> None:
     """Make a saved version the editable copy. The editable copy is kept as a version first.
 
     The editable copy always has the highest number, so an older version comes
-    back under the next free number, as a draft: it needs approval before it is
+    back under the next free number, in review: it needs approval before it is
     published again.
     """
     row = saved_versions(db, journey).get(number)
@@ -198,8 +198,8 @@ def restore_version(db: Session, journey: Journey, number: int) -> None:
     journey.status = published_status(db, journey, row.status)
     if number < highest:
         journey.version = next_free_version(db, journey, highest)
-        # A new version: approval covers one version, so it starts as a draft.
-        journey.status = "draft"
+        # A new version: approval covers one version, so it waits in review.
+        journey.status = "in_review"
     elif row.status == "exported" and journey.status == "approved":
         journey.status = "exported"
     db.commit()

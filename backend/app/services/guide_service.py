@@ -26,9 +26,10 @@ def guide_query():
     )
 
 
-# Approval covers the words as they stood. Any change to the content drops the
-# working copy back to draft, so an editor approves it again before the Studio
-# exports or publishes it. A published or saved version is fixed: the first
+# Approval covers the words as they stood. Any change to the content sends an
+# approved working copy back to in_review, the queue of guides waiting for
+# approval, so it is approved again before the Studio exports or publishes it.
+# A draft stays a draft and a guide in review stays in review. A published or saved version is fixed: the first
 # change to it moves the working copy to the next version number by itself.
 # The editor never sets the number.
 APPROVED_STATUSES = {"approved", "exported"}
@@ -42,7 +43,7 @@ def mark_edited(guide: Guide) -> None:
     """Record a real content change to the working copy.
 
     A fixed (published or saved) version moves to the next version number, and
-    an approved copy drops back to draft, so it is approved again before publishing.
+    an approved copy goes back to in review, so it is approved again before publishing.
     """
     from app.services.guide_versions import start_next_version
 
@@ -52,7 +53,7 @@ def mark_edited(guide: Guide) -> None:
     if db is not None:
         start_next_version(db, guide)
     if guide.status in APPROVED_STATUSES:
-        guide.status = "draft"
+        guide.status = "in_review"
 
 
 def get_guide_or_404(db: Session, guide_id: uuid.UUID) -> Guide:
@@ -165,7 +166,7 @@ def restore_latest_from_version(db: Session, guide: Guide) -> dict[str, Any]:
     """Make a saved version the working copy. The working copy is saved first, so nothing is lost.
 
     The working copy always has the highest version number. An older version
-    comes back under the next free number, as a draft: it needs approval before
+    comes back under the next free number, in review: it needs approval before
     it is published again.
     """
     from app.services.guide_versions import highest_version, keep_working_copy, next_free_version
@@ -183,8 +184,8 @@ def restore_latest_from_version(db: Session, guide: Guide) -> dict[str, Any]:
     copy_guide_contents(db, source=guide, target=latest)
     if guide.version < highest:
         latest.content_version = next_free_version(db, latest, highest)
-        # A new version: approval covers one version, so it starts as a draft.
-        latest.status = "draft"
+        # A new version: approval covers one version, so it waits in review.
+        latest.status = "in_review"
     db.commit()
     db.refresh(latest)
     return guide_to_dict(latest)

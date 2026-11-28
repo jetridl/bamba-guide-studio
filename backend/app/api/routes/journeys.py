@@ -59,7 +59,11 @@ VERSION_IS_AUTOMATIC = (
 
 
 def save(db: Session, journey: Journey, data: JourneyInput) -> dict[str, Any]:
-    """Save the editable copy. A real change to a fixed version moves it to the next number, as a draft."""
+    """Save the editable copy. A real change to a fixed version moves it to the next number.
+
+    A real change also sends an approved Journey back to in review, the queue of
+    work waiting for approval. A draft stays a draft and a Journey in review stays in review.
+    """
     if journey.external_id and journey.external_id != data.externalId:
         raise HTTPException(status_code=409, detail="Journey IDs stay unchanged after creation.")
     creating = journey.version is None
@@ -99,7 +103,8 @@ def save(db: Session, journey: Journey, data: JourneyInput) -> dict[str, Any]:
         if is_fixed(db, journey):
             journey.version = next_free_version(db, journey)
         # Approval covers the words as they stood.
-        journey.status = "draft"
+        if journey.status in {"approved", "exported"}:
+            journey.status = "in_review"
     db.add(journey)
     db.commit()
     return detail(get_journey(db, journey.id))

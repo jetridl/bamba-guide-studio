@@ -80,7 +80,7 @@ def test_publish_existing_guide_updates_its_folder_and_replaces_its_draft(
     guide_id = _import_and_approve(client, source)
     # The edit moves the published version 1 on to version 2, which needs approval.
     edited = client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"}).json()
-    assert (edited["contentVersion"], edited["status"]) == (2, "draft")
+    assert (edited["contentVersion"], edited["status"]) == (2, "in_review")
     client.post(f"/api/guides/{guide_id}/approve")
 
     result = client.post(f"/api/guides/{guide_id}/publish").json()
@@ -189,7 +189,7 @@ def test_an_edit_to_a_published_guide_starts_the_next_version(client: TestClient
     # Further edits stay on the new version: it is not published yet.
     second = client.patch(f"/api/guides/{guide_id}", json={"description": "Again"}).json()
 
-    assert (first["contentVersion"], first["status"]) == (2, "draft")
+    assert (first["contentVersion"], first["status"]) == (2, "in_review")
     assert (second["contentVersion"], second["versionFixed"]) == (2, False)
     assert plan.read_text() == before
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 409
@@ -207,7 +207,7 @@ def test_a_page_edit_starts_the_next_version_too(client: TestClient, dirs: tuple
     client.patch(f"/api/pages/{page['id']}", json={"bodyMarkdown": "New words."})
 
     guide = client.get(f"/api/guides/{guide_id}").json()
-    assert (guide["contentVersion"], guide["status"]) == (2, "draft")
+    assert (guide["contentVersion"], guide["status"]) == (2, "in_review")
 
 
 def test_published_version_never_goes_down(client: TestClient, dirs: tuple[Path, Path]) -> None:
