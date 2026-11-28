@@ -22,6 +22,12 @@ from app.main import app  # noqa: E402
 from app.services.json_schema import validate_json_schema  # noqa: E402
 
 
+def approve(client: TestClient, url: str):
+    """Approve the way the team does: the writer marks the guide in review, then a second editor approves."""
+    client.post(url.removesuffix("/approve") + "/mark-in-review")
+    return client.post(url)
+
+
 @pytest.fixture
 def client() -> Generator[TestClient, None, None]:
     engine = create_engine(
@@ -143,11 +149,11 @@ def test_game_round_type_is_derived_from_page_type(
     assert response.status_code == 200
     assert response.json()["sessions"][0]["pages"][0]["roundType"] == round_type
     validation = client.get(f"/api/guides/{response.json()['id']}/validate")
-    approve = client.post(f"/api/guides/{response.json()['id']}/approve")
+    approved = approve(client, f"/api/guides/{response.json()['id']}/approve")
     exported = client.get(f"/api/guides/{response.json()['id']}/export").json()
 
     assert validation.status_code == 200
-    assert approve.status_code == 200
+    assert approved.status_code == 200
     exported_page = exported["sessions"][0]["pages"][0]
     assert exported_page["type"] == page_type
     assert exported_page["roundType"] == round_type
@@ -170,10 +176,10 @@ def test_chunk_scoped_page_exports_inherited_session_chunks(client: TestClient, 
 
     imported = client.post("/api/import/guide", json=payload).json()
     validation = client.get(f"/api/guides/{imported['id']}/validate").json()
-    approve = client.post(f"/api/guides/{imported['id']}/approve")
+    approved = approve(client, f"/api/guides/{imported['id']}/approve")
     exported = client.get(f"/api/guides/{imported['id']}/export").json()
 
-    assert approve.status_code == 200
+    assert approved.status_code == 200
     assert imported["sessions"][0]["pages"][0]["chunkIds"] == []
     assert exported["sessions"][0]["chunkIds"] == ["stanza_1_line_1", "stanza_1_line_2"]
     assert exported["sessions"][0]["pages"][0]["chunkIds"] == ["stanza_1_line_1", "stanza_1_line_2"]
@@ -192,7 +198,7 @@ def test_poem_cover_survives_import_and_export(client: TestClient) -> None:
     guide_id = imported.json()["id"]
     assert imported.json()["poem"]["coverImage"] == cover
     assert client.get(f"/api/guides/{guide_id}").json()["poem"]["coverImage"] == cover
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{guide_id}/approve").status_code == 200
     exported = client.get(f"/api/guides/{guide_id}/export").json()
     assert exported["poem"]["coverImage"] == cover
     assert exported["guide"]["version"] == 2
@@ -217,13 +223,13 @@ def test_whole_poem_reading_page_keeps_empty_chunk_ids(client: TestClient) -> No
     page["chunkIds"] = []
     page["bodyMarkdown"] = payload["poem"]["text"]
     exported_v1 = client.post("/api/import/guide", json=payload).json()
-    assert client.post(f"/api/guides/{exported_v1['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{exported_v1['id']}/approve").status_code == 200
     v2 = client.get(f"/api/guides/{exported_v1['id']}/export").json()
     v2["sessions"][0]["pages"][0]["metadata"] = {"scope": "whole_poem"}
     v2["sessions"][0]["pages"][0]["chunkIds"] = []
 
     imported = client.post("/api/import/guide", json=v2).json()
-    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{imported['id']}/approve").status_code == 200
     exported = client.get(f"/api/guides/{imported['id']}/export").json()
 
     assert exported["sessions"][0]["pages"][0]["chunkIds"] == []
@@ -245,7 +251,7 @@ def test_page_types_the_app_cannot_render_block_export(client: TestClient, page_
         issue["code"] == "page_type_not_supported_by_app" and issue["severity"] == "blocking"
         for issue in validation["issues"]
     )
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 409
+    assert approve(client, f"/api/guides/{guide_id}/approve").status_code == 409
     assert client.get(f"/api/guides/{guide_id}/export").status_code == 409
 
 
@@ -256,7 +262,7 @@ def test_first_word_game_exports_with_first_word_round(client: TestClient) -> No
     client.patch(f"/api/sessions/{session['id']}", json={"chunkIds": ["stanza_1_line_1"]})
     client.patch(f"/api/pages/{page['id']}", json={"type": "first_word_game", "bodyMarkdown": None})
 
-    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{imported['id']}/approve").status_code == 200
     exported_page = client.get(f"/api/guides/{imported['id']}/export").json()["sessions"][0]["pages"][0]
 
     assert exported_page["type"] == "first_word_game"
@@ -282,7 +288,7 @@ def test_app_format_v2_guide_round_trips_structure(client: TestClient) -> None:
 
     imported = client.post("/api/import/guide", json=source)
     assert imported.status_code == 200, imported.text
-    assert client.post(f"/api/guides/{imported.json()['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{imported.json()['id']}/approve").status_code == 200
     exported = client.get(f"/api/guides/{imported.json()['id']}/export").json()
 
     assert validate_json_schema(exported, "guided-plan.schema.json") == []
@@ -324,7 +330,7 @@ def test_full_chunk_typing_invalid_chunks_block_export(
         issue["code"] == expected_code and issue["severity"] == "blocking"
         for issue in validation["issues"]
     )
-    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 409
+    assert approve(client, f"/api/guides/{imported['id']}/approve").status_code == 409
     assert client.get(f"/api/guides/{imported['id']}/export").status_code == 409
 
 
@@ -384,11 +390,11 @@ def test_reflection_pages_use_prompt_not_body_markdown(client: TestClient) -> No
 
     response = client.post("/api/import/guide", json=payload)
     validation = client.get(f"/api/guides/{response.json()['id']}/validate").json()
-    approve = client.post(f"/api/guides/{response.json()['id']}/approve")
+    approved = approve(client, f"/api/guides/{response.json()['id']}/approve")
     exported = client.get(f"/api/guides/{response.json()['id']}/export").json()
 
     assert response.status_code == 200
-    assert approve.status_code == 200
+    assert approved.status_code == 200
     assert exported["sessions"][0]["pages"][0]["prompt"] == "What image from these lines stayed with you?"
     assert exported["sessions"][0]["pages"][0]["bodyMarkdown"] is None
     assert not [
@@ -450,7 +456,7 @@ def test_chunks_are_ordered_by_section_then_chunk_order(client: TestClient) -> N
 def test_approve_and_export_round_trip_marks_exported(client: TestClient) -> None:
     imported = client.post("/api/import/guide", json=load_example()).json()
 
-    approve_response = client.post(f"/api/guides/{imported['id']}/approve")
+    approve_response = approve(client, f"/api/guides/{imported['id']}/approve")
     assert approve_response.status_code == 200
 
     export_response = client.get(f"/api/guides/{imported['id']}/export")
@@ -485,7 +491,7 @@ def test_open_blocking_review_comment_blocks_approval(client: TestClient) -> Non
     }
 
     review_response = client.post("/api/import/review", json=review)
-    approve_response = client.post(f"/api/guides/{imported['id']}/approve")
+    approve_response = approve(client, f"/api/guides/{imported['id']}/approve")
 
     assert review_response.status_code == 200
     assert approve_response.status_code == 409
@@ -494,7 +500,7 @@ def test_open_blocking_review_comment_blocks_approval(client: TestClient) -> Non
 def _approved_guide(client: TestClient) -> dict:
     """An imported guide, approved, with its first session and page."""
     imported = client.post("/api/import/guide", json=load_example()).json()
-    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{imported['id']}/approve").status_code == 200
     return imported
 
 
@@ -517,7 +523,7 @@ def test_an_edited_guide_exports_again_after_a_second_approval(client: TestClien
     page = imported["sessions"][0]["pages"][0]
     client.patch(f"/api/pages/{page['id']}", json={"title": "A new title"})
 
-    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{imported['id']}/approve").status_code == 200
     assert client.get(f"/api/guides/{imported['id']}/export").status_code == 200
 
 
@@ -563,7 +569,7 @@ def test_reordering_pages_drops_the_approval(client: TestClient) -> None:
     imported = client.post("/api/import/guide", json=load_example()).json()
     session_id = imported["sessions"][0]["id"]
     assert client.post(f"/api/pages/{imported['sessions'][0]['pages'][0]['id']}/duplicate").status_code == 200
-    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{imported['id']}/approve").status_code == 200
     pages = client.get(f"/api/guides/{imported['id']}").json()["sessions"][0]["pages"]
 
     response = client.post(
@@ -646,3 +652,73 @@ def test_an_edit_keeps_a_draft_or_a_guide_in_review(client: TestClient) -> None:
     client.post(f"/api/guides/{imported['id']}/mark-in-review")
     client.patch(f"/api/pages/{page['id']}", json={"title": "An edit in review"})
     assert _status(client, imported["id"]) == "in_review"
+
+
+def _review(severity: str = "suggestion", comment_id: str = "note_1") -> dict:
+    return {
+        "schemaVersion": 1,
+        "guideId": "the_tyger_guide_v1",
+        "reviewer": "second editor",
+        "summary": "Notes from the second editor.",
+        "comments": [
+            {
+                "id": comment_id,
+                "targetType": "page",
+                "targetId": "day1_page1",
+                "field": "title",
+                "severity": severity,
+                "category": "clarity",
+                "comment": "This title could be warmer.",
+            }
+        ],
+    }
+
+
+def test_approval_needs_the_in_review_step(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+
+    refused = client.post(f"/api/guides/{imported['id']}/approve")
+
+    assert refused.status_code == 409 and "Mark the guide in review first" in refused.json()["detail"]
+    assert _status(client, imported["id"]) == "draft"
+    assert client.post(f"/api/guides/{imported['id']}/mark-in-review").json()["status"] == "in_review"
+    assert client.post(f"/api/guides/{imported['id']}/approve").json()["status"] == "approved"
+
+
+def test_approval_needs_every_review_note_closed(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+    client.post(f"/api/guides/{imported['id']}/mark-in-review")
+    # Even a suggestion blocks approval until someone closes it.
+    first = client.post("/api/import/review", json=_review("suggestion", "note_1")).json()["comments"][0]
+    second = client.post("/api/import/review", json=_review("note", "note_2")).json()["comments"][0]
+
+    refused = client.post(f"/api/guides/{imported['id']}/approve")
+    assert refused.status_code == 409 and "2 notes are still open" in refused.json()["detail"]
+
+    client.patch(f"/api/review-comments/{first['id']}", json={"status": "resolved"})
+    refused = client.post(f"/api/guides/{imported['id']}/approve")
+    assert refused.status_code == 409 and "1 note is still open" in refused.json()["detail"]
+
+    client.patch(f"/api/review-comments/{second['id']}", json={"status": "dismissed"})
+    assert client.post(f"/api/guides/{imported['id']}/approve").json()["status"] == "approved"
+
+
+def test_a_new_review_note_sends_an_approved_guide_back_to_review(client: TestClient) -> None:
+    imported = _approved_guide(client)
+
+    comment = client.post("/api/import/review", json=_review()).json()["comments"][0]
+
+    assert _status(client, imported["id"]) == "in_review"
+    client.patch(f"/api/review-comments/{comment['id']}", json={"status": "resolved"})
+    assert client.post(f"/api/guides/{imported['id']}/approve").json()["status"] == "approved"
+    # Reopening a note does the same.
+    client.patch(f"/api/review-comments/{comment['id']}", json={"status": "open"})
+    assert _status(client, imported["id"]) == "in_review"
+
+
+def test_a_note_on_a_draft_keeps_it_a_draft(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+
+    client.post("/api/import/review", json=_review())
+
+    assert _status(client, imported["id"]) == "draft"

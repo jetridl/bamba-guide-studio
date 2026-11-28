@@ -173,7 +173,7 @@ Bamba app bundle
 2. Click **Refresh** on the guide list. Studio imports every new file in `guides/json/` as a draft. (Or open `/guides/import` and paste the JSON.) See [Versions](#versions) for files of a guide Studio already holds.
 3. Edit sessions and pages in `/guides/:guideId`. Page changes autosave. Every edit drops an approval the guide already had, so approve it again before you publish.
 4. Optional: import review JSON from `/guides/:guideId/reviews/import`, then resolve, dismiss, or accept each comment.
-5. Validate from the bottom bar, and approve when no blocking issues remain.
+5. Validate from the bottom bar. When the draft is ready, the writer clicks **Mark in review**. A second editor then approves it, once no blocking issues remain and every review note is closed (accepted, resolved or dismissed).
 6. Click **Publish**. Studio checks the guide again, writes `exports/curated_poems/<slug>/guided_plan.json`, and replaces your draft `guides/json/<slug>.json` with a link to it. The guide's status becomes `exported`.
 7. On the authoritative Hetzner instance, Studio automatically commits and pushes approved exports to bamba-content. If GitHub is unavailable, exports stay safe and Studio retries automatically. Wait for **Synced** before building.
 8. In the Bamba repo, use `./tool/flutter run` or `./tool/flutter build …`. It fetches latest content and registers new assets automatically. There is no content pin to update. Local development Studios have automatic pushing disabled.
@@ -188,7 +188,9 @@ The guide is already in the Studio, because the backend loads it from `exports/`
 
 - It writes nothing unless the guide is approved and passes validation.
 - An edit drops the approval. The moment you change the words, the structure, or the order of an approved guide, it goes back to `in_review`, **Publish** and **Download JSON** turn off, and the guide waits for a new approval. A draft stays a draft and a guide in review stays in review. Accepting a review suggestion counts as an edit.
-- **In review** is the queue of work waiting for approval: editors mark a guide in review when it is ready, and the **In review** filter on the guide list shows the queue. Studio has no accounts yet, so who may approve and publish is a team agreement for now; approval does not require the in-review step.
+- **Approval has two gates.** A guide can be approved only from **In review**, and only when every review note is closed: accepted, resolved or dismissed. Even a suggestion or a plain note blocks approval until someone closes it.
+- **The team flow:** one editor writes the draft and marks it in review; a second editor approves it; the publisher looks over approved guides for structure and formatting and publishes. The **In review** filter on the guide list is the approval queue, and **Approved** is the publishing queue. Studio has no accounts yet, so who approves and publishes is a team agreement for now: Studio cannot yet tell that the approver is not the writer.
+- **Anything new on an approved guide sends it back to review:** an edit, an accepted suggestion, an imported review with notes, or a reopened note. On a draft these leave it a draft.
 - A published version is fixed. The first edit to a published (or saved) version moves the latest copy to the next free version number, above every saved version and the one in `exports/`. Further edits stay on that number until it is published. The editor shows the new number as you type. You never set the number in Studio; the API refuses a `contentVersion` change.
 - The version in `exports/` never goes down. Publish refuses a version lower than the published one.
 - A version is published once. Publish refuses the version that `exports/` holds already, even with the same content. The Publish sheet shows this, turns off **Publish**, and names the version your next edit starts.
@@ -256,7 +258,7 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 4. Write the Journey Introduction and the optional closing text. Leave a blank line between paragraphs.
 5. Add poems. Only poems with an approved or exported guide can be added; the API refuses any other poem. Drag poems, or use **Up** and **Down**, to set the order. Write a Journey Note for each poem.
 6. Save. The Validation panel lists what still blocks approval, for example a missing note or a cover without a description.
-7. Mark in review, then approve.
+7. Mark in review. A second editor then approves it: Studio approves a Journey only from **In review**.
 8. Click **Publish**. Studio checks the Journey again and refuses to publish when:
    - a poem's guide is not published to `exports/curated_poems/` yet (the app hides a Journey with a poem it does not bundle),
    - the cover image is not in `guides/journeys/<journey_id>/`,

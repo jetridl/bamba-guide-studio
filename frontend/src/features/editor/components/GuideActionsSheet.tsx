@@ -80,7 +80,7 @@ export function GuideActionsSheet({
       key: "mark-in-review",
       icon: Eye,
       title: "Mark in review",
-      description: "Say that the guide is waiting for notes",
+      description: "Hand it over: a second editor approves it",
       disabled: guide.status !== "draft",
       disabledHint: guide.status === "draft" ? undefined : "Only a draft can go into review",
       onSelect: () => {

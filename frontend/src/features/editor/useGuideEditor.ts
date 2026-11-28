@@ -250,8 +250,9 @@ export function useGuideEditor(guideId: string) {
     [comments, guide, validation],
   )
   const ready = checks.length > 0 && checks.every((check) => check.ok)
+  // One editor writes and marks the guide in review; a second editor approves it.
   const canApprove = Boolean(
-    guide && !readOnly && guide.status !== "approved" && guide.status !== "exported" &&
+    guide && !readOnly && guide.status === "in_review" &&
       checks.filter((check) => check.key !== "approved").every((check) => check.ok),
   )
 

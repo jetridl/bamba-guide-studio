@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from test_guides import ROOT, client, load_example  # noqa: F401
+from test_guides import ROOT, client, load_example, approve  # noqa: F401
 
 from app.core.config import settings
 from app.services import content_repository as publisher
@@ -99,7 +99,7 @@ def test_publish_api_keeps_saved_export_when_remote_is_unavailable(
     shutil.rmtree(exports)
     monkeypatch.setattr(settings, "content_repository", str(remote / "unavailable"))
     guide_id = client.post("/api/import/guide", json=load_example()).json()["id"]
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{guide_id}/approve").status_code == 200
     response = client.post(f"/api/guides/{guide_id}/publish")
     assert response.status_code == 200, response.text
     assert response.json()["sync"]["state"] == "pending"
@@ -116,7 +116,7 @@ def test_publish_api_pushes_before_returning(
     remote, exports = repository
     shutil.rmtree(exports)
     guide_id = client.post("/api/import/guide", json=load_example()).json()["id"]
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{guide_id}/approve").status_code == 200
 
     response = client.post(f"/api/guides/{guide_id}/publish")
 

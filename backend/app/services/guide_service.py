@@ -39,6 +39,12 @@ APPROVED_STATUSES = {"approved", "exported"}
 ASSIGNABLE_STATUSES = {"draft", "in_review"}
 
 
+def back_to_review(guide: Guide) -> None:
+    """Send an approved working copy back to the approval queue (a new note, for example)."""
+    if guide.version == 0 and guide.status in APPROVED_STATUSES:
+        guide.status = "in_review"
+
+
 def mark_edited(guide: Guide) -> None:
     """Record a real content change to the working copy.
 
@@ -130,21 +136,48 @@ def patch_guide(db: Session, guide: Guide, patch: GuidePatch) -> dict[str, Any]:
 
 def mark_in_review(db: Session, guide: Guide) -> dict[str, Any]:
     _ensure_editable_guide(guide)
+    if guide.status == "exported":
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="This version is published and never changes. Edit the guide to start the next version.",
+        )
     guide.status = "in_review"
     db.commit()
     db.refresh(guide)
     return guide_to_dict(guide)
 
 
-def approve_guide(db: Session, guide: Guide) -> dict[str, Any]:
+def approve_guide(db: Session, guide: Guide, *, from_file: bool = False) -> dict[str, Any]:
+    """Approve the working copy.
+
+    One editor writes and marks the guide in review; a second editor approves it.
+    So approval needs the in-review step and every review note closed (accepted,
+    resolved or dismissed). `from_file` approves a file that was approved before
+    Studio loaded it, where only validation applies.
+    """
     _ensure_editable_guide(guide)
+    if guide.status == "exported":
+        # A published, unchanged guide has nothing new to approve.
+        return guide_to_dict(guide)
+    if not from_file:
+        if guide.status != "in_review":
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="Mark the guide in review first. A second editor approves what the writer hands over.",
+            )
+        open_notes = [comment for review in guide.reviews for comment in review.comments if comment.status == "open"]
+        if open_notes:
+            count = len(open_notes)
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail=f"Close every review note first: accept, resolve or dismiss it. "
+                f"{count} {'note is' if count == 1 else 'notes are'} still open.",
+            )
     validation = validate_guide(guide)
     blocking = [issue for issue in validation["issues"] if issue["severity"] == "blocking"]
     if blocking:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail={"message": "Guide has blocking issues.", "issues": blocking})
-    if guide.status != "exported":
-        # A published, unchanged guide stays exported: it has nothing new to approve.
-        guide.status = "approved"
+    guide.status = "approved"
     db.commit()
     db.refresh(guide)
     return guide_to_dict(guide)

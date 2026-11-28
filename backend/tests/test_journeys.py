@@ -1,14 +1,14 @@
 # ruff: noqa: F811
 from __future__ import annotations
 
-from test_guides import client, load_example  # noqa: F401
+from test_guides import client, load_example, approve  # noqa: F401
 
 from app.services.json_schema import validate_json_schema
 
 
 def approved_poem(client):
     guide = client.post('/api/import/guide', json=load_example()).json()
-    assert client.post(f"/api/guides/{guide['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{guide['id']}/approve").status_code == 200
     return guide
 
 
@@ -29,7 +29,7 @@ def test_guide_export_is_v2_and_round_trips_line_identity(client):
     assert exported['chunks'][0]['lineIds']
     assert 'sectionId' not in exported['chunks'][0]
     imported = client.post('/api/import/guide', json=exported).json()
-    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{imported['id']}/approve").status_code == 200
     again = client.get(f"/api/guides/{imported['id']}/export").json()
     assert again['lines'] == exported['lines']
     assert again['chunks'] == exported['chunks']
@@ -44,7 +44,7 @@ def test_journey_editorial_flow_and_version_refresh(client):
     path = f"/api/journeys/{journey['id']}"
     assert client.get(f'{path}/export').status_code == 409
     assert client.post(f'{path}/mark-in-review').json()['status'] == 'in_review'
-    assert client.post(f'{path}/approve').json()['status'] == 'approved'
+    assert approve(client, f'{path}/approve').json()['status'] == 'approved'
     exported = client.get(f'{path}/export')
     assert exported.status_code == 200, exported.text
     assert validate_json_schema(exported.json(), 'journey.schema.json') == []
@@ -54,7 +54,7 @@ def test_journey_editorial_flow_and_version_refresh(client):
     unchanged = client.put(path, json=data).json()
     assert (unchanged['status'], unchanged['version'], unchanged['versionFixed']) == ('exported', 1, True)
     assert client.post(f'{path}/mark-in-review').status_code == 409
-    assert client.post(f'{path}/approve').json()['status'] == 'exported'
+    assert approve(client, f'{path}/approve').json()['status'] == 'exported'
     # The editor cannot set the number.
     assert client.put(path, json={**data, 'version': 2}).status_code == 409
     data['poems'][0]['note'] = ['A revised note.']
@@ -74,7 +74,7 @@ def test_unchanged_save_keeps_the_approval(client):
     data = journey_input(guide['poem']['externalId'])
     journey = client.post('/api/journeys', json=data).json()
     path = f"/api/journeys/{journey['id']}"
-    assert client.post(f'{path}/approve').json()['status'] == 'approved'
+    assert approve(client, f'{path}/approve').json()['status'] == 'approved'
 
     assert client.put(path, json=data).json()['status'] == 'approved'
     data['title'] = 'Images of light, revised'
@@ -94,7 +94,7 @@ def test_journey_revalidates_guide_status_at_export(client):
     guide = approved_poem(client)
     journey = client.post('/api/journeys', json=journey_input(guide['poem']['externalId'])).json()
     path = f"/api/journeys/{journey['id']}"
-    assert client.post(f'{path}/approve').status_code == 200
+    assert approve(client, f'{path}/approve').status_code == 200
     assert client.patch(f"/api/guides/{guide['id']}", json={'status': 'draft'}).status_code == 200
     assert client.get(f'{path}/export').status_code == 409
     assert client.get(f'{path}/validate').json()['issues'][0]['code'] == 'poem_without_approved_guide'
@@ -118,7 +118,7 @@ def test_v2_page_metadata_and_timing_are_preserved(client):
     page['metadata'] = {'editorial': 'keep'}
     page['estimatedSeconds'] = 45
     imported = client.post('/api/import/guide', json=exported).json()
-    client.post(f"/api/guides/{imported['id']}/approve")
+    approve(client, f"/api/guides/{imported['id']}/approve")
     result = client.get(f"/api/guides/{imported['id']}/export").json()
     assert result['sessions'][0]['pages'][0]['metadata'] == {'editorial': 'keep'}
     assert result['sessions'][0]['pages'][0]['estimatedSeconds'] == 45
@@ -132,7 +132,7 @@ def test_journey_order_notes_and_removal_are_saved(client):
     second_payload['guide']['id'] = 'second-guide'
     second_payload['guide']['poemId'] = 'second-poem'
     second = client.post('/api/import/guide', json=second_payload).json()
-    assert client.post(f"/api/guides/{second['id']}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{second['id']}/approve").status_code == 200
     data = journey_input(first['poem']['externalId'])
     data['poems'].append({'poemId': 'second-poem', 'note': ['A second image.']})
     created = client.post('/api/journeys', json=data).json()
@@ -157,12 +157,12 @@ def test_journey_draft_saves_gaps_but_validation_blocks_them(client):
     path = f"/api/journeys/{created.json()['id']}"
     codes = {issue['code'] for issue in client.get(f'{path}/validate').json()['issues']}
     assert codes == {'missing_introduction', 'missing_note'}
-    assert client.post(f'{path}/approve').status_code == 409
+    assert approve(client, f'{path}/approve').status_code == 409
 
     data['introduction'] = ['Listen for the light.']
     data['poems'][0]['note'] = ['Begin with the burning image.']
     assert client.put(path, json=data).status_code == 200
-    assert client.post(f'{path}/approve').status_code == 200
+    assert approve(client, f'{path}/approve').status_code == 200
     exported = client.get(f'{path}/export').json()
     assert 'closing' not in exported['journey']
     assert validate_json_schema(exported, 'journey.schema.json') == []
@@ -182,7 +182,7 @@ def test_journey_cover_image_round_trips_into_export(client):
     journey = client.post('/api/journeys', json=data).json()
     assert journey['coverImage'] == {'path': 'cover.jpg', 'alt': 'A lantern on a winter path'}
     path = f"/api/journeys/{journey['id']}"
-    assert client.post(f'{path}/approve').status_code == 200
+    assert approve(client, f'{path}/approve').status_code == 200
     exported = client.get(f'{path}/export').json()
     assert validate_json_schema(exported, 'journey.schema.json') == []
     assert exported['journey']['coverImage'] == {'path': 'cover.jpg', 'alt': 'A lantern on a winter path'}
@@ -196,7 +196,7 @@ def test_journey_without_cover_saves_but_cannot_be_approved(client):
     assert journey['coverImage'] is None
     path = f"/api/journeys/{journey['id']}"
     assert [issue['code'] for issue in client.get(f'{path}/validate').json()['issues']] == ['missing_cover']
-    assert client.post(f'{path}/approve').status_code == 409
+    assert approve(client, f'{path}/approve').status_code == 409
     assert client.get(f'{path}/export').status_code == 409
 
 
@@ -218,7 +218,7 @@ def test_journey_cover_gaps_save_but_block_approval(client):
         assert saved.status_code == 200, saved.text
         result = client.get(f'{path}/validate').json()
         assert {issue['code'] for issue in result['issues']} == codes, cover
-        assert client.post(f'{path}/approve').status_code == 409
+        assert approve(client, f'{path}/approve').status_code == 409
 
 
 def write_journey(folder, journey_id, poem_ids, status='draft'):
@@ -297,3 +297,15 @@ def test_a_change_keeps_a_draft_or_a_journey_in_review(client):
     assert client.post(f'{path}/mark-in-review').json()['status'] == 'in_review'
     data['title'] = 'A change in review'
     assert client.put(path, json=data).json()['status'] == 'in_review'
+
+
+def test_journey_approval_needs_the_in_review_step(client):
+    guide = approved_poem(client)
+    journey = client.post('/api/journeys', json=journey_input(guide['poem']['externalId'])).json()
+    path = f"/api/journeys/{journey['id']}"
+
+    refused = client.post(f'{path}/approve')
+
+    assert refused.status_code == 409 and 'Mark the Journey in review first' in refused.json()['detail']
+    assert client.post(f'{path}/mark-in-review').json()['status'] == 'in_review'
+    assert client.post(f'{path}/approve').json()['status'] == 'approved'

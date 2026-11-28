@@ -597,8 +597,8 @@ export function JourneyEditorPage() {
                 key: "review",
                 icon: Eye,
                 title: "Mark in review",
-                description: "Say that the Journey is waiting for notes",
-                disabled: busy || dirty || lockedByExport || !saved,
+                description: "Hand it over: a second editor approves it",
+                disabled: busy || dirty || lockedByExport || !saved || journey.status !== "draft",
                 disabledHint: dirty ? "Save your changes first" : undefined,
                 onSelect: () => {
                   setMenuOpen(false)
@@ -609,9 +609,13 @@ export function JourneyEditorPage() {
                 key: "approve",
                 icon: Check,
                 title: "Approve",
-                description: "Mark the Journey ready to publish",
-                disabled: busy || dirty || lockedByExport || !saved,
-                disabledHint: dirty ? "Save your changes first" : undefined,
+                description: "A second editor approves the Journey once it is in review",
+                disabled: busy || dirty || lockedByExport || !saved || journey.status !== "in_review",
+                disabledHint: dirty
+                  ? "Save your changes first"
+                  : journey.status === "draft"
+                    ? "Mark it in review first"
+                    : undefined,
                 onSelect: () => {
                   setMenuOpen(false)
                   void changeStatus("approve")

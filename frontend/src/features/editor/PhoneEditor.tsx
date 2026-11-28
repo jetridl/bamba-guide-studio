@@ -129,7 +129,9 @@ function GuideOverview({
   banners: React.ReactNode
 }) {
   const approved = guide.status === "approved" || guide.status === "exported"
-  const blocked = approved ? !editor.ready : !editor.canApprove
+  // A draft goes into review first; a second editor approves it there.
+  const drafting = !approved && guide.status !== "in_review"
+  const blocked = approved ? !editor.ready : drafting ? false : !editor.canApprove
 
   return (
     <div className="min-h-dvh bg-linear-to-b from-bamba-bg-top to-bamba-bg pb-36 text-bamba-ink">
@@ -203,9 +205,9 @@ function GuideOverview({
           variant="primary"
           size="pinned"
           disabled={blocked || editor.readOnly}
-          onClick={approved ? onOpenPublish : onOpenPublish}
+          onClick={drafting ? editor.markInReview : onOpenPublish}
         >
-          {approved ? "Publish" : "Approve"}
+          {approved ? "Publish" : drafting ? "Mark in review" : "Approve"}
         </ActionButton>
         {blocked ? (
           <p className="mt-2 text-center text-[13px] text-bamba-hint">

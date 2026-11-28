@@ -106,7 +106,7 @@ def _load_guide_files(db: Session, files: list[tuple[str, Path]]) -> LoadReport:
         working = get_guide_or_404(db, uuid.UUID(imported["id"]))
         if payload["guide"].get("status") in PUBLISHED_STATUSES:
             try:
-                approve_guide(db, working)
+                approve_guide(db, working, from_file=True)
             except HTTPException as error:
                 db.rollback()
                 logger.warning("Loaded %s as draft: it does not pass approval (%s).", name, error.detail)

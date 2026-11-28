@@ -161,6 +161,11 @@ export function PublishSheet({
       </div>
 
       <div className="mt-5 flex flex-col gap-2.5">
+        {!approved && guide.status !== "in_review" ? (
+          <p className="text-center text-[13px] leading-relaxed text-bamba-hint">
+            Mark the guide in review from the actions menu. A second editor then approves it.
+          </p>
+        ) : null}
         {!approved ? (
           <ActionButton variant="primary" size="pinned" disabled={!canApprove || readOnly} onClick={onApprove}>
             Approve

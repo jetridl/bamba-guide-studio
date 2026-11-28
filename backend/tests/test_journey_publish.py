@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from test_guides import client  # noqa: F401
+from test_guides import client, approve  # noqa: F401
 from test_journeys import approved_poem, journey_input
 
 from app.core.config import settings
@@ -45,7 +45,7 @@ def approved_journey(client: TestClient, folders: dict[str, Path]) -> tuple[dict
     draft.mkdir()
     (draft / "cover.png").write_bytes(COVER)
     journey = client.post("/api/journeys", json=data).json()
-    assert client.post(f"/api/journeys/{journey['id']}/approve").json()["status"] == "approved"
+    assert approve(client, f"/api/journeys/{journey['id']}/approve").json()["status"] == "approved"
     return journey, data
 
 
@@ -165,7 +165,7 @@ def test_new_version_replaces_the_published_journey(client: TestClient, folders:
     # The change moves the published version 1 on to version 2, which needs approval.
     assert (saved["version"], saved["status"]) == (2, "in_review")
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 409
-    assert client.post(f"/api/journeys/{journey['id']}/approve").status_code == 200
+    assert approve(client, f"/api/journeys/{journey['id']}/approve").status_code == 200
 
     response = client.post(f"/api/journeys/{journey['id']}/publish")
 

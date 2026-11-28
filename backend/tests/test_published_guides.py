@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 import pytest
-from test_guides import client  # noqa: F401
+from test_guides import client, approve  # noqa: F401
 
 from app.services.json_schema import validate_json_schema
 
@@ -25,7 +25,7 @@ def test_published_app_guide_imports_and_preserves_external_ids(client, path):
     imported = client.post('/api/import/guide', json=source)
     assert imported.status_code == 200, imported.text
     guide_id = imported.json()['id']
-    approved = client.post(f'/api/guides/{guide_id}/approve')
+    approved = approve(client, f'/api/guides/{guide_id}/approve')
     assert approved.status_code == 200, approved.text
     response = client.get(f'/api/guides/{guide_id}/export')
     assert response.status_code == 200, response.text

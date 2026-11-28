@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from test_guides import ROOT, client, load_example  # noqa: F401
+from test_guides import ROOT, client, load_example, approve  # noqa: F401
 
 from app.core.config import settings
 from app.services.json_schema import validate_json_schema
@@ -38,7 +38,7 @@ def _import_and_approve(client: TestClient, payload: dict) -> str:
     imported = client.post("/api/import/guide", json=payload)
     assert imported.status_code == 200, imported.text
     guide_id = imported.json()["id"]
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{guide_id}/approve").status_code == 200
     return guide_id
 
 
@@ -81,7 +81,7 @@ def test_publish_existing_guide_updates_its_folder_and_replaces_its_draft(
     # The edit moves the published version 1 on to version 2, which needs approval.
     edited = client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"}).json()
     assert (edited["contentVersion"], edited["status"]) == (2, "in_review")
-    client.post(f"/api/guides/{guide_id}/approve")
+    approve(client, f"/api/guides/{guide_id}/approve")
 
     result = client.post(f"/api/guides/{guide_id}/publish").json()
 
@@ -100,7 +100,7 @@ def test_publish_keeps_a_different_draft_and_warns(client: TestClient, dirs: tup
     guide_id = _import_and_approve(client, load_example())
     folder = client.post(f"/api/guides/{guide_id}/publish").json()["folder"]
     client.patch(f"/api/guides/{guide_id}", json={"title": "A second version"})
-    client.post(f"/api/guides/{guide_id}/approve")
+    approve(client, f"/api/guides/{guide_id}/approve")
     (guides_dir / f"{folder}.json").unlink()
     other = {"guide": {"id": "someone_else"}, "poem": {"id": "another_poem"}}
     (guides_dir / f"{folder}.json").write_text(json.dumps(other))
@@ -173,7 +173,7 @@ def test_published_version_cannot_be_published_again(client: TestClient, dirs: t
     client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
     # The new version needs its own approval.
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 409
-    client.post(f"/api/guides/{guide_id}/approve")
+    approve(client, f"/api/guides/{guide_id}/approve")
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200
     assert client.get(f"/api/guides/{guide_id}").json()["publishedVersion"] == 2
     versions = client.get(f"/api/guides/{guide_id}/versions").json()
@@ -193,7 +193,7 @@ def test_an_edit_to_a_published_guide_starts_the_next_version(client: TestClient
     assert (second["contentVersion"], second["versionFixed"]) == (2, False)
     assert plan.read_text() == before
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 409
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    assert approve(client, f"/api/guides/{guide_id}/approve").status_code == 200
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200
     written = json.loads(plan.read_text())
     assert (written["guide"]["title"], written["guide"]["version"]) == ("The Tyger, revised", 2)
@@ -238,7 +238,7 @@ def test_the_editor_cannot_set_the_version(client: TestClient, dirs: tuple[Path,
 def test_saved_version_cannot_be_published(client: TestClient, dirs: tuple[Path, Path]) -> None:
     guide_id, _ = _publish_tyger(client, dirs)
     client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
-    client.post(f"/api/guides/{guide_id}/approve")
+    approve(client, f"/api/guides/{guide_id}/approve")
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200
     saved = client.get(f"/api/guides/{guide_id}/versions").json()[1]
 
@@ -254,7 +254,7 @@ def test_list_shows_a_newer_unpublished_version(client: TestClient, dirs: tuple[
     assert (summary()["publishedVersion"], summary()["newerVersion"]) == (1, None)
     client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
     assert (summary()["publishedVersion"], summary()["newerVersion"]) == (1, 2)
-    client.post(f"/api/guides/{guide_id}/approve")
+    approve(client, f"/api/guides/{guide_id}/approve")
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200
     assert (summary()["publishedVersion"], summary()["newerVersion"]) == (2, None)
 

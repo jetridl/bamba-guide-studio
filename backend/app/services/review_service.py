@@ -8,7 +8,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.models import Guide, GuidePage, GuideReview, GuideReviewComment, GuideSession
-from app.services.guide_service import mark_edited
+from app.services.guide_service import back_to_review, mark_edited
 from app.services.json_schema import validate_json_schema
 from app.services.serialization import comment_to_dict
 
@@ -63,6 +63,9 @@ def import_review(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
                 status="open",
             )
         )
+    if payload.get("comments"):
+        # New notes on an approved guide: it waits for approval again.
+        back_to_review(guide)
 
     db.commit()
     db.refresh(review)
@@ -79,6 +82,9 @@ def set_comment_status(db: Session, comment_id: uuid.UUID, status_value: str) ->
     comment = db.get(GuideReviewComment, comment_id)
     if comment is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Review comment not found.")
+    if status_value == "open" and comment.status != "open":
+        # A reopened note on an approved guide: it waits for approval again.
+        back_to_review(comment.review.guide)
     comment.status = status_value
     db.commit()
     db.refresh(comment)

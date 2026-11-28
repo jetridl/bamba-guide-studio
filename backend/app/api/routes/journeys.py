@@ -166,6 +166,10 @@ def approve(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, A
     journey = get_journey(db, journey_id)
     if journey.status == "exported":
         return detail(journey)
+    if journey.status != "in_review":
+        # One editor writes and marks the Journey in review; a second editor approves it.
+        raise HTTPException(status_code=409, detail="Mark the Journey in review first. "
+                            "A second editor approves what the writer hands over.")
     result = validation(db, journey)
     if not result["valid"]:
         raise HTTPException(status_code=409, detail=result)

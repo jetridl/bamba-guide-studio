@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from test_guides import client  # noqa: F401
+from test_guides import client, approve  # noqa: F401
 from test_journeys import approved_poem
 
 from app.core.config import settings
@@ -110,7 +110,7 @@ def test_older_version_comes_back_under_the_next_number(setup) -> None:
     assert (restored["version"], restored["title"], restored["status"]) == (4, "Images of light", "in_review")
     versions = client.get(f"/api/journeys/{journey['id']}/versions").json()
     assert [item["version"] for item in versions] == [3, 1]
-    assert client.post(f"/api/journeys/{journey['id']}/approve").status_code == 200
+    assert approve(client, f"/api/journeys/{journey['id']}/approve").status_code == 200
     (drafts / JOURNEY / "cover.png").write_bytes(b"cover")
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 200
     written = json.loads((exports / JOURNEY / "journey.json").read_text())

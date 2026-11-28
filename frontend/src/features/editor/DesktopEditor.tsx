@@ -139,9 +139,14 @@ export function DesktopEditor({
           <ActionButton variant="primary" size="compact" disabled={!editor.ready || editor.readOnly} onClick={onOpenPublish}>
             Publish
           </ActionButton>
-        ) : (
+        ) : guide.status === "in_review" ? (
           <ActionButton variant="primary" size="compact" disabled={!editor.canApprove} onClick={onOpenPublish}>
             Approve
+          </ActionButton>
+        ) : (
+          // The writer hands the draft over; a second editor approves it.
+          <ActionButton variant="primary" size="compact" disabled={editor.readOnly} onClick={editor.markInReview}>
+            Mark in review
           </ActionButton>
         )}
         <IconButton aria-label="More actions" onClick={onOpenActions}>

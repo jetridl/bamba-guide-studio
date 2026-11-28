@@ -165,7 +165,8 @@ export function readinessChecks(
   const schemaIssues = blocking.filter((issue) => SCHEMA_CODES.has(issue.code))
   const commentIssues = blocking.filter((issue) => issue.code === COMMENT_CODE)
   const otherIssues = blocking.filter((issue) => !SCHEMA_CODES.has(issue.code) && issue.code !== COMMENT_CODE)
-  const openBlocking = openComments(comments).filter((comment) => comment.severity === "blocking")
+  // Approval needs every note closed: accepted, resolved or dismissed.
+  const open = openComments(comments)
   const checked = validation !== null
   const approved = guide.status === "approved" || guide.status === "exported"
 
@@ -174,7 +175,11 @@ export function readinessChecks(
       key: "approved",
       label: "Status is approved",
       ok: approved,
-      detail: approved ? undefined : "Approve the guide when the rest is settled",
+      detail: approved
+        ? undefined
+        : guide.status === "in_review"
+          ? "A second editor approves it when the rest is settled"
+          : "Mark it in review, then a second editor approves it",
     },
     {
       key: "schema",
@@ -190,9 +195,9 @@ export function readinessChecks(
     },
     {
       key: "notes",
-      label: "No open blocking notes",
-      ok: checked ? commentIssues.length === 0 && openBlocking.length === 0 : openBlocking.length === 0,
-      detail: openBlocking.length ? `${openBlocking.length} still open` : undefined,
+      label: "Every review note closed",
+      ok: checked ? commentIssues.length === 0 && open.length === 0 : open.length === 0,
+      detail: open.length ? `${open.length} still open` : undefined,
     },
   ]
 }
