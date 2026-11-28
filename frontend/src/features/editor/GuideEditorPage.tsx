@@ -149,7 +149,6 @@ export function GuideEditorPage() {
           setPublishOpen(false)
           void editor.publishGuide()
         }}
-        onRaiseVersion={editor.raiseVersion}
       />
     </>
   )

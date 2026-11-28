@@ -77,8 +77,10 @@ export type GuideDetail = {
   contentVersion: number
   // The version in exports/, or null when the guide is not published.
   publishedVersion?: number | null
-  // The lowest version number no copy of this guide uses yet.
+  // The lowest version number no copy of this guide uses yet, in Studio or exports/.
   nextFreeVersion?: number
+  // Published or saved, so it never changes: the next edit starts nextFreeVersion.
+  versionFixed?: boolean
   status: GuideStatus
   metadata: Record<string, unknown>
   poem: {

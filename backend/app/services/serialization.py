@@ -81,7 +81,7 @@ def comment_to_dict(comment: GuideReviewComment) -> dict[str, Any]:
 
 
 def guide_to_dict(guide: Guide) -> dict[str, Any]:
-    from app.services.guide_versions import next_free_version
+    from app.services.guide_versions import is_fixed, next_free_version
     from app.services.publish_service import published_version
 
     db = object_session(guide)
@@ -102,8 +102,10 @@ def guide_to_dict(guide: Guide) -> dict[str, Any]:
         "versionLabel": "latest" if guide.version == 0 else f"v{guide.version}",
         "contentVersion": guide.content_version,
         "publishedVersion": published_version(guide.external_id),
-        # The number "Raise to N" offers: above the latest copy and every saved version.
+        # The number the next edit moves a fixed version to: above every copy and exports/.
         "nextFreeVersion": next_free_version(db, guide) if db is not None else guide.content_version + 1,
+        # Published or saved: the next edit starts version nextFreeVersion.
+        "versionFixed": is_fixed(db, guide) if db is not None else guide.version > 0,
         "status": guide.status,
         "metadata": guide.metadata_json or {},
         "poem": poem_to_dict(guide.poem),

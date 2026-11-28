@@ -58,7 +58,7 @@ export function ReadinessStrip({
         </span>
         <span className="mt-0.5 block truncate text-[13px] text-bamba-hint">
           {published != null
-            ? "Raise the version to publish a change"
+            ? "Your next edit starts a new version"
             : ready
               ? "All four checks pass"
               : (first?.detail ?? first?.label)}
@@ -102,7 +102,6 @@ export function PublishSheet({
   readOnly,
   onApprove,
   onPublish,
-  onRaiseVersion,
 }: {
   open: boolean
   onOpenChange: (open: boolean) => void
@@ -114,7 +113,6 @@ export function PublishSheet({
   readOnly: boolean
   onApprove: () => void
   onPublish: () => void
-  onRaiseVersion: () => void
 }) {
   const approved = guide.status === "approved" || guide.status === "exported"
   const left = unsettled(checks).length
@@ -126,7 +124,7 @@ export function PublishSheet({
       title={published ? `Version ${guide.contentVersion} is published` : ready ? "Ready to publish" : "Before you publish"}
       description={
         published
-          ? "A version is published once. To publish a change, raise the version first."
+          ? "A published version never changes. Your next edit starts a new version, which you approve and publish in turn."
           : ready
             ? "All four checks pass."
             : `${left} ${left === 1 ? "check is" : "checks are"} still open. Settle them, then approve.`
@@ -147,17 +145,12 @@ export function PublishSheet({
           </span>
           <span className="mt-0.5 block text-[13px] leading-relaxed text-bamba-hint">
             {published
-              ? "Raise the version, approve, and publish the new version."
+              ? `Edit the guide to start version ${guide.nextFreeVersion ?? guide.contentVersion + 1}. Studio numbers versions by itself.`
               : guide.publishedVersion != null
                 ? `Not published yet. exports/ holds version ${guide.publishedVersion}.`
                 : "Not published yet. This is the first version in exports/."}
           </span>
         </span>
-        {!readOnly ? (
-          <ActionButton size="compact" onClick={onRaiseVersion}>
-            Raise to {guide.nextFreeVersion ?? guide.contentVersion + 1}
-          </ActionButton>
-        ) : null}
       </div>
 
       <div className="mt-3 rounded-field bg-bamba-quiet-surface p-3.5">

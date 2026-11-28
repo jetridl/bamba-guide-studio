@@ -5,8 +5,9 @@ Layout (see exports/README.md):
     guides/json/<author-name>--<poem-title>.json                         symlink to it
 
 The folder holds only the newest published version, and its version never goes
-down. A version is published once: to publish a change, raise the version
-first. Each published version is also kept as a saved version.
+down. A version is published once and then fixed: the first edit after it moves
+the guide to the next version, which is approved and published in turn. Each
+published version is also kept as a saved version.
 """
 
 from __future__ import annotations
@@ -81,16 +82,13 @@ def publish_guide(db: Session, guide: Guide, exports_dir: Path, guides_dir: Path
     if isinstance(published, int) and number <= published:
         display = f"exports/curated_poems/{folder}/{PLAN_FILENAME}"
         free = next_free_version(db, guide, published)
-        if number < published:
-            reason = f"{display} holds version {published}, and a published version never goes down."
-        elif comparable(existing) == comparable(payload):
-            reason = f"Version {number} is published already."
+        if comparable(existing) == comparable(payload):
+            detail = (f"Version {number} is published already. Edit the guide to start version {free}, "
+                      "then approve and publish it.")
         else:
-            reason = f"{display} holds version {published} with different content."
-        raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
-            detail=f"{reason} To publish a change, raise the version to {free} first.",
-        )
+            detail = (f"{display} holds version {published}, and a published version is never replaced. "
+                      f"Edit the guide to start version {free}, then approve and publish it.")
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=detail)
     try:
         _write_atomically(plan_path, json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
     except OSError as error:

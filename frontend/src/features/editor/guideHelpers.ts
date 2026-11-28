@@ -212,11 +212,22 @@ export function isPublished(item: { contentVersion: number; publishedVersion?: n
 }
 
 /**
- * Approval covers the words as they stood, so an edit drops it. The Studio
- * shows this the moment the editor types; the backend does the same on save.
+ * Approval covers the words as they stood, so an edit drops it. A published or
+ * saved version never changes, so the first edit to one starts the next version.
+ * The Studio shows both the moment the editor types; the backend does the same on save.
  */
 export function withEditReset(guide: GuideDetail): GuideDetail {
-  return guide.status === "approved" || guide.status === "exported" ? { ...guide, status: "draft" } : guide
+  if (guide.version !== 0) return guide
+  const approved = guide.status === "approved" || guide.status === "exported"
+  if (!approved && !guide.versionFixed) return guide
+  const next = guide.versionFixed ? (guide.nextFreeVersion ?? guide.contentVersion + 1) : guide.contentVersion
+  return {
+    ...guide,
+    status: approved ? "draft" : guide.status,
+    contentVersion: next,
+    nextFreeVersion: guide.versionFixed ? next + 1 : guide.nextFreeVersion,
+    versionFixed: false,
+  }
 }
 
 export function versionName(item: { version: number; contentVersion: number }) {

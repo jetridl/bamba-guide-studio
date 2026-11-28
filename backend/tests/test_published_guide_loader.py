@@ -36,6 +36,14 @@ def db() -> Generator[Session, None, None]:
         session.close()
 
 
+@pytest.fixture(autouse=True)
+def no_live_exports(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Version numbers must not depend on the versions the live catalogue has published."""
+    from app.core.config import settings
+
+    monkeypatch.setattr(settings, "published_guides_dir", tmp_path / "not-published")
+
+
 def _folder(tmp_path: Path, *names: str) -> Path:
     """Start version-flow fixtures at 1 even when the live catalogue advances."""
     for name in names:
@@ -233,19 +241,38 @@ def test_unsaved_changes_keep_the_working_copy(db: Session, tmp_path: Path) -> N
     load_published_guides(db, folder)
     guide_id = json.loads((folder / TYGER / "guided_plan.json").read_text())["guide"]["id"]
     working = _versions(db, guide_id)[0]
+    # Older data: an edit that never moved the guide on from its saved version 1.
     working.description = "Edited in Studio"
     db.commit()
     _write_version(folder, 2, "The Tyger, second edition")
 
     report = load_published_guides(db, folder)
 
-    assert report.loaded == [f"{TYGER} (version 2)"] and report.failed == [TYGER]
-    assert "Raise its version to 3" in report.problems[0]
+    # The changes are kept under the next free number, and the file as version 2.
+    assert report.loaded == [f"{TYGER} (version 2)"] and report.failed == []
     versions = _versions(db, guide_id)
-    assert sorted(versions) == [0, 1, 2] and versions[2].title == "The Tyger, second edition"
-    assert (versions[0].description, versions[0].content_version) == ("Edited in Studio", 1)
-    # "Raise to N" offers a number no copy uses yet.
-    assert guide_to_dict(versions[0])["nextFreeVersion"] == 3
+    assert sorted(versions) == [0, 1, 2, 3] and versions[2].title == "The Tyger, second edition"
+    assert (versions[0].description, versions[0].content_version, versions[0].status) == (
+        "Edited in Studio", 3, "draft")
+    assert versions[3].description == "Edited in Studio"
+    assert guide_to_dict(versions[0])["nextFreeVersion"] == 4
+
+
+def test_an_edit_after_refresh_starts_the_next_version(db: Session, tmp_path: Path) -> None:
+    from app.schemas.api import GuidePatch
+    from app.services.guide_service import get_guide_or_404, patch_guide
+
+    folder = _folder(tmp_path, TYGER)
+    load_published_guides(db, folder)
+    guide_id = json.loads((folder / TYGER / "guided_plan.json").read_text())["guide"]["id"]
+    working = _versions(db, guide_id)[0]
+    assert guide_to_dict(working)["versionFixed"] is True
+
+    edited = patch_guide(db, get_guide_or_404(db, working.id), GuidePatch(description="Edited in Studio"))
+
+    assert (edited["contentVersion"], edited["status"], edited["versionFixed"]) == (2, "draft", False)
+    # Version 1 is unchanged.
+    assert _versions(db, guide_id)[1].description != "Edited in Studio"
 
 
 def test_same_version_with_other_content_is_a_problem(db: Session, tmp_path: Path) -> None:
@@ -315,27 +342,33 @@ def test_older_version_comes_back_under_the_next_number(db: Session, tmp_path: P
 
     restored = restore_latest_from_version(db, get_guide_or_404(db, versions[1].id))
 
-    assert (restored["title"], restored["contentVersion"], restored["status"]) == (first_title, 3, "approved")
+    # A new version: it needs approval before it is published.
+    assert (restored["title"], restored["contentVersion"], restored["status"]) == (first_title, 3, "draft")
     versions = _versions(db, payload["guide"]["id"])
     assert sorted(versions) == [0, 1, 2] and versions[2].title == "The Tyger, second edition"
 
 
-def test_unsaved_changes_block_a_restore(db: Session, tmp_path: Path) -> None:
-    from fastapi import HTTPException
-
-    from app.services.guide_service import get_guide_or_404, restore_latest_from_version, save_guide_version
+def test_edits_are_kept_as_their_own_version_before_a_restore(db: Session, tmp_path: Path) -> None:
+    from app.schemas.api import GuidePatch
+    from app.services.guide_service import (
+        get_guide_or_404,
+        patch_guide,
+        restore_latest_from_version,
+        save_guide_version,
+    )
 
     folder = _folder(tmp_path, TYGER)
     load_published_guides(db, folder)
     payload = _write_version(folder, 2, "The Tyger, second edition")
     load_published_guides(db, folder)
-    working = _versions(db, payload["guide"]["id"])[0]
+    guide_id = payload["guide"]["id"]
+    working = _versions(db, guide_id)[0]
     save_guide_version(db, get_guide_or_404(db, working.id))
-    working.title = "Edited after the save"
-    db.commit()
+    edited = patch_guide(db, get_guide_or_404(db, working.id), GuidePatch(title="Edited after the save"))
+    assert edited["contentVersion"] == 3
 
-    with pytest.raises(HTTPException) as error:
-        restore_latest_from_version(db, get_guide_or_404(db, _versions(db, payload["guide"]["id"])[1].id))
+    restored = restore_latest_from_version(db, get_guide_or_404(db, _versions(db, guide_id)[1].id))
 
-    assert error.value.status_code == 409 and "Raise its version to 3" in error.value.detail
-    assert _versions(db, payload["guide"]["id"])[0].title == "Edited after the save"
+    versions = _versions(db, guide_id)
+    assert sorted(versions) == [0, 1, 2, 3] and versions[3].title == "Edited after the save"
+    assert (restored["contentVersion"], restored["status"]) == (4, "draft")

@@ -182,15 +182,16 @@ Bamba app bundle
 
 ### A guide the app already ships
 
-The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there. In the Publish sheet, click **Raise to N** so the changed guide gets a new version number. Then approve and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Studio pushes automatically; the next app build fetches the update.
+The guide is already in the Studio, because the backend loads it from `exports/` (see below). Edit it there. The first edit moves the guide to the next version number by itself, as a draft. Then approve and click **Publish**. Studio finds the folder that holds the same guide ID (or poem ID) and replaces its `guided_plan.json`. Studio pushes automatically; the next app build fetches the update.
 
 ### What Publish protects
 
 - It writes nothing unless the guide is approved and passes validation.
-- An edit drops the approval. The moment you change the words, the structure, or the order, the guide goes back to `draft`, **Publish** and **Download JSON** turn off, and the guide waits for a new approval. Accepting a review suggestion counts as an edit. Raising the version does not: the version is the first step of publishing a change.
+- An edit drops the approval. The moment you change the words, the structure, or the order, the guide goes back to `draft`, **Publish** and **Download JSON** turn off, and the guide waits for a new approval. Accepting a review suggestion counts as an edit.
+- A published version is fixed. The first edit to a published (or saved) version moves the latest copy to the next free version number, above every saved version and the one in `exports/`. Further edits stay on that number until it is published. The editor shows the new number as you type. You never set the number in Studio; the API refuses a `contentVersion` change.
 - The version in `exports/` never goes down. Publish refuses a version lower than the published one.
-- A version is published once. Publish refuses the version that `exports/` holds already, even with the same content. To publish a change, raise the version first. The Publish sheet shows this and turns off **Publish**.
-- One version number keeps one content. Publish refuses changed content at a version that is already saved, and tells you which version to raise it to.
+- A version is published once. Publish refuses the version that `exports/` holds already, even with the same content. The Publish sheet shows this, turns off **Publish**, and names the version your next edit starts.
+- One version number keeps one content. Because an edit always leaves a fixed version first, a saved version never changes.
 - It refuses to write into a folder that holds a different guide.
 - It replaces a file in `guides/json/` only when that file is a link or a draft of the same guide. Otherwise it leaves the file alone and shows a warning.
 - It writes the file in one step, so a failed write never leaves half a file. The status changes only after the file is saved.
@@ -209,7 +210,7 @@ When the backend starts, it reads every `exports/curated_poems/*/guided_plan.jso
 - **A version Studio holds already, with the same content:** skipped.
 - **A version Studio holds already, with different content:** not added. The Refresh notice says so and names the version to use instead.
 - **A file with a new guide ID for a poem Studio holds:** not added. The Refresh notice says so.
-- **Unsaved changes in the latest copy:** the higher version is saved, but it does not become the latest copy. The Refresh notice asks you to raise the latest copy's version and click **Save version**, so the changes are kept.
+- **Unsaved changes in the latest copy** (only older data can have them, because an edit leaves a saved version first): Studio keeps the changes as a draft under the next free number, and the file's version is saved below it. Use **Use as latest** on the file's version to continue from it.
 - **A file Studio cannot read:** skipped, and the other files still load.
 
 The log shows a summary, for example `Published guides: 9 loaded, 0 already in Studio, 0 failed.` Note: if you delete a guide in the Studio and its file is still in `guides/json/`, Refresh adds it again. Set `LOAD_PUBLISHED_GUIDES=false` to turn this off, or `PUBLISHED_GUIDES_DIR` to read another folder.
@@ -218,9 +219,10 @@ The log shows a summary, for example `Published guides: 9 loaded, 0 already in S
 
 Each guide has one copy you edit (**Latest**) and any number of read-only saved versions. The number in the `guide.version` field names one content only, so a saved version never changes. The latest copy always has the highest version number.
 
-- **Refresh**, **Publish** and **Save version** add saved versions. Save version keeps the latest copy under its current number.
+- **Refresh**, **Publish** and **Save version** add saved versions. Save version keeps the latest copy under its current number; the next edit then starts the next number.
+- Studio numbers versions by itself: an edit to a published or saved version starts the next one, which needs approval before Publish. The only way to choose a number by hand is a file in `guides/json/` and **Refresh** (below).
 - Open **Version history** from the guide's actions menu to read any version.
-- To edit an older version, open it and choose **Use as latest**. It comes back under the next free number, so you can publish it again. Studio first keeps the latest copy as a version of its own. If the latest copy has changes that are not in a saved version, Studio asks you to raise its version and save it first, so nothing is lost.
+- To edit an older version, open it and choose **Use as latest**. It comes back under the next free number, as a draft, so you approve it and can publish it again. Studio first keeps the latest copy as a version of its own, so nothing is lost.
 - To publish a newer version from a file: put the file in `guides/json/` with a higher `guide.version`, click **Refresh**, and click **Publish**. Refresh makes it the latest copy.
 - When the latest copy is not in `exports/` yet, the guide list shows **New version** beside the status, and the editor shows **Not published**.
 - Only the newest published version is in `exports/`. Older versions live in Studio's database and in Git history.

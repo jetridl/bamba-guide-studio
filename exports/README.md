@@ -8,8 +8,8 @@ files, so Studio imports and app builds use identical JSON.
 Poem covers live beside `guided_plan.json`, normally as `cover.png`, and are
 referenced by `poem.coverImage` (`path`, a filename only, and descriptive `alt`).
 Keep image briefs beside the artwork, outside the guide JSON. Studio preserves
-cover references on import/export. Raise `guide.version` when updating a
-published guide; the app loads bundled covers and refreshes higher authored
+cover references on import/export. Studio raises `guide.version` by itself
+when a published guide is edited; the app loads bundled covers and refreshes higher authored
 plan versions at startup, while protecting plans currently being learned.
 
 The initial nine guides are copied byte-for-byte from the working Bamba app.

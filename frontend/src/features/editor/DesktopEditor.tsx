@@ -111,7 +111,7 @@ export function DesktopEditor({
             <h1 className="font-heading text-2xl leading-tight font-semibold">{guide.poem.title}</h1>
             <GuideStatusPill status={guide.status} />
             <Pill tone="neutral" className="font-normal">
-              {versionName(currentVersion ?? guide)}
+              {versionName(guide)}
               {currentVersion?.timestamp ? ` · ${formatVersionTimestamp(currentVersion.timestamp)}` : ""}
             </Pill>
             {guide.version === 0 && !isPublished(guide) ? <NotPublishedPill publishedVersion={guide.publishedVersion} /> : null}

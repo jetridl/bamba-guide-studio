@@ -78,7 +78,9 @@ def test_publish_existing_guide_updates_its_folder_and_replaces_its_draft(
     (exports_dir / "renamed/guided_plan.json").write_text(json.dumps(source))
     (guides_dir / "renamed.json").write_text(json.dumps(source))  # an unlinked draft copy
     guide_id = _import_and_approve(client, source)
-    client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised", "contentVersion": 2})
+    # The edit moves the published version 1 on to version 2, which needs approval.
+    edited = client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"}).json()
+    assert (edited["contentVersion"], edited["status"]) == (2, "draft")
     client.post(f"/api/guides/{guide_id}/approve")
 
     result = client.post(f"/api/guides/{guide_id}/publish").json()
@@ -97,7 +99,8 @@ def test_publish_keeps_a_different_draft_and_warns(client: TestClient, dirs: tup
     exports_dir, guides_dir = dirs
     guide_id = _import_and_approve(client, load_example())
     folder = client.post(f"/api/guides/{guide_id}/publish").json()["folder"]
-    client.patch(f"/api/guides/{guide_id}", json={"contentVersion": 2})
+    client.patch(f"/api/guides/{guide_id}", json={"title": "A second version"})
+    client.post(f"/api/guides/{guide_id}/approve")
     (guides_dir / f"{folder}.json").unlink()
     other = {"guide": {"id": "someone_else"}, "poem": {"id": "another_poem"}}
     (guides_dir / f"{folder}.json").write_text(json.dumps(other))
@@ -163,30 +166,48 @@ def test_published_version_cannot_be_published_again(client: TestClient, dirs: t
 
     assert response.status_code == 409
     assert "Version 1 is published already" in response.json()["detail"]
-    assert "raise the version to 2" in response.json()["detail"]
+    assert "start version 2" in response.json()["detail"]
     assert plan.read_text() == before
     assert client.get(f"/api/guides/{guide_id}").json()["publishedVersion"] == 1
 
-    client.patch(f"/api/guides/{guide_id}", json={"contentVersion": 2})
+    client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
+    # The new version needs its own approval.
+    assert client.post(f"/api/guides/{guide_id}/publish").status_code == 409
+    client.post(f"/api/guides/{guide_id}/approve")
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200
     assert client.get(f"/api/guides/{guide_id}").json()["publishedVersion"] == 2
     versions = client.get(f"/api/guides/{guide_id}/versions").json()
     assert [(item["versionLabel"], item["status"]) for item in versions] == [("latest", "exported"), ("v2", "exported")]
 
 
-def test_changed_guide_needs_a_higher_version(client: TestClient, dirs: tuple[Path, Path]) -> None:
+def test_an_edit_to_a_published_guide_starts_the_next_version(client: TestClient, dirs: tuple[Path, Path]) -> None:
     guide_id, plan = _publish_tyger(client, dirs)
     before = plan.read_text()
-    client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
-    # The edit dropped the approval, so approve the new words before publishing.
-    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    assert client.get(f"/api/guides/{guide_id}").json()["versionFixed"] is True
 
-    response = client.post(f"/api/guides/{guide_id}/publish")
+    first = client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"}).json()
+    # Further edits stay on the new version: it is not published yet.
+    second = client.patch(f"/api/guides/{guide_id}", json={"description": "Again"}).json()
 
-    assert response.status_code == 409
-    assert "holds version 1 with different content" in response.json()["detail"]
-    assert "raise the version to 2" in response.json()["detail"]
+    assert (first["contentVersion"], first["status"]) == (2, "draft")
+    assert (second["contentVersion"], second["versionFixed"]) == (2, False)
     assert plan.read_text() == before
+    assert client.post(f"/api/guides/{guide_id}/publish").status_code == 409
+    assert client.post(f"/api/guides/{guide_id}/approve").status_code == 200
+    assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200
+    written = json.loads(plan.read_text())
+    assert (written["guide"]["title"], written["guide"]["version"]) == ("The Tyger, revised", 2)
+    assert client.get(f"/api/guides/{guide_id}").json()["versionFixed"] is True
+
+
+def test_a_page_edit_starts_the_next_version_too(client: TestClient, dirs: tuple[Path, Path]) -> None:
+    guide_id, _ = _publish_tyger(client, dirs)
+    page = client.get(f"/api/guides/{guide_id}").json()["sessions"][0]["pages"][0]
+
+    client.patch(f"/api/pages/{page['id']}", json={"bodyMarkdown": "New words."})
+
+    guide = client.get(f"/api/guides/{guide_id}").json()
+    assert (guide["contentVersion"], guide["status"]) == (2, "draft")
 
 
 def test_published_version_never_goes_down(client: TestClient, dirs: tuple[Path, Path]) -> None:
@@ -198,20 +219,26 @@ def test_published_version_never_goes_down(client: TestClient, dirs: tuple[Path,
     response = client.post(f"/api/guides/{guide_id}/publish")
 
     assert response.status_code == 409
-    assert "never goes down" in response.json()["detail"] and "raise the version to 6" in response.json()["detail"]
+    assert "never replaced" in response.json()["detail"] and "start version 6" in response.json()["detail"]
     assert json.loads(plan.read_text())["guide"]["version"] == 5
 
+    # An edit moves the guide above the version in exports/.
+    assert client.patch(f"/api/guides/{guide_id}", json={"title": "Newer"}).json()["contentVersion"] == 6
 
-def test_versions_cannot_go_down_in_the_editor(client: TestClient, dirs: tuple[Path, Path]) -> None:
+
+def test_the_editor_cannot_set_the_version(client: TestClient, dirs: tuple[Path, Path]) -> None:
     guide_id, _ = _publish_tyger(client, dirs)
-    assert client.patch(f"/api/guides/{guide_id}", json={"contentVersion": 3}).json()["contentVersion"] == 3
 
-    assert client.patch(f"/api/guides/{guide_id}", json={"contentVersion": 2}).status_code == 409
+    for number in (3, 0, 2):
+        assert client.patch(f"/api/guides/{guide_id}", json={"contentVersion": number}).status_code in {409, 422}
+    guide = client.get(f"/api/guides/{guide_id}").json()
+    assert (guide["contentVersion"], guide["status"]) == (1, "approved")
 
 
 def test_saved_version_cannot_be_published(client: TestClient, dirs: tuple[Path, Path]) -> None:
     guide_id, _ = _publish_tyger(client, dirs)
-    client.patch(f"/api/guides/{guide_id}", json={"contentVersion": 2})
+    client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
+    client.post(f"/api/guides/{guide_id}/approve")
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200
     saved = client.get(f"/api/guides/{guide_id}/versions").json()[1]
 
@@ -225,7 +252,7 @@ def test_list_shows_a_newer_unpublished_version(client: TestClient, dirs: tuple[
         return client.get("/api/guides").json()[0]
 
     assert (summary()["publishedVersion"], summary()["newerVersion"]) == (1, None)
-    client.patch(f"/api/guides/{guide_id}", json={"contentVersion": 2})
+    client.patch(f"/api/guides/{guide_id}", json={"title": "The Tyger, revised"})
     assert (summary()["publishedVersion"], summary()["newerVersion"]) == (1, 2)
     client.post(f"/api/guides/{guide_id}/approve")
     assert client.post(f"/api/guides/{guide_id}/publish").status_code == 200

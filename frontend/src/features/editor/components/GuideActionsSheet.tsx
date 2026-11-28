@@ -132,7 +132,10 @@ export function GuideActionsSheet({
       ) : (
         <>
           <ListSurface>
-            {versions.map((version) => (
+            {versions
+              // The copy on screen may have moved to a new version since the list loaded.
+              .map((version) => (version.id === guide.id ? { ...version, contentVersion: guide.contentVersion, status: guide.status } : version))
+              .map((version) => (
               <ListRow
                 key={version.id}
                 selected={version.id === guide.id}

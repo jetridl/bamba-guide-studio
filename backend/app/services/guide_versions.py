@@ -8,6 +8,11 @@ Publish add saved versions.
 The working copy ("Latest") always has the highest version number. When
 Refresh adds a higher version, it becomes the working copy, and the old working
 copy is kept as a saved version first.
+
+A published or saved version is fixed. The editor never sets a version number:
+the first edit to a fixed version moves the working copy to the next free
+number, as a draft that needs approval before it can be published. The only
+other way to a new number is a file with that version in guides/json and Refresh.
 """
 
 from __future__ import annotations
@@ -88,7 +93,29 @@ def saved_versions(db: Session, external_id: str) -> dict[int, Guide]:
 
 
 def next_free_version(db: Session, guide: Guide, *also: int) -> int:
-    return max([guide.content_version, *saved_versions(db, guide.external_id), *also]) + 1
+    """The next number no copy of this guide uses: above the working copy, every saved version and exports/."""
+    from app.services.publish_service import published_version
+
+    published = published_version(guide.external_id) or 0
+    return max([guide.content_version, *saved_versions(db, guide.external_id), published, *also]) + 1
+
+
+def is_fixed(db: Session, working: Guide) -> bool:
+    """True when the working copy's version is published or saved, so it may no longer change."""
+    from app.services.publish_service import published_version
+
+    if working.version > 0 or working.status == "exported":
+        return True
+    published = published_version(working.external_id)
+    if published is not None and working.content_version <= published:
+        return True
+    return working.content_version in saved_versions(db, working.external_id)
+
+
+def start_next_version(db: Session, working: Guide) -> None:
+    """Move the working copy to the next free version number, before its first change."""
+    if is_fixed(db, working):
+        working.content_version = next_free_version(db, working)
 
 
 def record_version(db: Session, working: Guide, status_label: str | None = None) -> Guide:
@@ -128,11 +155,12 @@ def keep_working_copy(db: Session, working: Guide) -> None:
     if own is None:
         record_version(db, working)
     elif not holds_content(own, build_guided_plan(working)):
-        raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
-            detail=f"The latest copy has changes that are not in a saved version. Raise its version to "
-            f"{next_free_version(db, working)} and click Save version first, so the changes are kept.",
-        )
+        # Only older data gets here: an edit moves a fixed version to the next number.
+        # Keep the changes under the next free number, as a draft.
+        working.content_version = next_free_version(db, working)
+        if working.status in {"approved", "exported"}:
+            working.status = "draft"
+        record_version(db, working)
 
 
 def promote_highest(db: Session, working: Guide) -> int | None:
@@ -144,6 +172,9 @@ def promote_highest(db: Session, working: Guide) -> int | None:
     if number <= working.content_version:
         return None
     keep_working_copy(db, working)
+    if working.content_version > number:
+        # The working copy had changes of its own, now kept under a higher number.
+        return None
     # The saved version's status comes along: "exported" stays exported.
     copy_guide_contents(db, source=saved[number], target=working)
     db.flush()
@@ -153,6 +184,6 @@ def promote_highest(db: Session, working: Guide) -> int | None:
 def version_taken(number: int, free: int) -> HTTPException:
     return HTTPException(
         status_code=status.HTTP_409_CONFLICT,
-        detail=f"Version {number} is already saved with different content. "
-        f"Raise the version to {free} first, so each version number keeps one content.",
+        detail=f"Version {number} is already saved with different content, and a saved version never changes. "
+        f"Edit the guide once more: Studio then moves it to version {free}, ready for approval.",
     )

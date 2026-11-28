@@ -10,8 +10,8 @@ drafts. Both follow the same rules:
   content, it is reported as a problem: one version number, one content.
 - The working copy always has the highest version. When a higher version is
   saved, it becomes the working copy, and the old working copy is kept as a
-  saved version. Unsaved changes in the working copy stop this; Studio reports
-  it, and changes nothing.
+  saved version. This is the one way to set a version number by hand: Studio
+  itself only moves an edited guide to the next free number.
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ from sqlalchemy.orm import Session
 
 from app.models import Guide, Poem
 from app.services.guide_service import approve_guide, get_guide_or_404
-from app.services.guide_versions import holds_content, next_free_version, promote_highest
+from app.services.guide_versions import holds_content, promote_highest
 from app.services.import_service import add_saved_version, check_guide_schema, import_guide, upsert_poem
 from app.services.validation_service import validate_guide
 
@@ -165,14 +165,14 @@ def _promote(db: Session, name: str, guide_id: str, report: LoadReport, added: b
         db.rollback()
         report.fail(
             name,
-            f"a higher version is saved, but the latest copy (version {working.content_version}) has changes "
-            f"that are not in a saved version. Raise its version to {next_free_version(db, working)} and click "
-            "Save version, so the changes are kept.",
+            f"a higher version is saved, but the latest copy (version {working.content_version}) could not "
+            "be kept as a saved version first, so nothing changed.",
         )
         return
+    # Commit either way: keeping an edited working copy may have saved it as a version.
+    db.commit()
     if number is None:
         return
-    db.commit()
     if added:
         report.loaded[-1] = f"{name} (version {number}, now the latest copy)"
     else:

@@ -590,13 +590,14 @@ def test_an_edit_that_changes_nothing_keeps_the_approval(client: TestClient) -> 
     assert _status(client, imported["id"]) == "approved"
 
 
-def test_raising_the_version_keeps_the_approval(client: TestClient) -> None:
+def test_the_version_cannot_be_raised_by_hand(client: TestClient) -> None:
     imported = _approved_guide(client)
 
     response = client.patch(f"/api/guides/{imported['id']}", json={"contentVersion": 2})
 
-    assert response.status_code == 200
-    assert _status(client, imported["id"]) == "approved"
+    assert response.status_code == 409
+    guide = client.get(f"/api/guides/{imported['id']}").json()
+    assert (guide["contentVersion"], guide["status"]) == (imported["contentVersion"], "approved")
 
 
 def test_a_patch_cannot_approve_a_guide(client: TestClient) -> None:

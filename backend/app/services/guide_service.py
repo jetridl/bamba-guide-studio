@@ -5,7 +5,7 @@ from typing import Any
 
 from fastapi import HTTPException, status
 from sqlalchemy import select
-from sqlalchemy.orm import Session, selectinload
+from sqlalchemy.orm import Session, object_session, selectinload
 
 from app.models import Guide, GuidePage, GuideReview, GuideSession, Poem, PoemChunk
 from app.schemas.api import GuidePatch, PagePatch, ReorderPayload, SessionPatch
@@ -28,8 +28,9 @@ def guide_query():
 
 # Approval covers the words as they stood. Any change to the content drops the
 # working copy back to draft, so an editor approves it again before the Studio
-# exports or publishes it. Raising the version is not a change to the content:
-# it is the first step of publishing a version that was approved already.
+# exports or publishes it. A published or saved version is fixed: the first
+# change to it moves the working copy to the next version number by itself.
+# The editor never sets the number.
 APPROVED_STATUSES = {"approved", "exported"}
 
 # The statuses an editor sets by hand. Approval goes through /approve, which
@@ -38,8 +39,19 @@ ASSIGNABLE_STATUSES = {"draft", "in_review"}
 
 
 def mark_edited(guide: Guide) -> None:
-    """Drop an approved working copy back to draft after a real content change."""
-    if guide.version == 0 and guide.status in APPROVED_STATUSES:
+    """Record a real content change to the working copy.
+
+    A fixed (published or saved) version moves to the next version number, and
+    an approved copy drops back to draft, so it is approved again before publishing.
+    """
+    from app.services.guide_versions import start_next_version
+
+    if guide.version != 0:
+        return
+    db = object_session(guide)
+    if db is not None:
+        start_next_version(db, guide)
+    if guide.status in APPROVED_STATUSES:
         guide.status = "draft"
 
 
@@ -97,9 +109,12 @@ def patch_guide(db: Session, guide: Guide, patch: GuidePatch) -> dict[str, Any]:
             edited = edited or (guide.metadata_json or {}) != value
             guide.metadata_json = value
         elif key == "content_version":
-            if value is None or value < guide.content_version:
-                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Guide versions cannot go down.")
-            guide.content_version = value
+            if value != guide.content_version:
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail="Studio sets the version number: an edit to a published version starts the next one. "
+                    "To bring in a version by hand, put its file in guides/json and click Refresh.",
+                )
         elif key == "status":
             guide.status = _assignable_status(value)
         else:
@@ -126,7 +141,9 @@ def approve_guide(db: Session, guide: Guide) -> dict[str, Any]:
     blocking = [issue for issue in validation["issues"] if issue["severity"] == "blocking"]
     if blocking:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail={"message": "Guide has blocking issues.", "issues": blocking})
-    guide.status = "approved"
+    if guide.status != "exported":
+        # A published, unchanged guide stays exported: it has nothing new to approve.
+        guide.status = "approved"
     db.commit()
     db.refresh(guide)
     return guide_to_dict(guide)
@@ -148,9 +165,10 @@ def restore_latest_from_version(db: Session, guide: Guide) -> dict[str, Any]:
     """Make a saved version the working copy. The working copy is saved first, so nothing is lost.
 
     The working copy always has the highest version number. An older version
-    comes back under the next free number, so it can be published again.
+    comes back under the next free number, as a draft: it needs approval before
+    it is published again.
     """
-    from app.services.guide_versions import highest_version, keep_working_copy
+    from app.services.guide_versions import highest_version, keep_working_copy, next_free_version
 
     if guide.version == 0:
         return guide_to_dict(guide)
@@ -164,10 +182,9 @@ def restore_latest_from_version(db: Session, guide: Guide) -> dict[str, Any]:
         highest = highest_version(db, latest)
     copy_guide_contents(db, source=guide, target=latest)
     if guide.version < highest:
-        latest.content_version = highest + 1
-        if latest.status == "exported":
-            # The new version is not in exports/ yet: Publish puts it there.
-            latest.status = "approved"
+        latest.content_version = next_free_version(db, latest, highest)
+        # A new version: approval covers one version, so it starts as a draft.
+        latest.status = "draft"
     db.commit()
     db.refresh(latest)
     return guide_to_dict(latest)
