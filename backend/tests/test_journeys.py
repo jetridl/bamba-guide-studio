@@ -309,3 +309,52 @@ def test_journey_approval_needs_the_in_review_step(client):
     assert refused.status_code == 409 and 'Mark the Journey in review first' in refused.json()['detail']
     assert client.post(f'{path}/mark-in-review').json()['status'] == 'in_review'
     assert client.post(f'{path}/approve').json()['status'] == 'approved'
+
+
+def _approved_journey(client):
+    guide = approved_poem(client)
+    poem_id = guide['poem']['externalId']
+    journey = client.post('/api/journeys', json=journey_input(poem_id)).json()
+    path = f"/api/journeys/{journey['id']}"
+    assert approve(client, f'{path}/approve').json()['status'] == 'approved'
+    return path, poem_id
+
+
+def test_journey_notes_follow_the_guide_rules(client):
+    path, poem_id = _approved_journey(client)
+
+    note = client.post(f'{path}/review-comments', json={
+        'targetType': 'poem', 'targetId': poem_id, 'severity': 'suggestion', 'category': 'tone',
+        'comment': 'This note reads a little dry.', 'reviewer': 'Ana'})
+
+    assert note.status_code == 200, note.text
+    assert (note.json()['targetId'], note.json()['reviewer'], note.json()['status']) == (poem_id, 'Ana', 'open')
+    # A new note sends the approved Journey back to review, and blocks approval until closed.
+    assert client.get(path).json()['status'] == 'in_review'
+    refused = client.post(f'{path}/approve')
+    assert refused.status_code == 409 and '1 note is still open' in refused.json()['detail']
+    client.patch(f"/api/journey-review-comments/{note.json()['id']}", json={'status': 'dismissed'})
+    assert client.post(f'{path}/approve').json()['status'] == 'approved'
+    # Reopening the note does the same.
+    client.patch(f"/api/journey-review-comments/{note.json()['id']}", json={'status': 'open'})
+    assert client.get(path).json()['status'] == 'in_review'
+    assert len(client.get(f'{path}/review-comments').json()) == 1
+
+
+def test_an_open_blocking_journey_note_blocks_export(client):
+    path, _ = _approved_journey(client)
+    note = client.post(f'{path}/review-comments', json={'targetType': 'journey', 'severity': 'blocking',
+                                                        'comment': 'The introduction names the wrong poet.'}).json()
+
+    issues = client.get(f'{path}/validate').json()['issues']
+
+    assert [issue['code'] for issue in issues] == ['open_blocking_review_comment']
+    assert note['targetId'] == 'images-of-light'
+
+
+def test_a_journey_note_needs_a_target_in_the_journey(client):
+    path, _ = _approved_journey(client)
+
+    assert client.post(f'{path}/review-comments', json={'targetType': 'poem', 'targetId': 'nope',
+                                                        'comment': 'x'}).status_code == 422
+    assert client.post(f'{path}/review-comments', json={'targetType': 'page', 'comment': 'x'}).status_code == 422

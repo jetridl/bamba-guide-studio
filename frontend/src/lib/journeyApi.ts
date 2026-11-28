@@ -1,5 +1,5 @@
 import { UNREACHABLE, apiFetch } from "@/lib/api"
-import type { GuideStatus } from "@/lib/types"
+import type { GuideStatus, NewReviewNote, ReviewComment } from "@/lib/types"
 
 export type JourneyPoem = { poemId: string; title?: string; author?: string; note: string[] }
 
@@ -117,6 +117,11 @@ export const journeyApi = {
   version: (id: string, version: number) => request<JourneyVersionDetail>(`/journeys/${id}/versions/${version}`),
   restoreVersion: (id: string, version: number) =>
     request<Journey>(`/journeys/${id}/versions/${version}/restore`, { method: "POST" }),
+  notes: (id: string) => request<ReviewComment[]>(`/journeys/${id}/review-comments`),
+  addNote: (id: string, note: NewReviewNote) =>
+    request<ReviewComment>(`/journeys/${id}/review-comments`, { method: "POST", body: JSON.stringify(note) }),
+  setNoteStatus: (noteId: string, status: ReviewComment["status"]) =>
+    request<ReviewComment>(`/journey-review-comments/${noteId}`, { method: "PATCH", body: JSON.stringify({ status }) }),
   validate: (id: string) => request<JourneyValidation>(`/journeys/${id}/validate`),
   export: async (id: string) => {
     const response = await apiFetch(`${BASE}/journeys/${id}/export`)

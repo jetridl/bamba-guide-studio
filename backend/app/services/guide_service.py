@@ -165,19 +165,22 @@ def approve_guide(db: Session, guide: Guide, *, from_file: bool = False) -> dict
                 status_code=status.HTTP_409_CONFLICT,
                 detail="Mark the guide in review first. A second editor approves what the writer hands over.",
             )
-        open_notes = [comment for review in guide.reviews for comment in review.comments if comment.status == "open"]
-        if open_notes:
-            count = len(open_notes)
-            raise HTTPException(
-                status_code=status.HTTP_409_CONFLICT,
-                detail=f"Close every review note first: accept, resolve or dismiss it. "
-                f"{count} {'note is' if count == 1 else 'notes are'} still open.",
-            )
+        from app.services.review_notes import require_notes_closed
+
+        require_notes_closed(
+            sum(comment.status == "open" for review in guide.reviews for comment in review.comments)
+        )
     validation = validate_guide(guide)
     blocking = [issue for issue in validation["issues"] if issue["severity"] == "blocking"]
     if blocking:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail={"message": "Guide has blocking issues.", "issues": blocking})
     guide.status = "approved"
+    if not from_file:
+        from app.services.publish_service import matches_published
+
+        if matches_published(guide):
+            # Re-approved after a note, with no edit: exports/ holds exactly this version.
+            guide.status = "exported"
     db.commit()
     db.refresh(guide)
     return guide_to_dict(guide)

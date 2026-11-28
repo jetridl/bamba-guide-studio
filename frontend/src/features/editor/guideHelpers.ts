@@ -1,3 +1,4 @@
+import type { NoteTarget } from "@/components/ReviewNotes"
 import type { GuideDetail, GuidePage, GuideSession, PageType, ReviewComment, ValidationResult } from "@/lib/types"
 
 export const PAGE_TYPES: PageType[] = [
@@ -136,6 +137,19 @@ export function commentsForPage(
     (comment) =>
       comment.targetType === "guide" || comment.targetId === page?.externalId || comment.targetId === guide.externalId,
   )
+}
+
+/** What a new note can be about from this page: the page itself, or the whole guide. */
+export function noteTargets(guide: GuideDetail, page: GuidePage | null): NoteTarget[] {
+  const whole: NoteTarget = { key: "guide", label: "The whole guide", targetType: "guide", targetId: guide.externalId }
+  return page
+    ? [{ key: "page", label: `This page: ${pageLabel(page)}`, targetType: "page", targetId: page.externalId }, whole]
+    : [whole]
+}
+
+/** Notes about the whole guide say so; page notes sit beside their page. */
+export function guideNoteLabel(comment: ReviewComment): string | undefined {
+  return comment.targetType === "guide" ? "Whole guide" : comment.targetType === "session" ? "Session" : undefined
 }
 
 export function openCommentsForPage(comments: ReviewComment[], guide: GuideDetail, page: GuidePage | null) {

@@ -9,11 +9,13 @@ import { CountBadge, GuideStatusPill, NotPublishedPill, Pill } from "@/component
 import { DailyChunksForm } from "@/features/editor/components/DailyChunksForm"
 import { PageForm } from "@/features/editor/components/PageForm"
 import { PagePreview } from "@/features/editor/components/PagePreview"
-import { ReviewNotes } from "@/features/editor/components/ReviewNotes"
+import { ReviewNotes } from "@/components/ReviewNotes"
 import { SaveState } from "@/features/editor/components/SaveState"
 import { SessionsNavigator } from "@/features/editor/components/SessionsNavigator"
 import {
   commentsForPage,
+  guideNoteLabel,
+  noteTargets,
   findSelectedDailySession,
   findSelectedPage,
   formatVersionTimestamp,
@@ -92,6 +94,9 @@ export function DesktopEditor({
             readOnly={editor.readOnly}
             onAccept={editor.acceptComment}
             onStatus={editor.setCommentStatus}
+            targets={noteTargets(guide, selected?.page ?? null)}
+            onAdd={editor.addNote}
+            targetLabel={guideNoteLabel}
           />
         </div>
       )}
@@ -258,6 +263,9 @@ export function DesktopEditor({
                 readOnly={editor.readOnly}
                 onAccept={editor.acceptComment}
                 onStatus={editor.setCommentStatus}
+                targets={noteTargets(guide, selected?.page ?? null)}
+                onAdd={editor.addNote}
+                targetLabel={guideNoteLabel}
               />
             )}
           </Sheet>

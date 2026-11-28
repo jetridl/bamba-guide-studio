@@ -171,4 +171,17 @@ export type ReviewComment = {
   comment: string
   suggestedRevision?: string | null
   status: "open" | "accepted" | "dismissed" | "resolved"
+  // Who wrote it: the reviewer of an imported file, or the name given in the Studio.
+  reviewer?: string
+  createdAt?: string | null
+}
+
+/** A review note written in the Studio, on a guide or a Journey. */
+export type NewReviewNote = {
+  targetType: string
+  targetId?: string | null
+  severity: ReviewComment["severity"]
+  category: string
+  comment: string
+  reviewer?: string
 }

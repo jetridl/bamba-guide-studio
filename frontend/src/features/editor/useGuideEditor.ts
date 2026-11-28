@@ -6,6 +6,7 @@ import type {
   GuideDetail,
   GuidePage,
   GuideVersionSummary,
+  NewReviewNote,
   PublishResult,
   ReviewComment,
   ValidationResult,
@@ -286,6 +287,16 @@ export function useGuideEditor(guideId: string) {
     approve: () => guide && void runAction(() => api.approveGuide(guide.id)),
     markInReview: () => guide && void runAction(() => api.markInReview(guide.id)),
     acceptComment: (commentId: string) => void runAction(() => api.acceptComment(commentId)),
+    /** Write a review note. Resolves to false when it was not saved, so the form keeps the text. */
+    addNote: async (note: NewReviewNote) => {
+      if (!guide) return false
+      let saved = false
+      await runAction(async () => {
+        await api.addReviewNote(guide.id, note)
+        saved = true
+      })
+      return saved
+    },
     setCommentStatus: (commentId: string, status: ReviewComment["status"]) =>
       void runAction(() => api.setCommentStatus(commentId, status)),
     publishGuide,

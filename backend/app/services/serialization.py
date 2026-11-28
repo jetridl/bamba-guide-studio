@@ -66,18 +66,9 @@ def poem_to_dict(poem: Poem) -> dict[str, Any]:
 
 
 def comment_to_dict(comment: GuideReviewComment) -> dict[str, Any]:
-    return {
-        "id": str(comment.id),
-        "externalId": comment.external_id,
-        "targetType": comment.target_type,
-        "targetId": comment.target_external_id,
-        "field": comment.field,
-        "severity": comment.severity,
-        "category": comment.category,
-        "comment": comment.comment,
-        "suggestedRevision": comment.suggested_revision,
-        "status": comment.status,
-    }
+    from app.services.review_notes import note_dict
+
+    return note_dict(comment, comment.review.reviewer)
 
 
 def guide_to_dict(guide: Guide) -> dict[str, Any]:

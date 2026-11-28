@@ -722,3 +722,35 @@ def test_a_note_on_a_draft_keeps_it_a_draft(client: TestClient) -> None:
     client.post("/api/import/review", json=_review())
 
     assert _status(client, imported["id"]) == "draft"
+
+
+def test_notes_can_be_written_in_the_studio(client: TestClient) -> None:
+    imported = _approved_guide(client)
+    page = imported["sessions"][0]["pages"][0]
+    url = f"/api/guides/{imported['id']}/review-comments"
+
+    on_page = client.post(url, json={"targetType": "page", "targetId": page["externalId"], "severity": "warning",
+                                     "category": "ux", "comment": "  The heading wraps badly.  ", "reviewer": "Ana"})
+    on_guide = client.post(url, json={"targetType": "guide", "comment": "Check the pacing of day 3."})
+
+    assert on_page.status_code == 200, on_page.text
+    note = on_page.json()
+    assert (note["targetType"], note["targetId"], note["comment"], note["reviewer"], note["status"]) == (
+        "page", page["externalId"], "The heading wraps badly.", "Ana", "open")
+    assert (on_guide.json()["targetId"], on_guide.json()["reviewer"]) == (imported["externalId"], "Studio editor")
+    # A new note sends the approved guide back to review, and blocks approval until closed.
+    assert _status(client, imported["id"]) == "in_review"
+    assert len(client.get(url).json()) == 2
+    assert client.post(f"/api/guides/{imported['id']}/approve").status_code == 409
+    for item in (note, on_guide.json()):
+        client.patch(f"/api/review-comments/{item['id']}", json={"status": "resolved"})
+    assert client.post(f"/api/guides/{imported['id']}/approve").json()["status"] == "approved"
+
+
+def test_a_note_needs_a_target_in_the_guide(client: TestClient) -> None:
+    imported = client.post("/api/import/guide", json=load_example()).json()
+    url = f"/api/guides/{imported['id']}/review-comments"
+
+    assert client.post(url, json={"targetType": "page", "targetId": "no_such_page", "comment": "x"}).status_code == 422
+    assert client.post(url, json={"targetType": "poem", "comment": "x"}).status_code == 422
+    assert client.post(url, json={"targetType": "guide", "comment": ""}).status_code == 422

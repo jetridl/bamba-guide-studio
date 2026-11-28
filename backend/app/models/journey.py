@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 from typing import Any
 
-from sqlalchemy import DateTime, ForeignKey, Integer, String, UniqueConstraint, func
+from sqlalchemy import DateTime, ForeignKey, Integer, String, Text, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.types import Uuid
 
@@ -31,6 +31,9 @@ class Journey(Base, TimestampMixin):
     )
     versions: Mapped[list[JourneyVersion]] = relationship(
         back_populates="journey", cascade="all, delete-orphan", order_by="JourneyVersion.version"
+    )
+    review_comments: Mapped[list[JourneyReviewComment]] = relationship(
+        back_populates="journey", cascade="all, delete-orphan", order_by="JourneyReviewComment.created_at"
     )
 
 
@@ -62,3 +65,25 @@ class JourneyVersion(Base):
     payload_json: Mapped[dict[str, Any]] = mapped_column(json_type, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     journey: Mapped[Journey] = relationship(back_populates="versions")
+
+
+class JourneyReviewComment(Base, TimestampMixin):
+    """A review note on a Journey, the same shape as a guide's review note.
+
+    It is about the whole Journey (target_type "journey") or one of its poems
+    (target_type "poem", target_external_id the poem ID).
+    """
+
+    __tablename__ = "journey_review_comments"
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=uuid.uuid4)
+    external_id: Mapped[str] = mapped_column(String, nullable=False)
+    journey_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("journeys.id", ondelete="CASCADE"), nullable=False)
+    reviewer: Mapped[str] = mapped_column(String, nullable=False)
+    target_type: Mapped[str] = mapped_column(String, nullable=False)
+    target_external_id: Mapped[str | None] = mapped_column(String)
+    severity: Mapped[str] = mapped_column(String, nullable=False)
+    category: Mapped[str] = mapped_column(String, nullable=False)
+    comment: Mapped[str] = mapped_column(Text, nullable=False)
+    suggested_revision: Mapped[str | None] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(String, nullable=False, default="open")
+    journey: Mapped[Journey] = relationship(back_populates="review_comments")

@@ -17,7 +17,17 @@ from app.models.journey import Journey, JourneyPoem
 from app.services.journey_loader import load_journey_folders
 from app.services.journey_publish_service import publish_journey
 from app.services.content_repository import publication_lock, sync_content
-from app.services.journey_service import detail, get_journey, payload, published_version, validation
+from app.services.journey_service import (
+    detail,
+    get_journey,
+    matches_published,
+    payload,
+    published_version,
+    validation,
+)
+from app.schemas.api import ReviewCommentPatch, ReviewNoteInput
+from app.services.journey_review_service import add_note, list_notes, open_notes, set_note_status
+from app.services.review_notes import require_notes_closed
 from app.services.journey_versions import is_fixed, next_free_version, restore_version, same_content, saved_versions
 
 router = APIRouter()
@@ -170,10 +180,14 @@ def approve(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, A
         # One editor writes and marks the Journey in review; a second editor approves it.
         raise HTTPException(status_code=409, detail="Mark the Journey in review first. "
                             "A second editor approves what the writer hands over.")
+    require_notes_closed(len(open_notes(journey)))
     result = validation(db, journey)
     if not result["valid"]:
         raise HTTPException(status_code=409, detail=result)
     journey.status = "approved"
+    if matches_published(journey):
+        # Re-approved after a note, with no change: exports/ holds exactly this version.
+        journey.status = "exported"
     db.commit()
     return detail(journey)
 
@@ -234,3 +248,18 @@ def use_version(journey_id: uuid.UUID, version: int, db: Session = Depends(get_d
     journey = get_journey(db, journey_id)
     restore_version(db, journey, version)
     return detail(get_journey(db, journey_id))
+
+
+@router.get("/journeys/{journey_id}/review-comments")
+def list_review_notes(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> list[dict[str, Any]]:
+    return list_notes(get_journey(db, journey_id))
+
+
+@router.post("/journeys/{journey_id}/review-comments")
+def add_review_note(journey_id: uuid.UUID, payload: ReviewNoteInput, db: Session = Depends(get_db)) -> dict[str, Any]:
+    return add_note(db, get_journey(db, journey_id), payload)
+
+
+@router.patch("/journey-review-comments/{note_id}")
+def update_review_note(note_id: uuid.UUID, payload: ReviewCommentPatch, db: Session = Depends(get_db)) -> dict[str, Any]:
+    return set_note_status(db, note_id, payload.status)

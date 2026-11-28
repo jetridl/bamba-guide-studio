@@ -21,6 +21,7 @@ import {
 import { ActionList } from "@/components/bamba/ActionList"
 import { Banner } from "@/components/bamba/Banner"
 import { ContentSyncNotice } from "@/components/ContentSyncNotice"
+import { ReviewNotes, type NoteTarget } from "@/components/ReviewNotes"
 import { ActionButton, IconButton } from "@/components/bamba/Button"
 import { Field, inputClass, textareaClass } from "@/components/bamba/Field"
 import { Sheet } from "@/components/bamba/Sheet"
@@ -29,6 +30,7 @@ import { GuideStatusPill, NotPublishedPill, Pill, statusLabel } from "@/componen
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { THEME_LABELS, useTheme } from "@/lib/theme"
 import { useIsPhone } from "@/lib/useMediaQuery"
+import type { NewReviewNote, ReviewComment } from "@/lib/types"
 import { cn } from "@/lib/utils"
 import {
   journeyApi,
@@ -73,6 +75,7 @@ export function JourneyEditorPage() {
   const [revision, setRevision] = useState(0)
   const [candidates, setCandidates] = useState<JourneyCandidate[]>([])
   const [validation, setValidation] = useState<JourneyValidation | null>(null)
+  const [notes, setNotes] = useState<ReviewComment[]>([])
   const [dirty, setDirty] = useState(false)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -87,14 +90,41 @@ export function JourneyEditorPage() {
     setValidation(await journeyApi.validate(id))
   }, [])
 
+  const refreshNotes = useCallback(async (id: string) => {
+    setNotes(await journeyApi.notes(id))
+  }, [])
+
   const replaceFromServer = useCallback(
     (next: Journey) => {
       setJourney(next)
       setDirty(false)
       setRevision((value) => value + 1)
-      if (next.id) void refreshValidation(next.id)
+      if (next.id) {
+        void refreshValidation(next.id)
+        void refreshNotes(next.id)
+      }
     },
-    [refreshValidation],
+    [refreshNotes, refreshValidation],
+  )
+
+  /**
+   * After a note changes, take the status and version from the server but keep
+   * unsaved edits on screen: a note never touches the words.
+   */
+  const refreshAfterNote = useCallback(
+    async (id: string) => {
+      const next = await journeyApi.get(id)
+      setJourney((current) => ({
+        ...current,
+        status: next.status,
+        version: next.version,
+        publishedVersion: next.publishedVersion,
+        nextFreeVersion: next.nextFreeVersion,
+        versionFixed: next.versionFixed,
+      }))
+      await Promise.all([refreshNotes(id), refreshValidation(id)])
+    },
+    [refreshNotes, refreshValidation],
   )
 
   useEffect(() => {
@@ -102,6 +132,7 @@ export function JourneyEditorPage() {
     if (isNew) {
       setJourney(BLANK)
       setValidation(null)
+      setNotes([])
       setLoaded(true)
       return
     }
@@ -151,6 +182,25 @@ export function JourneyEditorPage() {
       replaceFromServer(saved)
       setNotice("Saved.")
       if (isNew && saved.id) navigate(`/journeys/${saved.id}`, { replace: true })
+    })
+
+  const addNote = async (note: NewReviewNote) => {
+    if (!journey.id) return false
+    const id = journey.id
+    let saved = false
+    await run(async () => {
+      await journeyApi.addNote(id, note)
+      saved = true
+      await refreshAfterNote(id)
+    })
+    return saved
+  }
+
+  const setNoteStatus = (noteId: string, status: ReviewComment["status"]) =>
+    run(async () => {
+      if (!journey.id) return
+      await journeyApi.setNoteStatus(noteId, status)
+      await refreshAfterNote(journey.id)
     })
 
   const changeStatus = (action: "markInReview" | "approve") =>
@@ -237,12 +287,41 @@ export function JourneyEditorPage() {
   const saved = Boolean(journey.id)
   // Published or saved: saving a change starts the next version, back in review.
   const fixed = saved && Boolean(journey.versionFixed)
+  const openNotes = notes.filter((note) => note.status === "open").length
+  const noteTargets: NoteTarget[] = [
+    { key: "journey", label: "The whole Journey", targetType: "journey", targetId: journey.externalId },
+    ...journey.poems.map((poem) => ({
+      key: `poem:${poem.poemId}`,
+      label: `Poem: ${poem.title ?? poem.poemId}`,
+      targetType: "poem",
+      targetId: poem.poemId,
+    })),
+  ]
+  const noteLabel = (note: ReviewComment) =>
+    note.targetType === "journey"
+      ? "Whole Journey"
+      : `Poem: ${journey.poems.find((poem) => poem.poemId === note.targetId)?.title ?? note.targetId}`
   // An exported version has nothing left to review or approve.
   const lockedByExport = journey.status === "exported"
   const nextVersion = journey.nextFreeVersion ?? journey.version + 1
   // exports/ holds this version already: a version is published once.
   const published = journey.publishedVersion != null && journey.version <= journey.publishedVersion
   const publishable = saved && !dirty && !published && ["approved", "exported"].includes(journey.status)
+  // The next step in the same order as a guide: mark in review, approve, publish.
+  const stage =
+    journey.status === "draft"
+      ? { label: "Mark in review", disabled: busy || dirty, onClick: () => void changeStatus("markInReview") }
+      : journey.status === "in_review"
+        ? {
+            label: "Approve",
+            disabled: busy || dirty || openNotes > 0 || !validation?.valid,
+            onClick: () => void changeStatus("approve"),
+          }
+        : {
+            label: published ? `Version ${journey.version} is published` : "Publish journey",
+            disabled: busy || !publishable,
+            onClick: () => void publishJourney(),
+          }
   const saveState = busy ? "Working" : dirty ? "Unsaved changes" : saved ? "Saved" : "Draft"
 
   return (
@@ -289,10 +368,10 @@ export function JourneyEditorPage() {
               size="compact"
               variant="primary"
               className="hidden md:inline-flex"
-              disabled={busy || !publishable}
-              onClick={() => void publishJourney()}
+              disabled={stage.disabled}
+              onClick={stage.onClick}
             >
-              Publish
+              {journey.status === "approved" || journey.status === "exported" ? "Publish" : stage.label}
             </ActionButton>
           ) : null}
           <IconButton aria-label="More actions" onClick={() => setMenuOpen(true)}>
@@ -338,7 +417,7 @@ export function JourneyEditorPage() {
           {isNew && phone ? (
             <Banner>A new Journey needs a stable ID, so start it on the laptop. You can write its words here later.</Banner>
           ) : (
-            <JourneyChecks saved={saved} dirty={dirty} validation={validation} />
+            <JourneyChecks saved={saved} dirty={dirty} validation={validation} openNotes={openNotes} />
           )}
         </div>
 
@@ -486,6 +565,30 @@ export function JourneyEditorPage() {
             )}
           </Panel>
 
+          <Panel>
+            <SectionHeading
+              title="Review notes"
+              meta={openNotes ? `${openNotes} open` : notes.length ? "All closed" : undefined}
+            />
+            <p className="mb-4 text-sm leading-relaxed text-bamba-muted">
+              Notes for the writer, about the whole Journey or one poem. Approval waits until every note is accepted,
+              resolved or dismissed. A new note on an approved Journey sends it back to review.
+            </p>
+            {saved ? (
+              <ReviewNotes
+                comments={notes}
+                readOnly={busy}
+                onStatus={(noteId, status) => void setNoteStatus(noteId, status)}
+                targets={noteTargets}
+                onAdd={addNote}
+                targetLabel={noteLabel}
+                emptyText="No notes on this Journey."
+              />
+            ) : (
+              <p className="text-sm text-bamba-hint">Save the Journey to add notes.</p>
+            )}
+          </Panel>
+
           <p className="px-1 pb-4 text-[13px] leading-relaxed text-bamba-hint">
             Publish writes <span className="font-mono break-all">exports/journeys/{journey.externalId || "<id>"}/journey.json</span>
             {journey.coverImage?.path ? (
@@ -502,15 +605,15 @@ export function JourneyEditorPage() {
         </div>
       </div>
 
-      {/* The phone keeps one action in reach: save while editing, publish when ready. */}
+      {/* The phone keeps one action in reach: save while editing, then the next step. */}
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-bamba-border bg-bamba-bg/95 px-5 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-sm md:hidden">
         {dirty || !saved ? (
           <ActionButton variant="primary" size="pinned" disabled={busy || (isNew && phone)} onClick={() => void save()}>
             Save
           </ActionButton>
         ) : (
-          <ActionButton variant="primary" size="pinned" disabled={busy || !publishable} onClick={() => void publishJourney()}>
-            {published ? `Version ${journey.version} is published` : "Publish journey"}
+          <ActionButton variant="primary" size="pinned" disabled={stage.disabled} onClick={stage.onClick}>
+            {stage.label}
           </ActionButton>
         )}
       </div>
@@ -610,12 +713,14 @@ export function JourneyEditorPage() {
                 icon: Check,
                 title: "Approve",
                 description: "A second editor approves the Journey once it is in review",
-                disabled: busy || dirty || lockedByExport || !saved || journey.status !== "in_review",
+                disabled: busy || dirty || lockedByExport || !saved || journey.status !== "in_review" || openNotes > 0,
                 disabledHint: dirty
                   ? "Save your changes first"
                   : journey.status === "draft"
                     ? "Mark it in review first"
-                    : undefined,
+                    : openNotes > 0
+                      ? "Close every review note first"
+                      : undefined,
                 onSelect: () => {
                   setMenuOpen(false)
                   void changeStatus("approve")
@@ -702,16 +807,29 @@ function JourneyChecks({
   saved,
   dirty,
   validation,
+  openNotes,
 }: {
   saved: boolean
   dirty: boolean
   validation: JourneyValidation | null
+  openNotes: number
 }) {
   if (!saved) {
     return <Banner>Save the Journey to check it.</Banner>
   }
   if (dirty) {
     return <Banner>Save your changes to check them again.</Banner>
+  }
+  if (validation?.valid && openNotes > 0) {
+    return (
+      <div className="flex items-center gap-3 rounded-field border border-bamba-warn-border bg-bamba-warn-fill p-3.5">
+        <Circle className="size-5 shrink-0 text-bamba-block-ink" />
+        <span className="text-[15px] font-semibold">
+          {openNotes} review {openNotes === 1 ? "note is" : "notes are"} still open. Close {openNotes === 1 ? "it" : "them"}{" "}
+          before approval.
+        </span>
+      </div>
+    )
   }
   if (validation?.valid) {
     return (

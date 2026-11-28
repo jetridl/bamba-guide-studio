@@ -149,3 +149,16 @@ def test_published_version_never_goes_down(setup) -> None:
     assert response.status_code == 409
     assert "never replaced" in response.json()["detail"] and "start version 6" in response.json()["detail"]
     assert json.loads((exports / JOURNEY / "journey.json").read_text())["journey"]["version"] == 5
+
+
+def test_a_closed_note_on_a_published_version_returns_it_to_exported(setup) -> None:
+    client, exports, drafts, poem_id = setup
+    journey = only_journey(client)
+    path = f"/api/journeys/{journey['id']}"
+    note = client.post(f"{path}/review-comments", json={"targetType": "journey", "comment": "Check the cover."}).json()
+    assert client.get(path).json()["status"] == "in_review"
+
+    client.patch(f"/api/journey-review-comments/{note['id']}", json={"status": "resolved"})
+    approved = client.post(f"{path}/approve").json()
+
+    assert (approved["status"], approved["version"]) == ("exported", 1)

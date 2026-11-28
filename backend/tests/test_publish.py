@@ -232,7 +232,7 @@ def test_the_editor_cannot_set_the_version(client: TestClient, dirs: tuple[Path,
     for number in (3, 0, 2):
         assert client.patch(f"/api/guides/{guide_id}", json={"contentVersion": number}).status_code in {409, 422}
     guide = client.get(f"/api/guides/{guide_id}").json()
-    assert (guide["contentVersion"], guide["status"]) == (1, "approved")
+    assert (guide["contentVersion"], guide["status"]) == (1, "exported")
 
 
 def test_saved_version_cannot_be_published(client: TestClient, dirs: tuple[Path, Path]) -> None:
@@ -265,3 +265,17 @@ def test_unpublished_guide_has_no_newer_version(client: TestClient, dirs: tuple[
     guide = client.get("/api/guides").json()[0]
 
     assert (guide["publishedVersion"], guide["newerVersion"]) == (None, None)
+
+
+def test_a_closed_note_on_a_published_version_returns_it_to_exported(
+    client: TestClient, dirs: tuple[Path, Path]
+) -> None:
+    guide_id, _ = _publish_tyger(client, dirs)
+    note = client.post(f"/api/guides/{guide_id}/review-comments",
+                       json={"targetType": "guide", "comment": "Check the layout."}).json()
+    assert client.get(f"/api/guides/{guide_id}").json()["status"] == "in_review"
+
+    client.patch(f"/api/review-comments/{note['id']}", json={"status": "resolved"})
+    approved = client.post(f"/api/guides/{guide_id}/approve").json()
+
+    assert (approved["status"], approved["contentVersion"]) == ("exported", 1)

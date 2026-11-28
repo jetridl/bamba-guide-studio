@@ -111,6 +111,20 @@ def publish_guide(db: Session, guide: Guide, exports_dir: Path, guides_dir: Path
     }
 
 
+def matches_published(guide: Guide) -> bool:
+    """True when exports/ holds exactly this guide: the same version and the same content."""
+    from app.core.config import settings
+    from app.services.export_service import build_guided_plan
+    from app.services.guide_versions import comparable
+
+    exports_dir = settings.published_guides_dir
+    folder = _existing_folder(exports_dir, guide.external_id, guide.poem.external_id)
+    existing = _read_json(exports_dir / folder / PLAN_FILENAME) if folder else None
+    if not isinstance(existing, dict) or existing.get("guide", {}).get("version") != guide.content_version:
+        return False
+    return comparable(existing) == comparable(build_guided_plan(guide))
+
+
 def published_versions(exports_dir: Path) -> dict[str, int]:
     """The version in exports/ of each published guide, by guide ID."""
     versions: dict[str, int] = {}

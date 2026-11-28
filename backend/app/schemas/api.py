@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -48,6 +48,20 @@ class ReorderPayload(CamelModel):
 
 class ReviewCommentPatch(CamelModel):
     status: str
+
+
+class ReviewNoteInput(CamelModel):
+    """A review note written in the Studio, on a guide or a Journey."""
+
+    target_type: str = Field(alias="targetType")
+    target_id: str | None = Field(default=None, alias="targetId")
+    severity: Literal["note", "suggestion", "warning", "blocking"] = "note"
+    category: Literal[
+        "tone", "pacing", "clarity", "difficulty", "memorisation",
+        "literary_accuracy", "schema", "chunking", "ux", "copy",
+    ] = "copy"
+    comment: str = Field(min_length=1)
+    reviewer: str | None = None
 
 
 class ValidationIssue(CamelModel):

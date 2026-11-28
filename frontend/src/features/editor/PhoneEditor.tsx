@@ -9,10 +9,12 @@ import { CountBadge, GuideStatusPill, NotPublishedPill, Pill, StateDot } from "@
 import { PageForm } from "@/features/editor/components/PageForm"
 import { PagePreview } from "@/features/editor/components/PagePreview"
 import { ReadinessStrip } from "@/features/editor/components/Readiness"
-import { ReviewNotes } from "@/features/editor/components/ReviewNotes"
+import { ReviewNotes } from "@/components/ReviewNotes"
 import { SaveState } from "@/features/editor/components/SaveState"
 import {
   commentsForPage,
+  guideNoteLabel,
+  noteTargets,
   findSelectedPage,
   flattenPages,
   isPublished,
@@ -305,6 +307,9 @@ function PageScreen({
             readOnly={editor.readOnly}
             onAccept={editor.acceptComment}
             onStatus={editor.setCommentStatus}
+            targets={noteTargets(guide, page)}
+            onAdd={editor.addNote}
+            targetLabel={guideNoteLabel}
           />
         ) : null}
       </div>

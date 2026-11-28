@@ -64,6 +64,21 @@ def _version_state(journey: Journey) -> dict[str, Any]:
     return {"nextFreeVersion": next_free_version(db, journey), "versionFixed": is_fixed(db, journey)}
 
 
+def matches_published(journey: Journey) -> bool:
+    """True when exports/journeys holds exactly this Journey: the same version and the same content."""
+    from app.core.config import settings
+    from app.services.journey_versions import same_content
+
+    try:
+        path = settings.published_journeys_dir / journey.external_id / "journey.json"
+        existing = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    if not isinstance(existing, dict) or (existing.get("journey") or {}).get("version") != journey.version:
+        return False
+    return same_content(existing, payload(journey))
+
+
 def detail(journey: Journey) -> dict[str, Any]:
     data = payload(journey)
     return {"id": str(journey.id), "externalId": journey.external_id,
@@ -105,6 +120,11 @@ def validation(db: Session, journey: Journey) -> dict[str, Any]:
     if not issues:
         issues = [_issue("schema", message, "journey", journey.external_id)
                   for message in validate_json_schema(payload(journey), "journey.schema.json")]
+    # As for guides: an open blocking note stops export and publishing.
+    for note in journey.review_comments:
+        if note.status == "open" and note.severity == "blocking":
+            issues.append({"severity": "blocking", "code": "open_blocking_review_comment", "message": note.comment,
+                           "targetType": note.target_type, "targetId": note.target_external_id})
     for item in journey.poems:
         if not db.scalar(select(Guide.id).where(Guide.poem_id == item.poem_id,
                                               Guide.status.in_(["approved", "exported"]))):

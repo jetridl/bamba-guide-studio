@@ -5,6 +5,7 @@ import type {
   GuideVersionSummary,
   PublishResult,
   RefreshResult,
+  NewReviewNote,
   ReviewComment,
   ValidationResult,
 } from "@/lib/types"
@@ -117,6 +118,11 @@ export const api = {
     request<ReviewComment>(`/review-comments/${commentId}`, {
       method: "PATCH",
       body: JSON.stringify({ status }),
+    }),
+  addReviewNote: (guideId: string, note: NewReviewNote) =>
+    request<ReviewComment>(`/guides/${guideId}/review-comments`, {
+      method: "POST",
+      body: JSON.stringify(note),
     }),
   acceptComment: (commentId: string) =>
     request<ReviewComment>(`/review-comments/${commentId}/accept`, { method: "POST" }),

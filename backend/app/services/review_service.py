@@ -8,7 +8,9 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.models import Guide, GuidePage, GuideReview, GuideReviewComment, GuideSession
+from app.schemas.api import ReviewNoteInput
 from app.services.guide_service import back_to_review, mark_edited
+from app.services.review_notes import check_status, reviewer_name
 from app.services.json_schema import validate_json_schema
 from app.services.serialization import comment_to_dict
 
@@ -77,8 +79,7 @@ def import_review(db: Session, payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def set_comment_status(db: Session, comment_id: uuid.UUID, status_value: str) -> dict[str, Any]:
-    if status_value not in {"open", "accepted", "dismissed", "resolved"}:
-        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid comment status.")
+    check_status(status_value)
     comment = db.get(GuideReviewComment, comment_id)
     if comment is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Review comment not found.")
@@ -86,6 +87,49 @@ def set_comment_status(db: Session, comment_id: uuid.UUID, status_value: str) ->
         # A reopened note on an approved guide: it waits for approval again.
         back_to_review(comment.review.guide)
     comment.status = status_value
+    db.commit()
+    db.refresh(comment)
+    return comment_to_dict(comment)
+
+
+def add_note(db: Session, guide: Guide, note: ReviewNoteInput) -> dict[str, Any]:
+    """Write a review note in the Studio, about the whole guide, a session or a page."""
+    if guide.version > 0:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Saved versions are read-only. Add notes to the latest copy.",
+        )
+    if note.target_type not in {"guide", "session", "page"}:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            detail="A note is about the guide, a session or a page.")
+    target_id = guide.external_id if note.target_type == "guide" else note.target_id
+    target_db_id = _resolve_target(db, guide, note.target_type, target_id)
+    if target_db_id is None:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            detail=f"This guide has no {note.target_type} {target_id}.")
+    reviewer = reviewer_name(note.reviewer)
+    # Notes written in the Studio are grouped in one review per reviewer.
+    review = next((item for item in guide.reviews
+                   if (item.raw_json or {}).get("source") == "studio" and item.reviewer == reviewer), None)
+    if review is None:
+        review = GuideReview(guide=guide, reviewer=reviewer, summary=None, raw_json={"source": "studio"})
+        db.add(review)
+    comment = GuideReviewComment(
+        review=review,
+        external_id=f"studio_{uuid.uuid4().hex[:12]}",
+        target_type=note.target_type,
+        target_external_id=target_id,
+        target_db_id=target_db_id,
+        field=None,
+        severity=note.severity,
+        category=note.category,
+        comment=note.comment.strip(),
+        suggested_revision=None,
+        status="open",
+    )
+    db.add(comment)
+    # A new note on an approved guide: it waits for approval again.
+    back_to_review(guide)
     db.commit()
     db.refresh(comment)
     return comment_to_dict(comment)
