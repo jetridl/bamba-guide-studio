@@ -15,6 +15,10 @@ export type Journey = {
   version: number
   // The version in exports/journeys, or null when the Journey is not published.
   publishedVersion?: number | null
+  // The number a saved change to a fixed version moves to. Studio sets versions; the editor never does.
+  nextFreeVersion?: number
+  // Published or saved, so it never changes: the next saved change starts nextFreeVersion.
+  versionFixed?: boolean
   status: GuideStatus
   introduction: string[]
   closing: string[]
@@ -95,7 +99,7 @@ export const journeyApi = {
       title: journey.title,
       subtitle: journey.subtitle,
       curator: journey.curator,
-      version: journey.version,
+      // No version: Studio sets it, and starts the next one when a fixed version changes.
       introduction: journey.introduction,
       closing: journey.closing,
       coverImage: journey.coverImage,

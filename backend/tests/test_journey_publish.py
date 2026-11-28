@@ -93,7 +93,6 @@ def test_publish_needs_the_cover_image(client: TestClient, folders: dict[str, Pa
 def test_publish_needs_a_cover_image_set(client: TestClient, folders: dict[str, Path]) -> None:
     journey, data = approved_journey(client, folders)
     data["coverImage"] = None
-    data["version"] = 2
     assert client.put(f"/api/journeys/{journey['id']}", json=data).status_code == 200
 
     response = client.post(f"/api/journeys/{journey['id']}/publish")
@@ -153,16 +152,19 @@ def test_approved_file_is_not_published_again_at_the_same_version(
 
     response = client.post(f"/api/journeys/{journey['id']}/publish")
 
-    assert response.status_code == 409 and "raise the Journey version to 2" in response.json()["detail"]
+    assert response.status_code == 409 and "start version 2" in response.json()["detail"]
     assert json.loads(path.read_text())["journey"]["status"] == "approved"
 
 
 def test_new_version_replaces_the_published_journey(client: TestClient, folders: dict[str, Path]) -> None:
     journey, data = approved_journey(client, folders)
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 200
-    data["version"] = 2
+    data.pop("version")
     data["poems"][0]["note"] = ["A revised note."]
-    assert client.put(f"/api/journeys/{journey['id']}", json=data).status_code == 200
+    saved = client.put(f"/api/journeys/{journey['id']}", json=data).json()
+    # The change moves the published version 1 on to version 2, which needs approval.
+    assert (saved["version"], saved["status"]) == (2, "draft")
+    assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 409
     assert client.post(f"/api/journeys/{journey['id']}/approve").status_code == 200
 
     response = client.post(f"/api/journeys/{journey['id']}/publish")

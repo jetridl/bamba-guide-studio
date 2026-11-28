@@ -156,9 +156,10 @@ def _promote(db: Session, name: str, journey: Journey, report: JourneyLoadReport
         report.fail(name, f"a higher version is saved, but it cannot become the latest copy (version {current}): "
                     f"{error.detail}")
         return
+    # Commit either way: keeping an edited latest copy may have saved it as a version.
+    db.commit()
     if number is None:
         return
-    db.commit()
     if added:
         report.loaded[-1] = f"{name} (version {number}, now the latest copy)"
     else:

@@ -235,7 +235,11 @@ export function JourneyEditorPage() {
   }
 
   const saved = Boolean(journey.id)
+  // Published or saved: saving a change starts the next version, as a draft.
+  const fixed = saved && Boolean(journey.versionFixed)
+  // An exported version has nothing left to review or approve.
   const lockedByExport = journey.status === "exported"
+  const nextVersion = journey.nextFreeVersion ?? journey.version + 1
   // exports/ holds this version already: a version is published once.
   const published = journey.publishedVersion != null && journey.version <= journey.publishedVersion
   const publishable = saved && !dirty && !published && ["approved", "exported"].includes(journey.status)
@@ -323,9 +327,11 @@ export function JourneyEditorPage() {
               <span className="whitespace-pre-wrap">{notice}</span>
             </Banner>
           ) : null}
-          {lockedByExport ? (
+          {fixed ? (
             <Banner>
-              This Journey is exported. Raise the version before you save changes, so the app refreshes it.
+              {published ? `Version ${journey.version} is published` : `Version ${journey.version} is saved`} and never
+              changes. {dirty ? "Saving" : "Saving a change"} starts version {nextVersion}, which you approve and publish
+              in turn.
             </Banner>
           ) : null}
 
@@ -356,15 +362,9 @@ export function JourneyEditorPage() {
                   </Field>
                   <Field
                     label="Version"
-                    hint="Raise it when you change an exported Journey. One version keeps one content, and the published version never goes down."
+                    hint="Studio numbers versions: a saved change to a published version starts the next one."
                   >
-                    <input
-                      className={inputClass}
-                      min={1}
-                      type="number"
-                      value={journey.version}
-                      onChange={(event) => edit("version", Math.max(1, Number(event.target.value) || 1))}
-                    />
+                    <input className={inputClass} disabled readOnly value={`v${journey.version}`} />
                   </Field>
                 </>
               ) : null}
@@ -388,8 +388,8 @@ export function JourneyEditorPage() {
             </div>
             {phone ? (
               <p className="mt-4 text-[13px] text-bamba-hint">
-                The stable ID is <span className="font-mono">{journey.externalId || "not set"}</span>. Change the ID and
-                the version on the laptop.
+                The stable ID is <span className="font-mono">{journey.externalId || "not set"}</span>. Change the ID on the
+                laptop.
               </p>
             ) : null}
           </Panel>
@@ -496,7 +496,7 @@ export function JourneyEditorPage() {
             ) : null}
             . Every poem's guide must be published first. Once synced, the Journey is included in the next app build.
             {published
-              ? ` Version ${journey.version} is published already. To publish a change, raise the version and save.`
+              ? ` Version ${journey.version} is published already. Save a change to start version ${nextVersion}, then approve and publish it.`
               : ""}
           </p>
         </div>

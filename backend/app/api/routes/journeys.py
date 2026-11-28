@@ -17,8 +17,8 @@ from app.models.journey import Journey, JourneyPoem
 from app.services.journey_loader import load_journey_folders
 from app.services.journey_publish_service import publish_journey
 from app.services.content_repository import publication_lock, sync_content
-from app.services.journey_service import detail, get_journey, payload, validation
-from app.services.journey_versions import restore_version, saved_versions
+from app.services.journey_service import detail, get_journey, payload, published_version, validation
+from app.services.journey_versions import is_fixed, next_free_version, restore_version, same_content, saved_versions
 
 router = APIRouter()
 Text = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
@@ -44,18 +44,33 @@ class JourneyInput(BaseModel):
     title: Text
     subtitle: Text
     curator: Text
-    version: int = Field(default=1, ge=1)
+    # Studio sets the number. A client may send the current one back; any other is refused.
+    version: int | None = Field(default=None, ge=1)
     introduction: list[Text] = Field(default_factory=list)
     closing: list[Text] = Field(default_factory=list)
     coverImage: JourneyCoverInput | None = None
     poems: list[JourneyPoemInput] = Field(default_factory=list)
 
 
+VERSION_IS_AUTOMATIC = (
+    "Studio sets the Journey version: a saved change to a published version starts the next one. "
+    "To bring in a version by hand, put its journey.json in guides/journeys and click Refresh."
+)
+
+
 def save(db: Session, journey: Journey, data: JourneyInput) -> dict[str, Any]:
+    """Save the editable copy. A real change to a fixed version moves it to the next number, as a draft."""
     if journey.external_id and journey.external_id != data.externalId:
         raise HTTPException(status_code=409, detail="Journey IDs stay unchanged after creation.")
-    if journey.version is not None and data.version < journey.version:
-        raise HTTPException(status_code=409, detail="Journey versions cannot decrease.")
+    creating = journey.version is None
+    if creating:
+        # A new Journey starts above any version of the same ID in exports/.
+        journey.external_id = data.externalId
+        expected = (published_version(journey) or 0) + 1
+    else:
+        expected = journey.version
+    if data.version is not None and data.version != expected:
+        raise HTTPException(status_code=409, detail=VERSION_IS_AUTOMATIC)
     ids = [item.poemId for item in data.poems]
     if len(ids) != len(set(ids)):
         raise HTTPException(status_code=422, detail="A poem may appear only once in a Journey.")
@@ -65,11 +80,9 @@ def save(db: Session, journey: Journey, data: JourneyInput) -> dict[str, Any]:
         if poem is None or not db.scalar(select(Guide.id).where(Guide.poem_id == poem.id,
                                                              Guide.status.in_(["approved", "exported"]))):
             raise HTTPException(status_code=409, detail=f"{poem_id} needs an approved or exported guide.")
-    if journey.status == "exported" and data.version <= journey.version:
-        raise HTTPException(status_code=409, detail="Raise the Journey version before editing an exported Journey.")
+    before = None if creating else payload(journey)
     journey.external_id = data.externalId
     journey.title, journey.subtitle, journey.curator = data.title, data.subtitle, data.curator
-    journey.version, journey.status = data.version, "draft"
     journey.introduction_json, journey.closing_json = data.introduction, data.closing
     cover = data.coverImage
     journey.cover_image_json = {"path": cover.path, "alt": cover.alt} if cover and (cover.path or cover.alt) else None
@@ -80,6 +93,13 @@ def save(db: Session, journey: Journey, data: JourneyInput) -> dict[str, Any]:
         row.order_index, row.note_json = index, item.note
         keep.append(row)
     journey.poems = keep
+    if creating:
+        journey.version, journey.status = expected, "draft"
+    elif not same_content(before, payload(journey)):
+        if is_fixed(db, journey):
+            journey.version = next_free_version(db, journey)
+        # Approval covers the words as they stood.
+        journey.status = "draft"
     db.add(journey)
     db.commit()
     return detail(get_journey(db, journey.id))
@@ -129,7 +149,8 @@ def validate(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, 
 def mark_in_review(journey_id: uuid.UUID, db: Session = Depends(get_db)) -> dict[str, Any]:
     journey = get_journey(db, journey_id)
     if journey.status == "exported":
-        raise HTTPException(status_code=409, detail="Raise the Journey version and save before changing exported content.")
+        raise HTTPException(status_code=409, detail="This version is published and never changes. "
+                            "Edit the Journey and save to start the next version, then mark it in review.")
     journey.status = "in_review"
     db.commit()
     return detail(journey)

@@ -86,8 +86,10 @@ def test_studio_edits_do_not_clash_with_the_file(setup) -> None:
     journey = only_journey(client)
     data = {**{key: journey[key] for key in ("externalId", "title", "subtitle", "curator", "introduction",
                                              "closing", "coverImage")},
-            "version": 2, "poems": [{"poemId": poem_id, "note": ["A new note."]}]}
-    assert client.put(f"/api/journeys/{journey['id']}", json=data).status_code == 200
+            "poems": [{"poemId": poem_id, "note": ["A new note."]}]}
+    saved = client.put(f"/api/journeys/{journey['id']}", json=data).json()
+    # The published version 1 is fixed, so the change starts version 2 by itself.
+    assert (saved["version"], saved["status"], saved["versionFixed"]) == (2, "draft", False)
 
     result = client.post("/api/journeys/refresh").json()
 
@@ -104,34 +106,37 @@ def test_older_version_comes_back_under_the_next_number(setup) -> None:
 
     assert response.status_code == 200, response.text
     restored = response.json()
-    assert (restored["version"], restored["title"], restored["status"]) == (4, "Images of light", "approved")
+    # A new version: it needs approval before it is published.
+    assert (restored["version"], restored["title"], restored["status"]) == (4, "Images of light", "draft")
     versions = client.get(f"/api/journeys/{journey['id']}/versions").json()
     assert [item["version"] for item in versions] == [3, 1]
+    assert client.post(f"/api/journeys/{journey['id']}/approve").status_code == 200
     (drafts / JOURNEY / "cover.png").write_bytes(b"cover")
     assert client.post(f"/api/journeys/{journey['id']}/publish").status_code == 200
     written = json.loads((exports / JOURNEY / "journey.json").read_text())
     assert (written["journey"]["version"], written["journey"]["title"]) == (4, "Images of light")
 
 
-def test_unsaved_changes_block_a_restore(setup) -> None:
+def test_a_change_to_a_saved_version_starts_the_next_one(setup) -> None:
     client, exports, drafts, poem_id = setup
     write(drafts, journey_file(poem_id, 3, "Images of light, revised"))
     client.post("/api/journeys/refresh")
     journey = only_journey(client)
-    # Version 3 is the latest now. Change it without raising the version.
+    # Version 3 is the latest now, and saved: a change may not alter it.
     data = {**{key: journey[key] for key in ("externalId", "subtitle", "curator", "introduction",
                                              "closing", "coverImage")},
-            "title": "Changed at version 3", "version": 3, "poems": [{"poemId": poem_id, "note": ["Changed."]}]}
-    assert client.put(f"/api/journeys/{journey['id']}", json=data).status_code == 200
+            "title": "Changed after version 3", "version": 3, "poems": [{"poemId": poem_id, "note": ["Changed."]}]}
+    saved = client.put(f"/api/journeys/{journey['id']}", json=data).json()
+    assert (saved["version"], saved["status"]) == (4, "draft")
 
     response = client.post(f"/api/journeys/{journey['id']}/versions/1/restore")
 
-    assert response.status_code == 409 and "Raise its version to 4" in response.json()["detail"]
-    assert only_journey(client)["title"] == "Changed at version 3"
-    publish = client.post(f"/api/journeys/{journey['id']}/approve")
-    assert publish.status_code == 200
-    refused = client.post(f"/api/journeys/{journey['id']}/publish")
-    assert refused.status_code == 409 and "Version 3 is already saved" in refused.json()["detail"]
+    # The changes are kept as version 4 first, and version 1 comes back as 5.
+    assert response.status_code == 200, response.text
+    assert (response.json()["version"], response.json()["status"]) == (5, "draft")
+    versions = client.get(f"/api/journeys/{journey['id']}/versions").json()
+    assert [(item["version"], item["title"]) for item in versions][:2] == [(4, "Changed after version 3"),
+                                                                          (3, "Images of light, revised")]
 
 
 def test_published_version_never_goes_down(setup) -> None:
@@ -142,5 +147,5 @@ def test_published_version_never_goes_down(setup) -> None:
     response = client.post(f"/api/journeys/{journey['id']}/publish")
 
     assert response.status_code == 409
-    assert "never goes down" in response.json()["detail"] and "to 6" in response.json()["detail"]
+    assert "never replaced" in response.json()["detail"] and "start version 6" in response.json()["detail"]
     assert json.loads((exports / JOURNEY / "journey.json").read_text())["journey"]["version"] == 5

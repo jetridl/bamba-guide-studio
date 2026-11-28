@@ -10,8 +10,9 @@ exports/curated_poems. It shows a Journey only when every poem is bundled, and
 it refreshes a Journey on a device only when the version rises.
 
 The folder holds only the newest published version, and its version never goes
-down. A version is published once: to publish a change, raise the version
-first. Each published version is also kept as a saved version.
+down. A version is published once and then fixed: the first saved change after
+it moves the Journey to the next version, which is approved and published in
+turn. Each published version is also kept as a saved version.
 """
 
 from __future__ import annotations
@@ -83,14 +84,11 @@ def publish_journey(
         published_version = existing_journey.get("version")
         if isinstance(published_version, int) and journey.version <= published_version:
             free = next_free_version(db, journey, published_version)
-            if journey.version < published_version:
-                reason = f"{display} already holds version {published_version}, and a published version never goes down."
-            elif comparable(existing) == comparable(data):
+            if comparable(existing) == comparable(data):
                 reason = f"Version {journey.version} is published already."
             else:
-                reason = f"{display} already holds version {published_version} with different content."
-            raise _conflict(f"{reason} To publish a change, raise the Journey version to {free} and save, "
-                            "so the app refreshes it on devices that have it.")
+                reason = f"{display} already holds version {published_version}, and a published version is never replaced."
+            raise _conflict(f"{reason} Edit the Journey and save to start version {free}, then approve and publish it.")
 
     cover = journey.cover_image_json
     cover_name = cover["path"] if cover else None

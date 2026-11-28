@@ -52,11 +52,24 @@ def published_version(journey: Journey) -> int | None:
     return version if isinstance(version, int) else None
 
 
+def _version_state(journey: Journey) -> dict[str, Any]:
+    """The number the next saved change moves a fixed version to, and whether it is fixed."""
+    from sqlalchemy.orm import object_session
+
+    from app.services.journey_versions import is_fixed, next_free_version
+
+    db = object_session(journey)
+    if db is None:
+        return {"nextFreeVersion": journey.version + 1, "versionFixed": journey.status == "exported"}
+    return {"nextFreeVersion": next_free_version(db, journey), "versionFixed": is_fixed(db, journey)}
+
+
 def detail(journey: Journey) -> dict[str, Any]:
     data = payload(journey)
     return {"id": str(journey.id), "externalId": journey.external_id,
             **{key: value for key, value in data["journey"].items() if key != "id"},
             "publishedVersion": published_version(journey),
+            **_version_state(journey),
             "closing": journey.closing_json,
             "coverImage": journey.cover_image_json,
             "poems": [{**item, "title": row.poem.title, "author": row.poem.author}

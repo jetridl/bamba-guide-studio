@@ -246,7 +246,7 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 
    To start from a file instead, save it as `guides/journeys/<journey_id>/journey.json` and click **Refresh** on the Journeys page. Studio reads `exports/journeys/` and then `guides/journeys/`:
    - It adds each Journey it does not hold yet. A file marked `approved` or `exported` keeps that status if it passes validation; any other file loads as a draft.
-   - It adds a new version of a Journey it holds as a read-only saved version. The highest version becomes the latest copy, unless the latest copy has unsaved changes.
+   - It adds a new version of a Journey it holds as a read-only saved version. The highest version becomes the latest copy. If the latest copy has changes that are in no saved version (only older data can), Studio keeps them as a draft under the next free number instead.
    - It skips a version it holds with the same content, and lists a version it holds with different content as a problem.
 
    Every poem in the file must already be in Studio (click **Refresh** on the guide list first). The page lists any file it cannot import, with the reason.
@@ -259,7 +259,7 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 8. Click **Publish**. Studio checks the Journey again and refuses to publish when:
    - a poem's guide is not published to `exports/curated_poems/` yet (the app hides a Journey with a poem it does not bundle),
    - the cover image is not in `guides/journeys/<journey_id>/`,
-   - the published file already holds this version, or a higher one (raise the version first; a version is published once).
+   - the published file already holds this version, or a higher one (a version is published once; save a change to start the next one).
 
    Then it writes the canonical files and links the draft to them:
 
@@ -277,9 +277,9 @@ See [the integration spec](docs/flutter-guided-plan-json-integration-spec.md) fo
 
 When the backend starts, it loads `exports/journeys/*/journey.json` after the guides, with the same rules as **Refresh**.
 
-To change an exported Journey, raise its version first. Saving returns it to draft. The app replaces a bundled Journey only when the version is higher, and it keeps each user's progress.
+Studio numbers Journey versions by itself, as it does for guides. A published or saved version never changes: the first saved change to it moves the Journey to the next free version number (above every saved version and the one in `exports/journeys/`) and back to draft, so you approve and publish the new version in turn. Further saves stay on that number until it is published. Saving without a change keeps the status. The Version field is read only, and the API refuses any other `version`; to choose a number by hand, put a `journey.json` with that version in `guides/journeys/<journey_id>/` and click **Refresh**. The app replaces a bundled Journey only when the version is higher, and it keeps each user's progress.
 
-Journeys keep versions the same way as guides (see [Versions](#versions)). Refresh and Publish keep each version they see, and the latest copy always has the highest version. Open **Version history** from the Journey's actions menu to read one, and choose **Use as latest** to edit it. `exports/journeys/` holds only the newest published version, and its version never goes down. The Journey list shows **New version** when the latest copy is not published yet.
+Journeys keep versions the same way as guides (see [Versions](#versions)). Refresh and Publish keep each version they see, and the latest copy always has the highest version. Open **Version history** from the Journey's actions menu to read one, and choose **Use as latest** to edit it; an older version comes back under the next free number, as a draft. `exports/journeys/` holds only the newest published version, and its version never goes down. The Journey list shows **New version** when the latest copy is not published yet.
 
 The Journey file format is `schemas/journey.schema.json`, a copy of the app's schema.
 

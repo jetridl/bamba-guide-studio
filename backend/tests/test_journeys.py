@@ -50,16 +50,37 @@ def test_journey_editorial_flow_and_version_refresh(client):
     assert validate_json_schema(exported.json(), 'journey.schema.json') == []
     assert exported.json()['journey']['status'] == 'exported'
     assert 'images-of-light_journey.json' in exported.headers['content-disposition']
-    assert client.put(path, json=data).status_code == 409
+    # Saving the same content changes nothing: the version stays exported.
+    unchanged = client.put(path, json=data).json()
+    assert (unchanged['status'], unchanged['version'], unchanged['versionFixed']) == ('exported', 1, True)
     assert client.post(f'{path}/mark-in-review').status_code == 409
     assert client.post(f'{path}/approve').json()['status'] == 'exported'
-    data['version'] = 2
+    # The editor cannot set the number.
+    assert client.put(path, json={**data, 'version': 2}).status_code == 409
     data['poems'][0]['note'] = ['A revised note.']
     updated = client.put(path, json=data)
     assert updated.status_code == 200, updated.text
-    assert updated.json()['status'] == 'draft'
-    assert updated.json()['version'] == 2
+    assert (updated.json()['status'], updated.json()['version']) == ('draft', 2)
     assert updated.json()['poems'][0]['note'] == ['A revised note.']
+    # Further changes stay on version 2 until it is published.
+    data['version'] = 2
+    data['closing'] = ['Another closing.']
+    assert client.put(path, json=data).json()['version'] == 2
+    assert client.put(path, json={**data, 'version': 3}).status_code == 409
+
+
+def test_unchanged_save_keeps_the_approval(client):
+    guide = approved_poem(client)
+    data = journey_input(guide['poem']['externalId'])
+    journey = client.post('/api/journeys', json=data).json()
+    path = f"/api/journeys/{journey['id']}"
+    assert client.post(f'{path}/approve').json()['status'] == 'approved'
+
+    assert client.put(path, json=data).json()['status'] == 'approved'
+    data['title'] = 'Images of light, revised'
+    changed = client.put(path, json=data).json()
+    # Not published or saved yet, so the number stays; the approval goes.
+    assert (changed['status'], changed['version']) == ('draft', 1)
 
 
 def test_journey_rejects_poems_without_approved_guides(client):

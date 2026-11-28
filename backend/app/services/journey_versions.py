@@ -4,8 +4,13 @@ The Journey row is Studio's editable copy. Each JourneyVersion row is a
 read-only copy of one version's journey.json content. Refresh and Publish add
 versions. The editable copy always has the highest version number: when Refresh
 adds a higher version, it becomes the editable copy. "Use as latest" copies an
-older version back under the next free number. Both keep the editable copy as a
-version of its own first.
+older version back under the next free number, as a draft. Both keep the
+editable copy as a version of its own first.
+
+A published or saved version is fixed. The editor never sets a version number:
+the first saved change to a fixed version moves the editable copy to the next
+free number, as a draft that needs approval before it can be published. The
+only other way to a new number is a journey.json file with that version and Refresh.
 """
 
 from __future__ import annotations
@@ -45,14 +50,30 @@ def saved_versions(db: Session, journey: Journey) -> dict[int, JourneyVersion]:
 
 
 def next_free_version(db: Session, journey: Journey, *also: int) -> int:
-    return max([journey.version, *saved_versions(db, journey), *also]) + 1
+    """The next number no copy uses: above the editable copy, every saved version and exports/."""
+    from app.services.journey_service import published_version
+
+    published = published_version(journey) or 0
+    return max([journey.version or 0, *saved_versions(db, journey), published, *also]) + 1
+
+
+def is_fixed(db: Session, journey: Journey) -> bool:
+    """True when the editable copy's version is published or saved, so it may no longer change."""
+    from app.services.journey_service import published_version
+
+    if journey.status == "exported":
+        return True
+    published = published_version(journey)
+    if published is not None and journey.version <= published:
+        return True
+    return journey.id is not None and journey.version in saved_versions(db, journey)
 
 
 def version_taken(number: int, free: int) -> HTTPException:
     return HTTPException(
         status_code=status.HTTP_409_CONFLICT,
-        detail=f"Version {number} is already saved with different content. "
-        f"Raise the version to {free} and save first, so each version number keeps one content.",
+        detail=f"Version {number} is already saved with different content, and a saved version never changes. "
+        f"Edit the Journey once more and save: Studio then moves it to version {free}, ready for approval.",
     )
 
 
@@ -126,11 +147,12 @@ def keep_editable_copy(db: Session, journey: Journey) -> None:
     if own is None:
         record_version(db, journey)
     elif not same_content(own.payload_json, payload(journey)):
-        raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
-            detail=f"The latest copy has changes that are not in a saved version. Raise its version to "
-            f"{next_free_version(db, journey)} and save first, so the changes are kept.",
-        )
+        # Only older data gets here: a save moves a fixed version to the next number.
+        # Keep the changes under the next free number, as a draft.
+        journey.version = next_free_version(db, journey)
+        if journey.status in PUBLISHED_STATUSES:
+            journey.status = "draft"
+        record_version(db, journey)
 
 
 def _take(db: Session, journey: Journey, row: JourneyVersion) -> None:
@@ -149,6 +171,10 @@ def promote_highest(db: Session, journey: Journey) -> int | None:
     if number <= journey.version:
         return None
     row = saved[number]
+    keep_editable_copy(db, journey)
+    if journey.version > number:
+        # The editable copy had changes of its own, now kept under a higher number.
+        return None
     _take(db, journey, row)
     status_label = published_status(db, journey, row.status)
     # An exported file stays exported: it is the published copy.
@@ -161,7 +187,8 @@ def restore_version(db: Session, journey: Journey, number: int) -> None:
     """Make a saved version the editable copy. The editable copy is kept as a version first.
 
     The editable copy always has the highest number, so an older version comes
-    back under the next free number, ready to publish again.
+    back under the next free number, as a draft: it needs approval before it is
+    published again.
     """
     row = saved_versions(db, journey).get(number)
     if row is None:
@@ -170,7 +197,9 @@ def restore_version(db: Session, journey: Journey, number: int) -> None:
     highest = max(saved_versions(db, journey))
     journey.status = published_status(db, journey, row.status)
     if number < highest:
-        journey.version = highest + 1
+        journey.version = next_free_version(db, journey, highest)
+        # A new version: approval covers one version, so it starts as a draft.
+        journey.status = "draft"
     elif row.status == "exported" and journey.status == "approved":
         journey.status = "exported"
     db.commit()
